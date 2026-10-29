@@ -2257,7 +2257,7 @@ function processToastQueue(){
 
 /* ============================================================
    ASK A DOUBT — contextual Q&A powered by the user's own free
-   Gemini API key (see config.js). Runs client-side; no backend.
+   Gemini cloud proxy (see config.js). Requires a deployed Worker; no API key is stored in the browser.
    ============================================================ */
 function sampleImageBrightness(img){
   // Downscale to a tiny canvas — we only need an average, not per-pixel accuracy,
