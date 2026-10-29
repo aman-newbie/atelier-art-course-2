@@ -2530,7 +2530,7 @@ function showDoubtEngineChooser(){
   div.className = 'doubt-chooser';
   div.innerHTML =
     '<p>Pick how you want doubts answered \u2014 you can switch anytime with the \u21c4 button above.</p>' +
-    '<button class="btn btn-primary" data-doubt-engine="gemini">Cloud (Gemini) \u2014 better answers, needs a free key in config.js</button>' +
+    '<button class="btn btn-primary" data-doubt-engine="gemini">Cloud (Gemini) \u2014 better answers, requires the site owner to configure the secure proxy</button>' +
     '<button class="btn btn-ghost" data-doubt-engine="local">On-device \u2014 no setup at all, but a ~200MB one-time download and weaker answers</button>';
   wrap.appendChild(div);
   wrap.scrollTop = wrap.scrollHeight;
