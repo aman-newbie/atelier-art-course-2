@@ -1,0 +1,3153 @@
+
+'use strict';
+/* ============================================================
+   ATELIER — CURRICULUM DATA
+   This is the entire content model. Everything renders from
+   this object, so extending the platform later means adding
+   data here, not rewriting markup.
+   ============================================================ */
+
+const CURRICULUM = [...CURRICULUM_1, ...CURRICULUM_2, ...CURRICULUM_3, ...CURRICULUM_4];
+
+const QUOTES = [
+  "The page doesn't know how many you've thrown away.",
+  "Construction first. Likeness is what construction looks like from the outside.",
+  "You're not behind. You're early in something that takes years for everyone.",
+  "A confident wrong line teaches you more than a hesitant right one.",
+  "Seeing is the whole problem. The hand just needs to catch up.",
+  "Nobody's first thousand drawings are good. That's not a warning, it's the schedule."
+];
+
+/* ============================================================
+   STATE
+   ============================================================ */
+const ORIGINAL_THEME = 'dark'; // the site's actual default, used by the theme-preview toggle
+let showingOriginalTheme = false;
+const STATE = {
+  theme:'dark',
+  route:{view:'home', pathId:null, moduleId:null, tab:'overview'},
+  completed:new Set(),
+  favorites:new Set(),
+  checklist:{},
+  quizAnswers:{},
+  notes:{},
+  premadeEdits:{},
+  notesLangOverride:null,
+  notesMotionPaused:null,
+  resourcesOpened:{},
+  recentlyVisited:[],
+  searchQuery:'',
+  fontScale:1,
+  customBgUrl:'',
+  customHistory:[],
+  customScrimOpacity:0.55,
+  language:'en',
+  xp:0,
+  storageBackend:'none',
+  streak:0,
+  lastVisitDate:null,
+  activityLog:{},
+  unlockedAchievements:new Set()
+};
+
+/* ============================================================
+   PREMADE NOTES — ready-made notes for a module (see notes-data.js).
+   The originals are never modified: each user's edits are stored as
+   per-language overrides in STATE.premadeEdits (localStorage / export),
+   so one person's edits never change what anyone else sees.
+   ============================================================ */
+let NOTES_SUB = 'premade';
+let NOTES_EDITING = false;
+let NOTES_EDIT_MOD = null;
+let premadeSaveTimer = null;
+
+const NOTES_UI = {
+  en:{premade:'Premade notes', mine:'My notes', follow:'Following site language: ', only:'Notes only: ', names:{en:'English', hi:'Hinglish'},
+      toOther:{en:'Show these notes in English', hi:'Translate these notes to Hinglish'}, back:'Back to site language', pause:'Pause motion', play:'Play motion', figPause:'Pause this diagram', figPlay:'Play this diagram', figHint:'Tap a diagram to pause or play it.',
+      edit:'Edit these notes', done:'Done editing', reset:'Reset to original', edited:'Edited by you \u00b7 saved on this device', saved:'Saved on this device',
+      hint:'One point per line. Use **bold** for emphasis. Your edits stay on this device only.', confirm:'Reset these notes to the original? Your edits for this language will be removed.'},
+  hi:{premade:'Premade notes', mine:'My notes', follow:'Site ki language follow ho rahi hai: ', only:'Sirf notes: ', names:{en:'English', hi:'Hinglish'},
+      toOther:{en:'Notes English mein dekho', hi:'Notes ko Hinglish mein badlo'}, back:'Site ki language pe wapas', pause:'Motion roko', play:'Motion chalao', figPause:'Is diagram ko roko', figPlay:'Is diagram ko chalao', figHint:'Kisi bhi diagram pe tap karke use roko ya chalao.',
+      edit:'Notes edit karo', done:'Edit ho gaya', reset:'Original pe wapas', edited:'Aapne edit kiya \u00b7 is device pe saved', saved:'Is device pe saved',
+      hint:'Har point alag line mein. Zor dene ke liye **bold** use karo. Edits sirf is device pe rehte hain.', confirm:'In notes ko original pe wapas laayein? Is language ke aapke edits hat jaayenge.'}
+};
+
+function hasPremadeNotes(m){ return !!(m && typeof PREMADE_NOTES !== 'undefined' && PREMADE_NOTES[m.id]); }
+function getNotesLang(){ return STATE.notesLangOverride || STATE.language || 'en'; }
+function notesMd(s){ return escapeHtml(String(s)).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>'); }
+function premadeItems(mid, lang, sec){
+  const e = STATE.premadeEdits[mid] && STATE.premadeEdits[mid][lang];
+  return (e && Array.isArray(e[sec.id])) ? e[sec.id] : sec[lang].items;
+}
+function hasPremadeEdits(mid, lang){
+  const e = STATE.premadeEdits[mid] && STATE.premadeEdits[mid][lang];
+  return !!(e && Object.keys(e).length);
+}
+function isNotesMotionPaused(){
+  if(STATE.notesMotionPaused === true) return true;
+  if(STATE.notesMotionPaused === false) return false;
+  return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+}
+function notesSubTabsHtml(){
+  const ui = NOTES_UI[getNotesLang()];
+  return `<div class="notes-sub" role="tablist"><button class="notes-sub-btn${NOTES_SUB==='premade'?' on':''}" data-notes-sub="premade">${ui.premade}</button><button class="notes-sub-btn${NOTES_SUB==='mine'?' on':''}" data-notes-sub="mine">${ui.mine}</button></div>`;
+}
+function renderPremadeNotesView(m){
+  const data = PREMADE_NOTES[m.id];
+  if(NOTES_EDIT_MOD !== m.id) NOTES_EDITING = false;
+  const site = STATE.language || 'en';
+  const lang = getNotesLang();
+  const ui = NOTES_UI[lang];
+  const overridden = lang !== site;
+  const chip = (overridden ? ui.only : ui.follow) + ui.names[lang];
+  const other = lang === 'en' ? 'hi' : 'en';
+  const switchLabel = overridden ? (ui.back + ' (' + ui.names[site] + ')') : ui.toOther[other];
+  const edited = hasPremadeEdits(m.id, lang);
+  const paused = isNotesMotionPaused();
+  const secs = data.sections.map(sec=>{
+    const t = sec[lang];
+    const items = premadeItems(m.id, lang, sec);
+    let body;
+    if(NOTES_EDITING){
+      body = `<textarea class="note-edit" data-note-section="${sec.id}" rows="${Math.max(3, items.length * 3)}" aria-label="${escapeHtml(t.h)}">${escapeHtml(items.join('\n'))}</textarea>`;
+    } else {
+      const tag = sec.ordered ? 'ol' : 'ul';
+      body = `<${tag} class="note-list">${items.map(i=>`<li>${notesMd(i)}</li>`).join('')}</${tag}>`;
+    }
+    const figs = NOTES_EDITING ? '' : (t.figs || []).map(f=>`<figure class="note-fig${paused ? ' is-paused' : ''}">${f.svg}<div class="note-fig-foot"><figcaption>${escapeHtml(f.cap)}</figcaption><button type="button" class="note-fig-toggle" data-fig-toggle aria-label="${paused ? ui.figPlay : ui.figPause}"><svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><path class="ico-pause" d="M4 3h3v10H4zM9 3h3v10H9z"/><path class="ico-play" d="M5 3l8 5-8 5z"/></svg></button></div></figure>`).join('');
+    const nav = (!NOTES_EDITING && sec.nav && t.nav) ? `<div class="note-nav"><p>${escapeHtml(t.nav.text)}</p><div class="note-nav-btns"><button class="notes-btn notes-primary" data-notes-go="${sec.nav.next}">${escapeHtml(t.nav.next)}</button><button class="notes-btn" data-notes-go="${sec.nav.skip}">${escapeHtml(t.nav.skip)}</button></div></div>` : '';
+    return `<section class="note-sec"><h3>${escapeHtml(t.h)}</h3>${body}${figs}${nav}</section>`;
+  }).join('');
+  const acts = `<button class="notes-btn notes-primary" data-notes-edit>${NOTES_EDITING ? ui.done : ui.edit}</button>`
+    + (edited ? `<button class="notes-btn" data-notes-reset>${ui.reset}</button>` : '')
+    + `<a class="notes-btn" href="${escapeHtml(data.source.url)}" target="_blank" rel="noopener">${escapeHtml(lang === 'hi' ? data.source.openHi : data.source.openEn)}</a>`;
+  return `${notesSubTabsHtml()}
+    <div class="notes-bar"><span class="notes-chip">${escapeHtml(chip)}</span><button class="notes-btn" data-notes-motion>${paused ? ui.play : ui.pause}</button></div>
+    <button class="notes-btn notes-switch" data-notes-lang>${escapeHtml(switchLabel)}</button>
+    ${NOTES_EDITING ? '' : `<p class="notes-hint">${ui.figHint}</p>`}
+    <div class="notes-source">${escapeHtml(data.source[lang])}</div>
+    ${edited ? `<div class="notes-chip notes-chip-edited">${ui.edited}</div>` : ''}
+    ${NOTES_EDITING ? `<p class="notes-hint">${notesMd(ui.hint)}</p>` : ''}
+    <div class="note-card">${secs}</div>
+    <div class="notes-actions">${acts}</div>
+    <div class="notes-status" id="premadeStatus"></div>`;
+}
+function resActions(r, m){
+  const hasNotes = r.hasNotes && hasPremadeNotes(m);
+  if(!hasNotes && !r.lessonUrl) return '';
+  return `<div class="res-actions">${hasNotes ? `<button class="notes-btn" data-notes-open="${m.id}">Study notes</button>` : ''}${r.lessonUrl ? `<a class="res-lesson-link" href="${escapeHtml(r.lessonUrl)}" target="_blank" rel="noopener">Open original lesson \u2197</a>` : ''}</div>`;
+}
+function rerenderNotesTab(){
+  if(STATE.route.view !== 'module' || STATE.route.tab !== 'notes') return;
+  const m = findModule(STATE.route.moduleId);
+  const panel = document.getElementById('tabpanel');
+  if(m && panel) panel.innerHTML = renderTabContent(m, 'notes', new Set());
+}
+function handlePremadeNotesClick(e){
+  /* tap a diagram (or its pause button) to pause/play just that one */
+  const figHit = e.target.closest('[data-fig-toggle], svg[data-dur]');
+  if(figHit){
+    const figEl = figHit.closest('.note-fig'); const sv = figEl && figEl.querySelector('svg[data-dur]');
+    if(sv){ try{ if(sv.animationsPaused()) sv.unpauseAnimations(); else sv.pauseAnimations(); syncFigState(sv); }catch(err){} }
+    return true;
+  }
+  const t = e.target.closest('[data-notes-open],[data-notes-sub],[data-notes-lang],[data-notes-motion],[data-notes-edit],[data-notes-reset],[data-notes-go]');
+  if(!t) return false;
+  const mid = STATE.route.moduleId;
+  if(t.dataset.notesOpen){
+    const id = t.dataset.notesOpen; const p = findPathOfModule(id);
+    NOTES_SUB = 'premade'; NOTES_EDITING = false;
+    navigateModule(p ? p.id : null, id, 'notes');
+    return true;
+  }
+  if(t.dataset.notesGo){
+    const gid = t.dataset.notesGo; const gp = findPathOfModule(gid); const gm = findModule(gid);
+    NOTES_SUB = 'premade'; NOTES_EDITING = false;
+    navigateModule(gp ? gp.id : null, gid, (gm && hasPremadeNotes(gm)) ? 'notes' : 'overview');
+    return true;
+  }
+  if(t.dataset.notesSub){ NOTES_SUB = t.dataset.notesSub; NOTES_EDITING = false; rerenderNotesTab(); return true; }
+  if(t.dataset.notesLang !== undefined){
+    const site = STATE.language || 'en';
+    const eff = getNotesLang();
+    const target = (eff === site) ? (site === 'en' ? 'hi' : 'en') : site;
+    STATE.notesLangOverride = (target === site) ? null : target;
+    NOTES_EDITING = false;
+    saveProgress(); rerenderNotesTab(); return true;
+  }
+  if(t.dataset.notesMotion !== undefined){
+    STATE.notesMotionPaused = !isNotesMotionPaused();
+    saveProgress(); applyNotesMotion(false); updateMotionButtons(); return true;
+  }
+  if(t.dataset.notesEdit !== undefined){ NOTES_EDITING = !NOTES_EDITING; NOTES_EDIT_MOD = mid; rerenderNotesTab(); return true; }
+  if(t.dataset.notesReset !== undefined){
+    const lang = getNotesLang();
+    if(window.confirm(NOTES_UI[lang].confirm)){
+      if(STATE.premadeEdits[mid]) delete STATE.premadeEdits[mid][lang];
+      saveProgress(); rerenderNotesTab();
+    }
+    return true;
+  }
+  return false;
+}
+function handlePremadeEditInput(el){
+  const mid = STATE.route.moduleId, lang = getNotesLang(), sid = el.dataset.noteSection;
+  const data = PREMADE_NOTES[mid]; if(!data) return;
+  const sec = data.sections.find(s=>s.id === sid); if(!sec) return;
+  const lines = el.value.split('\n').map(s=>s.trim()).filter(Boolean);
+  const orig = sec[lang].items;
+  const same = lines.length === orig.length && lines.every((l,i)=>l === orig[i]);
+  STATE.premadeEdits[mid] = STATE.premadeEdits[mid] || {};
+  STATE.premadeEdits[mid][lang] = STATE.premadeEdits[mid][lang] || {};
+  if(same) delete STATE.premadeEdits[mid][lang][sid]; else STATE.premadeEdits[mid][lang][sid] = lines;
+  const status = document.getElementById('premadeStatus'); if(status) status.textContent = '\u2026';
+  clearTimeout(premadeSaveTimer);
+  premadeSaveTimer = setTimeout(()=>{ saveProgress(); const s = document.getElementById('premadeStatus'); if(s) s.textContent = NOTES_UI[lang].saved; }, 600);
+}
+/* Diagram animations loop until the reader pauses them. A newly drawn diagram that
+   starts paused is parked on a nearly-finished frame so it isn't blank. */
+function syncFigState(svg){
+  const fig = svg.closest('.note-fig'); if(!fig) return;
+  const p = svg.animationsPaused();
+  fig.classList.toggle('is-paused', p);
+  const btn = fig.querySelector('[data-fig-toggle]');
+  if(btn){ const u = NOTES_UI[getNotesLang()]; btn.setAttribute('aria-label', p ? u.figPlay : u.figPause); }
+}
+function applyNotesMotion(initial){
+  const paused = isNotesMotionPaused();
+  document.querySelectorAll('.note-fig svg[data-dur]').forEach(svg=>{
+    try{
+      if(initial){ if(svg.dataset.motionSet) return; svg.dataset.motionSet = '1'; }
+      if(paused){
+        if(initial) svg.setCurrentTime((parseFloat(svg.dataset.dur) || 6) * 0.85);
+        svg.pauseAnimations();
+      } else {
+        svg.unpauseAnimations();
+      }
+      syncFigState(svg);
+    }catch(err){ /* animations are decoration; never break the page over them */ }
+  });
+}
+function updateMotionButtons(){
+  const ui = NOTES_UI[getNotesLang()];
+  const label = isNotesMotionPaused() ? ui.play : ui.pause;
+  document.querySelectorAll('[data-notes-motion]').forEach(b=>{ b.textContent = label; });
+}
+function initPremadeNotes(){
+  let raf = 0;
+  const mo = new MutationObserver(()=>{
+    if(raf) return;
+    raf = requestAnimationFrame(()=>{ raf = 0; if(document.querySelector('.note-fig svg[data-dur]')){ applyNotesMotion(true); updateMotionButtons(); } });
+  });
+  mo.observe(document.body, {childList:true, subtree:true});
+}
+
+function getLivePaths(){
+  return CURRICULUM.filter(p=>p.status==='live');
+}
+function getAllLiveModules(){
+  const out = [];
+  getLivePaths().forEach(path=>{ path.modules.forEach(m=>{ if(!m.stub) out.push({m, path}); }); });
+  return out;
+}
+const TOTAL_LIVE_MODULES = getAllLiveModules().length;
+
+/* ============================================================
+   ICONS (inline SVG strings — no external icon library)
+   ============================================================ */
+const ICONS = {
+  clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>',
+  target:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>',
+  link:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 15l6-6M11 6l1-1a4 4 0 015 5l-1 1M13 18l-1 1a4 4 0 01-5-5l1-1"/></svg>',
+  check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>',
+  star:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>',
+  arrowLeft:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>',
+  chevronRight:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>',
+  stamp:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>',
+  warmup:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M4.9 4.9l2.8 2.8M2 12h4M4.9 19.1l2.8-2.8M12 18a6 6 0 100-12 6 6 0 000 12z"/></svg>',
+  daily:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
+  weekly:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>',
+  challenge:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 6.5L21 11l-6.5 2.5L12 20l-2.5-6.5L3 11l6.5-2.5z"/></svg>',
+  empty:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>',
+  toastCheck:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>',
+  lock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>',
+  flame:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c1 4-4 5-4 9a4 4 0 008 0c0-2-1-3-1-5 2 1 3 3 3 5a6 6 0 01-12 0c0-5 4-6 6-9z"/></svg>',
+  note:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h9l5 5v13a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1z"/><path d="M14 3v6h6M9 13h6M9 17h6"/></svg>',
+  play:'<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M6 4l14 8-14 8V4z"/></svg>',
+  pause:'<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="5" y="4" width="5" height="16" rx="1"/><rect x="14" y="4" width="5" height="16" rx="1"/></svg>',
+  shuffle:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h3l10 12h5M14 6h5v5M3 18h3l4-4.5M14 18h5v-5"/></svg>',
+  chart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M12 20V4M20 20v-7"/></svg>',
+  palette:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="9" r="1.2" fill="currentColor" stroke="none"/><circle cx="14.5" cy="8" r="1.2" fill="currentColor" stroke="none"/><circle cx="16" cy="13" r="1.2" fill="currentColor" stroke="none"/><circle cx="10" cy="15.5" r="1.2" fill="currentColor" stroke="none"/></svg>',
+  library:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 006.5 22H20V2H6.5A2.5 2.5 0 004 4.5v15z"/></svg>'
+};
+
+/* Small decorative construction-guide SVGs, thematically tied to content */
+const DECOR = {
+  ellipse:'<svg class="mcard-deco" viewBox="0 0 90 90" fill="none" stroke="currentColor" stroke-width="1"><ellipse cx="45" cy="45" rx="34" ry="14" transform="rotate(-18 45 45)"/><line x1="12" y1="45" x2="78" y2="45" stroke-dasharray="2 3" transform="rotate(-18 45 45)"/></svg>',
+  box:'<svg class="mcard-deco" viewBox="0 0 90 90" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 30 L55 20 L80 32 L45 42 Z"/><path d="M20 30 L20 62 L45 74 L45 42"/><path d="M80 32 L80 62 L45 74"/></svg>',
+  eye:'<svg class="mcard-deco" viewBox="0 0 90 90" fill="none" stroke="currentColor" stroke-width="1"><path d="M10 45 Q45 15 80 45 Q45 75 10 45 Z"/><circle cx="45" cy="45" r="12"/></svg>',
+  grid:'<svg class="mcard-deco" viewBox="0 0 90 90" fill="none" stroke="currentColor" stroke-width="1"><line x1="0" y1="30" x2="90" y2="30"/><line x1="0" y1="60" x2="90" y2="60"/><line x1="30" y1="0" x2="30" y2="90"/><line x1="60" y1="0" x2="60" y2="90"/></svg>',
+  lines:'<svg class="mcard-deco" viewBox="0 0 90 90" fill="none" stroke="currentColor" stroke-width="1"><line x1="10" y1="20" x2="80" y2="30"/><line x1="10" y1="45" x2="80" y2="40"/><line x1="10" y1="70" x2="80" y2="55"/></svg>',
+  vanish:'<svg class="mcard-deco" viewBox="0 0 90 90" fill="none" stroke="currentColor" stroke-width="1"><line x1="80" y1="20" x2="10" y2="10"/><line x1="80" y1="20" x2="10" y2="45"/><line x1="80" y1="20" x2="10" y2="80"/><circle cx="80" cy="20" r="2" fill="currentColor"/></svg>',
+  spark:'<svg class="mcard-deco" viewBox="0 0 90 90" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 70 L70 20 M20 20 L70 70"/></svg>'
+};
+const MODULE_DECOR = {m1:'spark', m2:'grid', m3:'lines', m4:'ellipse', m5:'eye', m6:'grid', m7:'box'};
+
+const TOTAL_MAPPED_MODULES = CURRICULUM.reduce((sum,p)=> sum + (p.modules ? p.modules.length : p.moduleCount), 0);
+
+/* ============================================================
+   ACHIEVEMENTS
+   Every condition reads directly off real state — no busywork
+   counters invented just to have something to unlock.
+   ============================================================ */
+function pathFullyComplete(pathId){
+  const path = CURRICULUM.find(p=>p.id===pathId);
+  if(!path || !path.modules) return false;
+  const real = path.modules.filter(m=>!m.stub);
+  if(!real.length) return false;
+  return real.every(m=>STATE.completed.has(m.id));
+}
+function totalQuizCorrect(){
+  let n = 0;
+  getAllLiveModules().forEach(({m})=>{
+    if(!m.quiz) return;
+    const ans = STATE.quizAnswers[m.id] || {};
+    m.quiz.forEach((q,qi)=>{ if(ans[qi]===q.correct) n++; });
+  });
+  return n;
+}
+
+function arcProgress(pathId){
+  const path = CURRICULUM.find(p=>p.id===pathId);
+  if(!path) return {done:0, total:0};
+  const real = path.modules.filter(m=>!m.stub);
+  const done = real.filter(m=>STATE.completed.has(m.id)).length;
+  return {done, total:real.length};
+}
+function notedModuleCount(s){
+  return Object.values(s.notes).filter(t=>t && t.trim().length>0).length;
+}
+function totalResourcesOpened(s){
+  return Object.values(s.resourcesOpened).reduce((sum,set)=>sum + (set ? set.size : 0), 0);
+}
+
+const ACHIEVEMENTS = [
+  {id:'first-mark', title:'First Mark', desc:'Complete your first module.', check:s=>s.completed.size>=1,
+    progress:s=>`${Math.min(s.completed.size,1)}/1 modules`},
+  {id:'foundations-grad', title:'Foundations Graduate', desc:'Complete every Foundations module.', check:()=>pathFullyComplete('foundations'),
+    progress:()=>{const p=arcProgress('foundations'); return `${p.done}/${p.total} modules`;}},
+  {id:'perspective-grad', title:'Perspective Graduate', desc:'Complete every Perspective & Construction module.', check:()=>pathFullyComplete('perspective'),
+    progress:()=>{const p=arcProgress('perspective'); return `${p.done}/${p.total} modules`;}},
+  {id:'portrait-grad', title:'Portrait Graduate', desc:'Complete every Head & Portrait module.', check:()=>pathFullyComplete('portrait'),
+    progress:()=>{const p=arcProgress('portrait'); return `${p.done}/${p.total} modules`;}},
+  {id:'anatomy-grad', title:'Anatomy Graduate', desc:'Complete every Body & Anatomy module.', check:()=>pathFullyComplete('anatomy'),
+    progress:()=>{const p=arcProgress('anatomy'); return `${p.done}/${p.total} modules`;}},
+  {id:'nature-grad', title:'Nature Graduate', desc:'Complete every Nature & Architecture module.', check:()=>pathFullyComplete('nature-arch'),
+    progress:()=>{const p=arcProgress('nature-arch'); return `${p.done}/${p.total} modules`;}},
+  {id:'creature-grad', title:'Creature Feature', desc:'Complete every Creatures & Hard Surface module.', check:()=>pathFullyComplete('creatures-hardsurface'),
+    progress:()=>{const p=arcProgress('creatures-hardsurface'); return `${p.done}/${p.total} modules`;}},
+  {id:'well-rounded', title:'Well-Rounded', desc:'Complete at least one module in every live arc.', check:s=>getLivePaths().every(p=>p.modules.filter(m=>!m.stub).some(m=>s.completed.has(m.id))),
+    progress:s=>`${getLivePaths().filter(p=>p.modules.filter(m=>!m.stub).some(m=>s.completed.has(m.id))).length}/${getLivePaths().length} arcs started`},
+  {id:'halfway', title:'Halfway There', desc:'Complete half of all live modules.', check:s=>s.completed.size>=Math.ceil(TOTAL_LIVE_MODULES/2),
+    progress:s=>`${s.completed.size}/${Math.ceil(TOTAL_LIVE_MODULES/2)} modules`},
+  {id:'completionist', title:'Completionist', desc:'Complete every live module in Atelier.', check:s=>s.completed.size>=TOTAL_LIVE_MODULES,
+    progress:s=>`${s.completed.size}/${TOTAL_LIVE_MODULES} modules`},
+  {id:'century', title:'Century Club', desc:'Earn 100 XP.', check:s=>s.xp>=100, progress:s=>`${Math.min(s.xp,100)}/100 XP`},
+  {id:'five-hundred', title:'500 Club', desc:'Earn 500 XP.', check:s=>s.xp>=500, progress:s=>`${Math.min(s.xp,500)}/500 XP`},
+  {id:'thousand', title:'1000 Club', desc:'Earn 1,000 XP.', check:s=>s.xp>=1000, progress:s=>`${Math.min(s.xp,1000)}/1,000 XP`},
+  {id:'quiz-sharp', title:'Sharp', desc:'Answer 20 quick-check questions correctly.', check:()=>totalQuizCorrect()>=20,
+    progress:()=>`${Math.min(totalQuizCorrect(),20)}/20 correct`},
+  {id:'quiz-scholar', title:'Scholar', desc:'Answer 50 quick-check questions correctly.', check:()=>totalQuizCorrect()>=50,
+    progress:()=>`${Math.min(totalQuizCorrect(),50)}/50 correct`},
+  {id:'three-day', title:'3-Day Streak', desc:'Come back three days in a row.', check:s=>s.streak>=3, progress:s=>`${Math.min(s.streak,3)}/3 days`},
+  {id:'week-strong', title:'Week Strong', desc:'Come back seven days in a row.', check:s=>s.streak>=7, progress:s=>`${Math.min(s.streak,7)}/7 days`},
+  {id:'two-week', title:'Two Weeks Strong', desc:'Come back fourteen days in a row.', check:s=>s.streak>=14, progress:s=>`${Math.min(s.streak,14)}/14 days`},
+  {id:'month-strong', title:'Thirty Days In', desc:'Come back thirty days in a row.', check:s=>s.streak>=30, progress:s=>`${Math.min(s.streak,30)}/30 days`},
+  {id:'curator', title:'Curator', desc:'Bookmark 3 modules.', check:s=>s.favorites.size>=3, progress:s=>`${Math.min(s.favorites.size,3)}/3 bookmarks`},
+  {id:'collector', title:'Collector', desc:'Bookmark 6 modules.', check:s=>s.favorites.size>=6, progress:s=>`${Math.min(s.favorites.size,6)}/6 bookmarks`},
+  {id:'reflective', title:'Reflective Practice', desc:'Write your first note.', check:s=>notedModuleCount(s)>=1,
+    progress:s=>`${Math.min(notedModuleCount(s),1)}/1 notes`},
+  {id:'chronicler', title:'Chronicler', desc:'Write notes in 5 different modules.', check:s=>notedModuleCount(s)>=5,
+    progress:s=>`${Math.min(notedModuleCount(s),5)}/5 modules noted`},
+  {id:'resourceful', title:'Resourceful', desc:'Open 15 supplementary resources across any modules.', check:s=>totalResourcesOpened(s)>=15,
+    progress:s=>`${Math.min(totalResourcesOpened(s),15)}/15 opened`}
+];
+
+function computeUnlocked(){
+  return new Set(ACHIEVEMENTS.filter(a=>a.check(STATE)).map(a=>a.id));
+}
+
+function checkAchievements(){
+  const current = computeUnlocked();
+  const fresh = [...current].filter(id=>!STATE.unlockedAchievements.has(id));
+  if(fresh.length){
+    fresh.forEach(id=>STATE.unlockedAchievements.add(id));
+    const a = ACHIEVEMENTS.find(x=>x.id===fresh[0]);
+    if(a) showToast('Achievement unlocked: ' + a.title);
+    saveProgress();
+  }
+}
+
+/* ============================================================
+   PRACTICE CENTER — prompt library
+   Every prompt maps to a drill already taught in a live module,
+   so nothing here asks for a skill that hasn't been introduced.
+   ============================================================ */
+const PRACTICE_PROMPTS = [
+  {cat:'Lines', text:'Draw 30 confident straight lines of varying length using the ghosting method.'},
+  {cat:'Lines', text:'Fill a page with superimposed lines, aiming to land exactly on each previous pass.'},
+  {cat:'Lines', text:'Draw a spiral from the center outward in one continuous, confident stroke.'},
+  {cat:'Lines', text:'Draw ten lines connecting random dot pairs, ghosting each one before committing.'},
+  {cat:'Ellipses', text:'Draw 20 ellipses through a grid of boxes, touching all four edges each time.'},
+  {cat:'Ellipses', text:'Draw a cylinder from three different angles using ellipse ends.'},
+  {cat:'Ellipses', text:'Practice ellipses at five different degrees, from nearly flat to nearly circular.'},
+  {cat:'Ellipses', text:'Draw through the same ellipse five times without lifting your pencil.'},
+  {cat:'Shapes', text:'Simplify five objects in the room into 3\u20135 basic shapes each.'},
+  {cat:'Shapes', text:'Draw ten silhouette thumbnails of random objects in under five minutes.'},
+  {cat:'Shapes', text:'Pick one object and draw it three ways: mostly circles, mostly rectangles, mostly triangles.'},
+  {cat:'Shapes', text:'Squint at a reference photo until detail disappears, then draw only the shapes left.'},
+  {cat:'Forms', text:'Draw a sphere, cube, cylinder, and cone from imagination with cross-contour lines.'},
+  {cat:'Forms', text:'Construct a simple mug from a cylinder plus a handle.'},
+  {cat:'Forms', text:'Build a simple robot or lamp from three combined basic forms.'},
+  {cat:'Forms', text:'Draw the same basic form from five different angles in one sitting.'},
+  {cat:'Observation', text:'Do a five-minute blind contour drawing of your own hand.'},
+  {cat:'Observation', text:'Draw the negative space around a chair instead of the chair itself.'},
+  {cat:'Observation', text:'Sight-measure a still life of three objects before drawing a single line.'},
+  {cat:'Observation', text:'Copy a reference image upside-down, then compare it to the subject right-side up.'},
+  {cat:'Warm-up', text:'Two minutes of loose scribbling with absolutely no goal.'},
+  {cat:'Warm-up', text:'Draw the same simple object twice: once in writing grip, once in overhand grip.'},
+  {cat:'Warm-up', text:'Draw fifty small circles as fast as you can while staying controlled.'},
+  {cat:'Warm-up', text:'Trace ten imaginary lines in the air before drawing any of them for real.'}
+];
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+function findModule(moduleId){
+  for(const path of CURRICULUM){
+    if(!path.modules) continue;
+    const m = path.modules.find(mm=>mm.id===moduleId);
+    if(m) return m;
+  }
+  return null;
+}
+
+function L(m, field){
+  if(STATE.language === 'hi' && m && typeof TRANSLATIONS_HI !== 'undefined'){
+    const t = TRANSLATIONS_HI[m.id];
+    if(t && t[field] !== undefined) return t[field];
+  }
+  return m ? m[field] : undefined;
+}
+function findPathOfModule(moduleId){
+  return CURRICULUM.find(p=>p.modules && p.modules.some(m=>m.id===moduleId));
+}
+function getNextIncompleteModule(){
+  return getAllLiveModules().find(({m})=>!STATE.completed.has(m.id)) || null;
+}
+function getChecklistProgress(moduleId){
+  const m = findModule(moduleId);
+  if(!m || !m.checklist) return 0;
+  const checked = STATE.checklist[moduleId] ? STATE.checklist[moduleId].size : 0;
+  return Math.round((checked / m.checklist.length) * 100);
+}
+
+/* ============================================================
+   PERSISTENCE
+   Three layers, tried in order, so this does the right thing
+   wherever it ends up running:
+   1. window.storage — active when this file is being viewed
+      inside Claude; survives reloads there.
+   2. localStorage — active when the file is opened directly in
+      a real browser (double-clicked, or hosted). Not available
+      inside Claude's preview, which is exactly why layer 1
+      exists first rather than assuming this one.
+   3. In-memory only, with Export/Import as the reliable manual
+      backup — always works, everywhere, no exceptions.
+   ============================================================ */
+const STORAGE_KEY = 'atelier-progress-v1';
+
+function serializeState(){
+  const checklistOut = {};
+  Object.entries(STATE.checklist).forEach(([k,v])=>{ checklistOut[k] = [...v]; });
+  const resOpenOut = {};
+  Object.entries(STATE.resourcesOpened).forEach(([k,v])=>{ resOpenOut[k] = [...v]; });
+  return {
+    completed:[...STATE.completed],
+    favorites:[...STATE.favorites],
+    checklist:checklistOut,
+    quizAnswers:STATE.quizAnswers,
+    notes:STATE.notes,
+    premadeEdits:STATE.premadeEdits,
+    notesLangOverride:STATE.notesLangOverride,
+    notesMotionPaused:STATE.notesMotionPaused,
+    resourcesOpened:resOpenOut,
+    recentlyVisited:STATE.recentlyVisited,
+    xp:STATE.xp,
+    theme:STATE.theme,
+    fontScale:STATE.fontScale,
+    customBgUrl:STATE.customBgUrl,
+    customHistory:STATE.customHistory,
+    customScrimOpacity:STATE.customScrimOpacity,
+    language:STATE.language,
+    streak:STATE.streak,
+    lastVisitDate:STATE.lastVisitDate,
+    activityLog:STATE.activityLog,
+    unlockedAchievements:[...STATE.unlockedAchievements],
+    route:STATE.route,
+    savedAt:new Date().toISOString()
+  };
+}
+
+function applyState(data){
+  if(!data) return;
+  STATE.completed = new Set(data.completed || []);
+  STATE.favorites = new Set(data.favorites || []);
+  STATE.checklist = {};
+  Object.entries(data.checklist || {}).forEach(([k,v])=>{ STATE.checklist[k] = new Set(v); });
+  STATE.quizAnswers = data.quizAnswers || {};
+  STATE.notes = data.notes || {};
+  STATE.premadeEdits = (data.premadeEdits && typeof data.premadeEdits === 'object') ? data.premadeEdits : {};
+  STATE.notesLangOverride = (data.notesLangOverride === 'en' || data.notesLangOverride === 'hi') ? data.notesLangOverride : null;
+  STATE.notesMotionPaused = (typeof data.notesMotionPaused === 'boolean') ? data.notesMotionPaused : null;
+  STATE.resourcesOpened = {};
+  Object.entries(data.resourcesOpened || {}).forEach(([k,v])=>{ STATE.resourcesOpened[k] = new Set(v); });
+  STATE.recentlyVisited = data.recentlyVisited || [];
+  STATE.xp = data.xp || 0;
+  if(data.theme) STATE.theme = data.theme;
+  if(typeof data.fontScale === 'number') STATE.fontScale = data.fontScale;
+  if(typeof data.customBgUrl === 'string') STATE.customBgUrl = data.customBgUrl;
+  if(Array.isArray(data.customHistory)) STATE.customHistory = data.customHistory.slice(0, 6);
+  if(typeof data.customScrimOpacity === 'number') STATE.customScrimOpacity = Math.max(0.40, data.customScrimOpacity);
+  if(data.language === 'hi' || data.language === 'en') STATE.language = data.language;
+  STATE.streak = data.streak || 0;
+  STATE.lastVisitDate = data.lastVisitDate || null;
+  STATE.activityLog = data.activityLog || {};
+  STATE.unlockedAchievements = new Set(data.unlockedAchievements || []);
+  restoreLastRoute(data.route);
+}
+
+function restoreLastRoute(route){
+  if(!route || typeof route !== 'object' || !route.view) return;
+  const restorableViews = ['module','practice','achievements','bookmarks','dashboard','calendar','library'];
+  if(!restorableViews.includes(route.view)) return; /* 'home' and 'search' are not worth resuming into */
+  if(route.view === 'module'){
+    const m = findModule(route.moduleId);
+    if(!m) return; /* module no longer exists (e.g. content reorganized) — fall back to home */
+    const ownerPath = CURRICULUM.find(p => p.modules && p.modules.some(mm => mm.id === route.moduleId));
+    const pathId = ownerPath ? ownerPath.id : route.pathId;
+    if(!pathId) return; /* can't resolve a real path — safer to fall back to home than render broken */
+    STATE.route = {view:'module', pathId, moduleId:route.moduleId, tab:route.tab || 'overview'};
+  } else {
+    STATE.route = {view:route.view, pathId:null, moduleId:null, tab:'overview'};
+  }
+}
+
+function todayKey(){
+  const d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+}
+
+function updateStreak(){
+  const today = todayKey();
+  STATE.activityLog[today] = true;
+  if(STATE.lastVisitDate === today) return; /* already counted today */
+  const yesterday = new Date(Date.now() - 86400000);
+  const yKey = yesterday.getFullYear() + '-' + String(yesterday.getMonth()+1).padStart(2,'0') + '-' + String(yesterday.getDate()).padStart(2,'0');
+  STATE.streak = (STATE.lastVisitDate === yKey) ? STATE.streak + 1 : 1;
+  STATE.lastVisitDate = today;
+  saveProgress();
+}
+
+async function loadProgress(){
+  const TEST_KEY = '__atelier_storage_selftest__';
+  try{
+    if(typeof window.storage !== 'undefined'){
+      await window.storage.set(TEST_KEY, 'ok', false);
+      const test = await window.storage.get(TEST_KEY, false);
+      if(test && test.value === 'ok'){
+        STATE.storageBackend = 'claude';
+        const r = await window.storage.get(STORAGE_KEY, false);
+        if(r && r.value) applyState(JSON.parse(r.value));
+        return;
+      }
+    }
+  }catch(e){ /* window.storage present but not actually working here — fall through to localStorage */ }
+  try{
+    localStorage.setItem(TEST_KEY, 'ok');
+    const test = localStorage.getItem(TEST_KEY);
+    localStorage.removeItem(TEST_KEY);
+    if(test === 'ok'){
+      STATE.storageBackend = 'local';
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if(raw) applyState(JSON.parse(raw));
+      return;
+    }
+  }catch(e){ /* localStorage present but blocked — common in some in-app mobile browsers */ }
+  STATE.storageBackend = 'none'; /* neither backend actually round-tripped — in-memory + export/import still work regardless */
+}
+
+let oversizeWarned = false;
+async function persistNow(){
+  const payload = JSON.stringify(serializeState());
+  if(payload.length > 3500000){
+    /* Something is carrying much more data than it should (a stray full-size
+       photo that slipped past thumbnailing, for instance). Writing several
+       MB to localStorage synchronously on every interaction is what causes
+       the whole page to lock up, so refuse rather than repeat that. */
+    if(!oversizeWarned){
+      oversizeWarned = true;
+      showToast("Your theme photo history got too large to save smoothly \u2014 trimming it down.");
+      STATE.customHistory = STATE.customHistory.slice(0, 2);
+      renderThemes();
+    }
+    return;
+  }
+  if(STATE.storageBackend === 'claude'){
+    try{ await window.storage.set(STORAGE_KEY, payload, false); return; }
+    catch(e){ /* fall through to localStorage below */ }
+  }
+  try{ localStorage.setItem(STORAGE_KEY, payload); }
+  catch(e){ /* in-memory state still holds this session regardless */ }
+}
+let saveTimer = null;
+function saveProgress(){
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(persistNow, 400);
+  updateStorageStatus();
+}
+
+function updateStorageStatus(){
+  const el = document.getElementById('storageStatus');
+  if(!el) return;
+  const labels = {
+    claude:'Progress saves automatically here.',
+    local:'Progress saves automatically in this browser.',
+    none:'Not saving automatically on this device \u2014 use Export below before closing.'
+  };
+  el.textContent = labels[STATE.storageBackend] || '';
+}
+
+
+function exportProgress(){
+  const blob = new Blob([JSON.stringify(serializeState(), null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'atelier-progress-' + new Date().toISOString().slice(0,10) + '.json';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+  showToast('Progress file downloaded.');
+}
+
+function importProgressFile(file){
+  const reader = new FileReader();
+  reader.onload = (e)=>{
+    try{
+      const data = JSON.parse(e.target.result);
+      applyState(data);
+      saveProgress();
+      navigateHome();
+      showToast('Progress restored from file.');
+    }catch(err){
+      showToast('That file could not be read as an Atelier progress export.');
+    }
+  };
+  reader.readAsText(file);
+}
+
+/* ============================================================
+   RENDERING
+   ============================================================ */
+function updateDocumentTitle(){
+  const route = STATE.route;
+  const base = 'Atelier';
+  let title = base;
+  if(route.view === 'module'){
+    const m = findModule(route.moduleId);
+    if(m) title = `${L(m,'title')} \u00b7 ${base}`;
+  } else if(route.view === 'practice'){
+    title = `Practice Center \u00b7 ${base}`;
+  } else if(route.view === 'achievements'){
+    title = `Achievements \u00b7 ${base}`;
+  } else if(route.view === 'bookmarks'){
+    title = `Bookmarks \u00b7 ${base}`;
+  } else if(route.view === 'dashboard'){
+    title = `Dashboard \u00b7 ${base}`;
+  } else if(route.view === 'calendar'){
+    title = `Calendar \u00b7 ${base}`;
+  } else if(route.view === 'search'){
+    title = `Search \u00b7 ${base}`;
+  }
+  document.title = title;
+}
+
+function renderApp(){
+  renderSidebar();
+  const route = STATE.route;
+  if(route.view === 'module'){
+    renderModule(route.pathId, route.moduleId, route.tab);
+  } else if(route.view === 'search'){
+    // search results were already rendered directly by handleSearch
+  } else if(route.view === 'practice'){
+    renderPractice();
+  } else if(route.view === 'achievements'){
+    renderAchievements();
+  } else if(route.view === 'bookmarks'){
+    renderBookmarks();
+  } else if(route.view === 'library'){
+    renderLibrary();
+  } else if(route.view === 'themes'){
+    renderThemes();
+  } else if(route.view === 'dashboard'){
+    renderDashboard();
+  } else if(route.view === 'calendar'){
+    renderCalendar();
+  } else {
+    renderHome();
+  }
+  updateChrome();
+  updateDocumentTitle();
+  if(STATE.route.view !== 'search') saveProgress();
+}
+
+let lastAppliedCustomBg = undefined;
+function applyCustomBackground(url){
+  url = url || '';
+  if(url === lastAppliedCustomBg) return; /* already applied (or being applied) — avoid redoing this on every render */
+  if(!url){
+    document.documentElement.style.removeProperty('--custom-bg-image');
+    lastAppliedCustomBg = url;
+    return;
+  }
+  /* Preload fully before it ever becomes a CSS background, so it can't pop in
+     mid-scroll — by the time it's assigned, the browser has already decoded it. */
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.onload = ()=>{
+    if(STATE.customBgUrl === url){
+      document.documentElement.style.setProperty('--custom-bg-image', `url("${url.replace(/"/g,'')}")`);
+      applyCustomThemeColors(sampleImageBrightness(img), sampleImageBands(img, 5));
+      lastAppliedCustomBg = url;
+    }
+  };
+  img.onerror = ()=>{
+    if(lastAppliedCustomBg === url) lastAppliedCustomBg = undefined;
+    showToast("Couldn't load that as an image \u2014 it needs to be a direct link to a photo (ending in .jpg/.png/etc.), not a webpage or share link.");
+  };
+  img.src = url;
+}
+function updateChrome(){
+  document.getElementById('xpValue').textContent = STATE.xp;
+  showingOriginalTheme = false; // any real state change (nav, save, etc.) drops back out of the preview
+  document.documentElement.setAttribute('data-theme', STATE.theme);
+  const themeBtn = document.getElementById('themeToggle');
+  if(themeBtn) themeBtn.setAttribute('aria-pressed', 'false');
+  document.documentElement.style.setProperty('--custom-scrim-opacity', STATE.customScrimOpacity);
+  applyCustomBackground(STATE.theme === 'custom' ? STATE.customBgUrl : '');
+  document.documentElement.style.setProperty('--font-scale', STATE.fontScale);
+  const langBtn = document.getElementById('langToggle');
+  if(langBtn){
+    langBtn.textContent = STATE.language === 'hi' ? 'HI' : 'EN';
+    langBtn.setAttribute('aria-pressed', String(STATE.language === 'hi'));
+  }
+}
+
+function renderSidebar(){
+  const nav = document.getElementById('sideNav');
+  let html = '';
+
+  const unlockedCount = computeUnlocked().size;
+  html += '<div class="side-section" style="margin-bottom:var(--sp-5)">';
+  html += '<span class="side-label">Tools</span><ul>';
+  html += `<li><button class="side-module-item ${STATE.route.view==='dashboard'?'active':''}" data-view="dashboard">
+    <span class="tool-icon">${ICONS.chart}</span><span style="flex:1">Dashboard</span>
+  </button></li>`;
+  html += `<li><button class="side-module-item ${STATE.route.view==='practice'?'active':''}" data-view="practice">
+    <span class="tool-icon">${ICONS.shuffle}</span><span style="flex:1">Practice Center</span>
+  </button></li>`;
+  html += `<li><button class="side-module-item ${STATE.route.view==='calendar'?'active':''}" data-view="calendar">
+    <span class="tool-icon">${ICONS.daily}</span><span style="flex:1">Calendar</span>
+  </button></li>`;
+  html += `<li><button class="side-module-item ${STATE.route.view==='achievements'?'active':''}" data-view="achievements">
+    <span class="tool-icon">${ICONS.stamp}</span><span style="flex:1">Achievements</span><span class="m-num">${unlockedCount}/${ACHIEVEMENTS.length}</span>
+  </button></li>`;
+  html += `<li><button class="side-module-item ${STATE.route.view==='bookmarks'?'active':''}" data-view="bookmarks">
+    <span class="tool-icon">${ICONS.star}</span><span style="flex:1">Bookmarks</span>${STATE.favorites.size?`<span class="m-num">${STATE.favorites.size}</span>`:''}
+  </button></li>`;
+  html += `<li><button class="side-module-item ${STATE.route.view==='library'?'active':''}" data-view="library">
+    <span class="tool-icon">${ICONS.library}</span><span style="flex:1">Library</span>
+  </button></li>`;
+  html += `<li><button class="side-module-item ${STATE.route.view==='themes'?'active':''}" data-view="themes">
+    <span class="tool-icon">${ICONS.palette}</span><span style="flex:1">Themes</span>
+  </button></li>`;
+  html += '</ul></div>';
+
+  if(STATE.recentlyVisited.length){
+    html += '<div class="side-section" style="margin-bottom:var(--sp-5)">';
+    html += '<span class="side-label">Recently viewed</span><ul>';
+    STATE.recentlyVisited.forEach(id=>{
+      const m = findModule(id);
+      if(!m) return;
+      const path = findPathOfModule(id);
+      const isActive = STATE.route.moduleId === id;
+      html += `<li><button class="side-module-item ${isActive?'active':''}" data-path="${path.id}" data-module="${id}">
+        <span class="m-num">${m.plate}</span><span style="flex:1">${L(m,'title')}</span>
+      </button></li>`;
+    });
+    html += '</ul></div>';
+  }
+
+  CURRICULUM.forEach(path=>{
+    if(path.status === 'live'){
+      html += `<div class="side-path-group">
+        <div class="side-path-header"><span class="path-dot"></span>${path.title}</div>
+        <ul class="side-module-list">`;
+      path.modules.forEach((m)=>{
+        const isActive = STATE.route.moduleId === m.id;
+        const isDone = STATE.completed.has(m.id);
+        html += `<li><button class="side-module-item ${isActive?'active':''}" data-path="${path.id}" data-module="${m.id}">
+          <span class="m-num">${m.plate}</span>
+          <span style="flex:1">${L(m,'title')}</span>
+          ${isDone ? `<span class="m-check">${ICONS.check}</span>` : ''}
+        </button></li>`;
+      });
+      html += '</ul></div>';
+    } else {
+      html += `<div class="side-path-group">
+        <div class="side-path-header"><span class="path-dot soon"></span>${path.title}</div>
+        <div class="side-locked"><span>${path.moduleCount} modules</span><span>soon</span></div>
+      </div>`;
+    }
+  });
+
+  nav.innerHTML = html;
+}
+
+function renderHome(){
+  const livePaths = getLivePaths();
+  const allLive = getAllLiveModules();
+  const doneCount = allLive.filter(({m})=>STATE.completed.has(m.id)).length;
+  const quote = QUOTES[new Date().getDate() % QUOTES.length];
+  const next = getNextIncompleteModule();
+
+  let html = `
+  <div class="hero">
+    <div class="eyebrow">A complete, honestly-scoped drawing path</div>
+    <h1>From your first line to <em>professional</em> fundamentals.</h1>
+    <p class="hero-sub">${livePaths.length} arc${livePaths.length===1?'':'s'} (${allLive.length} modules) are fully built and live right now, with every resource checked by hand instead of recalled from memory. The rest of the roadmap below is real and correctly ordered &mdash; it is simply not written yet.</p>
+    <div class="hero-row">
+      <button class="btn btn-primary" id="continueBtn">${ICONS.target} ${STATE.completed.size===0 ? 'Start here: ' + (next ? L(next.m,'title') : 'Mindset & Introduction') : (next ? 'Continue: ' + L(next.m,'title') : 'Everything live is complete')}</button>
+      <button class="btn btn-ghost" id="jumpFoundations">View Foundations</button>
+    </div>
+    <div class="stat-strip">
+      <div class="stat"><b>${doneCount}/${allLive.length}</b><span>Modules complete</span></div>
+      <div class="stat"><b>${STATE.xp}</b><span>XP earned</span></div>
+      <div class="stat"><b>${STATE.streak}${STATE.streak>0?' <svg class="streak-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c1 4-4 5-4 9a4 4 0 008 0c0-2-1-3-1-5 2 1 3 3 3 5a6 6 0 01-12 0c0-5 4-6 6-9z"/></svg>':''}</b><span>Day streak</span></div>
+      <div class="stat"><b>${allLive.length}</b><span>Modules live now</span></div>
+    </div>
+  </div>
+
+  <div class="quote-card"><p>&ldquo;${quote}&rdquo;</p><cite>Studio note</cite></div>
+
+  <div class="pathmap-wrap">
+    <div class="pathmap-head">
+      <h2>The full route</h2>
+      <p>Click an open module below. Locked arcs show what is coming, and in what order.</p>
+    </div>
+    <div class="pathmap">`;
+
+  const stationHtml = (path)=>{
+    const isOpen = path.status === 'live';
+    const doneInPath = isOpen ? path.modules.filter(m=>STATE.completed.has(m.id)).length : 0;
+    const allDone = isOpen && doneInPath === path.modules.length;
+    return `<button class="station ${isOpen?'is-open':''} ${allDone?'is-done':''}" data-path-jump="${path.id}">
+      <div class="station-rail">
+        <div class="station-node">${String(path.order).padStart(2,'0')}</div>
+        <div class="station-line"></div>
+      </div>
+      <div class="station-body">
+        <div class="station-top">
+          <span class="station-title">${path.title}</span>
+          <span class="tag ${isOpen?'open':''}">${isOpen ? 'Available now' : 'Coming next'}</span>
+        </div>
+        <p class="station-desc">${path.desc}</p>
+        <div class="station-modcount">${isOpen ? `${doneInPath}/${path.modules.length} modules complete` : `${path.moduleCount} modules planned &mdash; ${path.sample.join(', ')}`}</div>
+      </div>
+    </button>`;
+  };
+
+  const soonPaths = CURRICULUM.filter(p=>p.status !== 'live');
+  livePaths.forEach(path=>{ html += stationHtml(path); });
+  html += '</div>';
+  if(soonPaths.length){
+    const soonModuleTotal = soonPaths.reduce((sum,p)=>sum + p.moduleCount, 0);
+    // Collapsed by default — the planned roadmap is still here for anyone curious,
+    // it just doesn't compete with the live lesson content for first-time visitors.
+    html += `<details class="soon-arcs-details">
+      <summary>${soonPaths.length} more arc${soonPaths.length===1?'':'s'} planned (${soonModuleTotal} modules) &mdash; see the full roadmap</summary>
+      <div class="pathmap soon-pathmap">${soonPaths.map(stationHtml).join('')}</div>
+    </details>`;
+  }
+  html += '</div>';
+
+  let seenFirstModule = false;
+  livePaths.forEach(path=>{
+    html += `<div id="grid-${path.id}" style="margin-bottom:var(--sp-8)"><h2 style="font-size:calc(26px * var(--font-scale));margin-bottom:var(--sp-4)">${path.title} modules</h2><div class="module-grid">`;
+    path.modules.forEach(m=>{
+      const isDone = STATE.completed.has(m.id);
+      const isStartHere = STATE.completed.size===0 && !seenFirstModule;
+      if(isStartHere) seenFirstModule = true;
+      const pct = isDone ? 100 : getChecklistProgress(m.id);
+      html += `<button class="mcard ${isStartHere?'start-here':''}" data-path="${path.id}" data-module="${m.id}">
+        ${DECOR[MODULE_DECOR[m.id]] || ''}
+        <div class="mcard-top">
+          <span class="plate-id">PLATE ${m.plate}</span>
+          ${isDone ? `<span class="stamp">${ICONS.stamp} Mastered</span>` : ''}
+          ${isStartHere ? `<span class="stamp start-stamp">${ICONS.target} Start here</span>` : ''}
+        </div>
+        <h3>${L(m,'title')}</h3>
+        <p class="mcard-hook">${L(m,'hook') || 'Coming shortly &mdash; being built to the same bar as Module 1.'}</p>
+        <div class="mcard-meta">
+          <span class="meta-chip">${ICONS.clock} ${m.studyTime || '&mdash;'}</span>
+          <span class="meta-chip">${ICONS.target} ${m.difficulty || 'Beginner'}</span>
+        </div>
+        <div class="mcard-progress"><div class="mcard-progress-fill" style="width:${pct}%"></div></div>
+      </button>`;
+    });
+    html += '</div></div>';
+  });
+
+  document.getElementById('main').innerHTML = html;
+}
+
+function renderModule(pathId, moduleId, tab){
+  tab = tab || 'overview';
+  const path = CURRICULUM.find(p=>p.id===pathId);
+  if(!path){
+    navigateHome();
+    showToast('Couldn\u2019t find that module \u2014 back to the start.');
+    return;
+  }
+  const m = path.modules.find(mm=>mm.id===moduleId);
+
+  if(!m || m.stub){ renderComingSoonModule(path); return; }
+
+  STATE.recentlyVisited = [moduleId, ...STATE.recentlyVisited.filter(id=>id!==moduleId)].slice(0,5);
+
+  const isFav = STATE.favorites.has(moduleId);
+  const isDone = STATE.completed.has(moduleId);
+  const checklistTotal = m.checklist ? m.checklist.length : 0;
+  const checklistDone = STATE.checklist[moduleId] ? STATE.checklist[moduleId].size : 0;
+  const missingPrereqs = (m.prereq||[]).map(id=>findModule(id)).filter(pm=>pm && !STATE.completed.has(pm.id));
+  const idx = path.modules.findIndex(mm=>mm.id===moduleId);
+  const prev = idx > 0 ? path.modules[idx-1] : null;
+  const next = idx < path.modules.length-1 ? path.modules[idx+1] : null;
+  const checkedSet = STATE.checklist[moduleId] || new Set();
+
+  const html = `
+  <div class="breadcrumb">
+    <button data-nav-home>Atelier</button> ${ICONS.chevronRight}
+    <button data-path-jump="${pathId}">${path.title}</button> ${ICONS.chevronRight}
+    <span>${L(m,'title')}</span>
+  </div>
+
+  <div class="module-head">
+    <div class="status-banner ${isDone?'is-complete':'is-progress'}">
+      ${isDone
+        ? `${ICONS.stamp} <span>Marked complete</span>`
+        : `${ICONS.target} <span>Not complete yet &mdash; ${checklistDone}/${checklistTotal} checklist items checked. Finish the <b>Mastery</b> tab to mark it done.</span>`}
+    </div>
+    ${(!isDone && missingPrereqs.length) ? `
+    <div class="status-banner is-prereq-warning">
+      ${ICONS.empty} <span>Skipping ahead? ${missingPrereqs.map(pm=>L(pm,'title')).join(', ')} ${missingPrereqs.length>1?'aren\u2019t':'isn\u2019t'} marked complete yet. This will likely make more sense once ${missingPrereqs.length>1?'those are':'that is'} done \u2014 nothing here is locked, just worth knowing.</span>
+    </div>` : ''}
+    <div class="module-head-top">
+      <div>
+        <h1>${L(m,'title')}</h1>
+        <p class="module-hook">${L(m,'hook')}</p>
+      </div>
+      <button class="fav-btn" data-fav="${moduleId}" aria-pressed="${isFav}" aria-label="Toggle favorite">${ICONS.star}</button>
+    </div>
+    <div class="meta-row">
+      <div class="meta-item"><span>Difficulty</span><b>${m.difficulty}</b></div>
+      <div class="meta-item"><span>Study time</span><b>${m.studyTime}</b></div>
+      <div class="meta-item"><span>Practice time</span><b>${m.practiceTime}</b></div>
+      <div class="meta-item"><span>Prerequisite</span><b>${m.prereq.length ? m.prereq.map(id=>findModule(id).title).join(', ') : 'None &mdash; start here'}</b></div>
+    </div>
+  </div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tab-overview" aria-controls="tabpanel" data-tab="overview" aria-selected="${tab==='overview'}">Overview</button>
+    <button class="tab" role="tab" id="tab-practice" aria-controls="tabpanel" data-tab="practice" aria-selected="${tab==='practice'}">Practice</button>
+    <button class="tab" role="tab" id="tab-resources" aria-controls="tabpanel" data-tab="resources" aria-selected="${tab==='resources'}">Resources</button>
+    <button class="tab" role="tab" id="tab-mastery" aria-controls="tabpanel" data-tab="mastery" aria-selected="${tab==='mastery'}">Mastery</button>
+    <button class="tab" role="tab" id="tab-notes" aria-controls="tabpanel" data-tab="notes" aria-selected="${tab==='notes'}">Notes</button>
+  </div>
+
+  <div class="tabpanel" id="tabpanel" role="tabpanel" aria-labelledby="tab-${tab}">${renderTabContent(m, tab, checkedSet)}</div>
+
+  <div class="module-nav">
+    ${prev ? `<button class="nav-link-card" data-path="${pathId}" data-module="${prev.id}"><span>${ICONS.arrowLeft} Previous</span><b>${prev.title}</b></button>` : '<span></span>'}
+    ${next ? `<button class="nav-link-card next" data-path="${pathId}" data-module="${next.id}"><span>Next ${ICONS.chevronRight}</span><b>${next.title}</b></button>` : '<span></span>'}
+  </div>`;
+
+  document.getElementById('main').innerHTML = html;
+}
+
+function renderComingSoonModule(path){
+  document.getElementById('main').innerHTML = `
+    <div class="breadcrumb"><button data-nav-home>Atelier</button> ${ICONS.chevronRight} <span>${path.title}</span></div>
+    <div class="empty-state">
+      ${ICONS.empty}
+      <h2 style="font-family:var(--font-display);font-size:calc(26px * var(--font-scale));margin-bottom:8px;">This module is not written yet</h2>
+      <p>It is being built to the same bar as Module 1 &mdash; full content, hand-checked resources, no filler.</p>
+    </div>`;
+}
+
+let calendarMonthOffset = 0;
+
+function renderCalendar(){
+  const now = new Date();
+  const viewDate = new Date(now.getFullYear(), now.getMonth() + calendarMonthOffset, 1);
+  const year = viewDate.getFullYear();
+  const month = viewDate.getMonth();
+  const monthName = viewDate.toLocaleString('default', {month:'long'});
+  const firstWeekday = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month+1, 0).getDate();
+  const todayStr = todayKey();
+  const monthPrefix = year + '-' + String(month+1).padStart(2,'0');
+
+  let cells = '';
+  for(let i=0;i<firstWeekday;i++){ cells += '<div class="cal-cell cal-cell-empty"></div>'; }
+  for(let day=1; day<=daysInMonth; day++){
+    const dateKey = monthPrefix + '-' + String(day).padStart(2,'0');
+    const isToday = dateKey === todayStr;
+    const isActive = !!STATE.activityLog[dateKey];
+    cells += `<div class="cal-cell ${isActive?'cal-active':''} ${isToday?'cal-today':''}"><div class="cal-day-badge">${day}</div></div>`;
+  }
+
+  const activeDaysThisMonth = Object.keys(STATE.activityLog).filter(k=>k.indexOf(monthPrefix)===0).length;
+
+  document.getElementById('main').innerHTML = `
+  <div class="breadcrumb"><button data-nav-home>Atelier</button> ${ICONS.chevronRight} <span>Calendar</span></div>
+  <div class="hero">
+    <div class="eyebrow">Consistency, visible</div>
+    <h1>Your practice <em>calendar</em></h1>
+    <p class="hero-sub">Every day you open a module or work through a checklist gets marked here, so the pattern is something you can actually see instead of guess at.</p>
+  </div>
+
+  <div class="stat-strip" style="margin-bottom:var(--sp-6);">
+    <div class="stat"><b>${STATE.streak}</b><span>Day streak</span></div>
+    <div class="stat"><b>${activeDaysThisMonth}</b><span>Active days this month</span></div>
+  </div>
+
+  <div class="cal-card">
+    <div class="cal-header">
+      <button class="icon-btn" data-calendar-nav="-1" aria-label="Previous month">${ICONS.arrowLeft}</button>
+      <b>${monthName} ${year}</b>
+      <button class="icon-btn" data-calendar-nav="1" aria-label="Next month">${ICONS.chevronRight}</button>
+    </div>
+    <div class="cal-weekdays"><span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div>
+    <div class="cal-grid">${cells}</div>
+    <div class="cal-legend"><span class="cal-legend-dot"></span> Practiced that day</div>
+  </div>
+
+  <div class="cal-card">
+    <h3 style="font-family:var(--font-display); font-size:calc(20px * var(--font-scale)); margin-bottom:var(--sp-2);">Set a weekly reminder</h3>
+    <p class="cal-reminder-sub">Course notes often say &ldquo;this week, do X.&rdquo; Pick a day and time and it lands on your phone's calendar.</p>
+    <div class="cal-reminder-row">
+      <select id="reminderDay">
+        <option value="1">Monday</option>
+        <option value="2">Tuesday</option>
+        <option value="3">Wednesday</option>
+        <option value="4">Thursday</option>
+        <option value="5" selected>Friday</option>
+        <option value="6">Saturday</option>
+        <option value="0">Sunday</option>
+      </select>
+      <input type="time" id="reminderTime" value="18:00">
+    </div>
+    <div class="cal-reminder-actions">
+      <button class="btn btn-primary" data-cal-remind="google">${ICONS.link} Add to Google Calendar</button>
+      <button class="btn btn-ghost" data-cal-remind="ics">${ICONS.daily} Download .ics</button>
+    </div>
+  </div>`;
+}
+
+function handleCalendarReminder(type){
+  const day = parseInt(document.getElementById('reminderDay').value, 10);
+  const time = document.getElementById('reminderTime').value || '18:00';
+  const parts = time.split(':').map(Number);
+  const hh = parts[0], mm = parts[1];
+
+  const now = new Date();
+  const next = new Date(now);
+  next.setHours(hh, mm, 0, 0);
+  let diff = (day - next.getDay() + 7) % 7;
+  if(diff === 0 && next <= now) diff = 7;
+  next.setDate(next.getDate() + diff);
+  const end = new Date(next.getTime() + 45*60000);
+
+  const fmt = d => d.getUTCFullYear() + String(d.getUTCMonth()+1).padStart(2,'0') + String(d.getUTCDate()).padStart(2,'0') + 'T' + String(d.getUTCHours()).padStart(2,'0') + String(d.getUTCMinutes()).padStart(2,'0') + '00Z';
+
+  const title = 'Atelier practice session';
+  const details = "Weekly drawing practice - whatever this week's module points you to.";
+
+  if(type === 'google'){
+    const url = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+      + '&text=' + encodeURIComponent(title)
+      + '&dates=' + fmt(next) + '/' + fmt(end)
+      + '&details=' + encodeURIComponent(details)
+      + '&recur=' + encodeURIComponent('RRULE:FREQ=WEEKLY');
+    window.open(url, '_blank');
+    showToast('Opening Google Calendar...');
+  } else {
+    const ics = [
+      'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Atelier//Practice Reminder//EN',
+      'BEGIN:VEVENT',
+      'UID:' + Date.now() + '@atelier',
+      'DTSTAMP:' + fmt(new Date()),
+      'DTSTART:' + fmt(next),
+      'DTEND:' + fmt(end),
+      'RRULE:FREQ=WEEKLY',
+      'SUMMARY:' + title,
+      'DESCRIPTION:' + details,
+      'END:VEVENT','END:VCALENDAR'
+    ].join('\r\n');
+    const blob = new Blob([ics], {type:'text/calendar'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'atelier-practice-reminder.ics';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    showToast('Reminder file downloaded - open it to add to your calendar.');
+  }
+}
+
+
+function renderPractice(){
+  document.getElementById('main').innerHTML = `
+  <div class="breadcrumb"><button data-nav-home>Atelier</button> ${ICONS.chevronRight} <span>Practice Center</span></div>
+  <div class="hero">
+    <div class="eyebrow">No decision fatigue</div>
+    <h1>Warm up, then <em>go</em>.</h1>
+    <p class="hero-sub">A random prompt pulled from the drills already taught in Foundations, and a plain timer. Nothing to configure.</p>
+  </div>
+
+  <div class="prompt-card" id="promptCard">
+    <span class="prompt-category" id="promptCategory">Ready</span>
+    <p class="prompt-text" id="promptText">Press "New prompt" for a warm-up pulled from what you've already learned.</p>
+  </div>
+  <button class="btn btn-primary" id="newPromptBtn" style="margin-bottom:var(--sp-7)">${ICONS.shuffle} New prompt</button>
+
+  <div class="timer-station">
+    <div class="timer-display" id="timerDisplay">05:00</div>
+    <div class="timer-presets" role="group" aria-label="Timer duration">
+      <button data-mins="2">2 min</button>
+      <button data-mins="5" class="active">5 min</button>
+      <button data-mins="10">10 min</button>
+      <button data-mins="20">20 min</button>
+    </div>
+    <div class="timer-custom">
+      <input type="number" id="customMinutesInput" min="1" max="180" step="1" placeholder="Custom">
+      <span>min</span>
+      <button class="btn btn-ghost" id="setCustomTimer">Set</button>
+    </div>
+    <div class="timer-controls">
+      <button id="timerStart" class="btn btn-primary">${ICONS.play} Start</button>
+      <button id="timerPause" class="btn btn-ghost">${ICONS.pause} Pause</button>
+      <button id="timerReset" class="btn btn-ghost">Reset</button>
+    </div>
+  </div>
+
+  <h2 style="font-size:calc(20px * var(--font-scale));margin:var(--sp-8) 0 var(--sp-3)">Quick refresher</h2>
+  <p class="hero-sub" style="margin-bottom:var(--sp-4)">A random question from something you've already studied &mdash; recall fades faster than it feels like it should. Doesn't affect your module progress either way.</p>
+  <div id="refresherWrap" style="max-width:520px">
+    <button class="btn btn-primary" id="newRefresherBtn">${ICONS.shuffle} Get a refresher question</button>
+  </div>`;
+  resetTimer();
+  refresherState = null;
+  const customInput = document.getElementById('customMinutesInput');
+  if(customInput){
+    customInput.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter'){ e.preventDefault(); document.getElementById('setCustomTimer').click(); }
+    });
+  }
+}
+
+function renderAchievements(){
+  const current = computeUnlocked();
+  let html = `
+  <div class="breadcrumb"><button data-nav-home>Atelier</button> ${ICONS.chevronRight} <span>Achievements</span></div>
+  <div class="hero">
+    <div class="eyebrow">${current.size}/${ACHIEVEMENTS.length} unlocked</div>
+    <h1>Small, honest milestones.</h1>
+    <p class="hero-sub">Every one of these reads directly off real progress &mdash; modules finished, XP earned, days returned, notes written. Nothing here is busywork.</p>
+  </div>
+  <div class="module-grid">`;
+  ACHIEVEMENTS.forEach(a=>{
+    const unlocked = current.has(a.id);
+    const progressLabel = a.progress ? a.progress(STATE) : null;
+    const inProgress = !unlocked && progressLabel && !progressLabel.startsWith('0/');
+    html += `<div class="mcard achievement-card ${unlocked?'unlocked':(inProgress?'locked in-progress':'locked')}">
+      <div class="mcard-top">
+        <span class="plate-id">${unlocked?ICONS.stamp:ICONS.lock}</span>
+        ${unlocked?'<span class="stamp">Unlocked</span>':''}
+      </div>
+      <h3>${a.title}</h3>
+      <p class="mcard-hook">${a.desc}</p>
+      ${progressLabel ? `<p class="achv-progress">${unlocked?'Completed \u00b7 ':''}${progressLabel}</p>` : ''}
+    </div>`;
+  });
+  html += '</div>';
+  document.getElementById('main').innerHTML = html;
+}
+
+function renderDashboard(){
+  const livePaths = getLivePaths();
+  const unlockedIds = computeUnlocked();
+  const correctCount = totalQuizCorrect();
+  let attemptedCount = 0;
+  getAllLiveModules().forEach(({m})=>{
+    if(m.quiz) attemptedCount += Object.keys(STATE.quizAnswers[m.id]||{}).length;
+  });
+
+  let html = `
+  <div class="breadcrumb"><button data-nav-home>Atelier</button> ${ICONS.chevronRight} <span>Dashboard</span></div>
+  <div class="hero">
+    <div class="eyebrow">Your progress, in one place</div>
+    <h1>Dashboard</h1>
+  </div>
+
+  <h2 style="font-size:calc(20px * var(--font-scale));margin-bottom:var(--sp-4)">Progress by arc</h2>
+  <div class="dash-arc-list">`;
+  livePaths.forEach(path=>{
+    const real = path.modules.filter(m=>!m.stub);
+    const done = real.filter(m=>STATE.completed.has(m.id)).length;
+    const pct = real.length ? Math.round((done/real.length)*100) : 0;
+    html += `<button class="dash-arc-row" data-path-jump="${path.id}">
+      <div class="dash-arc-top"><span>${path.title}</span><span class="dash-arc-count">${done}/${real.length}</span></div>
+      <div class="mcard-progress"><div class="mcard-progress-fill" style="width:${pct}%"></div></div>
+    </button>`;
+  });
+  html += `</div>
+
+  <div class="dash-stat-grid">
+    <div class="dash-stat-card">
+      <span class="dash-stat-label">Quiz accuracy</span>
+      <span class="dash-stat-value">${attemptedCount ? Math.round((correctCount/attemptedCount)*100)+'%' : '\u2014'}</span>
+      <span class="dash-stat-sub">${correctCount}/${attemptedCount} correct on first attempt</span>
+    </div>
+    <div class="dash-stat-card">
+      <span class="dash-stat-label">Achievements</span>
+      <span class="dash-stat-value">${unlockedIds.size}/${ACHIEVEMENTS.length}</span>
+      <span class="dash-stat-sub">${ACHIEVEMENTS.filter(a=>unlockedIds.has(a.id)).slice(-2).map(a=>a.title).join(', ') || 'None yet'}</span>
+    </div>
+    <div class="dash-stat-card">
+      <span class="dash-stat-label">Notes written</span>
+      <span class="dash-stat-value">${Object.values(STATE.notes).filter(t=>t&&t.trim().length>0).length}</span>
+      <span class="dash-stat-sub">across all modules</span>
+    </div>
+  </div>
+
+  <h2 style="font-size:calc(20px * var(--font-scale));margin:var(--sp-7) 0 var(--sp-4)">Recently viewed</h2>`;
+
+  const recent = STATE.recentlyVisited.map(id=>findModule(id)).filter(Boolean);
+  if(!recent.length){
+    html += `<div class="empty-state">${ICONS.empty}<p>Nothing viewed yet this session.</p></div>`;
+  } else {
+    html += '<div class="module-grid">' + recent.map(m=>{
+      const path = findPathOfModule(m.id);
+      const isDone = STATE.completed.has(m.id);
+      return `<button class="mcard" data-path="${path.id}" data-module="${m.id}">
+        ${DECOR[MODULE_DECOR[m.id]] || ''}
+        <div class="mcard-top"><span class="plate-id">PLATE ${m.plate}</span>${isDone?`<span class="stamp">${ICONS.stamp} Mastered</span>`:''}</div>
+        <h3>${L(m,'title')}</h3>
+        <p class="mcard-hook">${L(m,'hook')}</p>
+      </button>`;
+    }).join('') + '</div>';
+  }
+
+  document.getElementById('main').innerHTML = html;
+}
+
+function renderBookmarks(){
+  const favModules = [...STATE.favorites].map(id=>({m:findModule(id), path:findPathOfModule(id)})).filter(x=>x.m);
+  let html = `
+  <div class="breadcrumb"><button data-nav-home>Atelier</button> ${ICONS.chevronRight} <span>Bookmarks</span></div>
+  <div class="hero">
+    <div class="eyebrow">Saved for later</div>
+    <h1>Bookmarks</h1>
+    <p class="hero-sub">Tap the star on any module to save it here.</p>
+  </div>`;
+  if(!favModules.length){
+    html += `<div class="empty-state">${ICONS.empty}<p>Nothing bookmarked yet.</p></div>`;
+  } else {
+    html += '<div class="module-grid">' + favModules.map(({m,path})=>`
+      <button class="mcard" data-path="${path.id}" data-module="${m.id}">
+        ${DECOR[MODULE_DECOR[m.id]] || ''}
+        <div class="mcard-top"><span class="plate-id">PLATE ${m.plate}</span></div>
+        <h3>${L(m,'title')}</h3>
+        <p class="mcard-hook">${L(m,'hook')}</p>
+      </button>`).join('') + '</div>';
+  }
+  document.getElementById('main').innerHTML = html;
+}
+
+let LIB_FILTER = 'all';
+let LIB_QUERY = '';
+
+function categorizeResourceType(r){
+  const t = ((r && r.type) || '').toLowerCase();
+  /* A resolvable YouTube id means it actually plays inline here \u2014 that's
+     the real test for "video", not the label someone typed. This is what
+     keeps course-platform links and channel homepages (which just open an
+     external tab, same as an article) out of the Video tab. */
+  if(t.includes('channel')) return 'channel';
+  if(r && (r.videoId || getYouTubeId(r.url) || getYouTubePlaylistId(r.url))) return 'video';
+  if(t.includes('course')) return 'course';
+  if(t.includes('video') || t.includes('playlist')) return 'video';
+  if(t.includes('book')) return 'book';
+  if(t.includes('article') || t.includes('site') || t.includes('historical') || t.includes('read')) return 'article';
+  return 'other';
+}
+
+function libResKey(r){
+  const u = (r && r.url) || '';
+  const yt = (r && r.videoId) || getYouTubeId(u);
+  if(yt) return 'yt:' + yt;
+  const pl = getYouTubePlaylistId(u);
+  if(pl) return 'ytl:' + pl;
+  if(u) return u.replace(/^https?:\/\/(www\.)?/i,'').replace(/#.*$/,'').replace(/\/+$/,'').toLowerCase();
+  return 'title:' + ((r && r.title) || '').toLowerCase() + '|' + ((r && r.creator) || '').toLowerCase();
+}
+
+/* The same free resource is deliberately cited in several modules (that's
+   useful on each module page), but the Library is one list of everything, so
+   it shows each resource once and notes the other plates it appears in. */
+function getAllLibraryResources(){
+  const rows = [];
+  const byKey = new Map();
+  CURRICULUM.forEach(path=>{
+    if(path.status !== 'live' || !path.modules) return;
+    path.modules.forEach(m=>{
+      (m.resources||[]).forEach((r, ri)=>{
+        if(!r || !r.title) return;
+        const key = libResKey(r);
+        const hit = byKey.get(key);
+        if(hit){ hit.also.push({m, ri, path}); return; }
+        const row = {r, ri, m, path, also:[]};
+        byKey.set(key, row);
+        rows.push(row);
+      });
+    });
+  });
+  return rows;
+}
+
+function renderResourceCard(r, ri, m, also){
+  also = also || [];
+  const ytId = r.videoId || getYouTubeId(r.url);
+  const playlistId = !ytId ? getYouTubePlaylistId(r.url) : null;
+  const opened = [{m, ri}].concat(also).some(o => STATE.resourcesOpened[o.m.id] && STATE.resourcesOpened[o.m.id].has(o.ri));
+  return `
+  <div class="res-card">
+    <span class="res-type">${r.type}</span>
+    <div class="res-body">
+      <div class="res-title">${r.url ? `<a href="${r.url}" target="_blank" rel="noopener" data-res-open="${m.id}" data-res-index="${ri}">${r.title}</a>` : r.title}</div>
+      <div class="res-creator">${r.creator}</div>
+      <div class="res-why">${r.why}</div>
+      ${r.summary ? `<div class="res-summary"><span class="res-summary-label">What it teaches</span>${r.summary}</div>` : ''}
+      <div class="res-badges">
+        ${r.verified ? `<span class="res-verified">${ICONS.toastCheck} Checked</span>` : ''}
+        ${opened ? `<span class="res-opened">${ICONS.check} Opened</span>` : ''}
+      </div>
+${resActions(r, m)}
+      ${ytId ? `
+      <div class="video-embed-wrap" data-yt-id="${ytId}" data-res-module="${m.id}" data-res-idx="${ri}">
+        <img src="https://img.youtube.com/vi/${ytId}/hqdefault.jpg" alt="" loading="lazy">
+        <button class="video-play-btn" aria-label="Play video inline" data-yt-id="${ytId}" data-res-module="${m.id}" data-res-idx="${ri}">${ICONS.play}</button>
+      </div>` : ''}
+      ${playlistId ? `
+      <div class="video-embed-wrap playlist-embed-wrap">
+        <button class="video-play-btn playlist-play-btn" aria-label="Play playlist inline" data-yt-playlist-id="${playlistId}" data-res-module="${m.id}" data-res-idx="${ri}">${ICONS.play} Play playlist inline</button>
+      </div>` : ''}
+      <span class="library-source">${L(m,'title')} \u00b7 Plate ${m.plate}${also.length ? ' \u00b7 also in Plate' + (also.length > 1 ? 's ' : ' ') + also.map(a=>a.m.plate).join(', ') : ''}</span>
+    </div>
+  </div>`;
+}
+
+
+/* Uploaded photos land here as full-size data URLs (a few hundred KB each,
+   even after the upload-time downscale). Keeping several of those around in
+   "previously used" history meant every single save \u2014 which fires on
+   basically every click/navigation \u2014 was synchronously writing 1\u20133MB+
+   to localStorage. That's what caused everything to lock up: not just the
+   moment history was touched, but every interaction afterward, since each
+   one re-triggered that same oversized blocking write. Thumbnailing history
+   entries keeps storage in the tens of KB instead. */
+function migrateOversizedHistory(){
+  /* Anyone who already hit the history-bloat bug has large data-URL photos
+     sitting in customHistory from before thumbnailing existed. Shrink those
+     down in the background so their saves stop being multi-MB too. */
+  const big = STATE.customHistory
+    .map((h, i) => ({h, i}))
+    .filter(({h}) => typeof h === 'string' && h.startsWith('data:') && h.length > 150000);
+    /* Only catches genuinely oversized pre-thumbnailing entries (the original
+       bug). Entries already shrunk to 220px by the previous fix can't be
+       un-shrunk from here — the higher-resolution source is already gone —
+       so there's nothing to migrate for those; they age out of history
+       naturally as new photos get used. */
+  if(!big.length) return;
+  let remaining = big.length;
+  big.forEach(({h, i}) => {
+    makeThumbnailDataUrl(h, thumb => {
+      if(thumb) STATE.customHistory[i] = thumb;
+      remaining--;
+      if(remaining === 0) saveProgress();
+    });
+  });
+}
+
+function makeThumbnailDataUrl(dataUrl, done){
+  try{
+    const img = new Image();
+    img.onload = ()=>{
+      /* 220px caused a visible bug: reapplying a "previously used" entry
+         means THIS becomes the full-screen background via background-size:
+         cover, and stretching a 220px-wide image to cover a real phone
+         screen needs ~3-4x upscaling — a blurry, badly-cropped zoom into
+         one corner of the photo instead of the nice fitted portrait it was
+         originally. 640px is still ~4x smaller than the full upload, but
+         doesn't need dramatic upscaling on ordinary phone screens. */
+      const maxDim = 640;
+      const scale = Math.min(1, maxDim / Math.max(img.width, img.height));
+      const w = Math.max(1, Math.round(img.width * scale));
+      const h = Math.max(1, Math.round(img.height * scale));
+      const canvas = document.createElement('canvas');
+      canvas.width = w; canvas.height = h;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, w, h);
+      try{ done(canvas.toDataURL('image/jpeg', 0.6)); }
+      catch(e){ done(null); } /* tainted canvas etc — just skip archiving this one rather than crash */
+    };
+    img.onerror = ()=>done(null);
+    img.src = dataUrl;
+  }catch(e){ done(null); }
+}
+
+function archiveToHistory(entry, newUrl){
+  if(!entry) return;
+  STATE.customHistory = [entry, ...STATE.customHistory.filter(h => h !== entry && h !== newUrl)].slice(0, 6);
+  saveProgress();
+  renderThemes();
+}
+
+function setCustomThemeBackground(newUrl){
+  const previous = STATE.customBgUrl;
+  STATE.customBgUrl = newUrl;
+  STATE.theme = 'custom';
+  saveProgress();
+  updateChrome();
+  renderThemes();
+
+  if(previous && previous !== newUrl){
+    if(previous.startsWith('data:')){
+      makeThumbnailDataUrl(previous, thumb => archiveToHistory(thumb, newUrl));
+    } else {
+      archiveToHistory(previous, newUrl); /* plain URL — already a short string, no need to shrink it */
+    }
+  } else if(!previous){
+    STATE.customHistory = STATE.customHistory.filter(h => h !== newUrl);
+  }
+}
+
+function renderThemes(){
+  const presets = [
+    {key:'dark', name:'Drafting Desk', desc:'The default \u2014 graphite tones, construction-line motifs.'},
+    {key:'light', name:'Paper', desc:'Bright and clean, like working on real paper.'},
+    {key:'sketchbook', name:'Sketchbook', desc:'Warm cream tones with visible pencil-sketch texture.'}
+  ];
+
+  let html = `
+  <div class="breadcrumb"><button data-nav-home>Atelier</button> ${ICONS.chevronRight} <span>Themes</span></div>
+  <div class="hero">
+    <div class="eyebrow">Make it yours</div>
+    <h1>Themes</h1>
+    <p class="hero-sub">Pick a preset, or set your own background from a photo. Your choice is saved and applied every time you open Atelier.</p>
+  </div>
+
+  <h2 class="section-title">Presets</h2>
+  <div class="theme-preset-grid">
+    ${presets.map(p => `
+      <button class="theme-preset-card ${STATE.theme===p.key?'active':''}" data-theme-preset="${p.key}">
+        <span class="theme-preset-swatch ${p.key}"></span>
+        <span class="theme-preset-name">${p.name}</span>
+        <span class="theme-preset-desc">${p.desc}</span>
+        ${STATE.theme===p.key?`<span class="theme-preset-check">${ICONS.check}</span>`:''}
+      </button>`).join('')}
+  </div>
+
+  <h2 class="section-title">Custom background</h2>
+  <div class="theme-custom-panel">
+    ${STATE.customBgUrl ? `
+      <div class="theme-custom-preview" style="background-image:url('${STATE.customBgUrl.replace(/'/g,"%27")}')">
+        ${STATE.theme==='custom' ? `<span class="theme-preset-check theme-custom-active-badge">${ICONS.check} Active</span>` : ''}
+      </div>
+    ` : `<div class="theme-custom-preview theme-custom-preview-empty">No custom background set yet</div>`}
+
+    <div class="theme-custom-controls">
+      <div class="library-search theme-url-row">
+        ${ICONS.link}
+        <input type="url" id="themesCustomUrl" placeholder="Paste an image URL\u2026" aria-label="Custom background image URL" value="${(STATE.customBgUrl && !STATE.customBgUrl.startsWith('data:')) ? STATE.customBgUrl.replace(/"/g,'&quot;') : ''}">
+        <button class="btn btn-sm" id="themesCustomApply">Set</button>
+      </div>
+      <label class="theme-custom-upload" for="themesCustomFile">
+        ${ICONS.link}
+        Or choose a photo from your device
+      </label>
+      <input type="file" accept="image/*" id="themesCustomFile" hidden>
+
+      ${STATE.customBgUrl ? `
+      <div class="theme-opacity-row">
+        <label for="themesOpacitySlider">Background strength</label>
+        <input type="range" id="themesOpacitySlider" min="40" max="85" value="${Math.round(STATE.customScrimOpacity*100)}">
+        <span class="theme-opacity-value" id="themesOpacityValue">${Math.round(STATE.customScrimOpacity*100)}%</span>
+      </div>
+      <p class="theme-opacity-hint">Lower = more of your photo shows through. Higher = stronger scrim, safest for busy or high-contrast photos. Text color adjusts automatically either way.</p>
+      ` : ''}
+    </div>
+  </div>
+
+  ${STATE.customHistory && STATE.customHistory.length ? `
+  <h2 class="section-title">Previously used</h2>
+  <div class="theme-history-grid">
+    ${STATE.customHistory.map((h, i) => `
+      <div class="theme-history-item">
+        <button class="theme-history-thumb" style="background-image:url('${h.replace(/'/g,"%27")}')" data-history-apply="${i}" aria-label="Use this background again"></button>
+        <button class="theme-history-remove" data-history-remove="${i}" aria-label="Remove from history">${ICONS.lock ? '\u00d7' : '\u00d7'}</button>
+      </div>`).join('')}
+  </div>
+  ` : ''}
+  `;
+
+  document.getElementById('main').innerHTML = html;
+}
+
+function renderLibrary(){
+  const all = getAllLibraryResources();
+  const counts = {all: all.length, video:0, course:0, article:0, book:0, other:0};
+  all.forEach(row=>{ counts[categorizeResourceType(row.r)]++; });
+
+  let filtered = LIB_FILTER === 'all' ? all : all.filter(row=>categorizeResourceType(row.r) === LIB_FILTER);
+  if(LIB_QUERY.trim()){
+    const q = LIB_QUERY.trim().toLowerCase();
+    filtered = filtered.filter(row=>
+      (row.r.title||'').toLowerCase().includes(q) ||
+      (row.r.creator||'').toLowerCase().includes(q) ||
+      (row.m.title||'').toLowerCase().includes(q) ||
+      (row.also||[]).some(a=>(a.m.title||'').toLowerCase().includes(q))
+    );
+  }
+
+  const filterDefs = [
+    {key:'all', label:'All'},
+    {key:'video', label:'Videos'},
+    {key:'course', label:'Courses'},
+    {key:'article', label:'Articles'},
+    {key:'book', label:'Books'},
+    {key:'channel', label:'Channels'},
+    {key:'other', label:'Other'}
+  ];
+
+  let html = `
+  <div class="breadcrumb"><button data-nav-home>Atelier</button> ${ICONS.chevronRight} <span>Library</span></div>
+  <div class="hero">
+    <div class="eyebrow">Every resource, in one place</div>
+    <h1>Resource Library</h1>
+    <p class="hero-sub">Every free video, article, and book cited across the whole course \u2014 ${all.length} resources so far, all checked, all free, all playable or readable without leaving Atelier.</p>
+  </div>
+  <div class="library-search">
+    ${ICONS.link}
+    <input type="search" id="librarySearchInput" placeholder="Search by title, creator, or module\u2026" value="${LIB_QUERY.replace(/"/g,'&quot;')}" aria-label="Search the library">
+  </div>
+  <div class="library-filters">
+    ${filterDefs.map(f=>`<button class="library-filter-btn ${LIB_FILTER===f.key?'active':''}" data-lib-filter="${f.key}">${f.label} <span class="m-num">${counts[f.key]}</span></button>`).join('')}
+  </div>`;
+
+  if(!filtered.length){
+    html += `<div class="library-empty">${ICONS.empty}<p>Nothing matches that search yet \u2014 try a different term or filter.</p></div>`;
+  } else {
+    html += `<div class="library-grid">${filtered.map(row=>renderResourceCard(row.r, row.ri, row.m, row.also)).join('')}</div>`;
+  }
+
+  document.getElementById('main').innerHTML = html;
+}
+
+function renderTabContent(m, tab, checkedSet){
+  if(tab === 'overview'){
+    return `<div class="prose">
+      <h4>Why this matters</h4>
+      ${L(m,'whyItMatters').map(p=>`<p>${p}</p>`).join('')}
+      <h4>The core idea</h4>
+      ${L(m,'coreIdea').map(p=>`<p>${p}</p>`).join('')}
+      <h4>Where beginners go wrong</h4>
+      <ul class="mistake-list">${L(m,'mistakes').map(x=>`<li>${x}</li>`).join('')}</ul>
+      <div class="tip-card">
+        <h4>Professional habits</h4>
+        <ul>${L(m,'proTips').map(x=>`<li>${x}</li>`).join('')}</ul>
+      </div>
+    </div>`;
+  }
+  if(tab === 'practice'){
+    const practice = L(m,'practice');
+    const blocks = [
+      {icon:'warmup', label:'Warm-up', text:practice.warmup},
+      {icon:'daily', label:'Daily practice', text:practice.daily},
+      {icon:'weekly', label:"This week's assignment", text:practice.weekly},
+      {icon:'challenge', label:'Stretch challenge', text:practice.challenge}
+    ];
+    return `<div class="practice-grid">${blocks.map(b=>`
+      <div class="practice-block">
+        <div class="practice-block-head">
+          <div class="practice-icon">${ICONS[b.icon]}</div>
+          <h4>${b.label}</h4>
+        </div>
+        <p>${b.text}</p>
+      </div>`).join('')}</div>`;
+  }
+  if(tab === 'resources'){
+    const mainRes = [];
+    const channelRes = [];
+    m.resources.forEach((r, ri) => {
+      if(categorizeResourceType(r) === 'channel') channelRes.push({r, ri});
+      else mainRes.push({r, ri});
+    });
+
+    const cardHtml = (r, ri) => {
+      const ytId = r.videoId || getYouTubeId(r.url);
+      const playlistId = !ytId ? getYouTubePlaylistId(r.url) : null;
+      const opened = STATE.resourcesOpened[m.id] && STATE.resourcesOpened[m.id].has(ri);
+      return `
+      <div class="res-card">
+        <span class="res-type">${r.type}</span>
+        <div class="res-body">
+          <div class="res-title">${r.url ? `<a href="${r.url}" target="_blank" rel="noopener" data-res-open="${m.id}" data-res-index="${ri}">${r.title}</a>` : r.title}</div>
+          <div class="res-creator">${r.creator}</div>
+          <div class="res-why">${r.why}</div>
+          ${r.summary ? `<div class="res-summary"><span class="res-summary-label">What it teaches</span>${r.summary}</div>` : ''}
+          <div class="res-badges">
+            ${r.verified ? `<span class="res-verified">${ICONS.toastCheck} Checked</span>` : ''}
+            ${opened ? `<span class="res-opened">${ICONS.check} Opened</span>` : ''}
+          </div>
+${resActions(r, m)}
+          ${ytId ? `
+          <div class="video-embed-wrap" data-yt-id="${ytId}" data-res-module="${m.id}" data-res-idx="${ri}">
+            <img src="https://img.youtube.com/vi/${ytId}/hqdefault.jpg" alt="" loading="lazy">
+            <button class="video-play-btn" aria-label="Play video inline" data-yt-id="${ytId}" data-res-module="${m.id}" data-res-idx="${ri}">${ICONS.play}</button>
+          </div>` : ''}
+          ${playlistId ? `
+          <div class="video-embed-wrap playlist-embed-wrap">
+            <button class="video-play-btn playlist-play-btn" aria-label="Play playlist inline" data-yt-playlist-id="${playlistId}" data-res-module="${m.id}" data-res-idx="${ri}">${ICONS.play} Play playlist inline</button>
+          </div>` : ''}
+        </div>
+      </div>`;
+    };
+
+    return `<div class="res-note">Every resource below was checked against a live search today rather than recalled from memory. Links can still change after the fact &mdash; if one is dead, that is useful to know, so flag it and it gets swapped.</div>
+    ${mainRes.map(({r, ri}) => cardHtml(r, ri)).join('')}
+    ${channelRes.length ? `
+    <div class="res-channels-section">
+      <div class="res-channels-heading">Also worth following</div>
+      ${channelRes.map(({r, ri}) => {
+        const opened = STATE.resourcesOpened[m.id] && STATE.resourcesOpened[m.id].has(ri);
+        return `
+        <a class="res-channel-row" href="${r.url}" target="_blank" rel="noopener" data-res-open="${m.id}" data-res-index="${ri}">
+          <span class="res-type">${r.type}</span>
+          <span class="res-channel-title">${r.title}</span>
+          <span class="res-creator">${r.creator}</span>
+          ${opened ? `<span class="res-opened">${ICONS.check}</span>` : ''}
+        </a>`;
+      }).join('')}
+    </div>` : ''}`;
+  }
+  if(tab === 'mastery'){
+    const checklist = L(m,'checklist');
+    const quiz = L(m,'quiz');
+    const nextStep = L(m,'nextStep');
+    const total = checklist.length;
+    const done = checkedSet.size;
+    const quizState = STATE.quizAnswers[m.id] || {};
+    const hasQuiz = quiz && quiz.length > 0;
+    const quizAnsweredCount = Object.keys(quizState).length;
+    const quizCorrectCount = hasQuiz ? quiz.reduce((n,q,qi)=> n + (quizState[qi]===q.correct?1:0), 0) : 0;
+    const quizDone = !hasQuiz || quizAnsweredCount >= quiz.length;
+    const alreadyComplete = STATE.completed.has(m.id);
+
+    const quizHtml = hasQuiz ? `
+      <h4>Quick check <span class="quiz-progress">${quizAnsweredCount}/${quiz.length} answered${quizAnsweredCount>0 ? ' \u00b7 '+quizCorrectCount+' correct' : ''}</span></h4>
+      <p class="prose" style="margin-bottom:var(--sp-4);font-size:calc(14px * var(--font-scale));color:var(--text-muted);">These test whether the ideas actually landed, not whether you clicked play. Answer every one \u2014 right or wrong \u2014 to unlock module completion below.</p>
+      <div class="quiz-list">
+        ${quiz.map((q,qi)=>{
+          const answered = quizState.hasOwnProperty(qi);
+          const selected = quizState[qi];
+          return `<div class="quiz-card">
+            <p class="quiz-question">${q.q}</p>
+            <div class="quiz-options">
+              ${q.options.map((opt,oi)=>{
+                let cls = 'quiz-option';
+                if(answered && oi===q.correct) cls += ' correct';
+                else if(answered && oi===selected) cls += ' incorrect';
+                return `<button class="${cls}" data-quiz-module="${m.id}" data-quiz-q="${qi}" data-quiz-opt="${oi}" ${answered?'disabled':''}>${opt}</button>`;
+              }).join('')}
+            </div>
+            ${answered ? `<p class="quiz-explain">${q.explain}</p>` : ''}
+          </div>`;
+        }).join('')}
+      </div>` : '';
+
+    return `
+    <p class="prose" style="margin-bottom:var(--sp-5)">Check a line only once you can do it on a blank page, not once it sounds familiar. That is what &ldquo;complete&rdquo; means here.</p>
+    ${quizHtml}
+    <h4 style="font-family:var(--font-body);font-size:calc(12px * var(--font-scale));letter-spacing:1px;text-transform:uppercase;color:var(--text-faint);margin:var(--sp-6) 0 var(--sp-3);font-weight:600;">Mastery checklist</h4>
+    <div class="checklist" role="group" aria-label="Mastery checklist">
+      ${checklist.map((item,i)=>`
+        <button class="check-item" role="checkbox" aria-checked="${checkedSet.has(i)}" data-check-module="${m.id}" data-check-index="${i}">
+          <span class="check-box">${ICONS.check}</span>
+          <span class="check-text">${item}</span>
+        </button>`).join('')}
+    </div>
+    <div class="mastery-cta">
+      <p>${done}/${total} checked.${nextStep ? ' Next up: ' + nextStep : ''}</p>
+      ${alreadyComplete
+        ? `<button class="btn btn-primary" data-complete-module="${m.id}">${ICONS.check} Marked complete</button>`
+        : quizDone
+          ? `<button class="btn btn-primary" data-complete-module="${m.id}">Mark module complete (+50 XP)</button>`
+          : `<button class="btn btn-primary" disabled title="Answer every quick-check question above first">Answer all ${quiz.length} quiz questions to unlock</button>`
+      }
+    </div>`;
+  }
+  if(tab === 'notes'){
+    if(hasPremadeNotes(m) && NOTES_SUB === 'premade') return renderPremadeNotesView(m);
+    const text = STATE.notes[m.id] || '';
+    return `${hasPremadeNotes(m) ? notesSubTabsHtml() : ''}<p class="prose" style="margin-bottom:var(--sp-4)">Private notes for this module &mdash; what clicked, what didn't, what to revisit. Saved with the rest of your progress.</p>
+    <textarea id="notesArea" class="notes-textarea" placeholder="Write anything..." data-module="${m.id}">${escapeHtml(text)}</textarea>
+    <div class="notes-status" id="notesStatus">${text ? 'Saved' : ''}</div>`;
+  }
+  return '';
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+function navigateHome(){
+  flushNotesSave();
+  STATE.route = {view:'home', pathId:null, moduleId:null, tab:'overview'};
+  renderApp();
+  window.scrollTo({top:0, behavior:'auto'});
+}
+function navigateView(view){
+  flushNotesSave();
+  STATE.route = {view, pathId:null, moduleId:null, tab:'overview'};
+  renderApp();
+  window.scrollTo({top:0, behavior:'auto'});
+  closeMobileSidebar();
+}
+function navigateModule(pathId, moduleId, tab){
+  flushNotesSave();
+  STATE.route = {view:'module', pathId, moduleId, tab: tab || 'overview'};
+  renderApp();
+  window.scrollTo({top:0, behavior:'auto'});
+  closeMobileSidebar();
+  closeMobileSearch();
+}
+function openPathOnHome(pathId){
+  const path = CURRICULUM.find(p=>p.id===pathId);
+  if(!path) return;
+  if(path.status !== 'live'){
+    showToast(path.title + ' isn\u2019t built yet \u2014 five other arcs are live now.');
+    return;
+  }
+  navigateHome();
+  requestAnimationFrame(()=>{
+    document.getElementById('grid-' + pathId)?.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+  closeMobileSidebar();
+}
+function closeMobileSidebar(){
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebarBackdrop').classList.remove('show');
+  document.getElementById('menuBtn').setAttribute('aria-expanded','false');
+}
+
+function closeMobileSearch(){
+  const box = document.getElementById('topbarSearchBox');
+  if(box) box.classList.remove('mobile-search-open');
+}
+
+/* ============================================================
+   ACTIONS
+   ============================================================ */
+function toggleChecklistItem(moduleId, index){
+  if(!STATE.checklist[moduleId]) STATE.checklist[moduleId] = new Set();
+  const set = STATE.checklist[moduleId];
+  if(set.has(index)){ set.delete(index); STATE.xp = Math.max(0, STATE.xp - 10); }
+  else { set.add(index); STATE.xp += 10; }
+  STATE.route.tab = 'mastery';
+
+  const m = findModule(moduleId);
+  const answeredCount = m && m.quiz ? Object.keys(STATE.quizAnswers[moduleId] || {}).length : 0;
+  const quizSatisfied = !m || !m.quiz || !m.quiz.length || answeredCount >= m.quiz.length;
+  const justAutoCompleted = m && m.checklist && set.size === m.checklist.length && quizSatisfied && !STATE.completed.has(moduleId);
+  if(justAutoCompleted){
+    STATE.completed.add(moduleId);
+    STATE.xp += 50;
+  }
+
+  saveProgress();
+  renderApp();
+  if(justAutoCompleted) showToast('Every box checked \u2014 module marked complete. +50 XP.');
+  checkAchievements();
+}
+function completeModule(moduleId){
+  if(STATE.completed.has(moduleId)) return;
+  const m = findModule(moduleId);
+  if(m && m.quiz && m.quiz.length){
+    const answeredCount = Object.keys(STATE.quizAnswers[moduleId] || {}).length;
+    if(answeredCount < m.quiz.length){
+      showToast('Answer every quiz question first \u2014 that\u2019s what unlocks this.');
+      renderApp();
+      return;
+    }
+  }
+  STATE.completed.add(moduleId);
+  STATE.xp += 50;
+  STATE.route.tab = 'mastery';
+  saveProgress();
+  renderApp();
+  showToast('Module marked complete. +50 XP.');
+  checkAchievements();
+}
+function toggleFavorite(moduleId){
+  if(STATE.favorites.has(moduleId)) STATE.favorites.delete(moduleId);
+  else STATE.favorites.add(moduleId);
+  saveProgress();
+  renderApp();
+  checkAchievements();
+}
+function answerQuiz(moduleId, qIndex, oIndex){
+  if(!STATE.quizAnswers[moduleId]) STATE.quizAnswers[moduleId] = {};
+  if(STATE.quizAnswers[moduleId].hasOwnProperty(qIndex)) return;
+  STATE.quizAnswers[moduleId][qIndex] = oIndex;
+  const m = findModule(moduleId);
+  const q = m.quiz[qIndex];
+  if(oIndex === q.correct) STATE.xp += 5;
+  STATE.route.tab = 'mastery';
+  saveProgress();
+  renderApp();
+  checkAchievements();
+}
+
+/* Escape user-typed text before it goes back into innerHTML — the notes
+   textarea is the one place raw, unpredictable user input gets rendered
+   as HTML, and unescaped <, >, or & can corrupt or truncate the field. */
+function escapeHtml(str){
+  return String(str==null?'':str)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;');
+}
+
+/* Pulls the 11-character video ID out of a youtube.com/watch or youtu.be
+   link so it can be embedded inline. Returns null for anything else
+   (course pages, tool sites, articles) — those stay as plain links. */
+function getYouTubeId(url){
+  if(!url) return null;
+  const m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+  return m ? m[1] : null;
+}
+
+function getYouTubePlaylistId(url){
+  if(!url) return null;
+  const m = url.match(/[?&]list=([a-zA-Z0-9_-]+)/);
+  return m ? m[1] : null;
+}
+
+/* Honest framing matters here: this proves a link was clicked and a tab
+   opened. It does not, and cannot, prove the person actually watched or
+   read anything there. It's shown as "Opened", never as "Watched" or
+   "Completed", and nothing else in the app treats it as a stronger signal
+   than that. */
+function markResourceOpened(moduleId, index){
+  if(!STATE.resourcesOpened[moduleId]) STATE.resourcesOpened[moduleId] = new Set();
+  if(STATE.resourcesOpened[moduleId].has(index)) return;
+  STATE.resourcesOpened[moduleId].add(index);
+  saveProgress();
+  if(STATE.route.view === 'module' && STATE.route.tab === 'resources'){
+    document.getElementById('tabpanel').innerHTML = renderTabContent(findModule(moduleId), 'resources', new Set());
+  }
+}
+
+let notesSaveTimer = null;
+function handleNotesInput(moduleId, value){
+  STATE.notes[moduleId] = value;
+  const status = document.getElementById('notesStatus');
+  if(status) status.textContent = 'Saving\u2026';
+  clearTimeout(notesSaveTimer);
+  notesSaveTimer = setTimeout(()=>{
+    saveProgress();
+    checkAchievements();
+    const s = document.getElementById('notesStatus');
+    if(s) s.textContent = 'Saved';
+  }, 600);
+}
+function flushNotesSave(){
+  clearTimeout(notesSaveTimer);
+  clearTimeout(fpNotesSaveTimer);
+  clearTimeout(saveTimer);
+  persistNow();
+}
+
+/* ============================================================
+   FLOATING VIDEO PLAYER — draggable, survives tab/module navigation
+   (it lives outside #main, so re-rendering the page never touches it)
+   ============================================================ */
+let fpModuleId = null;
+let fpNotesSaveTimer = null;
+
+function openFloatingPlayer(ytId, moduleId, resIdx, title, playlistId){
+  const fp = document.getElementById('floatingPlayer');
+  fpModuleId = moduleId;
+  document.getElementById('fpTitle').textContent = title || (playlistId ? 'Playlist' : 'Video');
+  const embedSrc = playlistId
+    ? `https://www.youtube.com/embed/videoseries?list=${playlistId}&autoplay=1`
+    : `https://www.youtube.com/embed/${ytId}?autoplay=1`;
+  document.getElementById('fpVideo').innerHTML =
+    `<iframe src="${embedSrc}" title="${escapeHtml(title||'Embedded video player')}" frameborder="0" allow="accelerated-video; autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+  document.getElementById('fpNotesArea').value = STATE.notes[moduleId] || '';
+  document.getElementById('fpNotesStatus').textContent = '';
+  fp.classList.remove('minimized');
+  const minBtn = document.getElementById('fpMinBtn');
+  minBtn.textContent = '–'; minBtn.setAttribute('aria-label','Minimize player');
+  fp.hidden = false;
+
+  // First open in this session: place it in a sensible corner instead of at (0,0).
+  if(!fp.style.left && !fp.style.top){
+    const w = fp.offsetWidth || 340;
+    const h = fp.offsetHeight || 372;
+    fp.style.left = Math.max(12, window.innerWidth - w - 20) + 'px';
+    fp.style.top = Math.max(12, window.innerHeight - h - 20) + 'px';
+  }
+  clampFloatingPlayerToViewport();
+}
+function closeFloatingPlayer(){
+  const fp = document.getElementById('floatingPlayer');
+  document.getElementById('fpVideo').innerHTML = ''; // drop the iframe so playback actually stops
+  fp.hidden = true;
+  clearTimeout(fpNotesSaveTimer);
+  persistNow();
+  fpModuleId = null;
+}
+function clampFloatingPlayerToViewport(){
+  const fp = document.getElementById('floatingPlayer');
+  if(fp.hidden) return;
+  const rect = fp.getBoundingClientRect();
+  let left = rect.left, top = rect.top;
+  left = Math.min(Math.max(left, 4), window.innerWidth - rect.width - 4);
+  const maxTop = Math.max(4, window.innerHeight - rect.height - 4);
+  top = Math.min(Math.max(top, 4), maxTop);
+  fp.style.left = left + 'px';
+  fp.style.top = top + 'px';
+}
+function handleFloatingNotesInput(value){
+  if(!fpModuleId) return;
+  STATE.notes[fpModuleId] = value;
+  const status = document.getElementById('fpNotesStatus');
+  if(status) status.textContent = 'Saving…';
+  // keep the main Notes tab in sync live, in case it's open behind the player
+  const mainArea = document.getElementById('notesArea');
+  if(mainArea && mainArea.dataset.module === fpModuleId) mainArea.value = value;
+  clearTimeout(fpNotesSaveTimer);
+  fpNotesSaveTimer = setTimeout(()=>{
+    saveProgress();
+    checkAchievements();
+    const s = document.getElementById('fpNotesStatus');
+    if(s) s.textContent = 'Saved';
+    const ms = document.getElementById('notesStatus');
+    if(ms && mainArea && mainArea.dataset.module === fpModuleId) ms.textContent = 'Saved';
+  }, 600);
+}
+function initFloatingPlayerDrag(){
+  const fp = document.getElementById('floatingPlayer');
+  const header = document.getElementById('fpHeader');
+  let dragging = false, offsetX = 0, offsetY = 0;
+
+  header.addEventListener('pointerdown', (e)=>{
+    if(e.target.closest('.fp-btn')) return; // don't start a drag from the buttons
+    dragging = true;
+    const rect = fp.getBoundingClientRect();
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+    header.setPointerCapture(e.pointerId);
+  });
+  header.addEventListener('pointermove', (e)=>{
+    if(!dragging) return;
+    let left = e.clientX - offsetX;
+    let top = e.clientY - offsetY;
+    const rect = fp.getBoundingClientRect();
+    left = Math.min(Math.max(left, 4), window.innerWidth - rect.width - 4);
+    top = Math.min(Math.max(top, 4), window.innerHeight - 44);
+    fp.style.left = left + 'px';
+    fp.style.top = top + 'px';
+  });
+  const endDrag = ()=>{ dragging = false; };
+  header.addEventListener('pointerup', endDrag);
+  header.addEventListener('pointercancel', endDrag);
+  window.addEventListener('resize', clampFloatingPlayerToViewport);
+
+  // Resize handle — remembered across sessions via localStorage (not part of the
+  // main progress save, since it's a UI preference rather than course data).
+  const handle = document.getElementById('fpResizeHandle');
+  let resizing = false, startX = 0, startWidth = 0;
+  const savedWidth = parseInt(localStorage.getItem('atelier_fp_width') || '', 10);
+  if(savedWidth && savedWidth >= 280) fp.style.width = Math.min(savedWidth, window.innerWidth - 8) + 'px';
+  handle.addEventListener('pointerdown', (e)=>{
+    resizing = true;
+    startX = e.clientX;
+    startWidth = fp.getBoundingClientRect().width;
+    handle.setPointerCapture(e.pointerId);
+    e.preventDefault();
+  });
+  handle.addEventListener('pointermove', (e)=>{
+    if(!resizing) return;
+    const delta = e.clientX - startX;
+    const rect = fp.getBoundingClientRect();
+    const maxWidth = window.innerWidth - rect.left - 8;
+    const newWidth = Math.min(Math.max(startWidth + delta, 280), Math.min(maxWidth, window.innerWidth - 8));
+    fp.style.width = newWidth + 'px';
+  });
+  const endResize = ()=>{
+    if(!resizing) return;
+    resizing = false;
+    try{ localStorage.setItem('atelier_fp_width', String(Math.round(fp.getBoundingClientRect().width))); }catch(e){}
+  };
+  handle.addEventListener('pointerup', endResize);
+  handle.addEventListener('pointercancel', endResize);
+}
+
+/* ============================================================
+   PRACTICE CENTER — prompt + timer
+   ============================================================ */
+let lastPromptIndex = -1;
+function newPrompt(){
+  let i;
+  do{ i = Math.floor(Math.random()*PRACTICE_PROMPTS.length); }while(i===lastPromptIndex && PRACTICE_PROMPTS.length>1);
+  lastPromptIndex = i;
+  const p = PRACTICE_PROMPTS[i];
+  const catEl = document.getElementById('promptCategory');
+  const textEl = document.getElementById('promptText');
+  if(catEl) catEl.textContent = p.cat;
+  if(textEl) textEl.textContent = p.text;
+}
+
+/* Spaced-review pool: any quiz question the person has already answered
+   (right or wrong) is fair game to resurface here. Answering it again in
+   this context is standalone practice — it never touches STATE.quizAnswers
+   or module completion, on purpose, so replaying it can't be used to farm
+   XP through the completion gate. */
+let refresherState = null;
+let refresherQueue = [];
+let refresherPoolSignature = '';
+let lastRefresherKey = null;
+function pickRefresherPool(){
+  const pool = [];
+  getAllLiveModules().forEach(({m})=>{
+    if(!m.quiz) return;
+    const answered = STATE.quizAnswers[m.id] || {};
+    m.quiz.forEach((q,qi)=>{
+      if(answered.hasOwnProperty(qi)) pool.push({m, q, qi});
+    });
+  });
+  return pool;
+}
+function shuffleArray(arr){
+  const a = arr.slice();
+  for(let i=a.length-1; i>0; i--){
+    const j = Math.floor(Math.random()*(i+1));
+    const tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+  }
+  return a;
+}
+function refresherKey(item){ return item.m.id + ':' + item.qi; }
+function nextRefresherItem(){
+  const pool = pickRefresherPool();
+  if(!pool.length) return null;
+  const signature = pool.map(refresherKey).sort().join(',');
+  if(signature !== refresherPoolSignature || refresherQueue.length === 0){
+    refresherPoolSignature = signature;
+    const shuffled = shuffleArray(pool);
+    if(shuffled.length > 1 && lastRefresherKey && refresherKey(shuffled[0]) === lastRefresherKey){
+      const tmp = shuffled[0]; shuffled[0] = shuffled[1]; shuffled[1] = tmp;
+    }
+    refresherQueue = shuffled;
+  }
+  const item = refresherQueue.shift();
+  lastRefresherKey = refresherKey(item);
+  return item;
+}
+function renderRefresherQuestion(){
+  const wrap = document.getElementById('refresherWrap');
+  if(!wrap) return;
+  const pick = nextRefresherItem();
+  if(!pick){
+    wrap.innerHTML = `<div class="empty-state" style="padding:var(--sp-6) var(--sp-4)">${ICONS.empty}<p>Answer a quiz question in any module first, then come back here \u2014 refreshers are pulled from things you've actually already studied.</p></div>`;
+    return;
+  }
+  refresherState = {moduleId: pick.m.id, qi: pick.qi, answered: false};
+  wrap.innerHTML = `
+    <div class="quiz-card">
+      <p class="res-creator" style="margin-bottom:var(--sp-3)">From: ${L(pick.m,'title')}</p>
+      <p class="quiz-question">${pick.q.q}</p>
+      <div class="quiz-options" id="refresherOptions">
+        ${pick.q.options.map((opt,oi)=>`<button class="quiz-option" data-refresher-opt="${oi}">${opt}</button>`).join('')}
+      </div>
+      <p class="quiz-explain" id="refresherExplain" style="display:none"></p>
+    </div>
+    <button class="btn btn-ghost" id="newRefresherBtn" style="margin-top:var(--sp-4)">${ICONS.shuffle} Another one</button>`;
+}
+function answerRefresher(oi){
+  if(!refresherState || refresherState.answered) return;
+  refresherState.answered = true;
+  const m = findModule(refresherState.moduleId);
+  const q = m.quiz[refresherState.qi];
+  document.querySelectorAll('#refresherOptions .quiz-option').forEach((btn,idx)=>{
+    btn.disabled = true;
+    if(idx===q.correct) btn.classList.add('correct');
+    else if(idx===oi) btn.classList.add('incorrect');
+  });
+  const explainEl = document.getElementById('refresherExplain');
+  if(explainEl){ explainEl.textContent = q.explain; explainEl.style.display = 'block'; }
+}
+
+let timerInterval = null, timerSeconds = 300, timerRunning = false;
+function updateTimerDisplay(){
+  const el = document.getElementById('timerDisplay');
+  if(!el) return;
+  const m = Math.floor(Math.max(timerSeconds,0)/60).toString().padStart(2,'0');
+  const s = Math.max(timerSeconds,0)%60;
+  el.textContent = m + ':' + String(s).padStart(2,'0');
+}
+function setTimerPreset(mins, btn){
+  clearInterval(timerInterval);
+  timerRunning = false;
+  timerSeconds = mins*60;
+  updateTimerDisplay();
+  document.querySelectorAll('.timer-presets button').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+}
+function startTimer(){
+  if(timerRunning || timerSeconds<=0) return;
+  timerRunning = true;
+  timerInterval = setInterval(()=>{
+    timerSeconds--;
+    updateTimerDisplay();
+    if(timerSeconds<=0){
+      clearInterval(timerInterval);
+      timerRunning = false;
+      playChime();
+      showToast("Time's up. Nice work.");
+    }
+  }, 1000);
+}
+function pauseTimer(){ clearInterval(timerInterval); timerRunning=false; }
+function resetTimer(){
+  pauseTimer();
+  const activeBtn = document.querySelector('.timer-presets button.active');
+  const mins = activeBtn ? parseInt(activeBtn.dataset.mins,10) : 5;
+  timerSeconds = mins*60;
+  updateTimerDisplay();
+}
+function playChime(){
+  try{
+    const Ctx = window.AudioContext || window.webkitAudioContext;
+    const ctx = new Ctx();
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination);
+    o.frequency.value = 880;
+    g.gain.setValueAtTime(0.0001, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.25, ctx.currentTime+0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime+0.6);
+    o.start();
+    o.stop(ctx.currentTime+0.6);
+  }catch(e){ /* audio unavailable — silent, the toast still shows */ }
+}
+
+/* ============================================================
+   SEARCH
+   ============================================================ */
+function handleSearch(query){
+  const q = query.trim().toLowerCase();
+  if(!q){ STATE.route.view = STATE.route.moduleId ? 'module' : 'home'; renderApp(); return; }
+  const matches = [];
+  CURRICULUM.forEach(path=>{
+    if(!path.modules) return;
+    path.modules.forEach(m=>{
+      if(m.stub) return;
+      const resText = (m.resources||[]).map(r=>r.title+' '+r.creator).join(' ');
+      const checklistText = (m.checklist||[]).join(' ');
+      const hay = (m.title + ' ' + (m.hook||'') + ' ' + resText + ' ' + checklistText).toLowerCase();
+      if(hay.includes(q)) matches.push({path, m});
+    });
+  });
+  renderSearchResults(matches, query);
+}
+
+function renderSearchResults(matches, query){
+  STATE.route.view = 'search';
+  updateDocumentTitle();
+  let html = `<div class="hero"><div class="eyebrow">Search</div><h1 style="font-size:calc(32px * var(--font-scale));">${matches.length} result${matches.length===1?'':'s'} for &ldquo;${escapeHtml(query)}&rdquo;</h1></div>`;
+  if(matches.length === 0){
+    html += `<div class="empty-state">${ICONS.empty}<p>No matches. All live arcs are searchable &mdash; the rest is mapped but not written yet.</p></div>`;
+  } else {
+    html += '<div class="module-grid">' + matches.map(({path,m})=>`
+      <button class="mcard" data-path="${path.id}" data-module="${m.id}">
+        ${DECOR[MODULE_DECOR[m.id]] || ''}
+        <div class="mcard-top"><span class="plate-id">PLATE ${m.plate}</span></div>
+        <h3>${L(m,'title')}</h3>
+        <p class="mcard-hook">${L(m,'hook')}</p>
+      </button>`).join('') + '</div>';
+  }
+  document.getElementById('main').innerHTML = html;
+}
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+let toastTimer = null;
+let toastQueue = [];
+let toastShowing = false;
+
+function showToast(msg){
+  toastQueue.push(msg);
+  if(!toastShowing) processToastQueue();
+}
+
+function processToastQueue(){
+  if(toastQueue.length === 0){ toastShowing = false; return; }
+  toastShowing = true;
+  const msg = toastQueue.shift();
+  const el = document.getElementById('toast');
+  el.innerHTML = `${ICONS.toastCheck}<span>${msg}</span>`;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>{
+    el.classList.remove('show');
+    setTimeout(processToastQueue, 250);
+  }, 3200);
+}
+
+/* ============================================================
+   EVENTS
+   ============================================================ */
+
+/* ============================================================
+   ASK A DOUBT — contextual Q&A powered by the user's own free
+   Gemini API key (see config.js). Runs client-side; no backend.
+   ============================================================ */
+function sampleImageBrightness(img){
+  // Downscale to a tiny canvas — we only need an average, not per-pixel accuracy,
+  // and this keeps it fast even for a large photo.
+  try{
+    const size = 32;
+    const canvas = document.createElement('canvas');
+    canvas.width = size; canvas.height = size;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, size, size);
+    const data = ctx.getImageData(0, 0, size, size).data;
+    let total = 0;
+    for(let i = 0; i < data.length; i += 4){
+      // perceptual luminance weighting
+      total += data[i]*0.299 + data[i+1]*0.587 + data[i+2]*0.114;
+    }
+    return total / (data.length / 4); // 0-255
+  }catch(e){
+    // Cross-origin image without permissive CORS headers taints the canvas —
+    // getImageData throws. Fall back to a safe middle assumption rather than crash.
+    return 128;
+  }
+}
+
+let lastCustomBands = null; // cached per-band brightness for the current photo, so the opacity slider can rebuild the gradient without re-sampling the image
+
+function sampleImageBands(img, bandCount){
+  // Same idea as sampleImageBrightness, but split into horizontal strips so a photo
+  // that's dark at the top and light at the bottom (or vice versa) gets a scrim that
+  // actually follows it, instead of one flat tone picked from the whole-image average.
+  try{
+    const w = 24, stripH = 8;
+    const h = stripH * bandCount;
+    const canvas = document.createElement('canvas');
+    canvas.width = w; canvas.height = h;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, w, h);
+    const data = ctx.getImageData(0, 0, w, h).data;
+    const bands = [];
+    for(let b = 0; b < bandCount; b++){
+      let total = 0, count = 0;
+      for(let y = b*stripH; y < (b+1)*stripH; y++){
+        for(let x = 0; x < w; x++){
+          const i = (y*w + x) * 4;
+          total += data[i]*0.299 + data[i+1]*0.587 + data[i+2]*0.114;
+          count++;
+        }
+      }
+      bands.push(count ? total/count : 128);
+    }
+    return bands;
+  }catch(e){
+    return new Array(bandCount).fill(128);
+  }
+}
+
+function buildScrimGradient(bands, dark, baseOpacity){
+  const rgb = dark ? '15,13,10' : '245,243,236';
+  const stops = bands.map((brightness, i)=>{
+    const pct = Math.round((i / (bands.length - 1)) * 100);
+    const norm = brightness / 255; // 0 = dark pixel, 1 = bright pixel
+    // Dark mode uses light text, so bright patches of the photo need MORE scrim to
+    // stay readable; light mode uses dark text, so it's dark patches that need more.
+    const need = dark ? norm : (1 - norm);
+    const alpha = Math.min(0.92, Math.max(0.48, baseOpacity + (need - 0.5) * 0.6));
+    return `rgba(${rgb},${alpha.toFixed(2)}) ${pct}%`;
+  });
+  return `linear-gradient(to bottom, ${stops.join(', ')})`;
+}
+
+/* applyCustomThemeColors sets these directly via style.setProperty, which
+   means they're INLINE styles \u2014 those always win over any stylesheet
+   rule, including a preset's own [data-theme="x"]{...} colors, no matter
+   how specific. Switching to a preset never used to undo this, so once
+   you'd used a custom photo once, every preset after it silently kept
+   wearing the custom photo's leftover text/background colors \u2014 which
+   is exactly how you get invisible or badly-mismatched elements. */
+function clearCustomThemeOverrides(){
+  const root = document.documentElement.style;
+  ['--bg','--bg-raised','--surface','--surface-2','--text','--text-muted','--text-faint',
+   '--border','--border-soft','--custom-scrim-color','--custom-scrim-gradient',
+   '--custom-bg-image'].forEach(prop => root.removeProperty(prop));
+  /* --bg-raised was missing here — same variable, same class of bug as the
+     sidebar-illegibility fix, just in the clearing path this time: it stayed
+     stuck at whatever the last custom photo set it to, invisible on the very
+     next preset (same brightness family) and only surfacing as a real
+     collision once you hit a preset needing the opposite text color. */
+  lastAppliedCustomBg = undefined; /* so switching back to custom later re-applies cleanly instead of no-op'ing */
+  lastCustomBands = null;
+}
+
+function applyCustomThemeColors(brightness, bands){
+  const dark = brightness < 128;
+  STATE.customThemeMode = dark ? 'dark' : 'light';
+  if(bands) lastCustomBands = bands;
+  if(lastCustomBands){
+    document.documentElement.style.setProperty('--custom-scrim-gradient', buildScrimGradient(lastCustomBands, dark, STATE.customScrimOpacity));
+  }
+  const root = document.documentElement.style;
+  if(dark){
+    root.setProperty('--custom-text-shadow', '0 1px 4px rgba(0,0,0,0.75), 0 1px 12px rgba(0,0,0,0.45)');
+    root.setProperty('--bg', '#17151199');
+    root.setProperty('--bg-raised', '#1B1920'); // fully opaque — backs the sidebar; was never updated here, so it stayed stuck at the static light fallback even in dark mode, making sidebar text unreadable against its own nav background
+    root.setProperty('--custom-scrim-color', '#0F0D0A');
+    root.setProperty('--surface', 'rgba(30,27,22,0.88)');
+    root.setProperty('--surface-2', 'rgba(40,36,30,0.88)');
+    root.setProperty('--text', '#F2EEE4');
+    root.setProperty('--text-muted', '#C9C3B4');
+    root.setProperty('--text-faint', '#A39C8B');
+    root.setProperty('--border', 'rgba(255,255,255,0.16)');
+    root.setProperty('--border-soft', 'rgba(255,255,255,0.10)');
+  } else {
+    root.setProperty('--custom-text-shadow', '0 1px 4px rgba(255,255,255,0.85), 0 1px 12px rgba(255,255,255,0.5)');
+    root.setProperty('--bg', '#EDECE899');
+    root.setProperty('--bg-raised', '#F5F3EE'); // fully opaque, matches light mode
+    root.setProperty('--custom-scrim-color', '#F5F3EC');
+    root.setProperty('--surface', 'rgba(255,253,246,0.90)');
+    root.setProperty('--surface-2', 'rgba(240,236,224,0.90)');
+    root.setProperty('--text', '#22201B');
+    root.setProperty('--text-muted', '#5C584D');
+    root.setProperty('--text-faint', '#726D5E');
+    root.setProperty('--border', 'rgba(0,0,0,0.14)');
+    root.setProperty('--border-soft', 'rgba(0,0,0,0.08)');
+  }
+}
+
+let doubtHistory = [];
+let doubtOpen = false;
+const DOUBT_HISTORY_KEY = 'atelier_doubt_history';
+
+function saveDoubtHistory(){
+  try{ localStorage.setItem(DOUBT_HISTORY_KEY, JSON.stringify(doubtHistory.slice(-40))); }catch(e){ /* private browsing etc */ }
+}
+
+function loadDoubtHistory(){
+  try{
+    const raw = localStorage.getItem(DOUBT_HISTORY_KEY);
+    if(!raw) return;
+    const saved = JSON.parse(raw);
+    if(!Array.isArray(saved)) return;
+    doubtHistory = saved;
+    doubtHistory.forEach(h=>appendDoubtMessage(h.role === 'user' ? 'user' : 'model', h.text));
+  }catch(e){ /* corrupted/old-format history — start fresh rather than crash */ }
+}
+
+function getModuleContextForDoubt(){
+  const route = STATE.route;
+  if(route.view !== 'module' || !route.moduleId) return null;
+  const m = findModule(route.moduleId);
+  if(!m) return null;
+  const parts = ['Module: ' + L(m,'title')];
+  const hook = L(m,'hook');
+  if(hook) parts.push('Hook: ' + hook);
+  const why = m.whyItMatters;
+  if(Array.isArray(why) && why.length) parts.push('Why it matters: ' + why[0]);
+  if(Array.isArray(m.checklist) && m.checklist.length) parts.push('Self-check items: ' + m.checklist.slice(0,4).join('; '));
+  return parts.join('\n');
+}
+
+function toggleDoubtPanel(open){
+  const fab = document.getElementById('doubtFab');
+  const panel = document.getElementById('doubtPanel');
+  const backdrop = document.getElementById('doubtBackdrop');
+  if(!fab || !panel) return;
+  doubtOpen = open;
+  fab.hidden = open;
+  panel.hidden = !open;
+  if(backdrop) backdrop.hidden = !open;
+  if(open){
+    const input = document.getElementById('doubtInput');
+    if(input) input.focus();
+  }
+}
+
+function appendDoubtMessage(role, text){
+  const wrap = document.getElementById('doubtMessages');
+  if(!wrap) return null;
+  const div = document.createElement('div');
+  div.className = 'doubt-msg doubt-msg-' + role;
+  div.textContent = text;
+  wrap.appendChild(div);
+  wrap.scrollTop = wrap.scrollHeight;
+  return div;
+}
+
+const DOUBT_ENGINE_KEY = 'atelier_doubt_engine';
+const DOUBT_LOCAL_MODEL_ID = 'HuggingFaceTB/SmolLM2-360M-Instruct';
+let localPipelinePromise = null;
+
+// ---- Lightweight in-browser retrieval (BM25) over the whole curriculum ----
+// This lets the assistant answer using material from ANY module, not just
+// the one the student currently has open, without downloading another
+// model \u2014 it's plain JS text scoring against curriculum-index.json.
+let curriculumIndexPromise = null;
+
+function tokenizeForSearch(s){
+  return (String(s).toLowerCase().match(/[a-z0-9']+/g) || []).filter(w => w.length > 1);
+}
+
+async function loadCurriculumIndex(){
+  if(curriculumIndexPromise) return curriculumIndexPromise;
+  curriculumIndexPromise = (async () => {
+    const res = await fetch('curriculum-index.json');
+    const chunks = await res.json();
+    const df = new Map();
+    let totalLen = 0;
+    const docsTokens = chunks.map(c => {
+      const toks = tokenizeForSearch(c.t);
+      totalLen += toks.length;
+      new Set(toks).forEach(w => df.set(w, (df.get(w) || 0) + 1));
+      return toks;
+    });
+    return { chunks, docsTokens, df, avgdl: totalLen / (chunks.length || 1), N: chunks.length };
+  })().catch(e => { curriculumIndexPromise = null; throw e; });
+  return curriculumIndexPromise;
+}
+
+function bm25Score(queryTokens, docTokens, df, N, avgdl, k1, b){
+  const tf = new Map();
+  docTokens.forEach(w => tf.set(w, (tf.get(w) || 0) + 1));
+  const dl = docTokens.length || 1;
+  let score = 0;
+  queryTokens.forEach(qt => {
+    const f = tf.get(qt) || 0;
+    if(f === 0) return;
+    const n = df.get(qt) || 0;
+    const idf = Math.log((N - n + 0.5) / (n + 0.5) + 1);
+    score += idf * (f * (k1 + 1)) / (f + k1 * (1 - b + b * dl / avgdl));
+  });
+  return score;
+}
+
+async function searchCurriculum(query, topK){
+  try{
+    const idx = await loadCurriculumIndex();
+    const qTokens = tokenizeForSearch(query);
+    if(!qTokens.length) return [];
+    const scored = idx.chunks.map((c, i) => ({
+      c, score: bm25Score(qTokens, idx.docsTokens[i], idx.df, idx.N, idx.avgdl, 1.5, 0.75)
+    }));
+    scored.sort((a, b) => b.score - a.score);
+    return scored.filter(s => s.score > 0).slice(0, topK || 4).map(s => s.c);
+  }catch(e){
+    // Retrieval is a bonus, not a requirement \u2014 fail closed so the chat
+    // still works (just without cross-module context) if the index can't load.
+    return [];
+  }
+}
+
+async function getDoubtSystemInstruction(query){
+  const moduleContext = getModuleContextForDoubt();
+  let systemInstruction = "You are a friendly, encouraging drawing teacher's assistant embedded in the Atelier art course. Answer the student's question clearly and briefly (3-6 sentences unless the question truly needs more). If they lack tools or materials, suggest cheap or improvised alternatives rather than telling them to buy something. Stay grounded in practical, fundamentals-level drawing advice.";
+  if(moduleContext) systemInstruction += '\n\nThe student is currently on this module:\n' + moduleContext;
+
+  if(query){
+    const hits = await searchCurriculum(query, 4);
+    if(hits.length){
+      systemInstruction += '\n\nRelevant material from elsewhere in the course (use it if it helps answer the question; ignore anything not relevant):\n' +
+        hits.map(h => '[' + h.m + '] ' + h.t).join('\n');
+    }
+  }
+  return systemInstruction;
+}
+
+function showDoubtEngineChooser(){
+  const wrap = document.getElementById('doubtMessages');
+  if(!wrap || document.getElementById('doubtChooser')) return;
+  const div = document.createElement('div');
+  div.id = 'doubtChooser';
+  div.className = 'doubt-chooser';
+  div.innerHTML =
+    '<p>Pick how you want doubts answered \u2014 you can switch anytime with the \u21c4 button above.</p>' +
+    '<button class="btn btn-primary" data-doubt-engine="gemini">Cloud (Gemini) \u2014 better answers, needs a free key in config.js</button>' +
+    '<button class="btn btn-ghost" data-doubt-engine="local">On-device \u2014 no setup at all, but a ~200MB one-time download and weaker answers</button>';
+  wrap.appendChild(div);
+  wrap.scrollTop = wrap.scrollHeight;
+}
+
+function removeDoubtChooser(){
+  const el = document.getElementById('doubtChooser');
+  if(el) el.remove();
+}
+
+function chooseDoubtEngine(engine){
+  try{ localStorage.setItem(DOUBT_ENGINE_KEY, engine); }catch(e){ /* private browsing etc — falls back to asking each reload */ }
+  removeDoubtChooser();
+  sendDoubtMessage();
+}
+
+function switchDoubtEngine(){
+  try{ localStorage.removeItem(DOUBT_ENGINE_KEY); }catch(e){}
+  showDoubtEngineChooser();
+}
+
+async function sendDoubtMessage(){
+  const input = document.getElementById('doubtInput');
+  if(!input) return;
+  const text = input.value.trim();
+  if(!text) return;
+
+  let engine = null;
+  try{ engine = localStorage.getItem(DOUBT_ENGINE_KEY); }catch(e){}
+  if(!engine){
+    // Default to on-device \u2014 no key or setup needed for anyone.
+    // People who want the cloud (Gemini) option can still switch to it
+    // manually with the \u21c4 button, which brings up this same chooser.
+    engine = 'local';
+    try{ localStorage.setItem(DOUBT_ENGINE_KEY, engine); }catch(e){ /* private browsing etc \u2014 falls back to local each reload, which is a safe default */ }
+  }
+
+  appendDoubtMessage('user', text);
+  input.value = '';
+  doubtHistory.push({role:'user', text});
+  saveDoubtHistory();
+
+  const systemInstruction = await getDoubtSystemInstruction(text);
+  if(engine === 'local'){
+    await sendDoubtMessageLocal(systemInstruction);
+  } else {
+    await sendDoubtMessageGemini(systemInstruction);
+  }
+}
+
+async function sendDoubtMessageGemini(systemInstruction){
+  const cfg = window.ATELIER_CONFIG || {};
+  const proxyUrl = typeof cfg.geminiProxyUrl === 'string' ? cfg.geminiProxyUrl.trim() : '';
+  if(!proxyUrl){
+    appendDoubtMessage('error', 'Cloud AI is not configured yet. The site owner needs to deploy the Cloudflare Worker and set geminiProxyUrl in config.js. You can switch to the on-device option with the ↔ button above.');
+    return;
+  }
+  if(!/^https:\/\//i.test(proxyUrl)){
+    appendDoubtMessage('error', 'Cloud AI proxy URL must use HTTPS. You can switch to the on-device option with the ↔ button above.');
+    return;
+  }
+
+  const loadingEl = appendDoubtMessage('loading', 'Thinking…');
+  const contents = doubtHistory.slice(-10).map(h=>({
+    role: h.role === 'user' ? 'user' : 'model',
+    parts: [{text: h.text}]
+  }));
+
+  try{
+    const response = await fetch(proxyUrl, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        model: cfg.geminiModel || 'gemini-3.6-flash',
+        contents,
+        config: {systemInstruction, maxOutputTokens: 400, temperature: 0.6}
+      })
+    });
+    const data = await response.json().catch(()=>({}));
+    if(!response.ok){
+      const message = data && data.error && data.error.message;
+      throw new Error(typeof message === 'string' ? message : 'Cloud AI request failed (HTTP ' + response.status + ').');
+    }
+    if(loadingEl) loadingEl.remove();
+    const reply = data && data.candidates && data.candidates[0] && data.candidates[0].content &&
+      Array.isArray(data.candidates[0].content.parts) ?
+      data.candidates[0].content.parts.map(part=>typeof part.text === 'string' ? part.text : '').join('') : '';
+    if(!reply.trim()){
+      appendDoubtMessage('error', 'Got an empty response — try rephrasing the question.');
+      return;
+    }
+    appendDoubtMessage('bot', reply.trim());
+    doubtHistory.push({role:'model', text: reply.trim()});
+    saveDoubtHistory();
+  }catch(err){
+    if(loadingEl) loadingEl.remove();
+    const msg = err && typeof err.message === 'string' ? err.message.slice(0,240) : 'Network error reaching the cloud AI service.';
+    appendDoubtMessage('error', "Couldn't reach Gemini: " + msg);
+  }
+}
+
+async function getLocalPipeline(onProgress){
+  if(localPipelinePromise) return localPipelinePromise;
+  localPipelinePromise = (async ()=>{
+    const mod = await import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@4/+esm');
+    // Explicit, defensive: this should already be the library default, but making it
+    // explicit rules out that as a cause of the model re-downloading on every reload.
+    // If it's still redownloading after this, it's almost certainly the browser (e.g.
+    // Brave Shields) restricting persistent Cache Storage for these third-party origins,
+    // not this code \u2014 worth testing in a different browser to confirm.
+    if(mod.env) mod.env.useBrowserCache = true;
+    const pipeline = mod.pipeline;
+    const progress_callback = (p)=>{
+      if(onProgress && p && p.status === 'progress' && p.total){
+        onProgress(Math.round((p.loaded / p.total) * 100));
+      }
+    };
+    // WebGPU init can silently HANG (never resolve or reject) on some devices or
+    // browsers, instead of throwing \u2014 which otherwise leaves someone stuck on
+    // "loading" forever, since the WASM fallback below only ever runs on a thrown
+    // error, not a hang. Race it against a timeout so a hang is treated the same
+    // as a failure and we fall back to WASM instead of waiting indefinitely.
+    const withTimeout = (promise, ms) => new Promise((resolve, reject) => {
+      const t = setTimeout(()=>reject(new Error('webgpu-init-timeout')), ms);
+      promise.then(v=>{ clearTimeout(t); resolve(v); }, e=>{ clearTimeout(t); reject(e); });
+    });
+    try{
+      return await withTimeout(
+        pipeline('text-generation', DOUBT_LOCAL_MODEL_ID, {dtype:'q4', device:'webgpu', progress_callback}),
+        20000
+      );
+    }catch(e){
+      return await pipeline('text-generation', DOUBT_LOCAL_MODEL_ID, {dtype:'q4', device:'wasm', progress_callback});
+    }
+  })();
+  return localPipelinePromise;
+}
+
+
+async function sendDoubtMessageLocal(systemInstruction){
+  const loadingEl = appendDoubtMessage('loading', 'Loading on-device model\u2026 first time only, this can take a bit.');
+  // The model is a genuine ~200MB+ download — on a slow connection this can take a
+  // long time with no way to tell if it's still progressing or truly stuck. After 20s
+  // with no update, say so and point at the faster cloud option, rather than leaving
+  // someone staring at a percentage indefinitely with no escape hatch. The download
+  // itself isn't cancelled — it keeps going in the background for next time.
+  let patienceTimer = setTimeout(()=>{
+    if(loadingEl) loadingEl.textContent = 'Still loading (this is a large one-time download) \u2014 if this is taking a while, the \u21c4 button above switches to the faster cloud option.';
+  }, 20000);
+  let generator;
+  try{
+    generator = await getLocalPipeline((pct)=>{
+      clearTimeout(patienceTimer);
+      patienceTimer = setTimeout(()=>{
+        if(loadingEl) loadingEl.textContent = 'Still loading (this is a large one-time download) \u2014 if this is taking a while, the \u21c4 button above switches to the faster cloud option.';
+      }, 20000);
+      if(loadingEl) loadingEl.textContent = 'Downloading on-device model\u2026 ' + pct + '%';
+    });
+    clearTimeout(patienceTimer);
+  }catch(e){
+    clearTimeout(patienceTimer);
+    if(loadingEl) loadingEl.remove();
+    appendDoubtMessage('error', "Couldn't load the on-device model on this browser \u2014 try the cloud (Gemini) option instead with the \u21c4 button above.");
+    return;
+  }
+  if(loadingEl) loadingEl.textContent = 'Thinking\u2026';
+
+  const messages = [{role:'system', content: systemInstruction}].concat(
+    doubtHistory.slice(-6).map(h=>({role: h.role === 'user' ? 'user' : 'assistant', content: h.text}))
+  );
+
+  try{
+    const output = await generator(messages, {max_new_tokens:220, temperature:0.6, do_sample:true});
+    if(loadingEl) loadingEl.remove();
+    let reply = '';
+    if(Array.isArray(output) && output[0] && output[0].generated_text){
+      const gt = output[0].generated_text;
+      if(Array.isArray(gt)){
+        const last = gt[gt.length-1];
+        reply = (last && last.content) ? last.content : '';
+      } else if(typeof gt === 'string'){
+        reply = gt;
+      }
+    }
+    reply = (reply || '').trim();
+    if(!reply){
+      appendDoubtMessage('error', 'Got an empty response \u2014 try rephrasing, or switch to the cloud option.');
+      return;
+    }
+    appendDoubtMessage('bot', reply);
+    doubtHistory.push({role:'model', text: reply});
+  saveDoubtHistory();
+  }catch(err){
+    if(loadingEl) loadingEl.remove();
+    appendDoubtMessage('error', 'The on-device model hit an error generating a reply. Try again, or switch to the cloud option.');
+  }
+}
+
+function initEvents(){
+  const doubtInputEl = document.getElementById('doubtInput');
+  if(doubtInputEl){
+    doubtInputEl.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter'){ e.preventDefault(); sendDoubtMessage(); }
+    });
+  }
+
+  initPremadeNotes();
+  document.body.addEventListener('click', (e)=>{
+    if(handlePremadeNotesClick(e)) return;
+    const homeBtn = e.target.closest('[data-nav-home]');
+    if(homeBtn){ navigateHome(); return; }
+
+    const viewBtn = e.target.closest('[data-view]');
+    if(viewBtn){ navigateView(viewBtn.dataset.view); return; }
+
+    const libFilterBtn = e.target.closest('[data-lib-filter]');
+    if(libFilterBtn){ LIB_FILTER = libFilterBtn.dataset.libFilter; renderLibrary(); return; }
+
+    const themePresetBtn = e.target.closest('[data-theme-preset]');
+    if(themePresetBtn){
+      STATE.theme = themePresetBtn.dataset.themePreset;
+      clearCustomThemeOverrides();
+      saveProgress();
+      updateChrome();
+      renderThemes();
+      return;
+    }
+
+    const themesApplyBtn = e.target.closest('#themesCustomApply');
+    if(themesApplyBtn){
+      const val = document.getElementById('themesCustomUrl').value.trim();
+      if(val) setCustomThemeBackground(val);
+      return;
+    }
+
+    const historyApplyBtn = e.target.closest('[data-history-apply]');
+    if(historyApplyBtn){
+      const idx = parseInt(historyApplyBtn.dataset.historyApply, 10);
+      const url = STATE.customHistory[idx];
+      if(url) setCustomThemeBackground(url);
+      return;
+    }
+
+    const historyRemoveBtn = e.target.closest('[data-history-remove]');
+    if(historyRemoveBtn){
+      const idx = parseInt(historyRemoveBtn.dataset.historyRemove, 10);
+      STATE.customHistory.splice(idx, 1);
+      saveProgress();
+      renderThemes();
+      return;
+    }
+
+    const pathJump = e.target.closest('[data-path-jump]');
+    if(pathJump){ openPathOnHome(pathJump.dataset.pathJump); return; }
+
+    const calNav = e.target.closest('[data-calendar-nav]');
+    if(calNav){ calendarMonthOffset += parseInt(calNav.dataset.calendarNav,10); renderCalendar(); return; }
+
+    const calRemind = e.target.closest('[data-cal-remind]');
+    if(calRemind){ handleCalendarReminder(calRemind.dataset.calRemind); return; }
+
+    const doubtFabBtn = e.target.closest('#doubtFab');
+    if(doubtFabBtn){ toggleDoubtPanel(true); return; }
+
+    const doubtCloseBtn = e.target.closest('#doubtCloseBtn');
+    if(doubtCloseBtn){ toggleDoubtPanel(false); return; }
+
+    const doubtBackdropClick = e.target.closest('#doubtBackdrop');
+    if(doubtBackdropClick){ toggleDoubtPanel(false); return; }
+
+    const doubtSendBtn = e.target.closest('#doubtSendBtn');
+    if(doubtSendBtn){ sendDoubtMessage(); return; }
+
+    const doubtEngineBtn = e.target.closest('[data-doubt-engine]');
+    if(doubtEngineBtn){ chooseDoubtEngine(doubtEngineBtn.dataset.doubtEngine); return; }
+
+    const doubtSwitchBtn = e.target.closest('#doubtSwitchEngine');
+    if(doubtSwitchBtn){ switchDoubtEngine(); return; }
+
+    const tabBtn = e.target.closest('.tab');
+    if(tabBtn){
+      flushNotesSave();
+      STATE.route.tab = tabBtn.dataset.tab;
+      const m = findModule(STATE.route.moduleId);
+      document.getElementById('tabpanel').innerHTML = renderTabContent(m, STATE.route.tab, STATE.checklist[STATE.route.moduleId] || new Set());
+      document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-selected', String(t===tabBtn)));
+      return;
+    }
+
+    const checkItem = e.target.closest('[data-check-module]');
+    if(checkItem){ toggleChecklistItem(checkItem.dataset.checkModule, parseInt(checkItem.dataset.checkIndex,10)); return; }
+
+    const completeBtn = e.target.closest('[data-complete-module]');
+    if(completeBtn){ completeModule(completeBtn.dataset.completeModule); return; }
+
+    const favBtn = e.target.closest('[data-fav]');
+    if(favBtn){ toggleFavorite(favBtn.dataset.fav); return; }
+
+    const quizOpt = e.target.closest('[data-quiz-module]');
+    if(quizOpt){
+      answerQuiz(quizOpt.dataset.quizModule, parseInt(quizOpt.dataset.quizQ,10), parseInt(quizOpt.dataset.quizOpt,10));
+      return;
+    }
+
+    const playlistPlayBtn = e.target.closest('.playlist-play-btn');
+    if(playlistPlayBtn){
+      const playlistId = playlistPlayBtn.dataset.ytPlaylistId;
+      const modId = playlistPlayBtn.dataset.resModule;
+      const resIdx = parseInt(playlistPlayBtn.dataset.resIdx,10);
+      const m = findModule(modId);
+      const title = (m && m.resources[resIdx]) ? m.resources[resIdx].title : 'Playlist';
+      openFloatingPlayer(null, modId, resIdx, title, playlistId);
+      markResourceOpened(modId, resIdx);
+      return;
+    }
+
+    const playBtn = e.target.closest('.video-play-btn');
+    if(playBtn){
+      const ytId = playBtn.dataset.ytId;
+      const modId = playBtn.dataset.resModule;
+      const resIdx = parseInt(playBtn.dataset.resIdx,10);
+      const m = findModule(modId);
+      const title = (m && m.resources[resIdx]) ? m.resources[resIdx].title : 'Video';
+      openFloatingPlayer(ytId, modId, resIdx, title);
+      markResourceOpened(modId, resIdx);
+      return;
+    }
+
+    const fpCloseBtn = e.target.closest('#fpCloseBtn');
+    if(fpCloseBtn){ closeFloatingPlayer(); return; }
+
+    const fpMinBtn = e.target.closest('#fpMinBtn');
+    if(fpMinBtn){
+      const fp = document.getElementById('floatingPlayer');
+      const minimized = fp.classList.toggle('minimized');
+      fpMinBtn.textContent = minimized ? '▢' : '–';
+      fpMinBtn.setAttribute('aria-label', minimized ? 'Restore player' : 'Minimize player');
+      return;
+    }
+
+    const resLink = e.target.closest('[data-res-open]');
+    if(resLink){
+      markResourceOpened(resLink.dataset.resOpen, parseInt(resLink.dataset.resIndex,10));
+      // no return/preventDefault — the link still opens normally in a new tab
+    }
+
+    const newPromptBtn = e.target.closest('#newPromptBtn');
+    if(newPromptBtn){ newPrompt(); return; }
+
+    const newRefresherBtn = e.target.closest('#newRefresherBtn');
+    if(newRefresherBtn){ renderRefresherQuestion(); return; }
+
+    const refresherOpt = e.target.closest('[data-refresher-opt]');
+    if(refresherOpt){ answerRefresher(parseInt(refresherOpt.dataset.refresherOpt,10)); return; }
+
+    const presetBtn = e.target.closest('.timer-presets button');
+    if(presetBtn){ setTimerPreset(parseInt(presetBtn.dataset.mins,10), presetBtn); return; }
+
+    const timerStartBtn = e.target.closest('#timerStart');
+    if(timerStartBtn){ startTimer(); return; }
+
+    const timerPauseBtn = e.target.closest('#timerPause');
+    if(timerPauseBtn){ pauseTimer(); return; }
+
+    const timerResetBtn = e.target.closest('#timerReset');
+    if(timerResetBtn){ resetTimer(); return; }
+
+    const setCustomBtn = e.target.closest('#setCustomTimer');
+    if(setCustomBtn){
+      const input = document.getElementById('customMinutesInput');
+      let mins = parseFloat(input.value);
+      if(!mins || mins<=0){ showToast('Enter a number of minutes first.'); return; }
+      mins = Math.round(Math.min(Math.max(mins,1),180));
+      document.querySelectorAll('.timer-presets button').forEach(b=>b.classList.remove('active'));
+      setTimerPreset(mins, null);
+      showToast('Timer set to ' + mins + ' min.');
+      return;
+    }
+
+    const continueBtn = e.target.closest('#continueBtn');
+    if(continueBtn){
+      const next = getNextIncompleteModule();
+      if(next) navigateModule(next.path.id, next.m.id);
+      return;
+    }
+
+    const jumpFound = e.target.closest('#jumpFoundations');
+    if(jumpFound){ document.getElementById('grid-foundations')?.scrollIntoView({behavior:'smooth'}); return; }
+
+    // module/path buttons (cards, sidebar items, nav prev/next) — check last, broadest match
+    const modBtn = e.target.closest('[data-module]');
+    if(modBtn){ navigateModule(modBtn.dataset.path, modBtn.dataset.module); return; }
+  });
+
+  document.body.addEventListener('input', (e)=>{
+    if(e.target.matches && e.target.matches('[data-note-section]')){ handlePremadeEditInput(e.target); return; }
+    if(e.target.id === 'notesArea'){
+      handleNotesInput(e.target.dataset.module, e.target.value);
+      if(e.target.dataset.module === fpModuleId){
+        const fpArea = document.getElementById('fpNotesArea');
+        if(fpArea) fpArea.value = e.target.value;
+      }
+    }
+    if(e.target.id === 'fpNotesArea'){
+      handleFloatingNotesInput(e.target.value);
+    }
+  });
+  document.body.addEventListener('blur', (e)=>{
+    if(e.target.id === 'notesArea' || e.target.id === 'fpNotesArea') flushNotesSave();
+  }, true);
+  document.addEventListener('visibilitychange', ()=>{
+    if(document.visibilityState === 'hidden') flushNotesSave();
+  });
+  window.addEventListener('pagehide', flushNotesSave);
+
+  document.getElementById('searchInput').addEventListener('input', (e)=>handleSearch(e.target.value));
+  document.body.addEventListener('input', (e)=>{
+    if(e.target.id === 'librarySearchInput'){
+      LIB_QUERY = e.target.value;
+      const caret = e.target.selectionStart;
+      renderLibrary();
+      const revived = document.getElementById('librarySearchInput');
+      if(revived){ revived.focus(); revived.setSelectionRange(caret, caret); }
+    }
+    if(e.target.id === 'themesOpacitySlider'){
+      const pct = parseInt(e.target.value, 10);
+      STATE.customScrimOpacity = pct / 100;
+      if(lastCustomBands){
+        // Rebuild the banded gradient from the already-sampled photo — no need to
+        // re-load or re-sample the image just because the slider moved.
+        const dark = STATE.customThemeMode === 'dark';
+        document.documentElement.style.setProperty('--custom-scrim-gradient', buildScrimGradient(lastCustomBands, dark, STATE.customScrimOpacity));
+      }
+      const label = document.getElementById('themesOpacityValue');
+      if(label) label.textContent = pct + '%';
+    }
+  });
+  document.body.addEventListener('change', (e)=>{
+    if(e.target.id === 'themesOpacitySlider'){
+      saveProgress(); // commit once dragging stops, not on every tick
+    }
+    if(e.target.id === 'themesCustomFile'){
+      const file = e.target.files && e.target.files[0];
+      if(!file) return;
+      const label = document.querySelector('.theme-custom-upload');
+      const originalLabelHTML = label ? label.innerHTML : '';
+      if(label) label.textContent = 'Reading photo\u2026';
+      const reader = new FileReader();
+      reader.onload = (ev)=>{
+        const img = new Image();
+        img.onload = ()=>{
+          const maxDim = 1280;
+          let {width, height} = img;
+          if(width > maxDim || height > maxDim){
+            const scale = maxDim / Math.max(width, height);
+            width = Math.round(width * scale);
+            height = Math.round(height * scale);
+          }
+          const canvas = document.createElement('canvas');
+          canvas.width = width; canvas.height = height;
+          canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+          setCustomThemeBackground(canvas.toDataURL('image/jpeg', 0.72));
+        };
+        img.onerror = ()=>{ if(label) label.innerHTML = originalLabelHTML; showToast("Couldn't read that photo \u2014 try a different one."); };
+        img.src = ev.target.result;
+      };
+      reader.onerror = ()=>{ if(label) label.innerHTML = originalLabelHTML; showToast("Couldn't read that photo \u2014 try a different one."); };
+      reader.readAsDataURL(file);
+      e.target.value = '';
+    }
+  });
+  document.getElementById('homeLink').addEventListener('click', (e)=>{ e.preventDefault(); navigateHome(); });
+
+  document.getElementById('themeToggle').addEventListener('click', ()=>{
+    // Simple toggle now, not a menu: tap once to preview the site's original theme,
+    // tap again to go back to whatever you've actually chosen on the Themes page.
+    // This preview never gets saved — a fresh reload always shows your real preference.
+    showingOriginalTheme = !showingOriginalTheme;
+    const btn = document.getElementById('themeToggle');
+    btn.setAttribute('aria-pressed', String(showingOriginalTheme));
+    if(showingOriginalTheme){
+      document.documentElement.setAttribute('data-theme', ORIGINAL_THEME);
+    } else {
+      document.documentElement.setAttribute('data-theme', STATE.theme);
+      applyCustomBackground(STATE.theme === 'custom' ? STATE.customBgUrl : '');
+    }
+  });
+  document.getElementById('langToggle').addEventListener('click', ()=>{
+    STATE.language = STATE.language === 'hi' ? 'en' : 'hi';
+    saveProgress();
+    updateChrome();
+    renderApp();
+  });
+
+  document.getElementById('fontUp').addEventListener('click', ()=>{
+    const old = STATE.fontScale;
+    let next = Math.min(1.25, +(old + 0.075).toFixed(3));
+    if(old < 1 && next > 1) next = 1;
+    STATE.fontScale = next;
+    updateChrome(); saveProgress();
+  });
+  document.getElementById('fontDown').addEventListener('click', ()=>{
+    const old = STATE.fontScale;
+    let next = Math.max(0.875, +(old - 0.075).toFixed(3));
+    if(old > 1 && next < 1) next = 1;
+    STATE.fontScale = next;
+    updateChrome(); saveProgress();
+  });
+
+  document.getElementById('exportBtn').addEventListener('click', exportProgress);
+  document.getElementById('importBtn').addEventListener('click', ()=>document.getElementById('importFile').click());
+  document.getElementById('importFile').addEventListener('change', (e)=>{
+    if(e.target.files[0]) importProgressFile(e.target.files[0]);
+    e.target.value = '';
+  });
+  document.getElementById('resetBtn').addEventListener('click', ()=>{
+    if(confirm('Clear all progress on this device? This cannot be undone unless you exported a backup file first.')){
+      STATE.completed = new Set();
+      STATE.favorites = new Set();
+      STATE.checklist = {};
+      STATE.xp = 0;
+      STATE.recentlyVisited = [];
+      STATE.quizAnswers = {};
+      STATE.notes = {};
+      STATE.resourcesOpened = {};
+      STATE.streak = 0;
+      STATE.lastVisitDate = null;
+      STATE.activityLog = {};
+      STATE.unlockedAchievements = new Set();
+      saveProgress();
+      navigateHome();
+      showToast('Progress reset.');
+    }
+  });
+
+  const sidebar = document.getElementById('sidebar');
+  const backdrop = document.getElementById('sidebarBackdrop');
+  const menuBtn = document.getElementById('menuBtn');
+  menuBtn.addEventListener('click', ()=>{
+    const open = sidebar.classList.toggle('open');
+    backdrop.classList.toggle('show', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.innerHTML = open
+      ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>'
+      : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>';
+  });
+  backdrop.addEventListener('click', closeMobileSidebar);
+
+
+  initFloatingPlayerDrag();
+
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', ()=>{ scrollTopBtn.classList.toggle('show', window.scrollY > 500); });
+  scrollTopBtn.addEventListener('click', ()=>window.scrollTo({top:0, behavior:'smooth'}));
+  scrollTopBtn.addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); }
+  });
+
+  const doubtFabEl = document.getElementById('doubtFab');
+  if(doubtFabEl){
+    doubtFabEl.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggleDoubtPanel(true); }
+    });
+  }
+
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape'){ closeMobileSidebar(); closeMobileSearch(); if(doubtOpen) toggleDoubtPanel(false); }
+  });
+}
+
+/* ============================================================
+   ERROR BOUNDARY
+   If anything throws — a bad navigation state, a data mismatch,
+   anything I haven't anticipated — this is what stands between
+   that and a fully frozen page with nothing but a console error
+   only a developer would ever see.
+   ============================================================ */
+function showRecoveryBanner(detail){
+  if(document.getElementById('recoveryBanner')) return; // don't stack multiple
+  const banner = document.createElement('div');
+  banner.id = 'recoveryBanner';
+  banner.className = 'recovery-banner';
+  banner.innerHTML = `
+    <span>${ICONS.empty} Something broke on this page${detail ? ' (' + detail + ')' : ''}. Your saved progress is unaffected.</span>
+    <button id="recoveryHomeBtn">Back to home</button>`;
+  document.body.appendChild(banner);
+  document.getElementById('recoveryHomeBtn').addEventListener('click', ()=>{
+    banner.remove();
+    try{ navigateHome(); }
+    catch(e){ location.reload(); }
+  });
+}
+window.addEventListener('error', (e)=>{
+  console.error('Atelier error:', e.error || e.message);
+  showRecoveryBanner(e.message ? String(e.message).slice(0,60) : '');
+});
+window.addEventListener('unhandledrejection', (e)=>{
+  console.error('Atelier promise error:', e.reason);
+  showRecoveryBanner();
+});
+
+/* ============================================================
+   INIT
+   ============================================================ */
+async function init(){
+  STATE.theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  await loadProgress();
+  migrateOversizedHistory();
+  updateStreak();
+  initEvents();
+  renderApp();
+  loadDoubtHistory();
+  updateStorageStatus();
+  checkAchievements();
+  if(STATE.storageBackend === 'none'){
+    setTimeout(()=>showToast('This browser won\u2019t save progress automatically \u2014 use Export progress below before closing.'), 900);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', init);
