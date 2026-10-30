@@ -2256,8 +2256,8 @@ function processToastQueue(){
    ============================================================ */
 
 /* ============================================================
-   ASK A DOUBT — contextual Q&A powered by the user's own free
-   Gemini cloud proxy (see config.js). Requires a deployed Worker; no API key is stored in the browser.
+   ASK A DOUBT — curated offline knowledge + course search.
+   No cloud API, model download or external service is used.
    ============================================================ */
 function sampleImageBrightness(img){
   // Downscale to a tiny canvas — we only need an average, not per-pixel accuracy,
@@ -2399,7 +2399,7 @@ function loadDoubtHistory(){
     const saved = JSON.parse(raw);
     if(!Array.isArray(saved)) return;
     doubtHistory = saved;
-    doubtHistory.forEach(h=>appendDoubtMessage(h.role === 'user' ? 'user' : 'model', h.text));
+    doubtHistory.forEach(h=>appendDoubtMessage(h.role === 'user' ? 'user' : 'bot', h.text));
   }catch(e){ /* corrupted/old-format history — start fresh rather than crash */ }
 }
 
@@ -2443,293 +2443,138 @@ function appendDoubtMessage(role, text){
   return div;
 }
 
-const DOUBT_ENGINE_KEY = 'atelier_doubt_engine';
-const DOUBT_LOCAL_MODEL_ID = 'HuggingFaceTB/SmolLM2-360M-Instruct';
-let localPipelinePromise = null;
-
-// ---- Lightweight in-browser retrieval (BM25) over the whole curriculum ----
-// This lets the assistant answer using material from ANY module, not just
-// the one the student currently has open, without downloading another
-// model \u2014 it's plain JS text scoring against curriculum-index.json.
+// Offline retrieval: curated answers + the complete course search index.
+// This is intentionally not presented as a generative AI model.
 let curriculumIndexPromise = null;
-
-function tokenizeForSearch(s){
-  return (String(s).toLowerCase().match(/[a-z0-9']+/g) || []).filter(w => w.length > 1);
+const DOUBT_STOP_WORDS = new Set(['the','a','an','is','are','am','i','me','my','you','your','to','for','of','in','on','at','and','or','do','does','did','can','could','should','would','what','how','why','when','where','which','please','tell','explain','about','with','from','it','this','that','be','as','if','then','ki','ka','ke','hai','hain','ho','kya','kaise','kyu','kyun','mujhe','mera','meri','mere','bata','bta','samjha','samjhao','karu','karo','kare','karna','kya','aur','se','par','mein','me','ko','ye','yeh','woh','wo']);
+const DOUBT_EXPANSIONS = {
+  'shading':['shade','value','tone'], 'shade':['shading','value'], 'shadow':['light','shading'],
+  'chhaya':['shadow','shading'], 'roshni':['light'], 'rang':['color','colour'], 'colour':['color'],
+  'color':['colour','hue'], 'baal':['hair'], 'chehra':['face','head'], 'aankh':['eye','eyes'],
+  'haath':['hand','hands'], 'kapde':['clothing','fabric'], 'kapda':['fabric','cloth'],
+  'lakir':['line','lines'], 'lakeer':['line','lines'], 'seedhi':['straight','line'],
+  'gol':['circle','ellipse'], 'andaakar':['ellipse','oval'], 'perspektive':['perspective'],
+  'drishti':['perspective','observation'], 'anupat':['proportion'], 'anatomy':['anatomy'],
+  'drawing':['draw','drawing'], 'draw':['drawing'], 'banao':['draw','drawing'], 'banaye':['draw','drawing'],
+  'banau':['draw','drawing'], 'banana':['draw','drawing'], 'bana':['draw','drawing'],
+  'seekhna':['learn','practice'], 'seekhu':['learn','practice'], 'sikhu':['learn','practice'],
+  'practice':['practice','drill'], 'abhyas':['practice'], 'kaam':['work','practice'],
+  'pencil':['pencil'], 'brush':['brush'], 'layer':['layers'], 'layers':['layer'],
+  'start':['beginner','start'], 'shuru':['start','beginner'], 'shuruaat':['start','beginner'],
+  'galat':['wrong','mistake'], 'sahi':['correct','right'], 'sudharu':['improve'], 'sudharna':['improve'],
+  'kharab':['wrong','mistake'], 'madad':['help'], 'doubt':['question','help']
+};
+function normalizeDoubtText(value){
+  return String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9\s'-]/g,' ').replace(/\s+/g,' ').trim();
 }
-
+function tokenizeForSearch(value){
+  const base = normalizeDoubtText(value).match(/[a-z0-9']+/g) || [];
+  const out = new Set();
+  base.forEach(w=>{
+    if(w.length > 1 && !DOUBT_STOP_WORDS.has(w)) out.add(w);
+    (DOUBT_EXPANSIONS[w] || []).forEach(x=>out.add(x));
+  });
+  return Array.from(out);
+}
 async function loadCurriculumIndex(){
   if(curriculumIndexPromise) return curriculumIndexPromise;
-  curriculumIndexPromise = (async () => {
+  curriculumIndexPromise = (async()=>{
     const res = await fetch('curriculum-index.json');
+    if(!res.ok) throw new Error('Course index unavailable');
     const chunks = await res.json();
-    const df = new Map();
-    let totalLen = 0;
-    const docsTokens = chunks.map(c => {
-      const toks = tokenizeForSearch(c.t);
-      totalLen += toks.length;
-      new Set(toks).forEach(w => df.set(w, (df.get(w) || 0) + 1));
-      return toks;
+    const df = new Map(); let totalLen = 0;
+    const docsTokens = chunks.map(c=>{
+      const toks = tokenizeForSearch(c.t); totalLen += toks.length;
+      new Set(toks).forEach(w=>df.set(w,(df.get(w)||0)+1)); return toks;
     });
-    return { chunks, docsTokens, df, avgdl: totalLen / (chunks.length || 1), N: chunks.length };
-  })().catch(e => { curriculumIndexPromise = null; throw e; });
+    return {chunks,docsTokens,df,avgdl:totalLen/(chunks.length||1),N:chunks.length};
+  })().catch(e=>{curriculumIndexPromise=null;throw e;});
   return curriculumIndexPromise;
 }
-
 function bm25Score(queryTokens, docTokens, df, N, avgdl, k1, b){
-  const tf = new Map();
-  docTokens.forEach(w => tf.set(w, (tf.get(w) || 0) + 1));
-  const dl = docTokens.length || 1;
-  let score = 0;
-  queryTokens.forEach(qt => {
-    const f = tf.get(qt) || 0;
-    if(f === 0) return;
-    const n = df.get(qt) || 0;
-    const idf = Math.log((N - n + 0.5) / (n + 0.5) + 1);
-    score += idf * (f * (k1 + 1)) / (f + k1 * (1 - b + b * dl / avgdl));
+  const tf = new Map(); docTokens.forEach(w=>tf.set(w,(tf.get(w)||0)+1));
+  const dl = docTokens.length || 1; let score = 0;
+  queryTokens.forEach(qt=>{
+    const f=tf.get(qt)||0; if(!f) return;
+    const n=df.get(qt)||0; const idf=Math.log((N-n+0.5)/(n+0.5)+1);
+    score += idf*(f*(k1+1))/(f+k1*(1-b+b*dl/avgdl));
   });
   return score;
 }
-
 async function searchCurriculum(query, topK){
   try{
-    const idx = await loadCurriculumIndex();
-    const qTokens = tokenizeForSearch(query);
+    const idx=await loadCurriculumIndex(); const qTokens=tokenizeForSearch(query);
     if(!qTokens.length) return [];
-    const scored = idx.chunks.map((c, i) => ({
-      c, score: bm25Score(qTokens, idx.docsTokens[i], idx.df, idx.N, idx.avgdl, 1.5, 0.75)
-    }));
-    scored.sort((a, b) => b.score - a.score);
-    return scored.filter(s => s.score > 0).slice(0, topK || 4).map(s => s.c);
-  }catch(e){
-    // Retrieval is a bonus, not a requirement \u2014 fail closed so the chat
-    // still works (just without cross-module context) if the index can't load.
-    return [];
-  }
+    return idx.chunks.map((c,i)=>({c,score:bm25Score(qTokens,idx.docsTokens[i],idx.df,idx.N,idx.avgdl,1.5,0.75)}))
+      .filter(x=>x.score>0).sort((x,y)=>y.score-x.score).slice(0,topK||4).map(x=>x.c);
+  }catch(e){return [];}
 }
-
-async function getDoubtSystemInstruction(query){
-  const moduleContext = getModuleContextForDoubt();
-  let systemInstruction = "You are a friendly, encouraging drawing teacher's assistant embedded in the Atelier art course. Answer the student's question clearly and briefly (3-6 sentences unless the question truly needs more). If they lack tools or materials, suggest cheap or improvised alternatives rather than telling them to buy something. Stay grounded in practical, fundamentals-level drawing advice.";
-  if(moduleContext) systemInstruction += '\n\nThe student is currently on this module:\n' + moduleContext;
-
-  if(query){
-    const hits = await searchCurriculum(query, 4);
-    if(hits.length){
-      systemInstruction += '\n\nRelevant material from elsewhere in the course (use it if it helps answer the question; ignore anything not relevant):\n' +
-        hits.map(h => '[' + h.m + '] ' + h.t).join('\n');
-    }
-  }
-  return systemInstruction;
+function matchDoubtKnowledge(query){
+  const kb=window.ATELIER_DOUBT_KB;
+  if(!kb || !Array.isArray(kb.entries)) return null;
+  const normalized=normalizeDoubtText(query);
+  const baseTokens=new Set(normalized.split(' ').filter(w=>w.length>1 && !DOUBT_STOP_WORDS.has(w)));
+  const qTokens=new Set(tokenizeForSearch(query));
+  let best=null;
+  kb.entries.filter(e=>e.id!=='unknown-topic').forEach(entry=>{
+    let score=0;
+    (entry.aliases||[]).forEach(alias=>{
+      const phrase=normalizeDoubtText(alias);
+      if(phrase && normalized.includes(phrase)) score=Math.max(score,9+Math.min(phrase.length/30,2));
+      const at=phrase.split(' ').filter(w=>w.length>1 && !DOUBT_STOP_WORDS.has(w));
+      const overlap=at.filter(t=>baseTokens.has(t)).length;
+      if(overlap>=2) score=Math.max(score,overlap*1.7);
+    });
+    let hits=0;
+    (entry.keywords||[]).forEach(keyword=>{
+      const parts=normalizeDoubtText(keyword).split(' ').filter(w=>w.length>1 && !DOUBT_STOP_WORDS.has(w));
+      if(parts.length && (parts.length===1 ? qTokens.has(parts[0]) : parts.every(t=>qTokens.has(t)))) hits++;
+    });
+    score += hits*1.35;
+    if(score>0 && (!best || score>best.score)) best={entry,score};
+  });
+  return best && best.score>=3.1 ? best.entry : null;
 }
-
-function showDoubtEngineChooser(){
-  const wrap = document.getElementById('doubtMessages');
-  if(!wrap || document.getElementById('doubtChooser')) return;
-  const div = document.createElement('div');
-  div.id = 'doubtChooser';
-  div.className = 'doubt-chooser';
-  div.innerHTML =
-    '<p>Pick how you want doubts answered \u2014 you can switch anytime with the \u21c4 button above.</p>' +
-    '<button class="btn btn-primary" data-doubt-engine="gemini">Cloud (Gemini) \u2014 better answers, requires the site owner to configure the secure proxy</button>' +
-    '<button class="btn btn-ghost" data-doubt-engine="local">On-device \u2014 no setup at all, but a ~200MB one-time download and weaker answers</button>';
-  wrap.appendChild(div);
-  wrap.scrollTop = wrap.scrollHeight;
+function isHinglishDoubt(query){
+  if(/[\u0900-\u097f]/.test(query)) return true;
+  const words=new Set(normalizeDoubtText(query).split(' '));
+  return ['hai','hain','kaise','kya','kyu','kyun','mujhe','mera','meri','bata','bta','karu','karo','nahi','nhi','chahiye','hota','hoti','hoon','hun','raha','rahi','tha','thi'].some(w=>words.has(w));
 }
-
-function removeDoubtChooser(){
-  const el = document.getElementById('doubtChooser');
-  if(el) el.remove();
+function getDoubtRelatedTitles(moduleIds){
+  return (moduleIds||[]).map(id=>{
+    const m=findModule(id); return m ? (id.toUpperCase()+' '+L(m,'title')) : null;
+  }).filter(Boolean).slice(0,4);
 }
-
-function chooseDoubtEngine(engine){
-  try{ localStorage.setItem(DOUBT_ENGINE_KEY, engine); }catch(e){ /* private browsing etc — falls back to asking each reload */ }
-  removeDoubtChooser();
-  sendDoubtMessage();
-}
-
-function switchDoubtEngine(){
-  try{ localStorage.removeItem(DOUBT_ENGINE_KEY); }catch(e){}
-  showDoubtEngineChooser();
-}
-
 async function sendDoubtMessage(){
-  const input = document.getElementById('doubtInput');
-  if(!input) return;
-  const text = input.value.trim();
-  if(!text) return;
-
-  let engine = null;
-  try{ engine = localStorage.getItem(DOUBT_ENGINE_KEY); }catch(e){}
-  if(!engine){
-    // Default to on-device \u2014 no key or setup needed for anyone.
-    // People who want the cloud (Gemini) option can still switch to it
-    // manually with the \u21c4 button, which brings up this same chooser.
-    engine = 'local';
-    try{ localStorage.setItem(DOUBT_ENGINE_KEY, engine); }catch(e){ /* private browsing etc \u2014 falls back to local each reload, which is a safe default */ }
-  }
-
-  appendDoubtMessage('user', text);
-  input.value = '';
-  doubtHistory.push({role:'user', text});
-  saveDoubtHistory();
-
-  const systemInstruction = await getDoubtSystemInstruction(text);
-  if(engine === 'local'){
-    await sendDoubtMessageLocal(systemInstruction);
-  } else {
-    await sendDoubtMessageGemini(systemInstruction);
-  }
-}
-
-async function sendDoubtMessageGemini(systemInstruction){
-  const cfg = window.ATELIER_CONFIG || {};
-  const proxyUrl = typeof cfg.geminiProxyUrl === 'string' ? cfg.geminiProxyUrl.trim() : '';
-  if(!proxyUrl){
-    appendDoubtMessage('error', 'Cloud AI is not configured yet. The site owner needs to deploy the Cloudflare Worker and set geminiProxyUrl in config.js. You can switch to the on-device option with the ↔ button above.');
-    return;
-  }
-  if(!/^https:\/\//i.test(proxyUrl)){
-    appendDoubtMessage('error', 'Cloud AI proxy URL must use HTTPS. You can switch to the on-device option with the ↔ button above.');
-    return;
-  }
-
-  const loadingEl = appendDoubtMessage('loading', 'Thinking…');
-  const contents = doubtHistory.slice(-10).map(h=>({
-    role: h.role === 'user' ? 'user' : 'model',
-    parts: [{text: h.text}]
-  }));
-
-  try{
-    const response = await fetch(proxyUrl, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        model: cfg.geminiModel || 'gemini-3.6-flash',
-        contents,
-        config: {systemInstruction, maxOutputTokens: 400, temperature: 0.6}
-      })
+  const input=document.getElementById('doubtInput'); if(!input) return;
+  const question=input.value.trim(); if(!question) return;
+  appendDoubtMessage('user',question); input.value='';
+  doubtHistory.push({role:'user',text:question}); saveDoubtHistory();
+  const isHi=isHinglishDoubt(question);
+  const entry=matchDoubtKnowledge(question);
+  let answer='';
+  if(entry){
+    answer=isHi?entry.hi:entry.en;
+    const related=getDoubtRelatedTitles(entry.modules);
+    if(related.length) answer += (isHi?'\\n\\nRelated lessons: ':'\\n\\nRelated lessons: ')+related.join(' · ');
+  }else{
+    const hits=await searchCurriculum(question,4);
+    const titles=[]; const seen=new Set();
+    hits.forEach(hit=>{
+      const id=String(hit.m||''); if(!id || seen.has(id)) return; seen.add(id);
+      const m=findModule(id); if(m) titles.push(id.toUpperCase()+' '+L(m,'title'));
     });
-    const data = await response.json().catch(()=>({}));
-    if(!response.ok){
-      const message = data && data.error && data.error.message;
-      throw new Error(typeof message === 'string' ? message : 'Cloud AI request failed (HTTP ' + response.status + ').');
-    }
-    if(loadingEl) loadingEl.remove();
-    const reply = data && data.candidates && data.candidates[0] && data.candidates[0].content &&
-      Array.isArray(data.candidates[0].content.parts) ?
-      data.candidates[0].content.parts.map(part=>typeof part.text === 'string' ? part.text : '').join('') : '';
-    if(!reply.trim()){
-      appendDoubtMessage('error', 'Got an empty response — try rephrasing the question.');
-      return;
-    }
-    appendDoubtMessage('bot', reply.trim());
-    doubtHistory.push({role:'model', text: reply.trim()});
-    saveDoubtHistory();
-  }catch(err){
-    if(loadingEl) loadingEl.remove();
-    const msg = err && typeof err.message === 'string' ? err.message.slice(0,240) : 'Network error reaching the cloud AI service.';
-    appendDoubtMessage('error', "Couldn't reach Gemini: " + msg);
+    answer=isHi
+      ? 'Is exact sawaal ka prepared answer abhi knowledge file mein nahi mila. Thoda specific poochho—jaise “sphere ko shade kaise karun?” ya “perspective mein vanishing point kya hota hai?”.'
+      : 'I could not confidently match that question to a prepared answer. Try making it more specific—for example, “how do I shade a sphere?” or “what is a vanishing point?”.';
+    if(titles.length) answer+='\\n\\n'+(isHi?'Closest lessons: ':'Closest lessons: ')+titles.join(' · ');
   }
-}
-
-async function getLocalPipeline(onProgress){
-  if(localPipelinePromise) return localPipelinePromise;
-  localPipelinePromise = (async ()=>{
-    const mod = await import('https://cdn.jsdelivr.net/npm/@huggingface/transformers@4/+esm');
-    // Explicit, defensive: this should already be the library default, but making it
-    // explicit rules out that as a cause of the model re-downloading on every reload.
-    // If it's still redownloading after this, it's almost certainly the browser (e.g.
-    // Brave Shields) restricting persistent Cache Storage for these third-party origins,
-    // not this code \u2014 worth testing in a different browser to confirm.
-    if(mod.env) mod.env.useBrowserCache = true;
-    const pipeline = mod.pipeline;
-    const progress_callback = (p)=>{
-      if(onProgress && p && p.status === 'progress' && p.total){
-        onProgress(Math.round((p.loaded / p.total) * 100));
-      }
-    };
-    // WebGPU init can silently HANG (never resolve or reject) on some devices or
-    // browsers, instead of throwing \u2014 which otherwise leaves someone stuck on
-    // "loading" forever, since the WASM fallback below only ever runs on a thrown
-    // error, not a hang. Race it against a timeout so a hang is treated the same
-    // as a failure and we fall back to WASM instead of waiting indefinitely.
-    const withTimeout = (promise, ms) => new Promise((resolve, reject) => {
-      const t = setTimeout(()=>reject(new Error('webgpu-init-timeout')), ms);
-      promise.then(v=>{ clearTimeout(t); resolve(v); }, e=>{ clearTimeout(t); reject(e); });
-    });
-    try{
-      return await withTimeout(
-        pipeline('text-generation', DOUBT_LOCAL_MODEL_ID, {dtype:'q4', device:'webgpu', progress_callback}),
-        20000
-      );
-    }catch(e){
-      return await pipeline('text-generation', DOUBT_LOCAL_MODEL_ID, {dtype:'q4', device:'wasm', progress_callback});
-    }
-  })();
-  return localPipelinePromise;
-}
-
-
-async function sendDoubtMessageLocal(systemInstruction){
-  const loadingEl = appendDoubtMessage('loading', 'Loading on-device model\u2026 first time only, this can take a bit.');
-  // The model is a genuine ~200MB+ download — on a slow connection this can take a
-  // long time with no way to tell if it's still progressing or truly stuck. After 20s
-  // with no update, say so and point at the faster cloud option, rather than leaving
-  // someone staring at a percentage indefinitely with no escape hatch. The download
-  // itself isn't cancelled — it keeps going in the background for next time.
-  let patienceTimer = setTimeout(()=>{
-    if(loadingEl) loadingEl.textContent = 'Still loading (this is a large one-time download) \u2014 if this is taking a while, the \u21c4 button above switches to the faster cloud option.';
-  }, 20000);
-  let generator;
-  try{
-    generator = await getLocalPipeline((pct)=>{
-      clearTimeout(patienceTimer);
-      patienceTimer = setTimeout(()=>{
-        if(loadingEl) loadingEl.textContent = 'Still loading (this is a large one-time download) \u2014 if this is taking a while, the \u21c4 button above switches to the faster cloud option.';
-      }, 20000);
-      if(loadingEl) loadingEl.textContent = 'Downloading on-device model\u2026 ' + pct + '%';
-    });
-    clearTimeout(patienceTimer);
-  }catch(e){
-    clearTimeout(patienceTimer);
-    if(loadingEl) loadingEl.remove();
-    appendDoubtMessage('error', "Couldn't load the on-device model on this browser \u2014 try the cloud (Gemini) option instead with the \u21c4 button above.");
-    return;
-  }
-  if(loadingEl) loadingEl.textContent = 'Thinking\u2026';
-
-  const messages = [{role:'system', content: systemInstruction}].concat(
-    doubtHistory.slice(-6).map(h=>({role: h.role === 'user' ? 'user' : 'assistant', content: h.text}))
-  );
-
-  try{
-    const output = await generator(messages, {max_new_tokens:220, temperature:0.6, do_sample:true});
-    if(loadingEl) loadingEl.remove();
-    let reply = '';
-    if(Array.isArray(output) && output[0] && output[0].generated_text){
-      const gt = output[0].generated_text;
-      if(Array.isArray(gt)){
-        const last = gt[gt.length-1];
-        reply = (last && last.content) ? last.content : '';
-      } else if(typeof gt === 'string'){
-        reply = gt;
-      }
-    }
-    reply = (reply || '').trim();
-    if(!reply){
-      appendDoubtMessage('error', 'Got an empty response \u2014 try rephrasing, or switch to the cloud option.');
-      return;
-    }
-    appendDoubtMessage('bot', reply);
-    doubtHistory.push({role:'model', text: reply});
-  saveDoubtHistory();
-  }catch(err){
-    if(loadingEl) loadingEl.remove();
-    appendDoubtMessage('error', 'The on-device model hit an error generating a reply. Try again, or switch to the cloud option.');
-  }
+  appendDoubtMessage('bot',answer);
+  doubtHistory.push({role:'bot',text:answer}); saveDoubtHistory();
 }
 
 function initEvents(){
+  try{ localStorage.removeItem('atelier_doubt_engine'); }catch(e){}
   const doubtInputEl = document.getElementById('doubtInput');
   if(doubtInputEl){
     doubtInputEl.addEventListener('keydown', (e)=>{
@@ -2803,12 +2648,6 @@ function initEvents(){
 
     const doubtSendBtn = e.target.closest('#doubtSendBtn');
     if(doubtSendBtn){ sendDoubtMessage(); return; }
-
-    const doubtEngineBtn = e.target.closest('[data-doubt-engine]');
-    if(doubtEngineBtn){ chooseDoubtEngine(doubtEngineBtn.dataset.doubtEngine); return; }
-
-    const doubtSwitchBtn = e.target.closest('#doubtSwitchEngine');
-    if(doubtSwitchBtn){ switchDoubtEngine(); return; }
 
     const tabBtn = e.target.closest('.tab');
     if(tabBtn){
