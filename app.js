@@ -2550,7 +2550,8 @@ async function sendDoubtMessage(){
   const question=input.value.trim(); if(!question) return;
   appendDoubtMessage('user',question); input.value='';
   doubtHistory.push({role:'user',text:question}); saveDoubtHistory();
-  const isHi=isHinglishDoubt(question);
+  const rawWords=question.toLowerCase().split(/\s+/);
+  const isHi=isHinglishDoubt(question) || ['kaise','kya','kyu','kyun','hai','hain','mujhe','mera','meri','bata','bta','karu','karo','nahi','nhi','chahiye','hota','hoti'].some(w=>rawWords.includes(w));
   const entry=matchDoubtKnowledge(question);
   let answer='';
   if(entry){
