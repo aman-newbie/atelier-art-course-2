@@ -18,5 +18,5 @@ for(const row of rows){
  if(expected&&best>=0&&chunks[best].m.toLowerCase()===expected.toLowerCase())exact++;
  else if(examples.length<5)examples.push({question:q,expectedModule:expected,topModule:best>=0?chunks[best].m:null,score:Number(bestScore.toFixed(2))});
 }
-const out={qaPairs:rows.length,allQuestionsNonempty:rows.every(r=>r.messages[1].content.trim().length>0),indexChunks:chunks.length,confidenceThreshold:1.15,retrievalCoverage:covered,coveragePercent:Number((covered/rows.length*100).toFixed(1)),topModuleExact:exact,topModuleExactPercent:Number((exact/rows.length*100).toFixed(1)),unmatched:rows.length-covered,topModuleMismatchExamples:examples};
+const out={qaPairs:rows.length,allQuestionsNonempty:rows.every(r=>r.messages[1].content.trim().length>0),indexChunks:chunks.length,confidenceThreshold:2.8,retrievalCoverage:covered,coveragePercent:Number((covered/rows.length*100).toFixed(1)),topModuleExact:exact,topModuleExactPercent:Number((exact/rows.length*100).toFixed(1)),unmatched:rows.length-covered,topModuleMismatchExamples:examples};
 console.log(JSON.stringify(out,null,2));

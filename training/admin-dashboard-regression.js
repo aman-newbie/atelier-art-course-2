@@ -15,8 +15,8 @@ function store(){const x={};return {getItem:k=>Object.prototype.hasOwnProperty.c
  r=await auth.login(TEST_PIN);record('correct passphrase unlocks',r.ok&&auth.isAuthenticated());
  const otherSession=store();authCtx.sessionStorage=otherSession;record('new browser session requires login',!auth.isAuthenticated());authCtx.sessionStorage=session;auth.logout();
  const catCtx={window:{}};vm.createContext(catCtx);vm.runInContext(catalogSource,catCtx);const catalog=catCtx.window.ATELIER_ADMIN_CATALOG;
- record('16 fixed message templates catalogued',catalog.messages.length===16);
- record('every fixed message matches the live source',catalog.messages.every(m=>m.source==='index.html'?html.includes(m.text):app.includes(m.text)));
+ record('19 fixed and dynamic message templates catalogued',catalog.messages.length===19);
+ record('every message template points to its live source',catalog.messages.every(m=>m.source==='index.html'?html.includes(m.text):m.source.includes('#mentorLanguage')?html.includes('id="mentorLanguage"'):m.source.includes('answerProgressQuestion')?app.includes('function answerProgressQuestion')&&app.includes(m.text.slice(0,35)):app.includes(m.text)));
  record('conversation intent families represented',['Greeting','Identity','Thanks','Goodbye','Ambiguous / short input'].every(n=>catalog.intents.some(i=>i.name===n)));
  record('normal course UI has no admin link',!html.includes('admin.html'));
  record('no default passphrase embedded',!authSource.includes('DEFAULT_PIN')&&!authSource.includes('DEFAULT_PASSWORD'));

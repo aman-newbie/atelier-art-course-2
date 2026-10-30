@@ -42,6 +42,7 @@ const STATE = {
   customHistory:[],
   customScrimOpacity:0.55,
   language:'en',
+  mentorLanguage:'auto',
   xp:0,
   storageBackend:'none',
   streak:0,
@@ -490,6 +491,7 @@ function serializeState(){
     customHistory:STATE.customHistory,
     customScrimOpacity:STATE.customScrimOpacity,
     language:STATE.language,
+    mentorLanguage:STATE.mentorLanguage || 'auto',
     streak:STATE.streak,
     lastVisitDate:STATE.lastVisitDate,
     activityLog:STATE.activityLog,
@@ -520,6 +522,7 @@ function applyState(data){
   if(Array.isArray(data.customHistory)) STATE.customHistory = data.customHistory.slice(0, 6);
   if(typeof data.customScrimOpacity === 'number') STATE.customScrimOpacity = Math.max(0.40, data.customScrimOpacity);
   if(data.language === 'hi' || data.language === 'en') STATE.language = data.language;
+  if(['auto','en','hi','both'].includes(data.mentorLanguage)) STATE.mentorLanguage = data.mentorLanguage;
   STATE.streak = data.streak || 0;
   STATE.lastVisitDate = data.lastVisitDate || null;
   STATE.activityLog = data.activityLog || {};
@@ -2558,36 +2561,43 @@ function findModuleForSearchChunk(chunk){
   }
   return null;
 }
-async function searchExternalKnowledge(query, isHi){
+async function searchExternalKnowledge(query, languagePreference){
   try{
     const rawQuery=String(query||'').trim();
     if(rawQuery.length>300 || /[\w.+-]+@[\w.-]+\.[a-z]{2,}|https?:\/\/|(?:\+?\d[\d\s().-]{7,}\d)/i.test(rawQuery)) return null;
     const searchQuery=rawQuery.slice(0,180);
-    let lang=/[\u0900-\u097f]/.test(searchQuery)?'hi':'en';
-    const endpoint='https://'+lang+'.wikipedia.org/w/api.php?action=query&list=search&srsearch='+encodeURIComponent(searchQuery)+'&format=json&origin=*&srlimit=3';
-    const response=await fetch(endpoint,{headers:{'Accept':'application/json'}});
-    if(!response.ok) throw new Error('External search unavailable');
-    const data=await response.json();
-    const results=(data.query&&data.query.search)||[];
-    if(!results.length && lang==='hi'){
-      lang='en';
-      const fallback=await fetch('https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch='+encodeURIComponent(searchQuery)+'&format=json&origin=*&srlimit=3');
-      if(fallback.ok){const d=await fallback.json();results.push(...((d.query&&d.query.search)||[]));}
-    }
-    if(!results.length) return null;
-    const pageids=results.map(x=>x.pageid).join('|');
-    const detailUrl='https://'+lang+'.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=1&explaintext=1&exsentences=3&pageids='+encodeURIComponent(pageids)+'&format=json&origin=*';
-    const detail=await fetch(detailUrl,{headers:{'Accept':'application/json'}});
-    let pages={}; if(detail.ok){const d=await detail.json();pages=(d.query&&d.query.pages)||{};}
-    const lines=results.slice(0,3).map(item=>{
-      const page=pages[item.pageid]||{}; const summary=String(page.extract||item.snippet||'').replace(/<[^>]*>/g,'').replace(/\s+/g,' ').trim().slice(0,650);
+    const replyLanguage=typeof languagePreference==='string'?languagePreference:(languagePreference?'hi':'en');
+    async function fetchWiki(lang){
+      const endpoint='https://'+lang+'.wikipedia.org/w/api.php?action=query&list=search&srsearch='+encodeURIComponent(searchQuery)+'&format=json&origin=*&srlimit=3';
+      const response=await fetch(endpoint,{headers:{'Accept':'application/json'}});
+      if(!response.ok) return [];
+      const data=await response.json();
+      const results=(data.query&&data.query.search)||[];
+      if(!results.length) return [];
+      const pageids=results.map(x=>x.pageid).join('|');
+      const detailUrl='https://'+lang+'.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=1&explaintext=1&exsentences=3&pageids='+encodeURIComponent(pageids)+'&format=json&origin=*';
+      const detail=await fetch(detailUrl,{headers:{'Accept':'application/json'}});
+      let pages={}; if(detail.ok){const d=await detail.json();pages=(d.query&&d.query.pages)||{};}
       const host=lang==='hi'?'https://hi.wikipedia.org/wiki/':'https://en.wikipedia.org/wiki/';
-      return '• '+item.title+': '+(summary||'Open the source for details')+'\n  Source: '+host+encodeURIComponent(item.title.replace(/ /g,'_'));
-    });
-    return 'I could not find a confident answer in Atelier’s prepared knowledge, so here are external reference results. These are general references, not verified Atelier lesson instructions:\n\n'+lines.join('\n\n');
+      return results.slice(0,3).map(item=>{const page=pages[item.pageid]||{};const summary=String(page.extract||item.snippet||'').replace(/<[^>]*>/g,'').replace(/\s+/g,' ').trim().slice(0,650);return '• '+item.title+': '+(summary||'Open the source for details')+'\n  Source: '+host+encodeURIComponent(item.title.replace(/ /g,'_'));});
+    }
+    if(replyLanguage==='both'){
+      const [en,hi]=await Promise.all([fetchWiki('en'),fetchWiki('hi')]);
+      if(!en.length&&!hi.length) return null;
+      const parts=[];
+      if(en.length) parts.push('English references:\n'+en.join('\n\n'));
+      if(hi.length) parts.push('Hindi references:\n'+hi.join('\n\n'));
+      return 'I could not verify this in Atelier’s prepared knowledge. These are general Wikipedia references, not verified Atelier lesson instructions:\n\n'+parts.join('\n\n');
+    }
+    let lang=replyLanguage==='hi'?'hi':'en';
+    let lines=await fetchWiki(lang);
+    if(!lines.length&&lang==='hi'){lang='en';lines=await fetchWiki('en');}
+    if(!lines.length) return null;
+    const introEn='I could not find a confident answer in Atelier’s prepared knowledge, so here are external reference results. These are general references, not verified Atelier lesson instructions:';
+    const introHi='Atelier ki prepared knowledge mein iska pakka jawab nahi mila, isliye yeh general Wikipedia references hain; inhe Atelier lesson instructions na samjhein:';
+    return mentorText(introEn,introHi,replyLanguage)+'\n\n'+lines.join('\n\n');
   }catch(e){return null;}
 }
-
 function matchDoubtKnowledge(query){
   const kb=window.ATELIER_DOUBT_KB;
   if(!kb || !Array.isArray(kb.entries)) return null;
@@ -2619,31 +2629,69 @@ function isHinglishDoubt(query){
   const words=String(query || '').toLowerCase().replace(/[.,!?;:]/g,' ').split(' ');
   return ['hai','hain','kaise','kya','kyu','kyun','mujhe','mera','meri','bata','bta','karu','karo','nahi','nhi','chahiye','hota','hoti','hoon','hun','raha','rahi','tha','thi','banau','banao','bana'].some(w=>words.includes(w));
 }
-function getDoubtRelatedTitles(moduleIds){
+function getDoubtRelatedTitles(moduleIds,language){
   return (moduleIds||[]).map(id=>{
-    const m=findModule(id); return m ? (id.toUpperCase()+' '+L(m,'title')) : null;
+    const m=findModule(id); return m ? (id.toUpperCase()+' '+getMentorModuleField(m,'title',language)) : null;
   }).filter(Boolean).slice(0,4);
+}
+function getMentorReplyLanguage(query){
+  const preference=(typeof STATE!=='undefined'&&STATE.mentorLanguage)||'auto';
+  if(preference==='en'||preference==='hi'||preference==='both') return preference;
+  const raw=String(query||'');
+  return /[\u0900-\u097f]/.test(raw)||isHinglishDoubt(raw) ? 'hi' : 'en';
+}
+function getMentorModuleField(module,field,language){
+  if(!module) return '';
+  const translated=typeof TRANSLATIONS_HI!=='undefined'&&TRANSLATIONS_HI[module.id]&&TRANSLATIONS_HI[module.id][field]!==undefined?TRANSLATIONS_HI[module.id][field]:undefined;
+  if(language==='hi') return translated!==undefined?translated:module[field];
+  if(language==='both'&&translated!==undefined) return String(module[field]||'')+' / '+String(translated||'');
+  if(language==='en') return module[field];
+  return L(module,field);
+}
+function mentorText(en,hi,language){
+  const lang=language||'en';
+  if(lang==='both') return en+'\n\nहिंदी / Hinglish:\n'+hi;
+  return lang==='hi'?hi:en;
+}
+function answerProgressQuestion(query,language){
+  const q=normalizeDoubtText(query);
+  const asksProgress=q==='progress'||/(\b(?:my|meri|meree|mera|course|your)\s+(?:course\s+)?(?:prog\w*|pragati)\b|\bprogress report\b|\bhow far am i\b|\bhow am i doing\b|\bmy status\b|\bmy stats\b|\bwhat have i (?:completed|done)\b|\bwhat did i complete\b|\bhow many modules\b|\bhow much have i done\b|\bhow much of (?:the )?course\b|\bcourse status\b|\bcompleted modules\b|\bkitna complete\b|\bmeri padhai\b|\bkitna hua\b|\bkahan tak\b|\bkitne module\b|\bkitne complete\b|\bab tak kitna\b|\bmaine kitna\b)/.test(q);
+  if(!asksProgress) return null;
+  const all=getAllLiveModules();
+  const done=all.filter(({m})=>STATE.completed.has(m.id)).length;
+  const total=all.length;
+  const pct=total?Math.round(done/total*100):0;
+  let attempted=0,correct=0;
+  all.forEach(({m})=>{ if(!m.quiz) return; const answers=STATE.quizAnswers[m.id]||{}; attempted+=Object.keys(answers).length; m.quiz.forEach((item,i)=>{if(answers[i]===item.correct) correct++;}); });
+  const next=getNextIncompleteModule();
+  const nextTitle=next?getMentorModuleField(next.m,'title',language):'All currently published modules are complete';
+  const en='Here is your progress on this device:\n• Modules completed: '+done+'/'+total+' ('+pct+'%)\n• XP earned: '+(STATE.xp||0)+'\n• Current streak: '+(STATE.streak||0)+' days\n• Quiz accuracy: '+(attempted?Math.round(correct/attempted*100)+'% ('+correct+'/'+attempted+')':'No quiz attempts recorded yet')+'\n• Next incomplete module: '+nextTitle+'\n\nThis is based on the progress saved in this browser. It does not include activity from another device or browser.';
+  const hi='Is device par tumhari progress:\n• Complete modules: '+done+'/'+total+' ('+pct+'%)\n• Earned XP: '+(STATE.xp||0)+'\n• Current streak: '+(STATE.streak||0)+' din\n• Quiz accuracy: '+(attempted?Math.round(correct/attempted*100)+'% ('+correct+'/'+attempted+')':'Abhi koi quiz attempt record nahi hua')+'\n• Agla incomplete module: '+nextTitle+'\n\nYeh data isi browser mein saved progress par based hai. Doosre device ya browser ki activity ismein shamil nahi hai.';
+  return mentorText(en,hi,language);
+}
+function extractMentorExcerpt(raw,language){
+  const text=String(raw||'').replace(/\s+/g,' ').trim();
+  const en=(text.match(/English:\s*(.*?)(?=\s*\|\s*(?:Hinglish|Hindi):|$)/i)||[])[1];
+  const hi=(text.match(/(?:Hinglish|Hindi):\s*(.*)$/i)||[])[1];
+  if(language==='both'&&en&&hi) return en+'\n'+hi;
+  if(language==='hi'&&hi) return hi;
+  if(language!=='hi'&&en) return en;
+  return text;
 }
 function getConversationReply(query,isHi){
   const raw=String(query||'').trim();
   const q=normalizeDoubtText(raw).replace(/\s+/g,' ').trim();
-  const hi=!!isHi||/[\u0900-\u097f]/.test(raw);
+  const language=typeof isHi==='string'?isHi:(isHi?'hi':getMentorReplyLanguage(raw));
   const greetings=new Set(['hi','hello','hey','hey there','hiya','yo','namaste','namaskar','good morning','good afternoon','good evening']);
-  if(greetings.has(q)) return hi
-    ? 'Namaste! Main Atelier Mentor hoon. Drawing, art concepts ya course ke kisi bhi lesson ke baare mein poochho.'
-    : 'Hi! I’m Atelier Mentor. Ask me about drawing, art concepts, or any Atelier lesson.';
+  if(greetings.has(q)) return mentorText('Hi! I’m Atelier Mentor. Ask me about drawing, art concepts, or any Atelier lesson.','Namaste! Main Atelier Mentor hoon. Drawing, art concepts ya course ke kisi bhi lesson ke baare mein poochho.',language);
   const identity=new Set(['who are you','who are u','who r you','who r u','what are you','what r you','are you ai','are you an ai','are you a bot','are you an ai bot','what is your name','whats your name','your name','tum kaun ho','tum kon ho','aap kaun ho','aap kon ho','aapa kauna ho','aapa kona ho','tuma kauna ho','tuma kona ho','tu kaun hai','tu kon hai','tum kaun ho bhai','aapka naam kya hai','tumhara naam kya hai','tera naam kya hai']);
-  if(identity.has(q)) return hi
-    ? 'Main Atelier Mentor hoon — Atelier Art Course ka built-in learning assistant. Main prepared course knowledge aur lesson material se guidance deta hoon; main generative AI model nahi hoon.'
-    : 'I’m Atelier Mentor, the built-in learning assistant for Atelier Art Course. I guide you using prepared course knowledge and lesson material; I’m not a generative AI model.';
+  if(identity.has(q)) return mentorText('I’m Atelier Mentor, the built-in learning assistant for Atelier Art Course. I guide you using prepared course knowledge and lesson material; I’m not a generative AI model.','Main Atelier Mentor hoon — Atelier Art Course ka built-in learning assistant. Main prepared course knowledge aur lesson material se guidance deta hoon; main generative AI model nahi hoon.',language);
   const thanks=new Set(['thanks','thank you','thank u','thx','shukriya','dhanyavaad']);
-  if(thanks.has(q)) return hi ? 'Koi baat nahi! Art ya course se related kuch bhi pooch sakte ho.' : 'You’re welcome! Ask whenever you need help with art or an Atelier lesson.';
+  if(thanks.has(q)) return mentorText('You’re welcome! Ask whenever you need help with art or an Atelier lesson.','Koi baat nahi! Art ya course se related kuch bhi pooch sakte ho.',language);
   const goodbyes=new Set(['bye','goodbye','see you','see ya','later','alvida','phir milte hain']);
-  if(goodbyes.has(q)) return hi ? 'Phir milte hain! Practice ke liye all the best.' : 'See you next time. Happy practicing!';
+  if(goodbyes.has(q)) return mentorText('See you next time. Happy practicing!','Phir milte hain! Practice ke liye all the best.',language);
   const unclear=new Set(['eh','ehh','huh','what','hmm','hm','umm','um','uh','??','???','...','ok?','okay?']);
-  if(unclear.has(q)) return hi
-    ? 'Kya unclear laga? Apna sawaal thoda aur context ke saath likho, main help karunga.'
-    : 'Not sure what you mean yet. Did something seem unclear? Add a little context and I’ll help.';
+  if(unclear.has(q)) return mentorText('Not sure what you mean yet. Did something seem unclear? Add a little context and I’ll help.','Kya unclear laga? Apna sawaal thoda aur context ke saath likho, main help karunga.',language);
   return null;
 }
 function shouldSearchExternalKnowledge(query){
@@ -2654,7 +2702,7 @@ function shouldSearchExternalKnowledge(query){
   return /^(what|who|when|where|why|how|define|explain|tell me about|kya|kaun|kab|kahan|kyun|kaise|samjhao|batao)\b/.test(q);
 }
 
-function answerCurrentLessonQuestion(query){
+function answerCurrentLessonQuestion(query,replyLanguage){
   const route=STATE.route;
   if(route.view!=='module'||!route.moduleId) return null;
   const m=findModule(route.moduleId); if(!m) return null;
@@ -2663,7 +2711,7 @@ function answerCurrentLessonQuestion(query){
   const titleMentioned=title.length>3&&q.includes(title);
   const asksCurrent=asksAboutCurrentLesson(query)||titleMentioned||q.includes('mistake')||q.includes('tip')||q.includes('practice')||q.includes('practise')||q.includes('exercise')||['why does this matter','core idea','key takeaway','main takeaway','professional habit','how should i practice','what should i focus on'].some(p=>q.includes(p));
   if(!asksCurrent) return null;
-  const field=(name)=>L(m,name);
+  const field=(name)=>getMentorModuleField(m,name,replyLanguage);
   const clean=(v)=>String(v||'').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&quot;/g,'"');
   const list=(name,n)=>{const v=field(name);if(Array.isArray(v))return v.slice(0,n||5).map(x=>'• '+clean(x)).join('\n');if(typeof v==='string'&&v)return clean(v);return '';};
   const heading='Module '+String(m.plate||m.id.replace('m','')).padStart(2,'0')+' — '+(field('title')||m.title);
@@ -2681,46 +2729,51 @@ async function sendDoubtMessage(){
   const question=input.value.trim(); if(!question) return;
   appendDoubtMessage('user',question); input.value='';
   doubtHistory.push({role:'user',text:question}); saveDoubtHistory();
-  const isHi=isHinglishDoubt(question)||STATE.language==='hi';
+  const replyLanguage=getMentorReplyLanguage(question);
+  const isHi=replyLanguage==='hi';
   let answer='';
-  const conversationReply=getConversationReply(question,isHi);
+  const conversationReply=getConversationReply(question,replyLanguage);
   if(conversationReply){
     appendDoubtMessage('bot',conversationReply);
     doubtHistory.push({role:'bot',text:conversationReply}); saveDoubtHistory();
     return;
   }
-  const currentLessonAnswer=answerCurrentLessonQuestion(question);
+  const progressAnswer=answerProgressQuestion(question,replyLanguage);
+  if(progressAnswer){
+    answer=progressAnswer;
+  }else{
+  const currentLessonAnswer=replyLanguage==='both' ? mentorText(answerCurrentLessonQuestion(question,'en')||'',answerCurrentLessonQuestion(question,'hi')||'','both') : answerCurrentLessonQuestion(question,replyLanguage);
   if(currentLessonAnswer){
     answer=currentLessonAnswer;
   }else{
-    const capability=window.ATELIER_DOUBT_CAPABILITIES && window.ATELIER_DOUBT_CAPABILITIES.answer(question,findModule,m=>L(m,'title'),STATE.language);
+    const capability=window.ATELIER_DOUBT_CAPABILITIES && window.ATELIER_DOUBT_CAPABILITIES.answer(question,findModule,m=>getMentorModuleField(m,'title',isHi?'hi':'en'),isHi?'hi':'en');
     const entry=matchDoubtKnowledge(question);
     if(capability){
-      answer=capability;
+      answer=replyLanguage==='both' ? capability+'\n\n'+(window.ATELIER_DOUBT_CAPABILITIES.answer(question,findModule,m=>getMentorModuleField(m,'title','hi'),'hi')||'') : capability;
     }else if(entry){
-      answer=isHi?entry.hi:entry.en;
-      const related=getDoubtRelatedTitles(entry.modules);
+      answer=mentorText(entry.en,entry.hi,replyLanguage);
+      const related=getDoubtRelatedTitles(entry.modules,replyLanguage);
       if(related.length) answer += '\n\nRelated lessons: '+related.join(' · ');
     }else{
       const evidence=await searchCurriculumEvidence(question,3);
-      const strong=evidence.filter(x=>x.score>=1.15);
+      const strong=evidence.filter(x=>x.score>=2.8);
       if(strong.length){
         const lines=[]; const seen=new Set();
         strong.slice(0,2).forEach(item=>{
           const m=findModuleForSearchChunk(item.chunk);
-          const title=m ? (m.id.toUpperCase()+' '+L(m,'title')) : String(item.chunk.m||'Course lesson');
+          const title=m ? (m.id.toUpperCase()+' '+getMentorModuleField(m,'title',replyLanguage)) : String(item.chunk.m||'Course lesson');
           if(seen.has(title)) return; seen.add(title);
-          const excerpt=String(item.chunk.t||'').replace(/\\s+/g,' ').trim().slice(0,650);
+          const excerpt=extractMentorExcerpt(item.chunk.t,replyLanguage).slice(0,650);
           lines.push('**'+title+'**\n'+excerpt);
         });
-        answer=(isHi?'Atelier course mein is sawaal se related material mila:\n\n':'I found relevant material in the Atelier course:\n\n')+lines.join('\n\n')+'\n\nThese are retrieved lesson excerpts, not a generated explanation. Open the cited module for the complete context.';
+        answer=mentorText('Relevant Atelier course material:\n\n'+lines.join('\n\n')+'\n\nThese are lesson excerpts, not a generated explanation. Open the cited module for full context.','Atelier course mein is topic se related material:\n\n'+lines.join('\n\n')+'\n\nYeh lesson excerpts hain, generated explanation nahi. Full context ke liye cited module kholo.',replyLanguage);
       }else{
-        const external=shouldSearchExternalKnowledge(question) ? await searchExternalKnowledge(question,isHi) : null;
+        const external=shouldSearchExternalKnowledge(question) ? await searchExternalKnowledge(question,replyLanguage) : null;
         if(external) answer=external;
         else{
           const hits=evidence.length?evidence:await searchCurriculumEvidence(question,3);
           const titles=[]; const seen=new Set();
-          hits.forEach(hit=>{const m=findModuleForSearchChunk(hit.chunk);if(m&&!seen.has(m.id)){seen.add(m.id);titles.push(m.id.toUpperCase()+' '+L(m,'title'));}});
+          hits.forEach(hit=>{const m=findModuleForSearchChunk(hit.chunk);if(m&&!seen.has(m.id)){seen.add(m.id);titles.push(m.id.toUpperCase()+' '+getMentorModuleField(m,'title',replyLanguage));}});
           answer=isHi
             ? 'Is sawaal ka reliable answer Atelier knowledge ya external reference se confirm nahi ho paya. Thoda context ya exact topic batao; main galat jawab guess nahi karunga.'
             : 'I could not verify a reliable answer in the Atelier knowledge base or external reference search. Add a little context or a more specific topic; I will not guess.';
@@ -2729,11 +2782,17 @@ async function sendDoubtMessage(){
       }
     }
   }
+  }
   appendDoubtMessage('bot',answer);
   doubtHistory.push({role:'bot',text:answer}); saveDoubtHistory();
 }
 function initEvents(){
   try{ localStorage.removeItem('atelier_doubt_engine'); }catch(e){}
+  const mentorLanguageEl=document.getElementById('mentorLanguage');
+  if(mentorLanguageEl){
+    mentorLanguageEl.value=STATE.mentorLanguage||'auto';
+    mentorLanguageEl.addEventListener('change',()=>{STATE.mentorLanguage=mentorLanguageEl.value;saveProgress();});
+  }
   const doubtInputEl = document.getElementById('doubtInput');
   if(doubtInputEl){
     doubtInputEl.addEventListener('keydown', (e)=>{

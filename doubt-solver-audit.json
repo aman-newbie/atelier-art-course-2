@@ -1,10 +1,10 @@
 {
-  "version": 2,
+  "version": 3,
   "date": "2026-10-30",
   "target_repository": "aman-newbie/atelier-art-course-2",
-  "target_branch": "main",
+  "target_branch": "feature/atelier-admin-dashboard-local",
   "base_commit": "e26849aec21b94009efa534ec4f0843937a2e44b",
-  "scope": "Only atelier-art-course-2/main. The separate atelier-art-course repository was not read or modified.",
+  "scope": "Only aman-newbie/atelier-art-course-2, on feature/atelier-admin-dashboard-local. Main production branch was not modified or deployed. The separate atelier-art-course repository was not read or modified.",
   "implementation": [
     "Added a separate offline Tool Capability Engine with 19 tool categories, tool-combination interpretation, minimum-kit guidance, alternatives, and course references.",
     "Added module-aware answers for Modules 2 and 3 and explicit prerequisite/skip guidance.",
@@ -13,7 +13,14 @@
     "Added scored BM25 curriculum evidence retrieval and exact module-title metadata boosting.",
     "Added a no-key public Wikipedia Action API fallback for questions not confidently answered locally; query text is bounded and email/URL/phone-like inputs are not sent.",
     "Updated the Doubt Solver welcome copy to disclose external Wikipedia search and warn users not to include private information.",
-    "Added Atelier Mentor conversation routing for greetings, identity, thanks, goodbyes and ambiguous short messages before lesson retrieval; restricted Wikipedia fallback to explicit factual questions."
+    "Added Atelier Mentor conversation routing for greetings, identity, thanks, goodbyes and ambiguous short messages before lesson retrieval; restricted Wikipedia fallback to explicit factual questions.",
+    "Added a dedicated progress intent that reads this browser’s saved module completion, XP, streak, quiz accuracy and next incomplete module before course retrieval.",
+    "Added a persisted Mentor reply-language preference: Auto, English, Hindi/Hinglish or Both. Auto follows the language of the user message; explicit selection takes priority.",
+    "Added regression coverage for progress routing, language preference and bilingual excerpt selection; audited all 406 curated knowledge aliases across 76 entries.",
+    "Added a dedicated progress intent that reads this browser’s saved module completion, XP, streak, quiz accuracy and next incomplete module before course retrieval.",
+    "Added a persisted Mentor reply-language preference: Auto, English, Hindi/Hinglish or Both. Auto follows the language of the user message; explicit selection takes priority.",
+    "Course excerpts now select the requested language instead of exposing English and Hinglish source labels together; weak retrieval threshold raised from 1.15 to 2.8.",
+    "Added regression coverage for progress routing, language preference and bilingual excerpt selection; audited all 406 curated knowledge aliases across 76 entries."
   ],
   "tests": {
     "bilingual_tool_capability": {
@@ -36,17 +43,18 @@
       ]
     },
     "external_search_mock": {
-      "scenarios": 3,
-      "passed": 3,
+      "scenarios": 4,
+      "passed": 4,
       "includes_source_link": true,
       "privacy_guard": true,
-      "hindi_to_english_fallback": true
+      "hindi_to_english_fallback": true,
+      "both_language_results": true
     },
     "existing_qa_corpus": {
       "prompts": 1551,
       "all_user_questions_nonempty": true,
       "index_chunks": 3659,
-      "retrieval_threshold": 1.15,
+      "retrieval_threshold": 2.8,
       "retrieval_coverage": 1551,
       "retrieval_coverage_percent": 100.0,
       "top_module_exact": 1524,
@@ -54,11 +62,11 @@
       "top_module_mismatches": 27
     },
     "conversation_routing": {
-      "total": 29,
-      "passed": 29,
+      "total": 30,
+      "passed": 30,
       "router_cases": 19,
       "external_search_gate_cases": 7,
-      "send_handler_integration_cases": 3
+      "send_handler_integration_cases": 4
     },
     "existing_regression_after_router_change": {
       "bilingual_tool_capability": {
@@ -70,12 +78,44 @@
         "passed": 6
       },
       "external_search_mock_scenarios": {
-        "total": 3,
-        "passed": 3
+        "total": 4,
+        "passed": 4
       }
+    },
+    "mentor_progress_language": {
+      "total": 21,
+      "passed": 21,
+      "failed": 0
+    },
+    "knowledge_alias_coverage": {
+      "entries": 76,
+      "aliases": 406,
+      "matched": 406,
+      "missed": 0
+    },
+    "syntax_checks": {
+      "files": [
+        "app.js",
+        "admin.js",
+        "admin-auth.js",
+        "admin-catalog.js",
+        "training/conversation-routing-regression.js",
+        "training/mentor-progress-language-regression.js",
+        "training/knowledge-alias-coverage.js",
+        "training/doubt-solver-regression.js",
+        "training/admin-dashboard-regression.js",
+        "training/corpus-retrieval-audit.js"
+      ],
+      "passed": 10,
+      "failed": 0
+    },
+    "admin_dashboard": {
+      "total": 33,
+      "passed": 33,
+      "failed": 0
     }
   },
-  "interpretation": "The 100% figure means each existing QA prompt produced a BM25 result above the configured threshold; it does not mean every answer was semantically verified. Top retrieved module matched the dataset label for 98.3% of prompts. The remaining 27 mismatches are retained as visible audit examples in the reproducible corpus audit.",
+  "interpretation": "The 100% figure means each existing QA prompt produced a BM25 result above the configured threshold; it does not mean every answer was semantically verified. Top retrieved module matched the dataset label for 98.3% of prompts. The remaining 27 mismatches are retained as visible audit examples in the reproducible corpus audit. The 406 aliases are a finite curated coverage set, not a claim that every possible user question or paraphrase is covered. Progress is browser-local. Auto reply language follows the input; explicit preference overrides it. Re-benchmarked the existing 1,551-question English QA corpus at the stricter 2.8 threshold: all 1,551 still produce a retrieval result and the top module matches the dataset label for 98.3%. This remains a retrieval benchmark, not semantic verification of the answer text. The 406 aliases are a finite curated coverage set, not every possible user question or paraphrase. Progress is browser-local. Auto reply language follows the input; explicit preference overrides it.",
   "limitations": [
     "This is deterministic retrieval and rule-based answer construction, not a generative reasoning model.",
     "The external fallback is Wikipedia search, not a full-web search engine; it returns short sourced extracts and may return no result.",
