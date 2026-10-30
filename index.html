@@ -107,7 +107,7 @@
     </div>
   </div>
   <div class="doubt-messages" id="doubtMessages">
-    <div class="doubt-msg doubt-msg-bot">Hi! Ask about drawing, art fundamentals or any course topic. I use a curated offline knowledge base and the course lessons—no account, API or model download needed.</div>
+    <div class="doubt-msg doubt-msg-bot">Hi! Ask about drawing, art fundamentals or any course topic. I search Atelier’s offline knowledge and course lessons first. If no confident match is found, I may search public Wikipedia for general references; your question text is sent to Wikipedia for that search. Do not include private information.</div>
   </div>
   <div class="doubt-input-row">
     <input type="text" id="doubtInput" placeholder="Type your question&hellip;" aria-label="Your question">
@@ -132,7 +132,7 @@
   // load gets the current version, no matter who last committed.
   (function(){
     var v = Date.now();
-    var files = ['doubt-knowledge.js','curriculum-1.js','curriculum-2.js','curriculum-3.js','curriculum-4.js','translations-hi.js','notes-data.js','app.js'];
+    var files = ['doubt-knowledge.js','curriculum-1.js','curriculum-2.js','curriculum-3.js','curriculum-4.js','translations-hi.js','notes-data.js','doubt-capabilities.js','app.js'];
     files.forEach(function(f){ document.write('<script src="' + f + '?v=' + v + '"><\/script>'); });
   })();
 </script>

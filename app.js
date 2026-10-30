@@ -2452,7 +2452,7 @@ function appendDoubtMessage(role, text){
 // Offline retrieval: curated answers + the complete course search index.
 // This is intentionally not presented as a generative AI model.
 let curriculumIndexPromise = null;
-const DOUBT_STOP_WORDS = new Set(['the','a','an','is','are','am','i','me','my','you','your','to','for','of','in','on','at','and','or','do','does','did','can','could','should','would','what','how','why','when','where','which','please','tell','explain','about','with','from','it','this','that','be','as','if','then','ki','ka','ke','hai','hain','ho','kya','kaise','kyu','kyun','mujhe','mera','meri','mere','bata','bta','samjha','samjhao','karu','karo','kare','karna','kya','aur','se','par','mein','me','ko','ye','yeh','woh','wo']);
+const DOUBT_STOP_WORDS = new Set(['the','a','an','is','are','am','i','me','my','you','your','to','for','of','in','on','at','and','or','do','does','did','can','could','should','would','what','how','why','when','where','which','please','tell','explain','about','with','from','it','this','that','be','as','if','then','ki','ka','ke','hai','hain','ho','kya','kaise','kyu','kyun','mujhe','mera','meri','mere','bata','bta','samjha','samjhao','karu','karo','kare','karna','kya','aur','se','par','mein','me','ko','ye','yeh','woh','wo','zaroori','jaruri','chahiye','mere','paas','pass','sirf','bas','hai','hain','kya','kaise','mujhe','mere','tum','kya','kar','sakta','sakti','hoon','hun','bina','agar','aur','nahi','nhi','kharid','lena','laga','lagta','kitna','kaun','konsa','kaunsa','kuch','sab','mere']);
 const DOUBT_EXPANSIONS = {
   'shading':['shade','value','tone'], 'shade':['shading','value'], 'shadow':['light','shading'],
   'chhaya':['shadow','shading'], 'roshni':['light'], 'rang':['color','colour'], 'colour':['color'],
@@ -2468,13 +2468,38 @@ const DOUBT_EXPANSIONS = {
   'pencil':['pencil'], 'brush':['brush'], 'layer':['layers'], 'layers':['layer'],
   'start':['beginner','start'], 'shuru':['start','beginner'], 'shuruaat':['start','beginner'],
   'galat':['wrong','mistake'], 'sahi':['correct','right'], 'sudharu':['improve'], 'sudharna':['improve'],
-  'kharab':['wrong','mistake'], 'madad':['help'], 'doubt':['question','help']
+  'kharab':['wrong','mistake'], 'madad':['help'], 'doubt':['question','help'], 'auzaar':['tool','tools'], 'samaan':['materials','tools'], 'saaman':['materials','tools'], 'zaroori':['required','necessary'], 'jaruri':['required','necessary'], 'kagaz':['paper'], 'kaagaz':['paper'], 'rubber':['eraser'], 'scale':['ruler'], 'tablet':['drawing','digital'], 'brush':['brushes'], 'rang':['color','colour']
 };
-function normalizeDoubtText(value){
-  return String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 '-]/g,' ').replace(/ +/g,' ').trim();
+function transliterateHindiForSearch(value){
+  const s=String(value||'');
+  const consonants={'क':'k','ख':'kh','ग':'g','घ':'gh','ङ':'ng','च':'ch','छ':'chh','ज':'j','झ':'jh','ञ':'ny','ट':'t','ठ':'th','ड':'d','ढ':'dh','ण':'n','त':'t','थ':'th','द':'d','ध':'dh','न':'n','प':'p','फ':'ph','ब':'b','भ':'bh','म':'m','य':'y','र':'r','ल':'l','व':'v','श':'sh','ष':'sh','स':'s','ह':'h','क़':'q','ख़':'kh','ग़':'gh','ज़':'z','ड़':'r','ढ़':'rh','फ़':'f'};
+  const vowels={'अ':'a','आ':'aa','इ':'i','ई':'ee','उ':'u','ऊ':'oo','ऋ':'ri','ए':'e','ऐ':'ai','ओ':'o','औ':'au'};
+  const matras={'ा':'aa','ि':'i','ी':'ee','ु':'u','ू':'oo','ृ':'ri','े':'e','ै':'ai','ो':'o','ौ':'au','ॅ':'e','ॉ':'o'};
+  let out='';
+  for(let i=0;i<s.length;i++){
+    const c=s[i];
+    if(consonants[c]){
+      out+=consonants[c];
+      const n=s[i+1];
+      if(matras[n]){out+=matras[n];i++;}
+      else if(n==='्'){i++;}
+      else out+='a';
+    }else if(vowels[c]) out+=vowels[c];
+    else if(matras[c]) out+=matras[c];
+    else if(c==='ं'||c==='ँ') out+='n';
+    else if(c==='ः') out+='h';
+    else if(c==='़'||c==='्'||c==='़'){}
+    else if(/[०-९]/.test(c)) out+=String('०१२३४५६७८९'.indexOf(c));
+    else out+=c;
+  }
+  return out;
 }
+function normalizeDoubtText(value){
+  return transliterateHindiForSearch(String(value || '').toLowerCase()).normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 '-]/g,' ').replace(/ +/g,' ').trim();
+}
+window.normalizeDoubtText = normalizeDoubtText;
 function tokenizeForSearch(value){
-  const base = normalizeDoubtText(value).match(/[a-z0-9']+/g) || [];
+  const base = (normalizeDoubtText(value).match(/[a-z0-9']+/g) || []).map(w=>w.replace(/^'+|'+$/g,'' )).filter(Boolean);
   const out = new Set();
   base.forEach(w=>{
     if(w.length > 1 && !DOUBT_STOP_WORDS.has(w)) out.add(w);
@@ -2515,6 +2540,54 @@ async function searchCurriculum(query, topK){
       .filter(x=>x.score>0).sort((x,y)=>y.score-x.score).slice(0,topK||4).map(x=>x.c);
   }catch(e){return [];}
 }
+async function searchCurriculumEvidence(query, topK){
+  try{
+    const idx=await loadCurriculumIndex(); const qTokens=tokenizeForSearch(query);
+    if(!qTokens.length) return [];
+    const qNorm=normalizeDoubtText(query);
+    return idx.chunks.map((c,i)=>{const titleNorm=normalizeDoubtText(c.m||'');const titleBoost=titleNorm.length>3 && qNorm.includes(titleNorm)?100:0;return {chunk:c,score:bm25Score(qTokens,idx.docsTokens[i],idx.df,idx.N,idx.avgdl,1.5,0.75)+titleBoost};})
+      .filter(x=>x.score>0).sort((a,b)=>b.score-a.score).slice(0,topK||3);
+  }catch(e){return [];}
+}
+function findModuleForSearchChunk(chunk){
+  if(!chunk || !chunk.m) return null;
+  for(const path of CURRICULUM){
+    for(const m of (path.modules||[])){
+      if(m.title===chunk.m || L(m,'title')===chunk.m) return m;
+    }
+  }
+  return null;
+}
+async function searchExternalKnowledge(query, isHi){
+  try{
+    const rawQuery=String(query||'').trim();
+    if(rawQuery.length>300 || /[\w.+-]+@[\w.-]+\.[a-z]{2,}|https?:\/\/|(?:\+?\d[\d\s().-]{7,}\d)/i.test(rawQuery)) return null;
+    const searchQuery=rawQuery.slice(0,180);
+    let lang=/[\u0900-\u097f]/.test(searchQuery)?'hi':'en';
+    const endpoint='https://'+lang+'.wikipedia.org/w/api.php?action=query&list=search&srsearch='+encodeURIComponent(searchQuery)+'&format=json&origin=*&srlimit=3';
+    const response=await fetch(endpoint,{headers:{'Accept':'application/json'}});
+    if(!response.ok) throw new Error('External search unavailable');
+    const data=await response.json();
+    const results=(data.query&&data.query.search)||[];
+    if(!results.length && lang==='hi'){
+      lang='en';
+      const fallback=await fetch('https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch='+encodeURIComponent(searchQuery)+'&format=json&origin=*&srlimit=3');
+      if(fallback.ok){const d=await fallback.json();results.push(...((d.query&&d.query.search)||[]));}
+    }
+    if(!results.length) return null;
+    const pageids=results.map(x=>x.pageid).join('|');
+    const detailUrl='https://'+lang+'.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=1&explaintext=1&exsentences=3&pageids='+encodeURIComponent(pageids)+'&format=json&origin=*';
+    const detail=await fetch(detailUrl,{headers:{'Accept':'application/json'}});
+    let pages={}; if(detail.ok){const d=await detail.json();pages=(d.query&&d.query.pages)||{};}
+    const lines=results.slice(0,3).map(item=>{
+      const page=pages[item.pageid]||{}; const summary=String(page.extract||item.snippet||'').replace(/<[^>]*>/g,'').replace(/\s+/g,' ').trim().slice(0,650);
+      const host=lang==='hi'?'https://hi.wikipedia.org/wiki/':'https://en.wikipedia.org/wiki/';
+      return '• '+item.title+': '+(summary||'Open the source for details')+'\n  Source: '+host+encodeURIComponent(item.title.replace(/ /g,'_'));
+    });
+    return 'I could not find a confident answer in Atelier’s prepared knowledge, so here are external reference results. These are general references, not verified Atelier lesson instructions:\n\n'+lines.join('\n\n');
+  }catch(e){return null;}
+}
+
 function matchDoubtKnowledge(query){
   const kb=window.ATELIER_DOUBT_KB;
   if(!kb || !Array.isArray(kb.entries)) return null;
@@ -2551,37 +2624,78 @@ function getDoubtRelatedTitles(moduleIds){
     const m=findModule(id); return m ? (id.toUpperCase()+' '+L(m,'title')) : null;
   }).filter(Boolean).slice(0,4);
 }
+function answerCurrentLessonQuestion(query){
+  const route=STATE.route;
+  if(route.view!=='module'||!route.moduleId) return null;
+  const m=findModule(route.moduleId); if(!m) return null;
+  const q=normalizeDoubtText(query);
+  const title=normalizeDoubtText(L(m,'title')||m.title||'');
+  const titleMentioned=title.length>3&&q.includes(title);
+  const asksCurrent=asksAboutCurrentLesson(query)||titleMentioned||q.includes('mistake')||q.includes('tip')||q.includes('practice')||q.includes('practise')||q.includes('exercise')||['why does this matter','core idea','key takeaway','main takeaway','professional habit','how should i practice','what should i focus on'].some(p=>q.includes(p));
+  if(!asksCurrent) return null;
+  const field=(name)=>L(m,name);
+  const clean=(v)=>String(v||'').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&quot;/g,'"');
+  const list=(name,n)=>{const v=field(name);if(Array.isArray(v))return v.slice(0,n||5).map(x=>'• '+clean(x)).join('\n');if(typeof v==='string'&&v)return clean(v);return '';};
+  const heading='Module '+String(m.plate||m.id.replace('m','')).padStart(2,'0')+' — '+(field('title')||m.title);
+  if(q.includes('mistake')){const x=list('mistakes',6);if(x)return '**'+heading+' — Common mistakes**\n'+x;}
+  if(q.includes('tip')||q.includes('professional habit')){const x=list('proTips',6);if(x)return '**'+heading+' — Pro tips**\n'+x;}
+  if(q.includes('practice')||q.includes('practise')||q.includes('exercise')){const p=field('practice');if(p&&typeof p==='object')return '**'+heading+' — Practice**\n'+Object.entries(p).map(([k,v])=>'• '+k+': '+clean(v)).join('\n');}
+  if(q.includes('core idea')||q.includes('takeaway')||q.includes('focus')){const x=list('coreIdea',6);if(x)return '**'+heading+' — Core ideas**\n'+x;}
+  if(q.includes('why')||q.includes('matter')||q.includes('important')){const x=list('whyItMatters',4);if(x)return '**'+heading+' — Why it matters**\n'+x;}
+  const parts=[];const hook=field('hook');if(hook)parts.push(clean(hook));const why=list('whyItMatters',1);if(why)parts.push(why);const core=list('coreIdea',3);if(core)parts.push('**Core ideas**\n'+core);
+  return '**'+heading+'**\n'+parts.join('\n\n')+'\n\nSource: current Atelier lesson.';
+}
+
 async function sendDoubtMessage(){
   const input=document.getElementById('doubtInput'); if(!input) return;
   const question=input.value.trim(); if(!question) return;
   appendDoubtMessage('user',question); input.value='';
   doubtHistory.push({role:'user',text:question}); saveDoubtHistory();
   const isHi=isHinglishDoubt(question);
-  const context=getModuleContextForDoubt();
-  const entry=matchDoubtKnowledge(question);
   let answer='';
-  if(context && asksAboutCurrentLesson(question)){
-    answer=(isHi?'Is lesson ka quick breakdown:\n':'Quick breakdown of this lesson:\n')+context;
-  }else if(entry){
-    answer=isHi?entry.hi:entry.en;
-    const related=getDoubtRelatedTitles(entry.modules);
-    if(related.length) answer += '\n\nRelated lessons: '+related.join(' · ');
+  const currentLessonAnswer=answerCurrentLessonQuestion(question);
+  if(currentLessonAnswer){
+    answer=currentLessonAnswer;
   }else{
-    const hits=await searchCurriculum(question,4);
-    const titles=[]; const seen=new Set();
-    hits.forEach(hit=>{
-      const id=String(hit.m||''); if(!id || seen.has(id)) return; seen.add(id);
-      const m=findModule(id); if(m) titles.push(id.toUpperCase()+' '+L(m,'title'));
-    });
-    answer=isHi
-      ? 'Is exact sawaal ka prepared answer abhi knowledge file mein nahi mila. Thoda specific poochho—jaise “sphere ko shade kaise karun?” ya “perspective mein vanishing point kya hota hai?”.'
-      : 'I could not confidently match that question to a prepared answer. Try making it more specific—for example, “how do I shade a sphere?” or “what is a vanishing point?”.';
-    if(titles.length) answer+='\n\n'+(isHi?'Closest lessons: ':'Closest lessons: ')+titles.join(' · ');
+    const capability=window.ATELIER_DOUBT_CAPABILITIES && window.ATELIER_DOUBT_CAPABILITIES.answer(question,findModule,m=>L(m,'title'),STATE.language);
+    const entry=matchDoubtKnowledge(question);
+    if(capability){
+      answer=capability;
+    }else if(entry){
+      answer=isHi?entry.hi:entry.en;
+      const related=getDoubtRelatedTitles(entry.modules);
+      if(related.length) answer += '\n\nRelated lessons: '+related.join(' · ');
+    }else{
+      const evidence=await searchCurriculumEvidence(question,3);
+      const strong=evidence.filter(x=>x.score>=1.15);
+      if(strong.length){
+        const lines=[]; const seen=new Set();
+        strong.slice(0,2).forEach(item=>{
+          const m=findModuleForSearchChunk(item.chunk);
+          const title=m ? (m.id.toUpperCase()+' '+L(m,'title')) : String(item.chunk.m||'Course lesson');
+          if(seen.has(title)) return; seen.add(title);
+          const excerpt=String(item.chunk.t||'').replace(/\\s+/g,' ').trim().slice(0,650);
+          lines.push('**'+title+'**\n'+excerpt);
+        });
+        answer=(isHi?'Atelier course mein is sawaal se related material mila:\n\n':'I found relevant material in the Atelier course:\n\n')+lines.join('\n\n')+'\n\nThese are retrieved lesson excerpts, not a generated explanation. Open the cited module for the complete context.';
+      }else{
+        const external=await searchExternalKnowledge(question,isHi);
+        if(external) answer=external;
+        else{
+          const hits=evidence.length?evidence:await searchCurriculumEvidence(question,3);
+          const titles=[]; const seen=new Set();
+          hits.forEach(hit=>{const m=findModuleForSearchChunk(hit.chunk);if(m&&!seen.has(m.id)){seen.add(m.id);titles.push(m.id.toUpperCase()+' '+L(m,'title'));}});
+          answer=isHi
+            ? 'Is sawaal ka reliable answer Atelier knowledge ya external reference se confirm nahi ho paya. Thoda context ya exact topic batao; main galat jawab guess nahi karunga.'
+            : 'I could not verify a reliable answer in the Atelier knowledge base or external reference search. Add a little context or a more specific topic; I will not guess.';
+          if(titles.length) answer+='\n\nClosest course modules: '+titles.join(' · ');
+        }
+      }
+    }
   }
   appendDoubtMessage('bot',answer);
   doubtHistory.push({role:'bot',text:answer}); saveDoubtHistory();
 }
-
 function initEvents(){
   try{ localStorage.removeItem('atelier_doubt_engine'); }catch(e){}
   const doubtInputEl = document.getElementById('doubtInput');

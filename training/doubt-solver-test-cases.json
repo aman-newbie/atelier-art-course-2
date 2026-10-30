@@ -1,0 +1,349 @@
+{
+  "version": 1,
+  "description": "Regression questions for Atelier Doubt Solver: English, Roman Hinglish and Devanagari Hindi tool/module capability intents.",
+  "cases": [
+    {
+      "id": "en-001",
+      "language": "en",
+      "question": "What tools do I need to start drawing?",
+      "expectedContains": "Minimum drawing kit"
+    },
+    {
+      "id": "hinglish-002",
+      "language": "hinglish",
+      "question": "Drawing shuru karne ke liye kaunse tools chahiye?",
+      "expectedContains": "Minimum drawing kit"
+    },
+    {
+      "id": "hi-003",
+      "language": "hi",
+      "question": "ड्राइंग शुरू करने के लिए कौनसे टूल चाहिए?",
+      "expectedContains": "Minimum drawing kit"
+    },
+    {
+      "id": "en-004",
+      "language": "en",
+      "question": "Do I need expensive art tools?",
+      "expectedContains": "Minimum drawing kit"
+    },
+    {
+      "id": "hinglish-005",
+      "language": "hinglish",
+      "question": "Kya drawing ke liye mehange tools zaroori hain?",
+      "expectedContains": "Minimum drawing kit"
+    },
+    {
+      "id": "hi-006",
+      "language": "hi",
+      "question": "क्या ड्राइंग के लिए महंगे टूल ज़रूरी हैं?",
+      "expectedContains": "Minimum drawing kit"
+    },
+    {
+      "id": "en-007",
+      "language": "en",
+      "question": "I have an HB pencil and normal paper. Can I start?",
+      "expectedContains": "Your tools"
+    },
+    {
+      "id": "hinglish-008",
+      "language": "hinglish",
+      "question": "Mere paas HB pencil aur normal paper hai, kya main start kar sakta hoon?",
+      "expectedContains": "Tumhare tools"
+    },
+    {
+      "id": "hi-009",
+      "language": "hi",
+      "question": "मेरे पास HB पेंसिल और नॉर्मल पेपर है, क्या मैं शुरू कर सकता हूँ?",
+      "expectedContains": "Tumhare tools"
+    },
+    {
+      "id": "en-010",
+      "language": "en",
+      "question": "Can I draw without an eraser?",
+      "expectedContains": "Yes"
+    },
+    {
+      "id": "hinglish-011",
+      "language": "hinglish",
+      "question": "Bina eraser ke drawing kar sakta hoon?",
+      "expectedContains": "Haan"
+    },
+    {
+      "id": "hi-012",
+      "language": "hi",
+      "question": "क्या बिना इरेज़र के ड्राइंग कर सकता हूँ?",
+      "expectedContains": "Haan"
+    },
+    {
+      "id": "en-013",
+      "language": "en",
+      "question": "Can I practise freehand without a ruler?",
+      "expectedContains": "Yes"
+    },
+    {
+      "id": "hinglish-014",
+      "language": "hinglish",
+      "question": "Kya ruler ke bina freehand practice kar sakta hoon?",
+      "expectedContains": "Haan"
+    },
+    {
+      "id": "hi-015",
+      "language": "hi",
+      "question": "क्या रूलर के बिना फ्रीहैंड प्रैक्टिस कर सकता हूँ?",
+      "expectedContains": "Haan"
+    },
+    {
+      "id": "en-016",
+      "language": "en",
+      "question": "Do I need 4B and 6B pencils right now?",
+      "expectedContains": "4B/6B"
+    },
+    {
+      "id": "hinglish-017",
+      "language": "hinglish",
+      "question": "Kya mujhe abhi 4B aur 6B pencil leni chahiye?",
+      "expectedContains": "4B/6B"
+    },
+    {
+      "id": "hi-018",
+      "language": "hi",
+      "question": "क्या मुझे अभी 4B और 6B पेंसिल लेनी चाहिए?",
+      "expectedContains": "4B/6B"
+    },
+    {
+      "id": "en-019",
+      "language": "en",
+      "question": "Can I shade with only an HB pencil?",
+      "expectedContains": "shading"
+    },
+    {
+      "id": "hinglish-020",
+      "language": "hinglish",
+      "question": "Kya sirf HB pencil se shading kar sakta hoon?",
+      "expectedContains": "shading"
+    },
+    {
+      "id": "hi-021",
+      "language": "hi",
+      "question": "क्या सिर्फ HB पेंसिल से शेडिंग कर सकता हूँ?",
+      "expectedContains": "shading"
+    },
+    {
+      "id": "en-022",
+      "language": "en",
+      "question": "What tools are required in Module 2?",
+      "expectedContains": "Module 2"
+    },
+    {
+      "id": "hinglish-023",
+      "language": "hinglish",
+      "question": "Module 2 mein kaunse tools chahiye?",
+      "expectedContains": "Module 2"
+    },
+    {
+      "id": "hi-024",
+      "language": "hi",
+      "question": "मॉड्यूल 2 में कौनसे टूल चाहिए?",
+      "expectedContains": "Module 2"
+    },
+    {
+      "id": "en-025",
+      "language": "en",
+      "question": "What tools do I need for Module 3?",
+      "expectedContains": "Module 3"
+    },
+    {
+      "id": "hinglish-026",
+      "language": "hinglish",
+      "question": "Module 3 ke liye kaunse tools chahiye?",
+      "expectedContains": "Module 3"
+    },
+    {
+      "id": "hi-027",
+      "language": "hi",
+      "question": "मॉड्यूल 3 के लिए कौनसे टूल चाहिए?",
+      "expectedContains": "Module 3"
+    },
+    {
+      "id": "en-028",
+      "language": "en",
+      "question": "Explain the pencil grips in Module 3.",
+      "expectedContains": "grip"
+    },
+    {
+      "id": "hinglish-029",
+      "language": "hinglish",
+      "question": "Module 3 mein pencil kaise pakadni hai?",
+      "expectedContains": "grip"
+    },
+    {
+      "id": "hi-030",
+      "language": "hi",
+      "question": "मॉड्यूल 3 में पेंसिल कैसे पकड़नी है?",
+      "expectedContains": "grip"
+    },
+    {
+      "id": "en-031",
+      "language": "en",
+      "question": "I have a drawing tablet and stylus. Can I start digital art?",
+      "expectedContains": "drawing tablet"
+    },
+    {
+      "id": "hinglish-032",
+      "language": "hinglish",
+      "question": "Mere paas drawing tablet aur stylus hai, kya digital art shuru kar sakta hoon?",
+      "expectedContains": "drawing tablet"
+    },
+    {
+      "id": "hi-033",
+      "language": "hi",
+      "question": "मेरे पास ड्रॉइंग टैबलेट और स्टाइलस है, क्या डिजिटल आर्ट शुरू कर सकता हूँ?",
+      "expectedContains": "drawing tablet"
+    },
+    {
+      "id": "en-034",
+      "language": "en",
+      "question": "I have a phone, stylus and Krita. What can I do?",
+      "expectedContains": "Krita"
+    },
+    {
+      "id": "hinglish-035",
+      "language": "hinglish",
+      "question": "Mere paas phone, stylus aur Krita hai. Main kya kar sakta hoon?",
+      "expectedContains": "Krita"
+    },
+    {
+      "id": "hi-036",
+      "language": "hi",
+      "question": "मेरे पास फोन, स्टाइलस और Krita है। मैं क्या कर सकता हूँ?",
+      "expectedContains": "Krita"
+    },
+    {
+      "id": "en-037",
+      "language": "en",
+      "question": "Do I need a blending stump for shading?",
+      "expectedContains": "blending stump"
+    },
+    {
+      "id": "hinglish-038",
+      "language": "hinglish",
+      "question": "Shading ke liye blending stump zaroori hai kya?",
+      "expectedContains": "blending stump"
+    },
+    {
+      "id": "hi-039",
+      "language": "hi",
+      "question": "शेडिंग के लिए ब्लेंडिंग स्टंप ज़रूरी है क्या?",
+      "expectedContains": "blending stump"
+    },
+    {
+      "id": "en-040",
+      "language": "en",
+      "question": "Can I skip Module 2?",
+      "expectedContains": "Do not skip"
+    },
+    {
+      "id": "hinglish-041",
+      "language": "hinglish",
+      "question": "Kya main Module 2 skip kar sakta hoon?",
+      "expectedContains": "skip mat karo"
+    },
+    {
+      "id": "hi-042",
+      "language": "hi",
+      "question": "क्या मैं मॉड्यूल 2 छोड़ सकता हूँ?",
+      "expectedContains": "skip mat karo"
+    },
+    {
+      "id": "en-043",
+      "language": "en",
+      "question": "I only have paper. Can I start drawing?",
+      "expectedContains": "HB"
+    },
+    {
+      "id": "hinglish-044",
+      "language": "hinglish",
+      "question": "Mere paas sirf paper hai, kya drawing start kar sakta hoon?",
+      "expectedContains": "pencil"
+    },
+    {
+      "id": "hi-045",
+      "language": "hi",
+      "question": "मेरे पास सिर्फ पेपर है, क्या ड्रॉइंग शुरू कर सकता हूँ?",
+      "expectedContains": "pencil"
+    },
+    {
+      "id": "en-046",
+      "language": "en",
+      "question": "I only have a pencil. What else do I need?",
+      "expectedContains": "paper"
+    },
+    {
+      "id": "hinglish-047",
+      "language": "hinglish",
+      "question": "Mere paas sirf pencil hai, aur kya chahiye?",
+      "expectedContains": "paper"
+    },
+    {
+      "id": "hi-048",
+      "language": "hi",
+      "question": "मेरे पास सिर्फ पेंसिल है, और क्या चाहिए?",
+      "expectedContains": "paper"
+    },
+    {
+      "id": "en-049",
+      "language": "en",
+      "question": "What can I do with the tools I already have?",
+      "expectedContains": "List the tools"
+    },
+    {
+      "id": "hinglish-050",
+      "language": "hinglish",
+      "question": "Mere paas jo tools hain unse kya kar sakta hoon?",
+      "expectedContains": "Apne paas"
+    },
+    {
+      "id": "hi-051",
+      "language": "hi",
+      "question": "मेरे पास जो टूल हैं उनसे क्या कर सकता हूँ?",
+      "expectedContains": "Apne paas"
+    },
+    {
+      "id": "en-052",
+      "language": "en",
+      "question": "What is perspective?",
+      "expectNull": true
+    },
+    {
+      "id": "en-053",
+      "language": "en",
+      "question": "Do I need a drawing tablet to begin traditional drawing?",
+      "expectedContains": "No, you do not need"
+    },
+    {
+      "id": "en-054",
+      "language": "en",
+      "question": "I have a hard round brush and layers. What can I do?",
+      "expectedContains": "Your tools"
+    },
+    {
+      "id": "en-055",
+      "language": "en",
+      "question": "Can I draw with just a pencil and a notebook?",
+      "expectedContains": "Your tools"
+    },
+    {
+      "id": "en-056",
+      "language": "en",
+      "question": "What should I buy first for basic shading?",
+      "expectedContains": "shading"
+    },
+    {
+      "id": "hi-057",
+      "language": "hi",
+      "question": "I have an HB pencil and paper. Can I start?",
+      "expectedContains": "Tumhare tools",
+      "uiLanguage": "hi"
+    }
+  ]
+}
