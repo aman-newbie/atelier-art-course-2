@@ -7272,2692 +7272,2692 @@ const TRANSLATIONS_HI = {
     "nextStep": "Ab tum color ko teen alag, diagnose ho sakne wali properties ki tarah samajhte ho. Module 96 specifically value mein aur gehra jaata hai — color introduce hone se pehle hi ek poori painting mein value structure ko kaise plan aur control karte hain."
   },
   "m92": {
-    "hook": "Grayscale mein jo painting bikhar jaati hai, woh color mein bhi kabhi theek se kaam nahi kar rahi thi — aur value study yeh pata lagane ka sabse sasta tareeka hai, woh bhi rendering mein ghanton lagane se pehle.",
-    "whyItMatters": [
-      "Module 99 mein yeh establish hua tha ki painting ki readability ke liye value sabse important property hai. Is module mein aapko value control karne ki actual practice milegi — grayscale studies, limited value ranges, aur thumbnail value planning woh concrete techniques hain jo is principle ko apply karti hain.",
-      "Yeh professionals ki ek sachmuch universal habit hai: working illustrators lagataar ek hi sequence follow karte hain — value sketch, phir grayscale ya tonal study, phir full color. Iska khaas reason yeh hai ki agar painting structurally kaam nahi kar rahi, toh use thumbnail stage par theek karna full color rendering ke ghanton ke baad fix karne se kaafi sasta padta hai."
-    ],
-    "coreIdea": [
-      "Value study kisi reference ya idea ko sirf light aur dark masses tak simplify karti hai. Aksar full, smooth range ke bajay 3–5 alag values use ki jaati hain — kam values aapko bade shapes aur unke relationships par dhyaan dene par majboor karti hain, bajay iske ki aap bahut jaldi details mein ulajh jaayein.",
-      "Local value (kisi object ki woh natural value jo us par light padne se pehle hoti hai) sirf starting point hai. Believable value study mein light source, core shadow, cast shadow, aur shadow side mein wapas bounce hoti reflected light bhi shamil hoti hai — reflected light chhod dena ek aam wajah hai ki grayscale studies flat lagti hain.",
-      "Ek hi light mein alag materials value ko alag tarah se dikhate hain: zyada reflective material apne lit aur shadowed sides ke beech zyada contrast dikhata hai, jabki matte material ki value range zyada narrow hoti hai — yeh kaam ki jaankari hai jise aap Module 102 ki material rendering mein aage build karenge.",
-      "Value study mein focal point banane ke liye contrast ek tool hai — sabse strong value contrast wala area (light aur dark ke beech sabse bada jump) woh jagah hoti hai jahan nazar naturally sabse pehle jaati hai. Isliye strong local contrast ke bina focal point aksar nazar se chhoot jaata hai."
-    ],
-    "mistakes": [
-      "Pehle yeh test kiye bina ki image sirf 3–5 simplified values mein readable hai ya nahi, seedha full, smooth value range banana — isse woh step chhoot jaata hai jo composition ki kamzori jaldi pakad sakta tha.",
-      "Har object ko ek hi local value dena, jo color mein translate karne par yeh hoga ki har object ek hi color ka ho — aur result flat, bina farq wala lagega.",
-      "Shadow areas mein reflected light bhool jaana, jisse shadows environment se aane wale subtle bounce light aur color ke bajay bilkul flat dark reh jaate hain.",
-      "Sabse strong value contrast ko intended focal point ke bajay kahin aur rakhna, jisse galti se nazar image ke galat hisse ki taraf chali jaati hai.",
-      "Value study ko bekaar ka kaam samajhna, na ki ek asli diagnostic tool jo full rendering se pehle problems pakad kar, apni cost se kahin zyada samay bachata hai."
-    ],
-    "proTips": [
-      "Naya piece shuru karte waqt kuch aur add karne se pehle kam se kam ek 3-value study (light, midtone, dark) zaroor banao — agar composition 3 values mein samajh nahi aa rahi, toh aur values usse theek nahi karengi.",
-      "Shadow areas mein paas ki surfaces ke color se thodi reflected light jaan-boojhkar add karo, bajay shadows ko ek jaisa dark aur flat chhodne ke.",
-      "Kaam karte waqt beech-beech mein posterize adjustment use karo (ya study ko manually kuch alag-alag tones tak flatten karo). Isse jaldi check ho jaata hai ki details add karte hue bhi value structure theek bana hua hai ya nahi.",
-      "Sabse strong value contrast bilkul us jagah rakho jahan aap chahte ho ki nazar sabse pehle jaaye, aur visual hierarchy ko support karne ke liye image ke baaki hisson mein contrast comparatively kam rakho."
-    ],
-    "practice": {
-      "warmup": "Ek hi simple scene ke teen 5-minute thumbnail value studies banao, har ek mein sirf 3 values use karo, aur compare karo ki kaunsi composition sabse clearly read hoti hai.",
-      "daily": "Koi reference photo ya apne pehle ke pieces mein se ek lo aur use desaturate karo, phir uski grayscale study paint karo. Shadow areas mein reflected light par dhyaan do.",
-      "weekly": "Ek hi chhote scene ko pehle 3 values mein, phir 5 values mein, aur phir full smooth range mein paint karo. Compare karo ki value range ka har agla step kitni extra clarity sach mein add karta hai.",
-      "challenge": "Ek finished value study lo aur jaan-boojhkar sabse strong contrast ko kisi doosre area mein le jao. Phir evaluate karo ki is ek change se nazar sabse pehle kahan jaati hai, usmein kitna farq aata hai."
-    },
-    "quiz": [
-      {
-        "q": "Artists aksar value study ko full, smooth range ke bajay sirf 3–5 alag values tak kyun limit karte hain?",
-        "options": [
-          "Software 5 se zyada values render nahi kar sakta",
-          "Kam values aapka dhyaan bade shapes aur unke relationships par rakhti hain, bajay iske ki aap bahut jaldi details mein ulajh jaayein",
-          "Zyaadatar digital painting software mein yeh zaroori hota hai",
-          "Zyaada values hamesha kharab dikhti hain"
-        ],
-        "correct": 1,
-        "explain": "Limited value range major light aur dark masses aur unki composition par dhyaan dene ko majboor karti hai. Shuru se hi full, smooth value range ko judge karne ke muqable ise evaluate karna aur theek karna aasaan hota hai."
-      },
-      {
-        "q": "Reflected light kya hoti hai, aur use chhodne se value study aksar flat kyun lagti hai?",
-        "options": [
-          "Yeh sirf digital software mein use hone wala lighting effect hai, traditional value theory ka hissa nahi",
-          "Paas ki surfaces se bounce hokar shadow area mein aane wali light; ise chhodne se shadows mein subtle variation ke bajay ek jaisa flat dark dikhta hai",
-          "Yeh object par sabse bright highlight ko kehte hain aur iska shadows se koi sambandh nahi",
-          "Yeh sirf glass jaisi transparent objects ke liye zaroori hoti hai"
-        ],
-        "correct": 1,
-        "explain": "Reflected light environment se bounce hokar shadow area mein aati hai. Iske bina shadows subtle variation ke bajay flat, ek jaise dark shapes lagte hain, jabki real lighting mein unmein halka variation hota hai."
-      },
-      {
-        "q": "Ek hi light ke neeche zyada reflective materials, matte materials ke muqable, aam taur par zyada value contrast kyun dikhate hain?",
-        "options": [
-          "Reflective materials hamesha overall zyada dark dikhte hain",
-          "Woh zyada light bounce karte hain, jisse unke lit aur shadowed sides ke beech ka farq badh jaata hai",
-          "Material type ka value contrast par koi asar nahi hota",
-          "Matte materials hamesha reflective materials se zyada contrast dikhate hain"
-        ],
-        "correct": 1,
-        "explain": "Zyada reflective surface zyada light bounce karti hai. Isse uske sabse bright lit areas aur shadow side ke beech contrast, narrow value range rakhne wali matte surface ke muqable, badh jaata hai."
-      },
-      {
-        "q": "Value study mein contrast focal point establish karne mein kaise madad karta hai?",
-        "options": [
-          "Contrast ka nazar kahan jaati hai, isse koi sambandh nahi",
-          "Sabse strong value contrast wala area (light se dark tak ka sabse bada jump) naturally nazar ko pehle kheenchta hai",
-          "Sirf color contrast focal point bana sakta hai, value contrast nahi",
-          "Focal points ko hamesha composition ke bilkul center mein rakhna chahiye"
-        ],
-        "correct": 1,
-        "explain": "Nazar naturally sabse strong value contrast wale area ki taraf jaati hai. Isliye us contrast ko intended focal point par jaan-boojhkar rakhne se visual hierarchy clear hoti hai."
-      },
-      {
-        "q": "Module ke mutabik, professional value-first workflow ka recommended order kya hai?",
-        "options": [
-          "Pehle full color painting, phir value study, aur phir thumbnail sketch",
-          "Pehle value sketch ya thumbnail, phir grayscale ya tonal study, aur uske baad full color painting",
-          "Sirf full color painting, value studies ko poori tarah skip karke",
-          "Value studies tabhi kaam aati hain jab painting pehle se finish ho chuki ho"
-        ],
-        "correct": 1,
-        "explain": "Aam professional sequence ek chhoti value sketch ya thumbnail se shuru hota hai, phir grayscale ya tonal study par jaata hai, aur uske baad hi full color ki taraf badhta hai. Is tarah structural problems ko us waqt pakda jaata hai jab unhe theek karna abhi sasta hota hai."
-      }
-    ],
-    "checklist": [
-      "Main zyaada detailed piece shuru karne se pehle 3-value thumbnail study bana sakta/sakti hoon.",
-      "Main shadow area ko flat aur ek jaisa dark chhodne ke bajay usmein reflected light add kar sakta/sakti hoon.",
-      "Main samjha sakta/sakti hoon ki ek hi light ke neeche matte material ke muqable zyada reflective material mein value contrast zyada kyun hota hai.",
-      "Main sabse strong value contrast ko jaan-boojhkar apne intended focal point par rakh sakta/sakti hoon."
-    ],
-    "nextStep": "Ab aap color se alag value plan aur control kar sakte hain. Module 101 rendering ke liye lighting par focus karta hai — form shadow, cast shadow, core shadow, aur occlusion: in sabke peeche ki physical logic wahi hai jo yahan aapne value relationships mein study ki hai."
+  "hook": "Jo painting grayscale mein bikhar jaati hai, woh color mein bhi asal mein kabhi kaam nahi kar rahi thi — aur value study karke tum ghanton rendering karne se pehle hi yeh baat jaan sakte ho.",
+  "whyItMatters": [
+    "Module 95 mein tumne seekha tha ki painting kitni readable hai, uske liye value sabse important property hai. Is module mein tumhe value control karne ki actual practice milegi — grayscale studies, limited value ranges aur thumbnail value planning, isi principle ke practical techniques hain.",
+    "Yeh professionals ki ek sach mein universal habit hai: working illustrators lagataar ek hi sequence follow karte hain — pehle value sketch, phir grayscale ya tonal study, aur uske baad full color. Kyunki agar painting ki structure hi kaam nahi kar rahi, toh use thumbnail stage par theek karna, ghanton color render karne ke baad fix karne se kahin sasta padta hai."
+  ],
+  "coreIdea": [
+    "Value study kisi reference ya idea ko sirf light aur dark masses tak simplify kar deti hai. Aksar full smooth range ki jagah 3–5 alag values use hoti hain — kam values tumhe bade shapes aur unke beech ke relationships par dhyaan dene deti hain, taaki tum shuru mein hi details mein na kho jao.",
+    "Local value (kisi object ki natural value, kisi bhi light ke padne se pehle) bas shuruaat hai. Ek believable value study mein light source, core shadow, cast shadow aur shadow side par lautkar padne wali reflected light bhi shamil hoti hai — reflected light chhod dena ek aam wajah hai ki grayscale studies flat lagti hain.",
+    "Ek hi light mein alag materials ki values alag tarah se dikhti hain: zyada reflective material ke lit aur shadowed sides ke beech zyada contrast hota hai, jabki matte material ki value range zyada narrow hoti hai — yeh kaam ki jaankari hai, jise tum Module 98 ki material rendering mein aage build karoge.",
+    "Value study mein focal point banane ke liye contrast kaam aata hai — jis area mein value contrast sabse zyada ho (light aur dark ke beech sabse bada jump), aankh pehle wahin jaati hai. Isliye strong local contrast ke bina focal point aasani se nazar se chhoot sakta hai."
+  ],
+  "mistakes": [
+    "Yeh check kiye bina seedha full, smooth value range par chale jaana ki image sirf 3–5 simplified values ke saath read hoti hai ya nahi; is tarah woh step chhoot jaata hai jo weak composition ko jaldi pakad sakta tha.",
+    "Har object ko ek hi local value dena, jiska matlab color mein badalne par har object ko ek hi color dena hoga — aur result flat, bina farq wala banega.",
+    "Shadow areas mein reflected light bhool jaana, jisse shadows environment se aane wali light aur color ka halka bounce dikhane ke bajay ek hi flat dark rang ki reh jaati hain.",
+    "Sabse strong value contrast intended focal point ke bajay kisi aur jagah rakhna, aur galti se aankh ko image ke galat hisse ki taraf kheench lena.",
+    "Value study ko bekaar ki busywork samajhna, ek asli diagnostic tool ke bajay — jabki full rendering se pehle problems pakadkar yeh apne kharche hue waqt se kaafi zyada waqt bachati hai."
+  ],
+  "proTips": [
+    "Naya piece shuru karte waqt, aur values add karne se pehle, kam se kam ek 3-value study banao (light, midtone, dark) — agar composition 3 values par read nahi hoti, toh aur values usse theek nahi karengi.",
+    "Shadow areas mein aas-paas ki surfaces ke colors se thodi reflected light jaanbujhkar add karo; shadows ko har jagah ek jaisa dark aur flat mat chhodo.",
+    "Kaam karte waqt beech-beech mein posterize adjustment use karo (ya study ko manually kuch alag-alag tones mein flatten karo). Yeh jaldi se check karne ka achha tareeka hai ki details judne ke baad bhi value structure theek chal rahi hai.",
+    "Sabse strong value contrast bilkul wahin rakho jahan tum chahte ho ki aankh pehle jaaye. Image ke baaki hisson mein contrast comparatively kam rakho, taaki yeh hierarchy support ho."
+  ],
+  "practice": {
+    "warmup": "Ek hi simple scene ke teen 5-minute thumbnail value studies banao, har ek mein sirf 3 values use karke. Phir compare karo ki kaunsi composition sabse clearly read hoti hai.",
+    "daily": "Koi reference photo ya apne pehle ke pieces mein se ek lo aur use desaturate karo, phir uski grayscale study paint karo. Shadow areas mein reflected light par khaas dhyaan do.",
+    "weekly": "Ek hi chhota scene pehle 3 values mein, phir 5 values mein, aur phir full smooth range mein paint karo. Compare karo ki value range ke har extra step se waqai kitni clarity badhti hai.",
+    "challenge": "Ek finished value study lo aur jaanbujhkar sabse strong contrast ko kisi doosre area mein le jao. Phir dekho ki is ek change se aankh pehle kahan jaati hai, usmein kitna farq padta hai."
   },
+  "quiz": [
+    {
+      "q": "Artists aksar value study ko full smooth range ke bajay sirf 3–5 alag values tak kyun rakhte hain?",
+      "options": [
+        "Software 5 se zyada values render nahi kar sakta",
+        "Kam values tumhe jaldi details mein khone ke bajay bade shapes aur unke relationships par dhyaan dene par majboor karti hain",
+        "Zyadaatar digital painting software mein yeh zaroori hota hai",
+        "Zyada values hamesha buri dikhti hain"
+      ],
+      "correct": 1,
+      "explain": "Limited value range tumhe bade light aur dark masses aur unki composition par focus karne deti hai. Shuru se hi full smooth value range ko judge karne ke muqable, ise evaluate karna aur theek karna aasaan hota hai."
+    },
+    {
+      "q": "Reflected light kya hoti hai, aur ise chhodne se value study aksar flat kyun lagti hai?",
+      "options": [
+        "Yeh lighting effect sirf digital software mein use hota hai, traditional value theory mein nahi",
+        "Aas-paas ki surfaces se bounce hokar shadow area mein lautne wali light; ise chhodne par shadows mein subtle variation dikhne ke bajay woh ek jaisi flat aur dark lagti hain",
+        "Yeh object ka sabse bright highlight hota hai, aur shadows se iska koi lena-dena nahi",
+        "Yeh sirf glass jaisi transparent objects ke liye important hai"
+      ],
+      "correct": 1,
+      "explain": "Reflected light, environment se bounce hokar shadow area mein lautne wali light hai. Iske bina shadows mein real lighting wali subtle variation dikhne ke bajay woh flat, ek jaise dark shapes lagti hain."
+    },
+    {
+      "q": "Ek hi light mein zyada reflective materials, matte materials ke muqable aam taur par zyada value contrast kyun dikhate hain?",
+      "options": [
+        "Reflective materials hamesha overall zyada dark dikhte hain",
+        "Woh zyada light bounce karte hain, jisse unke lit aur shadowed sides ke beech ka farq zyada hota hai",
+        "Material type ka value contrast par koi asar nahi hota",
+        "Matte materials hamesha reflective materials se zyada contrast dikhate hain"
+      ],
+      "correct": 1,
+      "explain": "Zyada reflective surface zyada light bounce karti hai. Isse uske sabse bright, lit areas aur shadow side ke beech contrast aam taur par badh jaata hai, jabki matte surface ki value range zyada narrow rehti hai."
+    },
+    {
+      "q": "Value study mein contrast focal point banane mein kaise madad karta hai?",
+      "options": [
+        "Contrast ka is baat se koi rishta nahi ki aankh kahan jaati hai",
+        "Jis area mein value contrast sabse strong ho (light se dark ka sabse bada jump), aankh naturally pehle wahin jaati hai",
+        "Focal point sirf color contrast se ban sakta hai, value contrast se nahi",
+        "Focal point hamesha composition ke bilkul center mein hona chahiye"
+      ],
+      "correct": 1,
+      "explain": "Aankh naturally sabse strong value contrast wale area ki taraf jaati hai. Isliye us contrast ko jaanbujhkar intended focal point par rakhne se visual hierarchy saaf banti hai."
+    },
+    {
+      "q": "Module ke mutabik, professional value-first workflow mein recommended order kya hai?",
+      "options": [
+        "Pehle full color painting, phir value study, phir thumbnail sketch",
+        "Pehle value sketch ya thumbnail, phir grayscale ya tonal study, aur uske baad full color painting",
+        "Sirf full color painting, value studies ko poori tarah chhodkar",
+        "Value studies tabhi kaam aati hain jab painting pehle hi finish ho chuki ho"
+      ],
+      "correct": 1,
+      "explain": "Professionals ka aam sequence ek chhote value sketch ya thumbnail se shuru hota hai, phir grayscale ya tonal study par jaata hai, aur uske baad hi full color tak pahunchta hai. Isse structural problems tab pakad mein aa jaati hain jab unhe theek karna abhi sasta hota hai."
+    }
+  ],
+  "checklist": [
+    "Main zyada detailed piece shuru karne se pehle 3-value thumbnail study bana sakta/sakti hoon.",
+    "Main shadow area ko flat aur ek jaisa dark chhodne ke bajay usmein reflected light add kar sakta/sakti hoon.",
+    "Main samjha sakta/sakti hoon ki ek hi light mein zyada reflective material, matte material se zyada value contrast kyun dikhata hai.",
+    "Main sabse strong value contrast ko jaanbujhkar apne intended focal point par rakh sakta/sakti hoon."
+  ],
+  "nextStep": "Ab tum color se alag value plan aur control kar sakte ho. Module 97 mein rendering ke liye khaas taur par lighting seekhoge — form shadow, cast shadow, core shadow aur occlusion; yahi woh physical logic hai jo un value relationships ke peeche hai, jin par tumne yahan kaam kiya."
+},
   "m93": {
-    "hook": "Shadow koi ek flat shape nahi hota — asal mein chaar alag cheezein milkar kaam karti hain (form shadow, cast shadow, core shadow, aur occlusion shadow), lekin zyaadatar beginners in sabko ek hi uniform dark blob ki tarah paint karte hain.",
-    "whyItMatters": [
-      "Module 100 mein aapne value structure plan karna seekha; is module mein aapko un values ke peeche ki physical logic milegi — shadow ke specific, naam wale types jo kisi bhi single light source ke neeche form ko yakeenan three-dimensional dikhate hain.",
-      "Yeh foundational aur har jagah kaam aane wali knowledge hai: bilkul yahi shadow logic character, prop, ya environment render karne mein apply hoti hai. Isi liye yeh Module 102 ki material rendering se theek pehle aata hai — alag materials light ke behavior ko kaise badalte hain, yeh seekhne se pehle aapko generic form par light ka behavior samajhna zaroori hai."
-    ],
-    "coreIdea": [
-      "Ek light source ke neeche form, light zone aur shadow zone mein bant jaata hai. In dono ko terminator alag karta hai (woh edge jahan planes light se door mudte hain). Form shadow tab banta hai jab surface bas light se door face kar rahi ho; cast shadow ek alag shape hota hai, jo tab banta hai jab ek object doosri surface tak light pahunchne se rokta hai.",
-      "Reflected light (ya bounce light) ki wajah se shadows aam taur par bilkul pure black nahi hote — paas ki surfaces se bounce hokar light shadow side mein wapas aati hai. Core shadow ek alag, aksar zyada dark band hota hai jo terminator ke paas dikhta hai, khaas taur par wahan jahan reflected light utni mazbooti se nahi pahunchti.",
-      "Occlusion shadow scene ka sabse dark shadow hota hai. Yeh un tang jagahon par dikhta hai jahan do surfaces milti hain ya lagbhag touch karti hain (jaise zameen par rakhe object ke neeche) — na main light aur na reflected light us tang gap tak pahunch paati hai, isliye yeh aas-paas ke form ya cast shadow se zyada dark dikhta hai.",
-      "Highlight aur center light ko aksar ek samajh liya jaata hai, lekin dono alag cheezein hain: center light bas woh plane hai jo light source ki taraf sabse seedha face karta hai, jabki highlight khud light source ka reflection hota hai. Yeh viewer ki position ke hisaab se move karta hai, bilkul mirror mein reflection ki tarah."
-    ],
-    "mistakes": [
-      "Poore shadow area ko ek flat, uniform dark shape samajhna, bajay form shadow, cast shadow, core shadow, aur occlusion shadow ko alag causes aur values wale distinct elements pehchanne ke.",
-      "Shadows ko reflected light ke bina pure black paint karna, jisse real shadows mein dikhne wale subtle bounce of color aur light ke bajay look harsh aur artificial ho jaata hai.",
-      "Highlight (light source ka move karta reflection) ko center light (light source ki taraf face karne wala plane, jo viewer ke saath move nahi karta) samajh lena.",
-      "Occlusion shadow ko poori tarah bhool jaana. Do touch karte objects (zameen par khada figure, table par rakha prop) jab ek-doosre ke saath theek se grounded nahi lagte, toh aksar yahi missing hota hai.",
-      "Reference ke cast shadow shape ko bilkul waise hi copy karna, bajay use adjust karne ke — cast shadow ko jis surface par woh pad raha hai, us form ko behtar dikhane ke liye reshape kiya ja sakta hai, bina believability khoye."
-    ],
-    "proTips": [
-      "Classic egg-shading exercise practice karo: asli egg ko safed paper par ek desk lamp se light karo, aur imagination se banane se pehle observation karke us par har shadow type (form, cast, core, occlusion) ko seedha identify karo.",
-      "Jab shadow area flat ya bejaan lage, toh khaas taur par check karo ki core shadow ya reflected light toh missing nahi. Convincing dimensionality laane ke liye aam taur par inhi do cheezon ki zaroorat hoti hai.",
-      "Cast shadow ka shape adjust karne se hichkichaao mat, taaki jis form par woh padta hai use behtar dikhaya ja sake (jaise cylindrical object ke around wrap karke) — jab tak shadow believable lagta hai, audience ko geometric accuracy se chhote deviations aam taur par nazar nahi aate.",
-      "Simple sphere-and-ground scene banane aur light source ko seedha manipulate karne ke liye Blender jaise free 3D software use karo. Dekho ki form shadow, cast shadow, core shadow, aur occlusion shadow real time mein kaise badalte hain — isse abstract concepts concrete aur controllable ban jaate hain."
-    ],
-    "practice": {
-      "warmup": "Kisi asli object (egg, ball, apple) ko ek desk lamp ke neeche rakho aur us par shadow ke chaaron types identify karo: form shadow, cast shadow, core shadow, aur occlusion shadow.",
-      "daily": "Digital mein simple sphere ya geometric form render karo, aur jaan-boojhkar shadow ke chaaron types ke saath ek clearly alag dikhne wala highlight aur center light bhi shamil karo.",
-      "weekly": "Apni pehle ki value studies mein se ek (Module 100) lo. Agar shadow areas mein reflected light aur core shadow missing hain, toh unhe add karo.",
-      "challenge": "Do touch karte objects (zameen par khada figure, table par rakha cup) render karo aur jahan woh milte hain, wahan convincing occlusion shadow banane par khaas dhyaan do."
-    },
-    "quiz": [
-      {
-        "q": "Form shadow aur cast shadow mein kya farq hai?",
-        "options": [
-          "Dono ek hi cheez hain, bas naam alag hain",
-          "Form shadow tab banta hai jab surface light source se door face karti hai; cast shadow ek alag shape hota hai, jo tab banta hai jab ek object doosri surface tak light pahunchne se rokta hai",
-          "Form shadow sirf spheres par dikhta hai, cast shadow sirf flat surfaces par",
-          "Cast shadow hamesha form shadow se zyada dark hota hai"
-        ],
-        "correct": 1,
-        "explain": "Form shadow us surface par banta hai jo bas light se door mud rahi hoti hai, jabki cast shadow ek alag shape hota hai jo tab banta hai jab ek object doosri surface tak light pahunchne se rokta hai."
-      },
-      {
-        "q": "Shadows aam taur par pure black se zyada light kyun dikhte hain?",
-        "options": [
-          "Software pure black render nahi kar sakta",
-          "Paas ki surfaces se reflected light (bounce light) shadow area mein aati hai",
-          "Shadows sirf traditional media mein dark hote hain, digital mein nahi",
-          "Professional work mein pure black shadows rakhna kanooni taur par zaroori hai"
-        ],
-        "correct": 1,
-        "explain": "Paas ki surfaces se bounce hokar aane wali light (reflected ya bounce light) aam taur par shadow areas mein kuch brightness aur color laati hai. Isi liye real shadows aksar pure black nahi hote."
-      },
-      {
-        "q": "Occlusion shadow kis wajah se banta hai, aur aam taur par scene ka sabse dark shadow kyun hota hai?",
-        "options": [
-          "Yeh tang jagahon par banta hai jahan do surfaces milti hain ya lagbhag touch karti hain, aur wahan na main light pahunch paati hai na reflected light",
-          "Yeh sirf direct sunlight se banta hai aur ghar ke andar kabhi nahi dikhta",
-          "Yeh sirf reflective materials par dikhta hai",
-          "Yeh highlight jaisi hi cheez hai"
-        ],
-        "correct": 0,
-        "explain": "Occlusion shadow un tang gaps mein banta hai jahan surfaces touch karti hain ya lagbhag touch karti hain. Wahan primary aur reflected, dono tarah ki light block ho jaati hain, isliye yeh aam taur par scene ka sabse dark shadow hota hai."
-      },
-      {
-        "q": "Kisi form par highlight aur center light ke beech kya aham farq hai?",
-        "options": [
-          "Dono bilkul ek jaise hain aur ek-doosre ki jagah use ho sakte hain",
-          "Center light light source ki taraf face karne wala plane hai aur wahi fixed rehta hai; highlight light source ka reflection hai jo viewer ki position ke hisaab se move karta hai",
-          "Highlight sirf matte surfaces par dikhta hai",
-          "Center light sirf raat ko dikhta hai"
-        ],
-        "correct": 1,
-        "explain": "Center light light source ki taraf face karne wala fixed plane hai. Highlight khud light source ka reflection hota hai, jo viewer (ya camera) ki position badalne par apni jagah badalta hai, bilkul mirror mein reflection ki tarah."
-      },
-      {
-        "q": "Module ke mutabik, kya cast shadow ke exact shape ko strict geometric accuracy se alag adjust karna theek hai?",
-        "options": [
-          "Nahi, cast shadows hamesha geometrically perfect hone chahiye",
-          "Haan, cast shadow ko us form ko behtar dikhane ke liye reshape kar sakte hain jis par woh padta hai; chhote deviations aam taur par believability nahi bigaadte",
-          "Rendering mein cast shadows kabhi shamil nahi karne chahiye",
-          "Sahi cast shadow shapes sirf professional software calculate kar sakta hai"
-        ],
-        "correct": 1,
-        "explain": "Module kehta hai ki jis surface par cast shadow padta hai, use behtar dikhane ke liye uska shape adjust karna (jaise cylindrical form ke around wrap karna) ek aam aur theek technique hai. Strict geometric accuracy se chhote deviations audience ko aam taur par nazar nahi aate."
-      }
-    ],
-    "checklist": [
-      "Main kisi asli ya rendered object par form shadow, cast shadow, core shadow, aur occlusion shadow pehchan sakta/sakti hoon.",
-      "Main shadow area ko pure black chhodne ke bajay usmein reflected light add kar sakta/sakti hoon.",
-      "Main highlight (move karta reflection) aur center light (light ki taraf face karne wala fixed plane) mein farq samajh sakta/sakti hoon.",
-      "Main jahan do objects milte ya touch karte hain, wahan convincing occlusion shadow render kar sakta/sakti hoon."
-    ],
-    "nextStep": "Ab aap generic form par light aur shadow ki physical logic samajhte hain. Module 102 isi par seedha aage badhte hue specific materials — skin aur organic surfaces — render karta hai, jahan yahi shadow logic is baat se badalti hai ki koi khaas material light mein asal mein kaise behave karta hai."
+  "hook": "Shadow koi ek flat shape nahi hoti — asal mein chaar alag cheezein milkar use banati hain (form shadow, cast shadow, core shadow aur occlusion shadow), lekin zyadaatar beginners in sabko mila kar ek hi dark blob paint karte hain.",
+  "whyItMatters": [
+    "Module 96 mein tumne value structure plan karna seekha; is module mein tumhe un values ke peeche ka physical logic milega — shadows ke woh alag-alag, naam wale types jo kisi bhi ek light source ke neeche form ko convincingly three-dimensional dikhate hain.",
+    "Yeh buniyadi aur har jagah kaam aane wali knowledge hai: shadow ka bilkul yahi logic character, prop ya environment — teeno ko render karte waqt kaam aata hai. Isi liye yeh Module 98 ki material rendering se theek pehle aata hai — alag materials light ke behaviour ko kaise badalte hain, yeh seekhne se pehle tumhe samajhna hoga ki light ek generic form par kaise behave karti hai."
+  ],
+  "coreIdea": [
+    "Ek light source ke neeche form light zone aur shadow zone mein bantta hai, jinhe terminator alag karta hai (woh edge jahan planes light se door mudte hain). Form shadow tab banti hai jab surface bas light se door face kar rahi ho; cast shadow ek alag shape hoti hai, jo tab banti hai jab ek object light ko kisi doosri surface tak pahunchne se rokta hai.",
+    "Reflected light (ya bounce light) ki wajah se shadows aksar bilkul black nahi hoti — yeh paas ki surfaces se bounce hokar shadow side par lautne wali light hoti hai. Core shadow ek alag, aksar zyada dark band hoti hai, jo terminator ke paas wahan dikhti hai jahan reflected light utni mazbooti se nahi pahunchti.",
+    "Occlusion shadow scene ki sabse dark shadow hoti hai. Yeh tang jagahon par dikhti hai jahan do surfaces milti hain ya lagbhag chhooti hain (jaise jahan object zameen par rakha ho) — na main light, na reflected light us tang gap tak pahunch sakti hai, isliye yeh aas-paas ki form ya cast shadow se zyada dark dikhti hai.",
+    "Highlight aur center light ko aksar ek samajh liya jaata hai, lekin yeh alag cheezein hain: center light bas woh plane hai jo light source ki taraf sabse seedha face karta hai; highlight, light source ka reflection hota hai aur viewer ki position ke mutabik move karta hai, bilkul mirror mein dikhne wale reflection ki tarah."
+  ],
+  "mistakes": [
+    "Poore shadow area ko ek flat, ek jaise dark shape ki tarah paint karna, bajay iske ki form shadow, cast shadow, core shadow aur occlusion shadow ko alag wajah aur alag values wale elements samjha jaaye.",
+    "Reflected light ke bina shadows ko bilkul black paint karna, jisse real shadows mein dikhne wale subtle light aur color bounce ke bajay look harsh aur artificial ho jaata hai.",
+    "Highlight ko (light source ka move karta hua reflection) center light ke saath confuse karna (light source ki taraf face karta plane, jo viewer ke saath move nahi karta).",
+    "Occlusion shadow ko poori tarah bhool jaana — aksar jab do chhooti hui objects (zameen par khada figure, table par rakha prop) aapas mein theek se grounded nahi lagte, toh yahi cheez missing hoti hai.",
+    "Reference ki cast shadow shape ko bilkul jaisa hai waisa hi copy karna, use adjust karne ke bajay; jabki believability kharab kiye bina cast shadow ko us form ko behtar dikhane ke liye reshape kiya ja sakta hai jis par woh pad rahi hai."
+  ],
+  "proTips": [
+    "Classic \"shade an egg\" exercise karo: ek asli ande ko safed paper par single desk lamp se light karo. Imagination se banane ki koshish se pehle, observation karke us par har shadow type (form, cast, core, occlusion) ko pehchaano.",
+    "Jab shadow area flat ya bejaan lage, toh khaas taur par check karo ki core shadow ya reflected light missing toh nahi — convincing dimensionality laane ke liye aksar inhi do cheezon ki zaroorat hoti hai.",
+    "Cast shadow ki shape ko us form ko behtar dikhane ke liye adjust karne se mat daro jis par woh padti hai (jaise cylindrical object ke ird-gird lapetkar). Jab tak shadow believable lagti hai, audience aam taur par geometry se hue chhote deviations notice nahi karti.",
+    "Blender jaise free 3D software mein sphere aur ground ka ek simple scene banao. Light source ko seedha move karke dekho ki form shadow, cast shadow, core shadow aur occlusion shadow real time mein kaise badalti hain — isse abstract concepts ko samajhna aur control karna aasaan hota hai."
+  ],
+  "practice": {
+    "warmup": "Koi asli object (anda, ball ya apple) ek desk lamp ke neeche rakho aur us par chaaron shadow types pehchaano: form shadow, cast shadow, core shadow aur occlusion shadow.",
+    "daily": "Digital tareeke se ek simple sphere ya geometric form render karo. Jaanbujhkar chaaron shadow types ke saath ek pehchaan mein aane wala highlight aur center light bhi shamil karo.",
+    "weekly": "Apni pehle ki value studies mein se ek (Module 96) lo aur agar uske shadow areas mein reflected light ya core shadow missing ho, toh unhe add karo.",
+    "challenge": "Do chhooti hui objects render karo (zameen par khada figure, table par rakha cup) aur jahan woh milti hain, wahan convincing occlusion shadow render karne par khaas dhyaan do."
   },
+  "quiz": [
+    {
+      "q": "Form shadow aur cast shadow mein kya farq hai?",
+      "options": [
+        "Dono ek hi cheez hain, bas naam alag hain",
+        "Form shadow tab banti hai jab surface light source se door face kar rahi ho; cast shadow ek alag shape hoti hai, jo tab banti hai jab ek object light ko kisi doosri surface tak pahunchne se rokta hai",
+        "Form shadow sirf spheres par dikhti hai, cast shadow sirf flat surfaces par",
+        "Cast shadow hamesha form shadow se zyada dark hoti hai"
+      ],
+      "correct": 1,
+      "explain": "Form shadow tab hoti hai jab surface light se door mudti hai; cast shadow ek alag shape hoti hai, jo tab banti hai jab ek object light ko doosri surface tak pahunchne se rokta hai."
+    },
+    {
+      "q": "Shadows aam taur par bilkul black se halki kyun dikhti hain?",
+      "options": [
+        "Software bilkul black render nahi kar sakta",
+        "Paas ki surfaces se aane wali reflected light (bounce light) shadow area mein padti hai",
+        "Traditional media mein hi shadows dark hoti hain, digital mein nahi",
+        "Professional kaam mein pure black shadows rakhna kanooni taur par zaroori hai"
+      ],
+      "correct": 1,
+      "explain": "Paas ki surfaces se bounce hokar aane wali light (reflected light ya bounce light) shadow areas mein aam taur par thodi brightness aur color laati hai. Isi liye asli shadows aksar bilkul black nahi hoti."
+    },
+    {
+      "q": "Occlusion shadow kis wajah se banti hai, aur scene mein yeh aam taur par sabse dark shadow kyun hoti hai?",
+      "options": [
+        "Yeh tang jagahon par banti hai jahan do surfaces milti hain ya lagbhag chhooti hain, aur wahan na main light pahunchti hai na reflected light",
+        "Yeh sirf direct sunlight se banti hai aur kabhi indoors nahi dikhti",
+        "Yeh sirf reflective materials par dikhti hai",
+        "Yeh highlight ke jaisi hi cheez hai"
+      ],
+      "correct": 0,
+      "explain": "Occlusion shadow un tang gaps mein banti hai jahan surfaces ek doosre ko chhooti hain ya lagbhag chhooti hain. Wahan primary aur reflected, dono tarah ki light ruk jaati hain, isliye yeh aam taur par scene ki sabse dark shadow hoti hai."
+    },
+    {
+      "q": "Form par highlight aur center light ke beech main farq kya hai?",
+      "options": [
+        "Dono bilkul ek hi cheez hain aur ek doosre ki jagah use ho sakte hain",
+        "Center light light source ki taraf face karta plane hai aur apni jagah rehta hai; highlight light source ka reflection hai, jo viewer ki position ke mutabik move karta hai",
+        "Highlight sirf matte surfaces par dikhta hai",
+        "Center light sirf raat ko dikhta hai"
+      ],
+      "correct": 1,
+      "explain": "Center light, light source ki taraf face karta ek fixed plane hota hai. Highlight khud light source ka reflection hai, jo viewer (ya camera) ki position badalne ke saath apni jagah badalta hai — bilkul mirror mein dikhne wale reflection ki tarah."
+    },
+    {
+      "q": "Module ke mutabik, kya cast shadow ki exact shape ko strict geometric accuracy se alag adjust karna theek hai?",
+      "options": [
+        "Nahi, cast shadows hamesha geometrically perfect honi chahiye",
+        "Haan, cast shadow ko us form ko behtar dikhane ke liye reshape kar sakte ho jis par woh padti hai; chhote deviations se believability aam taur par kharab nahi hoti",
+        "Rendering mein cast shadows kabhi shamil nahi karni chahiye",
+        "Sahi cast shadow shapes sirf professional software hi calculate kar sakta hai"
+      ],
+      "correct": 1,
+      "explain": "Module mein bataya gaya hai ki cast shadow ki shape ko adjust karna (jaise use cylindrical form ke ird-gird lapetna), taaki jis surface par woh padti hai use behtar dikhaya ja sake, ek aam aur theek technique hai. Strict geometric accuracy se chhote deviations audience aam taur par notice nahi karti."
+    }
+  ],
+  "checklist": [
+    "Main kisi asli ya rendered object par form shadow, cast shadow, core shadow aur occlusion shadow pehchaan sakta/sakti hoon.",
+    "Main shadow area ko bilkul black chhodne ke bajay usmein reflected light add kar sakta/sakti hoon.",
+    "Main highlight (move karta reflection) aur center light (light ki taraf face karta fixed plane) mein farq samajh sakta/sakti hoon.",
+    "Main do objects ke milne ya chhoone ki jagah convincing occlusion shadow render kar sakta/sakti hoon."
+  ],
+  "nextStep": "Ab tum generic form par light aur shadow ka physical logic samajhte ho. Module 98 isi par seedha aage badhega aur khaas materials — skin aur organic surfaces — render karna sikhayega. Inmein shadow ka yahi logic, is baat ke mutabik badalta hai ki koi khaas material light ke neeche asal mein kaise behave karta hai."
+},
   "m94": {
-    "hook": "Skin sirf ek colored surface nahi hai — light asal mein usmein enter karti hai, surface ke neeche bounce hoti hai, aur kisi doosri jagah se bahar aati hai. Isi wajah se flat, single-tone skin, chahe use kitni bhi dhyaan se shade karo, hamesha plastic jaisi lagti hai.",
-    "whyItMatters": [
-      "Module 101 mein aapne kisi bhi form ke liye universal shadow logic seekhi. Yeh module kai modules mein se pehla hai jo dikhata hai ki ek specific material us generic logic ko kaise badalta hai — skin un sabse aam aur challenging surfaces mein se hai jinhe aap render karenge, kyunki human eyes chehre mein zara-si bhi galat lagne wali cheez ke liye bahut sensitive hoti hain.",
-      "Subsurface scattering, yahan cover kiya gaya skin-specific main effect, Module 101 ki kisi bhi cheez se sachmuch alag hai: yeh shadow type nahi, balki material ki ek property hai jo light ko andar ghusne aur phir se bahar nikalne deti hai. Isi liye skin ko sirf generic shadow logic se render karne ke bajay apna alag rendering approach chahiye."
-    ],
-    "coreIdea": [
-      "Subsurface scattering tab hoti hai jab light skin mein enter karke surface ke neeche bounce hoti hai aur paas hi se bahar nikalti hai; hard material ki tarah seedha surface se reflect nahi hoti. Isi liye ears, nostrils, aur fingertips jaise patle areas mein strong backlight padne par aksar warm reddish glow dikhta hai — light unmein se kuch had tak guzar rahi hoti hai.",
-      "Terminator (light se shadow tak ka transition) woh jagah hai jahan subsurface scattering sabse zyada dikhti hai: skin par terminator aksar flat, even transition ke bajay highlight aur shadow, dono se zyada warm aur saturated color dikhata hai, kyunki us edge par light material ke andar scatter ho rahi hoti hai.",
-      "Realistic lighting mein skin ke shadows aam taur par mid-tones se zyada muted aur desaturated rehne chahiye, kyunki shadows light ko reflect karne ke bajay absorb karte hain — mid-tones ko seedhi illumination milti hai, lekin woh overexposed nahi hote, isliye aam taur par unmein sabse zyada saturated color information hoti hai.",
-      "Skin apne aas-paas ke environment se alag nahi hoti: surrounding environment se bounce light (red shirt, blue sky, warm lamp) skin ke shadow areas mein subtly reflect hoti hai. Aksar ise shamil karne se rendered figure apne scene ka hissa lagti hai, bajay aisa lagne ke ki use scene ke upar chipka diya gaya ho."
-    ],
-    "mistakes": [
-      "Skin ko hard, opaque material ki tarah treat karna aur uske shadows ko flat, single-tone rakhna, jisse subsurface scattering ka warm internal glow chhoot jaata hai — khaas taur par ears aur fingertips jaise patle areas mein.",
-      "Skin ke shadow areas ko mid-tones se zyada saturated aur colorful banana, jo realistic lighting mein aam taur par unnatural lagta hai (haalanki stylized ya dramatic lighting wale kaam mein yeh jaan-boojhkar liya gaya style choice ho sakta hai).",
-      "Skin ko environment se alag render karna aur paas ki colored surfaces se aane wali bounce light ko ignore karna, jo naturally shadow areas mein subtly reflect hoti.",
-      "Form define karne ke liye sirf mid-tones par bharosa karna, bajay light aur shadow ke transition ko yeh kaam karne dene ke; isse look dull aur flat ho jaata hai.",
-      "Skin ko bilkul smooth banana aur usmein koi texture na rakhna, jisse woh convincingly organic ke bajay artificial aur plastic jaisi lagti hai."
-    ],
-    "proTips": [
-      "Terminator par khaas taur par ek soft, warm glaze (aksar orange-red) add karo. Subsurface scattering light-to-shadow transition par sabse zyada dikhti hai; use simulate karne ke liye low-opacity airbrush ya overlay-mode layer use karo.",
-      "Realistic look ke liye shadow saturation ko mid-tone saturation se kam rakho. Zyada saturated shadows ko default ke bajay dramatic ya stylized lighting ke liye jaan-boojhkar liya gaya style choice samjho.",
-      "Kisi dominant paas ki surface (clothing, background) se bounce-light color pick karke, low opacity par skin ke shadow areas mein subtly add karo. Isse figure visually apne environment se jud jaati hai.",
-      "Skin render ke end mein ek bahut subtle noise ya texture pass add karo, taaki perfectly smooth gradients toot jaayein. Aise gradients warna artificial ya plastic jaise lagte hain."
-    ],
-    "practice": {
-      "warmup": "Skin-tone color use karke ek simple sphere render karo, usmein warm terminator glaze aur reflected bounce light add karo. Phir compare karo ki wohi sphere flat, single-tone shading ke saath kaisi dikhti hai.",
-      "daily": "Koi simple portrait ya head study lo aur skin ko base color, Multiply shadow layer, warm terminator glaze, aur lit areas ke liye Screen ya Add layer use karke render karo.",
-      "weekly": "Ek chhoti figure illustration render karo jiske paas ek dominant colored surface ho (red shirt, green background), aur us color ko jaan-boojhkar skin ke shadow areas mein bounce light ke roop mein add karo.",
-      "challenge": "Ek hi face ko do baar render karo — ek baar muted, desaturated shadows aur vibrant mid-tones ke saath (realistic), aur ek baar zyada saturated shadows ke saath (stylized) — phir compare karo ki dono approaches overall feel ko kaise badalti hain."
-    },
-    "quiz": [
-      {
-        "q": "Subsurface scattering kya hai, aur skin par yeh sabse zyada kahan dikhti hai?",
-        "options": [
-          "Ek shadow type jo sirf raat mein dikhta hai aur forehead par sabse zyada nazar aata hai",
-          "Light skin mein enter karke andar bounce hoti hai aur paas hi se bahar nikalti hai; backlight mein ears, nostrils, aur fingertips jaise patle areas mein sabse zyada dikhti hai",
-          "Digital painting software ki brush setting jiska real duniya se koi lena-dena nahi",
-          "Blend mode jo sirf hard, reflective materials ke liye use hota hai"
-        ],
-        "correct": 1,
-        "explain": "Subsurface scattering mein light skin ke andar ghuskar paas hi se bahar nikalti hai, seedha surface se reflect nahi hoti. Ears aur fingertips jaise patle, backlit areas mein yeh sabse zyada dikhti hai aur unmein warm glow aata hai."
-      },
-      {
-        "q": "Module ke mutabik, skin par terminator (light-to-shadow transition) aksar kaisa dikhna chahiye?",
-        "options": [
-          "Bina color variation ke flat, even gray transition",
-          "Andar light scatter hone ki wajah se highlight ya shadow, dono se zyada warm aur saturated color",
-          "Bina kisi color ke pure black",
-          "Bilkul highlight jaisa hi color"
-        ],
-        "correct": 1,
-        "explain": "Kyuki subsurface scattering terminator par khaas taur par active hoti hai, skin ka yeh transition zone aksar aas-paas ke highlight ya shadow se zyada warm aur saturated hue dikhata hai."
-      },
-      {
-        "q": "Realistic lighting mein skin ki shadow saturation, mid-tone saturation ke muqable aam taur par kaisi honi chahiye?",
-        "options": [
-          "Shadows hamesha mid-tones se zyada saturated hone chahiye",
-          "Shadows aam taur par mid-tones se zyada muted/desaturated hone chahiye, kyunki shadows light ko reflect karne ke bajay absorb karte hain",
-          "Shadows aur mid-tones mein saturation ek jaisi honi chahiye",
-          "Skin rendering mein saturation ka koi relevant asar nahi hota"
-        ],
-        "correct": 1,
-        "explain": "Realistic lighting mein mid-tones (jin par seedhi illumination padti hai) mein aam taur par sabse zyada saturated color hota hai, jabki shadows zyada muted rehte hain kyunki woh light ko reflect karne ke bajay absorb karte hain."
-      },
-      {
-        "q": "Skin render karte waqt environment se aane wali bounce light kyun zaroori hai?",
-        "options": [
-          "Scene mein skin ke look par iska koi asli asar nahi hota",
-          "Yeh shadow areas mein subtly reflect hoti hai aur figure ko environment se visually jodne mein madad karti hai, bajay iske ki woh upar se chipka hua lage",
-          "Yeh sirf metal jaise hard, reflective materials render karte waqt zaroori hoti hai",
-          "Logon ko render karte waqt bounce light hamesha avoid karni chahiye"
-        ],
-        "correct": 1,
-        "explain": "Skin environment se alag nahi hoti — paas ki colored surfaces se bounce light shadow areas mein subtly reflect hoti hai aur rendered figure ko scene mein ghula-mila dikhati hai, bajay alag se chipki hui lagne ke."
-      },
-      {
-        "q": "Skin rendering ke aakhri step mein subtle texture ya noise pass add karna aksar kyun recommend kiya jaata hai?",
-        "options": [
-          "Isse file size kaafi kam ho jaata hai",
-          "Bilkul smooth skin artificial ya plastic jaisi lagti hai, isliye subtle texture se woh zyada convincingly organic dikhti hai",
-          "Zyaadatar software licenses mein yeh zaroori hota hai",
-          "Yeh subsurface scattering ki zaroorat poori tarah khatam kar deta hai"
-        ],
-        "correct": 1,
-        "explain": "Skin par bilkul smooth gradients artificial ya plastic jaise lagte hain. Halka noise ya texture pass us smoothness ko todta hai aur result ko zyada convincingly organic banata hai."
-      }
-    ],
-    "checklist": [
-      "Main samjha sakta/sakti hoon ki subsurface scattering kya hai aur skin par yeh sabse zyada kahan dikhti hai.",
-      "Main light-to-shadow transition par subsurface scattering simulate karne ke liye warm terminator glaze add kar sakta/sakti hoon.",
-      "Realistic result ke liye main shadow saturation ko mid-tone saturation se zyada muted rakh sakta/sakti hoon (ya stylized look ke liye jaan-boojhkar is rule ko tod sakta/sakti hoon).",
-      "Main figure ke shadow areas mein paas ki surface se bounce light add karke use environment ke saath integrate kar sakta/sakti hoon."
-    ],
-    "nextStep": "Ab aap samajhte hain ki ek specific material (skin), Module 101 ke generic shadow logic ko kaise badalta hai. Module 103 isi modify-the-logic approach ko hard surfaces — metal, glass, aur stone — par apply karta hai, jo organic material se bahut alag tarah behave karte hain."
+  "hook": "Skin sirf ek colored surface nahi hoti — light uske andar jaati hai, surface ke neeche bounce karti hai, aur phir kisi aur jagah se bahar nikalti hai. Isi wajah se flat, ek hi tone wali skin kitni bhi carefully shade karo, plastic jaisi lagti hai.",
+  "whyItMatters": [
+    "Module 97 mein tumne kisi bhi form ke liye universal shadow logic seekha. Yeh module un kai lessons mein se pehla hai jo dikhate hain ki ek specific material us general logic ko kaise badalta hai — skin un sabse common aur challenging surfaces mein se hai jinhe tum render karoge, kyunki human eyes chehre mein zara si bhi galti ko bahut jaldi pakad leti hain.",
+    "Subsurface scattering, yani yahan cover kiya gaya skin-specific main effect, Module 97 ki kisi bhi cheez se sach mein alag hai: yeh shadow ka koi type nahi, balki material ki apni property hai jo light ko andar jaane aur phir bahar nikalne deti hai. Isi liye skin ko sirf generic shadow logic se nahi, balki apne dedicated rendering approach se dikhana padta hai."
+  ],
+  "coreIdea": [
+    "Subsurface scattering tab hota hai jab light skin ke andar jaakar, surface ke neeche bounce karti hai aur aas-paas se bahar nikalti hai — hard material ki tarah seedha surface se reflect nahi hoti. Isi liye kaan, naak ke chhed aur ungliyon ke tips jaise patle hisson mein strong backlight padne par aksar warm, reddish glow dikhta hai: light unke andar se kuch had tak guzar rahi hoti hai.",
+    "Terminator (light se shadow mein jaane wala transition) par subsurface scattering sabse zyada dikhta hai. Skin par yeh transition aksar flat aur ek jaisa nahi hota; terminator ka color highlight aur shadow dono se zyada warm aur saturated nazar aa sakta hai, kyunki us edge par light andar hi scatter ho rahi hoti hai.",
+    "Realistic lighting mein skin ke shadows aam taur par mid-tones se zyada muted aur desaturated hone chahiye, kyunki shadows light ko reflect karne ke bajay absorb karte hain. Mid-tones ko direct light milti hai, lekin woh overexposed nahi hote, isliye aam taur par sabse zyada saturated color information unhi mein hoti hai.",
+    "Skin apne aas-paas ke environment se alag nahi hoti: aas-paas ki cheezon se aane wali bounce light (laal shirt, neela aasman, warm lamp) skin ke shadow areas mein halki si reflect hoti hai. Isse aksar rendered figure apne scene ka hissa lagti hai, na ki aise jaise use scene ke upar chipka diya ho. "
+  ],
+  "mistakes": [
+    "Skin ko hard, opaque material ki tarah dikhana aur flat, ek hi tone wali shadow rakhna, jisse subsurface scattering ka warm internal glow chhoot jaata hai — khaaskar kaan aur ungliyon ke tips jaise patle hisson mein.",
+    "Skin ke shadow areas ko mid-tones se zyada saturated aur colorful banana. Realistic lighting mein yeh aksar unnatural lagta hai (haalanki stylized ya dramatic lighting wale kaam mein yeh jaan-boojhkar kiya ja sakta hai).",
+    "Skin ko environment se alag render karna aur paas ki colored surfaces se aane wali bounce light ko nazarandaaz karna, jo naturally shadow areas mein halki si reflect hoti.",
+    "Form dikhane ke liye sirf mid-tones par bharosa karna, light aur shadow ke beech ke transition ko woh kaam nahi karne dena. Isse result dull aur flat lagta hai.",
+    "Skin ko bilkul smooth banana aur texture bilkul na dena, jisse woh convincingly organic ke bajay artificial aur plastic jaisi lagti hai."
+  ],
+  "proTips": [
+    "Terminator par khaas taur se ek soft, warm glaze (aksar orange-red) lagao. Iske liye low-opacity airbrush ya overlay-mode layer use karo, taaki light se shadow ke transition par sabse zyada dikhne wale subsurface scattering ko simulate kar sako.",
+    "Realistic look ke liye shadow saturation ko mid-tone saturation se kam rakho. Zyada saturated shadows ko default ki jagah dramatic ya stylized lighting ke liye ek deliberate stylistic choice samjho.",
+    "Aas-paas ki kisi dominant surface (clothing, background) se bounce-light color lo, phir low opacity par use skin ke shadow areas mein halka sa add karo. Isse figure visually apne environment se judi hui lagegi.",
+    "Skin render ke end mein bahut subtle noise ya texture pass add karo, taaki bilkul smooth gradients toot sakein — warna woh aksar artificial ya plastic jaise lagte hain."
+  ],
+  "practice": {
+    "warmup": "Skin-tone color use karke ek simple sphere render karo. Usmein warm terminator glaze aur reflected bounce light add karo, phir uski tulna usi sphere se karo jise flat, ek hi tone ki shading ke saath render kiya hai.",
+    "daily": "Ek simple portrait ya head study lo aur skin ko base color, Multiply shadow layer, warm terminator glaze, aur lit areas ke liye Screen ya Add layer se render karo.",
+    "weekly": "Ek chhoti figure illustration render karo, jiske paas ek dominant colored surface ho (laal shirt, hara background). Us surface ka color jaan-boojhkar skin ke shadow areas mein bounce light ke roop mein add karo.",
+    "challenge": "Ek hi face ko do baar render karo — ek baar muted, desaturated shadows aur vibrant mid-tones ke saath (realistic), aur ek baar zyada saturated shadows ke saath (stylized). Phir compare karo ki dono approaches overall feel ko kaise badalti hain."
   },
+  "quiz": [
+    {
+      "q": "Subsurface scattering kya hota hai, aur skin par yeh sabse zyada kahan dikhta hai?",
+      "options": [
+        "Shadow ka ek type jo sirf raat ko dikhta hai, aur forehead par sabse zyada nazar aata hai",
+        "Light skin ke andar jaakar internally bounce karti hai aur paas se bahar nikalti hai; backlight mein kaan, naak ke chhed aur ungliyon ke tips jaise patle hisson mein yeh sabse zyada dikhta hai",
+        "Digital painting software ki ek brush setting jiska real duniya se koi lena-dena nahi",
+        "Blend mode jo sirf hard, reflective materials ke liye use hota hai"
+      ],
+      "correct": 1,
+      "explain": "Subsurface scattering mein light skin ke andar jaakar paas se bahar nikalti hai, surface se seedha reflect nahi hoti. Yeh kaan aur ungliyon ke tips jaise patle, backlit hisson mein sabse zyada dikhta hai, jo warm glow karte hain."
+    },
+    {
+      "q": "Module ke mutabik, skin par terminator (light se shadow ka transition) mein aksar kya dikhna chahiye?",
+      "options": [
+        "Bina kisi color variation ka flat, even gray transition",
+        "Internal light scattering ki wajah se highlight ya shadow dono se zyada warm aur saturated color",
+        "Bina kisi color ka pure black",
+        "Highlight ke bilkul same color"
+      ],
+      "correct": 1,
+      "explain": "Subsurface scattering terminator par khaas taur se active hota hai, isliye skin par yeh transition zone aksar aas-paas ke highlight ya shadow se zyada warm aur saturated hue dikhata hai."
+    },
+    {
+      "q": "Realistic lighting mein skin ke shadow saturation ki tulna mid-tone saturation se kaise honi chahiye?",
+      "options": [
+        "Shadows hamesha mid-tones se zyada saturated hone chahiye",
+        "Shadows aam taur par mid-tones se zyada muted/desaturated hone chahiye, kyunki shadows light ko reflect karne ke bajay absorb karte hain",
+        "Shadows aur mid-tones mein saturation bilkul ek jaisi honi chahiye",
+        "Skin rendering mein saturation ka koi khaas asar nahi hota"
+      ],
+      "correct": 1,
+      "explain": "Realistic lighting mein mid-tones (jinhe direct light milti hai) aam taur par sabse zyada saturated color rakhte hain. Shadows zyada muted hote hain, kyunki woh light ko reflect karne ke bajay absorb karte hain."
+    },
+    {
+      "q": "Skin render karte waqt environment se aane wali bounce light zaroori kyun hoti hai?",
+      "options": [
+        "Scene mein skin ke look par iska koi asar nahi hota",
+        "Yeh shadow areas mein halki si reflect hoti hai aur figure ko environment se visually jodne mein madad karti hai, taaki woh upar chipkai hui na lage",
+        "Yeh sirf metal jaise hard, reflective materials render karte waqt kaam aati hai",
+        "Logon ko render karte waqt bounce light se hamesha bachna chahiye"
+      ],
+      "correct": 1,
+      "explain": "Skin apne aas-paas se alag nahi hoti — paas ki colored surfaces se aane wali bounce light jab shadow areas mein halki si reflect hoti hai, toh rendered figure scene ka hissa lagti hai, alag se chipkai hui nahi."
+    },
+    {
+      "q": "Skin render karne ke aakhri step mein subtle texture ya noise pass add karna aksar kyun recommend kiya jaata hai?",
+      "options": [
+        "Isse file size kaafi kam ho jaata hai",
+        "Bilkul smooth skin artificial ya plastic jaisi lagti hai, isliye subtle texture se woh zyada convincingly organic dikhti hai",
+        "Zyaadatar software licenses mein yeh zaroori hota hai",
+        "Yeh subsurface scattering ki zaroorat ko poori tarah khatam kar deta hai"
+      ],
+      "correct": 1,
+      "explain": "Skin par bilkul smooth gradients artificial ya plastic jaise lagte hain. Halka noise ya texture pass unki smoothness ko todta hai, jisse result zyada convincingly organic lagta hai."
+    }
+  ],
+  "checklist": [
+    "Main samjha sakta hoon ki subsurface scattering kya hota hai aur skin par yeh sabse zyada kahan dikhta hai.",
+    "Main light se shadow ke transition par subsurface scattering simulate karne ke liye warm terminator glaze add kar sakta hoon.",
+    "Realistic result ke liye main shadow saturation ko mid-tone saturation se zyada muted rakh sakta hoon (ya stylized look ke liye jaan-boojhkar is rule ko tod sakta hoon).",
+    "Figure ko uske environment se jodne ke liye main paas ki surface se bounce light lekar uske shadow areas mein add kar sakta hoon."
+  ],
+  "nextStep": "Ab tum samajhte ho ki ek specific material (skin), Module 97 ke generic shadow logic ko kaise badalta hai. Module 99 mein isi logic ko badalne wale approach ko hard surfaces — metal, glass aur stone — par apply karoge, jo organic materials se bilkul alag tarah behave karte hain."
+},
   "m95": {
-    "hook": "Metal ka apna koi rang nahi hota — ek polished sword asal mein silver-gray nahi hoti; woh ek distorted mirror hoti hai jo sky, ground aur scene ki har doosri cheez dikhati hai, aur isi wajah se sirf imagination se use paint karna itna mushkil hota hai.",
-    "whyItMatters": [
-      "Module 102 mein dekha tha ki ek material (skin), Module 101 ke generic shadow logic ko kaise modify karta hai. Yeh module isi modify-the-logic approach ko doosre extreme par apply karta hai: hard, reflective surfaces par, jo organic materials se lagbhag bilkul alag behave karte hain; isse illustration ki do sabse common material categories ka range poora hota hai.",
-      "Metal, glass aur stone character aur environment art mein baar-baar dikhte hain — armor, weapons, windows, architecture — aur inhe galat render karna (aksar contrast ko zaroorat se kam rakhne ki wajah se) kisi rendered piece ko amateurish dikhane ke sabse tez tareeqon mein se ek hai, chahe baaki sab kuch strong ho."
-    ],
-    "coreIdea": [
-      "Reflective surface apna color environment se leti hai; uska koi fixed local color nahi hota — metal object ke top par sky reflect hota hai, bottom par ground, aur sides par aas-paas ki colored objects. Isi liye metal ko surrounding scene ke baare mein soche bina, akela paint karne par woh flat aur scene se disconnected lagta hai.",
-      "Reflective surfaces mein value contrast bahut extreme aur abrupt hota hai: highlights lagbhag pure white ke kareeb, shadows lagbhag black tak, aur unke beech hard, sharp transition — organic materials ke unlike, jahan transitions soft aur gradual hote hain. Beginners lagataar is contrast ko zaroorat se kam rakhte hain; yahi sabse common wajah hai ki painted metal plastic jaisa lagta hai.",
-      "Reflected light band — shadow area ke bottom edge par lighter value ki ek strip, jahan surface ground ya aas-paas ki objects se bounce hokar aayi light pakadti hai — reflective materials par khaas taur se prominent aur important hoti hai; kabhi-kabhi yeh primary highlight jitni bright bhi hoti hai.",
-      "Alag-alag hard materials reflectivity spectrum par alag jagah hote hain (polished chrome, brushed steel, matte stone, rough rust), aur material spectrum par kahan hai, usi se baaki sab tay hota hai: uske highlights kitne sharp honge, value contrast kitna extreme hoga, aur environment ka kitna hissa usmein clearly reflect hoga."
-    ],
-    "mistakes": [
-      "Hard, reflective surface ko uske environment se alag paint karna aur sky-colored top, ground-colored bottom, aur paas ki objects ke reflections chhod dena, jabki yehi cheezein use scene ka hissa mehsoos karati hain.",
-      "Value contrast ko bahut moderate rakhna, jisse sharp, extreme highlight-to-shadow jump ke bajay soft, plastic-jaisa result milta hai jo genuinely reflective nahi lagta.",
-      "Highlight ko narrow aur hard-edged rakhne ke bajay broad aur soft banana, jo metal surface ko metal ke bajay rubber ya plastic jaisa dikhane ke sabse tez tareeqon mein se ek hai.",
-      "Har hard material ko ek hi tarah treat karna, chahe woh asal mein kitna bhi reflective ho; specific material ki reflectivity spectrum mein position ke hisaab se highlight sharpness aur value contrast adjust na karna.",
-      "Surface wear (scratches, dents, rust) ko believable cause aur direction wale details ke bajay random bikhre marks ki tarah add karna, jisse woh history ke bajay decoration lagte hain."
-    ],
-    "proTips": [
-      "Metal ya glass object paint karne se pehle decide karo ki uske upar kya hai (sky, ceiling), neeche kya hai (ground, floor), aur side mein kya hai (paas ki colored objects); phir un colors ko reflection mein dikhne do — yeh ek habit, kisi bhi brush technique se zyada, metal ko convincing banati hai.",
-      "Highlight aur shadow values ke beech ka difference pehle jitna comfortable lage, usse bhi zyada badhao — extreme value contrast hi convincing metal ko flat, moderate-contrast result se alag karta hai, jo plastic jaisa lagta hai.",
-      "Metal object ka primary highlight bahut saare chhote, unsure marks se dheere-dheere build karne ke bajay ek confident, narrow, hard-edged stroke ke roop mein paint karo — highlights mein hesitation lagbhag kisi bhi aur jagah se zyada dikhti hai.",
-      "Scratches ya wear add karte waqt, har scratch ko ek light side aur ek dark side do (groove ki dono walls); isi se scratch, upar banaye flat mark ke bajay 3D groove lagta hai."
-    ],
-    "practice": {
-      "warmup": "Ek hi sphere ko teen baar, teen alag hard materials ki tarah paint karo (polished chrome, brushed steel, matte stone); har material ke liye highlight sharpness aur value contrast adjust karo.",
-      "daily": "Ek hard-surface object (blade, goblet, window) ko deliberate environment-color reflections ke saath render karo — upar sky, neeche ground, aur ek side mein paas ki koi colored object.",
-      "weekly": "Ek finished hard-surface render lo aur uska value contrast apni pehli instinct se noticeably zyada badhao (brighter highlight, darker shadow), phir dono results compare karo.",
-      "challenge": "Hard-surface object par believable wear (scratches, dents ya rust) add karo; har mark ko plausible cause do aur ek flat line ke bajay light-and-dark paired edge banao."
-    },
-    "quiz": [
-      {
-        "q": "Polished metal jaisi highly reflective surface ka fixed local color kyun nahi hota?",
-        "options": [
-          "Convention ke mutabik reflective surfaces hamesha gray paint ki jaati hain",
-          "Yeh apna color environment se leti hai; apna fixed hue dikhane ke bajay sky, ground aur paas ki objects ko reflect karti hai",
-          "Digital painting mein local color ka concept hota hi nahi",
-          "Lighting chahe jaisi ho, metal hamesha white dikhta hai"
-        ],
-        "correct": 1,
-        "explain": "Highly reflective surface ek distorted mirror ki tarah kaam karti hai aur ek fixed local color dikhane ke bajay apne surroundings ke colors dikhati hai (upar sky, neeche ground, aur sides mein paas ki objects)."
-      },
-      {
-        "q": "Reflective hard surfaces par value contrast ke baare mein beginners ki ek common mistake kya hoti hai?",
-        "options": [
-          "Contrast ko bahut zyada extreme karna",
-          "Value contrast ko bahut moderate rakhna, jisse reflective dikhne wale sharp jump ke bajay soft, plastic-jaisa result milta hai",
-          "Hard surfaces ke liye value contrast maayne nahi rakhta",
-          "Bina kisi mid-tones ke sirf pure black aur white use karna"
-        ],
-        "correct": 1,
-        "explain": "Beginners reflective surfaces par value contrast ko zaroorat se kam rakhte hain; convincing reflective result ke liye highlights ko brighter aur shadows ko darker karna aam taur par zaroori hota hai, chahe yeh pehle uncomfortable lage."
-      },
-      {
-        "q": "Reflected light band kya hoti hai, aur yeh aam taur par kahan dikhai deti hai?",
-        "options": [
-          "Rainbow effect jo sirf glass prisms mein dikhta hai",
-          "Shadow area ke bottom edge par lighter value ki strip, jahan surface ground ya paas ki objects se bounce hokar aayi light pakadti hai",
-          "Ek aisa brush jo sirf fabric paint karne ke kaam aata hai",
-          "Surface par sabse bright highlight, jo uske center mein hoti hai"
-        ],
-        "correct": 1,
-        "explain": "Reflected light band aam taur par shadow area ke lower edge par milne wali lighter strip hoti hai, jo ground ya paas ki surfaces se bounce hokar aayi light ki wajah se banti hai — bahut reflective materials par yeh primary highlight jitni bright ho sakti hai."
-      },
-      {
-        "q": "Metal par primary highlight ko dheere-dheere build karne ke bajay ek confident, narrow stroke mein kyun paint karna chahiye?",
-        "options": [
-          "Isse sirf time bachta hai, visual benefit nahi hota",
-          "Narrow, hard-edged aur confident highlight metal jaisa lagta hai, jabki soft ya hesitant highlight plastic ya rubber jaisa lagta hai",
-          "Metal par kai chhote strokes hamesha zyada achhe lagte hain",
-          "Highlights ka material ke appearance par koi asar nahi hota"
-        ],
-        "correct": 1,
-        "explain": "Sharp, confidently placed highlight reflective metal surface ke sabse clear signals mein se ek hai; broad, soft ya dheere-dheere hichkichate hue banaya gaya highlight aksar kisi softer, non-metallic material jaisa lagta hai."
-      },
-      {
-        "q": "Scratches jaise surface wear ko randomly rakhne ke bajay unka believable cause aur direction kyun hona chahiye?",
-        "options": [
-          "Random marks hamesha zyada visually interesting hote hain",
-          "Socha-samjha, cause ke hisaab se logical wear history aur believability dikhata hai, jabki random bikhre marks decoration ya noise lagte hain",
-          "Scratches hamesha object ke bilkul center mein hone chahiye",
-          "Wear marks ka render ki believability par koi asar nahi hota"
-        ],
-        "correct": 1,
-        "explain": "Plausible cause aur direction ke saath rakhe gaye wear marks (jaise un jagahon par zyada marks jahan object par logically impact padta) object ki history ki believable kahani batate hain, jabki random scattering manmaani decoration lagti hai."
-      }
-    ],
-    "checklist": [
-      "Main hard-surface render mein environment-color reflections (sky, ground, paas ki objects) add kar sakta/sakti hoon.",
-      "Main reflective surface par value contrast ko apni pehli instinct se zyada push kar sakta/sakti hoon.",
-      "Main soft, dheere-dheere banaye highlight ke bajay confident, narrow, hard-edged highlight paint kar sakta/sakti hoon.",
-      "Main believable cause aur light-and-dark paired edge ke saath wear marks add kar sakta/sakti hoon."
-    ],
-    "nextStep": "Ab tumhare paas organic (skin) aur hard-reflective (metal, glass) surfaces ke liye material rendering approaches hain. Module 104 edge control par focus karta hai — poore piece mein hard aur soft edges ka deliberate use, taaki focus direct ho aur form describe ki ja sake; yeh skill un sabhi materials par apply hoti hai jinhe tumne ab tak render kiya hai."
+  "hook": "Metal ka apna koi color nahi hota — polished sword asal mein silver-gray nahi hoti. Woh ek distorted mirror hoti hai, jismein aasman, zameen aur scene ki baaki har cheez dikh rahi hoti hai. Isi liye sirf imagination se use paint karna itna mushkil hai.",
+  "whyItMatters": [
+    "Module 98 mein tumne dekha ki ek material (skin), Module 97 ke generic shadow logic ko kaise badalta hai. Is module mein wahi logic-badalne wala approach bilkul ulte extreme par apply hota hai: hard, reflective surfaces par, jo organic materials se lagbhag bilkul alag behave karte hain. Isse illustration mein sabse common do material categories ko render karne ki tumhari samajh poori hoti hai.",
+    "Character aur environment art mein metal, glass aur stone baar-baar dikhte hain — armor, weapons, windows, architecture mein. Inhe galat dikhana (aksar contrast ko kaafi push na karne ki wajah se) kisi rendered piece ko amateurish dikhane ke sabse tez tareeqon mein se hai, chahe us piece ki baaki sab cheezein strong hon."
+  ],
+  "coreIdea": [
+    "Reflective surface apna color environment se leti hai, uska ek fixed local color nahi hota — metal object ke upar wale hisse mein aasman reflect hota hai, neeche wale hisse mein zameen, aur sides par paas ki colored cheezein. Isi liye aas-paas ke scene ke baare mein soche bina metal paint karne par woh aksar flat aur scene se alag lagta hai.",
+    "Reflective surfaces mein value contrast bahut extreme aur achanak hota hai: highlights lagbhag pure white ke paas, shadows lagbhag black, aur dono ke beech hard, sharp transition — organic materials se bilkul alag, jahan transitions soft aur gradual hote hain. Beginners aksar contrast ko zaroorat jitna push nahi karte, aur yahi sabse common wajah hai ki painted metal plastic jaisa lagta hai.",
+    "Reflected light band — shadow area ke bottom edge par lighter value ki ek strip, jahan surface ko zameen ya aas-paas ki cheezon se bounce hui light milti hai — reflective materials par khaas taur se pronounced aur important hoti hai. Kabhi-kabhi yeh primary highlight jitni bright bhi hoti hai.",
+    "Alag-alag hard materials reflectivity spectrum par alag jagah aate hain (polished chrome, brushed steel, matte stone, rough rust). Material spectrum par kahan aata hai, isi se baaki sab tay hota hai: highlights kitne sharp honge, value contrast kitna extreme hoga, aur environment ka kitna hissa usmein saaf reflect hoga."
+  ],
+  "mistakes": [
+    "Hard, reflective surface ko environment se alag paint karna aur aasman ke rang ka upar wala hissa, zameen ke rang ka neeche wala hissa, aur paas ki cheezon ke reflections chhod dena — jabki yehi use scene ka hissa dikhate hain.",
+    "Value contrast ko bahut moderate rakhna, jisse genuinely reflective dikhne ke bajay result soft aur plastic jaisa lagta hai. Reflective look ke liye highlight se shadow tak sharp aur extreme jump chahiye.",
+    "Highlight ko narrow aur hard-edged rakhne ke bajay broad aur soft banana. Isse metal surface bahut jaldi metal ke bajay rubber ya plastic jaisi lagne lagti hai.",
+    "Har hard material ko ek hi tarah dikhana, chahe woh asal mein kitna bhi reflective ho. Iske bajay specific material reflectivity spectrum par kahan aata hai, uske mutabik highlight sharpness aur value contrast badlo.",
+    "Surface wear (scratches, dents, rust) ko kisi believable wajah aur direction wale details ki jagah idhar-udhar random marks ki tarah add karna. Isse woh history ke bajay decoration lagte hain."
+  ],
+  "proTips": [
+    "Metal ya glass object paint karne se pehle tay karo ki uske upar kya hai (sky, ceiling), neeche kya hai (ground, floor), aur bagal mein kya hai (paas ki colored cheezein). Phir un colors ko reflections mein dikhne do — yeh ek aadat metal ko believable dikhane ke liye kisi bhi brush technique se zyada kaam karti hai.",
+    "Highlight aur shadow values ke beech ka farq pehle jitna comfortable lage, usse bhi zyada push karo — extreme value contrast hi convincing metal ko flat, moderate-contrast result se alag karta hai, jo plastic jaisa lagta hai.",
+    "Metal object ka primary highlight kai chhote, unsure marks se dheere-dheere banane ke bajay ek confident, narrow, hard-edged stroke mein paint karo — highlights mein jhijhak lagbhag kisi bhi aur jagah se zyada saaf dikhti hai.",
+    "Scratches ya wear add karte waqt har mark ko ek light side aur ek dark side do (groove ki dono walls), sirf ek flat line nahi — isi se scratch upar se bana hua mark lagne ke bajay 3D groove jaisa dikhta hai."
+  ],
+  "practice": {
+    "warmup": "Ek hi sphere ko teen baar, teen alag hard materials ki tarah paint karo (polished chrome, brushed steel, matte stone). Har material ke liye highlight sharpness aur value contrast adjust karo.",
+    "daily": "Ek hard-surface object (blade, goblet, window) render karo aur usmein environment ke colors jaan-boojhkar reflect karo — upar sky, neeche ground, aur ek taraf paas ki colored cheez.",
+    "weekly": "Ek finished hard-surface render lo aur uska value contrast apni pehli instinct se kaafi zyada push karo (brighter highlight, darker shadow), phir dono results compare karo.",
+    "challenge": "Hard-surface object par believable wear (scratches, dents, ya rust) add karo. Har mark ki koi plausible wajah ho aur uske kinare par light-and-dark paired edge ho, ek flat line nahi."
   },
+  "quiz": [
+    {
+      "q": "Polished metal jaisi highly reflective surface ka fixed local color kyun nahi hota?",
+      "options": [
+        "Riwaaj ke mutabik reflective surfaces ko hamesha gray paint kiya jaata hai",
+        "Yeh apna color environment se leti hai; apna fixed hue dikhane ke bajay aasman, zameen aur paas ki cheezon ko reflect karti hai",
+        "Digital painting mein local color ka concept hota hi nahi",
+        "Lighting kaisi bhi ho, metal hamesha white dikhta hai"
+      ],
+      "correct": 1,
+      "explain": "Highly reflective surface ek distorted mirror ki tarah kaam karti hai. Apna ek fixed local color dikhane ke bajay woh aas-paas ke colors dikhati hai (upar aasman, neeche zameen, sides par paas ki cheezein)."
+    },
+    {
+      "q": "Reflective hard surfaces par value contrast ko lekar beginners ki ek common galti kya hai?",
+      "options": [
+        "Contrast ko zaroorat se zyada extreme karna",
+        "Value contrast ko bahut moderate rakhna, jisse sharp reflective jump ke bajay result soft aur plastic jaisa lagta hai",
+        "Hard surfaces ke liye value contrast ka koi maayne nahi hota",
+        "Bina mid-tones ke sirf pure black aur white use karna"
+      ],
+      "correct": 1,
+      "explain": "Beginners reflective surfaces par aksar value contrast ko zaroorat jitna push nahi karte. Convincingly reflective result ke liye highlights ko zyada bright aur shadows ko zyada dark karna aam taur par zaroori hota hai — shayad tumhari comfort level se bhi aage."
+    },
+    {
+      "q": "Reflected light band kya hoti hai, aur aam taur par kahan dikhti hai?",
+      "options": [
+        "Rainbow effect jo sirf glass prisms mein dikhta hai",
+        "Shadow area ke bottom edge par lighter value ki ek strip, jahan surface ko zameen ya paas ki cheezon se bounce hui light milti hai",
+        "Ek brush type jo sirf fabric paint karne ke liye hota hai",
+        "Surface ka sabse bright highlight, jo uske center mein hota hai"
+      ],
+      "correct": 1,
+      "explain": "Reflected light band ek lighter strip hoti hai jo aam taur par shadow area ke neeche wale edge par dikhti hai. Yeh zameen ya paas ki surfaces se bounce hokar upar aane wali light ki wajah se hoti hai — bahut reflective materials mein yeh primary highlight jitni bright bhi ho sakti hai."
+    },
+    {
+      "q": "Metal ka primary highlight dheere-dheere banane ke bajay ek confident, narrow stroke mein paint kyun karna chahiye?",
+      "options": [
+        "Isse sirf waqt bachta hai, visual benefit koi nahi",
+        "Narrow, hard-edged aur confident highlight metal jaisa lagta hai, jabki soft ya jhijhak bhara highlight plastic ya rubber jaisa lagta hai",
+        "Metal par kai chhote strokes hamesha zyada achhe lagte hain",
+        "Material kaisa dikhega, is par highlights ka koi asar nahi hota"
+      ],
+      "correct": 1,
+      "explain": "Sharp aur confident jagah par rakha highlight reflective metal surface ke sabse saaf signals mein se ek hai. Broad, soft ya jhijhak ke saath banaya gaya highlight aksar kisi softer, non-metallic material jaisa lagta hai."
+    },
+    {
+      "q": "Scratches jaise surface wear ko random jagah rakhne ke bajay unki believable wajah aur direction kyun honi chahiye?",
+      "options": [
+        "Random marks hamesha dekhne mein zyada interesting hote hain",
+        "Soch-samajh kar, kisi wajah ke mutabik dikhaya gaya wear object ki history jaisa lagta hai aur use believable banata hai; random marks decoration ya noise jaise lagte hain",
+        "Scratches hamesha object ke bilkul center mein rakhne chahiye",
+        "Wear marks se render kitna convincing lagta hai, us par koi asar nahi hota"
+      ],
+      "correct": 1,
+      "explain": "Jab wear marks ki koi plausible wajah aur direction hoti hai (jaise wahan zyada marks hona jahan object ko logically impact lag sakta tha), toh woh object ki history ki believable kahani batate hain. Idhar-udhar random marks arbitrary decoration jaise lagte hain."
+    }
+  ],
+  "checklist": [
+    "Main hard-surface render mein environment ke colors (aasman, zameen, paas ki cheezein) reflect kar sakta hoon.",
+    "Reflective surface par main value contrast ko apni pehli comfort level se aage push kar sakta hoon.",
+    "Main soft, dheere-dheere banaye gaye highlight ke bajay confident, narrow aur hard-edged highlight paint kar sakta hoon.",
+    "Main believable wajah wale wear marks add kar sakta hoon, jinmein light-and-dark paired edge ho."
+  ],
+  "nextStep": "Ab tumhare paas organic surfaces (skin) aur hard-reflective surfaces (metal, glass) dono ke liye material-rendering approaches hain. Module 100 mein edge control par kaam hoga — poore piece mein hard aur soft edges ka jaan-boojhkar use, jisse focus direct hota hai aur form samajh aati hai. Yeh skill tumhare ab tak render kiye har material par kaam aati hai."
+},
   "m96": {
-    "hook": "Jis painting ka har edge bilkul sharp ho, woh paradoxically use amateurish dikhane ke sabse tez tareeqon mein se ek hai — real depth is baat se aati hai ki tumhe bilkul pata ho kin edges ko chhod dena hai.",
-    "whyItMatters": [
-      "Ab tum skin (Module 102) aur hard surfaces (Module 103) render kar chuke ho, jinmein se har ek ki apni edge qualities hain. Edge control woh skill hai jo tay karti hai ki poore piece mein woh edges kaise behave karenge; yeh sirf yeh nahi tay karti ki surface paas se kaisi dikhti hai, balki yeh bhi ki viewer ki nazar kahan jaati hai.",
-      "Working painters edge control ko foundational skill batate hain, finishing touch nahi — yeh tay karti hai ki light form ke around kaise wrap hoti hai, space deep ya flat kaise lagta hai, aur composition mein nazar kitni naturally move karti hai; yeh seedhe Module 83 ke focal-point work se judi hai."
-    ],
-    "coreIdea": [
-      "Broadly, edges teen tarah ke hote hain: hard edges (clear, abrupt transitions jo attention kheenchte hain aur structure define karte hain), soft edges (gradual transitions jo atmosphere aur distance create karte hain), aur lost edges (aisa transition jo clearly shuru hota hai, gayab ho jaata hai, phir kahin aur dobara dikhai deta hai; yeh rhythm add karta hai aur viewer ko form dimaag mein poori karne ke liye invite karta hai).",
-      "Aam rule ke mutabik, hard edges saamne aate hain aur nazar ko apni taraf kheenchte hain, jabki soft edges peeche chale jaate hain aur nazar ko unke upar se agli shape tak jaane dete hain — isi liye hard edges aam taur par focal area ke liye, aur soft edges backgrounds ya kam important passages ke liye rakhe jaate hain.",
-      "Jab do paas-paas ki shapes ki values lagbhag ek jaisi hon, toh unke beech ka edge poori tarah gayab ho sakta hai — yeh theek karne wali mistake nahi, balki painting ko unify karne aur atmosphere banane ka ek deliberate, sophisticated tool hai.",
-      "Edge variety ko ek deliberate design decision samjho, jo painting se pehle ya painting ke dauran liya jaata hai; technique ka accident nahi: pehle se decide karna ki tumhara sabse sharp edge (focal point), sabse soft edge (atmospheric recession), aur lost edge (jahan values merge hoti hain) kahan hoga, poore piece ke mood aur movement ko shape karta hai."
-    ],
-    "mistakes": [
-      "Piece ke har edge ko ek hi hardness se render karna, jisse deliberate range ke bajay ya toh brittle, cut-out look milta hai (sab hard) ya mushy, undefined look (sab soft).",
-      "Sabse sharp aur highest-contrast edges ko intended focal point ke bajay kahin aur rakhna, jisse bina irade ke nazar composition ke galat hisse par chali jaati hai.",
-      "Vanishing edge (jahan do shapes ki value ek jaisi ho jaati hai) ko ek aisi galti samajhna jise theek karna hai, bajay iske ki use unity aur atmosphere ke ek legitimate, sophisticated technique ke roop mein pehchana jaaye.",
-      "Edge treatment ka faisla tab karna jab piece lagbhag finish ho chuka ho, na ki sharpest, softest aur lost edges ko shuru se composition ke hissa ke roop mein plan karna.",
-      "Kisi edge ko shape ki baaki value logic se inconsistent tareeqe se soften ya harden karna, jisse woh form toot jaati hai jise edge support karne ke liye tha."
-    ],
-    "proTips": [
-      "Piece finish karne se pehle, teen edges ko specifically identify karo: tumhara ek sabse sharp edge (focal point), sabse soft edge (atmospheric ya receding passage), aur ek lost edge (jahan do shapes value mein merge hoti hain) — phir check karo ki baaki painting is hierarchy ko support karti hai.",
-      "Direct comparison exercise practice karo: ek hi simple object ko do baar paint karo — pehli baar har contour sharp rakho, doosri baar ek edge ko chhodkar baaki zyada edges soften karo — phir compare karo ki kaunsa zyada natural lagta hai aur har version mein tumhari nazar pehle kahan jaati hai.",
-      "Jab paas-paas ki do shapes ki value close ho, toh unke beech defining line ko force karne ke bajay unke edge ko jaan-boojhkar merge karne par socho, khaas taur par background ya non-focal areas mein.",
-      "Edge decisions ko composition planning (Module 83) ka hissa samjho, baad ka kaam nahi — jis stage par tum focal point aur value structure decide karte ho, usi stage par decide karo ki hard, soft aur lost edges kahan honge."
-    ],
-    "practice": {
-      "warmup": "Ek simple object (cup, rock) ko do baar paint karo: pehli baar saare contours sharp rakho, doosri baar ek edge ko chhodkar zyada edges soften karo — compare karo ki kaunsa zyada natural lagta hai aur dono mein tumhari nazar pehle kahan jaati hai.",
-      "daily": "Apni Module 102 ya 95 ki ek material study lo aur uske edges jaan-boojhkar vary karo: focal point par hard, piece ke edges ki taraf soft, aur jahan values merge hoti hain wahan kam-se-kam ek lost edge.",
-      "weekly": "Do paas-paas ki shapes ke saath ek chhoti grayscale study banao, phir unki values dheere-dheere adjust karo jab tak unke beech ka edge lagbhag gayab na ho jaaye; dekho ki depth ka tumhara ehsaas kaise badalta hai.",
-      "challenge": "Pehle ke kisi module se ek finished piece lo aur ek aisa edge identify karo jise jaan-boojhkar lose kiya ja sakta hai (neighboring shape ke saath value match karke merge karna), bina form ki readability kharab kiye — phir yeh change karo."
-    },
-    "quiz": [
-      {
-        "q": "Hard aur soft edges nazar par kaise asar daalte hain, iska aam rule kya hai?",
-        "options": [
-          "Dono edge types ka nazar par ek jaisa asar hota hai",
-          "Hard edges saamne aate hain aur nazar ko apne saath kheenchte hain; soft edges peeche chale jaate hain aur nazar ko unke upar se agli shape tak jaane dete hain",
-          "Soft edges hamesha hard edges se zyada attention kheenchte hain",
-          "Edge hardness sirf traditional media mein maayne rakhti hai, digital mein nahi"
-        ],
-        "correct": 1,
-        "explain": "Hard, high-contrast edges nazar ko kheenchte aur rokte hain, isliye focal areas ke liye achhe hote hain; soft edges nazar ko unke upar se paas ki shapes tak jaane dete hain, isliye backgrounds aur kam important passages ke liye achhe hote hain."
-      },
-      {
-        "q": "Module ke mutabik, \"lost\" edge kya hota hai?",
-        "options": [
-          "Aisa edge jo galti se erase ho gaya ho",
-          "Aisa transition jo clearly shuru hota hai, gayab ho jaata hai, phir kahin aur dobara dikhai deta hai; yeh rhythm add karta hai aur viewer ko form dimaag mein poori karne ke liye invite karta hai",
-          "Koi bhi edge jo bilkul seedha ho",
-          "Aisa edge jo sirf black-and-white value studies mein dikhta hai"
-        ],
-        "correct": 1,
-        "explain": "Lost edge clearly defined shuru hota hai, phir dissolve ho jaata hai (aksar jahan values merge hoti hain) aur kahin aur dobara dikhai deta hai; isse visual rhythm banta hai aur viewer form ko dimaag mein poora karne mein hissa leta hai."
-      },
-      {
-        "q": "Jab paas-paas ki do shapes ki values lagbhag ek jaisi hon, toh kya hota hai aur ise kaise dekhna chahiye?",
-        "options": [
-          "Yeh hamesha ek galti hoti hai, jise defining line se theek karna zaroori hai",
-          "Unke beech ka edge gayab ho sakta hai; yeh unity aur atmosphere ke liye ek legitimate, deliberate technique hai, zaroori nahi ki galti ho",
-          "Painting mein aisa hona technically mumkin nahi",
-          "Yeh sirf digital painting mein hota hai, traditional media mein kabhi nahi"
-        ],
-        "correct": 1,
-        "explain": "Jab do shapes ki value close ho, toh unke beech ka edge poori tarah gayab ho sakta hai; yeh unity aur atmosphere banane ka ek sophisticated tool hai, theek karne layak flaw nahi."
-      },
-      {
-        "q": "Module ke mutabik, edge decisions (sharpest, softest, lost) ideally kab plan karne chahiye?",
-        "options": [
-          "Sirf piece poori tarah finish hone ke baad",
-          "Composition planning ke dauran, focal point aur value structure ke faislon ke saath",
-          "Edge decisions kabhi pehle se plan nahi karne chahiye",
-          "Edge quality sirf software ki default settings se tay honi chahiye"
-        ],
-        "correct": 1,
-        "explain": "Edge control ko ek foundational design decision maana jaata hai, jise focal point aur value structure ke saath plan kiya jaata hai; ise piece ke baaki finish hone ke baad lagaye gaye afterthought ki tarah nahi dekhna chahiye."
-      },
-      {
-        "q": "Painting ke har edge ko ek hi hardness se render karne ka kya risk hai?",
-        "options": [
-          "Koi risk nahi; uniform edges hamesha ideal hote hain",
-          "Isse ya toh brittle, cut-out look milta hai (agar sab hard hon) ya mushy, undefined look (agar sab soft hon), na ki aisi deliberate range jo nazar ko guide kare",
-          "Uniform edges apne aap sabse strong focal point bana dete hain",
-          "Iska asar sirf file size par hota hai, visual quality par nahi"
-        ],
-        "correct": 1,
-        "explain": "Poore piece mein sirf ek hi edge quality use karne se edge treatment ka woh contrast khatam ho jaata hai jo aam taur par nazar ko guide karta hai aur depth banata hai; nateeje mein overall look ya toh hadd se zyada brittle ya hadd se zyada mushy hota hai."
-      }
-    ],
-    "checklist": [
-      "Main reference painting ya apne kaam mein hard, soft aur lost edges identify kar sakta/sakti hoon.",
-      "Main apna sabse sharp edge jaan-boojhkar intended focal point par rakh sakta/sakti hoon.",
-      "Unity ke liye, similar value wali do shapes ke beech ka edge jaan-boojhkar merge (lose) kar sakta/sakti hoon.",
-      "Main focal point aur value structure ke saath, apni composition ke hissa ke roop mein edge treatment plan kar sakta/sakti hoon."
-    ],
-    "nextStep": "Ab tum poore piece mein edges ko deliberate design tool ki tarah control kar sakte ho. Module 101 ab tak seekhi hui har cheez — color, value, light, material, edges — ko atmospheric perspective par apply karta hai; in tools ka khaas istemal karke environment mein depth aur distance ka convincing ehsaas banaya jaata hai."
+  "hook": "Aisi painting jismein har edge bilkul sharp ho, woh ulta use amateurish dikhane ke sabse jaldi tareeqon mein se ek hai — asli depth tab aati hai jab tumhe pata ho ki kaunse edges ko jaan-boojhkar chhodna hai.",
+  "whyItMatters": [
+    "Ab tum skin (Module 98) aur hard surfaces (Module 99) render kar chuke ho, aur dono ki edge qualities alag hain. Edge control woh skill hai jo poore artwork mein in edges ke behaviour ko sambhalti hai. Isse sirf yeh nahi tay hota ki surface paas se kaisa dikhega, balki yeh bhi ki viewer ki nazar kahan jaayegi.",
+    "Working painters edge control ko finishing touch nahi, ek foundational skill maante hain — yeh tay karta hai ki light form ke around kaise wrap hoti hai, space deep ya flat kaise lagta hai, aur nazar composition mein kitni aasani se move karti hai. Iska seedha connection Module 79 ke focal-point work se bhi hai."
+  ],
+  "coreIdea": [
+    "Edges ke teen broad types hote hain: hard edges (saaf, achanak transitions jo attention kheenchte hain aur structure define karte hain), soft edges (dheere-dheere hone wale transitions jo atmosphere aur distance banate hain), aur lost edges (aisa transition jo saaf shuru hota hai, gaayab ho jaata hai, phir kahin aur dobara dikhta hai; isse rhythm aata hai aur viewer ko form apne dimaag mein poora karne ka mauka milta hai).",
+    "Aam taur par hard edges saamne aate hain aur nazar ko apni taraf kheenchte hain, jabki soft edges peeche chale jaate hain aur nazar ko unke upar se agle shape tak jaane dete hain — isi liye hard edges ko aam taur par focal area ke liye aur soft edges ko background ya kam important passages ke liye rakha jaata hai.",
+    "Jab paas-paas ke do shapes ki values lagbhag ek jaisi hon, toh unke beech ka edge poori tarah gaayab ho sakta hai — ise theek karne wali galti na samjho. Painting ko ek saath baandhne aur atmosphere banane ke liye yeh ek socha-samjha, sophisticated tool hai.",
+    "Edge variety ko painting se pehle ya uske dauraan liya gaya deliberate design decision samjho, technique ka accident nahi: pehle se tay karna ki tumhara sabse sharp edge (focal point), sabse soft edge (atmospheric recession), aur lost edge (jahan values mil jaati hain) kahan honge, poore artwork ka mood aur movement shape karta hai."
+  ],
+  "mistakes": [
+    "Artwork ke har edge ko ek jaisi hardness dena, jisse ya toh brittle, cut-out look aata hai (sab hard) ya mushy, undefined look (sab soft), bajaye ek deliberate range ke.",
+    "Sabse sharp, high-contrast edges ko intended focal point ke alawa kahin aur rakhna, jisse anjaane mein nazar composition ke galat hisse ki taraf chali jaati hai.",
+    "Vanishing edge (jahan do shapes ki value ek jaisi ho) ko theek karne wali galti samajhna, bajaye yeh pehchanne ke ki yeh unity aur atmosphere ke liye ek valid, sophisticated technique hai.",
+    "Edge treatment ka faisla tabhi karna jab artwork lagbhag finish ho chuka ho, bajaye sabse sharp, soft aur lost edges ko shuru se composition ka hissa bana kar plan karne ke.",
+    "Kisi edge ko shape ki baaki value logic se alag tareeqe se soft ya hard karna, jisse us edge ko support karne wali form ki feeling toot jaati hai."
+  ],
+  "proTips": [
+    "Artwork finish karne se pehle teen edges ko clearly identify karo: tumhara sabse sharp edge (focal point), sabse soft edge (atmospheric ya peeche jaata hua passage), aur ek lost edge (jahan do shapes values mein merge hote hain) — phir check karo ki baaki painting bhi is hierarchy ko support karti hai.",
+    "Direct comparison exercise karo: ek hi simple object ko do baar paint karo, ek baar har contour sharp rakhkar, aur doosri baar sirf ek edge chhodkar baaki ko soft karke — phir compare karo ki kaunsa zyada natural lagta hai aur dono mein pehle tumhari nazar kahan jaati hai.",
+    "Jab paas-paas ke do shapes ki values kareeb hon, toh unke beech defining line ko zabardasti rakhne ke bajaye unke edge ko jaan-boojhkar merge karne ke baare mein socho, khaaskar background ya non-focal areas mein.",
+    "Edge decisions ko composition planning (Module 79) ka hissa samjho, baad mein sochi jaane wali cheez nahi — focal point aur value structure tay karte waqt hi decide karo ki hard, soft aur lost edges kahan honge."
+  ],
+  "practice": {
+    "warmup": "Ek simple object (cup, rock) ko do baar paint karo: ek baar sab contours sharp rakhkar, doosri baar sirf ek edge chhodkar baaki ko soft karke — compare karo ki kaunsa zyada natural lagta hai aur dono mein pehle tumhari nazar kahan jaati hai.",
+    "daily": "Apni Module 98 ya 95 ki material studies mein se ek lo aur uske edges ko jaan-boojhkar alag-alag rakho: focal point par hard, artwork ke edges ki taraf soft, aur jahan values merge hoti hain wahan kam se kam ek lost edge.",
+    "weekly": "Do paas-paas ke shapes ke saath ek chhoti grayscale study banao, phir dheere-dheere unki values adjust karo jab tak unke beech ka edge lagbhag gaayab na ho jaaye. Dekho, isse tumhari depth ki feeling kaise badalti hai.",
+    "challenge": "Kisi pehle Module ki finished painting lo aur ek aisa edge pehchaano jise jaan-boojhkar lose kiya ja sakta hai (value match karke paas ke shape mein merge karke), bina form ki pehchaan kharaab kiye — phir woh change karo."
   },
+  "quiz": [
+    {
+      "q": "Hard aur soft edges nazar par kaise asar karte hain, iska aam rule kya hai?",
+      "options": [
+        "Dono edge types ka is baat par ek jaisa asar hota hai ki nazar kahan jaati hai",
+        "Hard edges saamne aate hain aur nazar ko apni taraf kheenchte hain; soft edges peeche jaate hain aur nazar ko unke upar se agle shape tak jaane dete hain",
+        "Soft edges hamesha hard edges se zyada attention kheenchte hain",
+        "Edge hardness sirf traditional media mein matter karti hai, digital mein nahi"
+      ],
+      "correct": 1,
+      "explain": "Hard, high-contrast edges nazar ko kheenchte aur rok kar rakhte hain, isliye focal areas ke liye sahi hote hain. Soft edges nazar ko apne upar se paas ke shapes tak jaane dete hain, isliye backgrounds aur kam important passages ke liye sahi hote hain."
+    },
+    {
+      "q": "Module ke mutabik \"lost\" edge kya hota hai?",
+      "options": [
+        "Aisa edge jo galti se erase ho gaya ho",
+        "Aisa transition jo saaf shuru ho, gaayab ho jaaye, phir kahin aur dobara dikhe; isse rhythm aata hai aur viewer ko form apne dimaag mein poora karne ka mauka milta hai",
+        "Koi bhi edge jo bilkul seedha ho",
+        "Aisa edge jo sirf black-and-white value studies mein dikhta ho"
+      ],
+      "correct": 1,
+      "explain": "Lost edge saaf define hokar shuru hota hai, dissolve ho jaata hai (aksar wahan jahan values merge hoti hain), aur kahin aur dobara dikhta hai. Isse visual rhythm aata hai aur viewer form ko dimaag mein poora karne mein hissa leta hai."
+    },
+    {
+      "q": "Jab paas-paas ke do shapes ki values lagbhag ek jaisi hon, toh kya hota hai aur ise kaise lena chahiye?",
+      "options": [
+        "Yeh hamesha ek galti hoti hai jise defining line se theek karna zaroori hai",
+        "Unke beech ka edge gaayab ho sakta hai; yeh unity aur atmosphere ke liye ek valid, deliberate technique hai, zaroori nahi ki galti ho",
+        "Painting mein aisa hona technically mumkin nahi hai",
+        "Aisa sirf digital painting mein hota hai, traditional media mein kabhi nahi"
+      ],
+      "correct": 1,
+      "explain": "Jab do shapes ki values kareeb hoti hain, toh unka edge poori tarah gaayab ho sakta hai. Ise theek karne wali khami nahi, balki unity aur atmosphere banane ka ek sophisticated tool samjho."
+    },
+    {
+      "q": "Module ke mutabik edge decisions (sabse sharp, soft, lost) kab plan karna behtar hota hai?",
+      "options": [
+        "Sirf artwork poori tarah finish hone ke baad",
+        "Composition planning ke dauraan, focal point aur value structure ke decisions ke saath",
+        "Edge decisions pehle se kabhi plan nahi karne chahiye",
+        "Sirf software ki default settings se edge quality decide honi chahiye"
+      ],
+      "correct": 1,
+      "explain": "Edge control ko ek foundational design decision maana gaya hai, jise focal point aur value structure ke saath plan karna chahiye — artwork lagbhag finish ho jaane ke baad sochne wali cheez nahi."
+    },
+    {
+      "q": "Painting ke har edge ko ek jaisi hardness dene ka risk kya hai?",
+      "options": [
+        "Koi risk nahi; ek jaise edges hamesha ideal hote hain",
+        "Isse ya toh brittle, cut-out look aata hai (agar sab hard hon) ya mushy, undefined look (agar sab soft hon), bajaye aisi deliberate range ke jo nazar ko guide kare",
+        "Ek jaise edges apne aap sabse strong focal point bana dete hain",
+        "Iska asar sirf file size par hota hai, visual quality par nahi"
+      ],
+      "correct": 1,
+      "explain": "Poore artwork mein sirf ek hi edge quality use karne se woh contrast khatam ho jaata hai jo aam taur par nazar ko guide karta hai aur depth banata hai. Iska nateeja overall feel ka zaroorat se zyada brittle ya mushy hona ho sakta hai."
+    }
+  ],
+  "checklist": [
+    "Main kisi reference painting ya apne kaam mein hard, soft aur lost edges pehchaan sakta/sakti hoon.",
+    "Main apna sabse sharp edge jaan-boojhkar intended focal point par rakh sakta/sakti hoon.",
+    "Main unity ke liye milti-julti value wale do shapes ke beech ka edge jaan-boojhkar merge (lose) kar sakta/sakti hoon.",
+    "Main focal point aur value structure ke saath, composition ke hissa ke taur par edge treatment plan kar sakta/sakti hoon."
+  ],
+  "nextStep": "Ab tum poore artwork mein edges ko ek deliberate design tool ki tarah control kar sakte ho. Module 101 ab tak seekhi hui har cheez — color, value, light, material, edges — ko atmospheric perspective par apply karta hai. In tools ka use karke environment mein depth aur distance ki convincing feeling banana seekhoge."
+},
   "m97": {
-    "hook": "Door ke mountains asal mein blue nahi hote — tumhare aur unke beech hawa ka ek poora ocean hota hai, aur us hawa ka apna color hota hai; door ki cheezein hazy, pale aur cool kyun dikhti hain, iska poora raaz yahi hai.",
-    "whyItMatters": [
-      "Modules 99–96 ki har cheez — color, value, light, material, edges — ab tak zyada tar ek object ya figure par apply hui hai. Atmospheric perspective mein wahi tools poore scene par use hote hain, taaki viewer ko yakeen ho ki kuch cheezein paas hain aur kuch sach mein bahut door.",
-      "Yeh seedhe Module 104 ke edge control ko aage badhata hai: atmospheric perspective asal mein edge control, value control aur color control hi hai, jinhe depth ki direction mein apply kiya jaata hai; maqsad naya hota hai, par underlying skills wahi hain."
-    ],
-    "coreIdea": [
-      "Atmospheric perspective isliye hota hai kyunki viewer aur door ki object ke beech ki hawa mein be-shumar chhote particles (water vapor, dust, haze) light ko scatter karte hain; yahi woh effect hai jiski wajah se sky blue dikhta hai. Tumhare aur object ke beech jitni zyada hawa hogi, yeh scattering us object ke appearance ko utna hi zyada affect karegi.",
-      "Distance badhne ke saath teen effects lagataar badhte hain: detail kam hoti hai (alag-alag leaves ek tree-mass ban jaate hain, phir ek forest-mass), value contrast kam hota hai (darks lighter aur lights thodi darker ho jaati hain, jisse range compress hoti hai), aur color cooler, kam saturated hues ki taraf shift hota hai, aam taur par blue ki taraf.",
-      "Yeh sirf landscape technique nahi hai — ise ek hi object ke andar bhi use kiya ja sakta hai; jaise kisi bade form (bada rock, lambi wall) ke far side ko near side se thoda cooler aur less detailed dikhana, taaki uska size aur depth aur clear ho.",
-      "Door ka light source rule badal deta hai: agar primary light horizon ke paas ho (low sun), toh distant objects cooler ke bajay paler aur warmer hongi, kyunki light source aur object ke beech blue introduce karne ke liye atmosphere kam hota hai — distance ke saath kam contrast aur kam detail ka underlying principle wahi rehta hai, bhale hi specific color shift badal jaaye."
-    ],
-    "mistakes": [
-      "Background elements par full sharp detail rakhna, jo depth ke us ehsaas ke khilaaf jaata hai jise piece ki baaki cheezein banane ki koshish kar rahi hain.",
-      "Background mein value contrast aur saturation ko foreground jitna hi strong rakhna, jisse distant elements ko peeche jaane dene ke bajay scene flat ho jaata hai.",
-      "Yeh maan lena ki lighting chahe jaisi ho, distant objects hamesha blue ki taraf shift hongi; jabki sunset jaisa low, warm light source distant objects ko pale warm tones ki taraf le ja sakta hai.",
-      "Atmospheric perspective ko sirf scene ke bilkul peeche apply karna, dheere-dheere gradation ke bajay; isse woh continuous effect nahi banta jo middle-ground gradation banati hai, balki ek hi hard jump lagta hai.",
-      "Yeh bhool jaana ki atmospheric perspective poore landscape mein hi nahi, ek single large object ke andar depth dikhane ke liye bhi use ho sakti hai."
-    ],
-    "proTips": [
-      "Elements distance mein peeche jaate hue unki value range ko limit karo: apne sabse dark darks aur sabse light lights foreground ke liye rakho, aur background ki taraf badhte hue range ko noticeably compress karo.",
-      "Shuruaat ke liye, far-background elements (mountains, distant buildings) mein sky color ki thodi si quantity seedhe mix karo, bajay iske ki sahi cooled, desaturated color scratch se invent karne ki koshish karo.",
-      "Jahan tumhara medium allow karta ho, physical texture ko implied distance ke saath combine karo: foreground mein zyada heavy, textured brushwork aur background mein smoother, flatter brushwork paas aur door ka ehsaas mazboot karta hai.",
-      "Distance ke color shift ka faisla karne se pehle apne scene ki dominant light direction check karo — typical daylight ke liye cooler aur paler se shuru karo, lekin horizon ke paas low, warm light source ho toh warmer aur paler colors ki ummeed rakho."
-    ],
-    "practice": {
-      "warmup": "Alag-alag distances par teen simple overlapping mountain shapes paint karo; unhe alag dikhane ke liye sirf reduced detail, reduced value contrast, aur cooler, less saturated colors use karo.",
-      "daily": "Apne pehle ke environment pieces mein se ek lo aur foreground, middle-ground aur background par atmospheric perspective ki layers add karo; check karo ki distance ke saath detail, contrast aur saturation teeno kam ho rahe hain.",
-      "weekly": "Ek hi simple scene ko do baar paint karo: ek baar typical daylight mein (distance par cooler, paler colors), aur ek baar sunset jaise low, warm light source mein (distance par warmer, paler colors); phir farq compare karo.",
-      "challenge": "Landscape ke bajay ek single large object (lambi wall, bada rock formation) ke andar atmospheric perspective apply karo; uske far side ko near side se cooler aur less detailed banao."
-    },
-    "quiz": [
-      {
-        "q": "Atmospheric (aerial) perspective ka physical cause kya hai?",
-        "options": [
-          "Door jaane par objects sach mein apna color badalti hain",
-          "Viewer aur object ke beech hawa mein maujood be-shumar chhote particles (water vapor, dust, haze) se light scatter hoti hai — yahi effect sky ko blue banata hai",
-          "Yeh sirf ek artistic convention hai, iska real optics se koi lena-dena nahi",
-          "Distance ka asar sirf objects ke size par hota hai, unke color ya detail par nahi"
-        ],
-        "correct": 1,
-        "explain": "Atmospheric perspective hawa ke particles se light ke scattering ki wajah se hota hai; viewer aur object ke beech jitni zyada atmosphere hoti hai, scattering object ke apparent color, contrast aur detail ko utna hi zyada affect karti hai."
-      },
-      {
-        "q": "Atmospheric perspective mein distance ke saath kaun se teen effects lagataar badhte hain?",
-        "options": [
-          "Zyada detail, zyada contrast, zyada saturation",
-          "Kam detail, kam value contrast, aur cooler, less saturated color ki taraf shift",
-          "Zyada sharpness, zyada darkness, color mein koi change nahi",
-          "Inmein se koi bhi effect distance se related nahi hai"
-        ],
-        "correct": 1,
-        "explain": "Distance badhne ke saath detail kam hoti hai, value contrast compress hota hai (darks lighter aur lights thodi darker ho jaati hain), aur color cooler, less saturated hues ki taraf, aam taur par blue ki taraf shift hota hai."
-      },
-      {
-        "q": "Low, warm light source (jaise sunset) atmospheric perspective ke typical color shift ko kaise badalta hai?",
-        "options": [
-          "Iska koi asar nahi hota; light source chahe jo ho, distant objects hamesha blue ki taraf shift hoti hain",
-          "Distant objects cool blue ke bajay pale warm tones ki taraf shift ho sakti hain, kyunki light source aur object ke beech blue introduce karne ke liye atmosphere kam hota hai",
-          "Yeh sirf foreground objects ko affect karta hai, background ko kabhi nahi",
-          "Yeh atmospheric perspective ko poori tarah khatam kar deta hai"
-        ],
-        "correct": 1,
-        "explain": "Jab primary light source low aur warm ho, toh distant objects cooler ke bajay paler aur warmer dikh sakti hain; phir bhi distance ke saath contrast aur detail kam hone ka underlying principle lagu rehta hai."
-      },
-      {
-        "q": "Kya atmospheric perspective sirf poore landscape mein nahi, ek single large object ke andar bhi use ho sakti hai?",
-        "options": [
-          "Nahi, yeh sirf kai alag elements wale landscapes par apply hoti hai",
-          "Haan, bade object (jaise lambi wall ya bada rock) ke far side ko near side se cooler aur less detailed dikhaya ja sakta hai, taaki uska size aur depth mazboot ho",
-          "Yeh sirf paani ke neeche kaam karti hai, zameen par nahi",
-          "Yeh sirf linear perspective technique hai, atmosphere se iska koi lena-dena nahi"
-        ],
-        "correct": 1,
-        "explain": "Atmospheric perspective ke principles ek single large form ke andar bhi apply kiye ja sakte hain; uske far side ko near side ke muqable peeche dikhakar scale aur depth ka ehsaas mazboot kiya ja sakta hai, bina poora landscape dikhaye."
-      },
-      {
-        "q": "Door ke background elements ko color karne ke liye ek practical starting technique kya hai?",
-        "options": [
-          "Door ke sabhi shadows ke liye pure black use karo",
-          "Color scratch se invent karne ke bajay scene ke sky color ki thodi si quantity seedhe far-background elements mein mix karo",
-          "Hamesha foreground elements wala bilkul wahi color use karo",
-          "Sky color ko khud sky ke alawa kahin bhi use na karo"
-        ],
-        "correct": 1,
-        "explain": "Sky color ka thoda hissa distant elements mein milane se line of sight mein light scattering ka effect simulate hota hai aur background elements ko believable atmospheric tint milti hai; iske liye imagination se exact color invent karne ki zaroorat nahi padti."
-      }
-    ],
-    "checklist": [
-      "Main samjha sakta/sakti hoon ki atmospheric scattering ki wajah se distant objects hazy, paler aur cooler kyun dikhte hain.",
-      "Background ki taraf peeche jaate elements mein main detail, value contrast aur saturation ko ek saath kam kar sakta/sakti hoon.",
-      "Main scene ka light source typical daylight hai ya low, warm light, iske hisaab se apna atmospheric color shift adjust kar sakta/sakti hoon.",
-      "Main atmospheric perspective ke principles sirf poore landscape mein nahi, ek single large object ke andar bhi apply kar sakta/sakti hoon."
-    ],
-    "nextStep": "Ab tum color, value aur detail use karke poore scene mein depth control kar sakte ho. Module 102 texture aur surface detail cover karta hai — woh finishing layer jo believable wear, grain aur material specificity add karti hai, jab is arc ke bade structural decisions pehle se set ho chuke hote hain."
+  "hook": "Door ke mountains asal mein blue nahi hote — tumhare aur unke beech hawa ka ek poora samundar hota hai, aur us hawa ka apna color hota hai. Door ki cheezein hazy, feeki aur cool kyun dikhti hain, iska poora raaz yahi hai.",
+  "whyItMatters": [
+    "Modules 95–96 ki har cheez — color, value, light, material, edges — ab tak zyadaatar kisi ek object ya figure par apply hui hai. Atmospheric perspective mein wahi tools poore scene par use hote hain, taaki viewer ko yakeen ho ki kuch cheezein paas hain aur kuch sach mein door.",
+    "Yeh Module 100 ke edge control ko seedhe aage badhata hai: atmospheric perspective asal mein edge control, value control aur color control ko depth ki direction mein apply karna hai — wahi buniyadi skills, bas ek naye maqsad ke liye."
+  ],
+  "coreIdea": [
+    "Atmospheric perspective isliye hota hai kyunki viewer aur door ke object ke beech ki hawa mein maujood anagint chhote particles (water vapor, dust, haze) light ko scatter karte hain. Yahi effect sky ko blue dikhata hai. Tumhare aur object ke beech jitni zyada hawa hogi, utna hi yeh scattering us object ke dikhne ke tareeqe ko badlegi.",
+    "Distance badhne ke saath teen effects lagataar badhte hain: detail kam hoti hai (alag-alag leaves milkar ek tree-mass, phir ek forest-mass ban jaate hain), value contrast kam hota hai (darks halke aur lights thodi dark ho jaati hain, jisse range compress hoti hai), aur color cooler, kam saturated hues ki taraf shift hota hai, aam taur par blue ki taraf.",
+    "Yeh sirf landscape technique nahi hai — ise ek hi object ke andar bhi use kar sakte ho. Jaise kisi bade form (bade rock, lambi wall) ka door wala hissa paas wale hisse se thoda cooler aur kam detailed bana kar uski size aur depth ko ubhaara ja sakta hai.",
+    "Door ka light source is rule ko badal deta hai: agar main light source horizon ke paas ho (low sun), toh door ke objects cooler ke bajaye zyada feeke aur warm honge, kyunki light source aur object ke beech blue rang laane ke liye atmosphere kam hota hai. Buniyadi principle wahi rehta hai — distance ke saath contrast aur detail kam hote hain — chahe specific color shift badal jaaye."
+  ],
+  "mistakes": [
+    "Background elements mein poori sharp detail rakhna, jisse baaki artwork jo depth banane ki koshish kar raha hai, uska asar kam ho jaata hai.",
+    "Background mein value contrast aur saturation ko foreground jitna hi strong rakhna, jisse door ke elements ko peeche jaane dene ke bajaye scene flat ho jaata hai.",
+    "Yeh maan lena ki lighting conditions chahe jo hon, door ke objects hamesha blue ki taraf shift honge, jabki sunset jaise low, warm light source unhe feeke warm tones ki taraf le ja sakte hain.",
+    "Atmospheric perspective ko scene ke sirf bilkul peeche apply karna, dheere-dheere beech ka gradation na banana; isse effect lagataar hone ke bajaye ek hi achanak jump jaisa lagta hai.",
+    "Yeh bhool jaana ki atmospheric perspective poore landscape mein hi nahi, balki ek bade object ke andar ki depth dikhane ke liye bhi use ho sakta hai."
+  ],
+  "proTips": [
+    "Elements ke peeche jaane ke saath unke value range ko aur compress karo: sabse dark darks aur sabse light lights foreground ke liye rakho, aur background ki taraf badhte hue range ko saaf taur par kam karo.",
+    "Shuruaat ke liye, far-background elements (mountains, door ki buildings) ke rang mein thoda sa sky color seedha milao. Sahi cool, desaturated color ko bilkul shuru se invent karne ki zaroorat nahi padegi.",
+    "Jahan tumhara medium allow kare, physical texture ko implied distance ke saath milaao: foreground mein zyada heavy, textured brushwork aur background mein smoother, flatter brushwork paas aur door ka ehsaas badhata hai.",
+    "Distance ke liye color shift tay karne se pehle apne scene ki dominant light direction check karo — aam daylight mein cooler aur feeka rang default rakho, lekin horizon ke paas low, warm light source ho toh warmer aur feeke rang expect karo."
+  ],
+  "practice": {
+    "warmup": "Alag-alag distances par teen simple overlapping mountain shapes paint karo. Unhe alag dikhane ke liye sirf kam detail, kam value contrast aur cooler, kam saturated color use karo.",
+    "daily": "Apne pehle ke environment pieces mein se ek lo aur usmein foreground, middle-ground aur background ke liye atmospheric perspective ki layers add karo. Check karo ki distance badhne ke saath detail, contrast aur saturation teeno kam ho rahe hain.",
+    "weekly": "Ek hi simple scene ko do baar paint karo: ek baar aam daylight mein (door ke hisse cooler aur feeke), aur doosri baar sunset jaise low, warm light source mein (door ke hisse warmer aur feeke). Phir dono ka farq compare karo.",
+    "challenge": "Landscape par atmospheric perspective apply karne ke bajaye, ise ek hi bade object (lambi wall, bada rock formation) ke andar apply karo. Uska door wala hissa paas wale hisse se cooler aur kam detailed banao."
   },
+  "quiz": [
+    {
+      "q": "Atmospheric (aerial) perspective kis physical wajah se hota hai?",
+      "options": [
+        "Door jaate hue objects ka rang sach mein badal jaata hai",
+        "Viewer aur object ke beech hawa mein maujood anagint chhote particles (water vapor, dust, haze) se light scatter hoti hai — yahi effect sky ko blue banata hai",
+        "Yeh sirf ek artistic convention hai, iska real optics se koi lena-dena nahi",
+        "Distance se sirf objects ka size badalta hai, unka color ya detail nahi"
+      ],
+      "correct": 1,
+      "explain": "Atmospheric perspective hawa mein maujood particles se light scatter hone ki wajah se hota hai. Viewer aur object ke beech jitna zyada atmosphere hoga, utna hi yeh scattering object ke nazar aane wale color, contrast aur detail ko badlegi."
+    },
+    {
+      "q": "Atmospheric perspective mein distance ke saath kaunse teen effects lagataar badhte hain?",
+      "options": [
+        "Zyada detail, zyada contrast, zyada saturation",
+        "Kam detail, kam value contrast, aur cooler, kam saturated color ki taraf shift",
+        "Zyada sharpness, zyada darkness, rang mein koi badlav nahi",
+        "Inmein se koi bhi effect distance se related nahi hai"
+      ],
+      "correct": 1,
+      "explain": "Distance badhne par detail kam hoti hai, value contrast compress hota hai (darks halke aur lights thodi dark hoti hain), aur color cooler, kam saturated hues ki taraf shift hota hai, aam taur par blue ki taraf."
+    },
+    {
+      "q": "Low, warm light source (jaise sunset) atmospheric perspective ke aam color shift ko kaise badalta hai?",
+      "options": [
+        "Iska koi asar nahi hota; light source chahe jo ho, door ke objects hamesha blue ki taraf shift hote hain",
+        "Door ke objects cool blue tones ke bajaye feeke warm tones ki taraf shift ho sakte hain, kyunki light source aur object ke beech blue rang laane ke liye atmosphere kam hota hai",
+        "Yeh sirf foreground objects ko affect karta hai, background ko kabhi nahi",
+        "Isse atmospheric perspective poori tarah khatam ho jaata hai"
+      ],
+      "correct": 1,
+      "explain": "Jab main light source neeche aur warm ho, toh door ke objects cooler ke bajaye zyada feeke aur warm dikh sakte hain. Phir bhi distance ke saath contrast aur detail kam hone ka buniyadi principle lagu rehta hai."
+    },
+    {
+      "q": "Kya atmospheric perspective ko sirf poore landscape mein nahi, ek hi bade object ke andar bhi use kar sakte ho?",
+      "options": [
+        "Nahi, yeh sirf kai alag elements wale landscapes par lagu hota hai",
+        "Haan, kisi bade object (jaise lambi wall ya bada rock) ke door wale hisse ko paas wale hisse se cooler aur kam detailed banaya ja sakta hai, taaki uska size aur depth ubhar kar aaye",
+        "Yeh sirf paani ke neeche kaam karta hai, zameen par nahi",
+        "Yeh sirf linear perspective ki technique hai, atmosphere se iska lena-dena nahi"
+      ],
+      "correct": 1,
+      "explain": "Atmospheric perspective ke principles ek hi bade form ke andar bhi apply kiye ja sakte hain. Uska door wala hissa paas wale hisse ke muqable peeche jaata hua dikhaya ja sakta hai, jisse poora landscape na hone par bhi scale aur depth ka ehsaas milta hai."
+    },
+    {
+      "q": "Door ke background elements ko color karne ke liye shuruaat ki ek practical technique kya hai?",
+      "options": [
+        "Door ki har shadow ke liye pure black use karo",
+        "Scene ke sky color ki thodi si quantity seedha far-background elements mein milao, bajaye rang ko bilkul shuru se invent karne ke",
+        "Foreground elements wala bilkul wahi rang hamesha use karo",
+        "Sky color ko sky ke alawa kahin use mat karo"
+      ],
+      "correct": 1,
+      "explain": "Door ke elements mein thoda sa sky color milaane se nazar ki line mein light scattering ka effect aata hai aur background elements ko believable atmospheric tint milti hai. Is tarah tumhe imagination se bilkul sahi rang invent nahi karna padta."
+    }
+  ],
+  "checklist": [
+    "Main samjha sakta/sakti hoon ki atmospheric scattering ki wajah se door ke objects zyada hazy, feeke aur cool kyun dikhte hain.",
+    "Main background ki taraf jaate elements mein detail, value contrast aur saturation ko ek saath kam kar sakta/sakti hoon.",
+    "Main scene ke light source ke mutabik atmospheric color shift adjust kar sakta/sakti hoon — chahe aam daylight ho ya low, warm light.",
+    "Main atmospheric perspective ke principles sirf poore landscape mein nahi, balki ek hi bade object ke andar bhi apply kar sakta/sakti hoon."
+  ],
+  "nextStep": "Ab tum color, value aur detail ki madad se poore scene mein depth control kar sakte ho. Module 102 texture aur surface detail cover karta hai — yeh finishing layer hai jo is arc ke bade structural decisions ho jaane ke baad believable wear, grain aur material ki specificity jodti hai."
+},
   "m98": {
-    "hook": "Skin aur metal ke liye jo exact rendering skills tumne build ki hain, kuch materials par unhe poori tarah shortcut kiya ja sakta hai — real fabric ki photo ko halka sa paint over karna, hand-rendered texture par ghanton lagane se zyada achha result de sakta hai, aur kab kaunsa approach use karna hai, yeh samajhna apne aap mein ek skill hai.",
-    "whyItMatters": [
-      "Yeh module Modules 99–97 ki har cheez ke upar finishing layer hai: color, value, light, material, edges aur depth, sab structural decisions hain, jabki texture aur surface detail woh cheezein hain jinhe viewer paas se notice karta hai; yeh specific, believable wear aur material identity jodte hain, jisse artwork generic ke bajay real lagta hai.",
-      "Texture ke decisions mein time management ka bhi ek real role hai: texture ko hand-paint kab karna hai aur filter ya reference photo (photobashing) kab use karni hai, yeh samajhna ek practical skill hai jo professional-speed workflow ko kitna realistic banata hai, us par asar dalti hai."
-    ],
-    "coreIdea": [
-      "Artwork ke end ke paas ek subtle noise ya grain layer add karne se bahut smooth digital gradients break up hote hain, jo warna artificial ya plastic jaise lagte hain — yeh ek fast, software-native technique (noise filter) hai, jise hand-paint karne ki zaroorat nahi hoti.",
-      "Alag fabric types ke liye waqai alag rendering approaches chahiye: smooth, slippery fabrics (silk, satin) ko zyada tar soft blended value shifts se render kiya jata hai, lagbhag bina kisi separate texture pass ke; jabki rough, textured fabrics (denim, tweed) textured brush aur zyada visible, broken brushwork se fayda uthate hain.",
-      "Overlapping texture (is purpose ke liye ise photobashing bhi kehte hain) — pehle se rendered form ke upar real texture ki desaturated, contrast-adjusted photo rakhna, phir blend mode aur opacity adjust karna — lace, chainmail ya close-up fabric weave jaise highly detailed textures ke liye ek legitimate, efficient technique hai; yeh aisa shortcut nahi hai jiske liye sharminda hona pade.",
-      "Texture ko wahi wear-with-a-cause logic follow karna chahiye jo Module 103 mein hard-surface scratches ke liye establish hua tha: ise kam aur soch-samajhkar lagao, aur wahan concentrate karo jahan physical contact ya stress logically hota hai, na ki poori surface par evenly scatter karo."
-    ],
-    "mistakes": [
-      "Material ki parwah kiye bina poore artwork par uniformly heavy texture add karna, jabki smooth ya slippery materials mein relatively kam texture hona chahiye aur value ko hi kaam karne dena chahiye.",
-      "Fully rendered artwork par final noise ya grain pass bilkul na karna, jisse smooth gradients artificial ya plastic jaise lagte hain.",
-      "Real photo use karke overlapping texture ko ek galat shortcut samajhna, na ki kuch highly detailed surfaces ke liye suitable genuine professional technique.",
-      "Pehle contrast, saturation aur blend mode adjust kiye bina texture photo ko seedha form par rakh dena, jisse woh existing rendering mein integrate hone ke bajay chipki hui lagti hai.",
-      "Wear aur texture ko surface par evenly scatter karna, jabki physical logic (contact points, stress areas, exposure) ke hisaab se unhe specific jagahon par concentrate hona chahiye."
-    ],
-    "proTips": [
-      "Subtle noise/grain pass ko artwork ke bilkul end ke paas, color aur value baaki taur par finish hone ke baad use karo; smooth digital gradients ko zyada textured aur alive feel dene ka yeh ek fast tareeqa hai.",
-      "Apni rendering approach fabric ke hisaab se chuno: smooth/slippery materials ke liye minimum separate texture work, rough/stiff materials ke liye visible textured brushwork, aur lace ya chainmail jaise bahut fine, detailed patterns ke liye overlapping texture (photo reference).",
-      "Photo texture use karte waqt pehle hamesha uska contrast adjust karo aur use desaturate karo, phir blend modes ke saath experiment karo (light fabrics ke liye Multiply, dark fabrics ke liye Lighten ya Screen); use full opacity aur Normal blend mode mein seedha paste mat karo.",
-      "Texture aur wear detail ko logical contact points par concentrate karo (jahan bag ko pakda jata hai, jahan fabric kisi joint par stretch hota hai), na ki evenly spread karo; Module 103 ke scratches wala wahi wear-with-a-cause logic use karo."
-    ],
-    "practice": {
-      "warmup": "Teen chhote, identical shapes ko teen alag fabric types (silk, denim, lace) ki tarah render karo, aur har ek ke liye sahi technique use karo: soft blending, textured brushwork, aur overlapping photo texture.",
-      "daily": "Pichhle kisi module ka ek finished artwork lo aur usmein final subtle noise/grain layer add karo; result ko pehle aur baad mein compare karo.",
-      "weekly": "Fabric folds wale ek clothing piece ko render karo; ek detailed area ke liye overlapping texture (real photo, desaturated aur contrast-adjusted) use karo, aur baaki ke liye hand-painted texture.",
-      "challenge": "Kisi artwork mein wear ya texture detail sirf logical contact points par add karo (bag ke handle ki grip, jacket ki elbow), evenly spread mat karo; phir dekho ki artwork kitna zyada specific aur believable lagta hai."
-    },
-    "quiz": [
-      {
-        "q": "Digital painting ke end ke paas subtle noise ya grain layer add karne ka kya purpose hai?",
-        "options": [
-          "File size ko kaafi kam karna",
-          "Bahut smooth digital gradients ko break up karna, jo warna artificial ya plastic jaise lagte hain",
-          "Iska koi real visual effect nahi hota aur yeh sirf optional decoration hai",
-          "Color mistakes ko automatically theek karna"
-        ],
-        "correct": 1,
-        "explain": "Subtle noise ya grain pass perfectly smooth digital gradients ko break up karne mein madad karta hai, jisse artwork zyada organic aur kam artificial lagta hai."
-      },
-      {
-        "q": "Smooth, slippery fabrics (jaise silk ya satin) ko rough, textured fabrics (jaise denim) ke muqable aam taur par kaise render karna chahiye?",
-        "options": [
-          "Dono ko heavy visible texture ke saath bilkul ek jaisa render karna chahiye",
-          "Smooth fabrics ko zyada tar soft blended value shifts aur minimum separate texture ke saath; rough fabrics ko zyada visible, broken textured brushwork ke saath",
-          "Smooth fabrics ko rough fabrics se zyada texture chahiye",
-          "Fabric type ka rendering approach par koi asar nahi hota"
-        ],
-        "correct": 1,
-        "explain": "Smooth, slippery materials sirf value aur blending se believable lagte hain, jabki rough ya textured materials ki surface quality dikhane ke liye visible textured brushwork faydemand hota hai."
-      },
-      {
-        "q": "\"Overlapping texture\" (ya texture ke liye photobashing) kya hai, aur yeh kab suitable hai?",
-        "options": [
-          "Ise cheating maana jata hai aur kabhi use nahi karna chahiye",
-          "Pehle se rendered form ke upar real texture ki adjusted photo rakhna; lace ya chainmail jaisi highly detailed surfaces ke liye yeh suitable hai",
-          "Yeh sirf backgrounds par lagu hota hai, clothing ya props par kabhi nahi",
-          "Iska matlab kisi doosre artist ki finished painting copy karna hai"
-        ],
-        "correct": 1,
-        "explain": "Overlapping texture ek legitimate technique hai jismein real texture photo ko contrast aur saturation adjust karke pehle se rendered form par blend kiya jata hai — yeh khaas taur par bahut fine, detailed patterns ke liye useful hai jinhe hand-paint karne mein bahut zyada waqt lagega."
-      },
-      {
-        "q": "Rendered surface par blend karne se pehle texture photo mein kya adjust karna chahiye?",
-        "options": [
-          "Kuch nahi; ise full opacity par seedha paste karo",
-          "Iska contrast, saturation aur blend mode, taaki yeh pasted-on lagne ke bajay existing rendering mein integrate ho",
-          "Sirf iska file format badalna chahiye",
-          "Photo ko bina kisi software adjustment ke bilkul waise hi use karna chahiye jaise li gayi thi"
-        ],
-        "correct": 1,
-        "explain": "Texture photo ka contrast adjust karna, use desaturate karna aur sahi blend mode chunna (use Normal mode mein full opacity par paste karne ke bajay) hi use neeche wali rendered surface mein believably integrate karta hai."
-      },
-      {
-        "q": "Module ke mutabik, surface par texture aur wear detail ko aam taur par kaise distribute karna chahiye?",
-        "options": [
-          "Poore surface par bilkul evenly spread karna",
-          "Logical contact points ya stress areas par concentrate karna, Module 103 ke scratches wale wear-with-a-cause logic ko follow karte hue",
-          "Cause ke baare mein soche bina randomly lagana",
-          "Texture ko kabhi selectively apply nahi karna chahiye"
-        ],
-        "correct": 1,
-        "explain": "Jahan physical contact, stress ya exposure logically hota hai, wahan texture aur wear ko concentrate karne se poore surface par detail evenly spread karne ke muqable zyada specific aur believable result milta hai."
-      }
-    ],
-    "checklist": [
-      "Main finished artwork ke smooth gradients ko unify karne ke liye subtle noise/grain pass add kar sakta/sakti hoon.",
-      "Main fabric ki properties ke hisaab se suitable rendering approach (soft blending ya textured brushwork) chun sakta/sakti hoon.",
-      "Main overlapping-texture technique use kar sakta/sakti hoon aur rendered surface par apply karne se pehle photo ka contrast aur blend mode adjust kar sakta/sakti hoon.",
-      "Main texture aur wear detail ko evenly spread karne ke bajay logical contact points par concentrate kar sakta/sakti hoon."
-    ],
-    "nextStep": "Ab tumhare paas is arc mein cover hua har rendering tool hai — color, value, light, material, edges, depth aur texture. Module 103 in sab ko ek complete illustration workflow mein jodta hai: kisi artwork ko pehle sketch se finished render tak le jane ka professional sequence."
+  "hook": "Skin aur metal ke liye jo rendering skills tumne banayi hain, kuch materials ke liye unhi ka shortcut liya ja sakta hai — real fabric ki photo par halka sa paint karna, hand-rendered texture banane mein ghanton lagane se bhi behtar ho sakta hai. Kab kaunsa approach use karna hai, yeh samajhna bhi apne aap mein ek skill hai.",
+  "whyItMatters": [
+    "Yeh module, Modules 95–97 mein seekhi har cheez ke upar finishing layer hai: color, value, light, material, edges aur depth — yeh sab structural decisions hain. Lekin viewer paas se dekhe toh texture aur surface detail notice karta hai; yeh specific, believable wear aur material ki pehchaan laate hain, jisse artwork generic ke bajaye real lagta hai.",
+    "Texture ke decisions mein time manage karne ka bhi ek real pehlu hai: texture ko hand-paint kab karna hai aur filter ya reference photo (photobashing) kab use karni hai, yeh samajhna ek practical skill hai. Isse pata chalta hai ki professional speed par workflow kitna realistic ho sakta hai."
+  ],
+  "coreIdea": [
+    "Piece ke end ke paas ek subtle noise ya grain layer add karne se overly smooth digital gradients break ho jaate hain, jo warna artificial ya plastic jaise lagte. Yeh fast, software-native technique hai (noise filter), ise hand-paint karne ki zaroorat nahi hoti.",
+    "Alag-alag fabric types ke liye waqai alag rendering approaches chahiye: smooth, slippery fabrics (silk, satin) ko mostly soft blended value shifts se render kiya jaata hai, bina kisi alag texture pass ke. Rough, textured fabrics (denim, tweed) textured brush aur zyada visible, broken brushwork se achhe lagte hain.",
+    "Overlapping texture (is purpose ke liye photobashing bhi kehte hain) — real texture ki desaturated, contrast-adjusted photo ko pehle se rendered form ke upar rakhna, phir blend mode aur opacity adjust karna — lace, chainmail ya fabric weave ke close-up jaise highly detailed textures ke liye ek valid, efficient technique hai. Is shortcut par sharminda hone ki zaroorat nahi.",
+    "Texture ko bhi Module 99 mein hard-surface scratches ke liye bataye gaye wear-with-a-cause logic ko follow karna chahiye: ise thoda-thoda use karo aur wahan concentrate karo jahan physical contact ya stress logically hota hai, poori surface par barabar mat failao."
+  ],
+  "mistakes": [
+    "Material ko dekhe bina poori piece par heavy texture ek jaisa add karna, jabki smooth ya slippery materials par relatively kam texture hona chahiye aur value ko kaam karne dena chahiye.",
+    "Fully rendered piece par final noise ya grain pass bilkul na karna, jisse smooth gradients artificial ya plastic jaise lagte rehte hain.",
+    "Overlapping texture (real photo use karke) ko genuine professional technique ke bajaye najaayaz shortcut samajhna, jabki kuch highly detailed surfaces ke liye yeh sahi technique hai.",
+    "Texture photo ko form par seedha rakh dena, pehle uska contrast, saturation aur blend mode adjust na karna. Isse photo existing rendering ke saath ghulne ke bajaye chipki hui lagti hai.",
+    "Wear aur texture ko surface par barabar failana, jabki physical logic (contact points, stress areas, exposure) ke mutabik unhe specific jagahon par concentrate hona chahiye."
+  ],
+  "proTips": [
+    "Piece ke end ke kareeb, jab color aur value baaki tarah se finish ho chuke hon, tab subtle noise/grain pass add karo. Smooth digital gradients ko zyada textured aur lively banane ka yeh fast tareeqa hai.",
+    "Fabric ke hisaab se rendering approach chuno: smooth/slippery materials ke liye alag texture ka kaam bahut kam, rough/stiff materials ke liye visible textured brushwork, aur lace ya chainmail jaise bahut fine, detailed patterns ke liye overlapping texture (photo reference).",
+    "Photo texture use karte waqt pehle uska contrast adjust karo aur use desaturate karo. Phir blend modes try karo (light fabrics ke liye Multiply, dark fabrics ke liye Lighten ya Screen), seedha full opacity aur Normal blend mode par paste mat karo.",
+    "Texture aur wear ki detail ko logical contact points par rakho (jahan bag ko pakda jaata hai, ya jahan fabric kisi joint par stretch hota hai), har jagah barabar mat failao. Module 99 ke scratches wali wear-with-a-cause logic yahan bhi use karo."
+  ],
+  "practice": {
+    "warmup": "Teen chhoti, ek jaisi shapes ko teen alag fabric types (silk, denim, lace) ki tarah render karo. Har ek ke liye sahi technique use karo: soft blending, textured brushwork aur overlapping photo texture.",
+    "daily": "Pichhle kisi module ki ek finished piece lo aur us par final subtle noise/grain layer add karo. Add karne se pehle aur baad ka result compare karo.",
+    "weekly": "Fabric folds wale ek clothing piece ko render karo. Ek detailed area ke liye overlapping texture (real photo, desaturated aur contrast-adjusted) use karo, aur baaki ke liye hand-painted texture.",
+    "challenge": "Kisi piece par wear ya texture detail sirf logical contact points par add karo (bag ke handle ki grip, jacket ki kohni), har jagah barabar nahi. Phir dekho ki woh kitni zyada specific aur believable lagti hai."
   },
+  "quiz": [
+    {
+      "q": "Digital painting ke end ke paas subtle noise ya grain layer add karne ka kya purpose hai?",
+      "options": [
+        "File size ko kaafi kam karna",
+        "Overly smooth digital gradients ko break karna, jo warna artificial ya plastic jaise lagte hain",
+        "Iska koi asli visual effect nahi hota; yeh sirf optional decoration hai",
+        "Color ki galtiyan automatically theek karna"
+      ],
+      "correct": 1,
+      "explain": "Subtle noise ya grain pass se bilkul smooth digital gradients break hote hain, aur piece zyada organic, kam artificial lagti hai."
+    },
+    {
+      "q": "Smooth, slippery fabrics (jaise silk ya satin) ko rough, textured fabrics (jaise denim) ke muqable aam taur par kaise render karna chahiye?",
+      "options": [
+        "Dono ko ek jaisa, heavy visible texture ke saath render karna chahiye",
+        "Smooth fabrics ko mostly soft blended value shifts aur bahut kam alag texture ke saath; rough fabrics ko zyada visible, broken textured brushwork ke saath",
+        "Smooth fabrics ko rough fabrics se zyada texture chahiye",
+        "Fabric type ka rendering approach par koi asar nahi hota"
+      ],
+      "correct": 1,
+      "explain": "Smooth, slippery materials sirf value aur blending se convincing lagte hain, jabki rough ya textured materials ki surface quality dikhane ke liye visible textured brushwork kaam aata hai."
+    },
+    {
+      "q": "Overlapping texture (ya texture ke liye photobashing) kya hai, aur ise kab use karna sahi hai?",
+      "options": [
+        "Ise cheating maana jaata hai aur kabhi use nahi karna chahiye",
+        "Real texture ki adjusted photo ko pehle se rendered form ke upar rakhna; lace ya chainmail jaisi highly detailed surfaces ke liye yeh sahi hai",
+        "Yeh sirf backgrounds ke liye hai, clothing ya props ke liye nahi",
+        "Iska matlab kisi doosre artist ki finished painting copy karna hai"
+      ],
+      "correct": 1,
+      "explain": "Overlapping texture ek valid technique hai jisme real texture ki photo ko contrast aur saturation ke hisaab se adjust karke pehle se rendered form ke saath blend kiya jaata hai. Yeh khaas taur par bahut fine, detailed patterns ke liye useful hai, jinhe hand-paint karne mein bahut zyada waqt lagta."
+    },
+    {
+      "q": "Rendered surface ke saath blend karne se pehle texture photo mein kya adjust karna chahiye?",
+      "options": [
+        "Kuch nahi; use seedha full opacity par paste karo",
+        "Uska contrast, saturation aur blend mode, taaki woh chipki hui lagne ke bajaye existing rendering ke saath ghul jaaye",
+        "Sirf uska file format badalna chahiye",
+        "Photo ko bilkul waise hi use karna chahiye jaise li gayi thi, bina software adjustments ke"
+      ],
+      "correct": 1,
+      "explain": "Texture photo ka contrast adjust karna, use desaturate karna aur sahi blend mode chunna (full opacity par Normal mode mein paste karne ke bajaye) use neeche rendered surface ke saath believable tareeke se blend karta hai."
+    },
+    {
+      "q": "Module ke mutabik surface par texture aur wear detail aam taur par kaise distribute honi chahiye?",
+      "options": [
+        "Poori surface par bilkul barabar faila kar",
+        "Logical contact points ya stress areas par concentrate karke, Module 99 ke scratches wali wear-with-a-cause logic follow karte hue",
+        "Bina kisi cause ka dhyan rakhe randomly lagakar",
+        "Texture ko kabhi selectively apply nahi karna chahiye"
+      ],
+      "correct": 1,
+      "explain": "Jahan physical contact, stress ya exposure logically ho sakta hai, wahan texture aur wear concentrate karne se poori surface par detail barabar failane ke muqable zyada specific aur believable result milta hai."
+    }
+  ],
+  "checklist": [
+    "Main finished piece ke smooth gradients ko unify karne ke liye subtle noise/grain pass add kar sakta/sakti hoon.",
+    "Main fabric ki properties ke hisaab se sahi rendering approach chun sakta/sakti hoon (soft blending ya textured brushwork).",
+    "Main overlapping-texture technique use kar sakta/sakti hoon, rendered surface par apply karne se pehle photo ka contrast aur blend mode adjust kar sakta/sakti hoon.",
+    "Main texture aur wear detail ko har jagah barabar failane ke bajaye logical contact points par concentrate kar sakta/sakti hoon."
+  ],
+  "nextStep": "Ab tumhare paas is arc mein cover kiye gaye saare rendering tools hain — color, value, light, material, edges, depth aur texture. Module 103 mein in sab ko ek complete illustration workflow mein joda jaayega: kisi piece ko pehle sketch se finished render tak le jaane ka professional sequence."
+},
   "m99": {
-    "hook": "Is arc mein ab tak har skill toolbox ka ek alag tool rahi hai. Yeh module us order ke baare mein hai jismein tum un tools ko uthate ho — kyunki wahi nau tools galat sequence mein use karne se mess banta hai, aur sahi sequence mein use karne se finished artwork.",
-    "whyItMatters": [
-      "Color theory, value, light, material, edges, depth aur texture (Modules 99–98), sab decisions hain. Workflow woh order hai jismein yeh decisions liye jate hain, aur sahi order aksar ek aise artwork ke beech ka farq hota hai jo smoothly develop hota hai aur ek aise artwork ke beech ka jise baar-baar rework karna padta hai kyunki woh muddy ho gaya.",
-      "Yeh Module 88 ke concept-art pipeline se bhi seedha compare kiya ja sakta hai: full-color illustration workflow wahi explore-then-commit logic hai, bas ise concept-art production process ke bajay rendered, painterly artwork par apply kiya jata hai."
-    ],
-    "coreIdea": [
-      "Standard sequence yeh hai: sketch (loose, low-opacity, proportion aur gesture par focused), line art (varied line weight ke saath ek clean, deliberate pass), flat colors (har element ke liye ek color, abhi shading nahi), phir shading aur rendering (pehle light direction decide hoti hai, phir flats ke upar shadows aur highlights build hote hain).",
-      "Ek bhi shadow rakhne se pehle light direction decide karna, shading stage ka sabse zyada leverage dene wala decision hai — uske baad ke har shadow aur highlight ka decision isi ek choice se nikalta hai; ise skip karna shading inconsistent hone ki ek common wajah hai.",
-      "Agli stage par jane se pehle current stage ko alag se check karna problems ko jaldi pakad leta hai: sketch hide karne par line art clearly read honi chahiye, aur bina shading ke flat colors sahi dikhne chahiye, kyunki kisi problem ko pehle wali stage par fix karna uske upar aage ka kaam build ho jane ke baad fix karne se bahut aasaan hota hai.",
-      "Line weight ek aisa underused tool hai jo rendering se pehle hi available hota hai — silhouettes aur overlapping shapes par thicker lines, internal detail par thinner lines — isse ek bhi shadow paint karne se pehle depth aur hierarchy ka sense aata hai."
-    ],
-    "mistakes": [
-      "Sketch ke proportions aur gesture solid hone se pehle detailed rendering shuru kar dena, phir structural problems fix karne mein sketch stage par lagne wale waqt se kahin zyada waqt lagana.",
-      "Light direction decide karne se pehle shading karna, jisse shadows aur highlights aapas mein agree nahi karte kyunki unke peeche guide karne wala koi ek decision nahi tha.",
-      "Current stage ko alag se check kiye bina agli stage par chale jana (jaise sirf line art check karne ke liye sketch hide na karna), aur aisi problems miss kar dena jo baad ki stages mein aur badh jati hain.",
-      "Line weight ko sirf decoration samajhna, jabki color ya shading se pehle hi depth aur hierarchy banane ke liye yeh ek aasaan, shuruati tool hai.",
-      "Flat colors skip karke seedha line art se full rendering par chale jana, jisse shading ko affect kiye bina color choice ko alag se samajhna aur fix karna mushkil hota hai."
-    ],
-    "proTips": [
-      "Apna sketch low opacity par rakho aur gesture loose rakho — ise tight karne ki jaldi tab tak mat karo jab tak proportions aur pose waqai solid na lagen, kyunki baad mein structure fix karna bahut zyada costly hota hai.",
-      "Ek bhi shadow add karne se pehle clearly decide karo ki light kis direction se aa rahi hai, aur uske baad rakhe gaye har shadow aur highlight ke liye us decision ko refer karo.",
-      "Aage badhne se pehle har stage ko alag se check karo: sketch layer hide karke verify karo ki line art akeli clearly read hoti hai, aur shading hide karke verify karo ki flats apne aap mein sahi lagte hain.",
-      "Line art stage par line weight ko soch-samajhkar use karo — silhouettes aur overlapping shapes par heavier, internal detail par lighter — taaki color aane se pehle hi depth aur hierarchy build ho."
-    ],
-    "practice": {
-      "warmup": "Ek simple subject ko sirf pehli do stages se guzaro (sketch, phir clean line art), aur check karo ki sketch layer hide karne par line art clearly read hoti hai.",
-      "daily": "Ek chhote artwork ko poore four-stage workflow se complete karo (sketch, line art, flat colors, shading), aur shading shuru karne se pehle light direction clearly decide karo.",
-      "weekly": "Ek artwork ko workflow ke through le jao; agli stage par jane se pehle har stage ko alag se check karo (pichhli layer hide karke), aur note karo ki kaunsi problem tumne jaldi pakdi jo shayad warna miss ho jati.",
-      "challenge": "Kisi finished artwork ki line art dobara banao aur sirf deliberate line weight par focus karo (silhouette/overlaps par heavy, interior detail par light); phir usse usi line art ke ek flat-weight version se compare karo."
-    },
-    "quiz": [
-      {
-        "q": "Is module mein bataya gaya standard four-stage sequence kya hai?",
-        "options": [
-          "Shading, line art, sketch, flat colors",
-          "Sketch, line art, flat colors, shading aur rendering",
-          "Flat colors, sketch, shading, line art",
-          "Rendering, sketch, shading, flats"
-        ],
-        "correct": 1,
-        "explain": "Standard sequence loose sketch se clean line art tak, phir bina shading wale flat colors tak, aur aakhir mein un flats ke upar banayi gayi shading aur rendering tak jata hai."
-      },
-      {
-        "q": "Module ke mutabik, shading stage par sabse zyada leverage dene wala decision kya hai?",
-        "options": [
-          "Final export file format chunna",
-          "Koi bhi shadow rakhne se pehle light direction decide karna",
-          "Canvas resolution chunna",
-          "Brush pack select karna"
-        ],
-        "correct": 1,
-        "explain": "Shading shuru hone se pehle light direction par commit karna woh decision hai jisse uske baad ke har shadow aur highlight ko nikalna chahiye; ise skip karne se shading aksar inconsistent ho jati hai."
-      },
-      {
-        "q": "Agli stage par jane se pehle har workflow stage ko alag se check karne ki salah kyun di jati hai?",
-        "options": [
-          "Iska koi real fayda nahi aur yeh sirf waqt barbaad karta hai",
-          "Problems ko pehle wali stage par pakadkar fix karna, baad ka kaam unke upar build ho jane ke baad fix karne se bahut aasaan hota hai",
-          "Stages ko alag karna zyadaatar software mein zaroori hota hai",
-          "Yeh sirf traditional media ke liye maayne rakhta hai, digital ke liye nahi"
-        ],
-        "correct": 1,
-        "explain": "Kisi stage ko akela check karna (jaise line art verify karne ke liye sketch hide karna) problems ko tab pakadta hai jab unhe fix karna aasaan hota hai, na ki baad ki stages kisi flawed foundation par ban jane ke baad."
-      },
-      {
-        "q": "Shading ya color se pehle line weight ko tool ki tarah kaise use kiya ja sakta hai?",
-        "options": [
-          "Line weight ka koi visual effect nahi hota aur yeh sirf stylistic preference hai",
-          "Silhouettes aur overlapping shapes par thicker lines, internal detail par thinner lines, line art stage par hi depth aur hierarchy ka sense dete hain",
-          "Line weight sirf full rendering complete hone ke baad adjust kiya ja sakta hai",
-          "Consistency ke liye hamesha sabhi lines ka weight bilkul ek jaisa hona chahiye"
-        ],
-        "correct": 1,
-        "explain": "Line weight vary karna — silhouettes aur overlapping shapes par heavier, interior detail par lighter — koi color ya shading add hone se pehle depth aur visual hierarchy build karne ka ek shuruati, aasaan tareeqa hai."
-      },
-      {
-        "q": "Flat colors stage skip karke seedha line art se full rendering par jane ka ek risk kya hai?",
-        "options": [
-          "Koi risk nahi; stages skip karna hamesha zyada efficient hota hai",
-          "Shading ko affect kiye bina color choice ko alag se samajhna aur fix karna mushkil ho jata hai, kyunki shading pehle hi uske upar build ho chuki hoti hai",
-          "Flat colors sirf traditional painting ke liye relevant hain",
-          "Stages skip karne se final quality hamesha behtar hoti hai"
-        ],
-        "correct": 1,
-        "explain": "Flat colors shading banne se pehle unhe check aur adjust karne ke liye ek clean base dete hain; seedha rendering par jane se shading ko disturb kiye bina color ki problem fix karna mushkil ho jata hai."
-      }
-    ],
-    "checklist": [
-      "Main artwork ko is order mein aage badha sakta/sakti hoon: sketch, line art, flat colors, shading.",
-      "Main koi bhi shadow rakhne se pehle light direction clearly decide kar sakta/sakti hoon.",
-      "Main agli stage par jane se pehle kisi stage ko alag se check kar sakta/sakti hoon (pehle wali layers hide karke).",
-      "Main color aane se pehle depth add karne ke liye line art stage par line weight ko soch-samajhkar use kar sakta/sakti hoon."
-    ],
-    "nextStep": "Ab tumhare paas kisi artwork ko pehle sketch se finished render tak le jane ka ek complete, repeatable workflow hai. Module 104 capstone hai — is poore arc ki har skill ko ek complete, fully rendered illustration mein ek saath lana."
+  "hook": "Ab tak is arc ki har skill toolbox ka ek alag tool thi. Is module mein baat hai ki tum in tools ko kis order mein uthate ho — kyunki yehi nau tools galat sequence mein use karo toh gadbad hoti hai, aur sahi sequence mein use karo toh finished piece banti hai.",
+  "whyItMatters": [
+    "Color theory, value, light, material, edges, depth aur texture (Modules 95–98) — yeh sab decisions hain. Workflow batata hai ki ye decisions kis order mein liye jaate hain. Sahi order aksar wahi farq hota hai jo smoothly banne wali piece aur muddy hokar baar-baar rework maangne wali piece ke beech hota hai.",
+    "Yeh Module 84 ke concept-art pipeline se bhi seedha compare kiya ja sakta hai: full-color illustration workflow mein bhi pehle explore, phir commit karne ka logic hota hai; bas yahan yeh rendered, painterly piece par apply hota hai, concept-art production process par nahi."
+  ],
+  "coreIdea": [
+    "Standard sequence hai: sketch (loose, low-opacity, proportion aur gesture par focused), line art (varied line weight ke saath clean, deliberate pass), flat colors (har element ke liye ek color, abhi shading nahi), phir shading aur rendering (pehle light direction decide karo, phir flats ke upar shadows aur highlights banao).",
+    "Ek bhi shadow rakhne se pehle light direction decide karna shading stage ka sabse zyada asar daalne wala decision hai. Uske baad har shadow aur highlight ka decision usi se niklega. Ise chhod dena shading ke inconsistent hone ki aam wajah hai.",
+    "Agli stage par jaane se pehle current stage ko alag se check karne par problems jaldi pakad mein aati hain: sketch chhupane par line art saaf padhna chahiye, aur bina shading ke flat colors sahi lagne chahiye. Pehle stage par problems theek karna, unke upar aage ka kaam ban jaane ke baad theek karne se bahut aasaan hota hai.",
+    "Line weight khud ek aisa tool hai jiska kam istemal hota hai, aur rendering shuru hone se pehle bhi available hota hai — silhouettes aur jahan shapes overlap karti hain wahan moti lines, aur internal detail par patli lines, ek bhi shadow paint karne se pehle depth aur hierarchy ka ehsaas laati hain."
+  ],
+  "mistakes": [
+    "Sketch ke proportions aur gesture solid hone se pehle detailed rendering shuru kar dena, phir sketch stage par structure theek karne ke muqable kahin zyada waqt structural problems sudhaarne mein laga dena.",
+    "Light direction decide karne se pehle shading karna, jisse shadows aur highlights ek-doosre se match nahi karte, kyunki unke peeche koi ek guiding decision nahi hota.",
+    "Current stage ko alag se check kiye bina agle stage par chale jaana (jaise line art ko akela check karne ke liye sketch chhupana), aur aisi problems miss kar dena jo baad ki stages mein badhti jaati hain.",
+    "Line weight ko sirf decoration samajhna, jabki color ya shading se pehle hi depth aur hierarchy laane ke liye yeh ek aasaan, shuruati tool hai.",
+    "Flat colors chhodkar seedha line art se full rendering par jaana, jisse shading ko affect kiye bina color choice ko alag se samajhna aur theek karna mushkil ho jaata hai."
+  ],
+  "proTips": [
+    "Sketch ko low opacity par rakho aur gesture loose rakho — use tight karne ki jaldi mat karo, jab tak proportions aur pose sach mein solid na lagen. Baad mein structure theek karna kaafi zyada mehenga padta hai.",
+    "Ek bhi shadow add karne se pehle saaf taur par decide karo ki light kahan se aa rahi hai, aur uske baad rakhi har shadow aur highlight ke liye us decision ko yaad rakho.",
+    "Aage badhne se pehle har stage ko alag se check karo: line art saaf padh rahi hai ya nahi dekhne ke liye sketch layer chhupao, aur flats apne aap mein sahi lag rahe hain ya nahi dekhne ke liye shading chhupao.",
+    "Line art stage par line weight soch-samajhkar use karo — silhouettes aur overlapping shapes par moti, internal detail par patli — taaki koi color aane se pehle hi depth aur hierarchy ban jaaye."
+  ],
+  "practice": {
+    "warmup": "Ek simple subject ko sirf pehli do stages se guzaro (sketch, phir clean line art). Sketch layer chhupa kar check karo ki line art saaf padh rahi hai.",
+    "daily": "Sketch, line art, flat colors aur shading — poori four-stage workflow se ek chhoti piece complete karo. Shading shuru karne se pehle light direction saaf taur par decide karo.",
+    "weekly": "Ek piece ko workflow ke through le jao. Agli stage par jaane se pehle har stage ko alag se check karo (pichhli layer chhupakar), aur note karo ki kaunsi problem tumne jaldi pakdi jo warna shayad miss ho jaati.",
+    "challenge": "Ek finished piece ki line art ko dobara banao aur sirf deliberate line weight par focus karo (silhouette/overlaps par moti, andar ki detail par patli). Phir uski tulna usi line art ke ek flat-weight version se karo."
   },
+  "quiz": [
+    {
+      "q": "Is module mein bataya gaya standard four-stage sequence kya hai?",
+      "options": [
+        "Shading, line art, sketch, flat colors",
+        "Sketch, line art, flat colors, shading aur rendering",
+        "Flat colors, sketch, shading, line art",
+        "Rendering, sketch, shading, flats"
+      ],
+      "correct": 1,
+      "explain": "Standard sequence loose sketch se shuru hota hai, phir clean line art, phir bina shading ke flat colors, aur aakhir mein un flats ke upar shading aur rendering hoti hai."
+    },
+    {
+      "q": "Module ke mutabik shading stage ka sabse zyada asar daalne wala decision kya hai?",
+      "options": [
+        "Final export file format chunna",
+        "Koi bhi shadow rakhne se pehle light direction decide karna",
+        "Canvas resolution chunna",
+        "Brush pack select karna"
+      ],
+      "correct": 1,
+      "explain": "Shading shuru hone se pehle light direction decide karne ko woh decision bataya gaya hai jisse har agla shadow aur highlight nikalna chahiye. Ise chhodne par shading inconsistent ho sakti hai."
+    },
+    {
+      "q": "Agli stage par jaane se pehle workflow ki har stage ko alag se check karne ki salah kyun di jaati hai?",
+      "options": [
+        "Iska koi asli faayda nahi, bas waqt barbaad hota hai",
+        "Problems ko pehle stage par pakadna aur theek karna, baad ka kaam unke upar ban jaane ke baad karne se bahut aasaan hota hai",
+        "Zyadaatar software mein stages ko alag karna zaroori hota hai",
+        "Yeh sirf traditional media mein zaroori hai, digital mein nahi"
+      ],
+      "correct": 1,
+      "explain": "Kisi stage ko alag se check karne se (jaise line art dekhne ke liye sketch chhupana) problems tabhi pakad mein aa jaati hain jab unhe theek karna aasaan hota hai, na ki tab jab baad ki stages pehle se flawed foundation par ban chuki hon."
+    },
+    {
+      "q": "Shading ya color se pehle line weight ko tool ki tarah kaise use kiya ja sakta hai?",
+      "options": [
+        "Line weight ka koi visual effect nahi; yeh sirf style ki pasand hai",
+        "Silhouettes aur overlapping shapes par moti lines, internal detail par patli lines rakhne se line art stage par hi depth aur hierarchy ka ehsaas aata hai",
+        "Line weight sirf full rendering complete hone ke baad adjust ho sakta hai",
+        "Consistency ke liye hamesha saari lines bilkul ek jaisi motai ki honi chahiye"
+      ],
+      "correct": 1,
+      "explain": "Line weight mein variation — silhouettes aur overlapping shapes par moti lines, interior detail par patli — color ya shading add hone se pehle depth aur visual hierarchy banane ka ek aasaan, shuruati tareeqa hai."
+    },
+    {
+      "q": "Flat colors stage chhodkar seedha line art se full rendering par jaane ka ek risk kya hai?",
+      "options": [
+        "Koi risk nahi; stages chhodna hamesha zyada efficient hota hai",
+        "Shading ko affect kiye bina color choice ko alag se samajhna aur theek karna mushkil ho jaata hai, kyunki shading pehle se uske upar bani hoti hai",
+        "Flat colors sirf traditional painting ke liye relevant hain",
+        "Stages chhodne se final quality hamesha behtar hoti hai"
+      ],
+      "correct": 1,
+      "explain": "Flat colors shading banne se pehle unhe check aur adjust karne ke liye ek saaf base dete hain. Seedha rendering par chale jaane se color ki problem theek karna mushkil hota hai, kyunki upar ki shading ko bhi disturb kiye bina yeh kaam nahi hota."
+    }
+  ],
+  "checklist": [
+    "Main ek piece par is order mein kaam kar sakta/sakti hoon: sketch, line art, flat colors, shading.",
+    "Main koi bhi shadow rakhne se pehle light direction saaf taur par decide kar sakta/sakti hoon.",
+    "Main agle stage par jaane se pehle kisi stage ko alag se check kar sakta/sakti hoon (pehle wali layers chhupakar).",
+    "Main color aane se pehle depth laane ke liye line art stage par line weight soch-samajhkar use kar sakta/sakti hoon."
+  ],
+  "nextStep": "Ab tumhare paas kisi piece ko pehle sketch se finished render tak le jaane ka complete, baar-baar use kar sakne wala workflow hai. Module 104 capstone hai — yahan is poore arc ki har skill ko ek complete, fully rendered illustration mein joda jaayega."
+},
   "m100": {
-    "hook": "Nau modules ki theory apne aap ko sirf ek jagah prove karti hai: ek single finished artwork mein, jahan color, value, light, material, edges, depth aur texture sabko ek hi waqt par milkar kaam karna hota hai.",
-    "whyItMatters": [
-      "Yeh Digital Painting & Rendering ko is tarah wrap up karta hai ki tumhe Modules 99–99 ki har skill ek complete artwork par apply karni hoti hai, waise hi jaise Module 90 ke capstone ne worldbuilding ko wrap up kiya tha — portfolio finished artworks se banta hai, alag-alag exercises se nahi.",
-      "Capstone artwork tumhari current weak point dhoondhne ka sabse imaandaar tareeqa bhi hai. Alag skills par kaam karne se woh gaps chhupe rehte hain jo tabhi saamne aate hain jab sab kuch ek saath kaam karna ho, aur yahi woh information hai jo tumhe batati hai ki aage kya practice karna hai."
-    ],
-    "coreIdea": [
-      "Module 103 wala workflow isi order mein follow karo: sketch, line art (ya hard lines ke bina kaam kar rahe ho to painted block-in), flat colors, phir us light direction ke hisaab se shading, jise tum pehla shadow banane se pehle decide karte ho.",
-      "Render karte waqt Modules 102–95 ke har material ke specific logic ko apply karo (skin ke liye subsurface scattering, metal ya glass ke liye environment reflections aur extreme contrast), har surface ko ek jaisa treat karne ke bajay.",
-      "Ek focal point par nazar direct karne aur foreground ko background se alag dikhane ke liye edge control (Module 104) aur atmospheric perspective (Module 101) ko saath use karo; phir texture (Module 102) sirf end mein add karo aur use logical wear points par concentrate karo.",
-      "Capstone artwork ko complete hone ke liye bada ya complex hona zaroori nahi — ek chhota, fully considered artwork jo har skill ko soch-samajhkar apply karta hai, us ambitious artwork se zyada valuable hai jo finished-looking render jaldi pane ke liye steps skip karta hai."
-    ],
-    "mistakes": [
-      "Pehle light direction decide kiye bina seedha rendering shuru karna, jisse artwork ke alag-alag hisson mein shading ek doosre se agree nahi karti.",
-      "Har material (skin, metal, fabric) ko ek hi generic technique se render karna, bajay us specific logic ko apply karne ke jo har material ke liye zaroori hai.",
-      "Poore artwork par texture aur wear evenly add karna, bajay unhe un jagahon par concentrate karne ke jahan physical sense banta hai.",
-      "Itne ambitious scope wala artwork chunna ki reasonable timeframe mein har stage ko proper care ke saath finish karna namumkin ho jaye.",
-      "Finished artwork ko process ka end samajhna, bajay iska honestly use karke pehchanne ke ki is arc ki nau skills mein se kaunsi abhi sabse weak hai."
-    ],
-    "proTips": [
-      "Shading shuru hone se pehle apni light direction likh lo, aur jo bhi shadow ya highlight banao uske saath use practically check karo — Module 101 wali wahi discipline.",
-      "Artwork mein materials ki palette limited rakho (skin, ek hard surface, ek fabric), taaki tum har material ki specific rendering logic ko sachchi care ke saath apply kar sako, bajay kai materials ko jaldi-jaldi aur satahi taur par render karne ke.",
-      "Finish karne ke baad Modules 99–99 par ek-ek karke wapas jao aur har module ki checklist ke against apne artwork ko imaandari se check karo — isse capstone sirf finished picture nahi, balki ek genuine diagnostic ban jata hai.",
-      "Agar ho sake to bahar se feedback lo (critique community, paint-over channel, koi dost) — ghanton tak apna artwork dekhne ke baad uski problems saaf dekh pana mushkil ho jata hai."
-    ],
-    "practice": {
-      "warmup": "Apne capstone artwork ke liye ek sentence ka brief likho: subject, ek dominant material, aur lighting ke liye ek emotional target.",
-      "daily": "Har session mein workflow ki ek stage par kaam karo (sketch, line art ya block-in, flats, shading), poora artwork ek hi sitting mein complete karne ki koshish karne ke bajay.",
-      "weekly": "Ek complete capstone illustration ko brief se finished render tak banao; har stage par color, value, light, material-specific rendering, edges, depth aur texture ko soch-samajhkar apply karo.",
-      "challenge": "Apne finished capstone artwork ko Modules 99–99 ki har checklist ke against imaandari se score karo, apni sabse weak area pehchano, aur uske chalte aage practice karne ke liye ek specific cheez ka naam lo."
-    },
-    "quiz": [
-      {
-        "q": "Is capstone module ka primary purpose kya hai?",
-        "options": [
-          "Ek bilkul nayi rendering technique sikhana",
-          "Modules 99–99 ki har skill ko ek finished artwork mein saath apply karna, jisse tumhari current sabse weak area saamne aaye",
-          "Is arc ke pehle ke modules ki zaroorat ko khatam karna",
-          "Sirf speed painting par focus karna"
-        ],
-        "correct": 1,
-        "explain": "Capstone mein koi nayi theory nahi hai; yeh tumse ek artwork mein color, value, light, material, edges, depth aur texture ko combine karne ke liye kehta hai, jisse pata chalta hai ki filhaal tumhari kaunsi specific skill sabse weak hai."
-      },
-      {
-        "q": "Module 101 ke mutabik, capstone artwork par shading shuru hone se pehle kya decide karna chahiye?",
-        "options": [
-          "Final export file format",
-          "Light direction, aur uske baad banaye gaye har shadow aur highlight ke against use check karna",
-          "Canvas resolution",
-          "Use karne wala brush pack"
-        ],
-        "correct": 1,
-        "explain": "Pehla shadow rakhne se pehle light direction par commit karna, aur uske baad ke har shadow aur highlight ko uske against check karna, poore artwork mein aapas mein disagree karti shading se bachata hai."
-      },
-      {
-        "q": "Capstone artwork mein materials ki palette limited rakhne ki salah kyun di jati hai?",
-        "options": [
-          "Materials limit karne ka koi real fayda nahi",
-          "Isse har material ki specific rendering logic (skin, metal, fabric) ko sachchi care ke saath apply karna mumkin hota hai, bajay kai materials ko satahi taur par render karne ke",
-          "Technically sirf ek material ki ijazat hai",
-          "Isse file size kaafi kam hota hai"
-        ],
-        "correct": 1,
-        "explain": "Kam materials par focus karne se tum har ek ki specific technique (skin ke liye subsurface scattering, metal ke liye extreme contrast, aur isi tarah) ko sahi tarah apply kar sakte ho, bajay kai surfaces mein apni mehnat ko bahut zyada baant dene ke."
-      },
-      {
-        "q": "Module 102 ke mutabik, finished capstone artwork mein texture aur wear kaise apply karna chahiye?",
-        "options": [
-          "Poore artwork mein evenly spread karna",
-          "Process ke end ke paas add karna aur un jagahon par concentrate karna jahan physical sense banta hai",
-          "Koi color ya shading hone se pehle apply karna",
-          "Capstone artwork mein texture se poori tarah bachna chahiye"
-        ],
-        "correct": 1,
-        "explain": "Texture aur wear ko end ke paas add karna chahiye aur logical contact ya stress points par concentrate karna chahiye, Module 102 mein establish kiye gaye wahi wear-with-a-cause logic ko follow karte hue."
-      },
-      {
-        "q": "Finished capstone artwork ko complete karne ke baad use karne ka recommended tareeqa kya hai?",
-        "options": [
-          "Bina aur soche turant aage badh jana",
-          "Modules 99–99 ki har checklist par wapas jaakar imaandari se sabse weak skill pehchanna, jise aage practice karna hai",
-          "Export karte hi working file delete kar dena",
-          "Sirf doosre logon ke finished artwork se compare karna"
-        ],
-        "correct": 1,
-        "explain": "Finished artwork ko pehle ke har module ki checklist ke against check karna capstone ko ek genuine diagnostic tool banata hai, jo bilkul dikhata hai ki aage kis skill par focus karna faydemand hoga."
-      }
-    ],
-    "checklist": [
-      "Main poore workflow se artwork complete kar sakta/sakti hoon: sketch, line art, flat colors, shading.",
-      "Main har cheez ke liye ek generic technique use karne ke bajay material-specific rendering logic (skin vs. hard surface vs. fabric) apply kar sakta/sakti hoon.",
-      "Main focus direct karne aur depth ke alag planes dikhane ke liye edge control aur atmospheric perspective ko saath use kar sakta/sakti hoon.",
-      "Main apni sabse weak skill dhoondhne ke liye finished artwork ko Modules 99–99 ki checklists ke against imaandari se score kar sakta/sakti hoon."
-    ],
-    "nextStep": "Tumne Digital Painting & Rendering complete kar liya hai — color ki teen properties se lekar ek fully rendered, material-aware illustration tak. Yeh skills seedhe Advanced Digital Art mein kaam aayengi, jahan blend-mode compositing, photobashing aur speed painting jaisi techniques yahan seekhi gayi har cheez par aage build hoti hain."
+  "hook": "Theory ke nau modules ka asli proof sirf ek jagah milta hai: ek hi finished piece mein, jahan color, value, light, material, edges, depth aur texture sabko ek saath kaam karna hota hai.",
+  "whyItMatters": [
+    "Is lesson ke saath Digital Painting & Rendering ka arc khatam hota hai. Yahan tum Modules 95–99 ki har skill ko ek complete piece mein apply karoge—bilkul waise hi jaise Module 86 ke capstone ne worldbuilding ko wrap up kiya tha. Portfolio alag-alag exercises se nahi, finished pieces se banta hai.",
+    "Capstone piece tumhari abhi ki weak point dhoondhne ka sabse honest tareeka bhi hai. Alag-alag skills par kaam karne se kuch gaps chhupe reh jaate hain; woh tabhi saamne aate hain jab har cheez ko ek saath kaam karna ho. Agla practice focus chunne ke liye tumhe bilkul isi information ki zaroorat hai."
+  ],
+  "coreIdea": [
+    "Module 103 ka workflow isi order mein follow karo: sketch, line art (ya agar hard lines ke bina kaam kar rahe ho toh painted block-in), flat colors, phir shading. Pehla shadow banane se pehle decide kar lo ki light kis direction se aa rahi hai.",
+    "Render karte waqt har material ke liye Modules 98–95 ki specific logic apply karo (skin ke liye subsurface scattering, metal ya glass ke liye environment reflections aur extreme contrast), har surface ko ek jaisa treat mat karo.",
+    "Eye ko ek focal point ki taraf le jaane aur foreground ko background se alag dikhane ke liye edge control (Module 100) aur atmospheric perspective (Module 101) ko saath use karo. Texture (Module 102) sirf aakhir mein add karo, aur use un jagahon par rakho jahan wear hona logically banta hai.",
+    "Capstone piece ko complete banane ke liye uska bada ya complex hona zaroori nahi. Chhota, achhi tarah socha-samjha piece jo har skill ko jaan-boojhkar apply karta hai, us ambitious piece se zyada valuable hai jo jaldi finished dikhne ke chakkar mein steps skip kar de."
+  ],
+  "mistakes": [
+    "Light direction decide kiye bina seedha rendering shuru kar dena, jisse piece ke alag-alag hisson ki shading aapas mein match nahi karti.",
+    "Har material (skin, metal, fabric) ko ek hi generic technique se render karna, bajaye har ek ke liye zaroori specific logic apply karne ke.",
+    "Texture aur wear ko poore piece par barabar add karna, un jagahon par focus karne ke bajaye jahan woh physically sensible lage.",
+    "Itne ambitious scope wala piece chunna ki reasonable time mein har stage ko dhyaan se complete karna mumkin na rahe.",
+    "Finished piece ko process ka end samajhna, bajaye usse honestly yeh pehchanne ke liye use karne ke ki arc ki nau skills mein se abhi tumhari sabse weak kaunsi hai."
+  ],
+  "proTips": [
+    "Shading shuru karne se pehle light direction likh lo, phir jo bhi shadow ya highlight banao uske saath use check karo. Yeh Module 97 wali discipline hi hai.",
+    "Piece mein materials ki palette limited rakho (skin, ek hard surface, ek fabric), taaki har material ki specific rendering logic ko dhyaan se apply kar sako, bajaye kai materials ko jaldi-jaldi aur satahi taur par render karne ke.",
+    "Finish karne ke baad Modules 95–99 ko ek-ek karke dekho aur apne piece ko har module ki checklist ke against honestly check karo. Isse capstone sirf ek finished picture nahi, balki ek real diagnostic ban jaata hai.",
+    "Agar mumkin ho toh bahar se feedback lo (kisi critique community, paint-over channel ya friend se)—apne piece ko ghanton dekhne ke baad uski problems saaf nazar aana mushkil ho jaata hai."
+  ],
+  "practice": {
+    "warmup": "Apne capstone piece ke liye ek sentence ka brief likho: subject, ek dominant material aur lighting ka ek emotional target.",
+    "daily": "Har session mein workflow ka ek stage complete karo (sketch, line art ya block-in, flats, shading), poora piece ek hi baar mein khatam karne ki koshish mat karo.",
+    "weekly": "Brief se lekar finished render tak ek complete capstone illustration banao. Har stage par color, value, light, material-specific rendering, edges, depth aur texture ko jaan-boojhkar apply karo.",
+    "challenge": "Apne finished capstone piece ko Modules 95–99 ki har checklist ke against honestly score karo, apna ek sabse weak area pehchano, aur uske chalte agla practice karne ke liye ek specific cheez tay karo."
   },
+  "quiz": [
+    {
+      "q": "Is capstone module ka main purpose kya hai?",
+      "options": [
+        "Ek bilkul nayi rendering technique sikhana",
+        "Modules 95–99 ki har skill ko ek finished piece mein saath apply karke apna abhi ka sabse weak area pehchanna",
+        "Is arc ke pehle wale modules ki zaroorat khatam karna",
+        "Sirf speed painting par focus karna"
+      ],
+      "correct": 1,
+      "explain": "Capstone mein koi nayi theory nahi hai; yeh tumse color, value, light, material, edges, depth aur texture ko ek piece mein combine karne ko kehta hai. Isse pata chalta hai ki abhi tumhari kaunsi specific skill sabse weak hai."
+    },
+    {
+      "q": "Module 97 ke mutabik, capstone piece par shading shuru karne se pehle kya decide karna chahiye?",
+      "options": [
+        "Final export file format",
+        "Light direction, aur baad mein banaye gaye har shadow aur highlight ko uske against check karna",
+        "Canvas resolution",
+        "Kaunsa brush pack use karna hai"
+      ],
+      "correct": 1,
+      "explain": "Pehla shadow banane se pehle light direction tay karna, aur uske baad har shadow aur highlight ko uske against check karna, piece mein aapas mein na milne wali shading se bachata hai."
+    },
+    {
+      "q": "Capstone piece mein materials ki palette limited rakhne ki salah kyun di jaati hai?",
+      "options": [
+        "Materials limit karne ka koi khaas fayda nahi hai",
+        "Isse har material ki specific rendering logic (skin, metal, fabric) ko dhyaan se apply kiya ja sakta hai, bajaye kai materials ko satahi taur par render karne ke",
+        "Technically sirf ek material allowed hai",
+        "Isse file size kaafi kam ho jaata hai"
+      ],
+      "correct": 1,
+      "explain": "Kam materials par focus karne se tum har ek ki specific technique (skin ke liye subsurface scattering, metal ke liye extreme contrast, vagairah) theek se apply kar sakte ho, bajaye kai surfaces par apni mehnat ko patla-patla baantne ke."
+    },
+    {
+      "q": "Module 102 ke mutabik, finished capstone piece mein texture aur wear kaise apply karna chahiye?",
+      "options": [
+        "Poore piece par barabar phaila kar",
+        "Process ke aakhir ke paas add karke, un jagahon par jahan physically sense banta hai",
+        "Koi color ya shading banne se pehle",
+        "Capstone piece mein texture se poori tarah bachna chahiye"
+      ],
+      "correct": 1,
+      "explain": "Texture aur wear process ke aakhir ke paas add karo, un logical contact ya stress points par focus karke jahan unka hona banta hai. Yeh Module 102 mein establish ki gayi wear ke peeche cause wali logic hi follow karta hai."
+    },
+    {
+      "q": "Finished capstone piece complete karne ke baad use karne ka recommended tareeka kya hai?",
+      "options": [
+        "Bina aur soche turant aage badh jaana",
+        "Modules 95–99 ki har checklist dobara dekhkar honestly apni sabse weak skill pehchanna, taaki agla practice focus tay ho",
+        "Export karte hi working file delete kar dena",
+        "Sirf doosre logon ke finished work se compare karna"
+      ],
+      "correct": 1,
+      "explain": "Finished piece ko pehle ke har module ki checklist ke against check karne se capstone ek real diagnostic tool ban jaata hai aur saaf pata chalta hai ki agla focus kis skill par hona chahiye."
+    }
+  ],
+  "checklist": [
+    "Main poora workflow follow karke ek piece complete kar sakta/sakti hoon: sketch, line art, flat colors, shading.",
+    "Main har cheez ke liye ek generic technique use karne ke bajaye material-specific rendering logic apply kar sakta/sakti hoon (skin vs. hard surface vs. fabric).",
+    "Main focus direct karne aur depth alag dikhane ke liye edge control aur atmospheric perspective ko saath use kar sakta/sakti hoon.",
+    "Main finished piece ko Modules 95–99 ki checklists ke against honestly score karke apni sabse weak skill dhoondh sakta/sakti hoon."
+  ],
+  "nextStep": "Tumne Digital Painting & Rendering complete kar liya hai—color ki teen properties se lekar fully rendered, materials ko dhyaan mein rakhkar banayi illustration tak. Ye skills seedhe Advanced Digital Art mein kaam aayengi, jahan blend-mode compositing, photobashing aur speed painting jaisi techniques yahan seekhi rendering skills ko aur aage le jaati hain."
+},
   "m111": {
-    "hook": "Teen hafte baad client aapse artwork mein ek chhota sa change maangta hai — agar aapki file destructively flatten ki hui hai, toh use dobara banane mein ek ghanta lagega; agar file non-destructive hai, toh sirf tees seconds.",
-    "whyItMatters": [
-      "Aapne is course mein alag-alag non-destructive tools use kiye hain (Module 94 mein layers, Module 96 mein transforms), lekin shayad unhe ek jaan-boojhkar banaye gaye system ke roop mein nahi dekha. Yeh module in sab ko ek complete philosophy mein jodta hai: kisi bhi decision ko permanently commit tab tak na karein, jab tak aapko yakeen na ho ki aapko us par dobara kaam nahi karna padega.",
-      "Yahi hobbyist workflow aur professional workflow ke beech ka fark hai. Revisions, client feedback, aur kisi artwork ke baare mein aapki apni badalti hui rai — real work mein yeh sab aam hai aur lagataar hota rehta hai. Non-destructive file yeh sab sambhaal leti hai; flattened file mein aapko kaam shuru se dobara karna padta hai."
-    ],
-    "coreIdea": [
-      "Smart Object ek container hota hai jo image ka original data sambhaal kar rakhta hai, chahe aap use baar-baar scale, rotate, ya warp karein. Normal layer ke unlike, jo har transform ke saath quality khoti hai, Smart Object ko anagint baar resize kiya ja sakta hai, kyunki software hamesha untouched original ko reference karta hai.",
-      "Adjustment layers (Curves, Hue/Saturation, Color Balance) doosri layers ke upar hoti hain aur unke actual pixel data ko badle bina unka look modify karti hain. Inhe kisi bhi waqt aasani se edit, hide, ya delete kiya ja sakta hai — usi adjustment ko seedha layer par apply karne ke unlike.",
-      "Smart Object par apply kiye gaye filters Smart Filters ban jaate hain, jinhe baad mein bhi poori tarah edit kiya ja sakta hai. Aap kisi bhi waqt Smart Filter ko dobara khol sakte hain, adjust kar sakte hain, ya uska effect mask kar sakte hain; effect permanently pixels mein bake nahi hota.",
-      "Masks woh mechanism hain jo in sab ko ek saath jodte hain: layer ya filter effect ka koi hissa erase karne ke bajay, mask use reversibly hide karta hai. Mask par paint karke aap kisi bhi waqt effect ko wapas laa sakte hain ya hide kar sakte hain, aur neeche ka original data kabhi nahi khota."
-    ],
-    "mistakes": [
-      "File ko “clean up” karne ke liye layers ko jaldi rasterize ya flatten kar dena, jisse baad mein alag-alag elements ko revise karne ka option permanently chala jaata hai.",
-      "Adjustment layer use karne ke bajay (jaise brightness ya hue ke liye) adjustment seedha layer par apply karna. Isse baad mein us decision ko badalne ke liye sirf setting adjust karne ke bajay edit dobara karna padta hai.",
-      "Layer ka koi hissa hide karne ke liye mask use karne ke bajay Eraser Tool se erase karna, jisse pixel data permanently delete ho jaata hai, jabki mask use reversibly hide kar sakta tha.",
-      "Aise elements ke liye Smart Objects use na karna jinhe baad mein resize ya reposition karna pad sakta hai, jisse baar-baar destructive transforms ke kaaran quality visibly kharab hone ka risk hota hai.",
-      "Yeh samajhna ki non-destructive workflow sirf professional client work ke liye relevant hai, jabki aasani se revisions kar paane aur artwork “kharab” karne ka darr kam hone jaise faayde personal practice pieces par bhi seedhe lagu hote hain."
-    ],
-    "proTips": [
-      "Imported images aur kisi bhi aise element ko, jise aap ek se zyada baar transform karne ki ummeed rakhte hain, turant Smart Object mein convert karein. Ise baad mein yaad aane wali cheez ke bajay default habit banayein.",
-      "Color aur tone changes (Curves, Hue/Saturation, Color Balance) ke liye, equivalent adjustment seedha layer par apply karne ke bajay, default roop se adjustment layers use karein.",
-      "Jab bhi layer ya effect ka koi hissa hide karna ho, Eraser ke bajay mask use karein, taaki baad mein use wapas laane ka option bana rahe.",
-      "Jab tak artwork ko revise karne ki zara bhi sambhavna ho, apni working file ko uske native, layered format mein rakhein — flattened versions sirf share karne ke liye export karein."
-    ],
-    "practice": {
-      "warmup": "Ek imported image lein, use Smart Object mein convert karein, phir lagataar paanch baar transform (scale, rotate) karein. Har baar check karein ki uski quality barkaraar hai.",
-      "daily": "Kisi existing artwork mein color ya tone ke ek decision ko direct edit ke bajay adjustment layer use karke dobara karein. Phir us decision ko do baar aur adjust karein, taaki revise karna kitna aasaan hai, yeh aap khud mehsoos kar sakein.",
-      "weekly": "Har imported element ke liye Smart Objects aur har hidden area ke liye masks (Eraser ke bajay) use karke ek chhota composite banayein. Phir jaan-boojhkar inmein se kai decisions ko “undo” karke restore karein.",
-      "challenge": "Ek finished artwork lein aur client ki request ka simulation karein: ek color badlein, ek element resize karein, aur ek masked area adjust karein. Non-destructive file mein har change karne mein laga samay note karein, phir andaza lagayein ki flattened file mein kitna samay lagta."
-    },
-    "quiz": [
-      {
-        "q": "Smart Object ko baar-baar chhota-bada karne par quality kyun nahi khoti, jabki normal layer mein aisa hota hai?",
-        "options": [
-          "Smart Objects ek alag color mode use karte hain",
-          "Smart Object original image data ko container ke roop mein sambhaal kar rakhta hai, isliye software baar-baar transform hue version ke bajay hamesha untouched original ko reference karta hai",
-          "Smart Objects ki resolution normal layers se automatically zyada hoti hai",
-          "Smart Objects aur normal layers mein koi asli fark nahi hota"
-        ],
-        "correct": 1,
-        "explain": "Smart Object ek container ki tarah kaam karta hai jo original data ko sambhaal kar rakhta hai. Har transform us untouched original ko reference karta hai, isliye normal layer par baar-baar destructive transforms se hone wala quality loss nahi hota."
-      },
-      {
-        "q": "Kisi layer par adjustment seedha apply karne ke bajay adjustment layer use karne ka sabse bada faayda kya hai?",
-        "options": [
-          "Adjustment layers bina kisi aur faayde ke, bas zyada tezi se render hoti hain",
-          "Adjustment layer ko kisi bhi waqt aasani se edit, hide, ya delete kiya ja sakta hai, bina neeche ke pixel data ko badle",
-          "Zyadatar software licenses ke liye adjustment layers zaroori hoti hain",
-          "Dono tareekon mein koi functional fark nahi hai"
-        ],
-        "correct": 1,
-        "explain": "Adjustment layer apne neeche ki layers ka actual pixel data badle bina unka look modify karti hai. Isliye adjustment ko baad mein aasani se edit ya hataaya ja sakta hai, direct edit ke unlike."
-      },
-      {
-        "q": "Smart Object par filter apply karne par kya hota hai?",
-        "options": [
-          "Filter destructively apply hota hai aur use badla nahi ja sakta",
-          "Woh Smart Filter ban jaata hai, jise baad mein bhi poori tarah edit, mask, ya remove kiya ja sakta hai",
-          "Smart Objects par filters apply hi nahi kiye ja sakte",
-          "Smart Object automatically normal layer mein convert ho jaata hai"
-        ],
-        "correct": 1,
-        "explain": "Smart Object par apply kiye gaye filters Smart Filters ban jaate hain. Pixels mein permanently bake hone ke bajay, unhe kisi bhi waqt dobara khola, adjust, mask, ya remove kiya ja sakta hai."
-      },
-      {
-        "q": "Layer ka koi hissa hide karne ke liye Eraser Tool ke bajay mask use karna behtar kyun hai?",
-        "options": [
-          "Mask aur Eraser dono bilkul ek jaise, irreversible results dete hain",
-          "Mask content ko reversibly hide karta hai, isliye mask par paint karke hidden area baad mein restore kiya ja sakta hai; Eraser pixel data permanently delete karta hai",
-          "Eraser Tool har situation mein zyada fast hota hai",
-          "Masks sirf Smart Objects par use kiye ja sakte hain, normal layers par nahi"
-        ],
-        "correct": 1,
-        "explain": "Mask layer ya effect ke kisi hisse ko neeche ka pixel data permanently delete kiye bina hide karta hai, isliye hidden content ko baad mein reversibly restore kiya ja sakta hai; erase karne par aisa nahi hota."
-      },
-      {
-        "q": "Module ke mutabik, professional work ke liye non-destructive workflow khaas taur par kyun zaroori hai?",
-        "options": [
-          "Personal practice ke muqable professional work mein iska koi khaas mahatva nahi hai",
-          "Professional work mein client feedback aur revision requests aam hain, aur non-destructive file shuru se dobara kaam karne ke bajay changes jaldi karne deti hai",
-          "Non-destructive workflows sirf print work ke liye useful hain, digital delivery ke liye nahi",
-          "Yeh editing flexibility ke bajay zyada tar file size ko affect karta hai"
-        ],
-        "correct": 1,
-        "explain": "Professional work mein revisions aur client feedback aam hote hain, isliye non-destructive file mein changes jaldi kiye ja sakte hain. Flattened, destructive file mein kaafi kaam shuru se dobara karna pad sakta hai."
-      }
-    ],
-    "checklist": [
-      "Main kisi imported element ko transform karne se pehle Smart Object mein convert kar sakta/sakti hoon.",
-      "Main color aur tone changes ke liye direct edit ke bajay adjustment layer use kar sakta/sakti hoon.",
-      "Main layer ya effect ka koi hissa reversibly hide karne ke liye Eraser ke bajay mask use kar sakta/sakti hoon.",
-      "Main sharing ke liye banaye gaye flattened export se alag, native layered working file rakh sakta/sakti hoon."
-    ],
-    "nextStep": "Ab aap apni file structure ko bhi ek socha-samjha, reversible system maante hain. Module 74 blend modes aur adjustment layers ko aur gehraai se samjhega, aur is non-destructive foundation par advanced compositing aur color-grading techniques banayega."
+  "hook": "Client tumse piece finish karne ke teen hafte baad ek chhota change maangta hai—agar tumhari file destructively flattened hai toh use dobara banane mein ek ghanta lagega; agar non-destructive hai toh sirf tees second.",
+  "whyItMatters": [
+    "Is course mein tumne non-destructive tools alag-alag use kiye hain (Module 90 mein layers, Module 92 mein transforms), lekin zaroori nahi ki unhe ek sochi-samjhi system ki tarah dekha ho. Yeh module un tools ko jodkar ek complete philosophy banata hai: kisi decision ko permanently commit tab tak mat karo, jab tak tumhe pakka na ho ki use dobara dekhne ki zaroorat nahi padegi.",
+    "Yahi hobbyist workflow aur professional workflow ke beech ka farq hai. Real kaam mein revisions, client feedback aur apne piece ke baare mein tumhari badalti soch normal aur lagataar aati rehti hai. Non-destructive file yeh sab sambhaal leti hai; flattened file mein kaam shuru se dobara karna padta hai."
+  ],
+  "coreIdea": [
+    "Smart Object ek aisa container hai jo image ka original data sambhaal kar rakhta hai, chahe tum use baar-baar scale, rotate ya warp karo. Normal layer har transform ke saath quality kho deti hai, lekin Smart Object ko jitni baar chaaho resize kar sakte ho, kyunki software hamesha untouched original ko reference karta hai.",
+    "Adjustment layers (curves, hue/saturation, color balance) doosri layers ke upar hoti hain aur unke actual pixel data ko badle bina unka look modify karti hain. Inhe kabhi bhi edit, hide ya delete kar sakte ho—usi adjustment ko seedha layer par apply karne se yeh mumkin nahi hota.",
+    "Smart Object par apply kiye gaye filters Smart Filters ban jaate hain, jo baad mein bhi poori tarah editable rehte hain. Tum kisi bhi waqt Smart Filter ko dobara khol, adjust ya mask kar sakte ho; effect pixels mein permanently bake nahi hota.",
+    "Masks in sab cheezon ko ek saath jodne ka tareeka hain: layer ya filter effect ka koi hissa erase karne ke bajaye mask use karo, jo use reversible tareeke se hide karta hai. Mask par paint karke tum effect ko kabhi bhi wapas la ya hide kar sakte ho, bina neeche ka original data khoye."
+  ],
+  "mistakes": [
+    "File ko “clean up” karne ke liye layers ko jaldi rasterize ya flatten kar dena, jisse baad mein alag-alag elements revise karne ka option permanently chala jaata hai.",
+    "Brightness ya hue jaisi adjustment ke liye adjustment layer use karne ke bajaye use seedha layer par apply karna. Baad mein decision badalne ke liye sirf setting adjust karne ke bajaye edit dobara karna padta hai.",
+    "Layer ka koi hissa mask se hide karne ke bajaye eraser tool se mita dena, aur aise pixel data permanently delete karna jise mask reversible tareeke se chhupa sakta tha.",
+    "Un elements ke liye Smart Objects skip karna jinhe baad mein resize ya reposition karna pad sakta hai, aur baar-baar destructive transforms se quality mein dikhne wala nuksaan hone ka risk lena.",
+    "Yeh samajhna ki non-destructive workflow sirf professional client work ke liye hai, jabki wahi fayde (aasani se revise karna, piece ko “ruin” karne ka darr kam hona) personal practice pieces mein bhi kaam aate hain."
+  ],
+  "proTips": [
+    "Imported images aur har us element ko turant Smart Object mein convert karo jise tum ek se zyada baar transform karne ki umeed rakhte ho. Ise baad mein yaad aane wali cheez nahi, default habit banao.",
+    "Color aur tone changes (curves, hue/saturation, color balance) ke liye seedha layer par adjustment apply karne ke bajaye adjustment layers ko default rakho.",
+    "Jab bhi layer ya effect ka koi hissa hide karna ho, eraser ke bajaye mask use karo, taaki baad mein use wapas laane ka option bana rahe.",
+    "Apni working file ko native, layered format mein rakho (flattened export mein nahi), jab tak tumhe lagta ho ki shayad piece revise karna pade. Flattened versions sirf share karne ke liye export karo."
+  ],
+  "practice": {
+    "warmup": "Ek imported image lo, use Smart Object mein convert karo aur lagataar paanch baar transform (scale, rotate) karo. Har baar check karo ki quality waisi hi bani hui hai.",
+    "daily": "Existing piece mein color ya tone ka ek decision direct edit ke bajaye adjustment layer se dobara karo. Phir us decision ko do baar aur adjust karke dekho ki use revise karna kitna aasaan hai.",
+    "weekly": "Ek chhota composite banao. Har imported element ke liye Smart Objects aur har hidden area ke liye masks (eraser nahi) use karo, phir jaan-boojhkar unmein se kai decisions ko “undo” karke restore karo.",
+    "challenge": "Ek finished piece lo aur client ki request ka scene banao: ek color badlo, ek element resize karo aur ek masked area adjust karo. Har change mein kitna waqt lagta hai, non-destructive file mein time karo aur compare karo ki flattened file mein tumhare hisaab se kitna waqt lagta."
   },
+  "quiz": [
+    {
+      "q": "Smart Object ko normal layer ke muqable baar-baar scale up aur down karne par quality kyun nahi ghatti?",
+      "options": [
+        "Smart Objects alag color mode use karte hain",
+        "Smart Object original image data ko container ke roop mein sambhaal kar rakhta hai, isliye software baar-baar transform kiye version ke bajaye hamesha untouched original ko reference karta hai",
+        "Smart Objects ki resolution normal layers se apne aap zyada hoti hai",
+        "Smart Objects aur normal layers mein asal mein koi farq nahi hai"
+      ],
+      "correct": 1,
+      "explain": "Smart Object ek container ki tarah original data sambhaal kar rakhta hai. Har transform us untouched original ko reference karta hai, isliye normal layer par baar-baar destructive transforms se hone wala quality loss nahi hota."
+    },
+    {
+      "q": "Layer par adjustment seedha apply karne ke bajaye adjustment layer use karne ka sabse bada fayda kya hai?",
+      "options": [
+        "Adjustment layers bina kisi aur fayde ke tezi se render hoti hain",
+        "Adjustment layer ko kisi bhi waqt freely edit, hide ya delete kiya ja sakta hai, bina neeche ke pixel data ko badle",
+        "Zyadatar software licenses mein adjustment layers zaroori hoti hain",
+        "Dono tareekon mein functionality ka koi farq nahi hai"
+      ],
+      "correct": 1,
+      "explain": "Adjustment layer neeche ki layers ka look modify karti hai, lekin unka actual pixel data nahi badalti. Isliye adjustment ko baad mein poori tarah edit ya remove kiya ja sakta hai, direct edit ke unlike."
+    },
+    {
+      "q": "Smart Object par filter apply karne par kya hota hai?",
+      "options": [
+        "Filter destructively apply hota hai aur use badla nahi ja sakta",
+        "Woh Smart Filter ban jaata hai, jise baad mein poori tarah edit, mask aur remove kiya ja sakta hai",
+        "Smart Objects par filters apply hi nahi kiye ja sakte",
+        "Smart Object apne aap normal layer mein convert ho jaata hai"
+      ],
+      "correct": 1,
+      "explain": "Smart Object par apply kiye gaye filters Smart Filters ban jaate hain. Unhe kisi bhi waqt dobara khol, adjust, mask ya remove kiya ja sakta hai; woh pixels mein permanently bake nahi hote."
+    },
+    {
+      "q": "Layer ka koi hissa hide karne ke liye eraser tool ke bajaye mask use karna kyun behtar hai?",
+      "options": [
+        "Mask aur eraser bilkul ek jaise, irreversible results dete hain",
+        "Mask content ko reversible tareeke se hide karta hai, isliye mask par paint karke baad mein chhupa hua area wapas la sakte ho; eraser pixel data permanently delete karta hai",
+        "Har situation mein eraser tool zyada fast hai",
+        "Masks sirf Smart Objects par use ho sakte hain, regular layers par nahi"
+      ],
+      "correct": 1,
+      "explain": "Mask layer ya effect ke ek hisse ko hide karta hai, lekin neeche ka pixel data permanently delete nahi karta. Isliye erasing ke unlike, chhupaye gaye content ko baad mein wapas la sakte ho."
+    },
+    {
+      "q": "Module ke mutabik, professional kaam ke liye non-destructive workflow khaas taur par kyun important hai?",
+      "options": [
+        "Personal practice ke muqable professional kaam mein iska koi khaas matlab nahi hai",
+        "Professional kaam mein client feedback aur revision requests aam hain. Non-destructive file se changes jaldi ho jaate hain, bajaye sab kuch shuru se dobara banane ke",
+        "Non-destructive workflows sirf print work ke kaam aate hain, digital delivery ke nahi",
+        "Yeh editing flexibility ke bajaye zyada tar file size par asar daalta hai"
+      ],
+      "correct": 1,
+      "explain": "Professional kaam mein revisions aur client feedback normal hote hain. Non-destructive file se yeh changes jaldi kiye ja sakte hain, jabki flattened, destructive file mein kaafi kaam shuru se dobara karna pad sakta hai."
+    }
+  ],
+  "checklist": [
+    "Main imported element ko transform karne se pehle Smart Object mein convert kar sakta/sakti hoon.",
+    "Main color aur tone changes ke liye direct edit ke bajaye adjustment layer use kar sakta/sakti hoon.",
+    "Main layer ya effect ke kisi hisse ko reversibly hide karne ke liye eraser ke bajaye mask use kar sakta/sakti hoon.",
+    "Main native layered working file ko sharing ke liye banaye flattened export se alag rakh sakta/sakti hoon."
+  ],
+  "nextStep": "Ab tum apni file structure ko bhi ek sochi-samjhi, reversible system ki tarah handle karte ho. Module 106 blend modes aur adjustment layers ko aur detail mein samjhata hai, aur isi non-destructive foundation par zyada advanced compositing aur color-grading techniques build karta hai."
+},
   "m112": {
-    "hook": "Curves, Levels ke sabhi kaam kar sakta hai, aur ek aisa kaam bhi jo Levels nahi kar sakta: tonal range ko ek se zyada points par ek saath bend karna. Yahi asal wajah hai ki professional colorists lagbhag har doosre tool ke bajay Curves use karte hain.",
-    "whyItMatters": [
-      "Module 94 mein shadow aur highlight layers ke liye blend modes ka introduction hua tha, aur Module 73 mein non-destructive concept ke roop mein adjustment layers ka. Yeh module sabse powerful adjustment layer, Curves, ko gehraai se samjhata hai aur use blend modes ke saath jodkar ek practical color-grading toolkit banata hai.",
-      "Color grading (finished artwork ke overall tone aur mood ko adjust karna) shuru se color paint karne se alag skill hai. Yeh final pass hota hai jo artwork ke palette ko ek-saath laata hai aur kisi bhi object ko dobara paint kiye bina uska poora mood badal sakta hai."
-    ],
-    "coreIdea": [
-      "Curves image ki tonal range ko ek diagonal line ke roop mein dikhata hai, jo black (neeche-baayen) se white (upar-daayen) tak jaati hai. Is line ke kisi bhi point ko upar ya neeche kheenchne se us khaas tonal range ki brightness badhti ya ghat-ti hai. Aap kai points add karke unhe alag-alag adjust kar sakte hain — isi wajah se Curves, Levels se zyada powerful hai; Levels sirf endpoints aur ek midpoint ko control karta hai.",
-      "S-curve (line ke upper-middle ko upar aur lower-middle ko neeche kheenchna) contrast badhane ka ek classic aur bharosemand tareeka hai. Isse highlights bright aur shadows dark hote hain, bina asli black aur white points ko chhede.",
-      "Curves ke eyedroppers se white, black, aur gray points set karna (image mein jis jagah pure white, pure black, ya neutral gray hona chahiye, wahan click karna) poori image mein color cast ko ek hi step mein theek karne ka tez aur bharosemand tareeka hai.",
-      "Kai blend-mode adjustment layers ko stack karke (contrast ke liye Curves layer, color wash ke liye Overlay layer, vignette ke liye Multiply layer) aam taur par ek complete color grade banaya jaata hai. Har layer ek khaas kaam sambhaalti hai; sab kuch ek adjustment se karne ke bajay layers ko ek ke upar ek rakha jaata hai."
-    ],
-    "mistakes": [
-      "Curves mein hamesha sirf endpoint sliders use karna (jo Levels ke barabar hai) aur midpoint kabhi add na karna, jisse tonal range ke kai points ko alag-alag control karne ka Curves ka asli faayda chhoot jaata hai.",
-      "Jab sirf kisi khaas area ko zyada contrast chahiye, tab bhi poori image par strong Curves S-curve apply karna; effect ko zaroorat wali jagah tak seemit karne ke liye mask use na karna.",
-      "Color cast correction ko aankh ke andaze se karna, white/black/gray point eyedroppers use karne ke bajay, jo adjust karne ke liye ek tez aur bharosemand starting correction dete hain.",
-      "Contrast, color wash, aur vignette jaise alag-alag kaam ke liye kai simple adjustment layers stack karne ke bajay, ek hi adjustment layer se poora color grade karne ki koshish karna.",
-      "Yeh bhool jaana ki adjustment layers default roop se layer stack mein apne neeche ki har cheez ko affect karti hain, aur jab adjustment ko artwork ke sirf ek hisse par apply karna ho toh unhe group ya mask na karna."
-    ],
-    "proTips": [
-      "Kisi bhi color grade ki shuruaat overall contrast ke liye S-curve se karein, phir zyada stylized adjustments jodein. Flat dikhne wali image ko aam taur par sabse pehle contrast ki zaroorat hoti hai.",
-      "Color cast correction ke liye Curves ke white, black, aur gray point eyedroppers ko fast first pass ke roop mein use karein. Phir scratch se andaza lagane ke bajay, us starting point se manually fine-tune karein.",
-      "Jab image ke sirf ek hisse ko contrast ya tone change ki zaroorat ho, toh Curves adjustment layer ko us khaas area tak mask karein (Module 73 ki wahi mask technique use karke), poori image par apply karne ke bajay.",
-      "Contrast, color cast, aur mood ko ek hi complex adjustment mein theek karne ki koshish karne ke bajay, kai simple adjustment layers ko stack karke color grade ko stages mein banayein."
-    ],
-    "practice": {
-      "warmup": "Flat dikhne wali image mein Curves adjustment layer add karein aur simple S-curve apply karein. Contrast ko pehle aur baad mein compare karein.",
-      "daily": "Unwanted color cast wali artwork lein aur Curves ke white/black/gray point eyedroppers se use correct karein. Phir result ko manual color adjustment se compare karein.",
-      "weekly": "Finished artwork par kam-se-kam teen stacked adjustment layers use karke poora color grade banayein: contrast ke liye Curves pass, color wash ke liye Overlay, aur vignette ke liye Multiply.",
-      "challenge": "Curves adjustment layer ko mask karein, taaki woh poori image ke bajay artwork ke sirf ek area (ek object ya background) ko affect kare. Phir dekhein ki is targeted change se composition ka focus kaise badalta hai."
-    },
-    "quiz": [
-      {
-        "q": "Tonal adjustment ke liye Curves ko Levels se zyada powerful kya banata hai?",
-        "options": [
-          "Curves sirf black-and-white images par kaam karta hai",
-          "Curves tonal range par kai alag-alag points add aur adjust karne deta hai, jabki Levels sirf endpoints aur ek midpoint control karta hai",
-          "Levels aur Curves function ke maamle mein ek jaise tools hain",
-          "Curves ko adjustment layer ke roop mein use nahi kiya ja sakta"
-        ],
-        "correct": 1,
-        "explain": "Curves tonal range ko ek editable line ke roop mein dikhata hai, jisme kai points add karke unhe alag-alag adjust kiya ja sakta hai. Isse Levels ke ek midpoint aur do endpoints ke muqable zyada bareek control milta hai."
-      },
-      {
-        "q": "Classic S-curve image par kya asar karta hai?",
-        "options": [
-          "Yeh tone par nahi, sirf image ki color saturation par asar karta hai",
-          "Yeh highlights ko bright aur shadows ko ek saath dark karta hai, aur asli black aur white points ko move kiye bina contrast badhata hai",
-          "Yeh image ko horizontal flip karta hai",
-          "Yeh image se saare colors hata deta hai"
-        ],
-        "correct": 1,
-        "explain": "S-curve tonal curve ke upper-middle ko upar aur lower-middle ko neeche kheenchta hai. Isse highlights bright aur shadows dark hote hain, contrast badhta hai, aur asli white aur black points waise hi rehte hain."
-      },
-      {
-        "q": "Curves mein white, black, aur gray point eyedroppers use karne ka kya faayda hai?",
-        "options": [
-          "Yeh sirf grayscale images par kaam karte hain",
-          "Yeh image ke un hisson par click karke poori image ka color cast jaldi aur bharosemand tareeke se correct karte hain jinhe pure white, pure black, ya neutral gray hona chahiye",
-          "Yeh image ka original color data permanently delete kar dete hain",
-          "Inhe har document mein sirf ek baar use kiya ja sakta hai"
-        ],
-        "correct": 1,
-        "explain": "Image ke mutabik tones par in eyedroppers se click karne par unwanted color cast ko theek karne ke liye jaldi ek bharosemand starting correction milti hai, jise baad mein aur fine-tune kiya ja sakta hai."
-      },
-      {
-        "q": "Module ke mutabik, poora color grade aam taur par kaise banaya jaata hai?",
-        "options": [
-          "Ek hi complex adjustment layer se jo sab kuch ek saath sambhaalti hai",
-          "Kai simple adjustment layers ko stack karke (contrast, color wash, vignette), jismein har layer ek khaas kaam sambhaalti hai",
-          "Color grading ke liye poore artwork ko shuru se dobara paint karna padta hai",
-          "Color grading mein sirf Levels use kiya ja sakta hai, Curves nahi"
-        ],
-        "correct": 1,
-        "explain": "Poora color grade aam taur par kai simple adjustment layers ko stack karke banaya jaata hai. Har layer contrast, color wash, ya vignette jaise ek kaam ke liye hoti hai; sab kuch ek adjustment se karne ki koshish nahi ki jaati."
-      },
-      {
-        "q": "Jab image ke sirf ek hisse ko contrast change chahiye, tab Curves adjustment layer ko mask kyun karna chahiye?",
-        "options": [
-          "Adjustment layers ke liye masking ka koi functional faayda nahi hota",
-          "Adjustment layers default roop se apne neeche ki har cheez ko affect karti hain, isliye mask effect ko sirf chune hue area tak seemit karta hai",
-          "Curves adjustment layers ko mask kiya hi nahi ja sakta",
-          "Curves layer ko mask karne se woh Levels layer mein convert ho jaati hai"
-        ],
-        "correct": 1,
-        "explain": "Adjustment layer default roop se apne neeche ki sabhi layers ko affect karti hai. Isliye effect ko poori image ke bajay kisi khaas area tak seemit rakhne ke liye mask zaroori hai."
-      }
-    ],
-    "checklist": [
-      "Main Curves adjustment mein midpoint add kar sakta/sakti hoon aur samajhta/samajhti hoon ki yeh Levels se kaise alag hai.",
-      "Main flat image mein contrast badhane ke liye simple S-curve bana sakta/sakti hoon.",
-      "Main color cast correct karne ke liye white/black/gray point eyedroppers use kar sakta/sakti hoon.",
-      "Main poora color grade banane ke liye kai adjustment layers stack kar sakta/sakti hoon."
-    ],
-    "nextStep": "Ab aapke paas non-destructive adjustment layers par bana ek practical color-grading toolkit hai. Module 75 photobashing par aage badhega — real photographic elements ko mila kar ek cohesive concept art ya illustration banane ki technique. Ismein is module mein seekhi color aur tone matching skills ka bahut istemaal hota hai."
+  "hook": "Curves woh sab kar sakta hai jo Levels karta hai, aur ek extra cheez bhi: ek hi baar mein tonal range ke kai points ko bend kar sakta hai. Yahi asli wajah hai ki professional colorists baaki tools ke bajay Curves use karte hain.",
+  "whyItMatters": [
+    "Module 90 mein tumne shadow aur highlight layers ke liye blend modes dekhe the, aur Module 105 mein adjustment layers ka non-destructive concept seekha tha. Is module mein hum sabse powerful adjustment layer, Curves, ko detail mein samjhenge aur blend modes ke saath jodkar ek practical color-grading toolkit banayenge.",
+    "Color grading (finished artwork ke overall tone aur mood ko adjust karna), shuru se color paint karne se alag skill hai — yeh final pass hota hai jo artwork ki palette ko ek saath laata hai aur bina kisi object ko dobara paint kiye uska poora mood badal sakta hai."
+  ],
+  "coreIdea": [
+    "Curves image ki tonal range ko black (neeche-baayen) se white (upar-daayen) tak jaati diagonal line ke roop mein dikhata hai; is line ke kisi bhi point ko upar ya neeche kheenchne se us khaas tonal range ki brightness badhti ya ghat-ti hai. Tum kai points add karke unhe alag-alag adjust kar sakte ho — isi wajah se Curves, Levels se zyada powerful hai. Levels sirf endpoints aur ek midpoint control karta hai.",
+    "S-curve (line ke upper-middle ko upar aur lower-middle ko neeche kheenchna) contrast badhane ka ek classic aur bharosemand tareeka hai: yeh highlights ko bright aur shadows ko dark karta hai, bina asli black aur white points ko chhede.",
+    "Curves ke eyedroppers se white, black aur gray points set karna (image mein jis jagah pure white, pure black ya neutral gray hona chahiye, wahan click karna) poori image mein color cast ko ek hi step mein theek karne ka tez aur bharosemand tareeka hai.",
+    "Kai blend-mode adjustment layers ko stack karke (contrast ke liye Curves layer, color wash ke liye Overlay layer, vignette ke liye Multiply layer) aam taur par ek complete color grade banaya jaata hai — har layer ek khaas kaam karti hai aur sab ek saath stack hoti hain, bajay iske ki ek adjustment se sab kuch karne ki koshish ki jaaye."
+  ],
+  "mistakes": [
+    "Curves mein hamesha sirf endpoint sliders use karna (jo Levels jaisa hai) aur kabhi midpoint add na karna. Isse tonal range ke alag-alag points ko independently control karne ka asli faayda haath se nikal jaata hai.",
+    "Jab sirf kisi khaas area ko zyada contrast chahiye, tab poori image par strong Curves S-curve laga dena. Iske bajay mask use karo, taaki effect sirf wahin tak rahe jahan zaroorat hai.",
+    "Color cast ko theek karne ke liye white/black/gray point eyedroppers use karne ke bajay aankh se andaaza lagaana. Eyedroppers tumhe ek tez aur bharosemand starting correction dete hain, jise baad mein adjust kar sakte ho.",
+    "Ek hi adjustment layer se complete color grade karne ki koshish karna. Iske bajay kai simple layers stack karo — contrast, color wash aur vignette ke liye alag-alag — taaki har layer ek kaam sambhale.",
+    "Yeh bhool jaana ki adjustment layers default mein layer stack ke neeche wali har cheez ko affect karti hain, aur jab adjustment sirf artwork ke ek hissa par lagni chahiye tab layers ko group ya mask na karna."
+  ],
+  "proTips": [
+    "Koi bhi color grade shuru karte waqt pehle overall contrast ke liye S-curve lagao, phir zyada stylized adjustments add karo. Flat dikhne wali image ko aam taur par sabse pehle contrast ki zaroorat hoti hai.",
+    "Color cast theek karne ke liye Curves mein white, black aur gray point eyedroppers ko pehle quick pass ke roop mein use karo. Phir bilkul shuru se andaaza lagaane ke bajay, us starting point se manually fine-tune karo.",
+    "Jab image ke sirf ek hissa mein contrast ya tone badalna ho, tab Curves adjustment layer ko mask karo (Module 105 wali wahi mask technique use karke), poori image par apply karne ke bajay.",
+    "Color grade ko kai simple adjustment layers stack karke alag-alag stages mein banao. Contrast, color cast aur mood sab kuch ek hi complex adjustment mein theek karne ki koshish mat karo."
+  ],
+  "practice": {
+    "warmup": "Flat dikhne wali image mein Curves adjustment layer add karo aur ek simple S-curve lagao. Contrast mein aaye farq ko dekhne ke liye before aur after compare karo.",
+    "daily": "Aisa artwork lo jisme unwanted color cast ho. Curves ke white/black/gray point eyedroppers se use theek karo, phir result ko manual color adjustment ke saath compare karo.",
+    "weekly": "Finished artwork par kam se kam teen stacked adjustment layers use karke complete color grade banao: Curves contrast pass, Overlay color wash aur Multiply vignette.",
+    "challenge": "Curves adjustment layer ko mask karo taaki woh poori image ke bajay sirf artwork ke ek area (ek object ya background) ko affect kare. Phir dekho ki is targeted change se composition ka focus kaise badalta hai."
   },
+  "quiz": [
+    {
+      "q": "Tonal adjustment ke liye Curves ko Levels se zyada powerful kya banata hai?",
+      "options": [
+        "Curves sirf black and white images par kaam karta hai",
+        "Curves mein tonal range par kai independent points add aur adjust kiye ja sakte hain, jabki Levels sirf endpoints aur ek midpoint control karta hai",
+        "Levels aur Curves asal mein bilkul ek jaise tools hain",
+        "Curves ko adjustment layer ke roop mein use nahi kiya ja sakta"
+      ],
+      "correct": 1,
+      "explain": "Curves tonal range ko ek editable line ke roop mein dikhata hai, jismein kai points add karke independently adjust kiye ja sakte hain. Isse Levels ke ek midpoint aur do endpoints ke muqable zyada fine control milta hai."
+    },
+    {
+      "q": "Classic S-curve image mein kya karta hai?",
+      "options": [
+        "Yeh tone ko nahi, sirf image ke color saturation ko affect karta hai",
+        "Yeh highlights ko bright aur shadows ko dark karta hai, aur asli black aur white points ko badle bina contrast badhata hai",
+        "Yeh image ko horizontally flip karta hai",
+        "Yeh image ke saare colors hata deta hai"
+      ],
+      "correct": 1,
+      "explain": "S-curve tonal curve ke upper-middle ko upar aur lower-middle ko neeche kheenchta hai. Isse highlights bright aur shadows dark hote hain, contrast badhta hai aur asli white aur black points waise hi rehte hain."
+    },
+    {
+      "q": "Curves mein white, black aur gray point eyedroppers use karne ka kya faayda hai?",
+      "options": [
+        "Yeh sirf grayscale images par kaam karte hain",
+        "Image mein jis jagah pure white, pure black ya neutral gray hona chahiye, wahan click karke poori image ka color cast jaldi aur bharosemand tareeke se theek kiya ja sakta hai",
+        "Yeh image ka original color data hamesha ke liye delete kar dete hain",
+        "Inhe har document mein sirf ek baar use kiya ja sakta hai"
+      ],
+      "correct": 1,
+      "explain": "Image mein uske mutaabik tones par in eyedroppers se click karne par unwanted color cast ke liye ek tez aur bharosemand starting correction milti hai. Uske baad tum use aur fine-tune kar sakte ho."
+    },
+    {
+      "q": "Module ke mutaabik complete color grade aam taur par kaise banaya jaata hai?",
+      "options": [
+        "Ek complex adjustment layer se jo ek hi baar mein sab kuch sambhale",
+        "Kai simple adjustment layers (contrast, color wash, vignette) stack karke, jahan har layer ek khaas kaam karti hai",
+        "Color grading ke liye poore artwork ko shuru se dobara paint karna zaroori hai",
+        "Color grading ke liye sirf Levels use ho sakta hai, Curves kabhi nahi"
+      ],
+      "correct": 1,
+      "explain": "Complete color grade aam taur par kai simple adjustment layers stack karke banta hai. Har layer apna ek kaam sambhalti hai — jaise contrast, color wash ya vignette — bajay iske ki ek adjustment se sab kuch karne ki koshish ho."
+    },
+    {
+      "q": "Jab image ke sirf ek hissa mein contrast badalna ho, tab Curves adjustment layer ko mask kyun karna chahiye?",
+      "options": [
+        "Adjustment layers ke liye masking ka koi kaam nahi hota",
+        "Adjustment layers default mein layer stack ke neeche ki har cheez ko affect karti hain, isliye mask effect ko sirf zaroori area tak rakhta hai",
+        "Curves adjustment layers ko mask kiya hi nahi ja sakta",
+        "Curves layer ko mask karne se woh Levels layer ban jaati hai"
+      ],
+      "correct": 1,
+      "explain": "Adjustment layer default mein apne neeche ki sabhi layers ko affect karti hai. Isliye poori image ke bajay effect ko kisi khaas area tak seemit rakhne ke liye mask zaroori hai."
+    }
+  ],
+  "checklist": [
+    "Main Curves adjustment mein midpoint add kar sakta hoon aur samajhta hoon ki yeh Levels se kaise alag hai.",
+    "Main flat image mein contrast badhane ke liye simple S-curve bana sakta hoon.",
+    "Main color cast theek karne ke liye white/black/gray point eyedroppers use kar sakta hoon.",
+    "Main complete color grade banane ke liye kai adjustment layers stack kar sakta hoon."
+  ],
+  "nextStep": "Ab tumhare paas non-destructive adjustment layers par bana ek practical color-grading toolkit hai. Module 107 mein hum photobashing dekhenge — real photographic elements ko milaakar ek cohesive concept art ya illustration banana. Yeh technique isi module mein seekhe color aur tone matching skills par kaafi depend karti hai."
+},
   "m113": {
-    "hook": "Asli shehar ki bheed-bhaad wali street photograph ko kuch confident edits se ek sunsaan warzone concept mein badla ja sakta hai — isi liye tight deadlines mein kaam karne wale game aur film concept artists ke liye photobashing standard practice ban gaya.",
-    "whyItMatters": [
-      "Photobashing is poore arc ki lagbhag har cheez ko ek saath laata hai: non-destructive layers aur masks (Module 73), blend modes aur color grading (Module 74), aur poore Digital Painting arc mein seekhi material aur lighting ki samajh. In sabka istemaal real photographic elements ko ek bharosemand, cohesive artwork mein blend karne ke liye hota hai.",
-      "Yeh technique ek asli production problem ko solve karne ke liye bani hai: concept artists ko film ya game ke liye bahut saare visuals tayyar karne hote hain, aur photobashing se ek skilled artist har element ko shuru se paint karne ke muqable kaafi tezi se detailed, realistic result bana sakta hai."
-    ],
-    "coreIdea": [
-      "Photobashing ka matlab hai photographs (ya 3D-rendered assets) ko mila kar aur blend karke, un par paint aur compositing karte hue ek finished artwork banana. Yeh simple photo editing se alag hai, jo kai sources ko milane ya image ki basic structure badalne ke bajay, ek hi image ko enhance karti hai.",
-      "Yeh technique fundamentals ki jagah nahi leti; inhi par nirbhar karti hai. Artist ko lighting, composition, aur form ki itni samajh honi chahiye ki woh aisi photos chun sake jo ek saath achhi lagen, aur connective details (shadows, lighting adjustments, integrated details) paint kar sake jo photobashed elements ko ek cohesive image ki tarah dikhayein.",
-      "Photo selection, blending jitni hi zaroori hai: bharosemand stock sources ya Wikimedia Commons jaise free resources se milne wali high-quality, sharp, aasani se cut-out hone wali images, low-quality ya ajeeb lighting wali source photos ke saath joojhne ke muqable, kaafi samay bachati hain.",
-      "Art community mein photobashing ko “true” digital art maanne ko lekar sachchi aur jaari debate hai (kuch contests photobashed entries reject karte hain). Lekin is baat par kaafi sehmat hain ki design aur visualization ke maqsad se kiya gaya skilled photobashing achhi tarah execute karne ke liye asli artistic skill maangta hai."
-    ],
-    "mistakes": [
-      "Photobashing ko bina aur kaam kiye photos ko bas cut aur paste karna samajhna, jabki photos ko achhi tarah jodne ke liye lighting ko dobara paint karna, color adjust karna, aur connective details jodni padti hain.",
-      "Low-quality, ajeeb lighting wali, ya mushkil se cut-out hone wali source photos use karna, jisse clean aur achhi lighting wali reference images se shuru karne ke muqable integration ka kaam bahut badh jaata hai.",
-      "Photos source karte waqt copyright aur licensing ko nazarandaaz karna, licensed stock photography ya Wikimedia Commons jaise sach-much free sources use karne ke bajay.",
-      "Photobashing ko fundamentals ki jagah istemaal karna, un par bana speed tool samajhne ke bajay. Lighting aur form ki samajh ke bina, bashed elements ko kitna bhi blend karein, woh bharosemand tareeke se integrate nahi honge.",
-      "Photobashed artwork ko aise context (contest ya portfolio category) mein submit karna jo ise saaf taur par allow nahi karta, kyunki art community ke kuch hisson mein ise kaise classify kiya jaaye, is par asli aur jaari debate hai."
-    ],
-    "proTips": [
-      "Composition tay karne ke liye sketch ya base photograph se shuruaat karein. Phir uske upar additional photo elements ya painted details jodein aur blend karein, taaki sab kuch ek saath achha lage.",
-      "Pehli milne wali image se kaam chalaane ke bajay high-quality, sharp, aasani se cut-out hone wali photos dhoondhne ko tarjeeh dein — baad mein blending mein bachne wala samay, dhoondhne mein laga extra samay nikaal deta hai.",
-      "Agar aapke paas Photoshop nahi hai, toh Krita ya GIMP jaise free software use karein. Dono photobashing ke liye zaroori photo editing aur digital painting ko sambhaal sakte hain.",
-      "Ek hi surface par kai textures bash karte waqt (jaise feathers ya fur), pieces ko dhyaan se align karein, taaki koi obvious tiled ya repeated pattern na dikhe. Bashed texture ko fake dikhane ka yeh sabse tez tareekon mein se ek hai."
-    ],
-    "practice": {
-      "warmup": "Do milte-julte subjects ki do free, high-quality photos dhoondhein (Wikimedia Commons jaise source se). Ek photo ko cleanly cut out karke doosri mein rakhne ki practice karein.",
-      "daily": "Ek rough sketch ya painted background lein aur usmein ek photographic element photobash karein. Uski lighting aur color ko aas-paas ke scene se match karne ke liye adjust karein.",
-      "weekly": "Kam-se-kam teen photo sources ko painted connective details (shadows, lighting adjustments, blended edges) ke saath mila kar ek chhota concept artwork banayein.",
-      "challenge": "Kisi location ki asli photo lein aur photobashing aur paint-overs use karke use bilkul alag concept (warzone, overgrown ruin, futuristic city) mein badlein. Saath hi, original photo ki composition aur lighting logic ko barkaraar rakhein."
-    },
-    "quiz": [
-      {
-        "q": "Photobashing, ek hi image ko simple “photoshop” karne se kaise alag hai?",
-        "options": [
-          "Dono bilkul ek hi technique hain",
-          "Photobashing kai photographs (ya 3D assets) ko mila kar aur blend karke, un par paint karte hue ek naya artwork banata hai; ek existing image ki structure barkaraar rakhte hue sirf use enhance nahi karta",
-          "Photobashing mein kabhi painting nahi hoti, sirf photo editing hoti hai",
-          "Photoshopping mein photobashing se hamesha zyada photos chahiye hoti hain"
-        ],
-        "correct": 1,
-        "explain": "Photoshopping ek image ki basic structure barkaraar rakhte hue use enhance aur modify karta hai. Photobashing zyada creative process hai, jismein kai photos ko mila kar aur un par paint karke ek poori tarah nayi composition banayi jaati hai."
-      },
-      {
-        "q": "Photobashing ke liye lighting, composition, aur form jaise fundamentals ab bhi kyun zaroori hain?",
-        "options": [
-          "Photos use hone ke baad inki bilkul zaroorat nahi hoti",
-          "Aisi photos chunne ke liye jo ek saath sahi lagen, aur unhe jodne wali details (shadows, adjusted lighting) paint karke unify karne ke liye, in fundamentals ki practical samajh zaroori hai",
-          "Fundamentals sirf poori tarah hand-painted digital art par lagu hote hain",
-          "Photobashing se light aur form samajhne ki zaroorat bilkul khatam ho jaati hai"
-        ],
-        "correct": 1,
-        "explain": "Photobashing fundamentals par nirbhar karta hai: ek-doosre ke saath fit hone wali photos chunne aur unhe ek cohesive scene ki tarah dikhane wali details paint karne, dono ke liye lighting, composition, aur form ki samajh chahiye."
-      },
-      {
-        "q": "High-quality aur aasani se cut-out hone wali photos dhoondhne mein extra samay lagaana kyun faaydemand hai?",
-        "options": [
-          "Photo quality ka final result par koi asar nahi hota",
-          "Baad mein integration ka kaam kaafi kam ho jaata hai, kyunki clean aur achhi lighting wali photos ko low-quality ya ajeeb source images se aasani se blend kiya ja sakta hai",
-          "Kisi bhi artwork mein sirf paid stock photos hi kanooni taur par use ki ja sakti hain",
-          "High-resolution photos paint-over karne par hamesha kharab dikhti hain"
-        ],
-        "correct": 1,
-        "explain": "High-quality aur aasani se kaam mein aane wali photos se shuruaat karne par aage ka blending aur integration ka kaam aasaan aur kam samay lene wala hota hai. Isse dhoondhne mein laga extra samay vasool ho jaata hai."
-      },
-      {
-        "q": "Photobashing ko lekar kaunsi jaari debate ka zikr kiya gaya hai?",
-        "options": [
-          "Kya aaj ke software mein photobashing technically mumkin hai",
-          "Kya photobashing ko “true” digital art maana jaata hai, kyunki kuch digital art contests photobashed entries reject karte hain, jabki doosre ise ek legitimate professional technique maante hain",
-          "Kya photobashing ke liye mehenga software zaroori hai",
-          "Art community mein photobashing ko lekar koi debate nahi hai"
-        ],
-        "correct": 1,
-        "explain": "Photobashing ko art form ke roop mein kaise classify kiya jaaye, is par sachchi aur jaari debate hai. Kuch contests ise allow nahi karte, jabki kaafi log maante hain ki ise achhi tarah karne ke liye asli skill chahiye."
-      },
-      {
-        "q": "Photobashing ke liye photo reference ka kaunsa achha free source bataya gaya hai?",
-        "options": [
-          "Photo reference ke liye koi free aur legal source nahi hai",
-          "Wikimedia Commons, aur paid tools ke bajay Krita ya GIMP jaise free software",
-          "Sirf paid stock photography sites ko kanooni taur par use kiya ja sakta hai",
-          "Copyrighted films ke screenshots ko free source ke roop mein use karne ki salah di gayi hai"
-        ],
-        "correct": 1,
-        "explain": "Wikimedia Commons ko photo reference ke liye ek free aur legitimate source bataya gaya hai. Photobashing ke liye zaroori photo editing aur painting, Krita ya GIMP jaise free software mein bhi ki ja sakti hai."
-      }
-    ],
-    "checklist": [
-      "Main photobashing aur simple photo editing ke beech ka fark samjha sakta/sakti hoon.",
-      "Main baad ka integration work kam karne ke liye clean, achhi lighting wali, aur aasani se cut-out hone wali photos chun sakta/sakti hoon.",
-      "Main photographic element ki lighting aur color ko aas-paas ke scene se match karke use painted ya photographic scene mein blend kar sakta/sakti hoon.",
-      "Main photobashing ke liye free aur legitimate photo sources aur software use kar sakta/sakti hoon."
-    ],
-    "nextStep": "Ab aap real photographic elements ko ek cohesive artwork mein blend kar sakte hain. Module 76 isse aage badhakar 3D-assisted art par focus karega — free 3D software se blockouts, lighting studies, aur reference geometry banana, jin par baad mein paint kiya ja sakta hai. Concept work mein speed aur accuracy badhane ka yeh ek aur bada tool hai."
+  "hook": "Real city street ki bheed-bhaad wali photo ko kuch bharosemand edits se ek veeraan warzone concept mein badla ja sakta hai — isi wajah se tight deadlines mein kaam karne wale game aur film concept artists ke liye photobashing standard practice ban gaya.",
+  "whyItMatters": [
+    "Photobashing mein is arc ki lagbhag har cheez kaam aati hai: non-destructive layers aur masks (Module 105), blend modes aur color grading (Module 106), aur poore Digital Painting arc mein seekhi material aur lighting ki samajh. In sabka use real photographic elements ko milaakar ek believable artwork banane mein hota hai.",
+    "Yeh technique production ki ek asli mushkil ko hal karne ke liye bani hai: concept artists ko film ya game ke liye bahut saari cheezein visualize karni hoti hain, aur photobashing se skilled artist har element ko shuru se paint karne ke muqable kaafi kam waqt mein highly detailed, realistic result bana sakta hai."
+  ],
+  "coreIdea": [
+    "Photobashing mein photographs (ya 3D-rendered assets) ko milaakar blend kiya jaata hai, phir un par paint aur compositing karke ek finished artwork banaya jaata hai. Yeh simple photo editing se alag hai, jo kai sources ko milaane ya image ki underlying structure badalne ke bajay ek hi image ko enhance karti hai.",
+    "Yeh technique fundamentals ki jagah nahi leti; unhi par tikti hai. Artist ko lighting, composition aur form ki kaam-chalaau samajh chahiye, taaki woh aisi photos chun sake jo saath mein kaam karein, aur woh connective details (shadows, lighting adjustments, integrated details) paint kar sake jo bashed elements ko ek coherent image jaisa dikhati hain.",
+    "Photo chunna, unhe blend karne jitna hi zaroori hai: reputable stock sources ya Wikimedia Commons jaise free resources se mili high-quality, sharp aur aasani se cut out hone wali images, low-quality ya ajeeb lighting wali source photos ke saath joojhne ke muqable bahut waqt bachati hain.",
+    "Art community mein is baat par sachmuch aur abhi tak behas chalti rehti hai ki photobashing ko “true” digital art maana jaaye ya nahi (kuch contests photobashed entries reject karte hain). Lekin is baat par kaafi sehmat hain ki design aur visualization ke maqsad se ki gayi skillful photobashing ko achhe se karne ke liye asli artistic skill chahiye."
+  ],
+  "mistakes": [
+    "Photobashing ko bas photos cut aur paste karke jod dena samajhna. Photos ko achhe se integrate karne ke liye lighting dobara paint karni, color adjust karna aur connective details add karni hoti hain.",
+    "Low-quality, ajeeb lighting wali ya mushkil se cut out hone wali source photos use karna. Saaf aur achhi lighting wali reference images se shuru karne ke muqable inhe integrate karne mein kaafi zyada mehnat lagti hai.",
+    "Photos kahan se li hain, iski copyright aur licensing ko nazarandaaz karna. Iske bajay licensed stock photography ya Wikimedia Commons jaise sachmuch free sources use karo.",
+    "Photobashing ko fundamentals par bani speed tool samajhne ke bajay fundamentals ka replacement bana lena. Lighting aur form ki samajh ke bina, chahe blending kitni bhi achhi ho, bashed elements believable tareeke se integrate nahi honge.",
+    "Aise context (contest ya portfolio category) mein photobashed artwork submit karna jo ise saaf taur par allow nahi karta. Art community ke kuch hisson mein iski categorization ko lekar asli aur jaari behas hai."
+  ],
+  "proTips": [
+    "Pehle sketch ya base photograph se composition tay karo, phir uske upar extra photo elements ya painted details add aur blend karo, taaki sab ek saath sahi lage.",
+    "Pehli milne wali photo se kaam chalaane ke bajay high-quality, sharp aur aasani se cut out hone wali photos dhoondhne ko priority do. Baad mein blending mein jo waqt bachega, woh dhoondhne mein laga extra waqt se zyada hoga.",
+    "Agar tumhare paas Photoshop nahi hai, toh Krita ya GIMP jaise free software use karo. Dono photobashing ke liye zaroori photo editing aur digital painting ka kaam kar sakte hain.",
+    "Jab ek hi surface par kai textures bash karo (jaise feathers ya fur), toh pieces ko dhyaan se align karo. Isse saaf-suthra baar-baar dohraya hua pattern nahi dikhega, jo bashed texture ko fake dikhane ke sabse tez tareekon mein se ek hai."
+  ],
+  "practice": {
+    "warmup": "Wikimedia Commons jaise source se do free, high-quality aur ek-doosre se related subjects ki photos dhoondho. Ek ko saaf tareeke se cut out karke doosri mein rakhne ki practice karo.",
+    "daily": "Rough sketch ya painted background lo aur usmein ek photographic element photobash karo. Uski lighting aur color adjust karke aas-paas ke scene se match karao.",
+    "weekly": "Ek chhota concept artwork banao jismein kam se kam teen photo sources aur unhe ek saath jodne wali painted details (shadows, lighting adjustments, blended edges) hon.",
+    "challenge": "Kisi jagah ki real-world photo lo aur photobashing aur paint-overs se use bilkul alag concept mein badlo — jaise warzone, ghaas-phoos se dhaka khandahar ya futuristic city. Saath hi original photo ki composition aur lighting logic ko barkaraar rakho."
   },
+  "quiz": [
+    {
+      "q": "Photobashing sirf ek image ko “photoshop” karne se kaise alag hai?",
+      "options": [
+        "Dono bilkul ek hi technique hain",
+        "Photobashing mein kai photographs (ya 3D assets) ko milaakar blend kiya jaata hai aur un par paint karke ek naya artwork banaya jaata hai, na ki ek hi existing image ki structure barkaraar rakhte hue bas use enhance kiya jaata hai",
+        "Photobashing mein painting kabhi nahi hoti, sirf photo editing hoti hai",
+        "Photoshopping mein photobashing se hamesha zyada photos chahiye hote hain"
+      ],
+      "correct": 1,
+      "explain": "Photoshopping ek hi image ko enhance aur change karta hai, uski underlying structure barkaraar rakhte hue. Photobashing zyada creative hota hai: ismein kai photos ko milaakar un par paint kiya jaata hai, taaki ek bilkul nayi composition ban sake."
+    },
+    {
+      "q": "Photobashing ke liye lighting, composition aur form jaise fundamentals phir bhi kyun zaroori hain?",
+      "options": [
+        "Photos use karne ke baad inki koi zaroorat nahi rehti",
+        "Aisi photos chunne ke liye jo saath mein kaam karein, aur unhe ek saath jodne wali details (shadows, adjusted lighting) paint karne ke liye in fundamentals ki kaam-chalaau samajh zaroori hai",
+        "Fundamentals sirf poori tarah hand-painted digital art ke liye hain",
+        "Photobashing se light aur form samajhne ki zaroorat poori tarah khatam ho jaati hai"
+      ],
+      "correct": 1,
+      "explain": "Photobashing fundamentals par depend karta hai: aisi photos chunna jo ek saath jachein, aur un details ko paint karna jo unhe ek coherent scene ka hissa dikhayein — dono ke liye lighting, composition aur form ki samajh chahiye."
+    },
+    {
+      "q": "High-quality aur aasani se cut out hone wali photos dhoondhne mein extra waqt lagana kyun sahi hai?",
+      "options": [
+        "Photo quality ka final result par koi asar nahi hota",
+        "Baad mein integration ka kaam kaafi kam ho jaata hai, kyunki saaf aur achhi lighting wali photos low-quality ya ajeeb source images se zyada aasani se blend hoti hain",
+        "Kisi bhi artwork mein sirf paid stock photos hi kanooni taur par use ki ja sakti hain",
+        "High-resolution photos paint-over karne par hamesha kharaab dikhti hain"
+      ],
+      "correct": 1,
+      "explain": "Shuru se high-quality, aasani se kaam aane wali photos lene se baad mein blending aur integration ka kaam kam aur aasan hota hai. Iska faayda, photos dhoondhne mein lage extra waqt se zyada hota hai."
+    },
+    {
+      "q": "Photobashing ke baare mein kaunsi jaari behas ka zikr hai?",
+      "options": [
+        "Kya modern software mein photobashing technically mumkin hai",
+        "Kya photobashing ko “true” digital art maana jaata hai, kyunki kuch digital art contests photobashed entries reject karte hain, jabki kuch ise ek legitimate professional technique maante hain",
+        "Kya photobashing ke liye mehnga software chahiye",
+        "Art community mein photobashing ko lekar koi behas nahi hai"
+      ],
+      "correct": 1,
+      "explain": "Photobashing ko art form ke roop mein kaise dekha jaaye, is par sachmuch aur jaari behas hai. Kuch contests ise allow nahi karte, lekin kaafi log maante hain ki ise achhe se karne ke liye asli skill chahiye."
+    },
+    {
+      "q": "Photobashing ke liye photo reference ka ek achha free source kaunsa hai?",
+      "options": [
+        "Photo reference ke liye koi free aur legal source nahi hai",
+        "Wikimedia Commons, aur paid tools ke bajay Krita ya GIMP jaise free software",
+        "Sirf paid stock photography sites kanooni taur par use ki ja sakti hain",
+        "Copyrighted films ke screenshots ko free source ke roop mein use karne ki salaah di jaati hai"
+      ],
+      "correct": 1,
+      "explain": "Wikimedia Commons ko photo reference ke ek free aur legitimate source ke roop mein bataya gaya hai. Krita ya GIMP jaise free software se photobashing ke liye zaroori photo editing aur painting ka kaam bhi ho sakta hai."
+    }
+  ],
+  "checklist": [
+    "Main photobashing aur simple photo editing ke beech ka farq samjha sakta hoon.",
+    "Main baad ka integration work kam karne ke liye saaf, achhi lighting wali aur aasani se cut out hone wali photos chun sakta hoon.",
+    "Main photographic element ki lighting aur color adjust karke use painted ya photographic scene ke saath blend kar sakta hoon.",
+    "Main photobashing ke liye free aur legitimate photo sources aur software use kar sakta hoon."
+  ],
+  "nextStep": "Ab tum real photographic elements ko milaakar ek cohesive artwork bana sakte ho. Module 108 mein hum isse ek kadam aage 3D-assisted art dekhenge — free 3D software se blockouts, lighting studies aur reference geometry banana, jin par baad mein paint kiya ja sake. Concept work mein speed aur accuracy badhane ka yeh ek aur bada tool hai."
+},
   "m114": {
-    "hook": "Concept artist ko 3D use karne ke liye 3D modeler hona zaroori nahi hai — free software mein kuch rough, ugly cubes arrange karke perspective aur lighting ki aisi problem solve ho sakti hai jise freehand sahi karne mein ghanton lag jaate.",
-    "whyItMatters": [
-      "Photobashing (Module 75) ki tarah, 3D-assisted art ek speed aur accuracy tool hai jo aapke existing fundamentals ke upar kaam karta hai, unki jagah nahi leta — yeh widely used, well-established professional technique hai, sirf beginners ka shortcut nahi.",
-      "3D blocking khaas taur par unhi tarah ke environments aur hard-surface subjects ke liye valuable hai jin par is curriculum ne focus kiya hai: straight lines, consistent perspective, ya complex lighting wali cheezon ko isse sabse zyada fayda hota hai, kyunki 3D software perspective aur light ko aankh se estimate karne ke bajay physically calculate karta hai."
-    ],
-    "coreIdea": [
-      "3D blockout mein Blender jaise free 3D program mein simple, rough shapes (boxes, cylinders, spheres) arrange karke detailed painting shuru hone se pehle accurate perspective, proportion, aur composition set ki jaati hai — is stage par messy topology aur ugly geometry bilkul theek hain, kyunki blockout ek tool hai, final product nahi.",
-      "Yeh technique straight-edged, architectural, ya hard-surface subjects ke liye khaas taur par achchhi kaam karti hai, jahan 3D consistent perspective aur lighting logic automatically calculate kar sakta hai; bahut organic, curvy subjects (jaise lehrata hua cape ya creature ki soft anatomy) ko isse kam fayda hota hai aur unhe aksar haath se banana zyada fast hota hai.",
-      "Ek common workflow mein 2D aur 3D ke beech baar-baar aana-jaana hota hai, 3D ko one-way pipeline nahi maana jaata: rough 2D thumbnails se idea tayyar hota hai, 3D accurate perspective aur major forms block out karta hai, phir 2D paintover 3D render ke upar detail, texture, aur painterly quality jodta hai.",
-      "Blockout ko apne options tak seemit mat hone do — professional concept artists lagataar kehte hain ki 3D base ko flexible starting point ki tarah dekho, aur zaroorat ke mutabik naye elements jodo, jo parts kaam nahi kar rahe unhe hatao, ya poore image par paintover karo; sirf wahi tak seemit mat raho jo model kiya gaya tha."
-    ],
-    "mistakes": [
-      "3D blockout ki topology ya details ko perfect karne mein zaroorat se zyada waqt lagana, jabki uska ek hi kaam paintover se pehle perspective, proportion, aur rough lighting set karna hai.",
-      "Aise subjects ke liye 3D use karna jin par yeh achchha kaam nahi karta, jaise lehrata fabric ya soft organic anatomy, jinhe freehand painting se aksar zyada fast aur expressive tareeke se banaya ja sakta hai.",
-      "3D render ko finished piece samajhna, jabki woh 2D paintover ka base hota hai jo painterly detail, texture, aur polish jodta hai.",
-      "Yeh mehsoos karna ki blockout mein jo exactly model kiya gaya hai, usi tak seemit rehna hai; paintover stage mein parts ko khulkar jodne, hatane, ya chhod dene ke bajay unmein bandhe rehna.",
-      "3D se kaam ho jaayega sochkar freehand perspective aur drawing skills develop karna chhod dena, jabki perspective ki mazboot samajh hi aapko yeh judge karne deti hai ki 3D blockout kaam bhi kar raha hai ya nahi."
-    ],
-    "proTips": [
-      "Blockout jaan-boojhkar messy aur fast banao — bina clean topology ke rough box shapes bilkul theek hain, kyunki blockout ka ek hi kaam perspective, proportion, aur rough composition set karna hai.",
-      "3D blocking ko straight-edged ya architectural subjects ke liye rakho, jahan isse waqai waqt bachta hai, aur organic, flowing forms ke liye freehand painting ko default rakho, jahan 3D ka khaas fayda nahi hota.",
-      "Strict one-way pipeline follow karne ke bajay zaroorat ke mutabik 2D aur 3D ke beech aate-jaate raho — rough 2D thumbnail, 3D blockout, phir 2D paintover ek common aur flexible sequence hai.",
-      "3D render par paintover karte waqt rough brush strokes aur jaan-boojhkar imperfections jaldi jodo, kyunki raw 3D render natural painting ke muqable zyada clean aur physically correct lag sakta hai."
-    ],
-    "practice": {
-      "warmup": "Free 3D software mein sirf cubes aur cylinders use karke ek simple room ya street ka blockout banao; detail ke bajay proportions aur perspective sahi rakhne par poora focus karo.",
-      "daily": "Kisi architectural ya hard-surface subject ke rough 2D thumbnail idea ko lo aur uska quick 3D blockout banao, phir paintover ke liye screenshot lo.",
-      "weekly": "Poora 2D-3D-2D workflow use karke ek chhota piece complete karo: rough thumbnail, perspective aur lighting ke liye 3D blockout, aur phir painterly detail aur texture jodne ke liye full paintover.",
-      "challenge": "Ek hi subject ka do baar blockout banao — ek baar hard-surface, straight-edged subject ka aur ek baar organic, curvy subject ka — phir compare karo ki dono cases mein 3D se kitna waqt bacha aur kitni value add hui."
-    },
-    "quiz": [
-      {
-        "q": "Concept art workflow mein 3D blockout ka main purpose kya hai?",
-        "options": [
-          "Final, finished artwork banana",
-          "Detailed painting shuru hone se pehle rough shapes se accurate perspective, proportion, aur composition set karna",
-          "Painting skills ki zaroorat ko poori tarah khatam karna",
-          "Clean topology ke saath game-ready assets banana"
-        ],
-        "correct": 1,
-        "explain": "Blockout ka kaam simple shapes se perspective, proportion, aur rough composition ko jaldi aur accurately set karna hai; ise polished ya final banane ke liye nahi kiya jaata."
-      },
-      {
-        "q": "3D-assisted approach se kis tarah ke subjects ko sabse zyada fayda hota hai?",
-        "options": [
-          "Lehrata fabric aur soft organic anatomy",
-          "Straight-edged, architectural, ya hard-surface subjects, jahan 3D perspective aur lighting ko automatically calculate kar sakta hai",
-          "Kisi bhi tarah ke subject ko 3D se koi fayda nahi hota",
-          "Sirf aise subjects jinmein bilkul bhi straight lines na hon"
-        ],
-        "correct": 1,
-        "explain": "Hard-surface aur architectural subjects ke liye 3D blocking khaas taur par useful hai, kyunki inmein consistent perspective aur lighting logic ko aankh se estimate karna mushkil hota hai; organic, curvy forms ko aksar isse kam fayda hota hai."
-      },
-      {
-        "q": "Module ke mutabik, 2D aur 3D ko milakar kaunsa common, flexible workflow use hota hai?",
-        "options": [
-          "Sirf 3D, kisi bhi stage par 2D kaam ke bina",
-          "Pehle rough 2D thumbnail, phir perspective ke liye 3D blockout, aur uske baad detail aur polish ke liye 2D paintover",
-          "Sirf 2D, 3D ka bilkul use nahi",
-          "Strict one-way pipeline jismein 3D hamesha sabse aakhri step hota hai"
-        ],
-        "correct": 1,
-        "explain": "Ek common, flexible sequence mein 2D aur 3D ke beech baar-baar aana-jaana hota hai: pehle rough 2D idea, perspective aur lighting sahi karne ke liye 3D blockout, phir painterly detail aur polish ke liye 2D paintover."
-      },
-      {
-        "q": "Yeh mehsoos na karna kyun zaroori hai ki 3D blockout mein jo exactly model kiya hai, usi tak seemit rehna hai?",
-        "options": [
-          "Kyunki 3D blockouts banne ke baad badle nahi ja sakte",
-          "Professional concept artists blockout ko flexible base maanne par zor dete hain, jismein paintover ke dauraan parts ko khulkar joda, hataya, ya chhoda ja sakta hai",
-          "Kyunki 3D software aage painting karne se rokta hai",
-          "Flexible rehna waqai zaroori nahi hai"
-        ],
-        "correct": 1,
-        "explain": "Working artists lagataar is baat par zor dete hain ki 3D base ko flexible starting point ki tarah use karo, uske chalte apne options ko seemit mat karo, aur paintover ke dauraan parts ko khulkar badlo ya chhod do."
-      },
-      {
-        "q": "Natural painting jaisa lagne se pehle raw 3D render ko extra kaam ki zaroorat kyun pad sakti hai?",
-        "options": [
-          "3D renders hamesha hand-painted work jaise hi hote hain",
-          "Raw render bahut clean aur physically correct lag sakta hai, isliye paintover ke dauraan rough brush strokes aur jaan-boojhkar imperfections jodne se woh painterly lagta hai",
-          "3D renders par paintover kiya hi nahi ja sakta",
-          "3D-assisted art mein is baat ka koi khaas matlab nahi"
-        ],
-        "correct": 1,
-        "explain": "Physically accurate 3D render natural painting ke muqable sterile lag sakta hai, isliye paintover stage mein rough strokes aur intentional imperfections jodne se yeh fark kam hota hai."
-      }
-    ],
-    "checklist": [
-      "Main sirf perspective aur proportion par focus karke rough, messy 3D blockout bana sakta/sakti hoon, detail par nahi.",
-      "Main judge kar sakta/sakti hoon ki koi subject (hard-surface ya organic) 3D assistance ke liye achchha candidate hai ya nahi.",
-      "Main strict one-way pipeline follow karne ke bajay 2D aur 3D stages ke beech flexibility se aa-ja sakta/sakti hoon.",
-      "Main 3D render ko sterile chhodne ke bajay us par deliberate texture aur imperfections ke saath paintover kar sakta/sakti hoon."
-    ],
-    "nextStep": "Ab aapke toolkit mein ek genuine 3D-to-2D workflow hai. Module 109 ek naye aur actively debated tool ki taraf badhta hai — AI-assisted workflows — aur yeh cover karta hai ki ek working artist ke liye responsible, disclosed use asal mein kaisa dikhta hai."
+  "hook": "Concept artist banne ke liye 3D modeler hona zaroori nahi. Free software mein kuch rough, bhadde cubes saja kar bhi perspective aur lighting ki aisi problem solve ho sakti hai jise freehand sahi karne mein ghanton lag jaayen.",
+  "whyItMatters": [
+    "Photobashing (Module 107) ki tarah, 3D-assisted art bhi speed aur accuracy badhane ka tool hai jo tumhari pehle se maujood fundamentals ke saath kaam karta hai, unki jagah nahi leta. Yeh professionals ki widely used, well-established technique hai—not beginners ke liye koi khaas shortcut.",
+    "3D blocking unhi environments aur hard-surface subjects ke liye khaas taur par useful hai jin par is curriculum mein focus raha hai: seedhi lines, consistent perspective ya complex lighting wali cheezon ko isse sabse zyada faayda hota hai, kyunki 3D software perspective aur light ko aankh se estimate karne ke bajaye physically calculate karta hai."
+  ],
+  "coreIdea": [
+    "3D blockout mein Blender jaise free 3D program mein simple, rough shapes (boxes, cylinders, spheres) saja kar accurate perspective, proportion aur composition tay ki jaati hai—detailed painting shuru karne se pehle. Is stage par messy topology aur bhadde geometry bilkul theek hain; blockout ek tool hai, final product nahi.",
+    "Yeh technique seedhe kinare wali, architectural ya hard-surface subjects par khaas achchhi kaam karti hai, kyunki 3D consistent perspective aur lighting logic automatically calculate kar sakta hai. Bahut organic, curvy subjects (jaise udta hua cape ya creature ki soft anatomy) ko isse kam faayda hota hai; unhe aksar haath se banana zyada tez hota hai.",
+    "Aam workflow mein 2D aur 3D ke beech baar-baar aana-jaana hota hai; 3D ko one-way pipeline nahi maana jaata. Pehle rough 2D thumbnails se idea tay hota hai, phir 3D mein accurate perspective aur major forms block out kiye jaate hain, aur aakhir mein 2D paintover se 3D render ke upar detail, texture aur painterly quality jodi jaati hai.",
+    "Blockout ko apne liye bandish mat banne do—professional concept artists baar-baar kehte hain ki 3D base ko flexible starting point samjho. Usmein naye elements jodo, jo kaam nahi kar rahe un parts ko hatao, ya poore blockout par paintover kar do. Sirf isliye usi cheez tak simit mat raho jo model ki thi."
+  ],
+  "mistakes": [
+    "3D blockout ki topology ya details ko perfect karne mein zaroorat se zyada waqt lagana, jabki uska kaam sirf paintover se pehle perspective, proportion aur rough lighting tay karna hai.",
+    "Aise subjects ke liye 3D use karna jinke liye yeh theek nahi baithta—jaise flow karta fabric ya soft organic anatomy—jinhe freehand paint karna aksar zyada tez aur expressive hota hai.",
+    "3D render ko finished piece samajhna, jabki woh 2D paintover ka base hai jisme painterly detail, texture aur polish jodi jaati hai.",
+    "Yeh mehsoos karna ki blockout mein jo model kiya tha, bas usi tak simit rehna hai; paintover ke dauraan parts ko bina jhijhak jodo, hatao ya chhod do.",
+    "Yeh sochkar freehand perspective aur drawing skills develop karna chhod dena ki 3D yeh kaam sambhal lega. Perspective ki mazboot samajh phir bhi zaroori hai—usi se tum jaan paate ho ki 3D blockout sahi kaam kar raha hai ya nahi."
+  ],
+  "proTips": [
+    "Blockout ko jaan-boojhkar rough aur fast banao—simple box shapes aur bina clean topology ke kaam karna bilkul theek hai, kyunki blockout ka kaam sirf perspective, proportion aur rough composition tay karna hai.",
+    "3D blocking ko seedhe kinare wale ya architectural subjects ke liye rakho, jahan isse sach mein waqt bachta hai. Organic, flow karte forms ke liye default taur par freehand painting karo, jahan 3D ka faayda kam hai.",
+    "Zaroorat ke mutabik 2D aur 3D ke beech aate-jaate raho; strict one-way pipeline mein mat phanso. Rough 2D thumbnail, phir 3D blockout, aur uske baad 2D paintover—yeh ek aam aur flexible sequence hai.",
+    "3D render par paintover karte waqt shuru se hi rough brush strokes aur jaan-boojhkar imperfection jodo, kyunki raw 3D render natural painting ke muqable bahut clean aur 'physically correct' lag sakta hai."
+  ],
+  "practice": {
+    "warmup": "Free 3D software mein sirf cubes aur cylinders ka use karke ek simple room ya street ka blockout banao. Detail par nahi, proportions aur perspective sahi rakhne par poora focus karo.",
+    "daily": "Architectural ya hard-surface subject ke liye ek rough 2D thumbnail idea lo, uska quick 3D blockout banao, phir paintover ke liye screenshot lo.",
+    "weekly": "Poora 2D-3D-2D workflow use karke ek chhota piece complete karo: rough thumbnail, perspective aur lighting ke liye 3D blockout, aur phir painterly detail aur texture jodne wala full paintover.",
+    "challenge": "Ek hi subject ka do baar blockout banao—ek baar hard-surface, seedhe kinare wale subject ka aur ek baar organic, curvy subject ka. Phir compare karo ki har case mein 3D se kitna waqt bacha aur kitna faayda hua."
   },
+  "quiz": [
+    {
+      "q": "Concept art workflow mein 3D blockout ka main maksad kya hota hai?",
+      "options": [
+        "Art ka final, finished piece banana",
+        "Detailed painting shuru hone se pehle rough shapes se accurate perspective, proportion aur composition tay karna",
+        "Painting skills ki zaroorat poori tarah khatam kar dena",
+        "Clean topology ke saath game-ready assets banana"
+      ],
+      "correct": 1,
+      "explain": "Blockout ka kaam simple shapes se perspective, proportion aur rough composition ko jaldi aur sahi tareeke se tay karna hai; ise polished ya final banana iska maksad nahi."
+    },
+    {
+      "q": "3D-assisted approach se kis tarah ke subjects ko sabse zyada faayda hota hai?",
+      "options": [
+        "Flow karta fabric aur soft organic anatomy",
+        "Seedhe kinare wale, architectural ya hard-surface subjects, jahan 3D perspective aur lighting automatically calculate kar sakta hai",
+        "Kisi bhi tarah ke subject ko 3D se faayda nahi hota",
+        "Sirf aise subjects jinmein koi seedhi line na ho"
+      ],
+      "correct": 1,
+      "explain": "Hard-surface aur architectural subjects ke liye 3D blocking khaas taur par useful hai, kyunki consistent perspective aur lighting logic ko aankh se estimate karna mushkil hota hai. Organic, curvy forms ko aksar isse kam faayda hota hai."
+    },
+    {
+      "q": "Module ke mutabik, 2D aur 3D ko milane wala ek aam aur flexible workflow kya hai?",
+      "options": [
+        "Sirf 3D, kisi bhi stage par 2D kaam nahi",
+        "Pehle rough 2D thumbnail, phir perspective ke liye 3D blockout, aur aakhir mein detail aur polish ke liye 2D paintover",
+        "Sirf 2D, 3D ka kabhi use nahi",
+        "Strict one-way pipeline jismein 3D hamesha sabse aakhri step ho"
+      ],
+      "correct": 1,
+      "explain": "Ek aam aur flexible sequence mein 2D aur 3D ke beech baar-baar aana-jaana hota hai: pehle rough 2D idea, phir perspective aur lighting sahi karne ke liye 3D blockout, aur aakhir mein painterly detail aur polish ke liye 2D paintover."
+    },
+    {
+      "q": "3D blockout mein jo model kiya hai, sirf usi tak simit mehsoos na karna kyun zaroori hai?",
+      "options": [
+        "Kyunki 3D blockout banne ke baad badla nahi ja sakta",
+        "Professional concept artists blockout ko flexible base maanne par zor dete hain; paintover ke dauraan parts ko bina jhijhak joda, hataya ya chhoda ja sakta hai",
+        "Kyunki 3D software aage painting karne se rokta hai",
+        "Flexible rehna asal mein zaroori nahi hai"
+      ],
+      "correct": 1,
+      "explain": "Kaam karne wale artists baar-baar kehte hain ki 3D base ko flexible starting point samjho; usmein phansne ke bajaye paintover ke dauraan parts ko apni zaroorat ke mutabik badlo ya chhod do."
+    },
+    {
+      "q": "Raw 3D render ko natural painting jaisa dikhne ke liye extra kaam kyun chahiye ho sakta hai?",
+      "options": [
+        "3D renders hamesha hand-painted work jaise hi hote hain",
+        "Raw render bahut clean aur 'physically correct' lag sakta hai, isliye paintover ke dauraan rough brush strokes aur jaan-boojhkar imperfection jodne se woh painterly lagta hai",
+        "3D render par paintover kiya hi nahi ja sakta",
+        "3D-assisted art mein yeh baat maayne nahi rakhti"
+      ],
+      "correct": 1,
+      "explain": "Physically accurate 3D render natural painting ke muqable thoda sterile lag sakta hai. Paintover ke dauraan rough strokes aur sochi-samjhi imperfection jodne se yeh farq kam hota hai."
+    }
+  ],
+  "checklist": [
+    "Main rough, messy 3D blockout bana sakta hoon jismein focus sirf perspective aur proportion par ho, detail par nahi.",
+    "Main pehchaan sakta hoon ki koi subject (hard-surface ya organic) 3D assistance ke liye sahi hai ya nahi.",
+    "Main strict one-way pipeline follow karne ke bajaye 2D aur 3D stages ke beech flexibility se aa-ja sakta hoon.",
+    "Main 3D render ko deliberate texture aur imperfection ke saath paint over kar sakta hoon, taaki woh sterile na lage."
+  ],
+  "nextStep": "Ab tumhare toolkit mein ek asli 3D-to-2D workflow hai. Module 109 ek naye aur abhi bhi bahas ka vishay bane hue tool ki taraf badhta hai—AI-assisted workflows. Ismein dekhenge ki kaam karne wale artist ke liye responsible aur disclosed use asal mein kaisa dikhta hai."
+},
   "m115": {
-    "hook": "Poore curriculum mein yeh ek aisa module hai jahan is sawaal ka imaandaar jawab ki \"ise karne ka sahi tareeka kya hai\" waqai disputed hai — working artists, courts, aur AI companies khud bhi is par ekmat nahi hain — aur iske ulat dikhawa karna aapke liye nuksaan-deh hoga.",
-    "whyItMatters": [
-      "AI image tools ab kai working artists ke pipeline ka ek real hissa hain; inka use reference gathering, rapid ideation, aur mood-boarding ke liye hota hai, saath hi photobashing (Module 75) aur 3D-assisted art (Module 76) jaise speed tools ke liye bhi, jinhe aap pehle hi seekh chuke hain. Professional aur industry organizations inka responsible tareeke se use karne ke baare mein kya sochti hain, yeh samajhna ab ek practical, professional skill hai, optional add-on nahi.",
-      "Yeh sach mein abhi unresolved area bhi hai: artists, legal scholars, aur AI companies training-data consent aur meaningful human authorship kis cheez ko kehte hain jaise core sawaalon par asahmat hain. Ek hi final verdict dene ke bajay, yeh module aapko asal landscape aur ek practical decision framework deta hai, taaki aap apni judgment ka istemal karte hue isse navigate kar saken."
-    ],
-    "coreIdea": [
-      "Is debate ka central aur unresolved mudda training data hai: AI image generators existing images ke bahut bade sets se seekhte hain, jinmein se kai original artists ki consent ke bina scrape ki gayi hain. Artists lost commissions aur unki style ke unauthorized use ko real harms maante hain; AI companies aur users fair-use arguments aur technology ke transformative nature ki taraf ishara karte hain. Is likhe jaane tak duniya bhar ki courts mein kai lawsuits chal rahe hain, lekin abhi tak koi ek final, settled jawab nahi hai.",
-      "U.S. copyright law abhi ek real, practical farq karta hai: bina kisi human creative input ke poori tarah AI-generated output copyrightable nahi hai, jabki AI-assisted work mein agar koi human substantial creative control rakhta hai (prompts par baar-baar kaam karke, options select karke, editing, compositing, aur original elements jodkar), toh us human-authored hisson ko protection mil sakti hai.",
-      "Professional guidelines kuch concrete, baar-baar dohraye jaane wale practices par ekmat hain, chahe aap is badi debate mein kisi bhi taraf hon: clients aur audiences ko AI ke involvement ke baare mein batao, kisi specific living artist ki distinctive style ke liye prompt mat karo, raw output ko jaisa-ka-taisa use karne ke bajay substantial human creative input jodo, aur platform ya client contract mein AI use ke baare mein diye specific rules ka samman karo.",
-      "AI use ka ethical context jagah ke mutabik badalta hai: personal ideation, mood boards, ya human-made final work se pehle rapid prototyping ke liye iska use aam taur par unproblematic maana jaata hai; AI output ko poori tarah hand-made batakar pesh karna, ya commercial gain ke liye jaan-boojhkar kisi specific living artist ki signature style ki nakal karna, aise kaam hain jin par lagbhag har framework mein sabse zyada aur consistent concern hoti hai."
-    ],
-    "mistakes": [
-      "Is sawaal ko kisi bhi ek taraf se settled maanana — ya toh bilkul theek ya bilkul mana — jabki yeh waqai disputed area hai, jiske dono taraf real aur serious arguments aur stakeholders hain.",
-      "AI output ko bahut kam human input ke saath jaisa-ka-taisa use karke poori tarah hand-made work ke roop mein pesh karna; yeh disputed gray area se aage badhkar seedha misrepresentation ban jaata hai.",
-      "Commercial use ke liye kisi named, living artist ki distinctive style ki specifically nakal karne ke liye prompt dena, bina unki involvement ya compensation ke; yeh professional guidelines mein sabse zyada consistently flag ki jaane wali practice hai.",
-      "Client ya platform ke AI use ke explicit rules ko nazarandaaz karna aur apni technology ke saath comfort ko hi ekmatra relevant standard samajhna.",
-      "Yeh maan lena ki disclosure se log aapke work ko kam pasand karenge; professional guidance aur available research ke mutabik transparency ko aam taur par artists ke andeshe se behtar response milta hai, aur baad mein pata chalne wala undisclosed use aksar trust ko kahin zyada nuksaan pahunchata hai."
-    ],
-    "proTips": [
-      "Agar aap kisi bhi stage par AI use karte hain, toh clients ko aur, jahan relevant ho, audiences ko batane ko default rakhein — transparency ko optional extra nahi, baseline professional practice maanein.",
-      "Ideation ya reference ke liye AI use karte waqt uske upar substantial human creative work jodein (soch-samajhkar iterations karna, critically select karna, edit aur composite karna, paintover karna); isse practice ethically zyada mazboot hoti hai aur U.S. mein copyright claim bhi zyada strong ho sakta hai.",
-      "Prompt dete waqt kisi specific living artist ka naam lene ke bajay general style language (jaise \"cyberpunk,\" \"impressionist,\" \"heavy linework\") use karein, taaki professional guidelines mein sabse zyada consistently flag kiye gaye ethical issue se bacha ja sake.",
-      "Kisi project par AI use karne se pehle us par lagu terms of service ya contract padhein — kai clients, contests, aur platforms ke AI use ke baare mein ab explicit policies hain, aur baad mein problem hone par \"maine check nahi kiya\" kehna mazboot jawab nahi hai."
-    ],
-    "practice": {
-      "warmup": "Neeche diye gaye resources mein Graphic Artists Guild ke Ethical Focus aur Transparency sections padhein aur apne shabdon mein likhein ki aapko kaunsi ek practice sabse zyada important lagti hai aur kyun.",
-      "daily": "Agar aap is hafte ideation ke liye AI tool use karein, toh ek chhota note rakhein ki aapne iska disclosure kaise kiya aur AI output ke upar kaunsa human creative work joda.",
-      "weekly": "Kisi ek platform ya contest ki current AI policy par research karein (jaise portfolio site, competition, ya stock art marketplace) aur summarize karein ki woh khaas taur par kis cheez ki ijazat deta hai ya mana karta hai.",
-      "challenge": "Art mein AI tools ke apne future use ke liye ek paragraph ki personal policy likhein — aap kya karenge aur kya nahi, aur iska disclosure kaise karenge — is module mein jo padha hai uske aadhar par; legal aur professional landscape badalne ke saath ise dobara dekhein."
-    },
-    "quiz": [
-      {
-        "q": "AI art ethics discussions ke beech ka central, unresolved debate kya hai?",
-        "options": [
-          "Kya AI software technical taur par use karna mushkil hai",
-          "Kya AI models ko artists ke work par unki consent ke bina train kiya gaya, aur iska ethical aur legal matlab kya hai",
-          "AI software ka kaunsa specific brand sabse fast hai",
-          "Kya digital art, traditional media ke muqable legitimate hai"
-        ],
-        "correct": 1,
-        "explain": "Core, actively contested issue training-data consent hai: AI image generators images ke bade sets se seekhte hain, jinmein se kai artists ki explicit consent ke bina scrape ki gayi hain; is space ki zyadatar doosri ethical debates ki buniyad yahi hai."
-      },
-      {
-        "q": "Module mein bataye gaye current U.S. copyright guidance ke mutabik, copyrightable AI-assisted work aur non-copyrightable, poori tarah AI-generated work mein kya farq hai?",
-        "options": [
-          "Image save karne ke liye use hua file format",
-          "Kya kisi human ne substantial creative control rakha, jaise iterations karna, select karna, edit karna, aur original elements jodna",
-          "AI tool free tha ya paid",
-          "Koi farq nahi hai; AI se judi har output ko ek jaisa maana jaata hai"
-        ],
-        "correct": 1,
-        "explain": "U.S. mein bina human creative input ke poori tarah AI-generated output copyrightable nahi hai; jabki substantial human creative direction aur modification ke saath bana AI-assisted work apne human-authored elements ke liye protection ke laayak ho sakta hai."
-      },
-      {
-        "q": "Professional guidelines ke mutabik, kaunsi practice ko sabse zyada consistently serious ethical concern maana jaata hai?",
-        "options": [
-          "Personal mood boards ke liye AI use karna",
-          "Commercial gain ke liye kisi specific living artist ki distinctive style ki jaan-boojhkar nakal karna, ya AI output ko poori tarah hand-made batana",
-          "'watercolor' ya 'cyberpunk' jaise general style descriptors use karna",
-          "Clients ko AI use ke baare mein batana"
-        ],
-        "correct": 1,
-        "explain": "Commercially kisi specific living artist ki signature style ki nakal karna, aur AI-generated work ko poori tarah hand-made batakar galat pesh karna — ye dono practices professional frameworks mein sabse zyada consistently concern ka sabab banti hain."
-      },
-      {
-        "q": "Clients aur audiences ko AI involvement batane ke baare mein module kya suggest karta hai?",
-        "options": [
-          "Disclosure se hamesha bachna chahiye, kyunki isse trust zaroor khatam ho jaata hai",
-          "Transparency ko aam taur par safer, zyada professional baseline maana jaata hai, aur available guidance ke mutabik log aksar isse artists ke andeshe se behtar response dete hain",
-          "Duniya bhar ke har context mein disclosure kanoonan zaroori hai",
-          "Disclosure sirf bade commercial projects ke liye zaroori hai, chhote personal work ke liye nahi"
-        ],
-        "correct": 1,
-        "explain": "Professional guidelines disclosure ko baseline practice ke taur par lagataar recommend karti hain, aur available guidance ke mutabik baad mein pata chalne wala undisclosed use, pehle se transparency rakhne ke muqable, trust ko zyada nuksaan pahunchata hai."
-      },
-      {
-        "q": "Module ke mutabik, AI tools ka kaunsa use broadly sabse kam ethically contested maana jaata hai?",
-        "options": [
-          "Bina disclosure ke raw, unedited AI generation ko original finished commission ke roop mein bechna",
-          "Human-made final work banane se pehle personal ideation, mood boards, ya rapid prototyping ke liye AI use karna",
-          "Paid client project ke prompt mein kisi specific living artist ka naam lena",
-          "AI ka koi bhi use aisa nahi jise uncontroversial maana jaaye"
-        ],
-        "correct": 1,
-        "explain": "Human-made final work se pehle personal exploration, mood boards, ya prototyping ke liye AI tools use karna, discuss ki gayi guidelines mein broadly ethically unambiguous ke sabse kareeb maana jaata hai; commercial misrepresentation ya artist ki style ki nakal isse alag hain."
-      }
-    ],
-    "checklist": [
-      "Main training-data consent ki core debate ko artist aur AI-company, dono ke perspectives se samjha sakta/sakti hoon, bina ise settled maane.",
-      "Main samjha sakta/sakti hoon ki current U.S. guidance mein copyrightable AI-assisted work aur non-copyrightable, poori tarah AI-generated work ke beech aam taur par kya farq hota hai.",
-      "Main clients/audiences ko disclosure dene ko optional extra ke bajay baseline professional practice ke roop mein pehchaan sakta/sakti hoon.",
-      "Main un do practices (living artist ki style ki nakal karna, AI work ko hand-made batakar pesh karna) ka naam le sakta/sakti hoon jinhe sabse zyada consistently serious concern maana jaata hai."
-    ],
-    "nextStep": "Ab aapke paas ek waqai contested area ke liye ek grounded, practical framework hai, na ki bina jaanch-parakh ke apnayi hui ek rai. Module 110 speed painting ki taraf badhta hai — real time constraints ke andar jaldi strong work banane ki ek purely technical skill, jo is arc ke poore toolkit par build karti hai."
+  "hook": "Poore curriculum ka yeh eklauta module hai jahan “ise karne ka sahi tareeka kya hai?” ka imaandaar jawab sach mein vivaadit hai—kaam karne wale artists, courts aur AI companies khud is par ekmat nahi hain. Iske ulat dikhawa karna tumhare liye achchha nahi hoga.",
+  "whyItMatters": [
+    "AI image tools ab kai working artists ke workflow ka asli hissa hain. Inka use reference ikattha karne, jaldi ideas explore karne aur mood board banane ke liye hota hai—un photobashing (Module 107) aur 3D-assisted (Module 108) speed tools ke saath jo tum pehle hi seekh chuke ho. Inhe responsibly use karne ke baare mein professionals aur industry organizations ka nazariya samajhna ab ek practical professional skill hai, optional extra nahi.",
+    "Yeh maamla sach mein abhi suljha nahi hai: artists, legal scholars aur AI companies jaise buniyadi sawaalon par asahmat hain—training data ke liye consent aur meaningful human authorship kise kahenge. Yeh module tumhe ek hi final faisla dene ke bajaye, asal halaat aur practical decision framework deta hai, taaki tum apni samajh-bujh ke saath in sawaalon ko navigate kar sako."
+  ],
+  "coreIdea": [
+    "Is behas ka central aur abhi tak ansuljha sawaal training data hai: AI image generators bahut bade existing image sets se seekhte hain, jinmein se kai original artists ki permission ke bina scrape ki gayi hoti hain. Artists kehte hain ki commissions khona aur unki style ka bina permission istemaal hona asal nuksaan hain; AI companies aur users fair-use arguments aur technology ke transformative nature ki baat karte hain. Duniya bhar ki courts mein kai lawsuits chal rahe hain aur is module ke likhe jaane tak koi ek final jawab tay nahi hua hai.",
+    "U.S. copyright law filhaal ek practical farq karta hai: bina kisi human creative input ke poori tarah AI-generated output par copyright nahi milta. Lekin AI-assisted work mein agar insaan substantial creative control use karta hai (prompts ko baar-baar behtar banana, options chunna, editing, compositing, original elements jodna), to insaan ke banaye hue hisson ko protection mil sakti hai.",
+    "Bade sawaal par tumhara jo bhi nazariya ho, professional guidelines kuch gin-chuni, saaf aur baar-baar dohraayi jaane wali practices par ekmat hain: clients aur audience ko AI ke istemaal ke baare mein batao, kisi specific living artist ki distinctive style ke liye prompt mat karo, raw output ko jaisa hai waisa use karne ke bajaye substantial human creative input jodo, aur platform ya client contract ke AI use se jude khaas rules ka paalan karo.",
+    "AI ka ethical pehlu context ke hisaab se badalta hai. Personal ideation, mood board ya rapid prototyping ke liye AI use karke final kaam khud banana aam taur par problem nahi maana jaata. Iske muqable, AI output ko poori tarah hand-made batana ya commercial faayde ke liye kisi specific living artist ki signature style jaan-boojhkar copy karna, aise maamle hain jin par lagbhag har framework mein sabse zyada aur sanjeeda aitraaz hota hai."
+  ],
+  "mistakes": [
+    "Is sawaal ko kisi ek taraf se suljha hua maan lena—ya to ise bilkul theek kehna ya bilkul mana—jabki yeh sach mein vivaadit maamla hai aur ismein kai taraf se sanjeeda daleelein aur stakeholders hain.",
+    "AI output ko lagbhag bina kisi human input ke jaisa hai waisa hi use karke, phir use poori tarah hand-made kaam batana. Isse tum ek vivaadit gray area se nikal kar seedhe galat bayaani ke daayre mein aa jaate ho.",
+    "Kisi named, living artist ki distinctive style ko unki bhaagidaari ya muawze ke bina commercial use ke liye specifically copy karne wala prompt dena. Professional guidelines mein is practice par sabse zyada aur ek jaisi chetavani di jaati hai.",
+    "Client ya platform ke AI use ke baare mein diye gaye saaf rules ko nazarandaaz karke yeh samajhna ki technology ko lekar tumhari apni sahajta hi eklauta maapdand hai.",
+    "Yeh maan lena ki AI use disclose karne se log tumhare kaam ko kam pasand karenge. Professional guidance aur available research se lagta hai ki transparency ko aam taur par artists ke andeshe se behtar tareeke se liya jaata hai. Baad mein bina bataya gaya use saamne aa jaaye, to bharose ko isse kahin zyada nuksaan hota hai."
+  ],
+  "proTips": [
+    "Agar tum kisi bhi stage par AI use karte ho, to default yahi rakho ki clients ko aur, jahan zaroori ho, audience ko bhi batao. Transparency ko basic professional practice samjho, optional extra nahi.",
+    "AI ko ideation ya reference ke liye use karte waqt uske upar substantial human creative work jodo—soch-samajhkar iterations karo, options ko parakhkar chuno, edit aur composite karo, aur paint over karo. Isse practice ethical taur par zyada mazboot hoti hai aur U.S. mein copyright claim bhi zyada mazboot ho sakta hai.",
+    "Prompt mein kisi specific living artist ka naam lene ke bajaye general style language use karo (jaise “cyberpunk,” “impressionist,” “heavy linework”), taaki professional guidelines mein baar-baar uthne wale ethical concern se bacha ja sake.",
+    "Kisi project par AI use karne se pehle us par laagu terms of service ya contract padh lo. Kai clients, contests aur platforms ke AI use par ab saaf rules hain; baad mein problem aaye to “maine check nahi kiya” koi mazboot safai nahi hogi."
+  ],
+  "practice": {
+    "warmup": "Neeche diye resources mein Graphic Artists Guild ke Ethical Focus aur Transparency sections padho. Phir apne shabdon mein likho ki tumhe kaunsi ek practice sabse zaroori lagti hai aur kyun.",
+    "daily": "Agar tum is hafte ideation ke liye AI tool use karte ho, to chhota sa note rakho ki tumne iska use kaise disclose kiya aur AI output ke upar apna kaunsa human creative work joda.",
+    "weekly": "Kisi ek platform ya contest ki abhi ki AI policy par research karo—jaise portfolio site, competition ya stock art marketplace—aur summarize karo ki woh khaas taur par kya karne ko kehta hai ya kis cheez par rok lagata hai.",
+    "challenge": "Is module mein jo padha hai uske aadhar par apne art mein AI tools ke future use ke liye ek paragraph ki personal policy likho: tum kya karoge aur kya nahi, aur AI use kaise disclose karoge. Legal aur professional landscape badalta rahe, to apni policy par dobara nazar daalte rehna."
   },
+  "quiz": [
+    {
+      "q": "AI art ethics ki behas ke beech mein kaunsa central aur abhi ansuljha sawaal hai?",
+      "options": [
+        "Kya AI software use karna technical taur par mushkil hai",
+        "Kya AI models ko artists ke kaam par unki permission ke bina train kiya gaya, aur iska ethical aur legal matlab kya hai",
+        "AI software ka kaunsa brand sabse tez hai",
+        "Kya digital art, traditional media ke muqable, asli art hai"
+      ],
+      "correct": 1,
+      "explain": "Is maamle ka core aur abhi vivaadit sawaal training data ke liye consent hai: AI image generators bade image sets se seekhte hain, jinmein se kai artists ki saaf permission ke bina scrape ki gayi hoti hain. Is space ki zyadaatar doosri ethical behason ki bunyaad bhi yahi hai."
+    },
+    {
+      "q": "Module mein batayi gayi current U.S. copyright guidance ke mutabik, copyright mil sakne wale AI-assisted work aur copyright na milne wale purely AI-generated work mein kya farq hai?",
+      "options": [
+        "Image save karne ke liye istemaal hua file format",
+        "Kya insaan ne substantial creative control use kiya—jaise baar-baar prompts behtar karna, options chunna, editing karna aur original elements jodna",
+        "AI tool free tha ya paid",
+        "Koi farq nahi; AI se jude sabhi outputs ko ek jaisa maana jaata hai"
+      ],
+      "correct": 1,
+      "explain": "U.S. mein bina human creative input ke purely AI-generated output par copyright nahi milta. Lekin substantial human creative direction aur modification wale AI-assisted work ke insaan ke banaye hisson ko protection mil sakti hai."
+    },
+    {
+      "q": "Professional guidelines mein kis practice ko sanjeeda ethical concern ke taur par sabse lagataar flag kiya jaata hai?",
+      "options": [
+        "Personal mood board ke liye AI use karna",
+        "Commercial faayde ke liye kisi specific living artist ki distinctive style jaan-boojhkar copy karna, ya AI output ko poori tarah hand-made batana",
+        "'Watercolor' ya 'cyberpunk' jaise general style descriptors use karna",
+        "Clients ko AI use ke baare mein batana"
+      ],
+      "correct": 1,
+      "explain": "Commercial use ke liye kisi specific living artist ka naam lekar unki signature style copy karna, aur AI-generated work ko poori tarah hand-made bataana—professional frameworks mein in dono practices par sabse zyada ek-jaisi chinta hoti hai."
+    },
+    {
+      "q": "Clients aur audience ko AI ke istemaal ke baare mein batane par module kya salah deta hai?",
+      "options": [
+        "Disclosure se hamesha bachna chahiye, kyunki isse bharosa hamesha khatam ho jaata hai",
+        "Transparency ko aam taur par zyada safe aur professional baseline maana jaata hai, aur available guidance ke mutabik log ise aksar artists ke andeshe se behtar tareeke se lete hain",
+        "Duniya ke har context mein disclosure kanoonan zaroori hai",
+        "Disclosure sirf bade commercial projects ke liye maayne rakhta hai, chhote personal work ke liye kabhi nahi"
+      ],
+      "correct": 1,
+      "explain": "Professional guidelines disclosure ko lagataar baseline practice ke roop mein recommend karti hain. Available guidance yeh bhi batati hai ki baad mein saamne aaye undisclosed use se, pehle hi khulkar batane ke muqable, bharose ko zyada nuksaan ho sakta hai."
+    },
+    {
+      "q": "Module ke mutabik, AI tools ke kis use ko ethical taur par sabse kam vivaadit maana jaata hai?",
+      "options": [
+        "Raw, bina edit ki hui AI generation ko bina disclosure ke original finished commission ke roop mein bechna",
+        "Human-made final work banane se pehle personal ideation, mood board ya rapid prototyping ke liye AI use karna",
+        "Paid client project ke prompt mein kisi specific living artist ka naam lena",
+        "AI ka aisa koi use nahi jise bina vivaad ka kaha ja sake"
+      ],
+      "correct": 1,
+      "explain": "Human-made final work banane se pehle personal exploration, mood board ya prototyping ke liye AI tools use karna, discuss ki gayi guidelines mein aam taur par lagbhag be-vivaad maana jaata hai. Iske muqable commercial galat bayaani ya kisi artist ki style copy karna zyada concern paida karta hai."
+    }
+  ],
+  "checklist": [
+    "Main training-data consent ki central behas ko artist aur AI company—dono nazariyon se samjha sakta hoon, bina ise suljha hua maane.",
+    "Main bata sakta hoon ki current U.S. guidance mein copyright mil sakne wale AI-assisted work aur copyright na milne wale purely AI-generated work mein aam taur par kya farq hota hai.",
+    "Main pehchaan sakta hoon ki clients/audience ko AI use disclose karna optional extra nahi, balki basic professional practice hai.",
+    "Main un do practices ke naam bata sakta hoon jin par sabse lagataar sanjeeda concern uthta hai: living artist ki style copy karna aur AI work ko hand-made batana."
+  ],
+  "nextStep": "Ab tumhare paas sach mein vivaadit maamle ko samajhne ke liye ek grounded, practical framework hai—koi bina jaanche maan li hui ek hi rai nahi. Module 110 speed painting ki taraf badhta hai: real time constraints ke andar mazboot kaam jaldi banane ki ek purely technical skill, jo is arc ke poore toolkit par aage kaam karti hai."
+},
   "m116": {
-    "hook": "Ek striking speed painting paas se dekhne par aksar messy lagti hai aur room ke doosre kone se hi poori tarah samajh aati hai — aur yahi iska maksad hai, kyunki time limit aapko bade problems solve karne aur chhoti cheezein chhodne par majboor karti hai.",
-    "whyItMatters": [
-      "Speed painting ek deliberate practice constraint hai, aapne jo kuch seekha hai usse bypass karne ka shortcut nahi — yeh aapko composition (Module 83), value (Module 100), aur color (Module 99) ke decisions turant apply karne par majboor karti hai, bina unlimited time ke safety net ke jisme aap un par baar-baar doubt kar sakein.",
-      "Professional pitching mein bhi yeh seedhe kaam aati hai: jab aap illustration ke kai ideas jaldi present karna chahte hain aur abhi sure nahi hain ki sabse strong idea kaunsa hai, speed painting aapko jaldi real, comparable options generate karne deti hai. Yeh Module 87 ki thumbnailing aur iteration skills se seedhe judti hai."
-    ],
-    "coreIdea": [
-      "Speed painting bas ek aisi artwork hai jo ek set time limit ke andar banayi jaati hai, aam taur par 10 se 30 minute ke beech; exact duration se zyada zaroori hai ki aap us limit ko sach mein follow karein, kyunki limit se aage jaane par exercise phir ek ordinary, unconstrained painting ban jaati hai.",
-      "Preparation se speed painting mumkin hoti hai: ek strict timer set karna, brushes aur tools ki limited sankhya use karna taaki unke beech switch karne mein time na lage, aur pehle se limited color palette tayyar karna (color wheel par baar-baar jaane ke bajay, canvas par pehle se maujood colors ko mix karne ke liye eyedropper tool use karna) — yeh sab aise decision points hata dete hain jo warna aapka time lete.",
-      "Clear, confident big shapes aur jaan-boojhkar kuch jagahon par rakhe gaye details speed painting ko complete dikhate hain, bhale hi uska zyada hissa loose ho — thodi si convincing detail aankh ko baaki drawing ka andaza de deti hai, aur har jagah ko ek jaisi detail se render karne ke muqable bahut time bachati hai.",
-      "Speed painting ek structured study tool bhi hai, sirf original ideas banane ki technique nahi: time limit ke andar kisi reference photo ya old master painting ki composition, values, ya color distribution ka study karne se solutions ki ek mental library banti hai (jaise grass suggest karne ka koi khaas tareeka, ya light-to-dark colors ka koi specific relationship), jo baad mein aapke normal, unconstrained kaam ko tez kar deti hai."
-    ],
-    "mistakes": [
-      "Time limit cross kar jana aur is baat ko acknowledge na karna — isse exercise phir ek ordinary painting ban jaati hai aur speed constraint ka maksad khatam ho jaata hai.",
-      "Session ke beech kai brushes, tools, ya techniques switch karna, jisse woh time bachta hi nahi jiske liye poori exercise banayi gayi hai.",
-      "Painting ke har area ko barabar aur poori detail se render karne ki koshish karna, bajay kuch key areas mein thodi si convincing detail par focus karne aur baaki ko loose chhodne ke.",
-      "Speed painting ko sirf finished pieces banane ki technique samajhna, bajay time pressure mein kisi reference ya master painting se composition, value, ya color ke lessons seekhne ke liye structured study tool ke roop mein bhi use karne ke.",
-      "Aisa subject ya reference chunna jo itna complex ho ki time limit ke andar big shapes bhi establish na ho paayen, aur exercise shuru hone se pehle hi nakaam ho jaaye."
-    ],
-    "proTips": [
-      "Shuru karne se pehle sach mein timer set karein, aur agar time limit cross ho jaaye, toh over-time piece ko chupchaap finish karne ke bajay us attempt ko void maankar ek naya attempt shuru karein — jitni zyada speed paintings aap banate hain, aam taur par aapki speed utni hi behtar hoti jaati hai.",
-      "Shuru karne se pehle limited color palette tayyar karein, aur naye colors ko seedhe canvas par pehle se maujood colors se mix karne ke liye color wheel ke bajay eyedropper tool use karein. Yeh tez bhi hai aur palette ko naturally harmonious bhi rakhta hai.",
-      "Chhote canvas size par kaam karein aur detail bhi kam rakhein, khaaskar shuruaat mein — chhota working area naturally aapko bahut jaldi unnecessary detail mein ulajhne se rokta hai.",
-      "Structured study session ke liye har speed painting mein focus karne ke liye ek specific lesson chunein (sirf composition, sirf values, ya sirf color distribution), bajay ek hi baar mein reference ki har cheez study karne ki koshish ke."
-    ],
-    "practice": {
-      "warmup": "Ek hi simple subject ki lagataar teen 10-minute speed paintings banayein; har painting ke liye sirf ek brush aur limited 4-color palette use karein.",
-      "daily": "Koi old master painting ya strong reference photo chunein aur 20-minute speed painting banayein, jisme sirf ek lesson par focus ho: uski composition, uska value structure, ya uski color distribution.",
-      "weekly": "Ek hi concept ke liye teen alag illustration ideas banayein, teen separate 15-minute speed paintings ke roop mein. Phir compare karke decide karein ki aage develop karne ke liye kaunsi direction sabse strong hai.",
-      "challenge": "Ek hi speed painting ko, ek hi time limit ke saath, do baar banayein — pehli baar har cheez ko ek jaisi detail se render karne ki koshish karein, aur doosri baar sirf ek ya do key areas mein detail par focus karein. Phir compare karein ki kaunsi zyada complete lagti hai."
-    },
-    "quiz": [
-      {
-        "q": "Module ke mutabik speed painting ki defining feature kya hai?",
-        "options": [
-          "Ise hamesha watercolor mein banana zaroori hai",
-          "Yeh ek artwork hai jo set time limit ke andar complete ki jaati hai aur us limit ko sach mein follow kiya jaata hai; yeh bas loosely timed painting nahi hoti",
-          "Ismein hamesha landscape dikhana zaroori hai",
-          "Iske liye kam-se-kam 10 alag brushes chahiye"
-        ],
-        "correct": 1,
-        "explain": "Speed painting ki technical definition yeh hai ki uski time limit ho aur usse follow kiya jaaye; limit se aage jaane par woh phir ek ordinary, unconstrained painting ban jaati hai."
-      },
-      {
-        "q": "Speed painting ke liye limited color palette tayyar karna aur eyedropper tool use karna kyun recommend kiya jaata hai?",
-        "options": [
-          "Iska speed par koi khaas asar nahi hota",
-          "Isse full color wheel par baar-baar lautne mein lagne wala time bachta hai, aur canvas se colors mix karne se palette naturally harmonious rehti hai",
-          "Eyedropper tool sirf traditional media mein use kiya ja sakta hai",
-          "Copyright law ke mutabik limited palette zaroori hai"
-        ],
-        "correct": 1,
-        "explain": "Pehle se tayyar limited palette ke andar canvas par pehle se maujood colors ko eyedropper se seedhe mix karne par decision points aur color wheel tak jaane ki zaroorat kam hoti hai, jo warna time limit ka hissa le leti."
-      },
-      {
-        "q": "Thodi si focused detail se speed painting aksar complete kyun lagti hai?",
-        "options": [
-          "Detail kahan rakhi gayi hai, iska artwork ke finished lagne par koi asar nahi hota",
-          "Kuch key areas mein convincing detail aankh ko baaki drawing ka andaza de deti hai, jo har jagah ko ek jaisi detail se render karne se bahut tez hai",
-          "Speed painting ke har hisse mein hamesha barabar detail honi chahiye",
-          "Detail sirf traditional speed painting mein matter karti hai, digital mein nahi"
-        ],
-        "correct": 1,
-        "explain": "Kuch chuni hui jagahon par detail par focus karna aur baaki ko loose chhodna hi artwork ko finished dikhata hai, bhale hi uska zyada hissa jaldi aur kam refinement ke saath banaya gaya ho — aankh convincing hisson ke basis par baaki ko khud samajh leti hai."
-      },
-      {
-        "q": "Original finished pieces banane ke alawa, speed painting ko structured study tool ke roop mein kaise use kiya ja sakta hai?",
-        "options": [
-          "Iska study ke liye use nahi ho sakta, sirf original work ke liye ho sakta hai",
-          "Time limit ke andar kisi reference ya master painting ki composition, values, ya color distribution analyze karke, solutions ki reusable mental library banane ke liye",
-          "Study speed paintings hamesha bina time limit ke banani chahiye",
-          "Yeh sirf color study par lagu hoti hai, composition ya value par nahi"
-        ],
-        "correct": 1,
-        "explain": "Time pressure mein reference ke kisi specific lesson ki speed painting karna (jaise composition ki leading lines, ya value structure) techniques ki mental library banane mein madad karta hai, jo baad mein unconstrained kaam ko tez karti hai."
-      },
-      {
-        "q": "Agar speed painting ka attempt set time limit se aage chala jaaye, toh kya karna chahiye?",
-        "options": [
-          "Kuch nahi; time limits sirf suggestion hoti hain",
-          "Aam taur par us attempt ko void maankar ek naya attempt shuru karna chahiye, bajay over-time piece ko chupchaap finish karne ke",
-          "Har future attempt ke liye time limit hamesha ke liye badha deni chahiye",
-          "Time se aage jaane par bana hua artwork practice ke liye zyada valuable ho jaata hai"
-        ],
-        "correct": 1,
-        "explain": "Time limit ko sach mein follow karna is exercise ka central hissa hai; attempt ko void maane bina (ya naya attempt shuru kiye bina) time se aage jaana speed constraint ka maksad khatam kar deta hai."
-      }
-    ],
-    "checklist": [
-      "Main speed painting session ke liye time limit set karke sach mein usse follow kar sakta/sakti hoon.",
-      "Main limited color palette tayyar karke canvas se naye colors mix karne ke liye eyedropper tool use kar sakta/sakti hoon.",
-      "Main har cheez ko barabar detail se render karne ke bajay kuch key areas mein detail par focus kar sakta/sakti hoon.",
-      "Main reference se kisi ek specific lesson (composition, value, ya color) par focus karne ke liye speed painting ko structured study tool ke roop mein use kar sakta/sakti hoon."
-    ],
-    "nextStep": "Ab aapke paas real time constraints ke andar tezi se aur decisively kaam karne ke liye ek practical toolkit hai. Module 105 isi time-limited discipline ko seedhe master paintings copy karne ki taraf le jaata hai — master studies, technique seekhne ke sabse purane aur bharosemand tareekon mein se ek, jismein aap un artists se seekhte hain jinka kaam pehle hi waqt ki kasauti par khara utar chuka hai."
+  "hook": "Ek striking speed painting paas se dekhne par aksar messy lagti hai, aur room ke doosre kone se hi poori tarah samajh aati hai — aur baat bhi yahi hai. Time limit tumhe bade problems solve karne aur chhoti cheezein chhodne par majboor karti hai.",
+  "whyItMatters": [
+    "Speed painting ek jaan-boojhkar rakhi gayi practice constraint hai, tumne jo kuch seekha hai usse bachne ka shortcut nahi. Yeh tumhe composition (Module 79), value (Module 96), aur color (Module 95) ke decisions turant lene par majboor karti hai — bina unlimited time ke us safety net ke, jisme tum baar-baar apne decisions par doubt kar sako.",
+    "Yeh professional pitching ke liye bhi seedhe kaam aati hai: jab tum illustration ke kai ideas jaldi present karna chahte ho aur abhi sure nahi ho ki sabse strong kaunsa hai, speed painting se tum jaldi real, aapas mein compare kiye ja sakne wale options bana sakte ho. Yeh Module 83 ki thumbnailing aur iteration skills se seedha judi hai."
+  ],
+  "coreIdea": [
+    "Speed painting bas ek aisi artwork hai jo set ki hui time limit ke andar banayi jaati hai. Aksar yeh limit 10 se 30 minutes ke beech hoti hai; exact number se zyada zaroori hai ki tum us par sach mein tikke raho. Limit paar karne par exercise phir ek aam, bina kisi time constraint wali painting ban jaati hai.",
+    "Speed se kaam karne ke liye preparation zaroori hai: pehle se strict timer set karna, brushes aur tools ki limited range rakhna taaki unke beech switch karne mein waqt na jaaye, aur pehle hi limited color palette tayyar karna. Canvas par jo colors pehle se hain unse naye colors mix karne ke liye eyedropper tool use karo; baar-baar color wheel par jaane ki zaroorat nahi padegi. Yeh sab aise decisions hata dete hain jo warna tumhara waqt lete.",
+    "Bade shapes ko clear aur confident rakhna, aur kuch jagahon par soch-samajhkar detail dena — isi se speed painting complete lagti hai, bhale hi uska zyada hissa loose ho. Kuch jagahon par thodi si convincing detail aankh ko baaki drawing ka andaaza de deti hai. Is tarah har jagah ek jaisi detail render karne ke muqable bahut waqt bachta hai.",
+    "Speed painting structured study tool bhi hai, sirf original ideas banane ki technique nahi. Time limit ke andar kisi reference photo ya old master painting ki composition, values, ya color distribution study karne se tumhare dimaag mein solutions ka ek mental library banta hai — jaise grass dikhane ka koi khaas tareeqa, ya light aur dark colors ke beech ek specific relationship. Baad mein tumhara normal, bina time limit wala kaam isse tez ho jaata hai."
+  ],
+  "mistakes": [
+    "Time limit paar kar jaana aur is baat ko maan-na nahi. Isse exercise phir ek aam painting ban jaati hai aur speed constraint ka maksad hi khatam ho jaata hai.",
+    "Session ke beech kai brushes, tools, ya techniques badalte rehna. Isse wahi waqt barbaad hota hai jise bachane ke liye poori exercise banayi gayi hai.",
+    "Kuch chuninda jagahon par thodi si convincing detail dene aur baaki hissa loose chhodne ke bajaye, painting ke har area ko ek jaisi aur poori detail mein render karne ki koshish karna.",
+    "Speed painting ko sirf finished pieces banane ki technique samajhna, aur reference ya master painting se composition, value, ya color ke lessons time pressure ke andar seekhne ke structured study tool ke roop mein use na karna.",
+    "Aisa subject ya reference chunna jo itna complex ho ki time limit ke andar uske bade shapes bhi na ban paayen. Isse exercise shuru hone se pehle hi apna maksad kho deti hai."
+  ],
+  "proTips": [
+    "Shuru karne se pehle sach mein timer lagao. Agar time limit paar ho jaaye, toh chupchaap over-time piece finish karne ke bajaye us attempt ko void samjho aur naya attempt shuru karo. Jitni zyada speed paintings tum karoge, aam taur par utni hi tezi se kaam karne lagoge.",
+    "Shuru karne se pehle limited color palette tayyar karo, aur naye colors mix karne ke liye color wheel ke bajaye eyedropper tool use karo. Canvas par jo colors pehle se hain unse seedha mix karna tez hota hai aur palette ko naturally harmonious bhi rakhta hai.",
+    "Canvas size chhota rakho aur detail ki quantity bhi kam rakho, khaaskar shuruat mein. Chhoti working area se tum bahut jaldi bekaar ki details mein ulajhne se bachoge.",
+    "Structured study session ke liye har speed painting mein ek hi specific lesson par focus karo — sirf composition, sirf values, ya sirf color distribution. Ek hi baar mein reference ki har cheez study karne ki koshish mat karo."
+  ],
+  "practice": {
+    "warmup": "Ek hi simple subject ki teen 10-minute speed paintings lagataar banao. Har painting ke liye sirf ek brush aur limited 4-color palette use karo.",
+    "daily": "Koi old master painting ya strong reference photo chuno aur 20-minute speed painting banao. Sirf ek lesson par focus karo: uski composition, value structure, ya color distribution.",
+    "weekly": "Ek hi concept ke liye teen alag illustration ideas banao — har idea ki apni 15-minute speed painting. Phir unhe compare karke decide karo ki aage develop karne ke liye kaunsi direction sabse strong hai.",
+    "challenge": "Ek hi time limit ke saath ek hi speed painting do baar banao. Pehli baar har cheez ko ek jaisi detail mein render karne ki koshish karo; doosri baar detail sirf ek ya do key areas mein rakho. Phir compare karo ki inmein se kaunsi zyada complete lagti hai."
   },
+  "quiz": [
+    {
+      "q": "Module ke mutabik speed painting ki pehchaan kya hai?",
+      "options": [
+        "Use hamesha watercolor mein banana zaroori hai",
+        "Yeh ek artwork hai jo set time limit ke andar poori ki jaati hai aur us limit ka sach mein paalan hota hai; bas halka-phulka time dekhkar banayi gayi painting nahi",
+        "Ismein hamesha landscape dikhana zaroori hai",
+        "Iske liye kam se kam 10 alag brushes chahiye"
+      ],
+      "correct": 1,
+      "explain": "Speed painting ki technical pehchaan yeh hai ki uski time limit ho aur tum us par tike raho. Limit paar karne par woh phir ek aam, bina time constraint wali painting ban jaati hai."
+    },
+    {
+      "q": "Speed painting ke liye limited color palette pehle tayyar karna aur eyedropper tool use karna kyun suggest kiya jaata hai?",
+      "options": [
+        "Isse speed par koi khaas farq nahi padta",
+        "Isse baar-baar poore color wheel par jaane mein lagne wala waqt bachta hai, aur canvas se colors mix karne par palette naturally harmonious rehti hai",
+        "Eyedropper tool sirf traditional media mein use kiya ja sakta hai",
+        "Copyright law ke mutabik limited palette zaroori hai"
+      ],
+      "correct": 1,
+      "explain": "Pehle se tayyar limited palette ke andar canvas par maujood colors se eyedropper ke zariye naye colors mix karne se extra decisions aur color wheel par jaane ka waqt bachta hai — warna yeh sab time limit kha jaata."
+    },
+    {
+      "q": "Thodi si, kuch jagahon par concentrated detail se speed painting aksar complete kyun lagti hai?",
+      "options": [
+        "Detail kahan rakhi hai, isse artwork kitni finished lagti hai us par koi asar nahi padta",
+        "Kuch key areas ki convincing detail aankh ko baaki drawing ka andaaza de deti hai. Yeh har cheez ko ek jaisi detail mein render karne se kahin tez hai",
+        "Speed painting ke har hissa mein hamesha ek jaisi detail honi chahiye",
+        "Detail sirf traditional speed painting mein matter karti hai, digital mein nahi"
+      ],
+      "correct": 1,
+      "explain": "Chuninda areas mein detail dena aur baaki ko loose chhodna hi artwork ko finished dikhata hai, bhale hi uska zyada hissa jaldi aur kam refine karke banaya gaya ho. Aankh convincing parts ke basis par baaki hissa khud samajh leti hai."
+    },
+    {
+      "q": "Original finished pieces banane ke alawa, speed painting ko structured study tool ke taur par kaise use kiya ja sakta hai?",
+      "options": [
+        "Isse study ke liye use nahi kar sakte, sirf original work ke liye kar sakte hain",
+        "Time limit ke andar reference ya master painting ki composition, values, ya color distribution analyze karke, solutions ka reusable mental library banana",
+        "Study ke liye speed painting hamesha bina kisi time limit ke karni chahiye",
+        "Iska use sirf color study ke liye hota hai, composition ya value ke liye nahi"
+      ],
+      "correct": 1,
+      "explain": "Reference ke kisi specific lesson — jaise composition ki leading lines ya value structure — ko time pressure ke andar speed painting ke zariye study karne se techniques ka mental library banta hai. Yeh baad mein bina time limit wale kaam ko tez kar sakta hai."
+    },
+    {
+      "q": "Agar speed painting ka attempt set time limit se aage nikal jaaye, toh kya karna chahiye?",
+      "options": [
+        "Kuch nahi; time limit sirf ek suggestion hai",
+        "Aam taur par us attempt ko void samajhkar naya attempt shuru karna chahiye, na ki time limit ke baad chupchaap us piece ko finish karna",
+        "Aage ke sabhi attempts ke liye time limit hamesha badha deni chahiye",
+        "Time se zyada lagane se woh artwork practice ke liye aur valuable ban jaati hai"
+      ],
+      "correct": 1,
+      "explain": "Exercise ke liye time limit ka sach mein paalan karna bahut zaroori hai. Attempt ko void samjhe ya naya shuru kiye bina time se aage kaam karte rehna speed constraint ka maksad khatam kar deta hai."
+    }
+  ],
+  "checklist": [
+    "Main speed painting session ke liye time limit set karke uska sach mein paalan kar sakta/sakti hoon.",
+    "Main limited color palette tayyar kar sakta/sakti hoon aur canvas se naye colors mix karne ke liye eyedropper tool use kar sakta/sakti hoon.",
+    "Main har cheez ko ek jaisi detail mein render karne ke bajaye kuch key areas mein detail rakh sakta/sakti hoon.",
+    "Main reference se kisi ek specific lesson — composition, value, ya color — par focus karte hue speed painting ko structured study tool ke roop mein use kar sakta/sakti hoon."
+  ],
+  "nextStep": "Ab tumhare paas real time constraints ke andar fast aur decisive tareeke se kaam karne ke liye ek solid toolkit hai. Module 111 isi time-limited discipline ko seedha master paintings copy karne par lagata hai — master studies, jo technique seekhne ke sabse purane aur bharosemand tareeqon mein se ek hain; inke zariye tum un artists se seekh sakte ho jinka kaam waqt ki kasauti par khara utra hai."
+},
   "m117": {
-    "hook": "Ek artist ne bina kisi specific goal ke 50 se zyada master paintings copy ki, aur usne jo ek cheez asal mein seekhi, woh yeh thi ki galti se har face ko pin-up girl jaisa paint karna, chahe subject kisi bhi gender ka ho — yeh saboot hai ki bina dimaag mein koi clear question rakhe, sirf copy karne se kuch nahi seekha jaata.",
-    "whyItMatters": [
-      "Master studies art history ke sabse purane training methods mein se ek hain. Inka chalan kai sadiyon se hai aur aaj bhi yeh professional training ka standard hissa hain. Iski ek seedhi si wajah hai: ek finished master painting mein composition, color aur technique ke problems pehle se solve hote hain, jinhe sirf trial and error se dhoondhne mein kaafi zyada waqt lagta.",
-      "Yeh module Module 109 ke responsible-use principles se bhi seedha juda hai: master study kisi doosre artist ke kaam se seekhne ka ek well-established aur ethically clear tareeka hai, lekin tabhi jab use ek clearly labeled study ke roop mein dikhaya jaaye, na ki original work ke roop mein pesh ya becha jaaye — is farq ko sirf maan lene ke bajay achchhi tarah samajhna zaroori hai."
-    ],
-    "coreIdea": [
-      "Master study sabse achchhi tab kaam karti hai jab shuru karne se pehle ek specific, chhota learning goal chuna jaaye — jaise kisi piece ka design matrix aur composition, uske color relationships, ya kisi chhote section mein paint application — na ki bina kisi khaas sawaal ke poore canvas ki be-maqsad copy banayi jaaye.",
-      "Design matrix ka study karne ka matlab hai un bade compositional structures ko pehchanna (lead lines, implied lines of action, focal armatures) jinse master ne viewer ki nazar ko guide kiya. Aksar iske liye painting ko paint chhoone se pehle uske bade shapes ke ek simple abstract diagram mein badal diya jaata hai.",
-      "Color study mein finished painting ki optical detail aur blending ko hata kar, uske neeche maujood pure aur simplified hue relationships ko samjha jaata hai — kisi ek alag color ko bilkul match karne ki koshish ke bajay, uske aas-paas ke colors ke muqable uska temperature aur value dekha jaata hai.",
-      "Kisi ek mushkil passage (face, fabric fold, foliage ka patch) par larger scale mein focus karne wali small-section study, aksar poore canvas ki copy se zyada valuable hoti hai, kyunki isse aap dheere kaam karke us ek area ki construction aur paint handling ko sach mein samajh sakte hain."
-    ],
-    "mistakes": [
-      "Bina kisi specific learning goal ke kai master paintings copy karna. Isse kisi artist ki face shapes ya kisi khaas color scheme jaisi surface habits apnane ka risk hota hai, jabki unke peeche koi asli, doosre kaam mein bhi istemaal ho sake aisa lesson nahi hota.",
-      "Kisi alag color ko bilkul match karne ki koshish karna, bajay iske ki dekhein woh aas-paas ke colors ke muqable kaisa hai (lighter, darker, warmer, cooler). Asal kaam mein transfer hone wala judgment yahi hai.",
-      "Master study ko clearly study label karne (jaise, \"Study after [Artist's Name]\") aur source ko credit dene ke bajay, use original composition ki tarah pesh ya share karna.",
-      "Kisi living ya haal hi mein active artist ki specific composition ki direct copy ko, is tarah bechna, exhibit karna ya market karna ki woh aapki apni original creation lage, bina lagu copyright aur reproduction rules check kiye.",
-      "Study poori hone ke baad hi ruk jaana, jabki sabse important aakhri step yeh hai: seekhe gaye ek ya do specific lessons ko baad mein ek sachmuch original composition mein apply karna."
-    ],
-    "proTips": [
-      "Master study shuru karne se pehle likh lein ki aap kis ek specific sawaal ka jawab dhoondhna chahte hain (yeh artist edges ko kaise handle karta hai? Is composition ka focal point kaise bana hai?), taaki baad mein jaanch sakein ki aapne sach mein woh seekha ya nahi.",
-      "Color study karte waqt relational sawaal poochhein (kya yeh apne paas wale color se warmer ya cooler, lighter ya darker hai), bajay iske ki context se alag kisi ek swatch ko bilkul precisely copy karne ki koshish karein.",
-      "Har baar poora canvas copy karne ke bajay, study ke liye ek chhota, specific section chunein (haath, fabric ka patch, foliage ka hissa) aur us par detail mein kaam karein — ek passage ko gehraai se samajhna aksar poore piece ko upar-upar se copy karne se zyada sikhata hai.",
-      "Shared master study ko hamesha clearly label karein (\"Study after [Artist], [Painting Title]\") aur uske baad ek original piece banayein, jismein study ka ek specific lesson kisi naye subject par apply ho."
-    ],
-    "practice": {
-      "warmup": "Apni pasand ki ek painting chunein aur koi bhi mark banane se pehle, uski study ke liye ek single, specific learning goal likhein.",
-      "daily": "Kisi painting ki composition ka quick design-matrix breakdown karein; rough diagram mein use simple shapes aur lead lines tak reduce karein, bina koi color ya detail jode.",
-      "weekly": "Painting ke kisi ek chhote section ki focused master study poori karein (poora canvas nahi), use artist aur title ke saath clearly label karein, aur ek specific technique par focus karein.",
-      "challenge": "Master study poori karne ke baad, ek alag subject par original piece banayein, jismein jaan-boojhkar study ka ek specific lesson (value pattern, limited palette, compositional structure) apply ho."
-    },
-    "quiz": [
-      {
-        "q": "Master study shuru karne se pehle ek specific learning goal chunne ki salah kyun di jaati hai?",
-        "options": [
-          "Iska result par koi khaas asar nahi hota",
-          "Bina clear goal ke copy karne se kisi asli, doosre kaam mein bhi istemaal ho sake aise lesson ke bajay surface habits (khaas face shape, ek particular palette) apnane ka risk hota hai",
-          "Specific goal sirf traditional media ke liye zaroori hai, digital ke liye nahi",
-          "Bina goal ke master studies hamesha kam samay mein poori hoti hain"
-        ],
-        "correct": 1,
-        "explain": "Module mein ek artist ka account batata hai ki usne bina kisi specific goal ke 50 se zyada paintings copy ki aur asli technique ke bajay zyada tar surface habits apnayi. Isi liye pehle se ek focused sawaal chunna zaroori hai."
-      },
-      {
-        "q": "Painting ke \"design matrix\" ka study karne ka kya matlab hai?",
-        "options": [
-          "Painting mein istemaal hue exact colors copy karna",
-          "Bade compositional structures ko pehchanna, jaise lead lines aur focal armatures, jo piece mein viewer ki nazar ko guide karte hain",
-          "Canvas ke physical dimensions naapna",
-          "Sirf istemaal hue paint ke brand ka analysis karna"
-        ],
-        "correct": 1,
-        "explain": "Design matrix ka matlab painting ki underlying compositional structure se hai — lead lines, implied lines of action aur focal armatures. Iska study aksar painting ko uske bade shapes ke ek simple abstract diagram mein badal kar kiya jaata hai."
-      },
-      {
-        "q": "Master painting mein color relationships ka study karte waqt, kisi alag color ko bilkul match karne ke bajay kis cheez ki tulna karni chahiye?",
-        "options": [
-          "Bina context ke exact pixel ya paint values",
-          "Color ka apne paas wale colors se rishta — kya woh lighter, darker, warmer ya cooler hai",
-          "Sirf painting ka sabse zyada saturated color",
-          "Modern palettes mein color ki popularity"
-        ],
-        "correct": 1,
-        "explain": "Color ka apne paas wale colors se rishta (relative lightness, warmth) dekhne se aisa visual judgment banta hai jo original work mein bhi kaam aata hai. Iske bajay, context se alag kisi ek color value ko yaad karne se yeh judgment nahi banta."
-      },
-      {
-        "q": "Module ke mutabik, master study share karte waqt use kis roop mein clearly label karna chahiye?",
-        "options": [
-          "Source ka koi zikr kiye bina ek poori tarah original composition",
-          "Ek study ke roop mein, original artist aur artwork ko credit dete hue, agar unki jaankari ho (jaise, \"Study after [Artist's Name]\")",
-          "Kisi bhi haal mein ise public mein share nahi karna chahiye",
-          "Artist ki apni signature style"
-        ],
-        "correct": 1,
-        "explain": "Master study ko clearly label karna aur original artist ko credit dena, educational practice ko original composition ke roop mein pesh karne se alag dikhata hai. Yeh ek important ethical distinction hai."
-      },
-      {
-        "q": "Module ke mutabik, master study poori karne ke baad recommended final step kya hai?",
-        "options": [
-          "Bas usi goal ke saath ek nayi master study shuru kar dena",
-          "Study se seekhe gaye ek ya do specific lessons ko alag subject wali original composition mein apply karna",
-          "Study poori hone ke baad use delete kar dena",
-          "Bina koi badlaav kiye bilkul wahi study baar-baar karna"
-        ],
-        "correct": 1,
-        "explain": "Master study ka sabse bada faayda tab milta hai jab uske lessons ko naye, original kaam mein transfer kiya jaaye. Source painting ki composition ko dohrane ke bajay, kisi alag subject par ek specific technique ya principle apply karein."
-      }
-    ],
-    "checklist": [
-      "Main master study shuru karne se pehle ek specific learning goal chun sakta/sakti hoon.",
-      "Main painting ke design matrix ko simple compositional shapes mein tod sakta/sakti hoon.",
-      "Main kisi color ko alag se match karne ke bajay, uska apne paas wale colors se rishta dekh sakta/sakti hoon.",
-      "Main master study ko clearly label karke, baad mein uska lesson ek original piece mein apply kar sakta/sakti hoon."
-    ],
-    "nextStep": "Ab aapke paas finished paintings se seekhne ka ek disciplined aur focused tareeka hai. Module 106 advanced compositing techniques par jaata hai, jahan professional level ki polish ke saath kai painted aur photographic elements ko mila kar ek cohesive scene banaya jaata hai."
+  "hook": "Ek artist ne bina kisi khaas goal ke 50 se zyada master paintings copy ki, aur jo ek cheez usne seekhi woh yeh thi ki bina soche har face ko pin-up girl jaisa paint karne laga — gender chahe jo bhi ho. Isse pata chalta hai ki dimaag mein clear sawaal na ho, toh sirf copy karne se kuch nahi seekha jaata.",
+  "whyItMatters": [
+    "Master studies art history ke sabse purane training methods mein se ek hain; yeh sadiyon se chalte aaye hain aur aaj bhi professional training ka standard hissa hain. Wajah seedhi hai: finished master painting mein composition, color, aur technique ke problems pehle se solve hote hain. Sirf trial and error se unhe dhoondhne mein isse kahin zyada waqt lagta.",
+    "Yeh module Module 109 ke responsible-use principles se bhi seedha juda hai: master study kisi doosre artist ke kaam se seekhne ka ek jaana-pehchaana aur ethically clear tareeqa hai, lekin tabhi jab tum use study ke roop mein label karo, apna original work bata kar pesh ya becho nahi. Is farq ko clearly samajhna zaroori hai; ise bas maan lena kaafi nahi."
+  ],
+  "coreIdea": [
+    "Master study tab sabse achchhi hoti hai jab shuru karne se pehle ek specific, chhota learning goal chuna jaaye — jaise artwork ka design matrix aur composition, uske color relationships, ya kisi chhote section mein paint application. Bina kisi khaas sawaal ke poore canvas ki unfocused copy banane se bachna chahiye.",
+    "Design matrix study karne ka matlab hai, bade compositional structures pehchanna — jaise lead lines, implied lines of action, aur focal armatures — jinke zariye master artist ne viewer ki nazar ko guide kiya hai. Aksar paint shuru karne se pehle painting ko uske main shapes ke ek simple abstract diagram mein badal kar yeh study kiya jaata hai.",
+    "Color study mein finished painting ki optical detail aur blending ko hata kar neeche ke simple, asli hue relationships dekhe jaate hain. Kisi ek color ko bilkul exact copy karne ke bajaye yeh compare karo ki woh apne aas-paas ke colors ke muqable kitna warm ya cool, aur kitna light ya dark hai.",
+    "Kisi ek chhote section ki study — jaise face, fabric ki fold, ya foliage ka patch — bade scale par focus karke karna, aksar poore canvas ki copy se zyada kaam aata hai. Isse tum dheere hokar us ek area ki construction aur paint handling ko sach mein samajh sakte ho."
+  ],
+  "mistakes": [
+    "Bina kisi specific learning goal ke dher saari master paintings copy karna. Isse tum asli, doosre kaam mein bhi kaam aane wala lesson seekhne ke bajaye upar-upar ke habits apna sakte ho — jaise kisi artist ke khaas face shapes ya uska color scheme.",
+    "Kisi color ko bilkul exact match karne ki koshish karna, uske aas-paas ke colors ke muqable uska relation — halka, gehra, zyada warm, ya zyada cool — samajhne ke bajaye. Original work mein asal mein yahi judgment kaam aati hai.",
+    "Master study ko original composition ki tarah pesh ya share karna, bajaye iske ki use clearly study label karo, jaise Study after [Artist's Name], aur source ko credit do.",
+    "Kisi living ya haal hi mein active artist ki specific composition ki direct copy ko bechna, exhibit karna, ya market karna is tarah ki log use tumhari original creation samajh sakte hain — bina applicable copyright aur reproduction rules check kiye.",
+    "Study poori karne ke baad wahi ruk jaana, jabki zyada important aakhri step yeh hai ki seekhe hue ek ya do specific lessons baad mein sachmuch original composition par apply karo."
+  ],
+  "proTips": [
+    "Master study shuru karne se pehle likh lo ki tum kis ek specific sawaal ka jawab chahte ho — jaise, yeh artist edges ko kaise handle karta hai? Is composition ka focal point kaise banaya gaya hai? Isse baad mein tum jaanch sakte ho ki tumne waqai woh cheez seekhi ya nahi.",
+    "Color study karte waqt relationship par sawaal karo — kya yeh apne paas wale color se zyada warm ya cool, zyada light ya dark hai? Context se alag ek swatch ko bilkul accurately copy karne ki koshish mat karo.",
+    "Har baar poore canvas ki copy karne ke bajaye, study ke liye koi chhota, specific section chuno — jaise haath, fabric ka patch, ya foliage ka hissa. Ek passage ko gehraai se study karne se aksar poore piece ko upar-upar se copy karne ke muqable zyada seekhne ko milta hai.",
+    "Master study share karte waqt use hamesha clearly label karo — Study after [Artist], [Painting Title] — aur uske baad ek original piece banao, jisme study ka koi ek specific lesson naye subject par apply ho."
+  ],
+  "practice": {
+    "warmup": "Apni pasand ki ek painting chuno. Koi bhi mark banane se pehle us study ke liye ek single, specific learning goal likho.",
+    "daily": "Kisi painting ki composition ka quick design-matrix breakdown banao. Use colors ya details ke bina simple shapes aur lead lines ke rough diagram mein badlo.",
+    "weekly": "Kisi painting ke ek chhote section ki focused master study poori karo, poora canvas nahi. Artist aur title ko clearly label karo, aur sirf ek specific technique par focus karo.",
+    "challenge": "Master study poori karne ke baad, ek alag subject par original piece banao. Study se seekha hua koi ek specific lesson — value pattern, limited palette, ya compositional structure — jaan-boojhkar apply karo."
   },
+  "quiz": [
+    {
+      "q": "Master study shuru karne se pehle ek specific learning goal chunne ki salah kyun di jaati hai?",
+      "options": [
+        "Iska result par koi khaas asar nahi padta",
+        "Bina clear goal ke copy karne par kisi specific face shape ya palette jaise upar-upar ke habits seekhne ka risk hota hai, na ki asli, doosre kaam mein bhi kaam aane wala lesson",
+        "Specific goal sirf traditional media ke liye zaroori hai, digital ke liye nahi",
+        "Bina goal wali master studies hamesha kam waqt mein poori hoti hain"
+      ],
+      "correct": 1,
+      "explain": "Module mein ek artist ka kissa hai jisne bina specific goal ke 50 se zyada paintings copy ki, lekin asli technique ke bajaye zyada tar upar-upar ke habits apnaye. Isi liye pehle se focused sawaal chunna zaroori hai."
+    },
+    {
+      "q": "Painting ke design matrix ko study karne ka kya matlab hai?",
+      "options": [
+        "Painting mein istemal hue exact colors copy karna",
+        "Bade compositional structures pehchanna — jaise lead lines aur focal armatures — jo artwork mein nazar ko guide karte hain",
+        "Canvas ke physical dimensions naapna",
+        "Sirf istemal hue paint ke brand ko analyze karna"
+      ],
+      "correct": 1,
+      "explain": "Design matrix ka matlab painting ki andarooni compositional structure se hai — lead lines, implied lines of action, aur focal armatures. Aksar painting ko uske main shapes ke ek simple abstract diagram mein badal kar iska study kiya jaata hai."
+    },
+    {
+      "q": "Master painting mein color relationships study karte waqt, kisi ek alag color ko bilkul match karne ke bajaye tumhe kya compare karna chahiye?",
+      "options": [
+        "Bina context ke exact pixel ya paint values",
+        "Woh color apne aas-paas ke colors se kaise juda hai — kya woh zyada light, dark, warm, ya cool hai",
+        "Sirf painting ka sabse saturated color",
+        "Aajkal ki palettes mein us color ki popularity"
+      ],
+      "correct": 1,
+      "explain": "Color ka apne aas-paas ke colors se relation compare karne — jaise relative lightness ya warmth — se woh visual judgment banti hai jo original work mein kaam aati hai. Iske bajaye alag-thalag, context ke bina ek color value yaad rakhna itna kaam ka nahi."
+    },
+    {
+      "q": "Module ke mutabik, share karte waqt master study ko clearly kis naam se label karna chahiye?",
+      "options": [
+        "Bina source ka zikr kiye ek poori tarah original composition",
+        "Ek study ke roop mein, aur jahan maloom ho wahan original artist aur artwork ko credit karke; jaise Study after [Artist's Name]",
+        "Kisi bhi haalat mein ise public share nahi karna chahiye",
+        "Artist ki apni signature style"
+      ],
+      "correct": 1,
+      "explain": "Master study ko clearly label karna aur original artist ko credit dena, educational practice ko original composition ke roop mein pesh karne se alag dikhata hai. Yeh ek important ethical farq hai."
+    },
+    {
+      "q": "Module ke mutabik, master study poori karne ke baad sabse aakhri kaam kya karna chahiye?",
+      "options": [
+        "Bas wahi goal rakhkar agli master study shuru kar dena",
+        "Study se seekhe hue ek ya do specific lessons ko alag subject wali original composition par apply karna",
+        "Study poori hone ke baad use delete kar dena",
+        "Bina kisi badlav ke bilkul wahi study baar-baar karna"
+      ],
+      "correct": 1,
+      "explain": "Master study ka sabse zyada faayda tab milta hai jab tum usse seekhe hue lessons ko naye, original work mein le jaate ho. Source painting ki composition ko dohrane ke bajaye koi specific technique ya principle alag subject par apply karo."
+    }
+  ],
+  "checklist": [
+    "Main master study shuru karne se pehle ek specific learning goal chun sakta/sakti hoon.",
+    "Main painting ke design matrix ko simple compositional shapes mein tod sakta/sakti hoon.",
+    "Main kisi color ko alag se match karne ke bajaye uska aas-paas ke colors se relation compare kar sakta/sakti hoon.",
+    "Main master study ko clearly label karke baad mein uska lesson original piece par apply kar sakta/sakti hoon."
+  ],
+  "nextStep": "Ab tumhare paas finished paintings se seekhne ka ek disciplined aur focused tareeqa hai. Module 112 advanced compositing techniques par le jaata hai, jahan kai painted aur photographic elements ko mila kar ek hi cohesive scene banaya jaata hai, professional level ki polish ke saath."
+},
   "m118": {
-    "hook": "Fake composite ka sabse bada giveaway edge ko cleanly cut na karna nahi hota — woh mismatched light hoti hai. Ek professional compositor mask ya blend mode ko touch karne se pehle ise check karta hai.",
-    "whyItMatters": [
-      "Photobashing (Module 75) mein photo elements ko ek piece mein combine karna seekha tha; is module mein professional techniques ko detail mein samjhenge — check layers, layer organization, aur systematic light-and-color matching — jo amateur collage aur aise composite ke beech farq dikhati hain jise viewers ek real scene ke roop mein accept karte hain.",
-      "Compositing mein is arc ki lagbhag har technical skill ek saath aati hai: non-destructive layers aur masks (Module 73), blend modes aur adjustment layers (Module 74), aur photobashing (Module 75) — ye sab milkar ek cohesive professional workflow banate hain."
-    ],
-    "coreIdea": [
-      "Mismatched lighting fake composite ka sabse aam giveaway hoti hai: background photo ki apni lighting ko badalna bahut mushkil hota hai, isliye bharosemand tareeqa ye hai ki background ko fixed reference maanein aur har added element ki light aur color ko uske mutabik adjust karein, na ki iska ulta.",
-      "“Check layers” ek compositor ki technique hai jisse lighting aur color ke mismatches zyada clearly dikhte hain: poori image ke upar Black & White adjustment layer lagane se color hat jata hai aur elements ke beech light-level differences saaf nazar aate hain. Saturated Solid Color Fill layer ko Saturation blend mode par set karne se color mismatches ko pehchanna aasaan hota hai; phir unhe clipped Color Balance ya Curves layer se fix karein.",
-      "Saaf layer organization (sabse neeche fixed base image, beech mein specific elements se clipped adjustment layers, sabse upar final detail work, aur har layer ka clear naam) badhte hue composite ko manageable rakhti hai. Isse aap baaki image ko disturb kiye bina kisi ek element ka match alag se check aur fix kar sakte hain.",
-      "Shadows banane ke liye Multiply layer use karein, jismein color us surface se sample kiya gaya ho jis par shadow padti hai — plain black use na karein. Edges ko halka sa feathering aur low-opacity soft-brush mask se soften karein, na ki unhe hard, sharp edge par paste karein; ye dono chhoti details bhi bade color match jitni hi maayne rakhti hain."
-    ],
-    "mistakes": [
-      "Added element ki lighting ko match karne ke liye background photo ki lighting badalne ki koshish karna, jabki zyada bharosemand tareeqa added element ko fixed background ke mutabik adjust karna hai.",
-      "Full color mein sirf aankhon se color aur light match judge karna, check layers (black & white, saturation) use karne ke bajay, jo dikhati hain ki mismatch exactly kahan ho raha hai.",
-      "Composite elements ko unorganized, unlabeled flat layer stack par chhod dena, jisse baaki sab par asar kiye bina kisi ek element ka match alag se check aur adjust karna mushkil ho jata hai.",
-      "Composite mein cast shadows ke liye plain black use karna, us surface ke color se banayi hui Multiply layer ke bajay jis par shadow padti hai.",
-      "Cut-out element ko hard, bina feather ki hui edge ke saath paste karna. Color aur lighting achchhi tarah match hone par bhi woh saaf nazar aane wala cutout lagta hai."
-    ],
-    "proTips": [
-      "Apne poore composite ke upar shuru mein hi ek temporary Black & White adjustment layer lagayein, taaki light-level mismatches saaf nazar aayein. Levels ko clipped Curves ya Levels layer se correct karne ke baad ise disable kar dein.",
-      "Color-temperature mismatches check karne ke liye Saturation blend mode par set ki hui saturated Solid Color Fill layer ko temporary check ke roop mein use karein. Clipped Color Balance layer se difference correct karne ke baad ise hata dein.",
-      "Composite badhne ke saath har layer ka naam uske content aur purpose ke mutabik clearly rakhein (\"subject\", \"bg_replacement\", \"shadow_multiply\"), taaki baad mein elements ko jaldi dhoondh aur alag kar sakein.",
-      "Cutout selection ko paste karne se pehle thoda sa (2–3 pixels) feather karein, aur hard cutout par hi bharosa karne ke bajay, uski edge ko background mein aur achchhi tarah blend karne ke liye low opacity par soft-brush layer mask use karein."
-    ],
-    "practice": {
-      "warmup": "Ek simple cutout element ko naye background par composite karein, phir ek temporary Black & White check layer add karke dekhein ki dono ke light levels abhi kitne achchhe se match karte hain.",
-      "daily": "Ek photobashed piece lein aur composited element ke neeche Multiply shadow layer add karein (black ke bajay surface se sampled color use karein), taaki element scene mein zyada convincingly grounded lage.",
-      "weekly": "Kam se kam teen alag sources se ek chhota composite banayein. Saaf naam wali, organized layers aur dono check-layer techniques (black & white aur saturation) use karke sabhi elements ki light aur color match karein.",
-      "challenge": "Ek aisa composite lein jisse aap poori tarah khush nahi hain, aur pehle check layers se uski problem diagnose karein — specifically pehchanein ki issue light level, color temperature, edge softness, ya shadow color mein hai — phir koi aur changes karein."
-    },
-    "quiz": [
-      {
-        "q": "Composite mein background photo ko aam taur par fixed reference kyun maana jata hai, bajay iske ki added element se match karne ke liye uski lighting badalne ki koshish ki jaye?",
-        "options": [
-          "Background lighting ka composite ke overall look par koi asar nahi hota",
-          "Background ki apni lighting ko convincingly badalna bahut mushkil hota hai, isliye added element ko uske mutabik adjust karna zyada bharosemand hota hai",
-          "Background images hamesha added elements se zyada high resolution hoti hain",
-          "Background ya added element ko adjust karne mein koi asli farq nahi hota"
-        ],
-        "correct": 1,
-        "explain": "Photographed background ki lighting ko convincingly badalna mushkil hota hai, isliye bharosemand workflow ye hai ki use fixed maanein aur kisi bhi added element ke color aur light ko uske mutabik adjust karein."
-      },
-      {
-        "q": "Compositing mein Black & White adjustment layer aur saturated Solid Color Fill layer (Saturation blend mode par set) kis kaam aati hain?",
-        "options": [
-          "Finished image par lagaye jaane wale permanent final effects",
-          "Temporary “check layers” ke roop mein, jo correction se pehle light-level aur color-temperature mismatches dikhati hain",
-          "Sirf file resolution adjust karne ke tools",
-          "Aisi layers jo image se color data hamesha ke liye delete kar deti hain"
-        ],
-        "correct": 1,
-        "explain": "Inka use temporary diagnostic tools ke roop mein hota hai: Black & White layer light-level differences ko alag se dikhati hai, aur saturated Saturation-blend layer color-temperature differences ko. Jab actual mismatch doosri adjustment layers se correct ho jata hai, tab dono check layers hata di jati hain."
-      },
-      {
-        "q": "Module ke mutabik, composited element ki cast shadow ke liye kaunsa color use karna chahiye?",
-        "options": [
-          "Surface chahe koi bhi ho, pure black",
-          "Jis surface par shadow padti hai, usse sampled color, jo Multiply layer ke zariye lagaya gaya ho",
-          "Kam opacity wala pure white",
-          "Shadow daalne wale element ka bilkul wahi color"
-        ],
-        "correct": 1,
-        "explain": "Jis surface par shadow padti hai, uske color se banayi hui Multiply layer ki shadow, plain black se banayi shadow ke muqable zyada natural aur grounded lagti hai."
-      },
-      {
-        "q": "Composite complex hota jaaye to layers ko clearly organize karne aur unke naam rakhne ki salah kyun di jati hai?",
-        "options": [
-          "Iska koi practical fayda nahi, ye sirf aesthetic preference hai",
-          "Isse composite ke baaki hisson ko affect kiye bina kisi specific element ke light/color match ko jaldi alag karke adjust kar sakte hain",
-          "File format specifications ke mutabik layer names zaroori hote hain",
-          "Organized naming se image resolution apne aap behtar ho jati hai"
-        ],
-        "correct": 1,
-        "explain": "Clearly named aur organized layers se badhte hue composite mein navigate karna bahut aasaan hota hai. Aap baaki sab ko disturb kiye bina ek element ko alag karke adjust kar sakte hain."
-      },
-      {
-        "q": "Cutout selection ko composite mein paste karne se pehle feather karne ki salah kyun di jati hai?",
-        "options": [
-          "Feathering ka final result par koi dikhne wala asar nahi hota",
-          "Thoda sa feathering edge ko soft karta hai, jisse element natural tarike se blend hota hai aur hard-edged cutout jaisa nahi dikhta",
-          "Feathering sirf text layers ke liye relevant hai, photo elements ke liye nahi",
-          "Isse element ka color hamesha ke liye badal jata hai"
-        ],
-        "correct": 1,
-        "explain": "Thoda sa feathering (kuch pixels) cutout ki edge ko soft karta hai, jisse woh naye scene mein zyada naturally blend hota hai aur sharply pasted-in nahi dikhta — chahe color aur lighting pehle se achchhi tarah match hon."
-      }
-    ],
-    "checklist": [
-      "Main composite mein light-level mismatches pehchanne ke liye Black & White check layer use kar sakta/sakti hoon.",
-      "Main color-temperature mismatches pehchanne ke liye saturated Saturation-blend check layer use kar sakta/sakti hoon.",
-      "Main plain black use karne ke bajay, jis surface par shadow padti hai uske color ki Multiply shadow layer bana sakta/sakti hoon.",
-      "Main badhte hue composite mein layers ko organize karke unke clear naam rakh sakta/sakti hoon, taaki elements ko alag se check aur adjust kiya ja sake."
-    ],
-    "nextStep": "Ab aapke paas professional-level compositing toolkit hai. Module 107 technique se aage badhkar identity par focus karta hai — personal style development, aur kaise poore course mein aapke kiye hue choices milkar ek pehchaanne layak artistic voice banana shuru karte hain."
+  "hook": "Fake composite ka sabse bada giveaway kisi edge ko cleanly cut na karna nahi hota—mismatch hoti lighting. Professional compositor mask ya blend mode chhoone se pehle ye check karta hai.",
+  "whyItMatters": [
+    "Photobashing (Module 107) mein tumne photo elements ko ek artwork mein combine karna seekha tha; is module mein hum un specific professional techniques ko aur detail mein dekhenge—check layers, layer organization aur light aur color ko systematically match karna—jo amateur collage aur aise composite ke beech farq laati hain jise viewers ek hi real scene samajhte hain.",
+    "Compositing mein is arc ki lagbhag har technical skill kaam aati hai: non-destructive layers aur masks (Module 105), blend modes aur adjustment layers (Module 106), aur photobashing (Module 107)—ye sab milkar yahan ek cohesive professional workflow banate hain."
+  ],
+  "coreIdea": [
+    "Mismatched lighting fake composite ka sabse common giveaway hai. Background photo ki apni lighting badalna bahut mushkil hota hai, isliye reliable approach ye hai ki background ko fixed reference samjho aur usmein add kiye har element ki light aur color ko uske saath match karo—iska ulta nahi.",
+    "“Check layers” compositor ki ek technique hai, jisse lighting aur color ke mismatches zyada clearly dikhte hain. Har cheez ke upar Black & White adjustment layer lagane se color hat jaata hai aur elements ke light-level differences saamne aa jaate hain. Saturated Solid Color Fill layer ko Saturation blend mode par rakhne se color mismatches dhoondhna aasan hota hai; phir unhe clipped Color Balance ya Curves layer se theek kar sakte ho.",
+    "Saaf layer organization se badhta hua composite manage karna aasan hota hai: neeche fixed base image, beech mein specific elements se clipped adjustment layers, sabse upar final detail work, aur har layer ka clear naam. Isse tum baaki image ko disturb kiye bina kisi ek element ka match alag se dekhkar theek kar sakte ho.",
+    "Shadows banane ke liye plain black ke bajaye Multiply layer use karo aur jis surface par shadow pad rahi hai, usi se color sample karo. Edges ko hard aur sharp chhodne ke bajaye thodi feathering aur low-opacity soft-brush mask se soften karo. Ye chhoti details bhi bade color match jitni hi important hain."
+  ],
+  "mistakes": [
+    "Background photo ki lighting ko added element se match karne ke liye badalne ki koshish karna, jabki zyada reliable tareeqa added element ko fixed background se match karna hai.",
+    "Full color mein sirf aankhon se light aur color match judge karna, check layers (black & white, saturation) use karke ye alag se dekhne ke bajaye ki mismatch exactly kahan hai.",
+    "Composite elements ko bina organize kiye, bina naam wali flat layer stack par chhod dena, jisse baaki sab par asar kiye bina kisi ek element ka match alag se theek karna mushkil ho jaata hai.",
+    "Composite mein cast shadows ke liye plain black use karna, jabki shadow jis surface par padti hai uske color wali Multiply layer use karni chahiye.",
+    "Cut-out element ko hard, unfeathered edge ke saath paste karna. Color aur lighting achchhi tarah match hone par bhi woh saaf cutout jaisa dikhega."
+  ],
+  "proTips": [
+    "Apne poore composite ke upar shuru mein temporary Black & White adjustment layer lagao, taaki light-level mismatches clearly dikh sakein. Levels ko clipped Curves ya Levels layer se theek karne ke baad ise disable kar do.",
+    "Color-temperature mismatches check karne ke liye Saturation blend mode par ek saturated Solid Color Fill layer ko temporary check ke roop mein use karo. Clipped Color Balance layer se farq theek karne ke baad ise hata do.",
+    "Composite badhne ke saath har layer ko uske content aur purpose ke hisaab se clear naam do, jaise “subject”, “bg_replacement”, “shadow_multiply”. Isse baad mein elements ko dhoondhna aur alag karna jaldi hoga.",
+    "Cutout selection ko paste karne se pehle thoda feather karo (2–3 pixels), phir low opacity par soft-brush layer mask use karke uske edge ko background mein aur blend karo. Sirf hard cutout par bharosa mat karo."
+  ],
+  "practice": {
+    "warmup": "Ek simple cutout element ko naye background par composite karo. Phir temporary Black & White check layer lagakar dekho ki dono ke light levels abhi kitne match karte hain.",
+    "daily": "Apne photobashed piece mein composited element ke neeche Multiply shadow layer add karo. Shadow ka color surface se sample karo, black use mat karo, taaki element scene mein zyada naturally grounded lage.",
+    "weekly": "Kam se kam three alag sources se ek chhota composite banao. Saaf naam wali organized layers use karo aur sab elements ki light aur color match karne ke liye dono check-layer techniques (black & white aur saturation) lagao.",
+    "challenge": "Aisa composite lo jisse tum poori tarah khush nahi ho. Pehle check layers se problem diagnose karo—specifically pehchano ki issue light level, color temperature, edge softness ya shadow color ka hai—phir koi aur change karo."
   },
+  "quiz": [
+    {
+      "q": "Composite mein background photo ko usually fixed reference kyun maana jaata hai, bajaye iske ki uski lighting ko added element se match karne ke liye badla jaaye?",
+      "options": [
+        "Background lighting ka composite kaisa dikhta hai, is par koi asar nahi hota",
+        "Background ki apni lighting ko convincingly badalna bahut mushkil hota hai, isliye added element ko usse match karna zyada reliable hai",
+        "Background images hamesha added elements se higher resolution hoti hain",
+        "Background ya added element ko adjust karne mein koi asli farq nahi hota"
+      ],
+      "correct": 1,
+      "explain": "Photographed background ki lighting ko convincingly badalna mushkil hota hai. Isliye reliable workflow mein use fixed rakhte hain aur added element ke color aur light ko usse match karte hain."
+    },
+    {
+      "q": "Compositing mein Black & White adjustment layer aur saturated Solid Color Fill layer (Saturation blend mode par) kis kaam aati hain?",
+      "options": [
+        "Finished image par lagne wale permanent final effects",
+        "Temporary “check layers”, jo correction se pehle light-level aur color-temperature mismatches dikhati hain",
+        "Sirf file resolution adjust karne ke tools",
+        "Aisi layers jo image ka color data permanently delete kar deti hain"
+      ],
+      "correct": 1,
+      "explain": "Ye temporary diagnostic tools hain: Black & White layer light-level differences ko alag se dikhati hai, aur saturated Saturation-blend layer color-temperature differences ko. Asli mismatch ko doosri adjustment layers se theek karne ke baad inhe hata diya jaata hai."
+    },
+    {
+      "q": "Module ke mutabik, composited element ki cast shadow ke liye kaunsa color use karna chahiye?",
+      "options": [
+        "Surface chahe koi bhi ho, pure black",
+        "Jis surface par shadow padti hai, us surface se sample kiya hua color, Multiply layer par lagakar",
+        "Kam opacity wala pure white",
+        "Shadow daalne wale element ka bilkul wahi color"
+      ],
+      "correct": 1,
+      "explain": "Jis surface par shadow padti hai, uske color wali Multiply layer se bani shadow plain black shadow ke muqable zyada natural aur grounded lagti hai."
+    },
+    {
+      "q": "Composite complex hota jaaye toh layers ko clear aur organized naam dena kyun recommend kiya jaata hai?",
+      "options": [
+        "Iska koi practical fayda nahi, bas aesthetic choice hai",
+        "Isse tum baaki composite ko affect kiye bina kisi specific element ka light/color match jaldi se alag karke adjust kar sakte ho",
+        "File format specifications ke mutabik layer names zaroori hain",
+        "Organized naming se image resolution apne aap behtar ho jaati hai"
+      ],
+      "correct": 1,
+      "explain": "Clear naam wali organized layers se badhte hue composite mein navigate karna aasan hota hai. Tum baaki sab ko disturb kiye bina kisi ek element ko alag karke adjust kar sakte ho."
+    },
+    {
+      "q": "Composite mein paste karne se pehle cutout selection ko feather karna kyun recommend kiya jaata hai?",
+      "options": [
+        "Feathering ka final result par koi dikhne wala asar nahi hota",
+        "Thodi feathering edge ko soften karti hai, jisse element natural tarah se blend hota hai aur hard-edged cutout jaisa nahi dikhta",
+        "Feathering sirf text layers ke liye hoti hai, photo elements ke liye nahi",
+        "Isse element ka color permanently badal jaata hai"
+      ],
+      "correct": 1,
+      "explain": "Thodi si feathering (kuch pixels) cutout ka edge soften karti hai aur use naye scene mein zyada naturally blend hone mein madad deti hai. Isse woh sharply pasted-in nahi dikhta, bhale hi color aur lighting achchhi tarah match hon."
+    }
+  ],
+  "checklist": [
+    "Main composite mein light-level mismatches pehchanne ke liye Black & White check layer use kar sakta/sakti hoon.",
+    "Main color-temperature mismatches pehchanne ke liye saturated Saturation-blend check layer use kar sakta/sakti hoon.",
+    "Main plain black use karne ke bajaye, shadow jis surface par padti hai uske color wali Multiply shadow layer bana sakta/sakti hoon.",
+    "Main badhte hue composite mein layers ko organize karke clear naam de sakta/sakti hoon, taaki elements ko alag karke individually adjust kiya ja sake."
+  ],
+  "nextStep": "Ab tumhare paas professional-level compositing toolkit hai. Module 113 technique se identity ki taraf badhta hai—personal style develop karna, aur ye samajhna ki poore course mein tum jo choices karte aaye ho, woh kaise milkar ek pehchaani ja sakne wali artistic voice banaati hain."
+},
   "m119": {
-    "hook": "Koi bhi apni style ke saath paida nahi hota. Style woh hai jo tab saamne aati hai jab aap itne soch-samajhkar choices kar chuke hote hain ki aakhir mein unhe naam de sakte hain—and yeh aisi cheez hai jise aap jaan-boojhkar develop kar sakte hain.",
-    "whyItMatters": [
-      "Is learning arc mein aapne bahut si techniques ke saath kaam kiya: copy karna, bash karna, composite banana aur speed-painting. Kisi point par portfolio aisa dikhna chahiye jaise woh ek hi insaan ne banaya ho. Yeh consistency hi style hai: color, shape, line aur subject mein baar-baar dikhne wali choices, jo aapke kaam ko pehchaanne layak banati hain.",
-      "Yeh Module 109 mein padhi ethics aur Module 105 mein master-study discipline se bhi seedha juda hai: style develop karne ka sustainable tareeqa yeh hai ki aap analyze karein ki aapko kya pasand hai, samjhein ki woh kyun kaam karta hai, aur un elements ko apne subjects ke around dobara build karein—na ki kisi ek living artist ke surface look ki nakal karein."
-    ],
-    "coreIdea": [
-      "Style banti hai; yeh ittefaq se nahi milti. Ek practical method hai ki aap teen aise artists ya styles chunein jo aapko sach mein pasand hain, har ek ki ek favorite image chunein, aur likhein ki har image mein kaunsa ek artistic element sabse pehle aapka dhyaan kheenchta hai, woh kyun dhyaan kheenchta hai, aur artist ne use kaise achieve kiya—specific terms mein, jaise line quality, color relationships, ya light-and-dark structure.",
-      "Agla step hai un analyzed elements ko combine karna—subject matter ko nahi—aur us subject par ek original piece banana jise aap sabse zyada draw karte hain. Kyunki aapne elements soch-samajhkar chune hain, result itna familiar hoga ki kisi tradition ka hissa lage, aur itna alag bhi ki aapka apna lage.",
-      "Style is baat se bhi ubharti hai ki aap kis medium aur subjects ke saath committed rehte hain. Aisa medium chunein jo aapke kaam karne ke tareeqe ko suit kare, apni asli strengths aur interests ka fayda uthayein (agar aap landscape painter hain aur figures banane mein kamzor hain, toh usse ladne ke bajaye landscapes par focus kar sakte hain), aur sirf personal inspiration ke liye references ka collection banayein—copyright ka respect karte hue.",
-      "Apni style dekhne ke sabse tez tareeqon mein se ek series banana hai. Chhote pieces ki ek series banayein, jahan har piece agle piece ko inform kare aur har piece itna chhota ho ki kuch hi dinon mein finish ho sake. Isse aap jo cheez kaam aayi use aage le ja sakte hain, aur jaldi dekh sakte hain ki aapke apne haath se kaunsi choices baar-baar saamne aati hain."
-    ],
-    "mistakes": [
-      "Kisi ek living artist ke surface look ko poori tarah copy karke use style kehna, bajaye yeh analyze karne ke ki unka kaam kyun kaam karta hai aur un elements ko apne subjects ke around dobara build karne ke.",
-      "'Mujhe pasand hai ki woh faces kaise draw karte hain' jaise vague observations likhna, bajaye line weight, color relationships, edge handling ya lighting ke baare mein specific observations likhne ke.",
-      "Apne favorite artists ke artistic elements ke bajaye unka subject matter combine karna, jisse style ke bajaye mashup banta hai.",
-      "Yeh dekhne ke liye ki kya baar-baar saamne aata hai, kaafi finished work hone se pehle hi style force karne ki koshish karna—pehle pieces ka body banane aur baad mein uska study karne ke bajaye.",
-      "Khud ko bahut jaldi ek box mein band kar lena. Aapki skills badhne ke saath style bhi evolve hoti hai, isliye use fixed samajhne se aap un cheezon ko try karna band kar sakte hain jo aapki style ko behtar bana sakti hain."
-    ],
-    "proTips": [
-      "Har reference image ke liye kam se kam ek poora paragraph likhein. Observation jitni specific hogi, apne kaam mein us element ko dobara build karte waqt woh utni hi zyada useful hogi.",
-      "Nikाले hue elements ko us subject par apply karein jise aap pehle se sabse zyada draw karte hain. Isse aap saaf dekh sakte hain ki kya badla, bajaye ek naya subject aur nayi style dono ek saath seekhne ke.",
-      "Aapas mein related pieces ki chhoti, tezi se banne wali series par kaam karein. Har piece mein pichhle piece ki koi ek kaam aayi cheez aage le jaayein.",
-      "Lagbhag ek darjan finished pieces ke baad unhe side by side rakhein aur likhein ki kya repeat hota hai: colors, textures, shapes, themes. Yehi repeats aapki style hain, aur agla step unhe aur aage push karna hai."
-    ],
-    "practice": {
-      "warmup": "Teen aise artists ya styles ki list banayein jo aapko pasand hain, har ek ki ek favorite image chunein, aur har image ke liye ek specific paragraph likhein ki kaunsa ek element us image ko aapke liye kaam ka banata hai.",
-      "daily": "Aisa subject dobara draw karein jise aap aksar draw karte hain, aur apne teen references mein se kisi ek ka analyzed element use karein—jaise uski line quality ya color relationships.",
-      "weekly": "Ek hi subject par paanch chhote pieces ki series banayein, jahan har piece pichhle piece se informed ho. Phir unki tulna karein ki kaunsi choices baar-baar nazar aati hain.",
-      "challenge": "Apne teen references mein se har ek ka ek element lekar apne favorite subject par ek hi original piece mein combine karein. Phir kisi friend se poochhein ki uske kaunse parts sabse zyada aap jaise lagte hain."
-    },
-    "quiz": [
-      {
-        "q": "Three-artist method mein, chuni hui har reference image ke saath aapko kya karna chahiye?",
-        "options": [
-          "Artist ke haath ko samajhne ke liye image ko bilkul exactly trace karna",
-          "Image ke subject matter ko apne kaam mein copy karna",
-          "Us ek artistic element ko pehchanna jo image ko kaam ka banata hai, aur kya, kyun aur kaise—yeh analyze karna",
-          "Image ko blur karna, jab tak sirf colors na reh jaayein"
-        ],
-        "correct": 2,
-        "explain": "Is method mein aapko har image ka ek standout artistic element dhoondhna aur analyze karna hai: aapka dhyaan kis cheez ne kheencha, kyun kheencha, aur woh kaise achieve ki gayi—taaki aap khud us element ko dobara build kar sakein."
-      },
-      {
-        "q": "Original piece banate waqt aapko apne references se kya combine karna chahiye?",
-        "options": [
-          "Pehchane hue artistic elements, jinhe apne subject par apply karein",
-          "Unka subject matter",
-          "Unke signatures",
-          "Poore compositions ko paste karke ek saath jodna"
-        ],
-        "correct": 0,
-        "explain": "Aap analyzed artistic elements—line quality, color relationships, light structure—ko aise subject mein combine karte hain jise aap aksar draw karte hain; subjects ko nahi. Isse result aapka apna rehta hai."
-      },
-      {
-        "q": "Style dhoondhne ke liye chhote pieces ki series par kaam karna useful kyun hai?",
-        "options": [
-          "Chhote pieces hamesha behtar art hote hain",
-          "Har piece pichhle piece ki kaam aayi cheez ko aage le ja sakta hai, aur baar-baar aane wali choices jaldi nazar aa jaati hain",
-          "Isse fundamentals ki practice ki zaroorat nahi rehti",
-          "Yeh teesre piece tak unique style ki guarantee deta hai"
-        ],
-        "correct": 1,
-        "explain": "Chhote aur jaldi finish hone wale pieces ki series mein har piece agle piece ko inform karta hai. Jo choices baar-baar saamne aati hain, woh dikhati hain ki aapki style kya ban rahi hai."
-      },
-      {
-        "q": "Yeh module style development ko Module 109 ki ethics guidance se kaise jodta hai?",
-        "options": [
-          "Style develop karne ke liye AI tools use karna zaroori hai",
-          "Yeh kisi ek living artist ki jitni ho sake utni nazdeeki se nakal karne ko badhava deta hai",
-          "Ethics sirf commercial work par lagu hoti hain",
-          "Yeh aapki pasand ki cheezon ko analyze karke un elements ko apne subjects ke around dobara build karne se style banata hai, na ki kisi ek living artist ke look ki nakal karke"
-        ],
-        "correct": 3,
-        "explain": "Elements ko analyze karke dobara combine karna style banane ka sustainable aur ethical tareeqa hai. Yeh kisi specific living artist ki distinctive style ki commercial use ke liye nakal karne ke khilaaf pehle di gayi warning ke saath bhi mel khata hai."
-      },
-      {
-        "q": "Lagbhag ek darjan pieces finish karne ke baad, apni style dekhne ka recommended tareeqa kya hai?",
-        "options": [
-          "Sabse kamzor pieces delete kar dena",
-          "Unhe side by side rakhkar un colors, textures, shapes aur themes ki list banana jo baar-baar repeat hote hain",
-          "Software se apni style label karwana",
-          "Kisi doosre medium mein shuru se shuru karna"
-        ],
-        "correct": 1,
-        "explain": "Kaam ke ek body mein baar-baar nazar aane wale elements hi style banate hain. Isliye finished pieces ki tulna karke yeh list banana ki kya repeat hota hai, aapko dikhata hai ki aage kis cheez ko push karna hai."
-      }
-    ],
-    "checklist": [
-      "Main apni pasand ke teen references chun sakta/sakti hoon aur specific tareeqe se bata sakta/sakti hoon ki har reference mein kaunsa ek element use kaam ka banata hai.",
-      "Main analyzed elements ko—subject matter ko nahi—ek original piece mein combine kar sakta/sakti hoon.",
-      "Main apni choices mein se kaunsi baar-baar saamne aati hain, yeh dekhne ke liye chhoti pieces ki series use kar sakta/sakti hoon.",
-      "Main samjha sakta/sakti hoon ki elements ko analyze karke dobara build karna, kisi ek living artist ki nakal karne ke muqable style banane ka zyada sustainable tareeqa kyun hai."
-    ],
-    "nextStep": "Ab aapke paas scattered techniques ko ek pehchaanne layak voice mein badalne ka method hai. Module 108, Advanced Digital Art ka capstone hai: ek finished piece jo non-destructive workflow, color grading, photobashing ya 3D assistance, compositing aur aapki ubharti hui style ko ek saath combine karta hai."
+  "hook": "Kisi ki style ek subah uthte hi nahi ban jaati. Style woh hai jo itne saare soch-samajhkar kiye gaye choices ke baad saamne aati hai ki tum aakhir unhe naam de sako—and ye tum jaan-boojhkar develop kar sakte ho.",
+  "whyItMatters": [
+    "Is arc mein tumne bahut si techniques ke through copy karna, bash karna, composite karna aur speed-paint karna seekha. Kisi point par portfolio ko aisa lagna chahiye jaise woh ek hi insaan ne banaya ho. Ye consistency hi style hai: color, shape, line aur subject mein baar-baar dikhne wale woh choices jo tumhare kaam ko pehchaan dete hain.",
+    "Ye Module 109 mein padhi ethics aur Module 111 ki master-study discipline se bhi seedha juda hai. Sustainable tareeqe se style develop karne ke liye, jin cheezon ki tum tareef karte ho unka analysis karo, samjho ki woh kyun kaam karti hain, aur un elements ko apne subjects ke around naye tareeqe se banao—kisi ek living artist ke surface look ki naqal mat karo."
+  ],
+  "coreIdea": [
+    "Style banti hai; woh achanak nahi milti. Ek practical tareeqa hai teen aise artists ya styles chunna jo tumhe sach mein pasand hon, har ek ka ek favorite image pick karna, aur likhna ki us image ka kaunsa ek artistic element sabse pehle tumhara dhyaan kheenchta hai, woh kyun kheenchta hai, aur artist ne use kaise banaya. Specific terms mein likho, jaise line quality, color relationships ya light-and-dark structure.",
+    "Agla step un analyzed elements ko combine karna hai, subject matter ko nahi, aur unhe us original piece mein use karna hai jiska subject tum sabse zyada draw karte ho. Kyunki tumne elements soch-samajhkar chune hain, result itna familiar hoga ki ek tradition ka hissa lage, aur itna alag bhi hoga ki tumhara apna lage.",
+    "Style us medium aur subjects se bhi ubharti hai jin par tum commitment ke saath kaam karte ho. Aisa medium chuno jo tumhare kaam karne ke tareeqe ko suit kare, aur apni asli strengths aur interests ko use karo. Agar landscape painter ko figures banane mein mushkil hoti hai, toh usse figures ke saath struggle karne ke bajaye landscapes par focus kar sakta hai. Personal inspiration ke liye reference collection rakho aur copyright ka dhyaan rakho.",
+    "Series banana apni style pehchanne ke sabse tez tareeqon mein se ek hai. Chhote pieces ki ek series banao—har piece agle ko inform kare aur itna chhota ho ki kuch dino mein finish ho sake. Isse jo cheez kaam aayi, use aage le ja paoge aur jaldi dikhne lagega ki tumhare apne kaam mein kaunse choices baar-baar aa rahe hain."
+  ],
+  "mistakes": [
+    "Kisi ek living artist ke surface look ki poori naqal karke use apni style kehna, bajaye ye samajhne ke ki unka kaam kyun kaam karta hai aur un elements ko apne subjects ke around naye tareeqe se banane ke.",
+    "“Mujhe pasand hai woh faces kaise draw karte hain” jaisi vague observations likhna, bajaye line weight, color relationships, edge handling ya lighting ke baare mein specific baatein likhne ke.",
+    "Favorite artists ke artistic elements ke bajaye unke subject matter ko combine karna, jisse style ke bajaye mashup banta hai.",
+    "Apne finished work mein baar-baar dikhne wali cheezein pehchanne jitna kaam karne se pehle hi style ko force karna, bajaye pehle kai pieces banakar baad mein unka study karne ke.",
+    "Bahut jaldi khud ko ek hi cheez tak baandh lena. Skills badhne ke saath style bhi evolve hoti hai, isliye use fixed samajhna tumhe aisi cheezein try karne se rok sakta hai jo use behtar banayein."
+  ],
+  "proTips": [
+    "Har reference image ke liye kam se kam ek poora paragraph likho. Observation jitni specific hogi, apne kaam mein us element ko naye tareeqe se banate waqt utni hi kaam aayegi.",
+    "Nikala hua element us subject par apply karo jise tum pehle se sabse zyada draw karte ho. Isse tum clearly dekh paoge ki kya badla, bajaye iske ki tum ek saath naya subject aur nayi style seekho.",
+    "Related pieces ki chhoti, fast series par kaam karo. Har piece mein pichhle piece ki ek kaamyaab cheez aage le jao.",
+    "Lagbhag ek dozen finished pieces ke baad unhe side by side rakho aur likho ki kya repeat hota hai: colors, textures, shapes, themes. Yehi repeats tumhari style hain; ab agla step unhe aur aage le jaana hai."
+  ],
+  "practice": {
+    "warmup": "Teen aise artists ya styles list karo jo tumhe pasand hain. Har ek ka ek favorite image chuno aur uske liye ek specific paragraph likho ki uska kaunsa ek element tumhare liye kaam karta hai.",
+    "daily": "Aisa subject dobara draw karo jise tum aksar draw karte ho, aur apne teen references mein se ek ka analyzed element use karo—jaise uski line quality ya color relationships.",
+    "weekly": "Ek hi subject par paanch chhote pieces ki series banao, har piece mein pichhle piece se seekhi hui cheez use karo. Phir compare karke dekho ki kaunse choices baar-baar nazar aa rahe hain.",
+    "challenge": "Apne teen references mein se har ek ka ek element lekar apne favorite subject par ek original piece banao. Phir kisi dost se poochho ki usmein kaunse parts use sabse zyada tumhare jaise lagte hain."
   },
+  "quiz": [
+    {
+      "q": "Three-artist method mein, chuni hui har reference image ke saath tumhe kya karna chahiye?",
+      "options": [
+        "Artist ka hand seekhne ke liye image ko bilkul trace karna",
+        "Uske subject matter ko apne kaam mein copy karna",
+        "Us ek artistic element ko pehchanna jo image ko kaamyaab banata hai, aur analyze karna ki kya, kyun aur kaise",
+        "Image ko blur karna, jab tak sirf colors na reh jaayein"
+      ],
+      "correct": 2,
+      "explain": "Is method mein har image ka woh ek standout artistic element dhoondhna hai, phir analyze karna hai ki tumhara dhyaan kis cheez ne kheencha, kyun kheencha aur woh kaise achieve ki gayi, taaki tum us element ko khud naye tareeqe se bana sako."
+    },
+    {
+      "q": "Original piece banate waqt references se kya combine karna chahiye?",
+      "options": [
+        "Pehchane hue artistic elements, apne subject par apply karke",
+        "Unka subject matter",
+        "Unke signatures",
+        "Pasted-together poori compositions"
+      ],
+      "correct": 0,
+      "explain": "Tum analyzed artistic elements (line quality, color relationships, light structure) ko us subject par combine karte ho jise tum aksar draw karte ho—not unke subjects ko. Isse result tumhara apna rehta hai."
+    },
+    {
+      "q": "Style dhoondhne ke liye chhote pieces ki series par kaam karna kyun useful hai?",
+      "options": [
+        "Chhote pieces hamesha behtar art hote hain",
+        "Har piece mein pichhle piece ki kaamyaab cheez aage le ja sakte ho, aur baar-baar aane wale choices jaldi dikhne lagte hain",
+        "Isse fundamentals ki practice ki zaroorat nahi rehti",
+        "Ye teesre piece tak unique style ki guarantee deta hai"
+      ],
+      "correct": 1,
+      "explain": "Chhote pieces ki fast series mein har piece agle ko inform karta hai. Jo choices baar-baar repeat hoti hain, woh dikhati hain ki tumhari style kya ban rahi hai."
+    },
+    {
+      "q": "Ye module style development ko Module 109 ki ethics guidance se kaise jodta hai?",
+      "options": [
+        "Style develop karne ke liye AI tools use karne zaroori hain",
+        "Ye kisi ek living artist ki jitni mumkin ho utni naqal karne ko kehta hai",
+        "Ethics sirf commercial work par lagu hoti hai",
+        "Ye tumhari pasand ki cheezon ka analysis karke un elements ko apne subjects ke around dobara banane se style develop karta hai, kisi ek living artist ke look ki naqal karne se nahi"
+      ],
+      "correct": 3,
+      "explain": "Elements ko analyze karke naye tareeqe se combine karna style develop karne ka sustainable aur ethical tareeqa hai. Ye pehle di gayi us warning ke mutabik hai ki commercial use ke liye kisi specific living artist ki distinctive style ki naqal na karo."
+    },
+    {
+      "q": "Lagbhag ek dozen pieces finish karne ke baad, apni style dekhne ka recommended tareeqa kya hai?",
+      "options": [
+        "Sabse kamzor pieces delete karna",
+        "Unhe side by side rakhkar un colors, textures, shapes aur themes ki list banana jo baar-baar dikhte hain",
+        "Software se apni style label karwana",
+        "Kisi doosre medium mein dobara shuru karna"
+      ],
+      "correct": 1,
+      "explain": "Kaam ke ek collection mein baar-baar dikhne wale elements hi style banate hain. Finished pieces compare karke aur repeats list karke tum dekh sakte ho ki kis cheez ko aur aage le jaana hai."
+    }
+  ],
+  "checklist": [
+    "Main teen pasandida references chun kar specifically bata sakta/sakti hoon ki har ek ka kaunsa ek element use kaamyaab banata hai.",
+    "Main analyzed elements ko subject matter ke bajaye ek original piece mein combine kar sakta/sakti hoon.",
+    "Main chhoti pieces ki series se dekh sakta/sakti hoon ki mere kaunse choices baar-baar dikhte hain.",
+    "Main samjha sakta/sakti hoon ki kisi ek living artist ki naqal karne ke bajaye elements ko analyze karke naye tareeqe se banana, style develop karne ka zyada sustainable tareeqa kyun hai."
+  ],
+  "nextStep": "Ab tumhare paas technique ke alag-alag pieces ko ek pehchaani ja sakne wali voice mein badalne ka tareeqa hai. Module 114 Advanced Digital Art ka capstone hai: ek finished piece jismein non-destructive workflow, color grading, photobashing ya 3D assistance, compositing aur tumhari ubharti hui style sab combine hote hain."
+},
   "m120": {
-    "hook": "Ab aapke paas ek non-destructive file, color grade, composite aur 3D tricks, speed discipline, master-study habits aur apni style ki shuruaat hai. Capstone ek sawaal poochta hai: kya aap in sabko ek hi piece par saath mein use kar sakte hain, bina inmein se kisi par bhi control khoye?",
-    "whyItMatters": [
-      "Yeh Advanced Digital Art ko usi tarah complete karta hai jaise Modules 90 aur 100 ne apne arcs complete kiye the: koi nayi theory nahi, bas ek finished piece jo har skill ko milkar kaam karne par majboor karta hai. Portfolios finished work se bante hain, aur real scope aur time limits ke andar kaam karna woh skill hai jiske liye studios asal mein hire karte hain.",
-      "Yeh aapko sabse saaf diagnostic bhi deta hai. Alag-alag exercises weak spots chhupa deti hain; ek full piece saamne laata hai ki Modules 73–119 ki kaunsi skill filhaal aapko rok rahi hai, jisse aapko bilkul pata chalta hai ki agla training kis cheez ki karna hai."
-    ],
-    "coreIdea": [
-      "Ek sentence ke brief aur realistic scope se shuru karein. Aisa piece chunein jise aap apne paas maujood samay mein poori care ke saath finish kar saken, phir uske hisaab se peeche se planning karein, kyunki bahut zyada ambitious scope capstone pieces ke lighting aur finishing tak pahunchne se pehle atak jaane ki sabse aam wajah hai.",
-      "Pehli layer se hi file ko non-destructively build karein (Module 73): imported elements ke liye Smart Objects, tone aur color ke liye adjustment layers, eraser ki jagah masks, aur clearly named layers, taaki process ke aakhri hisson mein bhi kisi ek decision par dobara kaam kiya ja sake.",
-      "Speed tools ko soch-samajhkar use karein aur unke istemal ke baare mein imaandari se batayein. Tay karein ki photobashing (113), 3D blockout (114), ya dono mein se koi bhi nahi—brief ke liye sahi hai, AI assistance ka istemal Module 109 ke disclosure practices ke mutabik rakhein, aur har cheez par paint karein taaki lighting aur edges aapke apne hon.",
-      "Detail polish karne se pehle check layers (Module 106) ka use karke light aur color match karein, poore piece ko stacked adjustment layers (Module 74) se grade karein, aur kisi ek reference ko copy karne ke bajay Module 107 se aapke apne baar-baar nazar aane wale choices ko final look guide karne dein."
-    ],
-    "mistakes": [
-      "Itna bada scope chunna ki mood, lighting aur finishing jaldi-jaldi ki jaaye ya chhod di jaaye.",
-      "File ko jaldi flatten ya rasterize kar dena, jisse baad mein koi bhi revision mehenga padta hai.",
-      "Light aur color match karne se pehle detail polish karna, jisse un elements par mehnat lagti hai jinhein baad mein badalna padta hai.",
-      "Photo, 3D ya AI-assisted elements ko scene ki light ke mutabik adjust kiye bina use karna, ya unke istemal ke baare mein saaf na batana.",
-      "Finished piece ko process ka aakhri padav samajhna, bajay iske ki uska use apni sabse kamzor skill pehchanne ke liye kiya jaaye."
-    ],
-    "proTips": [
-      "Brief aur apna time budget working file ke top par likhein, aur har session se pehle unhein check karein, taaki scope creep ko jaldi pakad saken.",
-      "Finished piece ke saath thumbnails ka ek spread aur ek early block-in bhi save karein. Process dikhana portfolio piece ko credible banane ka ek hissa hai.",
-      "Check-layer routine (black and white, phir saturation) kam-se-kam do baar karein: ek baar block-in ke waqt aur ek baar final polish se pehle.",
-      "Finish karne ke baad piece ko Modules 73–119 ki checklists ke hisaab se score karein aur agle step mein jaan-boojhkar train karne ke liye apna ek sabse kamzor area chunein."
-    ],
-    "practice": {
-      "warmup": "Apne capstone ke liye ek sentence ka brief aur time budget likhein, aur list karein ki Modules 73–119 ki kaunsi techniques use hongi aur kaunsi jaan-boojhkar use nahi hongi.",
-      "daily": "Har session mein ek stage par kaam karein: thumbnails aur block-in, phir composite ya 3D base, phir light aur color matching, phir grade aur finishing.",
-      "weekly": "Non-destructive layered file ke saath ek finished piece complete karein, aur apne thumbnails, early block-in aur layered working file sambhal kar rakhein.",
-      "challenge": "Finished piece ko Modules 73–119 ki har checklist ke hisaab se imaandari se score karein, apni ek sabse kamzor skill ka naam batayein, aur use behtar karne ke liye agla ek specific exercise likhein."
-    },
-    "quiz": [
-      {
-        "q": "Capstone ki shuruaat kis cheez se honi chahiye?",
-        "options": [
-          "Jitni detailed rendering aap kar sakte hain, usse",
-          "Ek sentence ke brief aur aapke time budget ke liye realistic scope se",
-          "Kisi purane piece ki flattened copy se",
-          "Kisi random preset se"
-        ],
-        "correct": 1,
-        "explain": "Ek clear brief aur aisa scope jise aap sach mein finish kar saken, baad ke har decision ko ek maqsad deta hai aur lighting aur finishing se pehle time khatam ho jaane ki aam problem ko rokta hai."
-      },
-      {
-        "q": "File ko shuru se non-destructively kyun build karna chahiye?",
-        "options": [
-          "Isse file chhoti hoti hai",
-          "Taaki kaam ko dobara banaye bina kisi bhi decision ko baad mein revise kiya ja sake",
-          "Export karne ke liye yeh zaroori hai",
-          "Isse masks ki zaroorat nahi rehti"
-        ],
-        "correct": 1,
-        "explain": "Smart Objects, adjustment layers aur masks har decision ko editable rakhte hain, jo isliye zaroori hai kyunki real production mein revisions aam baat hain."
-      },
-      {
-        "q": "Composite piece ko polish karne ka sahi order kya hai?",
-        "options": [
-          "Pehle fine detail, phir light aur color match karein",
-          "Pehle check layers se light aur color match karein, phir detail polish karein",
-          "Pehle export karein, phir adjust karein",
-          "Koi bhi color work karne se pehle texture add karein"
-        ],
-        "correct": 1,
-        "explain": "Light aur color ka mismatch fake composite ko pehchanne ka sabse bada sanket hota hai, isliye detail par mehnat karne se pehle unhein theek karna zaroori hai."
-      },
-      {
-        "q": "Capstone mein AI assistance ya photo aur 3D elements ko kis tarah handle karna chahiye?",
-        "options": [
-          "Bina bataye aur bina adjust kiye use karein",
-          "Un par paint karke aur unhein scene se match karke, aur AI ke kisi bhi use ka disclosure Module 109 ke mutabik karein",
-          "Har case mein unka istemal poori tarah avoid karein",
-          "Speed ke liye unhein bina badle chhod dein"
-        ],
-        "correct": 1,
-        "explain": "Har imported element ko paint karke aur light match karke integrate karna chahiye, aur AI-assisted use ko pehle discuss ki gayi disclosure practices ke mutabik hona chahiye."
-      },
-      {
-        "q": "Finished capstone ko baad mein use karne ka behtareen tareeqa kya hai?",
-        "options": [
-          "Bina soche-vichare aage badh jaana",
-          "Use Modules 73–119 ki checklists ke hisaab se score karke train karne ke liye ek sabse kamzor skill chunna",
-          "Sirf doosre logon ke finished pieces se compare karna",
-          "Layered file delete kar dena"
-        ],
-        "correct": 1,
-        "explain": "Finished piece ko har checklist ke hisaab se check karne se woh ek diagnostic ban jaata hai, jo aapko bilkul batata hai ki agla practice kis cheez ka karna hai."
-      }
-    ],
-    "checklist": [
-      "Main shuru karne se pehle ek sentence ka brief aur realistic scope likh sakta/sakti hoon.",
-      "Main pehli layer se final grade tak piece ko poori tarah non-destructive rakh sakta/sakti hoon.",
-      "Main polish karne se pehle check layers ka use karke alag-alag sources ki light aur color match kar sakta/sakti hoon.",
-      "Main finished piece ko arc ki checklists ke hisaab se score karke apni sabse kamzor skill ka naam bata sakta/sakti hoon."
-    ],
-    "nextStep": "Aapne Advanced Digital Art complete kar liya hai: non-destructive foundation se lekar grading, photobashing, 3D assistance, speed, master studies, compositing aur personal style ki shuruaat tak. Ye skills aage Professional Production mein kaam aayengi, jahan inka istemal comics, manga, webtoon aur game art jaise specialization pipelines mein hoga."
+  "hook": "Ab tumhare paas ek non-destructive file, color grade, composite aur 3D tricks, speed ki discipline, master-study ki aadatein aur apni style ki shuruaat hai. Capstone ek sawaal poochta hai: kya tum in sabko ek hi piece mein saath laa sakte ho, bina kisi par control khoye?",
+  "whyItMatters": [
+    "Yeh Advanced Digital Art ko usi tarah close karta hai jaise Modules 86 aur 100 ne apne arcs close kiye the: koi nayi theory nahi, bas ek finished piece jo har skill se milkar kaam karwata hai. Portfolio finished work se banta hai, aur real scope aur time limits ke andar kaam karna wahi skill hai jiske liye studios hire karte hain.",
+    "Yeh tumhe apni skills ka sabse clear diagnosis bhi deta hai. Alag-alag exercises weak spots chhupa sakti hain; ek full piece saamne laata hai ki Modules 105–119 mein se kaunsi skill abhi tumhe rok rahi hai. Isse tumhe pata chalta hai ki aage kis cheez ki practice karni hai."
+  ],
+  "coreIdea": [
+    "Ek sentence ke brief aur realistic scope se shuru karo. Aisa piece chuno jise tum apne paas maujood waqt mein dhyaan se finish kar sako, phir uske hisaab se plan banao. Capstone pieces lighting aur finishing tak pahunchne se pehle ruk jaate hain, iska sabse common reason hota hai scope ka zaroorat se zyada ambitious hona.",
+    "Pehli layer se hi file ko non-destructively banao (Module 105): imported elements ke liye Smart Objects, tone aur color ke liye adjustment layers, eraser ki jagah masks, aur layers ke clear naam—taaki process ke aakhir mein bhi kisi ek decision ko wapas badla ja sake.",
+    "Speed tools ko soch-samajhkar use karo aur unke baare mein honestly batao. Brief ke hisaab se decide karo ki photobashing (113), 3D blockout (114) ya dono mein se kuch bhi use karna sahi rahega ya nahi. AI ki kisi bhi madad ka use Module 109 ke disclosure practices ke mutaabik rakho, aur har cheez par paint karke lighting aur edges ko apna banao.",
+    "Detail polish karne se pehle check layers (Module 112) se light aur color match karo, poore piece ko stacked adjustment layers se grade karo (Module 106), aur final look ko kisi ek reference ki copy banane ke bajay Module 113 se saamne aaye apne recurring choices se guide hone do."
+  ],
+  "mistakes": [
+    "Itna bada scope chunna ki mood, lighting aur finishing jaldi-jaldi ho ya chhoot hi jaaye.",
+    "File ko jaldi flatten ya rasterize kar dena, jisse aakhir mein koi bhi revision mehenga padta hai.",
+    "Light aur color match karne se pehle details polish karna, phir un elements par mehnat karna jinhe baad mein badalna pade.",
+    "Photo, 3D ya AI-assisted elements ko scene ki lighting ke hisaab se adjust kiye bina use karna, ya yeh clear na karna ki kya use hua tha.",
+    "Finished piece ko process ka end samajhna, bajay iske ki usse apni sabse weak skill pehchaanne ke liye use karo."
+  ],
+  "proTips": [
+    "Brief aur apna time budget working file ke top par likho. Har session se pehle check karo, taaki scope creep ko jaldi pakad sako.",
+    "Finished piece ke saath thumbnails ka spread aur ek early block-in bhi save karo. Process dikhana portfolio piece ko credible banane ka hissa hai.",
+    "Check-layer routine (black and white, phir saturation) kam-se-kam do baar chalao: ek baar block-in par aur ek baar final polish se pehle.",
+    "Finish karne ke baad piece ko Modules 105–119 ki checklists ke against score karo, phir agle practice ke liye ek sabse weak area chuno."
+  ],
+  "practice": {
+    "warmup": "Apne capstone ke liye ek sentence ka brief aur time budget likho. Saath hi list banao ki Modules 105–119 ki kaunsi techniques use karoge aur kaunsi jaan-bujhkar use nahi karoge.",
+    "daily": "Har session mein ek stage par kaam karo: thumbnails aur block-in, phir composite ya 3D base, phir light aur color matching, aur phir grade aur finishing.",
+    "weekly": "Ek finished piece complete karo, jisme layered file non-destructive ho. Apne thumbnails, early block-in aur layered working file sambhaal kar rakho.",
+    "challenge": "Finished piece ko Modules 105–119 ki har checklist ke against honestly score karo, apni ek sabse weak skill ka naam likho, aur use improve karne ke liye agla ek specific exercise likho."
   },
+  "quiz": [
+    {
+      "q": "Capstone ki shuruaat kis cheez se honi chahiye?",
+      "options": [
+        "Jitni detailed rendering tum kar sakte ho, usse",
+        "Ek sentence ke brief aur tumhare time budget ke hisaab se realistic scope se",
+        "Kisi purane piece ki flattened copy se",
+        "Kisi random preset se"
+      ],
+      "correct": 1,
+      "explain": "Clear brief aur aisa scope jise tum sach mein finish kar sako, baad ke har decision ko purposeful banate hain. Saath hi, lighting aur finishing se pehle waqt khatam ho jaane ki common problem se bachate hain."
+    },
+    {
+      "q": "File ko shuruaat se hi non-destructively kyun banana chahiye?",
+      "options": [
+        "Isse file chhoti ho jaati hai",
+        "Taaki baad mein kisi bhi decision ko revise kar sako, bina kaam dobara banaye",
+        "Export karne ke liye yeh zaroori hai",
+        "Isse masks ki zaroorat nahi padti"
+      ],
+      "correct": 1,
+      "explain": "Smart Objects, adjustment layers aur masks se har decision editable rehta hai. Real production mein revisions aam baat hain, isliye yeh kaam aata hai."
+    },
+    {
+      "q": "Composited piece ko polish karne ka sahi order kya hai?",
+      "options": [
+        "Pehle fine details, phir light aur color match karna",
+        "Pehle check layers se light aur color match karna, phir details polish karna",
+        "Pehle export karna, phir adjustments karna",
+        "Kisi bhi color work se pehle texture add karna"
+      ],
+      "correct": 1,
+      "explain": "Light aur color ka mismatch fake composite ko sabse zyada dikhata hai, isliye details par mehnat karne se pehle ise theek karna zaroori hai."
+    },
+    {
+      "q": "Capstone mein AI assistance ya photo aur 3D elements ko kaise handle karna chahiye?",
+      "options": [
+        "Bina bataye use karo aur koi adjustment mat karo",
+        "Un par paint karke scene se match karo, aur AI use ko Module 109 ke mutaabik disclose karo",
+        "Har situation mein inka use bilkul mat karo",
+        "Speed ke liye inhe bina chhede chhod do"
+      ],
+      "correct": 1,
+      "explain": "Har imported element ko paint karke aur lighting match karke scene mein fit karna chahiye. AI-assisted use ko pehle discuss ki gayi disclosure practices ke mutaabik rakhna chahiye."
+    },
+    {
+      "q": "Finished capstone ko baad mein use karne ka sabse achha tareeka kya hai?",
+      "options": [
+        "Bina soche aage badh jaana",
+        "Ise Modules 105–119 ki checklists ke against score karke ek sabse weak skill ko practice ke liye chunna",
+        "Sirf doosron ke finished pieces se compare karna",
+        "Layered file delete kar dena"
+      ],
+      "correct": 1,
+      "explain": "Finished piece ko har checklist ke against check karne se woh ek diagnostic ban jaata hai, jo batata hai ki aage kis cheez ki practice karni hai."
+    }
+  ],
+  "checklist": [
+    "Main shuru karne se pehle ek sentence ka brief aur realistic scope likh sakta/sakti hoon.",
+    "Main pehli layer se final grade tak piece ko poori tarah non-destructive rakh sakta/sakti hoon.",
+    "Main polish karne se pehle check layers se alag-alag sources ki light aur color match kar sakta/sakti hoon.",
+    "Main finished piece ko arc ki checklists ke against score karke apni sabse weak skill ka naam bata sakta/sakti hoon."
+  ],
+  "nextStep": "Tumne Advanced Digital Art complete kar liya hai: non-destructive foundation se lekar grading, photobashing, 3D assistance, speed, master studies, compositing aur personal style ki shuruaat tak. Yeh skills aage Professional Production mein tumhare kaam aayengi, jahan inhe comics, manga, webtoon aur game art jaise specialization pipelines mein apply kiya jaata hai."
+},
   "m121": {
-    "hook": "Ek editorial illustration ke paas lagbhag do seconds hote hain ek aisa idea samjhane ke liye, jise explain karne mein poore article ko paragraphs lagte hain — aur art director kal tak uska intezar kar raha hai.",
-    "whyItMatters": [
-      "Pehle teen arcs mein aapne craft banaya. Professional production mein yeh craft client ke saath milta hai: ek brief, audience, deadline aur aisa format jise aap control nahi karte. Editorial illustration ise seekhne ki sabse seedhi jagah hai, kyunki is kaam ka lagbhag poora focus kisi idea ko jaldi aur clearly communicate karne par hota hai.",
-      "Yeh paid work mein aane ka ek common raasta bhi hai. Magazines, newspapers aur online publications ko articles ke liye lagataar images chahiye hoti hain, aur editors sirf ek sundar picture nahi, balki aapka thought process bhi kharid rahe hote hain. Isiliye brief se final tak aap kaise pahunche, yeh dikhana final art jitna hi important hai."
-    ],
-    "coreIdea": [
-      "Editorial illustration kisi text ko serve karti hai. Yeh visual metaphor ke zariye kisi complex concept ko explain kar sakti hai, kisi issue par ek clear point of view le sakti hai, ya dry, data-heavy material ko emotional weight de sakti hai. Yeh article ke saath hoti hai, uske saath compete nahi karti.",
-      "Professional process ek order mein chalta hai: brief padhein (message, audience, tone, size, deadline), text aur un symbols par research karein jinhe aap use karne ka plan bana rahe hain, kuch quick thumbnails sketch karein, aisa style aur technique chunein jo message ko serve kare, phir clear specifications ke saath clean files deliver karein.",
-      "Idea, style se pehle aata hai. Ek strong editorial piece ek baat ko clearly samjhata hai; agar image ko us size par, jahan use asal mein dekha jayega, do-teen seconds mein samjha nahi ja sakta, to woh fail ho gayi — chahe rendering kitni bhi achhi ho.",
-      "Professional delivery bhi craft ka hissa hai: layered aur tidy files, destination ke liye sahi resolution aur color profile, image page ke edge tak jaati ho to bleed, aur portfolio piece personal project ho, commission nahi, to us par sachcha label."
-    ],
-    "mistakes": [
-      "Sirf headline ya summary ke basis par illustration banana aur article ke beech ke kisi paragraph mein maujood nuance ko miss kar dena.",
-      "Art director ko choose karne ke liye ek hi idea ke teen variations dena, asli mein alag conceptual proposals dene ke bajay.",
-      "Aisa metaphor use karna jo aapko clear lage lekin reader ko cryptic ho, aur project se bahar kisi par pehle use test na karna.",
-      "Bleed ke liye bani art ko extra margin ke bina deliver karna, jisse trim ke baad safed edge reh jaati hai.",
-      "Style isliye chunna kyunki woh aapki aadat hai, na ki isliye kyunki woh message, publication aur available time ke liye sahi hai."
-    ],
-    "proTips": [
-      "Draw karne se pehle poora article padhein. Sabse achha visual hook aksar kisi aise nuance mein hota hai jo summary mein chhoot jaata hai.",
-      "Teen se paanch thumbnails banayein jo alag-alag concepts hon, phir finish mein time lagane se pehle art director ko direction chunne dein.",
-      "Apne favorite sketch ko phone size aur magazine column width mein chhota karke dekhein. Agar information gayab ho jaaye, to simplify karein.",
-      "Simulated assignments ke saath practice karein: koi current article lein, do ghante ki deadline set karein, aur padhne se delivery tak use visually solve karein."
-    ],
-    "practice": {
-      "warmup": "Koi ek news headline lein aur sirf words mein uske liye paanch alag visual metaphors likhein, phir us metaphor par circle karein jise koi anjaan vyakti sabse jaldi samajh sake.",
-      "daily": "Ek short article padhein aur teen thumbnails banayein jo teen alag concepts hon; har thumbnail itna chhota ho ki use ek nazar mein judge kiya ja sake.",
-      "weekly": "Do ghante ki deadline mein ek simulated editorial assignment complete karein. Ek tidy layered file ke saath brief, audience aur central idea par ek short note deliver karein.",
-      "challenge": "Ek hi article ko do bahut alag publications ke liye do baar illustrate karein (jaise ek serious news magazine aur ek playful online outlet). Tone aur style badlein, lekin core idea wahi rakhein."
-    },
-    "quiz": [
-      {
-        "q": "Editorial illustration ka main purpose kya hai?",
-        "options": [
-          "Article ke text ko poori tarah replace karna",
-          "Decoration jo article se farq na padte hue jitni ho sake utni eye-catching honi chahiye",
-          "Text ko serve karke idea explain karna, point of view lena ya dry material ko emotional weight dena",
-          "Illustrator ka personal style dikhana"
-        ],
-        "correct": 2,
-        "explain": "Editorial illustration article ke saath hoti hai aur reader ko use samajhne ya mehsoos karne mein madad karti hai; yeh uske saath compete nahi karti aur na hi sirf decoration hoti hai."
-      },
-      {
-        "q": "Thumbnail stage par art director ko kya submit karna chahiye?",
-        "options": [
-          "Teen se paanch sach mein alag conceptual proposals",
-          "Sirf ek finished piece",
-          "Ek hi idea ke paanch chhote variations",
-          "Bina sketches ka moodboard"
-        ],
-        "correct": 0,
-        "explain": "Alag concepts art director ko sach mein choose karne ka mauka dete hain; ek hi idea ke variations aisa nahi karte. Thumbnail stage par hi piece banta hai ya reh jaata hai."
-      },
-      {
-        "q": "Apne visual metaphor ko project se bahar kisi vyakti par test kyun karna chahiye?",
-        "options": [
-          "Har publication mein yeh zaroori hota hai",
-          "Isse file chhoti ho jaati hai",
-          "Isse research ki zaroorat nahi rehti",
-          "Jo metaphor aapko obvious lagta hai, woh reader ko cryptic lag sakta hai, aur editorial illustration ko jaldi communicate karna hota hai"
-        ],
-        "correct": 3,
-        "explain": "Aap article ko itni achhi tarah jaante hain ki apne metaphor ki clarity ko judge karna mushkil ho sakta hai. Isliye kisi outside viewer se test karna sabse jaldi aur imaandaar tareeka hai."
-      },
-      {
-        "q": "Bleed kis common beginner mistake ko address karta hai?",
-        "options": [
-          "Bahut zyada colors use karna",
-          "Page edge tak jaane wali art trim hone par safed border chhod de, kyunki extra margin deliver nahi ki gayi",
-          "Galat brush chunna",
-          "File bahut jaldi deliver karna"
-        ],
-        "correct": 1,
-        "explain": "Page edge tak jaane wali art ke liye trim line se aage bhi extra image chahiye hoti hai, aam taur par kuch millimeters; warna cut ke baad safed border reh sakti hai."
-      },
-      {
-        "q": "Portfolio mein final editorial pieces ke saath apna process kyun dikhana chahiye?",
-        "options": [
-          "Isse portfolio lamba ho jaata hai",
-          "Editors sirf ek sundar finished image nahi, balki yeh bhi kharid rahe hote hain ki aap text ko kaise analyze karte hain aur idea tak kaise pahunchte hain",
-          "Contest jeetne ke liye process work zaroori hota hai",
-          "Isse weak finished pieces chhup jaate hain"
-        ],
-        "correct": 1,
-        "explain": "Brief se sketch aur phir final tak ka safar dikhane se yeh prove hota hai ki aap conceptually soch sakte hain — editor aapko isi kaam ke liye hire karta hai."
-      }
-    ],
-    "checklist": [
-      "Main samjha sakta/sakti hoon ki editorial illustration us article ke liye kya karti hai jise woh serve karti hai.",
-      "Main brief, research, thumbnails, style aur delivery ke steps ko sahi order mein follow kar sakta/sakti hoon.",
-      "Main ek hi idea ke variations ke bajay kai sach mein alag concepts bana sakta/sakti hoon.",
-      "Main destination ke liye sahi size, color profile aur bleed ke saath clean delivery prepare kar sakta/sakti hoon."
-    ],
-    "nextStep": "Ab aap ek written brief ko ek clear image mein badal sakte hain. Module 110 ek image se sequential storytelling ki taraf badhta hai: comics, page layout aur panel flow."
+  "hook": "Editorial illustration ke paas bas do seconds hote hain ek aisa idea pahunchane ke liye jise samjhane mein poora article paragraphs leta hai—and art director kal tak iska intezaar kar raha hai.",
+  "whyItMatters": [
+    "Pehle teen arcs mein tumne craft banaya. Professional production mein wahi craft client ke saamne aata hai: ek brief, audience, deadline aur aisa format jis par tumhara control nahi hota. Editorial illustration ise seekhne ka sabse seedha tareeka hai, kyunki is kaam ka lagbhag poora hissa idea ko jaldi aur saaf tareeke se communicate karne ka hai.",
+    "Yeh paid work tak pahunchne ka ek common raasta bhi hai. Magazines, newspapers aur online publications ko articles ke liye lagataar images chahiye hoti hain. Editors sirf ek sundar picture nahi, tumhara sochne ka tareeka bhi khareedte hain. Isliye brief se final tak tum kaise pahunche, yeh dikhana final art jitna hi zaroori hai."
+  ],
+  "coreIdea": [
+    "Editorial illustration kisi text ko support karti hai. Yeh visual metaphor se complex concept samjha sakti hai, kisi issue par saaf point of view le sakti hai, ya dry, data-heavy material ko emotional weight de sakti hai. Yeh article ke saath chalti hai, usse compete nahi karti.",
+    "Professional process ek order mein chalta hai: brief padho (message, audience, tone, size, deadline), text aur use karne wale symbols par research karo, kai quick thumbnails banao, message ko suit karne wali style aur technique chuno, phir clear specifications ke saath clean files deliver karo.",
+    "Style se pehle idea aata hai. Ek strong editorial piece apni baat saaf taur par pahunchata hai. Agar image ko us size par, jahan log sach mein use dekhenge, kuch hi seconds mein samajh na paayein, toh woh kaamyaab nahi hai—chahe rendering kitni bhi achhi ho.",
+    "Professional delivery bhi craft ka hissa hai: layered aur tidy files, destination ke liye sahi resolution aur color profile, page ke edge tak jaane wali image ke liye bleed, aur portfolio ke har personal project ko commission ka kaam kehne ke bajay sahi label dena."
+  ],
+  "mistakes": [
+    "Sirf headline ya summary se illustration banana aur article ke beech ke paragraph mein chhupi nuance miss kar dena.",
+    "Art director ke saamne ek hi idea ke teen variations rakhna, alag-alag conceptual proposals dene ke bajay.",
+    "Aisa metaphor use karna jo tumhe clear lage par reader ko samajh na aaye, aur project se bahar kisi par pehle test na karna.",
+    "Page ke edge tak jaane wali art ko extra margin ke bina deliver karna, jisse trim ke baad safed edge nazar aaye.",
+    "Message, publication aur available time ko suit karne ke bajay apni aadat wali style chunna."
+  ],
+  "proTips": [
+    "Draw karne se pehle poora article padho. Behtareen visual hook aksar us nuance mein hota hai jo summary mein chhoot jaati hai.",
+    "Teen se paanch thumbnails banao jo alag-alag concepts hon. Finish mein mehnat lagane se pehle art director se direction choose karwao.",
+    "Apni pasand ke sketch ko phone size aur magazine column width par chhota karke dekho. Agar zaroori information gayab ho jaaye, toh simplify karo.",
+    "Simulated assignments ki practice karo: koi current article lo, do ghante ki deadline rakho, aur padhne se lekar delivery tak use visual tareeke se solve karo."
+  ],
+  "practice": {
+    "warmup": "Ek news headline lo aur uske liye words mein paanch alag visual metaphors likho. Phir us metaphor par circle karo jise koi anjaan insaan sabse jaldi samajh paaye.",
+    "daily": "Ek chhota article padho aur teen thumbnails banao, jo teen alag concepts dikhayein. Har thumbnail itna chhota ho ki use ek nazar mein judge kar sako.",
+    "weekly": "Do ghante ki deadline mein ek simulated editorial assignment complete karo. Ek tidy layered file deliver karo, saath mein brief, audience aur central idea par ek chhota note bhi.",
+    "challenge": "Ek hi article ko do bilkul alag publications ke liye do baar illustrate karo (jaise ek serious news magazine aur ek playful online outlet). Core idea wahi rakho, lekin tone aur style badlo."
   },
+  "quiz": [
+    {
+      "q": "Editorial illustration ka main kaam kya hai?",
+      "options": [
+        "Article ke text ko poori tarah replace karna",
+        "Article ki parwah kiye bina jitna ho sake utni eye-catching decoration karna",
+        "Text ko support karke idea samjhana, point of view lena ya dry material ko emotional weight dena",
+        "Illustrator ki personal style dikhana"
+      ],
+      "correct": 2,
+      "explain": "Editorial illustration article ke saath chalti hai aur reader ko use samajhne ya mehsoos karne mein madad karti hai; yeh article se compete nahi karti aur sirf decoration bhi nahi hoti."
+    },
+    {
+      "q": "Thumbnail stage par art director ko kya submit karna chahiye?",
+      "options": [
+        "Teen se paanch sach mein alag conceptual proposals",
+        "Sirf ek finished piece",
+        "Ek hi idea ke paanch chhote variations",
+        "Bina sketches ka moodboard"
+      ],
+      "correct": 0,
+      "explain": "Alag concepts art director ko sach mein choice dete hain; ek hi idea ke variations nahi. Thumbnail stage par hi aksar tay hota hai ki piece kaamyaab hoga ya nahi."
+    },
+    {
+      "q": "Apne visual metaphor ko project se bahar kisi par test kyun karna chahiye?",
+      "options": [
+        "Har publication mein yeh zaroori hota hai",
+        "Isse file chhoti ho jaati hai",
+        "Isse research ki zaroorat nahi padti",
+        "Jo metaphor tumhe obvious lagta hai, woh reader ko samajh na aaye; editorial illustration ko jaldi communicate karna hota hai"
+      ],
+      "correct": 3,
+      "explain": "Tum article ko itni achhi tarah jaante ho ki apne metaphor ki clarity ko sahi tarah judge nahi kar paoge. Bahar ka viewer use jaldi aur imaandari se test kar sakta hai."
+    },
+    {
+      "q": "Bleed se beginner ki kaunsi aam galti se bachne mein madad milti hai?",
+      "options": [
+        "Bahut saare colors use karna",
+        "Page ke edge tak jaane wali art ko trim karne par safed border aa jaana, kyunki extra margin nahi diya gaya",
+        "Galat brush chunna",
+        "File jaldi deliver karna"
+      ],
+      "correct": 1,
+      "explain": "Page ke edge tak jaane wali art ke liye trim line ke bahar bhi thodi extra image chahiye hoti hai—aksar kuch millimeters. Warna cut ke baad safed border aa sakta hai."
+    },
+    {
+      "q": "Portfolio mein final editorial pieces ke saath apna process kyun dikhana chahiye?",
+      "options": [
+        "Isse portfolio lamba ho jaata hai",
+        "Editors yeh dekhna chahte hain ki tum text ko kaise samajhte ho aur idea tak kaise pahunchte ho, sirf sundar finished image nahi",
+        "Contest jeetne ke liye process work zaroori hai",
+        "Isse weak finished pieces chhup jaate hain"
+      ],
+      "correct": 1,
+      "explain": "Brief se sketch aur phir final tak ka safar dikhana yeh prove karta hai ki tum conceptual tareeke se soch sakte ho—editor tumhe isi kaam ke liye hire karta hai."
+    }
+  ],
+  "checklist": [
+    "Main article ke context mein samjha sakta/sakti hoon ki editorial illustration ka kaam kya hai.",
+    "Main brief, research, thumbnails, style aur delivery ke steps sahi order mein follow kar sakta/sakti hoon.",
+    "Main ek hi idea ke variations ke bajay kai sach mein alag concepts bana sakta/sakti hoon.",
+    "Main destination ke hisaab se sahi size, color profile aur bleed ke saath clean delivery tayyar kar sakta/sakti hoon."
+  ],
+  "nextStep": "Ab tum written brief ko ek saaf image mein badal sakte ho. Module 116 ek image se sequential storytelling ki taraf badhta hai: comics, page layout aur panel flow."
+},
   "m122": {
-    "hook": "Koi ek bhi word balloon padhne se pehle, reader ki nazar aapke page par chalna shuru kar chuki hoti hai, aur uski direction sirf aapka panel layout tay karta hai.",
-    "whyItMatters": [
-      "Editorial illustration (Module 109) mein ek image ek hi kaam kar rahi thi. Comics mein bhi utni hi clarity chahiye, lekin kai images ke sequence mein. Page layout alag-alag drawings ko ek aisi story mein badalta hai jo sahi order aur sahi speed se padhi jaati hai.",
-      "Is arc mein layout sabse zyada kaam aane wali professional skills mein se ek hai. Reading order, grouping aur pacing ke baare mein yahi soch aage ke modules mein manga, webtoon aur storyboards par bhi lagu hoti hai."
-    ],
-    "coreIdea": [
-      "Western comics ko Z pattern mein padha jaata hai: ek row mein left se right, phir wapas left ki taraf aur neeche agli row mein. Panels ko words ki tarah ek-ek karke padha jaata hai, aur rows sentences ki tarah kaam karti hain. Manga iska ulta hota hai aur right se left padha jaata hai. Aap chahe jis tradition mein kaam karein, page ko is tarah design karna chahiye ki readers ko order samjhane ki zaroorat na pade.",
-      "Space panels ko group bhi karta hai aur alag bhi. Jo panels ek-doosre ke kareeb hote hain, woh ek group ke roop mein padhe jaate hain; bada gap unhe alag karta hai, aur overlapping panels ek bridge ki tarah kaam karte hain, jo ishara karta hai ki unhe saath mein padha jaaye. Poore page par gutters ka size ek jaisa rakhne se agla panel aasani se mil jaata hai, isliye unka size sirf soch-samajhkar badlein.",
-      "Panel ka size aur count pacing ko control karte hain. Bade panels reader ko dheema karte hain aur naye scenes ya bade reveals ke liye achhe hote hain; narrow panels nazar ko jaldi aage le jaate hain aur tension banate hain; lagataar ek jaise size ke panels steady rhythm banate hain (six-, nine- aur twelve-panel grids ke peeche yahi idea hai); aur alag-alag sizes page ko zyada dynamic ya chaotic banate hain.",
-      "Page design karte waqt pehle thumbnails banayein. Chhote, quick sketches se aap final drawing shuru karne se pehle panel arrangement aur reading order test kar sakte hain. Isi planning mein word balloons bhi aate hain: pehle speaker ko left ki taraf rakhein, taaki balloon tails ek-doosre ko cross na karein, aur balloons ko aisi jagah rakhne se bachein jisse nazar baar-baar idhar-udhar jaaye."
-    ],
-    "mistakes": [
-      "Natural reading order tod dena, bina reader ko koi clear path diye, jisse nazar galat panel par chali jaati hai.",
-      "Sound effect, ishara karti hui baah ya kisi aur strong tangent ko nazar ko aise panel ki taraf le jaane dena jise aap agla padhwana nahi chahte.",
-      "Har page par ek hi size ke panels use karna, jisse bina kisi emphasis ke flat, metronome jaisi rhythm banti hai.",
-      "Gutter widths ko soch-samajhkar panels ko group ya separate karne ke bajay random tareeke se badalna.",
-      "Aisa page design karne ke bajay order samjhane ke liye panel numbers ya arrows par nirbhar rehna, jo khud hi order ka ishara de."
-    ],
-    "proTips": [
-      "Final layout chunne se pehle poore page ke kai quick thumbnail versions banayein. Har version ko is baat par parakhein ki woh kitni clearly padha jaata hai, na ki woh kaisa dikhta hai.",
-      "Gutter size ko ek tool ki tarah use karein: jo panels ek saath hain unke beech ka gap kam karein, aur jahan break chahiye wahan gap badhayein.",
-      "Naya scene shuru hone par ya koi important baat reveal hone par pacing ko reset karne ke liye ek bada panel use karein.",
-      "Apne thumbnail ke upar arrows bana kar reading path trace karein. Agar path wapas ghoomta hai ya achanak jump karta hai, toh panel placement, eyelines ya balloons ko tab tak adjust karein jab tak flow smooth na ho."
-    ],
-    "practice": {
-      "warmup": "Kisi published comic page par arrows se reading path banayein. Note karein ki kaunse gutters, overlaps, eyelines ya balloons aapko ek panel se doosre panel tak le jaate hain.",
-      "daily": "Ek hi six-beat scene ko alag-alag panel sizes aur counts ke saath paanch baar thumbnail karein, phir unhe is hisaab se rank karein ki woh kitni clearly padhe jaate hain.",
-      "weekly": "Thumbnail se rough tak ek poora comic page design karein, aur word balloons ko reading order mein rakhein. Phir kisi se use zor se padhne ko kahein aur note karein ki woh kahan rukta ya hichkichata hai.",
-      "challenge": "Ek hi chhote scene ka layout pehle steady nine-panel grid mein banayein, phir alag-alag panel sizes wale page ke roop mein. Pacing kaise badalti hai, is par ek sentence likhein."
-    },
-    "quiz": [
-      {
-        "q": "Western comic pages ko aam taur par kaise padha jaata hai?",
-        "options": [
-          "Har row mein right se left",
-          "Neeche se upar",
-          "Z pattern mein: ek row mein left se right, phir neeche agli row mein",
-          "Numbers jis order ka ishara dein, usi order mein"
-        ],
-        "correct": 2,
-        "explain": "Western readers har row mein left se right jaate hain, phir wapas left ki taraf aur neeche jaate hain; manga iska ulta hota hai aur right se left padha jaata hai."
-      },
-      {
-        "q": "Do panels ke beech noticeably bada gap aam taur par kya karta hai?",
-        "options": [
-          "Unhe unke sabse kareeb panels ke saath group karta hai aur baaki se alag karta hai",
-          "Panels ko jaldi padhwata hai",
-          "Reader ko ulte order mein padhne par majboor karta hai",
-          "Kuch nahi; gutter size ka koi asar nahi hota"
-        ],
-        "correct": 0,
-        "explain": "Space panels ko group bhi karta hai aur alag bhi. Bada gap page ko clusters mein baant deta hai, jabki chhote gaps nazar ko batate hain ki kaunse panels ek saath hain."
-      },
-      {
-        "q": "Page ki pacing mein aam taur par bada panel kis kaam aata hai?",
-        "options": [
-          "Drawing ki galtiyan chhupane ke liye",
-          "Reader ki speed badhane ke liye",
-          "Thumbnails ki zaroorat khatam karne ke liye",
-          "Reader ko dheema karne ke liye, jaise naya scene establish karna ya koi bada reveal dikhana"
-        ],
-        "correct": 3,
-        "explain": "Bade panels ko padhne mein zyada waqt lagta hai, isliye woh kisi moment ko hold karte hain, naye scene ke liye pacing reset karte hain, ya climax ke reveal par zor dete hain."
-      },
-      {
-        "q": "Achhe layout ke muqable panels ko number dena kamzor tareeka kyun maana jaata hai?",
-        "options": [
-          "Numbers dekhne ke liye bahut chhote hote hain",
-          "Achhe se design kiya hua page bina order samjhaye apna reading order khud dikhata hai",
-          "Published comics mein numbers dena illegal hai",
-          "Isse gutters zyada chaude ho jaate hain"
-        ],
-        "correct": 1,
-        "explain": "Agar readers ko order samajhne ke liye numbers chahiye, toh layout khud nazar ko guide nahi kar raha. Maqsad aisa page banana hai jo bina kisi explanation ke sahi tarah padha jaaye."
-      },
-      {
-        "q": "Comic page design karte waqt pehla recommended step kya hai?",
-        "options": [
-          "Final inking",
-          "Har balloon mein lettering karna",
-          "Coloring",
-          "Panel arrangement aur reading order test karne ke liye quick thumbnails banana"
-        ],
-        "correct": 3,
-        "explain": "Thumbnails se aap jaldi kai arrangements try kar sakte hain aur dekh sakte hain ki final drawing par waqt lagane se pehle kya kaam karta hai."
-      }
-    ],
-    "checklist": [
-      "Main comic page ka reading path trace kar sakta/sakti hoon aur samjha sakta/sakti hoon ki nazar ko kya guide karta hai.",
-      "Main gutter size aur overlaps ka use karke panels ko soch-samajhkar group ya separate kar sakta/sakti hoon.",
-      "Main page ki pacing control karne ke liye panel size aur count ka use kar sakta/sakti hoon.",
-      "Main page ke thumbnails bana sakta/sakti hoon aur word balloons ko sahi order mein rakh sakta/sakti hoon."
-    ],
-    "nextStep": "Ab aap page ko is tarah layout kar sakte hain ki woh sahi order aur sahi speed se padha jaaye. Module 111 comics ko kai pages tak kaamyaab banane ke doosre pehlu par dhyaan deta hai: characters ko consistent rakhna aur unki lettering ko clear banana."
+  "hook": "Kisi ke ek bhi word balloon padhne se pehle, uski nazar page par chalna shuru kar chuki hoti hai. Panel layout hi tay karta hai ki woh kahan jaayegi.",
+  "whyItMatters": [
+    "Editorial illustration (Module 115) mein ek image ek kaam kar rahi thi. Comics bhi wahi clarity kai images ke sequence se maangte hain, aur page layout alag-alag drawings ko aisi story mein badalta hai jo sahi order aur sahi speed se padhi jaaye.",
+    "Layout is arc ki sabse zyada kaam aane wali professional skills mein se ek hai. Reading order, grouping aur pacing ke baare mein yahi soch aage ke modules mein manga, webtoon aur storyboards par bhi lagu hoti hai."
+  ],
+  "coreIdea": [
+    "Western comics ko Z pattern mein padha jaata hai: ek row mein left se right, phir wapas left ki taraf aur neeche agli row par. Panels ko words ki tarah ek-ek karke padha jaata hai, aur rows sentences ki tarah kaam karti hain. Manga iska ulta hota hai aur right se left padha jaata hai. Tum jis bhi tradition mein kaam karo, page aise design hona chahiye ki readers ko order samjhana na pade.",
+    "Space panels ko ek saath jodti aur alag karti hai. Jo panels paas-paas hote hain, woh ek group ki tarah padhe jaate hain; bada gap unhe alag karta hai; aur overlapping panels ek bridge ki tarah kaam karte hain, jo unhe saath padhne ka ishara deta hai. Page bhar gutters ka size ek jaisa rakhne se agla panel dhoondhna aasaan hota hai, isliye unka size sirf soch-samajh kar badlo.",
+    "Panel ka size aur unki ginti pacing control karte hain. Bade panels reader ko dheema karte hain aur naye scenes ya bade reveals ke liye achhe hote hain. Patle panels nazar ko jaldi aage le jaate hain aur tension banate hain. Ek jaise size ke panels ki series steady rhythm banati hai (isi idea ke peeche six-, nine- aur twelve-panel grids hain), jabki alag-alag sizes page ko zyada dynamic ya chaotic feel dete hain.",
+    "Page ko pehle thumbnails se design karo. Chhote, quick sketches se tum final drawing shuru karne se pehle panel arrangement aur reading order test kar sakte ho. Isi planning mein word balloons bhi aate hain: pehle speaker ko left ki taraf rakho, taaki balloon tails ek-doosre ko cross na karein; aur balloons ko aise jagah mat rakho ki nazar idhar-udhar uchhalti rahe."
+  ],
+  "mistakes": [
+    "Natural reading order tod dena, bina reader ko koi clear raasta diye, jisse nazar galat panel par chali jaati hai.",
+    "Sound effect, ishara karti baah ya kisi aur strong tangent ko nazar ko us panel se alag panel ki taraf le jaane dena, jise tum chahte ho ki reader agla padhe.",
+    "Har page par ek hi size ke panels rakhna, jisse bina kisi emphasis ke flat, metronome jaisi rhythm ban jaati hai.",
+    "Gutter widths ko bina soche badalte rehna, bajaye unhe panels ko jaan-bujhkar group ya separate karne ke liye use karne ke.",
+    "Reading order samjhane ke liye panel numbers ya arrows par bharosa karna, bajaye aisa page design karne ke jo khud order ka ishara de."
+  ],
+  "proTips": [
+    "Final layout par pakka hone se pehle poore page ke kai quick thumbnail versions banao, aur har version ko is baat par judge karo ki woh kitna clearly read hota hai, na ki woh kaisa dikhta hai.",
+    "Gutter size ko tool ki tarah use karo: jo panels ek saath hain unke beech gap kam rakho, aur jahan break chahiye wahan gap badhao.",
+    "Naya scene shuru ho ya koi zaroori baat reveal ho, pacing reset karne ke liye ek bada panel use karo.",
+    "Apne thumbnail par arrows se reading path trace karo. Agar path wapas mudta hai ya achanak jump karta hai, toh panel placement, eyelines ya balloons adjust karo, jab tak flow smooth na ho jaaye."
+  ],
+  "practice": {
+    "warmup": "Kisi published comic ka page lo aur arrows se uspar reading path banao. Note karo ki kaunse gutters, overlaps, eyelines ya balloons tumhe ek panel se doosre tak le jaate hain.",
+    "daily": "Wahi six-beat scene alag-alag panel sizes aur counts ke saath paanch baar thumbnail karo, phir unhe is hisaab se rank karo ki kaun sa sabse clearly read hota hai.",
+    "weekly": "Thumbnail se rough tak ek poora comic page design karo, word balloons ko reading order mein rakhte hue. Phir kisi se use zor se padhne ko kaho aur note karo ki woh kahan rukta ya hichkichata hai.",
+    "challenge": "Wahi chhota scene pehle ek steady nine-panel grid mein aur phir alag-alag panel sizes wale page mein layout karo. Likho ki pacing kaise badalti hai, ek sentence mein."
   },
+  "quiz": [
+    {
+      "q": "Western comic pages aam taur par kaise padhe jaate hain?",
+      "options": [
+        "Har row mein right se left",
+        "Neeche se upar",
+        "Z pattern mein: ek row mein left se right, phir neeche agli row par",
+        "Numbers jis order ka ishara dein, us order mein"
+      ],
+      "correct": 2,
+      "explain": "Western readers har row mein left se right jaate hain, phir wapas left ki taraf aur neeche aate hain; manga iska ulta hota hai aur right se left padha jaata hai."
+    },
+    {
+      "q": "Do panels ke beech noticeably bada gap aam taur par kya karta hai?",
+      "options": [
+        "Unhe paas ke panels ke saath group karta hai aur baaki se alag karta hai",
+        "Panels ko jaldi padhne layak banata hai",
+        "Reader ko ulte order mein padhne par majboor karta hai",
+        "Kuch nahi; gutter size ka koi asar nahi hota"
+      ],
+      "correct": 0,
+      "explain": "Space panels ko group aur separate karti hai. Bada gap page ko clusters mein baantta hai, jabki chhote gaps nazar ko batate hain ki kaunse panels ek saath hain."
+    },
+    {
+      "q": "Page ki pacing mein bada panel aam taur par kis kaam aata hai?",
+      "options": [
+        "Drawing ki galtiyan chhupane ke liye",
+        "Reader ki speed badhane ke liye",
+        "Thumbnails ki zaroorat khatam karne ke liye",
+        "Reader ko dheema karne ke liye, jaise naya scene dikhana ya koi bada reveal dena"
+      ],
+      "correct": 3,
+      "explain": "Bade panels ko padhne mein zyada waqt lagta hai, isliye woh kisi moment ko thehraate hain, naye scene ke liye pacing reset karte hain ya climax ke reveal par zor dete hain."
+    },
+    {
+      "q": "Panels ko number dena achhe layout se kamzor tareeqa kyun maana jaata hai?",
+      "options": [
+        "Numbers dekhne ke liye bahut chhote hote hain",
+        "Achhe se design kiya page apna reading order khud samjha deta hai",
+        "Published comics mein numbers allowed nahi hote",
+        "Isse gutters zyada chaude ho jaate hain"
+      ],
+      "correct": 1,
+      "explain": "Agar readers ko order samajhne ke liye numbers chahiye, toh layout apne aap nazar ko guide nahi kar raha. Maqsad aisa page banana hai jo bina samjhaye sahi order mein padhe."
+    },
+    {
+      "q": "Comic page design karte waqt pehla recommended step kya hai?",
+      "options": [
+        "Final inking",
+        "Har balloon mein lettering karna",
+        "Coloring",
+        "Panel arrangement aur reading order test karne ke liye quick thumbnails banana"
+      ],
+      "correct": 3,
+      "explain": "Thumbnails se tum kai arrangements jaldi try kar sakte ho aur final drawing par waqt lagane se pehle dekh sakte ho ki kya kaam karta hai."
+    }
+  ],
+  "checklist": [
+    "Main comic page ka reading path trace kar sakta hoon aur samjha sakta hoon ki nazar ko kya guide karta hai.",
+    "Main gutter size aur overlaps se panels ko jaan-bujhkar group ya separate kar sakta hoon.",
+    "Main page ki pacing control karne ke liye panel size aur count use kar sakta hoon.",
+    "Main page ka thumbnail bana sakta hoon aur word balloons ko sahi order mein rakh sakta hoon."
+  ],
+  "nextStep": "Ab tum page ko aise layout kar sakte ho ki woh sahi order aur sahi speed se padhe. Module 117 comics ko kai pages tak kaamyaab banane ke doosre pehlu par jaata hai: characters ko consistent rakhna aur lettering ko clear banana."
+},
   "m123": {
-    "hook": "Kharab lettering ek achhe comic ko amateur jaisa dikha sakti hai, aur jis hero ka chehra har panel mein badal jata hai, uski story par readers ka bharosa uth jata hai. Dono problems ko ek system se theek kiya ja sakta hai.",
-    "whyItMatters": [
-      "Page layout (Module 110) readers ko batata hai ki aage kahan dekhna hai. Consistent characters aur clean lettering unhe wahan pahunchne ke baad panels, pages aur poore issues mein sahi tarah follow karne mein madad karte hain.",
-      "Dono hi professional fields ki asli specialties hain. Studios model sheets par bharosa karte hain taaki kai artists ek hi character ko ek jaisa draw kar saken, aur mainstream comics mein lettering ek alag kaam hai, jiske apne conventions hain. Letterer se umeed hoti hai ki woh doosre logon ki scripts mein in conventions ko pehchane aur theek kare."
-    ],
-    "coreIdea": [
-      "Character consistency memory se nahi, balki reference system se banti hai. Turnaround ya model sheet character ko kai views se dikhati hai (aam taur par front, side, three-quarter aur back; animation mein aur bhi views hote hain). Inhe shared guidelines par draw kiya jata hai taaki measurements match hon, aur har design detail aur color palette record ki jati hai. Expression sheet mein alag-alag moods ke chehre bhi dikhte hain.",
-      "Simple, baar-baar banaye ja sakne wale shapes aur proportions character ko har angle se, aur exaggerated expressions ke saath bhi, pehchanne layak rakhte hain. Character ko baar-baar draw karne se hi design yaad rehta hai, isliye use itna simple rakho ki bina mehnat ke draw kar sako, aur yeh bhi maano ki saalon ke dauran design evolve ho sakta hai.",
-      "Lettering ka apna grammar hota hai. Standard balloon tail speaker ke mouth ki taraf point karti hai, jaise ek invisible line chehre tak jaari ho. Crossbar I pronoun I aur abbreviations ke liye hota hai. Double dash interrupted speech dikhata hai, jabki ellipsis batata hai ki speech dheere-dheere khatam ho rahi hai. Captions, thought balloons, burst balloons aur radio balloons—har ek ka apna established form hota hai.",
-      "Text ko art ke hisaab se fit karo. Balloon ko panel border se bilkul laga dene se space bachta hai; border ko overlap karna aam taur par aakhri option hona chahiye. Balloons ya sound effects ka doosre elements ko bas chhoo jana tangents banata hai, jinse bachna chahiye kyunki woh nazar ko distract karte hain."
-    ],
-    "mistakes": [
-      "Har baar model sheet ke bajay memory se character ko dobara draw karna.",
-      "Design mein itni saari details bhar dena ki use draw karne mein waqt lage aur galti karna aasan ho jaye.",
-      "Har capital I ke liye crossbar I ka istemal karna, jo amateur lettering ki sabse aam galtiyon mein se ek hai.",
-      "Balloon tails ko speaker ke mouth ke bajay haath ya pair ki taraf point karna.",
-      "Double dash aur ellipsis ko ek hi tarah istemal karna, ya ellipsis mein teen se zyada periods likhna."
-    ],
-    "proTips": [
-      "Pages shuru karne se pehle matching guidelines ke saath turnaround, expression sheet aur color palette taiyar karo, aur draw karte waqt use khula rakho.",
-      "Kai quick sketches mein apne character ko front se back tak dheere-dheere turn karke draw karo, taaki tum samjho ki har angle mein uske khaas features kaise badalte hain.",
-      "Har balloon tail ko check karte waqt tail ke end se speaker ke mouth tak jaati invisible line imagine karo.",
-      "Page finalize karne se pehle use scan karo aur dekho ki kahin balloon ya sound effect bas kisi doosri line ko chhoo to nahi raha. Phir use thoda move karke ya to clearly overlap karao ya line se alag kar do."
-    ],
-    "practice": {
-      "warmup": "Ek character ko shared guidelines par front, side, three-quarter aur back views mein draw karo. Phir check karo ki har view mein eyes, nose aur key details ek hi height par hain.",
-      "daily": "Apne character ko memory se ek pose mein draw karo, phir use apni model sheet se compare karke theek-theek note karo ki kya badal gaya.",
-      "weekly": "Sahi tails, interruption ke liye double dash, three-dot ellipsis, ek caption aur ek sound effect ka istemal karke haath se ya digitally comic ka ek page letter karo. Phir order check karne ke liye page ko zor se padhkar dekho.",
-      "challenge": "Apni model sheet kisi dost ko do aur usse character ko ek naye pose mein draw karne ko kaho. Phir uski drawing ko apni drawing se compare karo aur model sheet mein jo baat samjhana reh gaya ho, use theek karo."
-    },
-    "quiz": [
-      {
-        "q": "Character model sheet ya turnaround ka main purpose kya hai?",
-        "options": [
-          "Character ko draw karne ki zaroorat hi khatam karna",
-          "Character ko sirf color mein dikhana",
-          "Tumhe aur tumhare collaborators ko character ke kai angles ke references dena, taaki har drawing match kare",
-          "Page layout tay karna"
-        ],
-        "correct": 2,
-        "explain": "Model sheet character ke views, proportions aur details ko shared guidelines par record karti hai, taaki har baad ki drawing ko usse check kiya ja sake."
-      },
-      {
-        "q": "Standard dialogue balloon tail ko kahan point karna chahiye?",
-        "options": [
-          "Speaker ke mouth ki taraf, jaise ek invisible line chehre tak jaari ho",
-          "Speaker ke pairon ki taraf",
-          "Panel ke center ki taraf",
-          "Agli balloon ki taraf"
-        ],
-        "correct": 0,
-        "explain": "Tail ko mouth ki taraf point karna chahiye, character ke kisi general hisse—jaise haath ya pair—ki taraf nahi."
-      },
-      {
-        "q": "Comic lettering mein crossbar I aam taur par kab istemal hota hai?",
-        "options": [
-          "Sentence ke har capital I ke liye",
-          "Har balloon ke pehle letter ke liye",
-          "Sirf sound effects mein",
-          "Pronoun I aur abbreviations ke liye; baaki jagah plain vertical stroke istemal hota hai"
-        ],
-        "correct": 3,
-        "explain": "Kisi bhi capital I ke liye crossbar I ka istemal karna amateur lettering ki sabse aam galtiyon mein se ek hai."
-      },
-      {
-        "q": "Double dash aur ellipsis ka istemal kaise hota hai?",
-        "options": [
-          "Dono ek doosre ki jagah istemal ho sakte hain",
-          "Double dash interrupted speech dikhata hai, jabki ellipsis (teen periods) batata hai ki speech dheere-dheere khatam ho rahi hai",
-          "Ellipsis interruptions dikhata hai aur double dash pauses dikhata hai",
-          "Comic mein inmein se kisi ka bhi istemal nahi karna chahiye"
-        ],
-        "correct": 1,
-        "explain": "Dono marks ke kaam alag hain: double dash speech ko beech mein rokta hai, aur ellipsis use dheere-dheere khatam hone deta hai."
-      },
-      {
-        "q": "Expression sheets draw karne aur apne character ki practice aksar karne se consistency mein madad kyun milti hai?",
-        "options": [
-          "Isse character zyada realistic dikhta hai",
-          "Isse script chhoti ho jati hai",
-          "Isse character ke features ki muscle memory banti hai aur saath hi baad ke liye reference bhi taiyar hota hai",
-          "Isse model sheet ki zaroorat nahi rehti"
-        ],
-        "correct": 2,
-        "explain": "Baar-baar practice karne se design yaad rehta hai, aur expression sheet practice ke saath future reference ka kaam bhi karti hai."
-      }
-    ],
-    "checklist": [
-      "Main character ke liye matching guidelines ke saath turnaround, expression sheet aur color palette bana sakta/sakti hoon.",
-      "Main nayi drawing ko apni model sheet se check karke bata sakta/sakti hoon ki kya badal gaya.",
-      "Main balloon tails ko mouth ki taraf point kar sakta/sakti hoon aur double dash, ellipsis aur crossbar I ka sahi istemal kar sakta/sakti hoon.",
-      "Main balloons, sound effects aur art ke beech tangents pehchan kar theek kar sakta/sakti hoon."
-    ],
-    "nextStep": "Ab tum characters ko on model rakh sakte/sakti ho aur page ko clean tareeke se letter kar sakte/sakti ho. Module 112 Western comics se manga ki taraf badhta hai, jahan reading direction, screentones aur storytelling conventions apne alag hote hain."
+  "hook": "Kharab lettering ek achhi comic ko amateur dikha sakti hai, aur agar hero ka chehra har panel mein badalta rahe toh readers story par bharosa karna chhod dete hain. Dono cheezein ek system se theek ho sakti hain.",
+  "whyItMatters": [
+    "Page layout (Module 116) readers ko batata hai ki ab kahan dekhna hai. Characters ko consistent rakhna aur clean lettering karna unhe wahan pahunchne ke baad panels, pages aur poore issues mein sahi raasta dikhata rehta hai.",
+    "Dono hi professional kaam ke asal specializations hain. Studios model sheets par bharosa karte hain taaki kai artists ek hi character ko ek jaisa bana sakein. Mainstream comics mein lettering ka apna alag role aur conventions hote hain, aur letterer se umeed hoti hai ki woh doosron ki scripts mein bhi inhe pehchaan kar theek kare."
+  ],
+  "coreIdea": [
+    "Character consistency yaad-dasht se nahi, reference system se banti hai. Turnaround ya model sheet mein character ko kai views se dikhaya jaata hai (aam taur par front, side, three-quarter aur back; animation ke liye aur views bhi hote hain). Sab views shared guidelines par draw hote hain, taaki measurements match karein. Saath hi design ki har detail aur color palette record ki jaati hai. Expression sheet mein alag-alag moods ke chehre bhi dikhte hain.",
+    "Simple, baar-baar banaye ja sakne wale shapes aur proportions character ko har angle se, hatta ki exaggerated expressions mein bhi, pehchaanne layak rakhte hain. Character ko baar-baar draw karne se design yaad rehta hai, isliye use itna simple rakho ki bina mehnat ke draw ho jaaye. Aur yeh bhi maano ki saalon ke saath design evolve ho sakta hai.",
+    "Lettering ka apna grammar hota hai. Standard balloon tail speaker ke muh ki taraf point karti hai, jaise koi invisible line aage badhkar chehre tak ja rahi ho. Crossbar I pronoun I aur abbreviations ke liye hota hai. Double dash beech mein ruk jaati speech dikhata hai, jabki ellipsis aisi speech dikhata hai jo dheere-dheere khatam ho rahi ho. Captions, thought balloons, burst balloons aur radio balloons, sabke apne established forms hote hain.",
+    "Text ko art ke hisaab se fit karo. Balloon ko panel border se bilkul lagane par jagah bachti hai; border ke upar overlap karna aam taur par aakhri option hona chahiye. Balloons ya sound effects jab doosre elements ko chhoo jaate hain, toh tangents bante hain. Inse bachna chahiye kyunki yeh nazar ko distract karte hain."
+  ],
+  "mistakes": [
+    "Har baar character ko yaad-dasht se dobara draw karna, model sheet se kaam karne ke bajaye.",
+    "Design mein itni saari details bhar dena ki use draw karna dheema ho jaaye aur galti karna aasaan.",
+    "Har capital I ke liye crossbar I use karna; yeh amateur lettering ki sabse aam galtiyon mein se ek hai.",
+    "Balloon tails ko speaker ke muh ke bajaye haath ya pair ki taraf point karna.",
+    "Double dash aur ellipsis ko ek doosre ki jagah use karna, ya ellipsis mein teen se zyada periods likhna."
+  ],
+  "proTips": [
+    "Pages shuru karne se pehle matching guidelines ke saath turnaround, expression sheet aur color palette banao. Draw karte waqt inhe khula rakho.",
+    "Kuch quick sketches mein apne character ko front se back tak dheere-dheere ghoomta hua draw karo, taaki tum samajh sako ki har angle par uske khaas features kaise badalte hain.",
+    "Har balloon tail check karte waqt socho ki tail ke end se speaker ke muh tak ek invisible line ja rahi hai.",
+    "Page final karne se pehle tangents dhoondo, jahan balloon ya sound effect kisi doosri line ko bas chhoo raha ho. Use thoda hilaao, taaki woh ya toh clearly overlap kare ya line se alag ho jaaye."
+  ],
+  "practice": {
+    "warmup": "Ek character ko front, side, three-quarter aur back views mein shared guidelines par draw karo. Phir check karo ki har view mein eyes, nose aur zaroori details ek hi height par hain.",
+    "daily": "Apne character ko ek pose mein yaad-dasht se draw karo, phir model sheet se compare karo aur note karo ki exactly kya badal gaya.",
+    "weekly": "Haath se ya digitally ek comic page letter karo. Sahi tails, interruption ke liye double dash, three-dot ellipsis, ek caption aur ek sound effect use karo. Phir order check karne ke liye page ko zor se padho.",
+    "challenge": "Apni model sheet kisi dost ko do aur usse kaho ki character ko ek naye pose mein draw kare. Phir uski drawing ko apni drawing se compare karo aur jo baat sheet mein clear nahi thi use theek karo."
   },
+  "quiz": [
+    {
+      "q": "Character model sheet ya turnaround ka main maqsad kya hai?",
+      "options": [
+        "Character ko draw karne ki zaroorat hi khatam karna",
+        "Character ko sirf color mein dikhana",
+        "Tumhe aur collaborators ko character ke kai angles se reference dena, taaki har drawing match kare",
+        "Page layout tay karna"
+      ],
+      "correct": 2,
+      "explain": "Model sheet character ke views, proportions aur details ko shared guidelines par record karti hai, taaki har baad ki drawing usse compare ki ja sake."
+    },
+    {
+      "q": "Standard dialogue balloon ki tail ko kahan point karna chahiye?",
+      "options": [
+        "Speaker ke muh ki taraf, jaise koi invisible line aage badhkar chehre tak ja rahi ho",
+        "Speaker ke pairon ki taraf",
+        "Panel ke center ki taraf",
+        "Agli balloon ki taraf"
+      ],
+      "correct": 0,
+      "explain": "Tail ko speaker ke muh ki taraf point karna chahiye, character ke kisi aam hissa jaise haath ya pair ki taraf nahi."
+    },
+    {
+      "q": "Comic lettering mein crossbar I aam taur par kab use hota hai?",
+      "options": [
+        "Sentence ke har capital I ke liye",
+        "Har balloon ke pehle letter ke liye",
+        "Sirf sound effects mein",
+        "Pronoun I aur abbreviations mein; baaki jagah simple vertical stroke use hota hai"
+      ],
+      "correct": 3,
+      "explain": "Kisi bhi capital I ke liye crossbar I use karna amateur lettering ki sabse aam galtiyon mein se ek maana jaata hai."
+    },
+    {
+      "q": "Double dash aur ellipsis ka use kaise hota hai?",
+      "options": [
+        "Dono ek doosre ki jagah use hote hain",
+        "Double dash beech mein rukti speech dikhata hai, jabki ellipsis (teen periods) dheere-dheere khatam hoti speech dikhata hai",
+        "Ellipsis interruption dikhata hai aur double dash pause dikhata hai",
+        "Comic mein dono ka use nahi hona chahiye"
+      ],
+      "correct": 1,
+      "explain": "Dono marks ke kaam alag hain: double dash speech ko beech mein kaat deta hai, aur ellipsis use dheere-dheere khatam hone deta hai."
+    },
+    {
+      "q": "Expression sheets banana aur character ki practice baar-baar karna consistency mein kyun madad karta hai?",
+      "options": [
+        "Isse character zyada realistic dikhta hai",
+        "Isse script chhoti ho jaati hai",
+        "Isse character ke features ki muscle memory banti hai aur baad ke liye reference bhi milta hai",
+        "Isse model sheet ki zaroorat khatam ho jaati hai"
+      ],
+      "correct": 2,
+      "explain": "Baar-baar draw karne se design yaad rehta hai, aur expression sheet practice ke saath future reference ka kaam bhi karti hai."
+    }
+  ],
+  "checklist": [
+    "Main matching guidelines, expression sheet aur color palette ke saath character ka turnaround bana sakta hoon.",
+    "Main nayi drawing ko model sheet se compare karke bata sakta hoon ki kya badal gaya.",
+    "Main balloon tails ko muh ki taraf point kar sakta hoon aur double dash, ellipsis aur crossbar I sahi use kar sakta hoon.",
+    "Main balloons, sound effects aur art ke beech ke tangents pehchaan kar theek kar sakta hoon."
+  ],
+  "nextStep": "Ab tum characters ko on model rakh sakte ho aur page ko clean lettering de sakte ho. Module 118 Western comics se manga ki taraf jaata hai, jahan reading direction, screentones aur storytelling conventions alag hain."
+},
   "m124": {
-    "hook": "Manga ko us taraf se kholiye jo Western comics mein back lagti hai, aur aapki har aadat ulat jaati hai: nazar top right se shuru hoti hai, aur poora page use left ki taraf le jaane ke liye banaya jaata hai.",
-    "whyItMatters": [
-      "Modules 110 aur 123 mein aapne page flow, consistent characters aur lettering seekhi. Manga mein bhi yehi buniyadi cheezein hoti hain, lekin uski apni reading direction, workflow aur visual shorthand hoti hai. In conventions ko jaanna hi Western comic ko manga style mein draw karne aur asli manga banane ke beech ka farq hai.",
-      "Is arc mein manga production ke sabse structured workflows mein se ek hai. Script, storyboard, pencils, inks, tones aur final touches—har step ka apna clear kaam hai. Inhe sahi order mein seekhna pehli short story poori karne ka sabse tez tareeka hai, bajaye use beech mein chhod dene ke."
-    ],
-    "coreIdea": [
-      "Traditional manga right to left padhi jaati hai. Pehla panel right-hand page ke upper right mein hota hai aur har row left ki taraf badhti hai. Isliye pages isi raaste ke liye compose kiye jaate hain, aur panel order se lekar balloon placement tak har layout decision ko iska dhyaan rakhna hota hai.",
-      "Workflow ek fixed order mein chalta hai: scripting (theme, characters aur aise sequences jo place, time ya action ke hisaab se ek saath judte hain), panel composition plan karne wala storyboard, pencil sketch, inking, details aur blacks bharna, aur final touches. Storyboard stage chhodne par pages ko dobara draw karna padta hai.",
-      "Variety se pages engaging rehte hain. Monotony se bachne ke liye boxes ke size aur shots ki distance (close-ups, medium shots aur full shots) mein variation rakhein. Yaad rakhein ki manga kholne par nazar aksar left-hand page ke top par jaati hai, isliye koi important drawing ya reveal rakhne ke liye yeh ek strong jagah hai.",
-      "Manga ki apni visual shorthand hoti hai. Speed lines aur flashes movement aur impact dikhate hain, aur screentones (shading aur backgrounds ke liye use hone wale patterned overlays) pages ko unki khaas texture dete hain. Tone add karne se pehle page saaf karein, aur aakhir mein correction aur highlights ke liye white use karein."
-    ],
-    "mistakes": [
-      "Page ki composition storyboard mein final hone se pehle finished pencils ya inks shuru kar dena.",
-      "Har jagah ek hi size ke panels aur ek hi shot distance use karna, jisse pacing flat ho jaati hai.",
-      "Pages ko left-to-right order mein lay out karna aur yeh bhool jaana ki readers right to left padhenge.",
-      "Surface saaf kiye bina dirty ya unfinished page par screentone lagana.",
-      "Spread ke sabse bade moment ko aisi jagah rakhna jahan nazar naturally nahi jaati, bajaye left-hand page ke top ko use karne ke."
-    ],
-    "proTips": [
-      "Har sequence ka storyboard film director ki tarah banayein. Kuch bhi finished draw karne se pehle sochein ki kitne panels chahiye aur page ka balance kaise rakhna hai.",
-      "Shot distances soch-samajhkar mix karein: emotion ke liye close-up, action ke liye medium shot, aur scene establish karne ke liye full shot.",
-      "Sabse pehle panel borders ink karein, phir dialogue balloons, uske baad characters aur settings; speed lines aur doosre effects sabse aakhir mein add karein.",
-      "Roughs aur panel borders ke liye halki layer ya light-colored pencil use karein, taaki woh final line art ke saath compete na kare."
-    ],
-    "practice": {
-      "warmup": "Apni pasand ka ek manga page lein aur panels ko padhne ke order mein number karein—right to left aur top to bottom. Phir note karein ki layout is reading path ko kaise support karta hai.",
-      "daily": "Ek two-page scene ka storyboard banayein, jisme page one right par aur page two left par ho. Panel sizes aur shot distances mein variation rakhein.",
-      "weekly": "Ek storyboarded page ko pencils, inks aur tone ke stages se guzarein, aur steps ko Canson workflow ke order mein karein.",
-      "challenge": "Ek two-page spread design karein jisme ek bada reveal left-hand page ke top par aaye. Phir kisi reader par test karein ki uski nazar wahan jaati hai ya nahi."
-    },
-    "quiz": [
-      {
-        "q": "Traditional manga kis order mein padhi jaati hai?",
-        "options": [
-          "Left to right, top to bottom",
-          "Right to left, jisme pehla panel right-hand page ke upper right mein hota hai",
-          "Bottom to top",
-          "Panels ko jis order mein number kiya gaya ho"
-        ],
-        "correct": 1,
-        "explain": "Traditional manga right to left padhi jaati hai, isliye pehla box right-hand page ke upper right mein hota hai."
-      },
-      {
-        "q": "Manga page par boxes ke size aur shots ke type mein variation kyun rakhni chahiye?",
-        "options": [
-          "Taaki zyada panels fit ho sakein",
-          "Kyunki publishers ka yeh rule hai",
-          "Taaki drawings banana aasaan ho",
-          "Monotony se bachne aur page aur pacing ko interesting banaye rakhne ke liye"
-        ],
-        "correct": 3,
-        "explain": "Alag sizes aur shot distances (close-ups, medium aur full shots) mix karne se pages repetitive nahi lagte."
-      },
-      {
-        "q": "Canson guide ke mutabik, manga kholne par nazar aksar kahan jaati hai?",
-        "options": [
-          "Left-hand page ke top par, jo kisi important cheez ke liye achhi jagah hai",
-          "Right-hand page ke bottom par",
-          "Spread ke bilkul center mein",
-          "Page number par"
-        ],
-        "correct": 0,
-        "explain": "Guide kehti hai ki khaas taur par important drawing ya action left-hand page ke top par rakhein, kyunki nazar naturally wahan jaati hai."
-      },
-      {
-        "q": "Original drawing par screens (screentone) add karne se pehle kya karna chahiye?",
-        "options": [
-          "Pehle dialogue add karein",
-          "Saari inks mita dein",
-          "Original drawing ki surface saaf karein",
-          "Inking chhod dein"
-        ],
-        "correct": 2,
-        "explain": "Workflow ke mutabik, screen add karne se pehle original drawing ki surface saaf karein, taaki tone saaf-suthre tareeke se lage."
-      },
-      {
-        "q": "Storyboard stage kis kaam aata hai?",
-        "options": [
-          "Balloons ke liye fonts chunne ke liye",
-          "Finished drawing se pehle panel composition, zaroori boxes ki ginti aur page ka balance plan karne ke liye",
-          "Final pages ko color karne ke liye",
-          "Volume print karne ke liye"
-        ],
-        "correct": 1,
-        "explain": "Storyboard film director ke panels wale sketch ki tarah kaam karta hai; pencils aur inks se pehle composition aur balance tay karta hai."
-      }
-    ],
-    "checklist": [
-      "Main page ko right-to-left order mein padh aur compose kar sakta/sakti hoon.",
-      "Main script, storyboard, pencils, inks, fills aur final touches ko sahi order mein kar sakta/sakti hoon.",
-      "Main pacing control karne ke liye panel sizes aur shot distances mein variation la sakta/sakti hoon.",
-      "Main finish ke hissa ke taur par speed lines, screentone aur white correction use kar sakta/sakti hoon."
-    ],
-    "nextStep": "Ab aap manga ki reading direction, workflow aur visual shorthand jaante hain. Module 113 mein webtoons par baat hogi, jahan page ek vertical scroll ban jaata hai aur layout ke rules phir se badal jaate hain."
+  "hook": "Manga ko us taraf se kholo jo dekhne mein pichhla cover lagta hai, aur Western comics ki har aadat ulat jaati hai: nazar sabse pehle upar daayein jaati hai, aur poora page usse baayein taraf le jaane ke liye bana hota hai.",
+  "whyItMatters": [
+    "Modules 116 and 123 mein tumne page flow, consistent characters aur lettering seekhi. Manga bhi inhi buniyadon par tikta hai, lekin uski apni reading direction, workflow aur visual shorthand hoti hai. In conventions ko jaanna hi Western comic ko manga style mein draw karne aur asli manga banane ke beech ka farq hai.",
+    "Is arc mein manga ka production workflow sabse structured workflows mein se ek hai. Script, storyboard, pencils, inks, tones aur final touches—har step ka apna clear kaam hai. Inhe sahi order mein seekhna pehli short story poori karne ka sabse seedha tareeka hai, bina beech mein chhode."
+  ],
+  "coreIdea": [
+    "Traditional manga right to left padha jaata hai. Pehla panel right-hand page ke upar daayein taraf hota hai aur har row baayein taraf badhti hai. Isliye pages isi raaste ko dhyaan mein rakhkar compose hote hain, aur panel order se lekar balloon placement tak har layout decision ko iska khayaal rakhna hota hai.",
+    "Workflow ek fixed order mein chalta hai: scripting (theme, characters aur aise sequences jo jagah, waqt ya action ke hisaab se ek saath judte hain), storyboard mein panel composition plan karna, pencil sketch, inking, details aur blacks fill karna, phir final touches. Storyboard stage chhod doge toh pages dobara draw karne pad sakte hain.",
+    "Pages ko engaging rakhne ke liye variety zaroori hai. Boxes ka size aur shots ki distance badalte raho (close-ups, medium shots aur full shots), taaki monotony na aaye. Ye bhi yaad rakho ki manga kholne par nazar aksar left-hand page ke upar jaati hai, isliye koi important drawing ya reveal rakhne ke liye yeh ek strong jagah hai.",
+    "Manga ki apni visual shorthand hoti hai. Speed lines aur flashes motion aur impact dikhate hain, aur screentones (shading aur backgrounds ke liye use hone wale patterned overlays) pages ko unki khaas texture dete hain. Tone add karne se pehle page saaf karo, aur aakhir mein correction aur highlights ke liye white use karo."
+  ],
+  "mistakes": [
+    "Storyboard se page composition final hone se pehle finished pencils ya inks shuru kar dena.",
+    "Har jagah ek hi size ke panels aur ek hi shot distance use karna, jisse pacing flat ho jaati hai.",
+    "Pages ko left-to-right order mein lay out karna aur bhool jaana ki readers right-to-left padhenge.",
+    "Surface pehle saaf kiye bina gande ya adhure page par screentone add karna.",
+    "Spread ka sabse bada moment aisi jagah rakhna jahan nazar naturally nahi jaati, instead of left-hand page ke top ko use karne ke."
+  ],
+  "proTips": [
+    "Har sequence ka storyboard film director ki tarah banao. Finished drawing shuru karne se pehle socho ki kitne panels chahiye aur page ko balance kaise karna hai.",
+    "Shots ki distance soch-samajhkar mix karo: emotion ke liye close-up, action ke liye medium shot, aur scene establish karne ke liye full shot.",
+    "Pehle panel borders ink karo, phir dialogue balloons, phir characters aur settings; speed lines aur baaki effects sabse aakhir mein add karo.",
+    "Roughs aur panel borders ke liye halki layer ya light-colored pencil use karo, taaki woh final line art se compete na kare."
+  ],
+  "practice": {
+    "warmup": "Apna pasand ka manga page lo aur panels ko padhne ke order mein number karo—right to left aur top to bottom. Phir note karo ki layout tumhari nazar ko is raaste par kaise le jaata hai.",
+    "daily": "Do-page scene ka storyboard banao: page one right par aur page two left par. Panel sizes aur shot distances mein variety rakho.",
+    "weekly": "Ek storyboarded page ko pencils, inks aur tone ke stages se guzaro, steps ko Canson workflow ke order mein rakhte hue.",
+    "challenge": "Aisa two-page spread design karo jahan bada reveal left-hand page ke top par aaye. Phir kisi reader ko dikha kar check karo ki uski nazar wahan jaati hai ya nahi."
   },
+  "quiz": [
+    {
+      "q": "Traditional manga kis order mein padha jaata hai?",
+      "options": [
+        "Left to right, top to bottom",
+        "Right to left, jahan pehla panel right-hand page ke upper right mein hota hai",
+        "Bottom to top",
+        "Panels ko jis order mein number kiya ho"
+      ],
+      "correct": 1,
+      "explain": "Traditional manga right to left padha jaata hai, isliye pehla box right-hand page ke upper right mein hota hai."
+    },
+    {
+      "q": "Manga page par boxes ka size aur shot ka type kyun badalna chahiye?",
+      "options": [
+        "Zyada panels fit karne ke liye",
+        "Kyunki publishers ka yahi rule hai",
+        "Drawings ko aasaan banane ke liye",
+        "Monotony se bachne aur page aur pacing ko interesting rakhne ke liye"
+      ],
+      "correct": 3,
+      "explain": "Sizes aur shot distances (close-ups, medium aur full shots) mix karne se pages repetitive nahi lagte."
+    },
+    {
+      "q": "Canson guide ke mutabik, manga kholne par nazar aam taur par kahan jaati hai?",
+      "options": [
+        "Left-hand page ke top par, isliye koi important cheez rakhne ke liye yeh achhi jagah hai",
+        "Right-hand page ke bottom par",
+        "Spread ke bilkul center mein",
+        "Page number par"
+      ],
+      "correct": 0,
+      "explain": "Guide ke mutabik, khaas taur par significant drawing ya action left-hand page ke top par rakhna chahiye, kyunki nazar naturally wahin jaati hai."
+    },
+    {
+      "q": "Original drawing par screens (screentone) add karne se pehle kya karna chahiye?",
+      "options": [
+        "Pehle dialogue add karo",
+        "Saari inks mita do",
+        "Original drawing ki surface saaf karo",
+        "Inking chhod do"
+      ],
+      "correct": 2,
+      "explain": "Workflow kehta hai ki screen add karne se pehle original drawing ki surface saaf karo, taaki tone saaf-suthre tareeke se lage."
+    },
+    {
+      "q": "Storyboard stage kis kaam aata hai?",
+      "options": [
+        "Balloons ke fonts chunne ke liye",
+        "Finished drawing se pehle panel composition, kitne boxes chahiye aur page ko balance kaise karna hai, yeh plan karne ke liye",
+        "Final pages ko color karne ke liye",
+        "Volume print karne ke liye"
+      ],
+      "correct": 1,
+      "explain": "Storyboard film director ke panel sketches jaisa hota hai. Pencils aur inks se pehle composition aur balance tay ho jaata hai."
+    }
+  ],
+  "checklist": [
+    "Main page ko right-to-left order mein padh aur compose kar sakta hoon.",
+    "Main script, storyboard, pencils, inks, fills aur final touches ko sahi order mein kar sakta hoon.",
+    "Main pacing control karne ke liye panel sizes aur shot distances mein variety la sakta hoon.",
+    "Main finish ke hissa ke taur par speed lines, screentone aur white correction use kar sakta hoon."
+  ],
+  "nextStep": "Ab tum manga ki reading direction, workflow aur visual shorthand jaante ho. Module 119 mein webtoons par jaoge, jahan page vertical scroll ban jaata hai aur layout ke rules phir badal jaate hain."
+},
   "m125": {
-    "hook": "Webtoon reader ek waqt mein sirf ek panel dekhta hai, isliye panels ke beech ki jagah khaali nahi hoti. Wahi aapki story ki timing hoti hai.",
-    "whyItMatters": [
-      "Modules 110 se 124 tak page-based soch par focus tha: page par arranged panels, jinhe Z ya right-to-left path mein padha jaata hai. Webtoon mein page hota hi nahi. Reader scroll karta hai, aur pacing ke baare mein jo kuch aapne seekha hai, use phone ki ek single column ke hisaab se dobara plan karna padta hai.",
-      "Webtoons naye comic artists ke liye ek bada professional raasta bhi hain, kyunki yeh format mobile reading aur episodic release ke liye bana hai. Page layout ko bas crop karke strip bana dene ke bajay, format ke apne rules seekhne se artwork native feel karta hai."
-    ],
-    "coreIdea": [
-      "Webtoon ek vertical comic hota hai jo readers ko cinematic impression deta hai, kyunki page par ek saath kai panels dekhne ke bajay unhe ek waqt mein sirf ek panel nazar aata hai. Creator panels kahan place karta hai, usse story ki pacing control hoti hai. Aur kyunki zyadaatar readers mobile devices use karte hain, layout phone par dekhne mein comfortable hona chahiye.",
-      "Panels ke liye ek creator ke kuch rules of thumb: screen par ek waqt mein zyada se zyada do panels dikhayein, har panel mein lagbhag teen dialogues rakhein, important scenes ko emphasize karne ke liye panel ki width, shape aur size vary karein, panels ke beech kam se kam lagbhag 250 px aur time change dikhane ke liye kareeb 1000 px ki jagah chhodein, aur text itna bada rakhein ki aasani se padha ja sake. Jahan madad mile, wahan motion aur sound effects bhi use karein.",
-      "Webtoon storyboard mein chaar cheezon ki planning hoti hai: panel layout (shape aur size, upar se neeche ka order, aur dramatic pause ki tarah whitespace), character position aur composition (rough stick figures, close-up, medium ya long shot, aur panel mein kis character ka zyada dominance hai), emotion dikhane wale expressions aur gestures, aur clear reading order ke saath dialogue, jisme speech bubbles bahut crowded na hon.",
-      "Har panel type ka apna kaam hota hai: stable aur aasaan reading ke liye standard rectangles, towering cheezon ko dikhane, girne ya pace dheema karne ke liye tall vertical panels, landscapes aur sukoon ke liye wide panels, emotion ke liye close-ups, context ke liye establishing shots, climaxes ke liye splash panels, chhoti details ke liye inset panels, dreamlike feel ke liye borderless panels, chaos ke liye irregular panels, aur pause ke liye silent panels."
-    ],
-    "mistakes": [
-      "Webtoon ko comic page ki tarah treat karke ek screen mein kai panels bhar dena, jabki ek waqt mein sirf lagbhag do panels dikhne chahiye.",
-      "Ek panel mein bahut zyada dialogue rakhna, jisse reader scroll karna rok deta hai aur text ki deewar padhne lagta hai.",
-      "Har panel ke beech ek jaisi distance rakhna, jisse scroll mein rhythm nahi banti aur time changes ka signal nahi milta.",
-      "Aisa text use karna jo monitor par theek dikhe, lekin phone par aaram se padhne ke liye bahut chhota ho.",
-      "Silent panels aur whitespace ko skip karna, jabki scrolling format mein dramatic pause ke liye ye sabse zaroori tools hain."
-    ],
-    "proTips": [
-      "Har episode finalize karne se pehle use asli phone par preview karein, kyunki zyadaatar readers use wahin dekhenge.",
-      "Whitespace ko pause ki tarah use karein: reveal se pehle bada gap dene se reader anticipation ke ek beat ke dauraan scroll karta hai.",
-      "Important scenes ko mark karne ke liye panel ki width aur shape vary karein, aur splash ya oversized panel ko asli climax ke liye bachakar rakhein.",
-      "Clip Studio Paint mein frame border tool se panels banayein, taaki frame artwork ko mask kare aur line art uske bahar na nikle."
-    ],
-    "practice": {
-      "warmup": "Page comic ka ek four-panel scene lein aur use vertical scroll ke liye dobara storyboard karein. Panels ke beech kam se kam lagbhag 250 px ki jagah chhodein, aur jahan time change hota hai wahan isse kaafi bada gap rakhein.",
-      "daily": "List mein diye gaye kam se kam paanch alag panel types use karke stick-figure compositions ke saath das vertical panels ka storyboard banayein.",
-      "weekly": "Rough sketches ke saath ek short episode ka storyboard banayein, dialogue ko clear reading order mein rakhein, phir use apne phone par preview karein aur screen par bheed lagne wali har cheez theek karein.",
-      "challenge": "Ek hi reveal ko do baar draw karein: pehli baar usse pehle silent panel aur lamba whitespace pause rakhein, aur doosri baar inke bina. Phir ek sentence mein likhein ki timing kaise badalti hai."
-    },
-    "quiz": [
-      {
-        "q": "Module ke mutabik, webtoon reader ek waqt mein kya dekhta hai?",
-        "options": [
-          "Kai panels wala poora page",
-          "Saath-saath do poore pages",
-          "Aam taur par ek panel, jisse cinematic impression milta hai",
-          "Sirf text"
-        ],
-        "correct": 2,
-        "explain": "Page comic se alag, vertical webtoon readers ko ek waqt mein lagbhag ek panel dikhata hai. Isi liye panels ki placement aur spacing pacing ko control karti hai."
-      },
-      {
-        "q": "Ek waqt mein screen par ideally kitne panels dikhne chahiye?",
-        "options": [
-          "Zyada se zyada do",
-          "Kam se kam chhe",
-          "Bilkul chaar",
-          "Jitne fit ho sakein"
-        ],
-        "correct": 0,
-        "explain": "Suggested rule hai ki ek waqt mein screen par zyada se zyada do panels dikhayein, kyunki readers strip mein scroll karke aage badhte hain."
-      },
-      {
-        "q": "Panels ke beech whitespace ka kya use hai?",
-        "options": [
-          "File size kam karna",
-          "Mistakes chhupana",
-          "Page ko khaali dikhana",
-          "Dramatic pause dena; aur kaafi bada gap time change ka signal deta hai"
-        ],
-        "correct": 3,
-        "explain": "Scrolling format mein gap timing ka hissa hota hai: normal panels ke beech kam se kam lagbhag 250 px aur waqt beetne ka signal dene ke liye kareeb 1000 px rakhein."
-      },
-      {
-        "q": "Towering elements, girne aur pace dheema karne ke liye webtoons mein kaunsa panel type aam hai?",
-        "options": [
-          "Inset panel",
-          "Vertical (tall) panel",
-          "Silent panel",
-          "Borderless panel"
-        ],
-        "correct": 1,
-        "explain": "Tall vertical panels neeche ki taraf extend hote hain, towering subjects ya girne ke action ko dikhate hain, aur dramatic effect ke liye reading pace dheema karte hain."
-      },
-      {
-        "q": "Layouts mobile screens ke liye kyun design karne chahiye?",
-        "options": [
-          "Phones colors nahi dikha sakte",
-          "Kyunki print ki permission nahi hai",
-          "Kyunki zyadaatar webtoon readers computers ke bajay mobile devices use karte hain",
-          "Kyunki desktop screens bahut badi hoti hain"
-        ],
-        "correct": 2,
-        "explain": "Kyunki zyadaatar readers phones par padhte hain, isliye panels, text size aur spacing us screen size par comfortable hone chahiye."
-      }
-    ],
-    "checklist": [
-      "Main samjha sakta/sakti hoon ki webtoon ki pacing page layout ke bajay panel placement aur spacing se kaise tay hoti hai.",
-      "Main panels ke rules of thumb apply kar sakta/sakti hoon: har screen par lagbhag do panels, har panel mein lagbhag teen dialogues, aur bharpoor spacing.",
-      "Main vertical episode ke liye layout, composition, expressions aur dialogue ka storyboard bana sakta/sakti hoon.",
-      "Main pause, climax ya detail jaise kaamon ke liye sahi panel type chun sakta/sakti hoon."
-    ],
-    "nextStep": "Ab aap page, manga aur vertical-scroll formats ke liye comics plan kar sakte hain. Module 114 visual development ki taraf lautkar production shuru hone se pehle characters, environments aur mood ka look design karna sikhata hai."
+  "hook": "Webtoon reader ek waqt mein ek panel dekhta hai, isliye panels ke beech ki jagah khaali nahi hoti. Wahi tumhari story ki timing hoti hai.",
+  "whyItMatters": [
+    "Modules 116 to 124 mein tumne page-based soch banayi: page par arranged panels, jinhe Z pattern ya right-to-left direction mein padha jaata hai. Webtoon mein page hi nahi hota. Reader scroll karta hai, aur pacing ke baare mein tumne jo seekha hai use phone ki ek single column ke hisaab se dobara banana padta hai.",
+    "Naye comic artists ke liye webtoons professional kaam ka ek bada raasta bhi hain, kyunki yeh format mobile par padhne aur episodes mein release karne ke liye bana hai. Page layout ko strip mein crop karne ke bajay format ke apne rules seekhne se tumhara kaam webtoon ke liye natural lagta hai."
+  ],
+  "coreIdea": [
+    "Webtoon ek vertical comic hai jo readers ko cinematic feel deta hai, kyunki page par ek saath kai panels dekhne ke bajay woh ek waqt mein sirf ek panel dekhte hain. Creator panels ki placement se story ki pacing control karta hai. Aur kyunki zyadaatar readers mobile devices use karte hain, layout phone par aaraam se padhne layak hona chahiye.",
+    "Ek creator ke panel rules of thumb: screen par ek waqt mein zyada se zyada two panels dikhao, har panel mein lagbhag three dialogues rakho, important scenes ko ubharne ke liye panel ki width, shape aur size badalte raho, panels ke beech kam se kam lagbhag 250 px aur time change dikhane ke liye kareeb 1000 px chhodo, aur text itna bada rakho ki aasaani se padha ja sake. Jahan kaam aaye, motion aur sound effects bhi use karo.",
+    "Webtoon storyboard mein chaar cheezein plan hoti hain: panel layout (shape aur size, top-to-bottom order, aur dramatic pause ke liye whitespace); character position aur composition (rough stick figures, close-up, medium ya long shot, aur panel mein kaun dominate karta hai); emotion dikhane wale expressions aur gestures; aur clear reading order wala dialogue, jisme bubbles hadd se zyada bhare na hon.",
+    "Har panel type ka apna kaam hai: stable aur aasaan reading ke liye standard rectangles; oonchi cheezein dikhane, girne ya pace slow karne ke liye tall vertical panels; landscapes aur calm feel ke liye wide panels; emotion ke liye close-ups; context ke liye establishing shots; climax ke liye splash panels; chhoti details ke liye inset panels; dreamlike feel ke liye borderless panels; chaos ke liye irregular panels; aur pause ke liye silent panels."
+  ],
+  "mistakes": [
+    "Webtoon ko comic page ki tarah treat karke ek screen mein kai panels thoons dena, jabki ek waqt mein lagbhag two panels hi dikhne chahiye.",
+    "Ek panel mein bahut zyada dialogue rakhna, jisse reader scroll karna rok kar text ki deewar padhne lagta hai.",
+    "Har panel ke beech ek jaisi spacing rakhna, jisse scroll mein rhythm nahi banti aur time change ka pata nahi chalta.",
+    "Aisa text use karna jo monitor par theek dikhe, lekin phone par aaraam se padhne ke liye bahut chhota ho.",
+    "Silent panels aur whitespace chhod dena, jabki scrolling format mein dramatic pause banane ke yahi main tools hain."
+  ],
+  "proTips": [
+    "Har episode final karne se pehle use asli phone par preview karo, kyunki zyadaatar readers use wahin dekhenge.",
+    "Whitespace ko pause ki tarah use karo: reveal se pehle zyada gap rakhoge toh reader ke scroll karne se pehle anticipation ka ek beat banega.",
+    "Important scenes ko ubharne ke liye panel ki width aur shape badlo, aur splash ya oversized panel ko asli climax ke liye bachakar rakho.",
+    "Clip Studio Paint mein frame border tool se panels banao, taaki frame artwork ko mask kare aur line art uske bahar na nikle."
+  ],
+  "practice": {
+    "warmup": "Page comic ka ek four-panel scene lo aur use vertical scroll ke liye dobara storyboard karo. Panels ke beech kam se kam lagbhag 250 px chhodo aur time change hone par kaafi bada gap rakho.",
+    "daily": "Stick-figure compositions ke saath ten vertical panels ka storyboard banao, aur list mein se kam se kam five alag panel types use karo.",
+    "weekly": "Rough sketches ke saath ek short episode ka storyboard banao, dialogue ko clear reading order mein rakho, phir phone par preview karke screen par bheed lagne wali cheezein theek karo.",
+    "challenge": "Ek hi reveal do baar draw karo: ek baar usse pehle silent panel aur lamba whitespace pause rakhkar, aur ek baar bina inke. Phir ek sentence mein likho ki timing kaise badalti hai."
   },
+  "quiz": [
+    {
+      "q": "Module ke mutabik, webtoon reader ek waqt mein kya dekhta hai?",
+      "options": [
+        "Kai panels wala poora page",
+        "Side by side do poore pages",
+        "Aam taur par ek panel, jisse cinematic feel milta hai",
+        "Sirf text"
+      ],
+      "correct": 2,
+      "explain": "Page comic ke ulat, vertical webtoon mein readers ko ek waqt mein lagbhag ek panel dikhta hai. Isi wajah se placement aur spacing pacing control karte hain."
+    },
+    {
+      "q": "Ek waqt mein screen par ideally kitne panels dikhne chahiye?",
+      "options": [
+        "Zyada se zyada two",
+        "Kam se kam six",
+        "Bilkul four",
+        "Jitne fit ho jaayen"
+      ],
+      "correct": 0,
+      "explain": "Suggested rule hai ki ek waqt mein screen par zyada se zyada two panels rakho, kyunki readers strip mein scroll karte hain."
+    },
+    {
+      "q": "Panels ke beech whitespace kis kaam aata hai?",
+      "options": [
+        "File size bachane ke liye",
+        "Mistakes chhupane ke liye",
+        "Page ko khaali dikhane ke liye",
+        "Dramatic pause ke liye, aur time change dikhane ke liye kaafi bada gap rakhne ke liye"
+      ],
+      "correct": 3,
+      "explain": "Scrolling format mein gap timing ka hissa hai: normal panels ke beech kam se kam lagbhag 250 px aur waqt beetne ka signal dene ke liye kareeb 1000 px rakho."
+    },
+    {
+      "q": "Webtoons mein oonchi cheezein, girna aur pace slow karna dikhane ke liye kaunsa panel type aam hai?",
+      "options": [
+        "Inset panel",
+        "Vertical (tall) panel",
+        "Silent panel",
+        "Borderless panel"
+      ],
+      "correct": 1,
+      "explain": "Tall vertical panels neeche tak jaate hain, oonche subjects ya girne ko dikhate hain aur dramatic effect ke liye reading pace slow karte hain."
+    },
+    {
+      "q": "Layouts mobile screens ke liye kyun design karne chahiye?",
+      "options": [
+        "Phones color nahi dikha sakte",
+        "Kyunki print allowed nahi hai",
+        "Webtoon ke zyadaatar readers computers ke bajay mobile devices use karte hain",
+        "Kyunki desktop screens bahut bade hote hain"
+      ],
+      "correct": 2,
+      "explain": "Kyunki zyadaatar readers phone par hote hain, panels, text size aur spacing us screen par aaraam se padhne layak hone chahiye."
+    }
+  ],
+  "checklist": [
+    "Main samjha sakta hoon ki webtoon ki pacing page layout ke bajay panel placement aur spacing se kyun banti hai.",
+    "Main panel ke rules of thumb use kar sakta hoon: ek screen par lagbhag two panels, har panel mein lagbhag three dialogues, aur panels ke beech khuli spacing.",
+    "Main vertical episode ke liye layout, composition, expressions aur dialogue ka storyboard bana sakta hoon.",
+    "Main pause, climax ya detail jaise kaam ke hisaab se panel type chun sakta hoon."
+  ],
+  "nextStep": "Ab tum page, manga aur vertical-scroll formats ke liye comics plan kar sakte ho. Module 120 mein visual development ki taraf lautoge: production shuru hone se pehle characters, environments aur mood ka look design karna."
+},
   "m126": {
-    "hook": "Ek bhi character model kiye jaane ya ek bhi shot animate kiye jaane se pehle, koi pehle hi tay kar chuka hota hai ki poori duniya ka ehsaas kaisa hona chahiye. Isi ko visual development kehte hain.",
-    "whyItMatters": [
-      "Worldbuilding arc mein aapne color scripting, mood, lighting aur concept-art pipeline ko alag-alag skills ke roop mein seekha. Visual development woh kaam hai jahan ye sab judte hain: ek artist ya chhoti team, production shuru hone se pehle poore project ka look tay karti hai.",
-      "Isse aapka portfolio banane ka tareeka bhi badal jata hai. Studios sirf khoobsurat single images nahi dekhte; woh yeh saboot bhi chahte hain ki aap ek unified visual system bana sakte hain jise doosre artists follow kar saken."
-    ],
-    "coreIdea": [
-      "Visual development pre-production mein project ka look, mood aur feel tay karta hai: color palette, lighting mood, character style, environment tone aur poori duniya ki consistency. Iska use animation, games, film aur immersive media mein hota hai. Iske outputs mein color scripts, lighting studies, mood paintings aur atmosphere tests ke saath character, costume aur environment explorations bhi shamil hain.",
-      "Yeh pipeline ke shuruati hisson mein aata hai. Visual development artists directors, art directors, production designers aur story teams ke saath kaam karte hain, aur unka kaam visual reference ban jata hai jiske aadhar par modelers, animators aur lighting artists kaam karte hain. Kuch artists production ke dauran bhi jude rehte hain, taaki final result original vision se mel khata rahe.",
-      "In job titles ke beech kaafi overlap hai. Aam taur par visual development aur concept art ko lagbhag ek-doosre ke badle istemal kiya jata hai; feature aur TV animation mein visual development kehna zyada aam hai, jabki games aur live action mein concept art kehna zyada aam hai. Kaam ke liye ek upyogi farq yeh hai ki visual development overall look aur consistency tay karta hai—jaise color scripts, lighting style aur shape language—jabki concept art usi ke andar specific characters, props aur vehicles design karta hai.",
-      "Yeh kaam zyadaatar 2D digital painting ka hota hai, jisme environments aur lighting ke liye 3D blockouts ka sahara tezi se liya ja raha hai. Iski buniyad strong fundamentals par hoti hai: drawing, perspective, color, light aur storytelling. Ek strong portfolio mein unified visual system dikhna chahiye, jisme mood explorations, color studies, style variations aur unke peeche ka process ho. Kai unrelated pieces ke bajay kuch strong projects behtar hote hain."
-    ],
-    "mistakes": [
-      "Visual development ko ek khoobsurat illustration samajhna, na ki aisa system jo poore project mein consistent rehna chahiye.",
-      "Colors aur lighting isliye chunna kyunki woh achhe lagte hain, na ki isliye kyunki woh story ke emotion ko support karte hain.",
-      "Portfolio ko unrelated pieces se bhar dena, bajay kuch aise projects ke jo har ek mein ek complete aur coherent world dikhate hon.",
-      "Sirf polished final images dikhana aur explorations, style variations aur nakaam ideas chhupa dena, jo yeh dikhate hain ki aap kaise sochte hain.",
-      "Character look, environments, color scripting ya props aur costumes jaise kisi ek focus ko chunne ke bajay har specialty mein haath aazmana."
-    ],
-    "proTips": [
-      "Pehle story ke emotional beats likhein, phir colors aur lighting ko unke hisaab se dhalne dein—bilkul color script ki tarah.",
-      "Har portfolio project ke liye ek chhoti world bible banayein: ek palette, kuch lighting moods, ek shape language, kuch character silhouettes aur key environments.",
-      "Ek specialization chunein jiske liye aap pehchane ja sakein, aur baaki specializations ko uska support banayein.",
-      "Explorations sambhal kar rakhein. Mood studies, color studies aur style variations is baat ka saboot hain ki aap ek look develop kar sakte hain, sirf use render nahi."
-    ],
-    "practice": {
-      "warmup": "Apni jaani-pehchani koi chhoti story lein aur uske paanch key scenes ke emotional beats ko har scene ke liye ek sentence mein likhein.",
-      "daily": "Ek hi location ke teen 30-minute mood studies paint karein, har ek ko alag emotional tone dein aur sirf color aur lighting badlein.",
-      "weekly": "Ek original world ke liye ek-page style guide banayein: palette, lighting moods, shape language, teen character silhouettes aur do environment keys.",
-      "challenge": "Apni style guide ke liye six-frame color script banayein aur kisi se sirf colors ke aadhar par story ka emotional arc guess karne ko kahein."
-    },
-    "quiz": [
-      {
-        "q": "Visual development kisi project ke liye kya tay karta hai?",
-        "options": [
-          "Sirf marketing posters",
-          "Final animation timing",
-          "Full production se pehle project ka look, mood aur feel—jaise palette, lighting mood, character style aur environment tone",
-          "Business budget"
-        ],
-        "correct": 2,
-        "explain": "Visual development pre-production mein overall visual direction tay karta hai, taaki poori production ek coherent look follow kar sake."
-      },
-      {
-        "q": "Pipeline mein visual development zyadaatar kab hota hai?",
-        "options": [
-          "Pre-production mein, modeling, animation aur lighting shuru hone se pehle",
-          "Sirf film release hone ke baad",
-          "Sirf post-production ke dauran",
-          "Final rendering ke baad"
-        ],
-        "correct": 0,
-        "explain": "Yeh zyadaatar pre-production ka role hai, halanki kuch artists production ke dauran bhi jude rehte hain, taaki result original vision ke saath consistent rahe."
-      },
-      {
-        "q": "Visual development aur concept art ka aapas mein kya rishta hai?",
-        "options": [
-          "Dono ka koi sambandh nahi aur inmein kabhi overlap nahi hota",
-          "Concept art hamesha 3D hota hai aur visual development hamesha 2D",
-          "Visual development sirf advertising ke liye hota hai",
-          "Dono titles overlap karte hain, lekin visual development overall look tay karta hai, jabki concept art uske andar specific characters, props aur vehicles design karta hai"
-        ],
-        "correct": 3,
-        "explain": "Aam taur par dono titles ek-doosre ke badle istemal hote hain, lekin ek upyogi farq yeh hai: overall look aur consistency, banam specific designs."
-      },
-      {
-        "q": "Visual development portfolio mein kya dikhna chahiye?",
-        "options": [
-          "Mood explorations, color studies, style variations aur process ke saath ek unified visual system",
-          "Jitne ho sake utne unrelated pieces",
-          "Bina process ke sirf final renders",
-          "Sirf character portraits"
-        ],
-        "correct": 0,
-        "explain": "Studios yeh saboot chahte hain ki aap ek coherent look bana sakte hain. Isliye explorations ke saath kuch strong projects, kai random pieces se behtar hote hain."
-      },
-      {
-        "q": "Colors chunne se pehle story ke emotional beats likhna zaroori kyun hai?",
-        "options": [
-          "Kyunki colors printer tay karta hai",
-          "Taaki color aur lighting sirf achhe dikhne ke bajay story ke emotion ko support karein",
-          "Kyunki isse palette ki zaroorat nahi rehti",
-          "File ka size chhota karne ke liye"
-        ],
-        "correct": 1,
-        "explain": "Color script tabhi kaam karta hai jab har color choice story ke kisi emotional beat se judi ho."
-      }
-    ],
-    "checklist": [
-      "Main samjha sakta/sakti hoon ki visual development kya tay karta hai aur pipeline mein kahan aata hai.",
-      "Main bata sakta/sakti hoon ki visual development aur concept art mein kya overlap hai aur kya farq hai.",
-      "Main palette, lighting moods, shape language aur key designs ke saath ek chhoti world bible bana sakta/sakti hoon.",
-      "Main aisa portfolio project plan kar sakta/sakti hoon jo process ke saath ek unified visual system dikhaye."
-    ],
-    "nextStep": "Ab aap poore project ka look tay kar sakte hain. Module 115 us look ke andar aane wale specific designs par focus karta hai: concept art specializations, jaise character, prop aur environment design sheets."
+  "hook": "Ek bhi character model ya shot animate hone se pehle, koi yeh tay kar chuka hota hai ki poori duniya ka ehsaas kaisa hona chahiye. Isi faisle ko visual development kehte hain.",
+  "whyItMatters": [
+    "Worldbuilding arc mein tumne color scripting, mood, lighting aur concept-art pipeline ko alag-alag skills ki tarah seekha. Visual development mein yeh sab milkar kaam karte hain: ek artist ya chhoti team production shuru hone se pehle poore project ka look tay karti hai.",
+    "Isse portfolio banane ka tareeka bhi badal jata hai. Studios sirf khoobsurat single images nahi dhoondhte; woh yeh dekhna chahte hain ki tum ek unified visual system bana sakte ho jise doosre artists follow kar saken."
+  ],
+  "coreIdea": [
+    "Visual development pre-production mein project ka look, mood aur feel define karta hai: color palette, lighting mood, character style, environment tone aur poori duniya mein consistency. Animation, games, film aur immersive media mein iska use hota hai. Iske outputs mein color scripts, lighting studies, mood paintings aur atmosphere tests hote hain, saath hi character, costume aur environment explorations bhi.",
+    "Yeh pipeline ke shuruati hisson mein aata hai. Visual development artists directors, art directors, production designers aur story teams ke saath kaam karte hain. Unka kaam visual reference banta hai jiske basis par modelers, animators aur lighting artists aage kaam karte hain. Kuch artists production ke dauran bhi jude rehte hain, taaki final result original vision se match karta rahe.",
+    "In roles ke titles ek-doosre se overlap karte hain. Aksar visual development aur concept art ko lagbhag ek hi matlab mein use kiya jata hai. Feature aur TV animation mein visual development kehna zyada aam hai, jabki games aur live action mein concept art zyada kaha jata hai. Kaam ke liye ek useful farq yeh hai: visual development overall look aur consistency set karta hai (color scripts, lighting style, shape language), jabki concept art usi look ke andar specific characters, props aur vehicles design karta hai.",
+    "Yeh kaam zyada tar 2D digital painting mein hota hai. Environments aur lighting ke liye ab 3D blockouts ka sahara bhi zyada liya jata hai. Iski buniyad strong fundamentals hain: drawing, perspective, color, light aur storytelling. Ek strong portfolio mein unified visual system dikhna chahiye—mood explorations, color studies, style variations aur unke peeche ka process. Bahut saare alag-alag pieces ke bajaye kuch strong projects behtar hote hain."
+  ],
+  "mistakes": [
+    "Visual development ko ek khoobsurat illustration samajhna, na ki aisa system jo poore project mein consistent rehna chahiye.",
+    "Colors aur lighting sirf isliye chunna kyunki woh achhe lagte hain, na ki isliye ki woh story ki emotion ko support karte hain.",
+    "Portfolio ko alag-alag, bina talluq wale pieces se bhar dena, bajaye kuch aise projects dikhane ke jo har ek ek poori, coherent duniya dikhaye.",
+    "Sirf polished finals dikhana aur explorations, style variations aur failed ideas chhupa dena, jabki yahi cheezein dikhati hain ki tum kaise sochte ho.",
+    "Har specialty mein haath aazmana, bajaye ek focus chunne ke—jaise character look, environments, color scripting, ya props aur costumes."
+  ],
+  "proTips": [
+    "Pehle story ke emotional beats likho, phir colors aur lighting ko unke hisaab se aane do—bilkul color script ki tarah.",
+    "Portfolio ke har project ke liye ek chhoti world bible banao: palette, kuch lighting moods, shape language, kuch character silhouettes aur key environments.",
+    "Ek specialization chuno jiske liye tum pehchane jao, aur baaki skills ko uska support banne do.",
+    "Explorations sambhal kar rakho. Mood studies, color studies aur style variations is baat ka saboot hain ki tum ek look develop kar sakte ho, sirf render nahi."
+  ],
+  "practice": {
+    "warmup": "Apni jaani-pehchani koi chhoti story lo aur uske paanch key scenes ke emotional beat ko ek-ek sentence mein likho.",
+    "daily": "Ek hi location ke teen 30-minute mood studies paint karo, har ek mein alag emotional tone rakho. Sirf color aur lighting badlo.",
+    "weekly": "Ek original duniya ke liye ek-page style guide banao: palette, lighting moods, shape language, teen character silhouettes aur do environment keys.",
+    "challenge": "Apni style guide ke liye six-frame color script banao aur kisi se kaho ki woh sirf colors dekhkar story ka emotional arc guess kare."
   },
+  "quiz": [
+    {
+      "q": "Visual development kisi project ke liye kya define karta hai?",
+      "options": [
+        "Sirf marketing posters",
+        "Final animation timing",
+        "Full production se pehle project ka look, mood aur feel—jaise palette, lighting mood, character style aur environment tone",
+        "Business budget"
+      ],
+      "correct": 2,
+      "explain": "Visual development pre-production mein overall visual direction set karta hai, taaki poori production ek coherent look follow kar sake."
+    },
+    {
+      "q": "Pipeline mein visual development zyadatar kab hota hai?",
+      "options": [
+        "Pre-production mein, modeling, animation aur lighting shuru hone se pehle",
+        "Sirf film release hone ke baad",
+        "Sirf post-production ke dauran",
+        "Final rendering ke baad"
+      ],
+      "correct": 0,
+      "explain": "Yeh role zyadatar pre-production mein hota hai, halanki kuch artists production ke dauran bhi jude rehte hain, taaki result original vision ke saath consistent rahe."
+    },
+    {
+      "q": "Visual development aur concept art ka aapas mein kya rishta hai?",
+      "options": [
+        "Dono ka koi rishta nahi aur kabhi overlap nahi karte",
+        "Concept art hamesha 3D hota hai aur visual development hamesha 2D",
+        "Visual development sirf advertising ke liye hota hai",
+        "Dono titles overlap karte hain, lekin visual development overall look set karta hai aur concept art uske andar specific characters, props aur vehicles design karta hai"
+      ],
+      "correct": 3,
+      "explain": "Asal kaam mein in titles ko aksar ek-doosre ki jagah use kiya jata hai, lekin ek useful farq hai: overall look aur consistency, banam specific designs."
+    },
+    {
+      "q": "Visual development portfolio mein kya dikhna chahiye?",
+      "options": [
+        "Mood explorations, color studies, style variations aur process ke saath ek unified visual system",
+        "Jitne ho saken utne unrelated pieces",
+        "Sirf final renders, bina process ke",
+        "Sirf character portraits"
+      ],
+      "correct": 0,
+      "explain": "Studios yeh dekhna chahte hain ki tum coherent look bana sakte ho. Isliye process aur explorations ke saath kuch strong projects, dher saare random pieces se behtar hote hain."
+    },
+    {
+      "q": "Colors chunne se pehle story ke emotional beats likhna kyun zaroori hai?",
+      "options": [
+        "Kyunki colors printer tay karta hai",
+        "Taaki color aur lighting sirf achhe lagne ke bajaye story ki emotion ko support karein",
+        "Kyunki isse palette ki zaroorat nahi rehti",
+        "File size chhota karne ke liye"
+      ],
+      "correct": 1,
+      "explain": "Color script tab kaam karta hai jab har color choice story ke kisi emotional beat se judi ho."
+    }
+  ],
+  "checklist": [
+    "Main samjha sakta/sakti hoon ki visual development kya define karta hai aur pipeline mein kahan aata hai.",
+    "Main bata sakta/sakti hoon ki visual development aur concept art kahan overlap karte hain aur kaise alag hain.",
+    "Main palette, lighting moods, shape language aur key designs ke saath ek chhoti world bible bana sakta/sakti hoon.",
+    "Main aisa portfolio project plan kar sakta/sakti hoon jo process ke saath ek unified visual system dikhaye."
+  ],
+  "nextStep": "Ab tum poore project ka look define kar sakte ho. Module 121 us look ke andar aane wale specific designs par focus karta hai: concept art specializations, jaise character, prop aur environment design sheets."
+},
   "m127": {
-    "hook": "Concept artist sirf character ya prop draw nahi karta. Woh ek sawaal ka jawab deta hai: yeh kaisa dikhna chahiye, taaki writer, animator, modeler aur player—sab ise ek nazar mein samajh saken?",
-    "whyItMatters": [
-      "Visual development (Module 114) poore project ka look set karta hai. Specializations us look ke andar ke specific designs hote hain, aur concept art ki zyadaatar jobs mein asal mein yahi maange jaate hain: yeh character, yeh prop, yeh vehicle, yeh creature.",
-      "Yeh module un skills ko ek saath laata hai jo aap pehle se jaante hain. Thumbnailing (Module 87), production pipeline (Module 88) aur model sheets (Module 111)—yeh sab milkar character ya prop design karne ka ek repeatable process banate hain, jise doosre log dekhkar bana sakte hain."
-    ],
-    "coreIdea": [
-      "Character design visual communication hai. Aap sirf uske look ke zariye audience ko character ke baare mein kuch batate hain—posing, expression, costuming, props, shape language aur color ka use karke, aur saath hi design ko appealing rakhte hain. Appeal kai cheezon se milkar banti hai, kisi ek trick se nahi.",
-      "Process brief aur references se shuru hota hai, phir silhouette par focus karte hue bahut saare thumbnails banaye jaate hain. Har design pichhle design se kaafi alag dikhna chahiye, taaki art director ko ideas ki asli breadth nazar aaye; phir aap unmein se options chhaantte hain. Uske baad ek direction ko costume aur material callouts ke saath refine kiya jaata hai, phir turnaround, expression studies, prop breakouts aur handoff ke liye layered files banayi jaati hain.",
-      "Silhouette ko function guide karta hai. Sochiye ki project mein character kya karta hai, silhouettes ko chhote size aur shadow mein test kijiye, extra weapons ya outfit layers jodne ke bajaye image ko clean rakhiye, har feature ko functional banaiye, aur proportions ko us kaam ke hisaab se check kijiye jo character ko karna hai—jaise baithna, chadhna ya two-handed weapon pakadna. Ek kaam ka test hai: sheet aise kisi insaan ko dijiye jisne brief kabhi nahi padha ho, aur dekhiye kya woh aapko character ke baare mein bata sakta hai.",
-      "Props world-building ka hissa hain. Har environment mein props bhare hote hain aur characters unhe lagataar carry karte hain, isliye prop ko duniya aur use karne wale logon ke baare mein kuch batana chahiye, sirf jagah bharne ka kaam nahi karna chahiye. Game designer ki tarah sochna—ki duniya mein woh object kya karta hai—use design karne ka ek hissa hai."
-    ],
-    "mistakes": [
-      "Kai alag silhouettes explore karne se pehle hi rendered illustration banana shuru kar dena.",
-      "Thumbnails ka aisa page banana jismein sab ek hi idea ke chhote variations hon, bajaye iske ki alag-alag directions explore ki jaayen.",
-      "Aisa character design karna jise samajhne ke liye likhit explanation ki zaroorat ho.",
-      "Extra weapons, layers aur decoration jodna, jin sabko model karna padega, lekin jo character ke function mein koi madad nahi karte.",
-      "Props ko aisi filler cheez samajhna jo kisi bhi world mein fit ho sakti ho, bajaye unhe story aur function dikhane ke liye design karne ke."
-    ],
-    "proTips": [
-      "Draw karne se pehle ek chhota brief likhiye: project mein character ka function, uski history ka ek paragraph, teen se paanch references aur ek negative reference jo bataye ki aap kya nahi chahte.",
-      "Silhouettes jaldi generate kijiye aur har ek ko overall idea mein alag banaiye, sirf details mein nahi.",
-      "Refine karne se pehle apne favorite silhouettes ko bahut chhote size mein aur solid black shapes ke roop mein test kijiye.",
-      "Props ke liye poochhiye: ise kisne banaya, kaun use karta hai, yeh kis world ka hissa hai, aur ise kaise pakda ya operate kiya jaata hai? Jawabon ko design shape dene dijiye."
-    ],
-    "practice": {
-      "warmup": "Function, ek paragraph ki history, teen references aur ek negative reference ke saath ek page ka character brief bhariye.",
-      "daily": "Traveling merchant ke 20 quick silhouette thumbnails banaiye. Har ek ko clearly alag rakhiye, phir teen sabse strong options chuniye.",
-      "weekly": "Ek silhouette ko refinement, turnaround aur teen expression studies tak le jaiye, aur saath hi un props ki breakout sheet banaiye jo aapka character carry karta hai.",
-      "challenge": "Ek hi character ke liye teen props design kijiye, jinmein se har ek uski duniya ke baare mein alag baat bataye. Phir apne jaane-pehchaane game mein kisi naye item ke liye ek chhota brief likhiye aur us item ko design kijiye."
-    },
-    "quiz": [
-      {
-        "q": "Is module ke mutabik character design kya hai?",
-        "options": [
-          "Sabse khoobsurat mumkin outfit draw karna",
-          "Kisi existing character ki copy banana",
-          "Visual communication ka ek tareeqa, jo character ke look ke zariye audience ko uske baare mein batata hai",
-          "Character ki voice chunna"
-        ],
-        "correct": 2,
-        "explain": "Character designers posing, expression, costuming, props, shape language aur color ka use karke batate hain ki character kaun hai, aur saath hi design ko appealing rakhte hain."
-      },
-      {
-        "q": "Character design karte waqt thumbnail stage mein aapko kis cheez ka aim rakhna chahiye?",
-        "options": [
-          "Aise bahut se designs banana jo ek-doosre se kaafi alag hon, khaaskar silhouette mein, taaki ideas ki breadth nazar aaye",
-          "Ek final rendered image banana",
-          "Alag details ke saath ek hi silhouette ke paanch versions banana",
-          "Jitne ho sake utne colors istemal karna"
-        ],
-        "correct": 0,
-        "explain": "Art directors direction chunne se pehle ideas ki ek wide range dekhna chahte hain, isliye har thumbnail ek sachmuch alag idea hona chahiye."
-      },
-      {
-        "q": "Yeh jaanchne ka ek kaam ka tareeqa kya hai ki character sheet kaam kar rahi hai ya nahi?",
-        "options": [
-          "Woh kitni colorful hai",
-          "Kya usmein das se zyada details hain",
-          "Kya use jaldi draw kiya gaya tha",
-          "Kya aisa insaan jisne brief kabhi nahi padha, aapko character ke baare mein bata sakta hai"
-        ],
-        "correct": 3,
-        "explain": "Agar design ko samajhne ke liye likhit explanation ki zaroorat ho, toh woh abhi complete nahi hai; koi anjaan insaan sirf drawing dekhkar use samajh sake."
-      },
-      {
-        "q": "Props ko world-building ka hissa kyun maana jaata hai?",
-        "options": [
-          "Woh hamesha image ka sabse detailed hissa hote hain",
-          "Props optional decoration hote hain",
-          "Har environment mein props bhare hote hain aur characters unhe carry karte hain, isliye woh duniya aur uske logon ke baare mein kuch bata sakte hain",
-          "Woh environment design ki jagah lete hain"
-        ],
-        "correct": 2,
-        "explain": "Props har jagah dikhte hain aur characters unhe lagataar use karte hain. Isliye yeh batane ka ek asardar tareeqa hain ki cheezein kisne banayi aur kaun use karta hai, aur woh kis duniya ka hissa hain."
-      },
-      {
-        "q": "Brief mein negative reference kya karta hai?",
-        "options": [
-          "Woh aisi image dikhata hai jo batati hai ki aap kya nahi chahte; isse revisions ke kai rounds bach sakte hain",
-          "Woh character ki kamiyan batata hai",
-          "Woh thumbnails ki jagah leta hai",
-          "Woh final render hota hai"
-        ],
-        "correct": 0,
-        "explain": "‘Yeh nahi’ batane wala reference, positive references ki tarah design ke options ko limit karta hai, lekin ise aksar include nahi kiya jaata."
-      }
-    ],
-    "checklist": [
-      "Main function, history, references aur negative reference ke saath ek chhota design brief likh sakta/sakti hoon.",
-      "Main aise silhouettes bana sakta/sakti hoon jo ek-doosre se sachmuch alag hon, aur unhe chhote size mein test kar sakta/sakti hoon.",
-      "Main ek design ko refinement, turnaround, expression studies aur prop breakouts tak le ja sakta/sakti hoon.",
-      "Main kisi prop ko is tarah design kar sakta/sakti hoon ki woh function kare aur apni duniya ke baare mein kuch bataye."
-    ],
-    "nextStep": "Ab aap kisi project ke look ke andar specific characters aur props design kar sakte hain. Module 116 mein hum dekhenge ki games ke liye in designs ko asal mein kaise banaya jaata hai: concept se engine tak ka game art pipeline."
+  "hook": "Concept artist sirf character ya prop nahi banata. Woh ek sawaal ka jawab deta hai: yeh cheez kaisi dikhni chahiye, taaki writer, animator, modeler aur player sab use ek nazar mein samajh saken?",
+  "whyItMatters": [
+    "Visual development (Module 120) poore project ka look set karta hai. Specializations us look ke andar aane wale specific designs hain, aur concept art ki zyada tar jobs mein asal mein yahi maanga jata hai: yeh character, yeh prop, yeh vehicle, yeh creature.",
+    "Is module mein tum un skills ko ek saath laoge jo pehle se seekh chuke ho. Thumbnailing (Module 83), production pipeline (Module 84) aur model sheets (Module 117)—yeh sab milkar ek aisa repeatable process banate hain jisse tum character ya prop design kar sako aur doosre log us design ko bana saken. "
+  ],
+  "coreIdea": [
+    "Character design visual communication hai. Tum character ke look ke zariye audience ko uske baare mein batate ho—posing, expression, costuming, props, shape language aur color ka use karke—aur saath hi design ko appealing bhi rakhte ho. Appeal kai cheezon se milkar banti hai, kisi ek trick se nahi.",
+    "Process brief aur references se shuru hota hai, phir silhouette par focus karte hue dher saare thumbnails banao. Har design pichhle design se kaafi alag dikhna chahiye, taaki art director ko ideas ki asli range nazar aaye. Phir options ko chhaant kar aage badho. Ek direction chunne ke baad use costume aur material callouts ke saath refine kiya jata hai. Uske baad turnaround, expression studies, prop breakouts aur handoff ke liye layered files banti hain.",
+    "Silhouette ko character ka function guide karta hai. Socho ki project mein character kya karta hai, silhouettes ko chhote size mein aur shadow ke andar test karo, extra weapons ya outfit layers jodne ke bajaye image ko clean rakho, har feature ko functional banao, aur proportions ko character ke kaam ke hisaab se check karo—jaise baithna, chadhna ya two-handed weapon pakadna. Ek useful test hai sheet kisi aise insaan ko dena jisne brief kabhi nahi padha, aur dekhna ki kya woh tumhe character ka description de sakta hai.",
+    "Props duniya ko build karte hain. Har environment mein props hote hain aur characters unhe lagataar carry karte hain. Isliye prop ko duniya aur use karne wale logon ke baare mein kuch batana chahiye, sirf jagah bharni nahi chahiye. Object duniya mein kya kaam karta hai, is baare mein game designer ki tarah sochna bhi uske design ka hissa hai."
+  ],
+  "mistakes": [
+    "Kai alag silhouettes explore karne se pehle hi rendered illustration banana shuru kar dena.",
+    "Thumbnails ka page banana jahan sab ek hi idea ke chhote variations hon, asli mein alag-alag directions na hon.",
+    "Aisa character design karna jise samajhne ke liye likh kar explanation deni pade.",
+    "Extra weapons, layers aur decoration jodna jin sabko model karna padega, par jo character ke function mein koi madad nahi karte.",
+    "Props ko filler samajhna jo kisi bhi duniya ka hissa ho sakte hain, bajaye unhe story aur function dikhane ke liye design karne ke."
+  ],
+  "proTips": [
+    "Draw karne se pehle ek chhota brief likho: project mein character ka function, uski history ka ek paragraph, teen se paanch references aur ek negative reference jo bataye ki tum kya nahi chahte.",
+    "Silhouettes jaldi banao aur har ek ko overall idea mein alag rakhne par zor do, sirf details mein nahi.",
+    "Refine karne se pehle apne favorite silhouettes ko bahut chhote size par aur solid black shapes ki tarah test karo.",
+    "Props ke liye socho: ise kisne banaya, kaun use karta hai, yeh kis duniya ka hai, aur ise pakadte ya chalate kaise hain. Jawabon ko design ka rukh tay karne do."
+  ],
+  "practice": {
+    "warmup": "Ek page ka character brief bharo: function, history ka ek paragraph, teen references aur ek negative reference.",
+    "daily": "Ek traveling merchant ke 20 quick silhouette thumbnails banao. Har ek ko dekhne mein khaasa alag rakho, phir teen sabse strong chuno.",
+    "weekly": "Ek silhouette ko refinement, turnaround aur teen expression studies tak le jao. Saath hi tumhara character jo props carry karta hai unki breakout sheet banao.",
+    "challenge": "Ek hi character ke liye teen props design karo, jinmein se har ek uski duniya ke baare mein alag baat bataye. Phir apne jaane-pehchane game mein kisi naye item ke liye chhota brief likho aur us item ko design karo."
   },
+  "quiz": [
+    {
+      "q": "Is module ke hisaab se character design kya hai?",
+      "options": [
+        "Sabse khoobsurat mumkin outfit banana",
+        "Kisi existing character ki copy karna",
+        "Visual communication ka ek tareeka jo character ke look ke zariye audience ko uske baare mein batata hai",
+        "Character ki voice chunna"
+      ],
+      "correct": 2,
+      "explain": "Character designers posing, expression, costuming, props, shape language aur color ke zariye batate hain ki character kaun hai, aur saath hi design ko appealing rakhte hain."
+    },
+    {
+      "q": "Character design ke thumbnail stage mein tumhara kya aim hona chahiye?",
+      "options": [
+        "Aise kai designs banana jo ek-doosre se kaafi alag hon, khaaskar silhouette mein, taaki ideas ki range dikhe",
+        "Ek final rendered image banana",
+        "Alag details ke saath ek hi silhouette ke paanch versions banana",
+        "Jitne ho saken utne colors use karna"
+      ],
+      "correct": 0,
+      "explain": "Art directors direction chunne se pehle ideas ki wide range dekhna chahte hain. Isliye har thumbnail ka idea waqai alag hona chahiye."
+    },
+    {
+      "q": "Yeh jaanchne ka ek useful tareeka kya hai ki character sheet kaam kar rahi hai?",
+      "options": [
+        "Woh kitni colorful hai",
+        "Kya usmein das se zyada details hain",
+        "Kya use jaldi draw kiya gaya tha",
+        "Kya brief kabhi na padhne wala insaan tumhe character ka description de sakta hai"
+      ],
+      "correct": 3,
+      "explain": "Agar design samajhne ke liye likhi hui explanation chahiye, toh woh abhi tayyar nahi hai; koi ajnabi bhi sirf drawing dekhkar use samajh sake."
+    },
+    {
+      "q": "Props ko world-building ka hissa kyun maana jata hai?",
+      "options": [
+        "Kyunki woh hamesha image ka sabse detailed hissa hote hain",
+        "Props sirf optional decoration hote hain",
+        "Har environment mein props hote hain aur characters unhe carry karte hain, isliye woh duniya aur uske logon ke baare mein kuch bata sakte hain",
+        "Woh environment design ki jagah lete hain"
+      ],
+      "correct": 2,
+      "explain": "Props har jagah dikhte hain aur characters unhe lagataar use karte hain. Isliye unke zariye yeh batana aasaan hota hai ki cheezein kisne banayi, kaun unhe use karta hai aur woh kis duniya se hain."
+    },
+    {
+      "q": "Brief mein negative reference ka kya kaam hai?",
+      "options": [
+        "Aisi image dikhana jo bataye ki tum kya nahi chahte, jisse revisions ke kai rounds bach sakte hain",
+        "Character ki kamiyan ginana",
+        "Thumbnails ki jagah lena",
+        "Final render hona"
+      ],
+      "correct": 0,
+      "explain": "'Yeh nahi' batane wala reference, positive references ki tarah hi design ke options ko seemit karne mein madad karta hai—aur ise aksar shamil nahi kiya jata."
+    }
+  ],
+  "checklist": [
+    "Main function, history, references aur negative reference ke saath ek chhota design brief likh sakta/sakti hoon.",
+    "Main aise silhouettes bana sakta/sakti hoon jo waqai ek-doosre se alag hon, aur unhe chhote size par test kar sakta/sakti hoon.",
+    "Main ek design ko refinement, turnaround, expression studies aur prop breakouts tak le ja sakta/sakti hoon.",
+    "Main aisa prop design kar sakta/sakti hoon jo function dikhaye aur apni duniya ke baare mein kuch bataye."
+  ],
+  "nextStep": "Ab tum project ke look ke andar specific characters aur props design kar sakte ho. Module 122 mein hum dekhenge ki games ke liye yeh designs asal mein kaise banaye jate hain: concept se engine tak ka game art pipeline."
+},
   "m128": {
-    "hook": "Sculpting program mein bilkul perfect dikhne wala character bhi game mein kaam ka nahi ho sakta, kyunki game ko fixed budget wale hardware par use har second kai baar draw karna hota hai.",
-    "whyItMatters": [
-      "Module 115 ek model sheet par finished design ke saath khatam hua tha. Yeh module us design ko production tak follow karta hai: concept kaise aise asset mein badalta hai jo game engine ke andar sach mein run karta hai, aur in limits ko samajhne wala concept artist team ke liye zyada useful kyun hota hai.",
-      "Games par aisi constraints hoti hain jinka saamna illustration aur film concept art ko aam taur par nahi karna padta: performance budget, target platform aur real-time engine. Engine asset se kya expect karega, yeh jaanne se aap aisi cheezein design kar sakte hain jo banana sasta ho aur sketch se screen tak ka safar tay kar paayen."
-    ],
-    "coreIdea": [
-      "Game art pipeline ek concept ko engine-ready asset mein badalti hai. Ek typical 3D process concept aur reference se shuru hota hai, phir blocking aur high-detail sculpt, clean low-polygon mesh (retopology), UV unwrapping, textures mein detail bake karna aur texturing, characters ke liye rigging aur animation, aur aakhir mein engine mein import karne se pehle LODs aur collision jaise optimization steps aate hain. 2D process chhota hota hai: concept, line work, color, export ya sprite sheets, phir import.",
-      "Constraints design ko tay karti hain. Unity ki documentation ke mutabik, aapko kitne polygons use karne chahiye, yeh aapko chahiye visual quality aur target platform par depend karta hai: kam polygons se cheezein tez chalti hain, kyunki har vertex, edge aur face computing resources leta hai, jabki zyada polygons shape par zyada detail aur control dete hain. Models ke liye uski salah hai ki polygon count kam rakhein, jitne kam ho sake utne materials use karein, single skinned mesh renderer aur jitni kam ho sake utni bones rakhein. Saath hi, woh yeh bhi kehti hai ki iska koi ek hi jawab nahi hai aur aapko performance aur realism ke beech balance banana hoga.",
-      "Level of detail (LOD) woh tareeka hai jisse engines distance ko handle karte hain. LODs ke bina, koi object screen par chahe kitna bhi chhota dikhe, use hamesha ek hi complexity ke saath render kiya jata hai. LODs ke saath engine simpler versions switch karke use karta hai, jisse polygons, material complexity ya renderers ki sankhya kam hoti hai. LOD0 sabse detailed version hota hai aur uske baad badhte numbers mein detail dheere-dheere kam hoti jati hai. Unreal ke mutabik, yeh distance ke bajay screen size ke hisaab se switch karta hai, isliye chhota instance bade instance se pehle LOD badalta hai.",
-      "Technical art dono sides ko jodta hai. Riot Games ke mutabik, technical art ka core kaam art creation aur implementation ko streamline karna hai; isi wajah se engine limits samajhne wale artists valuable hote hain. Shuruaat mein decisions lena sabse sasta padta hai: sketch ya silhouette stage mein kiya gaya change, rigging ke baad usi change ko karne se kahin kam kharchila hota hai."
-    ],
-    "mistakes": [
-      "Yeh poochhe bina design ya sculpt karna ki target platform aur performance budget kya hain.",
-      "Polygon count ko sirf artistic choice samajhna, jabki yeh platform aur rendering resources ke liye compete kar rahi har cheez par depend karta hai.",
-      "LODs ko nazarandaaz karna, jisse detailed asset ko full cost par render kiya jata hai, chahe woh bas kuch pixels jitna hi kyun na dikhe.",
-      "Extra details, layers aur parts jodna jin sabko model karna pade, lekin player jitni doori se unhe dekhta hai, wahan woh kabhi nazar hi na aayein.",
-      "Engine mein import karne tak intezar karna aur tab pata chalna ki design rig, budget ya silhouette ke saath kaam nahi karta."
-    ],
-    "proTips": [
-      "Shuru mein hi budget ke baare mein poochhein: target platform, polygon aur texture limits, aur ek waqt mein asset ka kitna hissa screen par hoga.",
-      "Check karein ki lower LODs par bhi aapka silhouette samajh aaye, kyunki zyadatar players use hi zyadatar waqt dekhenge.",
-      "Assets ko sirf modeling ya painting software mein judge karne ke bajay engine mein jaldi aur baar-baar preview karein.",
-      "Apne target engine ki vocabulary seekhein (LOD, materials, bones, collision), taaki technical artists aur programmers ke saath limits par baat kar sakein."
-    ],
-    "practice": {
-      "warmup": "Module 115 ke apne designs mein se ek asset ke liye pipeline checklist likhein, jismein concept se engine import tak har stage aur uska zimmedar vyakti shamil ho.",
-      "daily": "Ek prop ko detail ke teen levels (LOD0, LOD1, LOD2) par sketch karein aur check karein ki sabse simple level par bhi silhouette samajh aata hai ya nahi.",
-      "weekly": "Koi free engine chunein aur LODs aur assets import karne par uski documentation padhein, phir aadhe page ka summary likhein ki artist ko kya deliver karna hota hai.",
-      "challenge": "Kisi free software mein ek prop ko concept se simple low-polygon model tak le jayein, use engine mein import karein, aur do LOD levels set up karein. Note karein ki budget ki wajah se aapko design mein kahan changes karne pade."
-    },
-    "quiz": [
-      {
-        "q": "Level of detail (LOD) ka main purpose kya hai?",
-        "options": [
-          "Sirf paas se dekhne par models ko zyada detailed dikhana",
-          "Object screen par chhota hote jaaye, to uske simpler versions use karke rendering ka workload kam karna",
-          "Model ka color badalna",
-          "Polygon count apne aap badhana"
-        ],
-        "correct": 1,
-        "explain": "LOD ke bina object ko uske chhota dikhne par bhi ek hi complexity ke saath render kiya jata hai, isliye engine object chhota hone par simpler versions switch karke use karta hai."
-      },
-      {
-        "q": "Unity ki documentation ke mutabik, aapko kitne polygons use karne chahiye, yeh kis baat se tay hota hai?",
-        "options": [
-          "Aapko chahiye visual quality aur aap jis platform ko target kar rahe hain",
-          "Sirf artist ki pasand",
-          "Sirf file format",
-          "Sirf bones ki sankhya"
-        ],
-        "correct": 0,
-        "explain": "Sahi sankhya aapko chahiye quality aur target platform par depend karti hai. Kam polygons tez chalte hain, jabki zyada polygons se zyada detail milti hai."
-      },
-      {
-        "q": "How-to mein Unreal Engine ek LOD se doosre LOD par switch karne ka faisla kaise karta hai?",
-        "options": [
-          "Sirf clock ke hisaab se",
-          "Camera ki color settings ke hisaab se",
-          "Distance ke bajay screen size ke hisaab se, isliye chhota instance bade instance se pehle LOD badalta hai",
-          "Artist ke naam ke hisaab se"
-        ],
-        "correct": 2,
-        "explain": "Documentation ke mutabik, LOD switching ka hisaab distance ke bajay screen size se lagaya jata hai, isliye alag size ke do instances alag distances par switch karte hain."
-      },
-      {
-        "q": "Unity manual mein diye gaye models ke performance tips mein se kaunsa ek hai?",
-        "options": [
-          "Jitne ho sake utne materials use karein",
-          "Variety ke liye extra bones add karein",
-          "Kabhi polygons use na karein",
-          "Jitni kam ho sake utni bones aur materials use karein"
-        ],
-        "correct": 3,
-        "explain": "Manual salah deta hai ki polygons kam se kam rakhein, jitne kam ho sake utne materials aur bones use karein, aur visual quality ke saath balance banayein."
-      },
-      {
-        "q": "Concept artist ko game performance budgets ke baare mein kyun seekhna chahiye?",
-        "options": [
-          "Kyunki concept art kabhi change nahi hota",
-          "Drawing se bachne ke liye",
-          "Taaki designs ko efficiently banaya ja sake aur woh sketch se engine tak ka safar tay kar sakein, kyunki changes shuru mein sabse saste hote hain",
-          "Kyunki budgets story tay karte hain"
-        ],
-        "correct": 2,
-        "explain": "Limits ko samajhne se aap aisi cheezein design kar sakte hain jo model aur run karne ke liye practical hon, aur rigging ya import ke baad mehange redesigns se bach sakte hain."
-      }
-    ],
-    "checklist": [
-      "Main concept se engine import tak game art pipeline ke main stages ginwa sakta/sakti hoon.",
-      "Main samjha/samjha sakti hoon ki polygon count, materials aur bones target platform aur budget par kyun depend karte hain.",
-      "Main samjha/samjha sakti hoon ki LODs kya hote hain aur engine unka use kaise karta hai.",
-      "Main asset shuru karne se pehle budget aur platform ke baare mein poochhe jaane wale sawal bata sakta/sakti hoon."
-    ],
-    "nextStep": "Ab aap samajh gaye/gayi hain ki design game engine tak kaise pahunchta hai. Module 117 mein hum animation pre-production par aayenge: storyboards, animatics aur ek bhi frame animate karne se pehle ki jaane wali planning."
+  "hook": "Sculpting program mein character bilkul perfect dikh sakta hai, phir bhi game mein use karna mumkin na ho. Game ko use fixed hardware budget ke andar har second kai baar draw karna padta hai.",
+  "whyItMatters": [
+    "Module 121 ke end mein model sheet par ek finished design tha. Is module mein hum us design ko production tak le jaate hain: concept game engine ke andar chalne wale asset mein kaise badalta hai, aur engine ki limits samajhne wala concept artist team ke liye itna zyada useful kyun hota hai.",
+    "Games mein aisi constraints hoti hain jo illustration aur film concept art mein aksar nahi hoti: performance budget, target platform aur real-time engine. Engine asset se kya expect karega, yeh samajhkar tum aise designs bana sakte ho jo banana aasaan ho aur sketch se screen tak ka safar tay kar saken."
+  ],
+  "coreIdea": [
+    "Game art pipeline concept ko engine-ready asset mein badalti hai. Ek typical 3D process mein pehle concept aur reference aate hain, phir blocking aur high-detail sculpt, uske baad clean low-polygon mesh (retopology), UV unwrapping, detail ko textures mein bake karke texturing, characters ke liye rigging aur animation, aur aakhir mein LODs aur collision jaise optimization steps ke baad engine mein import. 2D process chhota hota hai: concept, line work, color, export ya sprite sheets, phir import.",
+    "Design ko constraints tay karti hain. Unity ki documentation ke mutabik, kitne polygons use karne chahiye, yeh tumhari zaroori visual quality aur target platform par depend karta hai: kam polygons se game tez chalta hai, kyunki har vertex, edge aur face computing resources leta hai. Zyada polygons se detail aur shape par control badhta hai. Models ke liye Unity ki salah hai ki polygon count kam rakho, jitne ho saken kam materials use karo, ek single skinned mesh renderer aur jitni ho saken kam bones rakho. Saath hi, woh yeh bhi kehti hai ki iska koi ek fixed jawab nahi hai; performance aur realism ke beech balance banana padta hai.",
+    "Level of detail (LOD) se engine distance ke saath kaam sambhalta hai. LODs na hon, toh object screen par kitna bhi chhota dikhe, usi complexity ke saath render hota hai. LODs ke saath engine uske simpler versions use karta hai, jisse polygons, material complexity ya renderers ki tadaad kam hoti hai. LOD0 sabse detailed version hota hai aur uske baad ke numbers mein detail dheere-dheere kam hoti jaati hai. Unreal ke mutabik, LOD switch distance ke bajay screen size se hota hai, isliye chhota instance bade instance se pehle LOD badalta hai.",
+    "Technical art in dono sides ko jodta hai. Riot Games ke mutabik, technical art ka core kaam art creation aur implementation ko streamline karna hai. Isi liye engine limits samajhne wale artists valuable hote hain. Shuru mein kiye gaye decisions par kaam karna sabse sasta hota hai: sketch ya silhouette stage par change karna, rigging ke baad wahi change karne se kaafi kam costly hota hai."
+  ],
+  "mistakes": [
+    "Target platform aur performance budget kya hai, yeh pooche bina design ya sculpting shuru kar dena.",
+    "Polygon count ko sirf artistic choice samajhna, jabki yeh platform aur rendering resources ke liye compete kar rahi baaki cheezon par bhi depend karta hai.",
+    "LODs ko nazarandaaz karna, jisse detailed asset screen par sirf kuch pixels jitna dikhne par bhi poori cost ke saath render hota hai.",
+    "Extra details, layers aur parts jodte jaana, jinhe model toh karna padega par player jis distance se dekhega, wahan woh nazar hi nahi aayenge.",
+    "Engine mein import karne tak rukna aur tab pata chalna ki design rig, budget ya silhouette ke saath kaam nahi karta."
+  ],
+  "proTips": [
+    "Budget pehle hi pooch lo: target platform, polygon aur texture limits, aur ek waqt mein asset ka kitna hissa screen par hoga.",
+    "Check karo ki kam LODs par bhi silhouette samajh aa rahi hai, kyunki aksar players use zyadaatar waqt isi tarah dekhenge.",
+    "Assets ko engine mein jaldi aur baar-baar preview karo; sirf modeling ya painting software mein dekhkar faisla mat karo.",
+    "Apne target engine ki terminology seekho (LOD, materials, bones, collision), taaki technical artists aur programmers ke saath limits par baat kar sako."
+  ],
+  "practice": {
+    "warmup": "Module 121 ke apne designs mein se ek asset chuno aur concept se engine import tak har stage ki pipeline checklist banao. Har stage ka zimma kis ka hoga, yeh bhi likho.",
+    "daily": "Ek prop ko teen detail levels (LOD0, LOD1, LOD2) par sketch karo aur check karo ki sabse simple level par bhi silhouette samajh aati hai ya nahi.",
+    "weekly": "Koi free engine chuno aur uske LODs aur assets import karne wale documentation padho. Phir aadhe page mein likho ki artist ko kya deliver karna hota hai.",
+    "challenge": "Free software mein concept se ek prop ka simple low-polygon model banao, use engine mein import karo aur do LOD levels set up karo. Note karo ki budget ki wajah se design mein kahan badlav karna pada."
   },
+  "quiz": [
+    {
+      "q": "Level of detail (LOD) ka main purpose kya hai?",
+      "options": [
+        "Models ko sirf paas se dekhne par zyada detailed banana",
+        "Object screen par chhota hota jaaye toh uske simpler versions use karke rendering ka workload kam karna",
+        "Model ka color badalna",
+        "Polygon count apne aap badhana"
+      ],
+      "correct": 1,
+      "explain": "LOD ke bina object kitna bhi chhota dikhe, woh usi complexity se render hota hai. Isliye engine object ke chhota dikhne par simpler versions use karta hai."
+    },
+    {
+      "q": "Unity ki documentation ke mutabik, kitne polygons use karne chahiye, yeh kis baat se tay hota hai?",
+      "options": [
+        "Tumhe jitni visual quality chahiye aur jis platform ko target kar rahe ho",
+        "Sirf artist ki pasand",
+        "Sirf file format",
+        "Sirf bones ki tadaad"
+      ],
+      "correct": 0,
+      "explain": "Sahi tadaad tumhari zaroori quality aur target platform par depend karti hai. Kam polygons se game tez chalta hai, jabki zyada polygons se detail badhti hai."
+    },
+    {
+      "q": "How-to mein Unreal Engine ek LOD se doosre LOD par kab switch karta hai, yeh kaise tay karta hai?",
+      "options": [
+        "Sirf clock ke hisaab se",
+        "Camera ki color settings ke hisaab se",
+        "Distance ke bajay screen size ke hisaab se, isliye chhota instance bade instance se pehle LOD badalta hai",
+        "Artist ke naam ke hisaab se"
+      ],
+      "correct": 2,
+      "explain": "Documentation kehti hai ki LOD switching distance se nahi, screen size se calculate hoti hai. Isliye alag size ke do instances alag distances par switch karte hain."
+    },
+    {
+      "q": "Unity manual mein diye gaye models ke performance tips mein se kaunsa ek hai?",
+      "options": [
+        "Jitne ho saken zyada materials use karo",
+        "Variety ke liye extra bones add karo",
+        "Polygons kabhi use mat karo",
+        "Jitni ho saken kam bones aur kam materials use karo"
+      ],
+      "correct": 3,
+      "explain": "Manual polygon count kam rakhne aur jitne ho saken kam materials aur bones use karne ki salah deta hai. Saath hi, visual quality ke saath balance bhi zaroori hai."
+    },
+    {
+      "q": "Concept artist ko game performance budgets ke baare mein kyun seekhna chahiye?",
+      "options": [
+        "Kyunki concept art kabhi badalta nahi",
+        "Taaki drawing se bach saken",
+        "Taaki designs efficiently ban saken aur sketch se engine tak ka safar tay kar saken, kyunki shuru mein changes sabse saste hote hain",
+        "Kyunki budgets story tay karte hain"
+      ],
+      "correct": 2,
+      "explain": "Limits samajhne se tum aise designs bana sakte ho jinhe model karna aur chalana practical ho, aur rigging ya import ke baad mehange redesigns se bach sakte ho."
+    }
+  ],
+  "checklist": [
+    "Main concept se engine import tak game art pipeline ke main stages bata sakta/sakti hoon.",
+    "Main samjha sakta/sakti hoon ki polygon count, materials aur bones target platform aur budget par kyun depend karte hain.",
+    "Main samjha sakta/sakti hoon ki LODs kya hain aur engine unhe kaise use karta hai.",
+    "Main asset shuru karne se pehle budget aur platform ke baare mein poochhe jaane wale sawaal bata sakta/sakti hoon."
+  ],
+  "nextStep": "Ab tum samajhte ho ki design game engine tak kaise pahunchta hai. Module 123 mein hum animation pre-production dekhenge: storyboards, animatics aur woh planning jo ek bhi frame animate karne se pehle hoti hai."
+},
   "m129": {
-    "hook": "Koi scene page par bahut achha lag sakta hai, lekin screen par phir bhi feeka pad sakta hai. Animation studios ko yeh baat storyboards aur animatics mein pata chalti hai, jabki abhi kisi ne ek bhi frame animate nahi kiya hota.",
-    "whyItMatters": [
-      "Modules 110 se 125 mein aapne pages aur scrolling strips par sequential storytelling seekhi. Animation pre-production isi soch ko moving images par apply karta hai, aur yahin story ke shots, staging, timing aur designs ko kam kharch mein test kiya jaata hai—production mehenga hone se kaafi pehle.",
-      "Ismein ek aisa role bhi shamil hai jiski kai artists ko ummeed nahi hoti. Story artist ko drawing ke liye hire kiya jaata hai, lekin communication aur pitching bhi utne hi zaroori hote hain, kyunki boards directors aur teams ke saamne perform karke samjhaye jaate hain, sirf unke haath mein thamaaye nahi jaate."
-    ],
-    "coreIdea": [
-      "Studio pipeline mein pre-production final script se shuru hota hai aur ek hi waqt mein kai tracks par chalta hai. Design team episode ke liye zaroori har cheez ki breakdown karti hai. Woh rough pre-designs se shuru karti hai, jo storyboard artists ko diye jaate hain; phir final designs, clean line art, color styling aur background paint par kaam aage badhta hai. Storyboard artists aur director shots, compositions aur action ki apni breakdown karte hain. Casting team script ko voice roles ke hisaab se break down karti hai, auditions leti hai aur dialogue record karti hai, jise baad mein edit kiya jaata hai.",
-      "Storyboarding ka matlab hai scripts, pitches aur story ke shuruaati roop ko lekar shots, staging aur scenes draw karna. Shuruaati stage mein bahut saari iteration aur changes hote hain, kyunki page par achhe lagne wale emotional moments screen par asar nahi kar sakte, aur plot ki problems aksar tabhi saamne aati hain jab story ko boards mein dikhakar stress-test kiya jaata hai.",
-      "Animatic, storyboard images ki ek series hoti hai jise sound ke saath edit karke dikhaya jaata hai ki sequence motion mein kaise flow karega. Inhi images ke saath timing, dialogue, sound effects aur music jode jaate hain. Animatic banana hamesha zaroori nahi hota, lekin isse finished piece kaisa dikhega aur sunai dega, iska zyada poora andaaza milta hai. Complex action ya visual effects scenes ke liye live-action films mein bhi animatics use kiye jaate hain.",
-      "Animatic review karne ka tool hai. Studio mein, board roughs par director aur producers notes dete hain; phir cleaned boards animatic editor ko diye jaate hain, jo unhe timeline mein cut karta hai. Team animatic ko chalta hua dekhti hai aur phir se uski breakdown karti hai. Jo cheezein hata di gayi hain, unke designs ka kaam ruk jaata hai; jo cheezein jodi gayi hain, unke designs ka kaam shuru hota hai. Animatic ko director aur board revisionists ke saath tab tak revise kiya jaata hai jab tak woh kaam na kare."
-    ],
-    "mistakes": [
-      "Storyboards ko staging, shots aur story test karne ke tool ke bajay finished illustrations samajhna.",
-      "Animatic skip karna, jisse pacing aur timing ki problems animation shuru hone ke baad hi saamne aati hain.",
-      "Animatic mein jo cheezein ab story ka hissa nahi dikh rahi hain, unke designs ko polish karte rehna.",
-      "Aise shots aur staging chunna jisse acting aur action samajhna mushkil ho. Beginner storyboard portfolios mein yeh ek aam problem hai.",
-      "Boards ko explain aur pitch kiye bina doosron ko de dena."
-    ],
-    "proTips": [
-      "Pehle three-panel storytelling assignment try karein: teen panels mein batayi gayi ek bahut chhoti story. Isse poora sequence board kiye bina visual storytelling seekhne mein madad milti hai.",
-      "Animatic mein sound ko kaam ka kuch hissa sambhalne dein, rough track ke liye dialogue khud perform karein, aur agar piece share karne wale hain toh original music chunein.",
-      "Apna animatic kisi aise vyakti ko pehli baar dikhayein jisne boards nahi dekhe hain, aur note karein ki woh kahan confuse hota hai.",
-      "Jab bhi boards badlein, script breakdown phir se karein, taaki designs aur assets story ke mutabik hon, na ki story unke mutabik."
-    ],
-    "practice": {
-      "warmup": "Teen panels mein ek chhoti si story batayein (setup, turn, ending), phir use zor se pitch karein aur har panel ka shot samjhayein.",
-      "daily": "Lagbhag 12 panels mein ek chhota scene board karein. Ek hi moment ko staging ke do alag choices ke saath draw karein aur compare karein ki dono mein se kaunsa zyada clearly samajh aata hai.",
-      "weekly": "Apne boards ko kisi bhi video editor mein scratch dialogue aur simple sound ke saath timed animatic mein edit karein. Phir use dekhkar timing adjust karein.",
-      "challenge": "Animatic kisi aise vyakti ko dikhayein jisne boards nahi dekhe hain, aur usse scene apne shabdon mein dobara sunane ko kahein. Us jagah ko theek karein jahan uski retelling pehli baar galat hoti hai."
-    },
-    "quiz": [
-      {
-        "q": "Animatic kya hota hai?",
-        "options": [
-          "Ek finished animated film",
-          "Character model sheet",
-          "Storyboard images ki ek series, jise sound ke saath edit karke dikhaya jaata hai ki sequence motion mein kaise flow karta hai",
-          "Background painting"
-        ],
-        "correct": 2,
-        "explain": "Animatic storyboard ko dialogue, sound effects aur music ke saath timed video mein badalta hai, taaki animation se pehle pacing ko judge kiya ja sake."
-      },
-      {
-        "q": "Bataye gaye studio workflow mein shuruaat kis cheez se hoti hai aur tracks kaise chalte hain?",
-        "options": [
-          "Final script se; design, storyboard aur casting tracks ek hi waqt mein chalte hain",
-          "Finished animation se; tracks ek ke baad ek chalte hain",
-          "Music track se; storyboards sabse aakhir mein bante hain",
-          "Character model se; script baad mein likhi jaati hai"
-        ],
-        "correct": 0,
-        "explain": "Pre-production final script se shuru hota hai. Design team, storyboard artists aur director, aur casting aur dialogue ka kaam parallel mein chalta hai."
-      },
-      {
-        "q": "Animatic banane ke liye inmein se kaunsi ek tip hai?",
-        "options": [
-          "Kabhi sound na jodein",
-          "Sirf stock music use karein",
-          "Timing ko poori tarah chhod dein",
-          "Animatic kisi viewer ko pehli baar dikhayein—yaani aise vyakti ko jisne boards nahi dekhe hain"
-        ],
-        "correct": 3,
-        "explain": "Naya viewer aapko dikhata hai ki story ya pacing kahan confusing hai, kyunki woh yaad se chhooti hui baatein poori nahi kar sakta."
-      },
-      {
-        "q": "Storyboard stage mein bahut saari iteration kyun hoti hai?",
-        "options": [
-          "Kyunki boards ko kabhi review nahi kiya jaata",
-          "Kyunki emotional moments aur plot problems aksar tabhi saamne aate hain jab story draw karke test ki jaati hai",
-          "Kyunki drawings baad mein badli nahi ja sakti",
-          "Kyunki animators ko boards pasand nahi hote"
-        ],
-        "correct": 1,
-        "explain": "Script padhne mein achhi lag sakti hai, lekin screen par kaam na kare. Isliye boards aur animatics mein in problems ko kam kharch mein dhoondhkar theek kiya jaata hai."
-      },
-      {
-        "q": "Video mein story artist ke liye drawing ke alawa kaunse skills ko utna hi zaroori bataya gaya hai?",
-        "options": [
-          "Music composition",
-          "3D modeling",
-          "Communication aur pitching",
-          "Rigging"
-        ],
-        "correct": 2,
-        "explain": "Story artists apne boards present aur pitch karte hain, isliye story ko samjhana aur perform karna, use draw karne jitna hi zaroori hai."
-      }
-    ],
-    "checklist": [
-      "Main storyboard aur animatic ke beech ka fark samjha sakta/sakti hoon.",
-      "Main bata sakta/sakti hoon ki final script se design, storyboard aur casting tracks kaise chalte hain.",
-      "Main timing aur scratch sound ke saath ek chhota animatic bana sakta/sakti hoon.",
-      "Main boards ko naye viewer ke saath test karke confusion ki pehli jagah theek kar sakta/sakti hoon."
-    ],
-    "nextStep": "Ab aap production shuru hone se pehle animated sequence plan kar sakte hain. Module 130 mein print production ki baari hai: printing ke liye artwork taiyaar karna—resolution aur color se lekar bleed aur file setup tak."
+  "hook": "Koi scene page par khoobsurti se samajh aa sakta hai, phir bhi screen par uska asar kam ho sakta hai. Animation studios ko yeh baat storyboards aur animatics mein pata chal jaati hai, kisi ke ek bhi frame animate karne se pehle.",
+  "whyItMatters": [
+    "Modules 116 se 125 tak tumne pages aur scrolling strips mein sequential storytelling seekhi. Animation pre-production mein wahi soch moving images par lagu hoti hai, jahan story ke shots, staging, timing aur designs ko saste mein test kiya jaata hai—production mehenga hone se kaafi pehle.",
+    "Is process mein ek aisa role bhi saamne aata hai jiske baare mein kai artists nahi sochte. Story artist ko drawing ke liye hire kiya jaata hai, lekin communication aur pitching bhi utne hi zaroori hain, kyunki boards directors aur teams ke saamne perform karke samjhaye jaate hain, bas unke haath mein thama nahi diye jaate."
+  ],
+  "coreIdea": [
+    "Studio pipeline mein pre-production final script se shuru hoti hai aur kai tracks ek saath chalte hain. Design team episode ki har zaroorat ki breakdown karti hai. Pehle rough pre-designs bante hain jo storyboard artists ko diye jaate hain, phir final designs, clean line art, color styling aur background paint taiyaar hote hain. Storyboard artists aur director apni taraf se shots, compositions aur action ki breakdown karte hain. Casting team script ko voices ke liye break down karti hai, auditions leti hai aur dialogue record karti hai, jise baad mein edit kiya jaata hai.",
+    "Storyboarding ka matlab scripts, pitches aur story ke shuruaati ideas ko lekar shots, staging aur scenes draw karke dikhana hai. Shuruaati stage mein kaafi iteration aur changes hote hain, kyunki page par achhe lagne wale emotional moments screen par utna asar nahi karte, aur plot ki problems kai baar tabhi saamne aati hain jab story ko boards mein dikhakar aazmaya jaata hai.",
+    "Animatic, storyboard images ka ek silsila hota hai jise sound ke saath edit karke dikhaya jaata hai ki sequence motion mein kaise chalega. Ismein unhi images ke saath timing, dialogue, sound effects aur music jodte hain. Yeh hamesha zaroori nahi hota, lekin isse samajh aata hai ki final piece dikhega aur sunai kaisa dega. Live-action films bhi complex action ya visual effects scenes ke liye animatics use karti hain.",
+    "Animatic review ke liye kaam aata hai. Studio mein board roughs par director aur producers notes dete hain, phir cleaned boards animatic editor ko milte hain, jo unhe timeline mein cut karta hai. Team use chala kar dekhti hai aur phir se breakdown karti hai. Jo cheezein story se nikal gayi hain, unke designs par kaam ruk jaata hai; jo cheezein add hui hain, unke designs shuru ho jaate hain. Director aur board revisionists ke saath animatic ko baar-baar revise kiya jaata hai, jab tak woh sahi na lage."
+  ],
+  "mistakes": [
+    "Storyboards ko staging, shots aur story test karne ke tool ke bajay finished illustrations samajhna.",
+    "Animatic skip kar dena, jisse pacing aur timing ki problems animation shuru hone ke baad hi saamne aati hain.",
+    "Animatic se pata chalne ke baad bhi aise designs polish karte rehna jo ab story mein hain hi nahi.",
+    "Aise shots aur staging chunna jisse acting aur action samajhna mushkil ho. Beginner storyboard portfolios mein yeh aam problem hai.",
+    "Boards de dena, par unhe samjha aur pitch na paana."
+  ],
+  "proTips": [
+    "Pehle three-panel storytelling assignment try karo: teen panels mein ek chhoti si story. Isse poori sequence board kiye bina visual storytelling seekhne mein madad milti hai.",
+    "Animatic mein sound se kaafi kaam lo, rough track ke liye dialogue khud perform karo, aur agar piece share karne wale ho toh original music chuno.",
+    "Animatic aise kisi insaan ko dikhao jisne boards nahi dekhe. Note karo ki use kahan confusion hota hai.",
+    "Jab bhi boards badlein, script breakdown dobara karo, taaki designs aur assets story ke saath chalen—story unke hisaab se na badle."
+  ],
+  "practice": {
+    "warmup": "Teen panels mein ek chhoti story batao (setup, turn, ending), phir use zor se pitch karo aur har panel ka shot samjhao.",
+    "daily": "Lagbhag twelve panels mein ek chhota scene board karo. Ek hi moment ko do alag staging choices ke saath draw karo aur dekho kaunsa zyada clearly samajh aata hai.",
+    "weekly": "Apne boards ko kisi bhi video editor mein scratch dialogue aur simple sound ke saath timed animatic mein edit karo. Phir use dekhkar timing adjust karo.",
+    "challenge": "Animatic aise kisi insaan ko dikhao jisne boards nahi dekhe, aur usse scene apne shabdon mein dobara batane ko kaho. Jahan uski retelling pehli baar galat jaaye, us point ko theek karo."
   },
+  "quiz": [
+    {
+      "q": "Animatic kya hota hai?",
+      "options": [
+        "Ek finished animated film",
+        "Character model sheet",
+        "Storyboard images ka silsila jise sound ke saath edit karke dikhaya jaata hai ki sequence motion mein kaise chalega",
+        "Background painting"
+      ],
+      "correct": 2,
+      "explain": "Animatic storyboard ko dialogue, sound effects aur music wale timed video mein badalta hai, taaki animation se pehle pacing ko judge kiya ja sake."
+    },
+    {
+      "q": "Bataye gaye studio workflow mein shuruaat kahan se hoti hai aur tracks kaise chalte hain?",
+      "options": [
+        "Final script se; design, storyboard aur casting tracks ek saath chalte hain",
+        "Finished animation se; tracks ek ke baad ek chalte hain",
+        "Music track se; storyboards aakhir mein aate hain",
+        "Character model se; script baad mein likhi jaati hai"
+      ],
+      "correct": 0,
+      "explain": "Pre-production final script se shuru hoti hai. Design team, storyboard artists aur director, aur casting aur dialogue ka kaam parallel chalta hai."
+    },
+    {
+      "q": "Animatic banane ki salah mein se kaunsi ek hai?",
+      "options": [
+        "Sound kabhi add mat karo",
+        "Sirf stock music use karo",
+        "Timing ko poori tarah skip karo",
+        "Animatic kisi fresh viewer ko dikhao—yaani aise insaan ko jisne boards nahi dekhe"
+      ],
+      "correct": 3,
+      "explain": "Fresh viewer se pata chalta hai ki story ya pacing kahan confuse karti hai, kyunki woh yaad se chhooti hui baatein khud nahi bhar sakta."
+    },
+    {
+      "q": "Storyboard stage mein itni iteration kyun hoti hai?",
+      "options": [
+        "Kyunki boards kabhi review nahi hote",
+        "Kyunki emotional moments aur plot problems aksar tabhi saamne aate hain jab story draw karke test ki jaati hai",
+        "Kyunki drawings baad mein badli nahi ja sakti",
+        "Kyunki animators ko boards pasand nahi"
+      ],
+      "correct": 1,
+      "explain": "Script padhne mein achhi lag sakti hai, par zaroori nahi ki screen par bhi kaam kare. Boards aur animatics mein in problems ko production ke pehle kam kharch mein dhoondhkar theek kiya ja sakta hai."
+    },
+    {
+      "q": "Video mein story artist drawing ke alawa kin skills ko utna hi zaroori batata hai?",
+      "options": [
+        "Music composition",
+        "3D modeling",
+        "Communication aur pitching",
+        "Rigging"
+      ],
+      "correct": 2,
+      "explain": "Story artists apne boards present aur pitch karte hain, isliye story samjhana aur perform karna drawing jitna hi important hai."
+    }
+  ],
+  "checklist": [
+    "Main storyboard aur animatic ka farq samjha sakta/sakti hoon.",
+    "Main bata sakta/sakti hoon ki final script se design, storyboard aur casting tracks kaise chalte hain.",
+    "Main timing aur scratch sound ke saath ek chhota animatic bana sakta/sakti hoon.",
+    "Main boards ko fresh viewer par test karke confusion ki pehli jagah theek kar sakta/sakti hoon."
+  ],
+  "nextStep": "Ab tum production shuru hone se pehle animated sequence plan kar sakte ho. Module 130 mein hum print production dekhenge: printing ke liye artwork taiyaar karna, resolution aur color se lekar bleed aur file setup tak."
+},
 
 };
