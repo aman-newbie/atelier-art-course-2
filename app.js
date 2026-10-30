@@ -2416,7 +2416,7 @@ function getModuleContextForDoubt(){
   else if(typeof why === 'string' && why) parts.push('Why it matters: ' + why);
   const checklist = L(m,'checklist');
   if(Array.isArray(checklist) && checklist.length) parts.push('Self-check items: ' + checklist.slice(0,4).join('; '));
-  return parts.join('\\n');
+  return parts.join('\n');
 }
 function asksAboutCurrentLesson(query){
   const q=normalizeDoubtText(query);
@@ -2561,11 +2561,11 @@ async function sendDoubtMessage(){
   const entry=matchDoubtKnowledge(question);
   let answer='';
   if(context && asksAboutCurrentLesson(question)){
-    answer=(isHi?'Is lesson ka quick breakdown:\\n':'Quick breakdown of this lesson:\\n')+context;
+    answer=(isHi?'Is lesson ka quick breakdown:\n':'Quick breakdown of this lesson:\n')+context;
   }else if(entry){
     answer=isHi?entry.hi:entry.en;
     const related=getDoubtRelatedTitles(entry.modules);
-    if(related.length) answer += '\\n\\nRelated lessons: '+related.join(' · ');
+    if(related.length) answer += '\n\nRelated lessons: '+related.join(' · ');
   }else{
     const hits=await searchCurriculum(question,4);
     const titles=[]; const seen=new Set();
@@ -2576,7 +2576,7 @@ async function sendDoubtMessage(){
     answer=isHi
       ? 'Is exact sawaal ka prepared answer abhi knowledge file mein nahi mila. Thoda specific poochho—jaise “sphere ko shade kaise karun?” ya “perspective mein vanishing point kya hota hai?”.'
       : 'I could not confidently match that question to a prepared answer. Try making it more specific—for example, “how do I shade a sphere?” or “what is a vanishing point?”.';
-    if(titles.length) answer+='\\n\\n'+(isHi?'Closest lessons: ':'Closest lessons: ')+titles.join(' · ');
+    if(titles.length) answer+='\n\n'+(isHi?'Closest lessons: ':'Closest lessons: ')+titles.join(' · ');
   }
   appendDoubtMessage('bot',answer);
   doubtHistory.push({role:'bot',text:answer}); saveDoubtHistory();
