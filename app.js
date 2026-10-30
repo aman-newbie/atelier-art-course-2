@@ -2411,10 +2411,16 @@ function getModuleContextForDoubt(){
   const parts = ['Module: ' + L(m,'title')];
   const hook = L(m,'hook');
   if(hook) parts.push('Hook: ' + hook);
-  const why = m.whyItMatters;
+  const why = L(m,'whyItMatters');
   if(Array.isArray(why) && why.length) parts.push('Why it matters: ' + why[0]);
-  if(Array.isArray(m.checklist) && m.checklist.length) parts.push('Self-check items: ' + m.checklist.slice(0,4).join('; '));
-  return parts.join('\n');
+  else if(typeof why === 'string' && why) parts.push('Why it matters: ' + why);
+  const checklist = L(m,'checklist');
+  if(Array.isArray(checklist) && checklist.length) parts.push('Self-check items: ' + checklist.slice(0,4).join('; '));
+  return parts.join('\\n');
+}
+function asksAboutCurrentLesson(query){
+  const q=normalizeDoubtText(query);
+  return ['this lesson','this module','this topic','what is this about','what am i learning','explain this lesson','explain this module','why does this matter','why is this important','what should i focus on','what should i learn here','current lesson','ye lesson','ye module','ye topic','is lesson','is module'].some(p=>q.includes(p)) || q.includes('samjhao') || q.includes('iska matlab');
 }
 
 function toggleDoubtPanel(open){
@@ -2551,12 +2557,15 @@ async function sendDoubtMessage(){
   appendDoubtMessage('user',question); input.value='';
   doubtHistory.push({role:'user',text:question}); saveDoubtHistory();
   const isHi=isHinglishDoubt(question);
+  const context=getModuleContextForDoubt();
   const entry=matchDoubtKnowledge(question);
   let answer='';
-  if(entry){
+  if(context && asksAboutCurrentLesson(question)){
+    answer=(isHi?'Is lesson ka quick breakdown:\\n':'Quick breakdown of this lesson:\\n')+context;
+  }else if(entry){
     answer=isHi?entry.hi:entry.en;
     const related=getDoubtRelatedTitles(entry.modules);
-    if(related.length) answer += (isHi?'\\n\\nRelated lessons: ':'\\n\\nRelated lessons: ')+related.join(' · ');
+    if(related.length) answer += '\\n\\nRelated lessons: '+related.join(' · ');
   }else{
     const hits=await searchCurriculum(question,4);
     const titles=[]; const seen=new Set();
