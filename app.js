@@ -2465,7 +2465,7 @@ const DOUBT_EXPANSIONS = {
   'kharab':['wrong','mistake'], 'madad':['help'], 'doubt':['question','help']
 };
 function normalizeDoubtText(value){
-  return String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9\s'-]/g,' ').replace(/\s+/g,' ').trim();
+  return String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 '-]/g,' ').replace(/ +/g,' ').trim();
 }
 function tokenizeForSearch(value){
   const base = normalizeDoubtText(value).match(/[a-z0-9']+/g) || [];
@@ -2537,8 +2537,8 @@ function matchDoubtKnowledge(query){
 }
 function isHinglishDoubt(query){
   if(/[\u0900-\u097f]/.test(query)) return true;
-  const words=new Set(normalizeDoubtText(query).split(' '));
-  return ['hai','hain','kaise','kya','kyu','kyun','mujhe','mera','meri','bata','bta','karu','karo','nahi','nhi','chahiye','hota','hoti','hoon','hun','raha','rahi','tha','thi'].some(w=>words.has(w));
+  const words=String(query || '').toLowerCase().replace(/[.,!?;:]/g,' ').split(' ');
+  return ['hai','hain','kaise','kya','kyu','kyun','mujhe','mera','meri','bata','bta','karu','karo','nahi','nhi','chahiye','hota','hoti','hoon','hun','raha','rahi','tha','thi','banau','banao','bana'].some(w=>words.includes(w));
 }
 function getDoubtRelatedTitles(moduleIds){
   return (moduleIds||[]).map(id=>{
@@ -2550,8 +2550,7 @@ async function sendDoubtMessage(){
   const question=input.value.trim(); if(!question) return;
   appendDoubtMessage('user',question); input.value='';
   doubtHistory.push({role:'user',text:question}); saveDoubtHistory();
-  const rawWords=question.toLowerCase().split(/\s+/);
-  const isHi=isHinglishDoubt(question) || ['kaise','kya','kyu','kyun','hai','hain','mujhe','mera','meri','bata','bta','karu','karo','nahi','nhi','chahiye','hota','hoti'].some(w=>rawWords.includes(w));
+  const isHi=isHinglishDoubt(question);
   const entry=matchDoubtKnowledge(question);
   let answer='';
   if(entry){
