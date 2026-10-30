@@ -1,1672 +1,5015 @@
 const CURRICULUM_4 = [
-{id:'digital-fundamentals', title:'Digital Art Fundamentals', status:'live', order:8,
-    desc:'Software-agnostic digital basics — workspace, tablets, brush engines, layers, selections, transforms, and clean digital line art — built so the skill transfers across any application.',
-    moduleCount:8, sample:['Digital Workspace','Drawing Tablets','Brushes','Layers','Selection Tools','Digital Line Art'],
-    modules:[
-{
-"id": "m83",
-"plate": 83,
-"title": "The Digital Workspace",
-"difficulty": "Beginner",
-"studyTime": "15 min",
-"practiceTime": "20\u201325 min/day",
-"prereq": [],
-"hook": "Every piece of digital art software looks like a different alien cockpit at first \u2014 but underneath the menus, they're all built from the exact same handful of concepts, and once you see them once, you see them everywhere.",
-"whyItMatters": [
-  "This module (and this whole arc) is software-agnostic on purpose: whether you end up using Krita, Clip Studio Paint, Procreate, or Photoshop, the underlying workspace concepts \u2014 canvas, panels, layers, tools \u2014 are the same. Learning the concepts once means every new piece of software becomes a matter of finding familiar things in a new place, not learning from zero.",
-  "A cluttered, default, unfamiliar interface is one of the most common reasons beginners feel overwhelmed before they've drawn a single line. A workspace you've deliberately set up to show only what you actually use removes that friction and lets you focus on drawing instead of hunting through menus."
-],
-"coreIdea": [
-  "Every digital art application is built around the same core pieces: a canvas (where you draw), a set of tools (brush, eraser, selection, fill), a layers panel (stacked, independently editable sheets), and a color picker \u2014 learning to find these four things in any new software gets you most of the way to being functional in it.",
-  "You don't need to memorize every menu on day one. Configure the minimum required to make a mark on a blank canvas \u2014 set canvas size, pick a default brush, confirm you have one layer \u2014 and learn additional features only when you hit a specific problem the basics can't solve.",
-  "A default workspace is usually cluttered with panels you'll rarely use. Most working artists trim their workspace down to only a few panels they actually reference constantly, commonly layers, color, and brush settings, and save that as their own custom layout.",
-  "You do not need expensive hardware to learn these concepts. A budget entry-level tablet and free software (like Krita) teach the exact same underlying skills as a professional setup \u2014 the tool only becomes the limiting factor much later, once you already know what you're doing."
-],
-"mistakes": [
-  "Spending excessive time researching the \"best\" software, brush, or settings before ever opening a blank canvas and making a mark \u2014 research feels like progress but isn't the same as practice.",
-  "Leaving every default panel open and visible, creating visual clutter that makes it harder to find the few tools you actually use regularly.",
-  "Assuming you need to learn every menu and feature before starting to draw, instead of configuring the bare minimum and learning more only as specific problems come up.",
-  "Believing that better or more expensive hardware is the current bottleneck, when in most cases consistent practice with a basic setup would produce more improvement.",
-  "Drawing everything on a single layer out of unfamiliarity with layers, making it easy to accidentally damage a sketch while trying to add color or line work."
-],
-"proTips": [
-  "In any new software, find these four things first and nothing else: the canvas, the brush tool, the layers panel, and the color picker. That's enough to start drawing.",
-  "Create and save a custom workspace layout with only the panels you actually use (commonly layers, color, brush) so you're not hunting through clutter every session.",
-  "Give yourself a five-drawing rule: don't research a \"better\" brush, software, or setting until you've completed at least five finished drawings on your current setup and have a specific, real problem to solve.",
-  "Use the default round brush and a basic three-layer structure (sketch, line, color) for your first pieces \u2014 there's no need for anything more advanced until you hit a specific limitation."
-],
-"practice": {
-  "warmup": "Open your chosen software, set up a blank canvas, and locate the four core things (canvas, brush tool, layers panel, color picker) without following a tutorial.",
-  "daily": "Draw for 20\u201330 minutes using only the default round brush and a basic three-layer setup (sketch, line, color) \u2014 no new tools or settings.",
-  "weekly": "Customize your workspace layout by removing panels you haven't used all week and saving the result as your own default.",
-  "challenge": "Complete one small drawing using only a single layer with no undo, to feel the difference layers and undo normally give you."
-},
-"resources": [
-  {"type": "Video", "title": "Digital Painting Basics - Simple Forms to Complex Paintings", "creator": "Tayler Olivas (Proko)", "url": "https://www.youtube.com/watch?v=fJvcllrOrr4", "why": "A free 21-minute beginner lesson from the same instructor as the Wacom article below, showing the workspace and tools in actual use.", "summary": "Tayler Olivas shows how to set up your workspace, the digital tools he relies on and their shortcuts, how to practice non-destructive editing and use texture brushes, then combines them into a finished painting.", "verified": true},
-  {"type": "Article", "title": "Digital Painting Basics For Beginners", "creator": "Tayler Olivas, via Wacom Community", "url": "https://community.wacom.com/en-it/digital-painting-for-beginners-wacom/", "why": "A free, real workspace walkthrough from a working concept artist and teacher, showing exactly how and why to trim a cluttered default interface down to what you actually use.", "summary": "Tayler Olivas shows how to strip a cluttered default software interface down to a custom workspace showing only the Layer, Color, and Brush panels, plus an overview of the selection-based tools he relies on most, aimed specifically at someone opening digital painting software for the first time.", "verified": true},
-  {"type": "Article", "title": "Tips for Beginners: Getting Started in Digital Art", "creator": "Allard Lavaritte", "url": "https://lavaritte.com/blogs/how-to-start-digital-art/", "why": "A free, honest, detailed guide covering exact minimum setup steps for three different free/common software options (Krita, Clip Studio Paint, Procreate), plus a clear explanation of layers.", "summary": "Gives exact minimum setup steps to open a first canvas in Krita, Clip Studio Paint, and Procreate, explains layers as stacked transparent sheets with a basic sketch/line/color structure, and argues that researching the \"best\" brush or software before drawing is a common trap that delays real practice.", "verified": true}
-],
-"quiz": [
-  {"q": "What four core pieces are present in nearly every digital art application, according to this module?", "options": ["Filters, plugins, presets, and templates", "Canvas, tools, layers panel, and color picker", "Export settings, cloud sync, subscriptions, and updates", "Text tool, shape tool, gradient tool, and crop tool"], "correct": 1, "explain": "These four core pieces \u2014 the canvas, tools, layers panel, and color picker \u2014 exist in nearly every digital art application, which is why learning them once transfers across different software."},
-  {"q": "According to the module, what should you configure before your first drawing session in new software?", "options": ["Every available menu and setting", "Only the minimum required to make a mark on a blank canvas", "A custom brush pack downloaded from the internet", "A subscription to premium features"], "correct": 1, "explain": "The recommended approach is configuring only the bare minimum \u2014 canvas size, a default brush, one layer \u2014 and learning more features only when a specific problem requires it."},
-  {"q": "Why is trimming a default workspace down to a few key panels recommended?", "options": ["It's required by the software license", "A cluttered default interface makes it harder to find the few tools you actually use regularly", "It makes the file size smaller", "Extra panels slow down the computer significantly"], "correct": 1, "explain": "Most working artists customize their workspace to show only a few frequently-used panels (like layers, color, and brush), removing the visual clutter of a default layout."},
-  {"q": "What is the basic three-layer structure recommended for a beginner's first digital drawings?", "options": ["Background, midground, foreground", "Sketch, line, color", "Highlights, shadows, midtones", "Text, image, effects"], "correct": 1, "explain": "A simple starting structure \u2014 a sketch layer, a clean line layer, and a color layer \u2014 lets a beginner separate stages of a drawing without needing an advanced layer setup."},
-  {"q": "What does the module suggest about needing expensive hardware to start learning digital art?", "options": ["Expensive hardware is required from day one", "A budget entry-level tablet and free software teach the same underlying skills as a professional setup", "Hardware has no effect on learning at all", "Only tablets with screens (pen displays) can be used for beginners"], "correct": 1, "explain": "The module argues that a basic, affordable tablet and free software are enough to learn the same underlying skills as expensive professional equipment, which only becomes the limiting factor much later."}
-],
-"checklist": [
-  "I can locate the canvas, brush tool, layers panel, and color picker in a new piece of digital art software.",
-  "I can set up a basic three-layer structure (sketch, line, color) for a drawing.",
-  "I can trim a cluttered default workspace down to only the panels I actually use.",
-  "I can configure the minimum settings needed to start drawing without over-researching first."
-],
-"nextStep": "You can now navigate any digital art software's core workspace. Module 84 goes deeper into the primary input device itself \u2014 drawing tablets, pressure sensitivity, and the specific hand-eye adjustment of moving a pen on a flat surface while looking at a screen."
-}
-,
-{
-"id": "m84",
-"plate": 84,
-"title": "Drawing Tablets",
-"difficulty": "Beginner",
-"studyTime": "15 min",
-"practiceTime": "20\u201330 min/day",
-"prereq": ["m83"],
-"hook": "The first time you draw on a tablet, your hand moves on a flat pad while your eyes watch a completely separate screen \u2014 and for about a week, your brain treats that as a genuinely strange problem to solve.",
-"whyItMatters": [
-  "Every skill you build going forward runs through this one piece of hardware. Understanding what a tablet actually senses \u2014 position, pressure, and sometimes tilt \u2014 and how to configure it correctly is what determines whether your lines feel natural or fight you the whole time.",
-  "The single most common cause of frustrating, skewed, or unpredictable lines for a beginner isn't lack of skill \u2014 it's an unconfigured tablet: wrong area mapping, an uncalibrated pressure curve, or a missing driver. Fixing the hardware layer first means your practice time actually builds drawing skill instead of fighting the tool."
-],
-"coreIdea": [
-  "A tablet tracks three things: position (where the pen is), pressure (how hard you're pressing, typically 2,048+ levels), and on many tablets, tilt (the angle of the pen relative to the surface). Pressure is the one that matters most day-to-day, since it directly drives line thickness and opacity in almost every brush.",
-  "Tablet area mapping has to match your monitor's aspect ratio, or a circle you draw becomes an oval on screen. This is an easy, invisible-until-you-know-about-it setup step that fixes a huge share of \"my lines feel off\" frustration.",
-  "The pressure curve (how much physical force maps to how much digital effect) is adjustable in both the tablet driver and your software, and most factory defaults require more pressure than feels natural \u2014 softening the curve usually makes lines feel more responsive immediately.",
-  "The hand-eye disconnect of drawing on a screenless tablet (moving your hand on a flat surface while watching a separate monitor) is a real, temporary adjustment that most people stop consciously noticing within one to two weeks of consistent, short daily practice \u2014 it is not a sign you're using the wrong tool."
-],
-"mistakes": [
-  "Skipping the driver installation, which limits the tablet to basic cursor movement with no pressure sensitivity, tilt detection, or shortcut button support.",
-  "Never checking or correcting tablet area mapping, so circles come out as ovals and lines feel subtly wrong without an obvious cause.",
-  "Judging the tool as \"not for me\" after only two or three sessions, when the normal hand-eye adjustment period is closer to one to two weeks of consistent practice.",
-  "Leaving the factory-default pressure curve untouched when it feels too stiff, instead of softening it in the driver panel to match a natural hand pressure.",
-  "Prioritizing tilt-sensitive brushes and advanced features before pressure control feels confident and automatic, which fragments attention across too many variables at once."
-],
-"proTips": [
-  "Lock your tablet's active area to your monitor's aspect ratio in the driver panel before your first real drawing session \u2014 this single setting prevents a huge share of \"my lines feel off\" frustration.",
-  "If lines feel unresponsive or require too much force, open the driver's pressure curve settings and move it toward \"soft\" rather than assuming the tablet itself is the problem.",
-  "For your very first sessions, skip actual artwork and just draw long straight lines, smooth curves, and circles at different sizes \u2014 pure hand-eye calibration, not finished pictures.",
-  "Hold the stylus more like a pen than a mouse, and move from the shoulder and elbow rather than just the wrist for longer, smoother strokes."
-],
-"practice": {
-  "warmup": "Draw 20 straight lines and 20 smooth curves across your full canvas, focusing purely on control, not on making anything look good.",
-  "daily": "Spend 20\u201330 minutes drawing simple shapes and lines using only the default brush, paying attention to how pressure changes line thickness as you draw.",
-  "weekly": "Check and, if needed, correct your tablet's area mapping and pressure curve, then draw one simple finished sketch to compare against how it felt before the adjustment.",
-  "challenge": "Draw the same simple shape (a spiral, a wave) 10 times in a row, trying to make each one smoother and more consistent than the last, using full arm movement rather than just the wrist."
-},
-"resources": [
-  {"type": "Article", "title": "Beginner's guide to drawing tablets", "creator": "SevenPens (DrawTab documentation)", "url": "https://docs.sevenpens.com/drawtab/basics/beginners-guide", "why": "Clean, free, technical documentation explaining exactly what a tablet senses \u2014 hover, pressure, and tilt \u2014 without being tied to marketing for a specific brand.", "summary": "Explains the three core things a drawing tablet tracks \u2014 hover (pointer position up to about 10mm above the surface), pressure sensitivity (typically thousands of levels controlling stroke size), and pen tilt \u2014 and clarifies that a tablet uses absolute positioning, unlike a mouse's relative positioning, which is why the two feel so different to use.", "verified": true},
-  {"type": "Article", "title": "How to Use a Drawing Tablet: Complete Setup Guide for Beginners", "creator": "ugee", "url": "https://shop.ugee.com/blogs/tips-tricks/how-to-use-drawing-tablet", "why": "A free, detailed, step-by-step setup guide covering the specific configuration steps (driver, area mapping, pressure curve) that prevent common beginner frustrations.", "summary": "Walks through driver installation, connecting and verifying tablet detection, correctly mapping the tablet's physical area to your monitor's aspect ratio to avoid skewed lines, softening the pressure curve for a more natural feel, and sets realistic expectations that the hand-eye adjustment period normally takes about one to two weeks of consistent practice.", "verified": true}
-],
-"quiz": [
-  {"q": "What are the three things a drawing tablet primarily tracks?", "options": ["Color, brightness, and contrast", "Position, pressure, and (on many tablets) tilt", "File size, resolution, and DPI", "Layer count, blend mode, and opacity"], "correct": 1, "explain": "A drawing tablet senses the pen's position (including hover), how hard you're pressing (pressure sensitivity), and on many models, the angle of the pen (tilt)."},
-  {"q": "Why is correctly mapping the tablet's active area to your monitor's aspect ratio important?", "options": ["It has no real effect on drawing quality", "Mismatched mapping causes shapes like circles to come out skewed as ovals on screen", "It only affects battery life on wireless tablets", "It changes the tablet's pressure sensitivity levels"], "correct": 1, "explain": "If the tablet's physical drawing area doesn't match your monitor's aspect ratio proportionally, shapes get distorted on screen, which is a common invisible cause of \"my lines feel off\" frustration."},
-  {"q": "What is the recommended first response if lines feel unresponsive and require too much force?", "options": ["Immediately buy a more expensive tablet", "Soften the pressure curve in the driver panel", "Switch to a mouse instead", "Increase your monitor's brightness"], "correct": 1, "explain": "A stiff, unresponsive feel is often a pressure curve set too hard by default; softening it in the driver panel is the recommended first fix before assuming the hardware itself is the problem."},
-  {"q": "How long does the hand-eye adjustment period for a screenless drawing tablet typically take, according to the module?", "options": ["It never goes away", "About one to two weeks of consistent, short daily practice", "Exactly one single session", "Several months at minimum"], "correct": 1, "explain": "Most people stop consciously noticing the hand-eye disconnect after about one to two weeks of consistent practice \u2014 quitting after only two or three sessions is too early to judge the tool."},
-  {"q": "What does the module recommend prioritizing before exploring tilt-sensitive brushes and advanced features?", "options": ["Buying additional hardware accessories", "Building confident, automatic pressure control first", "Learning every keyboard shortcut available", "Switching between multiple different tablets"], "correct": 1, "explain": "Adding advanced features like tilt before pressure control feels natural fragments attention across too many variables; mastering pressure first gives a more solid foundation."}
-],
-"checklist": [
-  "I can explain the difference between position, pressure, and tilt tracking on a drawing tablet.",
-  "I can check and correct my tablet's area mapping to match my monitor's aspect ratio.",
-  "I can adjust a pressure curve if lines feel too stiff or unresponsive.",
-  "I can recognize the hand-eye adjustment period as normal and temporary rather than a sign I'm using the wrong tool."
-],
-"nextStep": "You now understand the hardware layer your hand interacts with directly. Module 85 moves to the software side of that same interaction \u2014 brushes and brush engines, and how settings like opacity, flow, and blending actually work underneath the presets."
-}
-,
-{
-"id": "m85",
-"plate": 85,
-"title": "Brushes & Brush Engines",
-"difficulty": "Beginner",
-"studyTime": "16 min",
-"practiceTime": "25\u201330 min/day",
-"prereq": ["m84"],
-"hook": "Two settings you'll touch on almost every single stroke \u2014 opacity and flow \u2014 look nearly identical in the menu and behave completely differently, and confusing them is the single most common reason a beginner's blending looks muddy or patchy.",
-"whyItMatters": [
-  "You now have the workspace (Module 83) and the hardware (Module 84) sorted \u2014 brushes are the actual point of contact between your hand and the image. Understanding what a brush's core settings actually do, rather than just picking presets randomly, is what lets you get a specific, intentional result instead of fighting the tool.",
-  "Beginners consistently report muddy, patchy, or 'stuck' looking digital paintings, and the root cause is almost always confusing a small number of brush settings \u2014 mainly opacity, flow, and hardness \u2014 not a lack of drawing skill. Fixing this understanding has an outsized effect on how finished your work looks."
-],
-"coreIdea": [
-  "Opacity sets the maximum amount of color a single stroke can lay down \u2014 once you lift the pen, that stroke is capped at that opacity no matter how many times your path crosses itself, creating a hard, glass-like layering when stacked.",
-  "Flow controls the rate color builds up as you paint, even within one continuous stroke \u2014 a low-flow stroke can still reach full opacity if you paint back and forth over the same spot, producing a softer, more gradual, \"painterly\" buildup than opacity alone.",
-  "Hardness controls the brush's edge: a hard brush gives a crisp, clean edge good for linework and details, while a soft brush gives a feathered, gradual edge good for blending and atmosphere \u2014 mixing the two intentionally, rather than picking one for an entire piece, is what most blending techniques are built on.",
-  "You don't need many brushes to start. A single hard round brush and a single soft round brush, used with different opacity, flow, and hardness combinations, can carry an entire finished illustration \u2014 chasing more brushes before you understand these core settings is a common and easily avoidable trap."
-],
-"mistakes": [
-  "Confusing opacity and flow, or not knowing the difference, leading to unpredictable results when trying to blend or build up color gradually.",
-  "Using a single hardness/opacity setting for an entire painting instead of deliberately switching between harder settings for blocking in and detail, and softer settings for blending and atmosphere.",
-  "Downloading and researching many different brush packs before understanding the core settings (opacity, flow, hardness) that determine how any brush actually behaves.",
-  "Using a very soft, low-opacity brush for edges that need to stay clean and crisp, producing a hazy, undefined result instead of a controlled one.",
-  "Giving up on blending after a few muddy attempts instead of recognizing that constantly adjusting hardness and opacity throughout a painting, not finding one perfect setting, is the actual normal workflow."
-],
-"proTips": [
-  "If you want one flat, capped layer of translucent color, turn down opacity. If you want a natural, gradually-building painterly feel, turn down flow instead and keep opacity high.",
-  "Use the eyedropper tool (usually Alt/Option plus the brush tool) constantly while blending \u2014 picking a color directly from your canvas and painting a new stroke next to it is the core technique behind most manual color blending.",
-  "Start with brush Hardness and Opacity both around 50% for general blending practice, then deliberately push one setting at a time toward its extreme to feel what changes.",
-  "Limit yourself to one hard round brush and one soft round brush for your first several finished pieces before exploring specialty brushes \u2014 mastering the two core settings matters far more than the brush shape itself."
-],
-"practice": {
-  "warmup": "Paint one stroke at 100% opacity/100% flow, then one at 100% opacity/20% flow, then one at 20% opacity/100% flow, and compare how each one looks and builds up when you paint back over itself.",
-  "daily": "Pick two colors and blend them into each other using only the eyedropper-and-repaint technique, practicing until the transition looks smooth with no hard edges.",
-  "weekly": "Paint a small study using only a hard round brush for construction and a soft round brush for blending, deliberately switching hardness and opacity multiple times through the piece.",
-  "challenge": "Recreate the same small color blend three times \u2014 once using only opacity changes, once using only flow changes, once mixing both \u2014 and write one sentence comparing how each result felt to control."
-},
-"resources": [
-  {"type": "Article", "title": "A Complete Guide To Photoshop Brushes, Pt. I: The Toolbar", "creator": "C.S. Jones, via Wacom Community", "url": "https://community.wacom.com/en-us/guide-to-photoshop-brushes-pt-1/", "why": "A free, detailed, accurate breakdown of exactly what opacity, flow, and blend mode settings do and how they differ.", "summary": "Explains that opacity and flow are the two controls for stroke transparency: opacity caps how opaque a single stroke can get regardless of overlap, while flow controls how gradually color builds up even within one continuous stroke, producing a softer, more paint-like buildup that many artists prefer for natural blending.", "verified": true},
-  {"type": "Article", "title": "Quick Tip: How to Blend With the Brush Tool for Digital Paintings", "creator": "Melody Nieves, Envato Tuts+", "url": "https://design.tutsplus.com/tutorials/quick-tip-how-to-blend-with-the-brush-tool-for-digital-paintings--cms-23052", "why": "A free, practical, step-by-step exercise for the core manual blending technique using hardness, opacity, and the eyedropper tool together.", "summary": "Teaches a concrete blending technique: start a stroke at 100% opacity and hardness, drop both to around 50%, then repeatedly use the eyedropper tool to sample the edge of a stroke and paint a new one beside it, gradually fading colors into each other \u2014 with a clear warning that constantly adjusting hardness and opacity through a painting, not settling on one setting, is the normal workflow.", "verified": true}
-],
-"quiz": [
-  {"q": "What is the key difference between how opacity and flow affect a single brush stroke?", "options": ["They are exactly the same setting with different names", "Opacity caps how opaque one stroke can get no matter how much it overlaps itself; flow lets color build up gradually even within one continuous stroke", "Flow only affects erasers, not brushes", "Opacity only works with soft brushes"], "correct": 1, "explain": "Opacity sets a hard ceiling for a single stroke, while flow determines how gradually color accumulates as you paint, even while the stroke overlaps itself, producing a softer buildup."},
-  {"q": "What does brush hardness primarily control?", "options": ["The color saturation of the brush", "How crisp or feathered the brush's edge is", "The speed at which the brush moves", "The file size of the final image"], "correct": 1, "explain": "Hardness controls the brush's edge quality: a hard brush gives a crisp, clean edge, while a soft brush gives a feathered, gradual edge, useful for different purposes in the same piece."},
-  {"q": "According to the module, how many brushes does a beginner actually need to produce a full finished illustration?", "options": ["At least 20 different specialty brushes", "Potentially just one hard round brush and one soft round brush, used with different settings", "A different brush for every color used", "Only brushes purchased from a paid brush pack"], "correct": 1, "explain": "A single hard round brush and a single soft round brush, combined with deliberate changes to opacity, flow, and hardness, can carry an entire finished piece \u2014 chasing more brushes before understanding these settings is a common trap."},
-  {"q": "What is the core manual blending technique described in the Tuts+ resource?", "options": ["Applying a single blur filter to the whole image", "Repeatedly using the eyedropper tool to sample a stroke's edge and painting a new stroke beside it to gradually fade colors together", "Using only the fill tool for all color transitions", "Painting every color at 100% opacity and flow"], "correct": 1, "explain": "The technique involves alternating between the brush tool and the eyedropper tool, sampling the edge of a stroke and painting a new one next to it, gradually building a smooth transition between colors."},
-  {"q": "What is a common beginner mistake with hardness and opacity across a whole painting, according to the module?", "options": ["Adjusting them too frequently throughout the piece", "Using a single hardness/opacity setting for the entire painting instead of switching deliberately between harder and softer settings for different purposes", "Only using hard brushes, never soft ones", "Never using the eyedropper tool"], "correct": 1, "explain": "Sticking to one setting for an entire painting is a common mistake; the normal workflow involves deliberately switching between harder settings for blocking-in/detail and softer settings for blending, constantly."}
-],
-"checklist": [
-  "I can explain the difference between opacity and flow in my own words.",
-  "I can deliberately switch between hard and soft brush settings for different purposes within one piece.",
-  "I can use the eyedropper tool combined with a brush to manually blend two colors together.",
-  "I can produce a reasonably finished piece using only a hard round brush and a soft round brush."
-],
-"nextStep": "You now understand how a single brush stroke behaves. Module 86 moves from one stroke to a whole image \u2014 layers, and how stacking, opacity, and blend modes at the layer level let you organize and edit a piece non-destructively."
-}
-,
-{
-"id": "m86",
-"plate": 86,
-"title": "Layers",
-"difficulty": "Beginner",
-"studyTime": "16 min",
-"practiceTime": "25\u201330 min/day",
-"prereq": ["m85"],
-"hook": "Traditional painters have exactly one shot to get a mark right on the canvas. Digital artists have layers \u2014 the single feature that makes almost everything else about digital art forgiving, editable, and non-destructive.",
-"whyItMatters": [
-  "Module 83 introduced a basic sketch/line/color layer structure just to get you drawing. This module goes deeper into what layers actually let you do \u2014 stacking, opacity, and blend modes \u2014 which is the organizational backbone every piece you build from here forward will rely on.",
-  "Blend modes specifically are one of the highest-leverage tools in digital art: a single Multiply layer can add convincing shadow across an entire piece in seconds, and a single Overlay or Soft Light layer can shift a scene's entire mood \u2014 effects that would take far longer to achieve by hand-painting every affected pixel."
-],
-"coreIdea": [
-  "A layer stack works like transparent sheets stacked on top of each other: higher layers cover lower ones by default (Normal blend mode), and you can hide, reorder, or delete any single layer without touching the others \u2014 this is what \"non-destructive\" means.",
-  "A blend mode changes how a layer's colors combine with the layers beneath it, rather than simply covering them. The three you'll use constantly: Multiply darkens (perfect for shadows), Screen lightens (perfect for highlights, glows, and light effects like rain or snow), and Overlay boosts contrast by combining both (brightening light areas and darkening dark ones).",
-  "Layer opacity and blend mode work together, not separately \u2014 a common workflow is setting a layer to a blend mode like Multiply or Overlay first, then lowering that layer's opacity to control how strong the effect reads, rather than trying to get the exact right color on a Normal layer.",
-  "Grouping related layers together (for example, all the layers that make up one character or one prop) keeps a growing layer stack manageable, and clipping one layer to another restricts an effect (like a shadow or color adjustment) to only the pixels already on that layer below."
-],
-"mistakes": [
-  "Painting everything on a single layer, making it impossible to isolate or adjust one part of a piece without repainting it.",
-  "Trying to manually pick and paint the exact right shadow or highlight color on a Normal layer, instead of using Multiply or Screen at a lower opacity to get a similar result far faster.",
-  "Forgetting that white is invisible on a Multiply layer and black is invisible on a Screen layer, then being confused about why part of an effect layer isn't showing up.",
-  "Never grouping or organizing layers as a piece grows, leading to a long, unmanageable list that's hard to navigate or edit later.",
-  "Applying a blend-mode layer globally across the whole piece when the effect should only affect one specific object, instead of clipping it to that object's layer."
-],
-"proTips": [
-  "Use a Multiply layer at a lower opacity for shadows and a Screen layer at a lower opacity for highlights or glow effects \u2014 this is faster and more flexible than hand-mixing the exact colors on a Normal layer.",
-  "When an effect should only apply to one object (a character, a prop) rather than the whole canvas, clip the effect layer to that object's layer instead of painting across the whole piece and risking it bleeding outside the object's edges.",
-  "Group related layers together as soon as a piece grows past roughly 8\u201310 layers, so you can collapse and navigate sections instead of scrolling through a long flat list.",
-  "Keep a layered working file (not a flattened export) as you work, so masks, groups, and individual layers stay editable if you need to revise the piece later."
-],
-"practice": {
-  "warmup": "Create a small flat-colored shape on one layer, then add a Multiply layer above it and paint a shadow shape, and a Screen layer above that for a highlight, adjusting opacity on each.",
-  "daily": "Take a simple piece and add one Multiply shadow layer and one Overlay color-mood layer over the whole composition, adjusting each layer's opacity until the effect feels right.",
-  "weekly": "Build a small piece using at least three organized layer groups (for example: background, main subject, effects), keeping each group collapsed except when actively working in it.",
-  "challenge": "Take one finished flat-colored piece and transform its entire mood using only blend-mode layers (Multiply, Screen, Overlay) and their opacity \u2014 no repainting of the original colors allowed."
-},
-"resources": [
-  {"type": "Video", "title": "How to ACTUALLY Use Layer Blend Modes", "creator": "8edhead (CLIP STUDIO TIPS)", "url": "https://www.youtube.com/watch?v=GxxJ2OkRdFg", "why": "A free 7-minute walkthrough of the most useful blend modes, with a written version on Clip Studio TIPS.", "summary": "Explains blend modes as a non-destructive way to change how a layer interacts with the layers beneath it, then demonstrates Multiply for dim lighting and shadow, Screen for highlights, snow, and rain textures, and Overlay for adding soft, vibrant color washes over a finished illustration.", "verified": true},
-  {"type": "Article", "title": "Ultimate Guide to Blending Modes", "creator": "Art Rocket (Clip Studio)", "url": "https://www.clipstudio.net/how-to-draw/archives/154182", "why": "A free, comprehensive reference covering every major blend mode with a clear description of what each one does, plus a worked example turning a daytime scene into a sunset.", "summary": "Catalogs every major blend mode grouped by effect (darkening, lightening, contrast-boosting), then demonstrates a concrete example: adding an orange gradient layer set to Hard Light at 85% opacity over a daytime sky to convincingly transform the entire scene into a sunset.", "verified": true}
-],
-"quiz": [
-  {"q": "What does \"non-destructive\" mean in the context of layers?", "options": ["The file can never be deleted", "You can hide, reorder, or delete a single layer without permanently altering the pixels on other layers", "The software cannot crash while layers are open", "Layers automatically save every few seconds"], "correct": 1, "explain": "Non-destructive editing means changes on one layer (or removing it entirely) don't permanently affect the pixels on other layers, unlike painting everything on a single flat layer."},
-  {"q": "Which blend mode is best suited for quickly adding shadow across a piece?", "options": ["Screen", "Multiply", "Normal", "Difference"], "correct": 1, "explain": "Multiply darkens colors beneath it and is the standard choice for shadow, since white on a Multiply layer is invisible and darker tones progressively darken what's underneath."},
-  {"q": "What is a common, efficient workflow for using a blend-mode layer like Multiply or Screen?", "options": ["Set the blend mode, then adjust that layer's opacity to control how strongly the effect reads", "Never adjust opacity once a blend mode is chosen", "Only use blend modes on the very bottom layer", "Blend modes should always stay at 100% opacity"], "correct": 0, "explain": "Combining a blend mode with adjusted opacity \u2014 rather than trying to hand-mix the exact right color on a Normal layer \u2014 is a fast, flexible way to control how strong an effect like shadow or a color mood layer reads."},
-  {"q": "What does clipping a layer to the layer below it accomplish?", "options": ["It merges the two layers permanently into one", "It restricts the clipped layer's effect to only the pixels already present on the layer below it", "It deletes the layer below automatically", "It changes the file format of the image"], "correct": 1, "explain": "Clipping restricts an effect layer (like a shadow or color adjustment) to the shape of the layer beneath it, preventing the effect from bleeding outside that object's edges."},
-  {"q": "Why is grouping related layers together recommended as a piece grows?", "options": ["It automatically improves image quality", "It keeps a growing layer stack manageable and easier to navigate than one long flat list", "Grouped layers render faster in every case", "It's required before a file can be exported"], "correct": 1, "explain": "Organizing related layers (like all the layers for one character or prop) into groups keeps a growing stack navigable, letting you collapse sections you're not actively working on."}
-],
-"checklist": [
-  "I can explain what makes layer editing non-destructive.",
-  "I can use a Multiply layer for shadow and a Screen layer for highlights or glow, adjusting opacity to control strength.",
-  "I can clip an effect layer to restrict it to a specific object rather than the whole canvas.",
-  "I can organize a growing layer stack into logical groups."
-],
-"nextStep": "You now understand how to structure and combine layers. Module 87 covers selection tools \u2014 how to isolate a specific area to edit, fill, or protect, which works hand-in-hand with layers and masks for precise, controlled changes."
-}
-,
-{
-"id": "m87",
-"plate": 87,
-"title": "Selection Tools",
-"difficulty": "Beginner",
-"studyTime": "15 min",
-"practiceTime": "25\u201330 min/day",
-"prereq": ["m86"],
-"hook": "Some of the cleanest, most confident-looking digital paintings aren't built with a brush at all \u2014 they're built by selecting a hard-edged shape and filling it, a completely different way of thinking about construction than drawing freehand.",
-"whyItMatters": [
-  "Selections work hand-in-hand with the layers and masks from Module 86: a selection is how you tell the software exactly which pixels a fill, adjustment, or mask should affect, instead of it applying to the whole layer.",
-  "Beyond the obvious use (isolating an object to cut it out or protect it), selection-based construction \u2014 building shapes with the lasso tool and filling them \u2014 is a real, widely used technique among professional concept artists and illustrators for getting clean, confident, graphic shapes that freehand brushwork makes much harder to achieve."
-],
-"coreIdea": [
-  "The marquee tool selects basic rectangular or oval shapes, the lasso tool lets you draw a freeform (or polygonal, point-by-point) selection outline by hand, and the magic wand selects pixels based on color similarity within an adjustable tolerance \u2014 each is suited to a different kind of shape.",
-  "Selections can be combined: holding Shift while making a new selection adds it to the existing one, holding Alt/Option subtracts from it, letting you build up a complex selection area from several simpler ones.",
-  "Inverse selection (flipping a selection so everything NOT selected becomes selected) is a powerful shortcut: it's often far easier to select a plain background with the magic wand and then invert the selection than to try to trace a complicated object directly.",
-  "Feathering softens a selection's edge so a fill or cutout blends more naturally instead of having a harsh, jagged boundary \u2014 useful both for cutting an object out cleanly and for creating vignette-style fades."
-],
-"mistakes": [
-  "Trying to trace a complicated object directly with the lasso tool when selecting its simpler background and inverting the selection would be much faster and more accurate.",
-  "Forgetting to clear an active selection before continuing to paint elsewhere, then being confused why new brush strokes only appear inside a small, forgotten selected area.",
-  "Using a single flat tolerance setting on the magic wand for every image, instead of adjusting it based on how much color variation is actually in the area you're trying to select.",
-  "Leaving a cutout's edge completely hard and unfeathered when it needs to blend into a new background, producing an obviously pasted-in look.",
-  "Not combining selection tools \u2014 relying on only one (usually just the lasso) instead of mixing marquee, lasso, and magic wand with add/subtract to build a more precise selection faster."
-],
-"proTips": [
-  "When cutting an object out of a plain or simple background, try selecting the background with the magic wand and inverting the selection instead of tracing the object itself.",
-  "Use Shift to add to a selection and Alt/Option to subtract from it as your default habit, rather than trying to get a complex selection right in a single pass.",
-  "Try the lasso-and-fill construction technique deliberately at least once: instead of brushing in a shape, select its outline with the lasso tool and fill it with the paint bucket for a clean, confident, graphic result.",
-  "Add a small amount of feathering before cutting out or pasting an object into a new scene so the edge blends rather than looking sharply pasted-in."
-],
-"practice": {
-  "warmup": "Practice selecting a simple shape three different ways: once with the marquee, once with the freeform lasso, and once with the magic wand, comparing how each felt to control.",
-  "daily": "Select a plain background behind a simple object using the magic wand, invert the selection, and move the isolated object onto a new background layer.",
-  "weekly": "Build one small shape (a rock, a building silhouette, a simple prop) entirely using the lasso-and-fill technique instead of freehand brushing, and compare the edge quality to a brushed version.",
-  "challenge": "Combine at least three selection tools (marquee, lasso, magic wand) with Shift/Alt add-and-subtract to build one complex, precise selection area in a single image."
-},
-"resources": [
-  {"type": "Video", "title": "How to Paint With the Lasso Tool", "creator": "Forrest Imel", "url": "https://www.youtube.com/watch?v=d0uYH8pRyYw", "why": "A free, real demonstration from a working artist of the lasso-and-fill construction technique, showing how selections can be used to build a painting, not just cut objects out.", "summary": "Forrest Imel demonstrates painting by selecting shapes with the lasso tool and filling them, rather than brushing freehand, showing how this selection-based construction technique produces clean, confident edges and efficient, graphic shape-building in a finished painting.", "verified": true},
-  {"type": "Article", "title": "Selection Tools", "creator": "University of Washington, AccessComputing WebD2", "url": "https://www.washington.edu/accesscomputing/webd2/student/unit4/module4/selection_tools.html", "why": "A free, clear educational resource covering all core selection concepts \u2014 marquee, lasso, magic wand, feathering, and inverse selection \u2014 explicitly licensed for free educational use.", "summary": "Covers the core selection toolkit: the marquee for basic shapes, the lasso for freeform outlines, the magic wand for color-based selection with adjustable tolerance, and explains the practical trick of selecting a plain background and using inverse selection to isolate a more complex object, plus feathering to soften a selection's edge.", "verified": true}
-],
-"quiz": [
-  {"q": "Which selection tool is best suited for selecting pixels based on color similarity?", "options": ["Marquee tool", "Magic wand tool", "Eraser tool", "Eyedropper tool"], "correct": 1, "explain": "The magic wand tool selects pixels that match a similar color within an adjustable tolerance range, making it ideal for solid-color or low-variation areas."},
-  {"q": "What does inverse selection let you do?", "options": ["Undo the last selection made", "Flip a selection so everything that was NOT selected becomes selected, and vice versa", "Automatically feather a selection's edges", "Convert a selection into a new layer"], "correct": 1, "explain": "Inverse selection flips the selected and unselected areas, which is especially useful for isolating a complex object by first selecting its simpler background."},
-  {"q": "What is the lasso-and-fill construction technique?", "options": ["Erasing a drawing and starting over", "Selecting a shape's outline with the lasso tool and filling it, instead of brushing the shape in freehand", "A method for adjusting brush pressure sensitivity", "A way to organize layers into groups"], "correct": 1, "explain": "This technique builds shapes by selecting an outline with the lasso tool and filling it with color, producing clean, confident, graphic edges that are harder to achieve with freehand brushwork."},
-  {"q": "What does feathering a selection do?", "options": ["It deletes the selected area permanently", "It softens the selection's edge so a fill or cutout blends more naturally instead of having a harsh boundary", "It increases the selection's color tolerance", "It converts the selection to a perfect circle"], "correct": 1, "explain": "Feathering creates a soft, gradual transition at a selection's edge, useful for natural-looking cutouts or vignette-style fades."},
-  {"q": "According to the module, what keyboard modifiers are commonly used to add to or subtract from an existing selection?", "options": ["Only the spacebar", "Shift to add, Alt/Option to subtract", "Only the Tab key", "Ctrl+Z for both"], "correct": 1, "explain": "Holding Shift while making a new selection adds it to the existing one, while holding Alt/Option subtracts the new area, allowing complex selections to be built from simpler pieces."}
-],
-"checklist": [
-  "I can choose the right selection tool (marquee, lasso, or magic wand) based on the shape I need to select.",
-  "I can use inverse selection to isolate a complex object by selecting its simpler background first.",
-  "I can add to or subtract from a selection using Shift and Alt/Option.",
-  "I can use the lasso-and-fill technique to construct a clean shape instead of brushing it freehand."
-],
-"nextStep": "You now have precise control over which pixels an edit affects. Module 88 covers transform tools \u2014 moving, scaling, rotating, and distorting a selection or layer, and how to do it non-destructively as your piece develops."
-}
-,
-{
-"id": "m88",
-"plate": 88,
-"title": "Transform Tools",
-"difficulty": "Beginner",
-"studyTime": "16 min",
-"practiceTime": "20\u201325 min/day",
-"prereq": ["m87"],
-"hook": "Traditional artists can't casually pick up a finished drawing, stretch it wider, rotate it, or make a mirrored copy in two seconds \u2014 digital artists do this constantly, and it changes how freely you can experiment.",
-"whyItMatters": [
-  "Transform tools work directly with the layers (Module 86) and selections (Module 87) you've already learned \u2014 they're how you actually move, resize, rotate, or reshape whatever you've isolated, rather than repainting it from scratch.",
-  "Used well, transforming is a genuine construction technique, not just cleanup: mirroring a symmetrical shape, distorting a flat texture onto a 3D-looking surface, or nudging a proportion after the fact are all things that would take far longer to redo by hand than to transform."
-],
-"coreIdea": [
-  "The core transform operations are scale (resize), rotate, skew (slant), distort (move each corner independently), and perspective (move corners in linked opposite pairs, useful for matching a surface's perspective) \u2014 most software lets you access all of them from one combined tool rather than separate menu items.",
-  "The reference point (sometimes shown as a small target icon in the center of the transform box) marks the anchor a transformation happens around \u2014 moving it to an edge or corner before rotating or scaling changes the whole effect, which is exactly how tricks like mirrored or radial copies are built.",
-  "Every time you transform a normal (rasterized) layer, the software has to redraw its pixels, which gradually degrades quality if repeated \u2014 this is a destructive edit. Working on a smart object (or vector layer, where available) instead keeps the original data intact no matter how many times you transform it.",
-  "Holding Shift while dragging a scale handle is the standard shortcut for keeping (or, depending on the software's default, deliberately breaking) an image's proportional aspect ratio \u2014 knowing which behavior is the default in your software prevents accidentally squishing or stretching something you meant to scale evenly."
-],
-"mistakes": [
-  "Repeatedly scaling, rotating, or distorting the same rasterized layer directly, gradually degrading its quality instead of working on a smart object or vector layer that stays undamaged.",
-  "Not noticing or intentionally moving the reference point before a transform, then being confused why a rotation or scale isn't centered where expected.",
-  "Confusing Distort (each corner moves independently) with Perspective (opposite corners move together in linked pairs) and picking the wrong one for the effect intended.",
-  "Scaling an image non-proportionally by accident because the software's default Shift behavior wasn't what was expected, producing an unintentionally squished or stretched result.",
-  "Flattening a piece before confirming every transform is finalized, losing the ability to go back and adjust a transformation non-destructively."
-],
-"proTips": [
-  "Convert a layer to a smart object (or work in vector where available) before transforming it, especially if you expect to scale or rotate it more than once.",
-  "Deliberately move the reference point to an edge before flipping or rotating a copy of a shape \u2014 this is the core trick behind quick mirrored or radial-symmetry effects.",
-  "Use Perspective mode specifically when you need a flat texture or image to match the converging angles of a surface in your scene, rather than trying to eyeball it with Distort.",
-  "Check whether your software's default Shift behavior locks or breaks proportional scaling before you rely on muscle memory from a different program."
-],
-"practice": {
-  "warmup": "Take one simple shape and practice all five core transforms on copies of it: scale, rotate, skew, distort, and perspective, labeling which is which.",
-  "daily": "Convert a layer to a smart object, then scale and rotate it several times in a row, comparing its quality to a non-smart-object version transformed the same number of times.",
-  "weekly": "Create a mirrored or radially-symmetric shape by moving the reference point to an edge and flipping or rotating a duplicated layer around it.",
-  "challenge": "Take a flat texture or pattern and use Distort or Perspective mode to make it appear to wrap realistically onto an angled surface, like a sign on a building wall."
-},
-"resources": [
-  {"type": "Video", "title": "Photoshop Transformation Tutorial: Skew, Distort, Perspective, Warp", "creator": "Ethan Dray", "url": "https://www.youtube.com/watch?v=rWHN--thboI", "why": "A free 9-minute walkthrough of the transform modes this module covers: skew, distort, perspective and warp.", "summary": "A short tutorial on using transformations in Photoshop, showing how they let you skew, distort, change the perspective of and warp the shape of a layer or object.", "verified": true},
-  {"type": "Video", "title": "Edit Non-Destructively with Smart Objects in Photoshop | Day 13", "creator": "PHLEARN", "url": "https://www.youtube.com/watch?v=44KFPa6WzWI", "why": "A free, focused lesson from a well-established free Photoshop education channel, covering exactly why smart objects protect quality during repeated transforms.", "summary": "Aaron Nace shows what breaks when you resize a regular layer versus a Smart Object: in a four-photo collage the regular layer loses real resolution after being shrunk and scaled back up while the Smart Object stays sharp, and the same protection applies to filters.", "verified": true},
-  {"type": "Article", "title": "How to use Free Transform in Photoshop", "creator": "Steve Patterson, Photoshop Essentials", "url": "https://www.photoshopessentials.com/basics/transform-and-warp-images-with-free-transform-in-photoshop-cc-2019/", "why": "An extremely thorough, free breakdown of every transform mode (scale, rotate, skew, distort, perspective) and the reference point, with clear step-by-step examples.", "summary": "Covers every transform mode in detail \u2014 proportional and non-proportional scaling, rotation, skew, the difference between Distort (independent corners) and Perspective (linked opposite corners) \u2014 and explains how moving the reference point (the target icon) changes the anchor of a transform, using it to build a four-way mirrored image as a concrete example.", "verified": true}
-],
-"quiz": [
-  {"q": "What is the key difference between Distort and Perspective transform modes?", "options": ["They are identical with different names", "Distort moves each corner handle independently, while Perspective moves opposite corners together in linked pairs", "Distort only works on text layers", "Perspective can only be used on circular shapes"], "correct": 1, "explain": "Distort lets each corner move freely and independently, while Perspective links opposite corners so they move together in opposite directions, which is useful for matching a surface's converging angles."},
-  {"q": "Why is transforming a smart object preferred over transforming a regular rasterized layer repeatedly?", "options": ["Smart objects load faster in every case", "Regular layers lose quality with each destructive transform, while a smart object preserves the original image data through repeated transforms", "Smart objects cannot be transformed at all", "There is no real difference between the two"], "correct": 1, "explain": "Repeatedly transforming a rasterized layer redraws its pixels each time, gradually degrading quality; a smart object keeps the original data intact no matter how many times it's transformed."},
-  {"q": "What does the reference point (target icon) control during a transform?", "options": ["The color of the transformed layer", "The anchor point that a rotation or scale happens around", "The file format of the exported image", "The brush size used afterward"], "correct": 1, "explain": "The reference point marks the center a transformation pivots or scales around; moving it to an edge, for example, changes a rotation from spinning in place to swinging around that edge instead."},
-  {"q": "What is a practical technique that relies on moving the reference point?", "options": ["Adjusting brush opacity", "Creating a mirrored or radially-symmetric copy by flipping or rotating around a moved reference point", "Changing the canvas resolution", "Selecting a color from the color picker"], "correct": 1, "explain": "Moving the reference point to an edge before flipping or rotating a duplicated layer is the core technique behind quick mirror-image or radial-symmetry effects."},
-  {"q": "What does holding Shift while dragging a scale handle typically control?", "options": ["The layer's blend mode", "Whether the image scales proportionally (keeping aspect ratio) or not, depending on the software's default behavior", "The brush hardness setting", "The selection tool being used"], "correct": 1, "explain": "Shift is the standard modifier for toggling proportional versus non-proportional scaling, though which behavior is the default versus the Shift-modified one can vary between software, so it's worth confirming in whichever program you use."}
-],
-"checklist": [
-  "I can explain the difference between Distort and Perspective transform modes.",
-  "I can convert a layer to a smart object before transforming it to avoid quality loss.",
-  "I can move a reference point to create a mirrored or radial-symmetry effect.",
-  "I can scale an image proportionally or non-proportionally on purpose, not by accident."
-],
-"nextStep": "You now have the core toolkit \u2014 workspace, hardware, brushes, layers, selections, transforms \u2014 to construct and edit any digital piece. Module 89 focuses specifically on clean digital line art, bringing several of these tools together for confident, controlled linework."
-}
-,
-{
-"id": "m89",
-"plate": 89,
-"title": "Digital Line Art",
-"difficulty": "Beginner",
-"studyTime": "16 min",
-"practiceTime": "25\u201330 min/day",
-"prereq": ["m88"],
-"hook": "The line stabilizer setting you probably ignored in your software's menu is the single biggest lever for turning a shaky, uncertain hand into confident, clean linework \u2014 and most beginners never touch it.",
-"whyItMatters": [
-  "This module brings the workspace, tablet, brushes, layers, selections, and transforms from Modules 83\u201388 together into one concrete, practiced skill: clean confident line art is the most common finishing step for illustration, comics, and character work, and shaky or inconsistent lines undermine even a strong underlying drawing.",
-  "Clean linework is also a genuinely learnable, mechanical skill, not just raw talent \u2014 specific habits like stabilization settings, canvas rotation, and controlled pressure account for most of the visible difference between a beginner's shaky lines and a professional's confident ones."
-],
-"coreIdea": [
-  "A line stabilizer (sometimes called smoothing) delays and averages your pen's movement slightly to smooth out small hand tremors, producing steadier lines \u2014 a moderate setting (often around the middle of the available range) balances smoothness against responsiveness, since too much stabilization adds noticeable lag.",
-  "Confident lines come from slow, steady, complete strokes rather than many short hesitant ones \u2014 if a stroke doesn't come out right, undoing and trying again produces a cleaner result than trying to patch or trace over a bad line.",
-  "Rotating and moving the canvas as you draw (not just your hand) lets every stroke approach from a comfortable angle, similar to how traditional artists physically turn a piece of paper \u2014 awkward strokes are very often a canvas-angle problem, not a skill problem.",
-  "Line weight (varying a line's thickness along its length, usually by varying pen pressure) adds a sense of form, connection, and depth \u2014 thicker where lines connect or an object is closer to the viewer, thinner where it recedes or across simpler open space."
-],
-"mistakes": [
-  "Drawing every line with identical, flat weight, producing a stiff and uniform result rather than lines that feel connected and grounded to the shapes they define.",
-  "Trying to trace over or patch a bad stroke repeatedly instead of undoing it and drawing the whole stroke again in one confident pass.",
-  "Never adjusting canvas rotation, forcing awkward wrist angles on strokes that would be easy from a rotated position.",
-  "Setting stabilization very high for all situations, including loose sketching or fast hatching, where the resulting lag actually hurts more than it helps.",
-  "Drawing an entire character or scene's lineart on a single layer, making later cleanup, recoloring, or part-specific edits far more difficult than necessary."
-],
-"proTips": [
-  "Start with a stabilizer value around the middle of your software's range and adjust from there \u2014 too little won't smooth shaky strokes, too much will feel laggy and unresponsive.",
-  "Zoom in close enough that the area you're inking fills most of your screen; mistakes are far easier to catch at this scale than when working zoomed out.",
-  "Flip your canvas horizontally periodically while inking \u2014 it resets your eye and reveals proportion or symmetry issues you've gone blind to from staring at the same orientation too long.",
-  "Build line weight by varying pen pressure through a single stroke (lighter at the start, heavier through the middle, lighter again at the end) rather than drawing a flat line and trying to thicken parts of it afterward."
-],
-"practice": {
-  "warmup": "Draw 15 long, confident lines using only full-arm movement (not wrist-only), trying to keep each one steady from start to finish without lifting the pen partway through.",
-  "daily": "Ink one small sketch from an earlier module using a moderate stabilizer setting, rotating the canvas as needed, and separating major parts (like a head vs. body) onto different layers.",
-  "weekly": "Ink a slightly more complex piece, deliberately varying line weight to make connected areas (like where two shapes overlap) read as heavier than open, simple areas.",
-  "challenge": "Ink the same simple shape twice \u2014 once with a low stabilizer setting, once with a high one \u2014 and compare which strokes came out cleaner and which felt more or less responsive to control."
-},
-"resources": [
-  {"type": "Video", "title": "How to Quickly Improve your Digital Lineart", "creator": "CrimsyCreates", "url": "https://www.youtube.com/watch?v=YvcyUOJjVH4", "why": "A free, thorough video covering 15 concrete tips for cleaner digital line art, from sketch prep through stabilization to line weight.", "summary": "Covers 15 practical tips for cleaner digital inking, including keeping the underlying sketch clean before inking, using a moderate stabilizer setting (around the middle of the available range), rotating and moving the canvas for awkward angles, keeping line width consistent, flipping the canvas periodically to catch mistakes, and building line weight by varying pen pressure through a stroke.", "verified": true},
-  {"type": "Article", "title": "15 Quick Tips to Improve your Digital Lineart!", "creator": "CrimsyCreates, CLIP STUDIO TIPS", "url": "https://tips.clip-studio.com/en-us/articles/3891", "why": "The free written companion to the same 15 tips, useful as a reference to revisit specific techniques without rewatching the full video.", "summary": "A written, tip-by-tip breakdown covering sketch preparation, canvas size and resolution, stabilization settings, relaxed arm movement for smoother curves, rotating and flipping the canvas, multi-layered lineart organization by body part or material, and how to build line weight to show where forms connect and simulate proximity to the viewer.", "verified": true}
-],
-"quiz": [
-  {"q": "What does a line stabilizer (or smoothing) setting actually do?", "options": ["It automatically colors a finished line art", "It delays and averages pen movement slightly to smooth out small hand tremors", "It permanently locks the canvas in place", "It converts a raster layer into a vector layer"], "correct": 1, "explain": "A stabilizer smooths a line by slightly delaying and averaging the pen's tracked movement, reducing small tremors and producing steadier strokes, at the cost of some added lag at high settings."},
-  {"q": "What is the recommended response when a single inked stroke comes out wrong?", "options": ["Trace over it repeatedly until it looks better", "Undo it and draw the whole stroke again in one confident pass", "Leave it as is and move on to a different part of the piece", "Increase the canvas resolution to fix it"], "correct": 1, "explain": "Undoing and redrawing a full stroke tends to produce a cleaner result than trying to patch or trace over a stroke that already went wrong."},
-  {"q": "Why is rotating the canvas while inking recommended?", "options": ["It changes the file's color profile", "It lets every stroke approach from a comfortable angle, since awkward strokes are often a canvas-angle problem rather than a skill problem", "It automatically applies a stabilizer effect", "Canvas rotation has no real effect on line quality"], "correct": 1, "explain": "Rotating the canvas (like a traditional artist physically turning paper) lets you approach each stroke from a comfortable angle, fixing many strokes that feel awkward purely because of hand position."},
-  {"q": "What does varying line weight (thickness) along a stroke typically communicate?", "options": ["The file's resolution setting", "A sense of form, connection, and depth, with thicker lines often at points of connection or proximity to the viewer", "The brush's opacity setting", "Nothing meaningful; it is purely decorative"], "correct": 1, "explain": "Varying line weight, usually by adjusting pen pressure through a stroke, adds a sense of where forms connect and which elements are closer to the viewer, giving lineart more depth than uniformly flat lines."},
-  {"q": "Why is organizing lineart across multiple layers (rather than one single layer) recommended?", "options": ["It has no practical benefit, it's purely stylistic", "It makes later cleanup, recoloring, or editing specific parts (like hair versus a face) significantly easier", "Multiple layers are required by most software licenses", "It automatically improves line stabilization"], "correct": 1, "explain": "Separating lineart into multiple layers (for example, by body part or material) makes it much easier to edit, recolor, or clean up one part without affecting the rest of the linework."}
-],
-"checklist": [
-  "I can set a moderate line stabilizer value appropriate to the kind of stroke I'm drawing.",
-  "I can rotate my canvas to approach an awkward stroke from a more comfortable angle.",
-  "I can vary line weight within a stroke using pen pressure to suggest connection and depth.",
-  "I can organize a piece's lineart across multiple layers instead of drawing everything on one."
-],
-"nextStep": "You've completed the core toolkit of Digital Art Fundamentals \u2014 workspace, tablet, brushes, layers, selections, transforms, and clean line art. Module 90 closes out this arc with canvas setup and export: resolution, DPI, color modes, and getting a finished piece out of your software correctly for print or web."
-}
-,
-{
-"id": "m90",
-"plate": 90,
-"title": "Canvas Setup & Export",
-"difficulty": "Beginner",
-"studyTime": "16 min",
-"practiceTime": "15\u201320 min setup + review",
-"prereq": ["m89"],
-"hook": "DPI is probably the most misunderstood setting in every piece of digital art software \u2014 and the honest truth is that for anything staying on a screen, it does absolutely nothing at all.",
-"whyItMatters": [
-  "This closes out the Digital Art Fundamentals arc by covering the two moments that bookend every single piece you make: setting up the canvas correctly before you start, and exporting it correctly when you're done, so all the workspace, brush, layer, and line-art skills from this arc actually reach a viewer at full quality.",
-  "Getting this wrong is expensive in a way other mistakes aren't: a bad brush stroke can be undone, but a canvas started too small can't be scaled up later without visible quality loss \u2014 you can never add resolution you didn't capture while drawing."
-],
-"coreIdea": [
-  "Resolution is simply the total pixel count of your canvas (width \u00d7 height); DPI (dots per inch) only controls how densely those pixels get packed onto paper when printed. On a screen, DPI is meaningless \u2014 two canvases with identical pixel dimensions look completely identical on a monitor no matter what DPI number is set.",
-  "The practical rule: for screen-only work, ignore DPI entirely and focus on pixel dimensions; for print work, set DPI to 300 (the standard for sharp prints) and let your chosen pixel dimensions determine the physical print size.",
-  "Color mode matters at setup too: RGB is correct for anything that will be viewed on a screen (which is almost everything you'll make), while CMYK is only for professional offset printing, and switching modes after painting can shift your colors.",
-  "You can safely resize a canvas smaller or add empty space around existing art at any time, but scaling existing art larger degrades it, since the software has to invent pixel data that was never captured \u2014 which is why starting reasonably large (a common default is roughly A4 at 300 DPI) is safer than starting too small."
-],
-"mistakes": [
-  "Starting a canvas too small and trying to scale the finished art larger later, producing visible blurring since new pixel information can't be invented from nothing.",
-  "Worrying about DPI for art that will only ever be viewed on a screen, when pixel dimensions are the only setting that actually matters for screen display.",
-  "Exporting a working file's only copy as a flattened JPG and discarding the original layered file, losing the ability to make any future edits.",
-  "Leaving color mode set to CMYK for work that's only ever going to be viewed digitally, resulting in duller on-screen colors than RGB would show.",
-  "Starting a canvas so large that the software lags through every brush stroke, when a more modest size would have looked just as good in the final shared image."
-],
-"proTips": [
-  "Ask what the piece is actually for before creating the canvas: purely digital (ignore DPI, focus on pixel size) or possibly print (set 300 DPI and physical dimensions from the start) \u2014 deciding this first avoids the far more painful fix of upscaling later.",
-  "Always keep your native, layered working file (like a .psd, .clip, or .kra) even after exporting a flattened PNG or JPG for sharing \u2014 the export is disposable, the working file is not.",
-  "Use PNG for lossless sharing or anything needing transparency, and JPG at a high quality setting for smaller files where transparency isn't needed, since social platforms compress uploads anyway.",
-  "If your software feels laggy at your chosen canvas size, that's a real signal to work smaller rather than push through \u2014 a smooth, confidently-executed smaller piece usually looks better than a laggy, rushed large one."
-],
-"practice": {
-  "warmup": "Set up three canvases for three different purposes (a square social media post, an A4-equivalent print piece, and a 16:9 wallpaper) and note the different resolution and DPI choices for each.",
-  "daily": "Take a finished piece from an earlier module and export it twice \u2014 once as a PNG for a portfolio site, once as a JPG for social sharing \u2014 and compare file size and any visible quality difference.",
-  "weekly": "Deliberately test the scale-up problem: take a small canvas piece, scale it 300% larger, and examine the blurring up close, so the \"never scale up\" rule is felt firsthand rather than just read.",
-  "challenge": "Set up a canvas specifically intended for print (300 DPI, physical dimensions in inches or cm) and export a print-ready file, confirming the exported pixel dimensions match what you expect from the DPI math."
-},
-"resources": [
-  {"type": "Video", "title": "This is not how DPI works! Let me explain.", "creator": "VildrArt\u2122", "url": "https://www.youtube.com/watch?v=ecOgVkfyA9c", "why": "A free video specifically addressing common DPI misconceptions among digital artists, directly relevant to the most confusing setting covered in this module.", "summary": "Addresses widespread misconceptions about DPI among digital artists, clarifying what the setting actually controls and correcting the common assumption that a higher DPI number automatically means a better or more detailed image regardless of pixel dimensions.", "verified": true},
-  {"type": "Article", "title": "Canvas Size for Digital Art: The Complete Guide to Resolution, DPI, and Dimensions", "creator": "Allard Lavaritte", "url": "https://lavaritte.com/blogs/digital-canvas-sizes/", "why": "An extremely thorough, free reference covering resolution, DPI, color mode, software-specific canvas setup, performance troubleshooting, and export settings by destination, with concrete size tables.", "summary": "Covers the full lifecycle from canvas creation to export: explains that DPI only matters for print (screen display is identical regardless of DPI), gives concrete canvas size tables for social media, print, and merchandise, walks through software-specific setup in Clip Studio Paint, Procreate, and Krita, and ends with a file-format guide (PNG for lossless sharing, JPG for smaller social files, TIFF for professional print) plus the rule to always keep a native layered working file separate from any export.", "verified": true}
-],
-"quiz": [
-  {"q": "What does DPI actually control?", "options": ["The total pixel count of an image", "How densely pixels are packed onto paper when printed; it has no effect on how an image looks on a screen", "The color mode of the canvas", "The number of layers available in a document"], "correct": 1, "explain": "DPI (dots per inch) only affects print density. Two images with identical pixel dimensions look completely identical on a screen regardless of their DPI setting."},
-  {"q": "For art that will only ever be viewed on a screen (social media, portfolio sites), what setting should you focus on instead of DPI?", "options": ["Color mode only", "Pixel dimensions (resolution)", "File format exclusively", "Brush hardness"], "correct": 1, "explain": "Since DPI is meaningless for screen display, pixel dimensions (the actual resolution) are what determine how sharp an image looks on any monitor."},
-  {"q": "Why is scaling a finished piece of art to a larger canvas size risky?", "options": ["It has no real risk at all", "The software has to invent pixel data that was never captured, causing visible blurring", "It automatically changes the color mode", "It only affects the file format, not image quality"], "correct": 1, "explain": "Scaling up requires the software to generate new pixel information that doesn't exist in the original, which degrades quality \u2014 unlike scaling down, which only discards unneeded data."},
-  {"q": "Which color mode is correct for art that will only be viewed digitally?", "options": ["CMYK", "RGB", "Greyscale, always", "It doesn't matter at all"], "correct": 1, "explain": "RGB is the correct mode for anything displayed on a screen; CMYK is reserved for professional offset printing and can make on-screen colors look duller if used unnecessarily."},
-  {"q": "What should you always keep after exporting a flattened PNG or JPG for sharing?", "options": ["Nothing, the export is sufficient", "The native, layered working file (like a .psd, .clip, or .kra)", "Only a low-resolution thumbnail", "The canvas can be deleted immediately after export"], "correct": 1, "explain": "The native layered file preserves every layer and setting and allows future edits; a flattened export is meant for sharing, not as your only saved copy of the work."}
-],
-"checklist": [
-  "I can explain why DPI has no effect on how an image looks on a screen.",
-  "I can choose appropriate pixel dimensions and DPI based on whether a piece is for screen or print.",
-  "I can choose RGB versus CMYK appropriately based on a piece's intended use.",
-  "I can export a piece in an appropriate file format while keeping my native layered working file."
-],
-"nextStep": "You've completed Digital Art Fundamentals \u2014 workspace, tablet, brushes, layers, selections, transforms, line art, and canvas setup. Every one of these skills carries forward directly into the next arc, Digital Painting & Rendering, where they get applied to full-color, fully-rendered work."
-}
-]},
-{id:'digital-painting', title:'Digital Painting & Rendering', status:'live', order:9,
-    desc:'Color theory, value control, lighting, material rendering, edge control, atmospheric effects, and a complete professional illustration workflow.',
-    moduleCount:10, sample:['Color Theory','Values','Lighting','Material Rendering','Edge Control','Illustration Workflow'],
-    modules:[
-{
-"id": "m91",
-"plate": 91,
-"title": "Color Theory Fundamentals",
-"difficulty": "Intermediate",
-"studyTime": "18 min",
-"practiceTime": "25\u201330 min/day",
-"prereq": ["m90"],
-"hook": "Two colors can be mathematically \"correct\" on a color wheel and still make a painting feel dead \u2014 because color isn't really three separate ingredients, it's one relationship, and most beginners are only ever adjusting one dial at a time.",
-"whyItMatters": [
-  "Everything you've built through Digital Art Fundamentals (Modules 83\u201390) gave you the mechanical control to put color anywhere on a canvas. This arc is about knowing which color, and why \u2014 color theory is the first and most foundational decision-making layer of full-color rendering.",
-  "Working artists consistently point to one specific insight as the turning point in their color understanding: hue is the least important of the three properties of color, and value is what actually holds a painting together \u2014 skipping straight to hue choices without value control is one of the most common reasons colorful paintings still look muddy or flat."
-],
-"coreIdea": [
-  "Every color has three independent properties: hue (its name \u2014 red, blue, green), value (how light or dark it is), and saturation (how intense or muted it is). A painting can fail in each one differently: wrong hues feel off, weak values feel flat, and wrong saturation feels either chaotic or dull.",
-  "Value matters more than hue for a painting's basic readability. A composition that still reads clearly in grayscale has a sound value structure; if it collapses into a gray mush without color to lean on, the hue choices were doing work the values should have been doing.",
-  "Different pure hues carry different inherent values \u2014 a pure yellow is naturally much lighter than a pure blue at maximum saturation. This matters constantly when planning a value structure, since simply picking \"nice colors\" can accidentally produce weak value contrast.",
-  "Saturation should be spent deliberately, not spread evenly: reserving your most saturated color for a focal point (a glowing object, a key light source) while keeping the rest of the palette more muted creates a clear hierarchy of what the viewer should look at first."
-],
-"mistakes": [
-  "Choosing colors based on hue alone (\"this looks like a nice blue\") without checking whether the underlying value structure is doing the actual work of readability.",
-  "Assuming that colorful automatically means good \u2014 saturating everything in a painting equally removes the contrast that would otherwise direct the eye to a focal point.",
-  "Forgetting that different hues have different natural values, leading to value contrast that's accidentally weaker (or stronger) than intended when colors are chosen by eye alone.",
-  "Treating hue, value, and saturation as one combined \"color\" decision instead of three separate, individually adjustable properties that can each be diagnosed and fixed on their own.",
-  "Never testing a painting in grayscale, missing an easy, fast way to check whether the value structure holds up independent of color."
-],
-"proTips": [
-  "When a painting feels wrong, diagnose it property by property: if the colors feel off, check hue; if it looks flat, check value; if it feels chaotic or dull, check saturation \u2014 don't try to fix all three with one change.",
-  "Squint at your painting or apply a grayscale filter regularly while working, especially at the block-in stage, to confirm your value structure reads before you commit further detail on top of it.",
-  "Reserve your highest saturation for the single area you most want the eye to land on, and deliberately mute the saturation everywhere else to support that hierarchy.",
-  "When picking a limited palette, plan your values first using a grayscale value study, then assign hues to that existing value structure rather than picking colors and hoping the values work out."
-],
-"practice": {
-  "warmup": "Take five random color swatches at full saturation and rank them from lightest to darkest value without using any tool, then check your ranking with a grayscale filter.",
-  "daily": "Paint a small study using only value first (grayscale), then add a single limited hue on top at low opacity to see how much the existing value structure carries the piece.",
-  "weekly": "Paint the same small scene twice: once with saturation spread evenly across the whole image, once with saturation concentrated only at one focal point, and compare which reads more clearly.",
-  "challenge": "Take a finished piece from an earlier module and diagnose it property by property (hue, value, saturation) using the grayscale test, then make one deliberate fix in only the weakest property."
-},
-"resources": [
-  {"type": "Video", "title": "Something strange you should know about color", "creator": "Marco Bucci", "url": "https://www.youtube.com/watch?v=gJ2HOj22gDo", "why": "A free video from a widely-recommended professional colorist, explaining a core insight about how value and hue actually relate to each other in painting.", "summary": "Marco Bucci explains a counterintuitive fact about color perception that trips up most beginners: that value, not hue, is the property doing the most work in making a painting read clearly, and demonstrates how to check and control value independent of hue while painting.", "verified": true},
-  {"type": "Article", "title": "Hue, Value, and Saturation: The Holy Trinity of Color", "creator": "Lunar Academy", "url": "https://www.lunaracademy.co/post/hue-value-and-saturation", "why": "A free, clearly written breakdown of the three properties of color specifically aimed at digital artists, with concrete examples from games and illustration.", "summary": "Breaks color down into hue, value, and saturation as three independent, diagnosable properties, explaining that value is the single most important one for readability (a painting should read clearly even in grayscale), that different hues carry different inherent values, and that saturation should be reserved deliberately for areas of focus rather than spread evenly.", "verified": true}
-],
-"quiz": [
-  {"q": "According to this module, which of the three color properties matters most for a painting's basic readability?", "options": ["Hue", "Value", "Saturation", "All three matter equally with no priority"], "correct": 1, "explain": "Value (lightness or darkness) is presented as the most important property for readability \u2014 a painting with strong value contrast reads clearly even in grayscale, while weak values produce a flat or muddy result regardless of hue choices."},
-  {"q": "What is a simple, fast way to check whether a painting's value structure is working?", "options": ["Increase the saturation of every color", "Apply a grayscale filter or squint at the painting to see if it still reads clearly without color", "Add more detail to every area equally", "Switch the canvas to CMYK color mode"], "correct": 1, "explain": "Converting to grayscale or squinting removes hue and reveals whether the underlying value structure alone is strong enough to read clearly."},
-  {"q": "Why do different pure hues have different inherent values?", "options": ["This is a myth with no basis in how color works", "At maximum saturation, some hues (like yellow) are naturally much lighter than others (like blue), which affects value contrast even when colors are chosen only by eye", "All hues have identical value by definition", "It only applies to physical paint, not digital color"], "correct": 1, "explain": "Pure yellow is naturally much lighter in value than pure blue at the same saturation, which is why simply picking \"nice\" hues can accidentally produce unintended value contrast (or a lack of it)."},
-  {"q": "How should saturation ideally be distributed across a painting, according to the module?", "options": ["Spread as evenly and highly as possible across the whole image", "Reserved deliberately for a focal point, with the rest of the palette kept more muted", "Kept at the same low level everywhere with no variation", "Saturation has no effect on where the eye looks"], "correct": 1, "explain": "Concentrating the highest saturation on a single focal area while muting the rest creates a clear visual hierarchy, rather than spreading saturation evenly and losing that focus."},
-  {"q": "What is the recommended way to diagnose a painting that \"feels wrong\"?", "options": ["Change hue, value, and saturation all at once and hope it improves", "Check each property individually \u2014 hue, value, and saturation \u2014 since each one causes a different kind of visual problem", "Only ever adjust saturation, since it's the most important property", "Start the painting over completely"], "correct": 1, "explain": "Since hue, value, and saturation are independent properties that each cause distinct visual problems, diagnosing and adjusting them one at a time is more effective than changing all three simultaneously."}
-],
-"checklist": [
-  "I can name the three independent properties of color: hue, value, and saturation.",
-  "I can check a painting's value structure using a grayscale test.",
-  "I can explain why different hues have different inherent values at full saturation.",
-  "I can deliberately concentrate saturation at a focal point rather than spreading it evenly."
-],
-"nextStep": "You now understand color as three separate, diagnosable properties. Module 92 goes deeper specifically into value \u2014 how to plan and control a value structure across a full painting before color is even introduced."
-}
-,
-{
-"id": "m92",
-"plate": 92,
-"title": "Value Control & Value Studies",
-"difficulty": "Intermediate",
-"studyTime": "18 min",
-"practiceTime": "25\u201330 min/day",
-"prereq": ["m91"],
-"hook": "A painting that falls apart in grayscale was never really working in color \u2014 and a value study is the cheapest way to find that out before you have spent hours rendering.",
-"whyItMatters": [
-  "Module 91 established that value is the single most important property for a painting's readability. This module gives you the actual practice for controlling it \u2014 grayscale studies, limited value ranges, and thumbnail value planning are the concrete techniques behind that principle.",
-  "This is a genuinely universal professional habit: working illustrators consistently follow the same sequence \u2014 value sketch, then grayscale or tonal study, then full color \u2014 specifically because a painting that fails structurally is far cheaper to fix at the thumbnail stage than after hours of color rendering."
-],
-"coreIdea": [
-  "A value study strips a reference or idea down to only light and dark masses, usually limited to 3\u20135 distinct values rather than a full smooth range \u2014 fewer values force you to think about the big shapes and their relationships instead of getting lost in detail too early.",
-  "Local value (an object's natural value before any light hits it) is only the starting point. A believable value study also accounts for the light source, core shadow, cast shadow, and reflected light bouncing back into the shadow side \u2014 skipping reflected light is a common reason grayscale studies look flat.",
-  "Different materials hold value differently under the same light: a more reflective material creates more contrast between its lit and shadowed sides, while a matte material holds a narrower value range \u2014 useful information you'll build on in Module 94's material rendering.",
-  "Contrast is the tool that creates a focal point within a value study \u2014 the area with the strongest value contrast (the biggest jump between light and dark) is where the eye naturally goes first, so a focal point without strong local contrast tends to get lost."
-],
-"mistakes": [
-  "Jumping straight into a full, smooth value range before testing whether the image reads with just 3\u20135 simplified values, skipping the step that would catch a weak composition early.",
-  "Giving every object the same local value, which (if translated to color) would mean every object is the same color \u2014 producing a flat, undifferentiated result.",
-  "Forgetting reflected light in shadow areas, leaving shadows pure flat dark instead of showing a subtle bounce of light and color from the environment.",
-  "Placing the strongest value contrast somewhere other than the intended focal point, accidentally pulling the eye to the wrong part of the image.",
-  "Treating a value study as throwaway busywork instead of as a genuine diagnostic tool that saves far more time than it costs by catching problems before full rendering."
-],
-"proTips": [
-  "When starting a new piece, do at least one 3-value study (light, midtone, dark) before adding any more \u2014 if the composition doesn't read at 3 values, more values won't fix it.",
-  "Deliberately add a touch of reflected light to shadow areas, pulled from the color of nearby surfaces, rather than leaving shadows uniformly dark and flat.",
-  "Use a posterize adjustment (or manually flatten a study to a few discrete tones) periodically while working, as a quick check that your value structure is still holding up as detail is added.",
-  "Place your strongest value contrast exactly where you want the eye to land first, and keep contrast elsewhere in the image comparatively lower to support that hierarchy."
-],
-"practice": {
-  "warmup": "Do three 5-minute thumbnail value studies of the same simple scene, using only 3 values each, and compare which composition reads most clearly.",
-  "daily": "Take a reference photo or one of your earlier pieces and desaturate it, then paint a grayscale study of it, paying attention to reflected light in shadow areas.",
-  "weekly": "Paint the same small scene at 3 values, then 5 values, then a full smooth range, and compare how much extra clarity each additional step of value range actually adds.",
-  "challenge": "Take a finished value study and deliberately move the strongest contrast to a different area, then evaluate how much that single change shifts where the eye goes first."
-},
-"resources": [
-  {"type": "Video", "title": "Train Your Eyes to See Values", "creator": "Stan Prokopenko (Proko)", "url": "https://www.youtube.com/watch?v=RFQtsXktc9g", "why": "A free 8-minute lesson on judging values by their relationships and context, which is exactly the skill value studies train.", "summary": "Explains why our perception of values can be misleading when we draw and teaches you to focus on relationships, meaning how the surroundings change what you see, using optical illusions as examples, plus tips against tunnel vision such as flipping, tilting, stepping back and squinting to simplify values.", "verified": true},
-  {"type": "Article", "title": "Understanding Grayscale/Monochrome Art", "creator": "Konart, CLIP STUDIO TIPS", "url": "https://tips.clip-studio.com/en-us/articles/2893", "why": "An extremely detailed, free breakdown of how local value, light, cast shadow, and reflected light combine to build a believable value study, plus how limited value ranges are used for thumbnails.", "summary": "Explains how a believable grayscale value study is built from local value plus the effects of a light source, cast shadow, and reflected light bouncing off nearby surfaces, shows how more reflective materials create more value contrast than matte ones, and demonstrates using limited value ranges (3\u20135 values) for fast, clear thumbnails before adding detail.", "verified": true}
-],
-"quiz": [
-  {"q": "Why do artists often limit a value study to just 3\u20135 distinct values instead of a full smooth range?", "options": ["Software cannot render more than 5 values", "Fewer values force attention onto the big shapes and their relationships instead of getting lost in detail too early", "It is required by most digital painting software", "More values always look worse"], "correct": 1, "explain": "A limited value range forces a focus on the major light and dark masses and their composition, which is easier to evaluate and fix than trying to judge a full smooth value range from the start."},
-  {"q": "What is reflected light, and why does skipping it often make a value study look flat?", "options": ["It's a lighting effect only used in digital software, not in traditional value theory", "Light bouncing back into a shadow area from nearby surfaces; skipping it leaves shadows uniformly flat and dark instead of subtly varied", "It refers to the brightest highlight on an object, unrelated to shadows", "It only matters for transparent objects like glass"], "correct": 1, "explain": "Reflected light is light bouncing from the environment back into a shadow area; without it, shadows read as flat, uniform dark shapes rather than having the subtle variation seen in real lighting."},
-  {"q": "Why do more reflective materials generally show more value contrast under the same light than matte materials?", "options": ["Reflective materials always appear darker overall", "They bounce more light, creating a stronger difference between their lit and shadowed sides", "Material type has no effect on value contrast", "Matte materials always show more contrast than reflective ones"], "correct": 1, "explain": "A more reflective surface bounces more light, which tends to increase the contrast between its brightest lit areas and its shadow side, compared to a matte surface holding a narrower value range."},
-  {"q": "How does contrast help establish a focal point in a value study?", "options": ["Contrast has no relationship to where the eye looks", "The area with the strongest value contrast (biggest light-to-dark jump) naturally draws the eye first", "Only color contrast can create a focal point, not value contrast", "Focal points must always be placed in the exact center of the composition"], "correct": 1, "explain": "The eye is naturally drawn to the area of strongest value contrast, so placing that contrast deliberately at the intended focal point supports a clear visual hierarchy."},
-  {"q": "According to the module, what is the recommended order in a professional value-first workflow?", "options": ["Full color painting, then a value study, then a thumbnail sketch", "Value sketch or thumbnail, then grayscale or tonal study, then full color painting", "Full color painting only, skipping value studies entirely", "Value studies are only useful after a painting is already finished"], "correct": 1, "explain": "The typical professional sequence starts with a small value sketch or thumbnail, moves to a grayscale or tonal study, and only then proceeds to full color, catching structural problems while they're still cheap to fix."}
-],
-"checklist": [
-  "I can create a 3-value thumbnail study before starting a more detailed piece.",
-  "I can add reflected light to a shadow area rather than leaving it flat and uniformly dark.",
-  "I can explain why a more reflective material shows more value contrast than a matte one under the same light.",
-  "I can deliberately place the strongest value contrast at my intended focal point."
-],
-"nextStep": "You can now plan and control value independent of color. Module 93 moves into lighting specifically for rendering \u2014 form shadow, cast shadow, core shadow, and occlusion, the physical logic behind the value relationships you've been studying here."
-}
-,
-{
-"id": "m93",
-"plate": 93,
-"title": "Light & Shadow Logic",
-"difficulty": "Intermediate",
-"studyTime": "20 min",
-"practiceTime": "25\u201330 min/day",
-"prereq": ["m92"],
-"hook": "A shadow isn't one flat shape \u2014 it's actually four distinct things working together (form shadow, cast shadow, core shadow, and occlusion shadow), and most beginners paint all four as a single uniform dark blob.",
-"whyItMatters": [
-  "Module 92 taught you to plan value structure; this module gives you the actual physical logic behind those values \u2014 the specific, nameable shadow types that make a form look convincingly three-dimensional under any single light source.",
-  "This is foundational, transferable knowledge: the exact same shadow logic applies whether you're rendering a character, a prop, or an environment, which is why it sits right before Module 94's material rendering \u2014 you need to understand how light behaves on a generic form before learning how different materials modify that behavior."
-],
-"coreIdea": [
-  "A form under one light source splits into a light zone and a shadow zone, separated by the terminator (the edge where planes turn away from the light). Form shadow is caused by a surface simply facing away from the light; cast shadow is a separate shape caused by one object blocking light from reaching another surface entirely.",
-  "Shadows are rarely pure black because of reflected light (or bounce light) \u2014 light bouncing off nearby surfaces back into the shadow side. The core shadow is a distinct, often darker band that appears near the terminator specifically where reflected light doesn't reach as strongly.",
-  "The occlusion shadow is the darkest shadow in a scene, appearing in tight areas where two surfaces meet or nearly touch (like where an object sits on the ground) \u2014 neither the main light nor reflected light can reach into that tight gap, so it reads darker than the surrounding form or cast shadow.",
-  "The highlight and the center light are often confused but are different things: the center light is simply the plane facing most directly toward the light source, while the highlight is a reflection of the light source itself and moves depending on the viewer's position, the way a reflection in a mirror does."
-],
-"mistakes": [
-  "Treating an entire shadow area as one flat, uniform dark shape instead of recognizing form shadow, cast shadow, core shadow, and occlusion shadow as distinct elements with different causes and values.",
-  "Painting shadows as pure black with no reflected light, producing a harsh, artificial look instead of the subtle bounce of color and light real shadows usually show.",
-  "Confusing the highlight (a moving reflection of the light source) with the center light (the plane facing the light source, which doesn't move with the viewer).",
-  "Forgetting the occlusion shadow entirely, which is often what's missing when two touching objects (a figure standing on ground, a prop resting on a table) don't feel properly grounded together.",
-  "Copying a reference's cast shadow shape exactly instead of adjusting it, when a cast shadow can be reshaped to better describe the form it's falling onto without breaking believability."
-],
-"proTips": [
-  "Practice the classic \"shade an egg\" exercise: light a real egg on white paper with a single desk lamp and identify each shadow type (form, cast, core, occlusion) on it directly from observation before trying to invent them from imagination.",
-  "When a shadow area looks flat or dead, check specifically for a missing core shadow or missing reflected light \u2014 these two elements are usually what's needed to add convincing dimensionality.",
-  "Don't be afraid to adjust the shape of a cast shadow to better describe the form it lands on (wrapping it around a cylindrical object, for example) \u2014 audiences rarely notice small deviations from geometric accuracy as long as the shadow still feels believable.",
-  "Use free 3D software like Blender to build a simple sphere-and-ground scene and directly manipulate the light source, watching form shadow, cast shadow, core shadow, and occlusion shadow change in real time \u2014 this makes the abstract concepts concrete and controllable."
-],
-"practice": {
-  "warmup": "Set up a real object (an egg, a ball, an apple) under a single desk lamp and identify all four shadow types on it: form shadow, cast shadow, core shadow, and occlusion shadow.",
-  "daily": "Render a simple sphere or geometric form digitally, deliberately including all four shadow types plus a distinguishable highlight and center light.",
-  "weekly": "Take one of your earlier value studies (Module 92) and add reflected light and a core shadow to its shadow areas if they're currently missing.",
-  "challenge": "Render two touching objects (a figure standing on ground, a cup resting on a table) and pay specific attention to rendering a convincing occlusion shadow where they meet."
-},
-"resources": [
-  {"type": "Video", "title": "Shading Light and Form - Basics", "creator": "Stan Prokopenko (Proko)", "url": "https://www.youtube.com/watch?v=V3WmrWUEIJo", "why": "A free 7-minute lesson from a highly respected figure-drawing educator, covering the named shadow types with an egg as the running example.", "summary": "Stan Prokopenko explains how light affects the appearance of form, covering the terminator, form shadow, cast shadow, core shadow, reflected light, occlusion shadow, halftone, center light and highlight, using an egg as the running example.", "verified": true},
-  {"type": "Article", "title": "How to Use Blender to Learn About Light and Shadow", "creator": "Monika Zagrobelna", "url": "https://monikazagrobelna.com/2023/11/17/how-to-use-blender-to-learn-about-light-and-shadow/", "why": "A free, hands-on tutorial using free 3D software to let you directly manipulate and observe every shadow type in real time, rather than only reading about them.", "summary": "Walks through setting up a simple sphere-and-ground scene in the free software Blender, then shows how moving the light source and ground plane changes the terminator, form shadow, cast shadow, core shadow, occlusion shadow, and ambient (reflected) light in real time, turning abstract shadow theory into something directly observable and adjustable.", "verified": true}
-],
-"quiz": [
-  {"q": "What is the difference between form shadow and cast shadow?", "options": ["They are the same thing with different names", "Form shadow is caused by a surface facing away from the light source; cast shadow is a separate shape caused by one object blocking light from reaching another surface", "Form shadow only appears on spheres, cast shadow only on flat surfaces", "Cast shadow is always darker than form shadow"], "correct": 1, "explain": "Form shadow occurs on a surface simply turning away from the light, while cast shadow is an entirely separate shape produced when one object blocks light from reaching another surface."},
-  {"q": "Why do shadows usually appear lighter than pure black?", "options": ["Software cannot render pure black", "Reflected light (bounce light) from nearby surfaces fills into the shadow area", "Shadows are only dark in traditional media, not digital", "Pure black shadows are a legal requirement in professional work"], "correct": 1, "explain": "Light bouncing off nearby surfaces (reflected or bounce light) typically fills shadow areas with some brightness and color, which is why real shadows are rarely pure black."},
-  {"q": "What causes an occlusion shadow, and why is it usually the darkest shadow in a scene?", "options": ["It occurs in tight areas where two surfaces meet or nearly touch, where neither the main light nor reflected light can reach", "It's caused by direct sunlight only and never appears indoors", "It only appears on reflective materials", "It's the same thing as a highlight"], "correct": 0, "explain": "An occlusion shadow forms in tight gaps between touching or nearly-touching surfaces, where both the primary and reflected light are blocked, making it typically the darkest shadow in a scene."},
-  {"q": "What is the key difference between the highlight and the center light on a form?", "options": ["They are identical and interchangeable terms", "The center light is the plane facing the light source and stays fixed; the highlight is a reflection of the light source that moves depending on the viewer's position", "The highlight only appears on matte surfaces", "The center light only appears at night"], "correct": 1, "explain": "The center light is a fixed plane facing the light source, while the highlight is a reflection of the light source itself, which shifts position as the viewer's (or camera's) position changes, similar to a reflection in a mirror."},
-  {"q": "According to the module, is it acceptable to adjust the exact shape of a cast shadow from strict geometric accuracy?", "options": ["No, cast shadows must always be geometrically perfect", "Yes, a cast shadow can be reshaped to better describe the form it lands on, since small deviations rarely break believability", "Cast shadows should never be included in a rendering", "Only professional software can calculate correct cast shadow shapes"], "correct": 1, "explain": "The module notes that adjusting a cast shadow's shape (for example, wrapping it around a cylindrical form) to better describe the surface it falls on is a common, acceptable technique, since audiences rarely notice small deviations from strict geometric accuracy."}
-],
-"checklist": [
-  "I can identify form shadow, cast shadow, core shadow, and occlusion shadow on a real or rendered object.",
-  "I can add reflected light to a shadow area instead of leaving it pure black.",
-  "I can distinguish between a highlight (a moving reflection) and a center light (a fixed plane facing the light).",
-  "I can render a convincing occlusion shadow where two objects meet or touch."
-],
-"nextStep": "You now understand the physical logic of light and shadow on a generic form. Module 94 builds directly on this by rendering specific materials \u2014 skin and organic surfaces \u2014 where this same shadow logic gets modified by how a particular material actually behaves under light."
-}
-,
-{
-"id": "m94",
-"plate": 94,
-"title": "Material Rendering: Skin & Organic Surfaces",
-"difficulty": "Advanced",
-"studyTime": "20 min",
-"practiceTime": "30 min/day",
-"prereq": ["m93"],
-"hook": "Skin isn't just a colored surface \u2014 light actually enters it, bounces around beneath the surface, and comes back out somewhere else, which is exactly why flat, single-tone skin always looks like plastic no matter how carefully it's shaded.",
-"whyItMatters": [
-  "Module 93 gave you the universal shadow logic for any form. This module is the first of several that show how a specific material modifies that generic logic \u2014 skin is one of the most common and most demanding surfaces you'll render, since human eyes are extremely sensitive to anything that looks slightly wrong about a face.",
-  "Subsurface scattering, the core skin-specific effect covered here, is genuinely different from anything in Module 93: it's not a shadow type at all, but a property of the material itself letting light penetrate and re-emerge, which is why skin needs its own dedicated rendering approach rather than just generic shadow logic."
-],
-"coreIdea": [
-  "Subsurface scattering is light entering skin, bouncing around beneath the surface, and exiting nearby, rather than reflecting straight off the surface like a hard material would. This is why thin areas like ears, nostrils, and fingertips often show a warm reddish glow when strongly backlit \u2014 light is passing partway through them.",
-  "The terminator (the transition from light to shadow) is where subsurface scattering is most visible: instead of a flat, even transition, the terminator on skin often shows a warmer, more saturated color than either the highlight or the shadow, because light is scattering internally right at that edge.",
-  "In realistic lighting, shadows on skin should generally stay more muted and desaturated than mid-tones, since shadows absorb rather than reflect light \u2014 mid-tones, which receive direct illumination without being overexposed, typically carry the most saturated color information.",
-  "Skin doesn't exist in isolation: bounce light from the surrounding environment (a red shirt, a blue sky, a warm lamp) reflects subtly into skin's shadow areas, and including this is often what makes a rendered figure feel like it belongs in its scene rather than looking pasted on top of it."
-],
-"mistakes": [
-  "Treating skin like a hard, opaque material with a flat, single-tone shadow, missing the warm internal glow that subsurface scattering produces, especially in thin areas like ears and fingertips.",
-  "Making shadow areas on skin more saturated and colorful than the mid-tones, which tends to look unnatural in realistic lighting (though this can be an intentional stylistic choice in stylized or dramatically lit work).",
-  "Rendering skin in isolation from its environment, ignoring bounce light from nearby colored surfaces that would naturally reflect subtly into the shadow areas.",
-  "Relying only on mid-tones to define form instead of letting the transition between light and shadow do that work, which produces a dull, flat look.",
-  "Making skin perfectly smooth with zero texture, which reads as artificial and plastic rather than convincingly organic."
-],
-"proTips": [
-  "Add a soft, warm glaze (often orange-red) specifically at the terminator, using a low-opacity airbrush or an overlay-mode layer, to simulate the way subsurface scattering shows up most strongly at the light-to-shadow transition.",
-  "Keep shadow saturation lower than mid-tone saturation for a realistic look, and treat higher-saturation shadows as a deliberate stylistic choice for dramatic or stylized lighting rather than a default.",
-  "Pull a bounce-light color from a dominant nearby surface (clothing, background) and add it subtly to skin's shadow areas at low opacity, to visually connect the figure to its environment.",
-  "Add a very subtle noise or texture pass at the end of a skin render to break up perfectly smooth gradients, which otherwise tend to read as artificial or plastic-looking."
-],
-"practice": {
-  "warmup": "Render a simple sphere using skin-toned color, adding a warm terminator glaze and reflected bounce light, then compare it to the same sphere rendered with flat, single-tone shading.",
-  "daily": "Take a simple portrait or head study and render its skin using a base color, a Multiply shadow layer, a warm terminator glaze, and a Screen or Add layer for lit areas.",
-  "weekly": "Render a small figure illustration with one dominant colored surface nearby (a red shirt, a green background) and deliberately add that color as bounce light into the skin's shadow areas.",
-  "challenge": "Render the same face twice \u2014 once with muted, desaturated shadows and vibrant mid-tones (realistic), once with more saturated shadows (stylized) \u2014 and compare how each approach changes the overall feel."
-},
-"resources": [
-  {"type": "Video", "title": "Painting Skin Tones and How Light Affects Color", "creator": "Marco Bucci (via Proko)", "url": "https://www.youtube.com/watch?v=kYtGh2xTAlg", "why": "A free YouTube video from a respected colorist covering fleshtone values and how light and shadow specifically affect skin color.", "summary": "Marco Bucci paints the planes of a head with color, demonstrating fleshtone values and showing concretely how light and shadow interact with skin tones differently than with other materials, building directly on shadow logic with skin-specific color decisions.", "verified": true},
-  {"type": "Article", "title": "Mastering Skin Tones: Tips & Step-by-Step Process", "creator": "nadherinn, CLIP STUDIO TIPS", "url": "https://tips.clip-studio.com/en-us/articles/10434", "why": "An extremely detailed, free, step-by-step guide covering base color, subsurface scattering, shadow blending modes, the terminator glow, and bounce light specifically for skin.", "summary": "Walks through a complete skin-rendering workflow: establishing a base color, using a soft airbrush for subsurface scattering in thin areas, building shadows with a Multiply layer, adding a warm, saturated terminator glaze with an Overlay layer, adding lit areas with Screen or Add layers, and finishing with subtle bounce light and a light noise texture pass for realism.", "verified": true}
-],
-"quiz": [
-  {"q": "What is subsurface scattering, and where is it most visible on skin?", "options": ["A shadow type that only appears at night, most visible on the forehead", "Light entering skin and bouncing internally before exiting nearby; most visible in thin areas like ears, nostrils, and fingertips when backlit", "A brush setting in digital painting software with no real-world basis", "A blend mode used only for hard, reflective materials"], "correct": 1, "explain": "Subsurface scattering is light penetrating skin and re-emerging nearby rather than reflecting straight off the surface, and it's most visible in thin, backlit areas like ears and fingertips, which glow warmly."},
-  {"q": "According to the module, what should the terminator (light-to-shadow transition) on skin often show?", "options": ["A flat, even gray transition with no color variation", "A warmer, more saturated color than either the highlight or the shadow, due to internal light scattering", "Pure black with no color at all", "The exact same color as the highlight"], "correct": 1, "explain": "Because subsurface scattering is especially active right at the terminator, this transition zone on skin often shows a warmer, more saturated hue than the surrounding highlight or shadow."},
-  {"q": "In realistic lighting, how should shadow saturation on skin generally compare to mid-tone saturation?", "options": ["Shadows should always be more saturated than mid-tones", "Shadows should generally be more muted/desaturated than mid-tones, since shadows absorb rather than reflect light", "Saturation should be identical in shadows and mid-tones", "Saturation has no relevant effect on skin rendering"], "correct": 1, "explain": "In realistic lighting, mid-tones (which receive direct illumination) typically carry the most saturated color, while shadows tend to be more muted since they absorb rather than reflect light."},
-  {"q": "Why is bounce light from the environment important when rendering skin?", "options": ["It has no real effect on how skin looks in a scene", "It reflects subtly into shadow areas, helping a figure feel visually connected to its environment rather than pasted on top of it", "It only matters for rendering hard, reflective materials like metal", "Bounce light should always be avoided when rendering people"], "correct": 1, "explain": "Skin doesn't exist in isolation \u2014 bounce light from nearby colored surfaces reflecting subtly into shadow areas helps a rendered figure feel integrated into its scene rather than looking separately pasted in."},
-  {"q": "Why is adding a subtle texture or noise pass often recommended as a final step for skin rendering?", "options": ["It reduces the file size significantly", "Perfectly smooth skin tends to look artificial or plastic, so subtle texture helps it read as convincingly organic", "It is required by most software licenses", "It replaces the need for subsurface scattering entirely"], "correct": 1, "explain": "Completely smooth gradients on skin tend to look artificial or plastic; a light noise or texture pass breaks up that smoothness for a more convincingly organic result."}
-],
-"checklist": [
-  "I can explain what subsurface scattering is and where it's most visible on skin.",
-  "I can add a warm terminator glaze to simulate subsurface scattering at the light-to-shadow transition.",
-  "I can keep shadow saturation more muted than mid-tone saturation for a realistic result (or deliberately break this for a stylized look).",
-  "I can add bounce light from a nearby surface into a figure's shadow areas to integrate it with its environment."
-],
-"nextStep": "You now understand how one specific material (skin) modifies the generic shadow logic from Module 93. Module 95 applies the same modify-the-logic approach to hard surfaces \u2014 metal, glass, and stone \u2014 which behave very differently from organic material."
-}
-,
-{
-"id": "m95",
-"plate": 95,
-"title": "Material Rendering: Hard Surfaces",
-"difficulty": "Advanced",
-"studyTime": "20 min",
-"practiceTime": "30 min/day",
-"prereq": ["m94"],
-"hook": "Metal doesn't have a color of its own \u2014 a polished sword isn't really silver-gray, it's a distorted mirror showing you the sky, the ground, and everything else in the scene, which is exactly why painting it from imagination alone is so hard.",
-"whyItMatters": [
-  "Module 94 showed how one material (skin) modifies the generic shadow logic from Module 93. This module applies that same modify-the-logic approach to the opposite extreme: hard, reflective surfaces that behave almost nothing like organic materials, completing your range across the two most common material categories in illustration.",
-  "Metal, glass, and stone appear constantly in character and environment art \u2014 armor, weapons, windows, architecture \u2014 and getting them wrong (usually by under-committing to contrast) is one of the fastest ways a rendered piece reads as amateurish, even when everything else in the piece is strong."
-],
-"coreIdea": [
-  "A reflective surface borrows its color from its environment rather than having a fixed local color \u2014 the sky reflects into the top of a metal object, the ground into the bottom, and nearby colored objects into the sides. This is why metal painted in isolation, without thinking about the surrounding scene, tends to look flat and disconnected.",
-  "Reflective surfaces have extreme, abrupt value contrast: highlights close to pure white, shadows that can be nearly black, with a hard, sharp transition between them \u2014 unlike organic materials, where transitions are soft and gradual. Beginners consistently under-commit to this contrast, which is the single most common reason painted metal reads as plastic.",
-  "The reflected light band \u2014 a strip of lighter value at the bottom edge of a shadow area, where a surface catches light bounced from the ground or nearby objects \u2014 is especially pronounced and important on reflective materials, sometimes nearly as bright as the primary highlight itself.",
-  "Different hard materials sit at different points on a reflectivity spectrum (polished chrome, brushed steel, matte stone, rough rust), and where a material sits determines everything else: how sharp its highlights are, how extreme its value contrast is, and how much of the environment visibly reflects in it."
-],
-"mistakes": [
-  "Painting a hard, reflective surface in isolation from its environment, skipping the sky-colored top, ground-colored bottom, and nearby object reflections that make it feel like it belongs in the scene.",
-  "Keeping value contrast too moderate, producing a soft, plastic-like result instead of the sharp, extreme highlight-to-shadow jump that reads as genuinely reflective.",
-  "Making a highlight broad and soft instead of narrow and hard-edged, which is one of the fastest ways a metal surface reads as rubber or plastic rather than metal.",
-  "Treating every hard material the same way regardless of how reflective it actually is, instead of adjusting highlight sharpness and value contrast based on where a specific material sits on the reflectivity spectrum.",
-  "Adding surface wear (scratches, dents, rust) as random scattered marks rather than details with a believable cause and direction, which reads as decoration instead of history."
-],
-"proTips": [
-  "Before painting a metal or glass object, decide what's above it (sky, ceiling), below it (ground, floor), and beside it (nearby colored objects), and let those colors show up in the reflection \u2014 this single habit does more to sell metal than any brush technique.",
-  "Push your highlight and shadow values further apart than feels comfortable at first \u2014 extreme value contrast is what separates convincing metal from a flat, moderate-contrast result that reads as plastic.",
-  "Paint a metal object's primary highlight as one confident, narrow, hard-edged stroke rather than building it up from many small uncertain marks \u2014 hesitation shows in highlights more than almost anywhere else.",
-  "When adding scratches or wear, give each one a light side and a dark side (the two walls of the groove) rather than a single flat line \u2014 this is what makes a scratch read as a 3D groove instead of a drawn-on mark."
-],
-"practice": {
-  "warmup": "Paint the same sphere three times as three different hard materials (polished chrome, brushed steel, matte stone), adjusting highlight sharpness and value contrast for each.",
-  "daily": "Render one hard-surface object (a blade, a goblet, a window) with deliberate environment-color reflections \u2014 sky above, ground below, a nearby colored object to one side.",
-  "weekly": "Take a finished hard-surface render and push its value contrast noticeably further (brighter highlight, darker shadow) than your first instinct, and compare the result.",
-  "challenge": "Add believable wear (scratches, dents, or rust) to a hard-surface object, giving each mark a plausible cause and a light-and-dark paired edge rather than a single flat line."
-},
-"resources": [
-  {"type": "Video", "title": "How to draw and paint reflective windows \u2014 4 mediums (and a freebie!)", "creator": "Sandy Allnock", "url": "https://www.youtube.com/watch?v=J0CKna8A51I", "why": "A free video from an established art educator specifically on reading and simplifying reflections in glass, a core hard-surface skill.", "summary": "Sandy Allnock demonstrates how to simplify complicated glass reflections into simple, recognizable shapes rather than trying to render every detail, showing how squinting to find the essential shapes in a reflection is more effective than attempting photorealistic accuracy.", "verified": true},
-  {"type": "Article", "title": "How to Render Realistic Metal and Gold Digital Art Tutorial", "creator": "Allard Lavaritte", "url": "https://lavaritte.com/blogs/how-to-paint-realistic-metal/", "why": "An exceptionally thorough, free guide covering the physics of metal reflectivity, a complete step-by-step process, six specific metal types with color palettes, and common mistakes with fixes.", "summary": "Explains that metal borrows its color entirely from its environment rather than having a fixed local color, walks through a complete layer-based painting process (base color, Multiply shadows, a reflected light band, a sharp Screen/Add highlight, and environment reflections), and gives specific base colors, highlight qualities, and shadow behavior for six metal types (steel, gold, copper, bronze, silver, rusted iron), plus common mistakes like insufficient value contrast that make metal read as plastic.", "verified": true}
-],
-"quiz": [
-  {"q": "Why does a highly reflective surface like polished metal not have a fixed local color?", "options": ["Reflective surfaces are always painted gray by convention", "It borrows its color from its environment, reflecting the sky, ground, and nearby objects rather than having its own fixed hue", "Local color doesn't exist as a concept in digital painting", "Metal always appears white regardless of lighting"], "correct": 1, "explain": "A highly reflective surface acts like a distorted mirror, showing colors from its surroundings (sky above, ground below, nearby objects to the sides) rather than displaying one fixed local color."},
-  {"q": "What is a common beginner mistake regarding value contrast on reflective hard surfaces?", "options": ["Making the contrast too extreme", "Keeping the value contrast too moderate, producing a soft, plastic-like result instead of the sharp jump that reads as reflective", "Value contrast doesn't matter for hard surfaces", "Only using pure black and white with no mid-tones at all"], "correct": 1, "explain": "Beginners tend to under-commit to value contrast on reflective surfaces; pushing highlights brighter and shadows darker than feels comfortable is usually necessary for a convincingly reflective result."},
-  {"q": "What is the reflected light band, and where does it typically appear?", "options": ["A rainbow effect only seen on glass prisms", "A strip of lighter value at the bottom edge of a shadow area, where a surface catches light bounced from the ground or nearby objects", "A type of brush exclusive to painting fabric", "The brightest highlight on a surface, located at its center"], "correct": 1, "explain": "The reflected light band is a lighter strip typically found at the lower edge of a shadow area, caused by light bouncing up from the ground or nearby surfaces \u2014 it can be nearly as bright as the primary highlight on very reflective materials."},
-  {"q": "Why should a primary highlight on metal be painted as one confident, narrow stroke rather than built up gradually?", "options": ["It saves time only, with no visual benefit", "A narrow, hard-edged, confident highlight reads as metal, while a soft or hesitant one reads as plastic or rubber", "Multiple small strokes always look better on metal", "Highlights have no effect on how a material reads"], "correct": 1, "explain": "A sharp, confidently-placed highlight is one of the clearest signals of a reflective metal surface; a broad, soft, or hesitantly-built highlight tends to read as a softer, non-metallic material instead."},
-  {"q": "Why should surface wear like scratches have a believable cause and direction rather than being randomly placed?", "options": ["Random marks are always more visually interesting", "Deliberate, causally logical wear reads as history and adds believability, while random scattered marks read as decoration or noise", "Scratches must always be placed in the exact center of an object", "Wear marks have no effect on how convincing a render looks"], "correct": 1, "explain": "Wear marks placed with a plausible cause and direction (for example, concentrated where an object would logically take impact) tell a believable story about the object's history, while random scattering reads as arbitrary decoration."}
-],
-"checklist": [
-  "I can add environment-color reflections (sky, ground, nearby objects) to a hard-surface render.",
-  "I can push value contrast on a reflective surface further than feels immediately comfortable.",
-  "I can paint a confident, narrow, hard-edged highlight rather than a soft, built-up one.",
-  "I can add wear marks with a believable cause and a light-and-dark paired edge."
-],
-"nextStep": "You now have material rendering approaches for both organic (skin) and hard-reflective (metal, glass) surfaces. Module 96 shifts to edge control \u2014 the deliberate use of hard and soft edges across an entire piece to direct focus and describe form, a skill that applies across every material you've rendered so far."
-}
-,
-{
-"id": "m96",
-"plate": 96,
-"title": "Edge Control",
-"difficulty": "Advanced",
-"studyTime": "18 min",
-"practiceTime": "25\u201330 min/day",
-"prereq": ["m95"],
-"hook": "A painting where every single edge is perfectly sharp is, paradoxically, one of the fastest ways to make it feel amateurish \u2014 real depth comes from knowing exactly which edges to let go of.",
-"whyItMatters": [
-  "You've now rendered skin (Module 94) and hard surfaces (Module 95), each with their own edge qualities. Edge control is the skill that governs how those edges behave across an entire piece, deciding not just what a surface looks like up close, but where the viewer's eye actually travels.",
-  "Working painters describe edge control as a foundational skill, not a finishing touch \u2014 it determines how light wraps around form, how space reads as deep or flat, and how confidently the eye moves through a composition, tying directly back to the focal-point work from Module 75."
-],
-"coreIdea": [
-  "There are three broad edge types: hard edges (clear, abrupt transitions that attract attention and define structure), soft edges (gradual transitions that create atmosphere and distance), and lost edges (a transition that starts clearly, disappears, then reappears elsewhere, adding rhythm and inviting the viewer to complete the form mentally).",
-  "As a general rule, hard edges come forward and pull the eye, while soft edges recede and let the eye travel over them into the next shape \u2014 which is why hard edges are typically reserved for a focal area, and soft edges for backgrounds or less important passages.",
-  "An edge can disappear entirely when two adjacent shapes share nearly identical values \u2014 this isn't a mistake to fix, but a deliberate, sophisticated tool for unifying a painting and creating a sense of atmosphere.",
-  "Edge variety should be treated as a deliberate design decision made before or during painting, not an accident of technique: deciding in advance where your single sharpest edge (the focal point), your softest edge (an atmospheric recession), and a lost edge (where values merge) will go shapes the entire piece's mood and movement."
-],
-"mistakes": [
-  "Rendering every edge in a piece with the same hardness, producing either a brittle, cut-out look (all hard) or a mushy, undefined look (all soft) instead of a deliberate range.",
-  "Placing the sharpest, highest-contrast edges somewhere other than the intended focal point, unintentionally pulling the eye to the wrong part of the composition.",
-  "Treating a vanishing edge (where two shapes share a value) as an error to fix, rather than recognizing it as a legitimate, sophisticated technique for unity and atmosphere.",
-  "Deciding on edge treatment only after a piece is nearly finished, instead of planning the sharpest, softest, and lost edges as part of the composition from the start.",
-  "Softening or hardening an edge inconsistently with the rest of a shape's value logic, breaking the sense of form the edge was supposed to support."
-],
-"proTips": [
-  "Before finishing a piece, explicitly identify three edges: your single sharpest (the focal point), your softest (an atmospheric or receding passage), and one lost edge (where two shapes merge in value) \u2014 then check the rest of the painting supports that hierarchy.",
-  "Practice the direct comparison exercise: paint the same simple object twice, once with every contour sharp, once with most edges softened except one \u2014 compare which reads more naturally and where your eye goes first in each.",
-  "When two adjacent shapes are close in value, consider deliberately merging their edge rather than forcing a defining line between them, especially in background or non-focal areas.",
-  "Treat edge decisions as part of your composition planning (Module 75), not an afterthought \u2014 decide where hard, soft, and lost edges will go at the same stage you're deciding your focal point and value structure."
-],
-"practice": {
-  "warmup": "Paint a simple object (a cup, a rock) twice: once with all contours sharp, once with most edges softened except one \u2014 compare which feels more natural and note where your eye goes first in each.",
-  "daily": "Take one of your Module 94 or 95 material studies and deliberately vary its edges: hard at the focal point, soft toward the edges of the piece, with at least one lost edge where values merge.",
-  "weekly": "Create a small grayscale study with two adjacent shapes, then gradually adjust their values until the edge between them nearly disappears, and observe how your sense of depth changes.",
-  "challenge": "Take a finished piece from an earlier module and identify one edge you could intentionally lose (merge into a neighboring shape by matching value) without damaging the read of the form \u2014 then make that change."
-},
-"resources": [
-  {"type": "Article", "title": "How to Handle the Edges in Your Paintings", "creator": "Krista Hasson", "url": "https://kristahasson.com/edges-in-painting/", "why": "A free, clear, visually-demonstrated breakdown of hard versus soft edges and how they direct a viewer's eye through a composition.", "summary": "Explains that hard or high-contrast edges attract the eye and pull it along their length, making them ideal for a focal area, while soft edges let the eye travel over them into the next shape and are better suited to backgrounds, with a concrete example showing how a softer edge at a composition's outer border keeps the viewer's eye from exiting the painting.", "verified": true},
-  {"type": "Article", "title": "Mastering Edge Control in Painting: Skip Whitcomb Guide", "creator": "Gabor Svagrik (Skip Whitcomb), TAAO", "url": "https://tucsonartacademyonline.com/blog/2025/11/5/controlling-your-edges", "why": "A free, in-depth lesson from a working professional painter's teaching, covering hard, soft, and lost edges as a design tool with concrete practice exercises.", "summary": "Skip Whitcomb categorizes edges into hard (clear, attention-grabbing transitions), soft (gradual, atmosphere-creating transitions), and lost-and-found (edges that dissolve and reappear, adding rhythm and inviting the viewer to mentally complete the form), and explains that when two shapes share nearly identical values their edge can vanish entirely as a deliberate tool for unity, recommending painters decide their sharpest, softest, and lost edge in advance as part of composition planning.", "verified": true}
-],
-"quiz": [
-  {"q": "What is the general rule for how hard versus soft edges affect the eye?", "options": ["Both edge types have identical effects on where the eye looks", "Hard edges come forward and pull the eye along them; soft edges recede and let the eye travel over them into the next shape", "Soft edges always attract more attention than hard edges", "Edge hardness only matters in traditional media, not digital"], "correct": 1, "explain": "Hard, high-contrast edges attract and hold the eye, making them suited to focal areas, while soft edges let the eye pass over them into adjacent shapes, making them suited to backgrounds and less important passages."},
-  {"q": "What is a \"lost\" edge, according to the module?", "options": ["An edge that has been erased by mistake", "A transition that begins clearly, disappears, then reappears elsewhere, adding rhythm and inviting the viewer to complete the form mentally", "Any edge that is completely straight", "An edge that only appears in black-and-white value studies"], "correct": 1, "explain": "A lost edge starts clearly defined, dissolves (often where values merge), and reappears elsewhere, which adds visual rhythm and engages the viewer in mentally completing the form."},
-  {"q": "What happens when two adjacent shapes share nearly identical values, and how should this be treated?", "options": ["It's always a mistake that must be corrected with a defining line", "The edge between them can disappear, which is a legitimate, deliberate technique for unity and atmosphere, not necessarily an error", "This situation is technically impossible in painting", "It only happens in digital painting, never in traditional media"], "correct": 1, "explain": "When two shapes are close in value, their edge can vanish entirely; this is a sophisticated tool for creating unity and atmosphere rather than a flaw to fix."},
-  {"q": "According to the module, when should edge decisions (sharpest, softest, lost) ideally be planned?", "options": ["Only after a piece is completely finished", "As part of the composition planning stage, alongside decisions about the focal point and value structure", "Edge decisions should never be planned in advance", "Only the software's default settings should determine edge quality"], "correct": 1, "explain": "Edge control is treated as a foundational design decision, planned alongside the focal point and value structure, rather than an afterthought applied once a piece is otherwise finished."},
-  {"q": "What is the risk of rendering every edge in a painting with the same hardness?", "options": ["There is no risk; uniform edges are always ideal", "It produces either a brittle, cut-out look (if all hard) or a mushy, undefined look (if all soft), rather than a deliberate range that guides the eye", "Uniform edges automatically create the strongest possible focal point", "This only affects file size, not visual quality"], "correct": 1, "explain": "Using only one edge quality throughout a piece removes the contrast in edge treatment that normally guides the eye and creates depth, resulting in either an overly brittle or overly mushy overall feel."}
-],
-"checklist": [
-  "I can identify hard, soft, and lost edges in a reference painting or my own work.",
-  "I can place my sharpest edge deliberately at my intended focal point.",
-  "I can deliberately merge (lose) an edge between two shapes of similar value for unity.",
-  "I can plan edge treatment as part of my composition, alongside focal point and value structure."
-],
-"nextStep": "You now control edges as a deliberate design tool across an entire piece. Module 97 applies everything so far \u2014 color, value, light, material, edges \u2014 to atmospheric perspective, using these tools specifically to create a convincing sense of depth and distance in an environment."
-}
-,
-{
-"id": "m97",
-"plate": 97,
-"title": "Atmospheric Perspective & Depth",
-"difficulty": "Advanced",
-"studyTime": "18 min",
-"practiceTime": "25\u201330 min/day",
-"prereq": ["m96"],
-"hook": "Distant mountains aren't actually blue \u2014 there's an entire ocean of air between you and them, and that air itself has a color, which is the whole secret behind why far-away things look hazy, pale, and cool.",
-"whyItMatters": [
-  "Everything from Modules 91\u201396 \u2014 color, value, light, material, edges \u2014 has mostly been applied to a single object or figure. Atmospheric perspective is where those same tools get used across an entire scene, to convince a viewer that some things are close and others are genuinely far away.",
-  "This directly extends the edge control from Module 96: atmospheric perspective is really edge control, value control, and color control all applied specifically along the axis of depth, using the same underlying skills for a new purpose."
-],
-"coreIdea": [
-  "Atmospheric perspective happens because the air between a viewer and a distant object scatters light through countless tiny particles (water vapor, dust, haze), which is the same effect that makes the sky blue. The more air between you and an object, the more that scattering affects how the object looks.",
-  "Three effects reliably increase with distance: reduced detail (individual leaves become a single tree-mass, then a single forest-mass), reduced value contrast (darks get lighter and lights get slightly darker, compressing the range), and a color shift toward cooler, less saturated hues, typically toward blue.",
-  "This is not just a landscape technique \u2014 it can be used within a single object too, such as making the far side of a large form (a big rock, a long wall) slightly cooler and less detailed than the near side to reinforce its size and depth.",
-  "A distant light source changes the rule: if the primary light is positioned near the horizon (a low sun), distant objects will be paler and warmer rather than cooler, since there's less atmosphere between the light source and the object to introduce blue \u2014 the underlying principle (less contrast, less detail with distance) stays the same even when the specific color shift changes."
-],
-"mistakes": [
-  "Keeping full sharp detail on background elements, which fights against the sense of depth the rest of the piece is trying to create.",
-  "Keeping value contrast and saturation just as strong in the background as the foreground, flattening the scene instead of letting distant elements recede.",
-  "Assuming distant objects must always shift toward blue regardless of lighting conditions, when a low warm light source (like sunset) can instead push distant objects toward pale warm tones.",
-  "Applying atmospheric perspective only at the very back of a scene instead of gradually, missing the middle-ground gradation that makes the effect read as continuous rather than a single hard jump.",
-  "Forgetting that atmospheric perspective can also describe depth within a single large object, not just across a whole landscape."
-],
-"proTips": [
-  "Push the value range you allow yourself as elements recede: keep your darkest darks and lightest lights reserved for the foreground, and compress the range noticeably as you move toward the background.",
-  "As a starting technique, mix a small amount of your sky color directly into far-background elements (mountains, distant buildings) rather than trying to invent the right cooled, desaturated color from scratch.",
-  "Combine physical texture with implied distance where your medium allows: heavier, more textured brushwork in the foreground and smoother, flatter brushwork in the background reinforces the sense of near versus far.",
-  "Check your scene's dominant light direction before deciding your distance color shift \u2014 default to cooler and paler for typical daylight, but expect warmer and paler for a low, warm light source near the horizon."
-],
-"practice": {
-  "warmup": "Paint three simple overlapping mountain shapes at different distances, using only reduced detail, reduced value contrast, and cooler, less saturated color to separate them.",
-  "daily": "Take one of your earlier environment pieces and add a foreground, middle-ground, and background layer of atmospheric perspective, checking that detail, contrast, and saturation all decrease together with distance.",
-  "weekly": "Paint the same simple scene twice: once under typical daylight (cooler, paler distance), once under a low warm light source like sunset (warmer, paler distance), and compare the difference.",
-  "challenge": "Apply atmospheric perspective within a single large object (a long wall, a big rock formation) rather than across a landscape, making its far side cooler and less detailed than its near side."
-},
-"resources": [
-  {"type": "Video", "title": "Quick Painting Tips | Atmospheric Perspective", "creator": "Roxane Lapa", "url": "https://www.youtube.com/watch?v=Wj7y3dtUTzQ", "why": "A free, fast, digital-art-focused explanation of atmospheric perspective as a practical painting technique.", "summary": "A quick, practical digital painting lesson demonstrating how to use (and deliberately push, or 'abuse') atmospheric perspective as a fast technique for separating foreground, middle-ground, and background elements in a painting.", "verified": true},
-  {"type": "Article", "title": "Aerial Perspective \u2014 How To Create Depth In Your Paintings", "creator": "Felix Auer, TwoInchBrush.com", "url": "https://blog.twoinchbrush.com/article/aerial-perspective-how-to-create-depth-in-your-paintings/", "why": "A free, clearly organized breakdown of the three core principles of atmospheric perspective, illustrated with real paintings by Monet.", "summary": "Explains that atmospheric perspective comes from light scattering through particles in the air, then organizes the effect into three principles: reduced detail and texture with distance, reduced value contrast (distant objects become lighter and lower-contrast), and a color shift toward cooler, less saturated hues, illustrated with Monet's 'The Thames at Westminster' and a tip about blending a touch of sky color into distant elements.", "verified": true}
-],
-"quiz": [
-  {"q": "What physically causes atmospheric (aerial) perspective?", "options": ["Objects genuinely change color as they get farther away", "Light scattering through countless tiny particles (water vapor, dust, haze) in the air between the viewer and the object \u2014 the same effect that makes the sky blue", "It is a purely artistic convention with no basis in real optics", "Distance affects only the size of objects, not their color or detail"], "correct": 1, "explain": "Atmospheric perspective results from light scattering through particles in the air; the more atmosphere between a viewer and an object, the more this scattering affects the object's apparent color, contrast, and detail."},
-  {"q": "Which three effects reliably increase with distance in atmospheric perspective?", "options": ["Increased detail, increased contrast, increased saturation", "Reduced detail, reduced value contrast, and a shift toward cooler, less saturated color", "Increased sharpness, increased darkness, no color change", "None of these effects are related to distance"], "correct": 1, "explain": "As distance increases, detail decreases, value contrast compresses (darks lighten, lights darken slightly), and color shifts toward cooler, less saturated hues, typically toward blue."},
-  {"q": "How does a low, warm light source (like a sunset) change the typical atmospheric perspective color shift?", "options": ["It has no effect; distant objects always shift toward blue regardless of light source", "Distant objects may shift toward pale warm tones rather than cool blue tones, since there's less atmosphere between the light source and object to introduce blue", "It only affects foreground objects, never background ones", "It eliminates atmospheric perspective entirely"], "correct": 1, "explain": "When the primary light source is low and warm, distant objects can appear paler and warmer instead of cooler, though the underlying principle of reduced contrast and detail with distance still applies."},
-  {"q": "Can atmospheric perspective be used within a single large object, not just across a whole landscape?", "options": ["No, it only applies to landscapes with multiple distinct elements", "Yes, the far side of a large object (like a long wall or big rock) can be made cooler and less detailed than the near side to reinforce its size and depth", "It only works underwater, never on land", "It is exclusively a linear perspective technique, unrelated to atmosphere"], "correct": 1, "explain": "Atmospheric perspective principles can be applied within a single large form, making its far side recede relative to its near side, reinforcing a sense of scale and depth even without a full landscape."},
-  {"q": "What is a practical starting technique for coloring distant background elements?", "options": ["Use pure black for all distant shadows", "Mix a small amount of the scene's sky color directly into far-background elements rather than inventing the color from scratch", "Always use the exact same color as foreground elements", "Avoid using the sky color anywhere except the sky itself"], "correct": 1, "explain": "Blending a touch of sky color into distant elements simulates the scattering of light into the line of sight, giving background elements a believable atmospheric tint without having to invent the exact color from imagination."}
-],
-"checklist": [
-  "I can explain why distant objects appear hazier, paler, and cooler due to atmospheric scattering.",
-  "I can reduce detail, value contrast, and saturation together as elements recede into the background.",
-  "I can adjust my atmospheric color shift based on whether the scene's light source is typical daylight or a low, warm light.",
-  "I can apply atmospheric perspective principles within a single large object, not just across a full landscape."
-],
-"nextStep": "You now control depth across an entire scene using color, value, and detail. Module 98 covers texture and surface detail \u2014 the finishing layer that adds believable wear, grain, and material specificity once the larger structural decisions from this arc are in place."
-}
-,
-{
-"id": "m98",
-"plate": 98,
-"title": "Texture & Surface Detail",
-"difficulty": "Advanced",
-"studyTime": "18 min",
-"practiceTime": "25\u201330 min/day",
-"prereq": ["m97"],
-"hook": "The exact same rendering skills you've built for skin and metal can be shortcut entirely for some materials \u2014 a photo of real fabric, lightly painted over, can outperform hours of hand-rendered texture, and knowing when to use which approach is its own skill.",
-"whyItMatters": [
-  "This module is the finishing layer on top of everything from Modules 91\u201397: color, value, light, material, edges, and depth are all structural decisions, while texture and surface detail are what a viewer notices up close, adding the specific, believable wear and material identity that makes a piece feel real rather than generic.",
-  "Texture decisions also have a genuine time-management dimension: knowing when to hand-paint a texture versus when to use a filter or a reference photo (photobashing) is a practical skill that affects how realistic a professional-speed workflow actually is."
-],
-"coreIdea": [
-  "A subtle noise or grain layer added near the end of a piece breaks up overly smooth digital gradients, which otherwise read as artificial or plastic \u2014 this is a fast, software-native technique (a noise filter) rather than something that needs to be hand-painted.",
-  "Different fabric types call for genuinely different rendering approaches: smooth, slippery fabrics (silk, satin) are rendered mostly through soft blended value shifts with almost no separate texture pass, while rough, textured fabrics (denim, tweed) benefit from a textured brush and more visible, broken brushwork.",
-  "Overlapping texture (also called photobashing for this purpose) \u2014 placing a desaturated, contrast-adjusted photo of a real texture on top of already-rendered form, then adjusting blend mode and opacity \u2014 is a legitimate, efficient technique for highly detailed textures like lace, chainmail, or close-up fabric weave, not a shortcut to be ashamed of.",
-  "Texture should follow the same wear-with-a-cause logic established for hard-surface scratches in Module 95: applied sparingly, concentrated where physical contact or stress would logically occur, rather than scattered evenly across a whole surface."
-],
-"mistakes": [
-  "Adding heavy texture uniformly across an entire piece regardless of material, when smooth or slippery materials should stay relatively textureless and let value do the work instead.",
-  "Skipping a final noise or grain pass entirely on a fully rendered piece, leaving smooth gradients that read as artificial or plastic-like.",
-  "Treating overlapping texture (using a real photo) as an illegitimate shortcut rather than a genuine professional technique appropriate for certain kinds of highly detailed surfaces.",
-  "Placing a texture photo directly onto a form without adjusting its contrast, saturation, and blend mode first, causing it to look pasted-on rather than integrated into the existing rendering.",
-  "Scattering wear and texture evenly across a surface instead of concentrating it where physical logic (contact points, stress areas, exposure) would place it."
-],
-"proTips": [
-  "Save a subtle noise/grain pass for near the very end of a piece, after color and value are otherwise finished, as a fast way to unify smooth digital gradients into something more textured and alive.",
-  "Match your rendering approach to the fabric: minimal separate texture work for smooth/slippery materials, visible textured brushwork for rough/stiff materials, and overlapping texture (photo reference) for extremely fine, detailed patterns like lace or chainmail.",
-  "When using a photo texture, always adjust its contrast and desaturate it first, then experiment with blend modes (Multiply for light fabrics, Lighten or Screen for dark ones) rather than pasting it in at full opacity and Normal blend mode.",
-  "Concentrate texture and wear detail at logical contact points (where a bag is gripped, where fabric stretches over a joint) rather than spreading it evenly, using the same wear-with-a-cause logic from Module 95's scratches."
-],
-"practice": {
-  "warmup": "Render three small identical shapes as three different fabric types (silk, denim, lace) using the appropriate technique for each: soft blending, textured brushwork, and overlapping photo texture.",
-  "daily": "Take a finished piece from an earlier module and add a final subtle noise/grain layer, comparing the result before and after.",
-  "weekly": "Render a piece of clothing with fabric folds, using overlapping texture (a real photo, desaturated and contrast-adjusted) for one detailed area, and hand-painted texture for the rest.",
-  "challenge": "Add wear or texture detail to a piece concentrated only at logical contact points (a bag's handle grip, a jacket's elbow) rather than spread evenly, and evaluate how much more specific and believable it feels."
-},
-"resources": [
-  {"type": "Article", "title": "[Custom Noise] Use noise filters to create textured art", "creator": "MediBang Paint (official)", "url": "https://medibangpaint.com/en/use/2022/09/how-to-use-the-custom-noise-function/", "why": "A free, official software tutorial from a completely free digital painting program, showing exactly how to add a fast, effective noise/grain texture pass.", "summary": "Demonstrates MediBang Paint's Custom Noise filter, walking through choosing a noise type, adjusting grain size and posterization, selecting a blend mode, and controlling opacity to add a fast, analog-style grain texture to a finished digital illustration.", "verified": true},
-  {"type": "Video", "title": "Digital Sketching: Real Object, Imaginary Details", "creator": "Matt Kohr (Ctrl+Paint)", "url": "https://www.youtube.com/watch?v=NCcd3xrNbzw", "why": "A short, free 4-minute exercise showing how added surface detail should follow the form underneath it.", "summary": "Matt Kohr has you draw an object from observation, then add imaginary details on a new layer that follow the object's form, mirroring curves and extending them off the form, as practice for drawing detail on top of a basic three-dimensional shape.", "verified": true}
-],
-"quiz": [
-  {"q": "What is the purpose of adding a subtle noise or grain layer near the end of a digital painting?", "options": ["To reduce the file size significantly", "To break up overly smooth digital gradients, which otherwise read as artificial or plastic", "It has no real visual effect and is purely optional decoration", "To automatically fix color mistakes"], "correct": 1, "explain": "A subtle noise or grain pass helps break up perfectly smooth digital gradients, giving a piece a more organic, less artificial feel."},
-  {"q": "How should smooth, slippery fabrics (like silk or satin) generally be rendered compared to rough, textured fabrics (like denim)?", "options": ["Both should be rendered identically with heavy visible texture", "Smooth fabrics mostly through soft blended value shifts with minimal separate texture; rough fabrics with more visible, broken textured brushwork", "Smooth fabrics need more texture than rough fabrics", "Fabric type has no effect on rendering approach"], "correct": 1, "explain": "Smooth, slippery materials read convincingly through value and blending alone, while rough or textured materials benefit from actual visible textured brushwork to communicate their surface quality."},
-  {"q": "What is \"overlapping texture\" (or photobashing for texture), and when is it appropriate?", "options": ["It's considered cheating and should never be used", "Placing an adjusted photo of a real texture on top of already-rendered form, appropriate for highly detailed surfaces like lace or chainmail", "It only applies to backgrounds, never to clothing or props", "It means copying another artist's finished painting"], "correct": 1, "explain": "Overlapping texture is a legitimate technique where a real texture photo, adjusted in contrast and saturation, is blended onto already-rendered form \u2014 particularly useful for very fine, detailed patterns that would take excessive time to hand-paint."},
-  {"q": "What should be adjusted on a texture photo before blending it onto a rendered surface?", "options": ["Nothing; paste it directly at full opacity", "Its contrast, saturation, and blend mode, so it integrates with the existing rendering instead of looking pasted-on", "Only its file format needs to change", "The photo should be used exactly as taken with no software adjustments"], "correct": 1, "explain": "Adjusting a texture photo's contrast, desaturating it, and choosing an appropriate blend mode (rather than pasting it at full opacity in Normal mode) is what allows it to integrate believably with the rendered surface beneath it."},
-  {"q": "According to the module, how should texture and wear detail generally be distributed across a surface?", "options": ["Spread perfectly evenly across the entire surface", "Concentrated at logical contact points or stress areas, following the same wear-with-a-cause logic as Module 95's scratches", "Applied randomly with no consideration of cause", "Texture should never be applied selectively"], "correct": 1, "explain": "Concentrating texture and wear at points where physical contact, stress, or exposure would logically occur produces more specific, believable results than spreading detail evenly across a whole surface."}
-],
-"checklist": [
-  "I can add a subtle noise/grain pass to unify a finished piece's smooth gradients.",
-  "I can choose an appropriate rendering approach (soft blending vs. textured brushwork) based on a fabric's properties.",
-  "I can use the overlapping-texture technique, adjusting a photo's contrast and blend mode before applying it to a rendered surface.",
-  "I can concentrate texture and wear detail at logical contact points rather than spreading it evenly."
-],
-"nextStep": "You now have every rendering tool this arc has covered \u2014 color, value, light, material, edges, depth, and texture. Module 99 brings them together into a complete illustration workflow, the professional sequence for taking a piece from first sketch to finished render."
-}
-,
-{
-"id": "m99",
-"plate": 99,
-"title": "The Complete Illustration Workflow",
-"difficulty": "Advanced",
-"studyTime": "18 min",
-"practiceTime": "2\u20134 hours (project)",
-"prereq": ["m98"],
-"hook": "Every skill in this arc so far has been a single tool in a toolbox. This module is about the order you actually pick them up in \u2014 because the same nine tools used in the wrong sequence produce a mess, and used in the right sequence produce a finished piece.",
-"whyItMatters": [
-  "Color theory, value, light, material, edges, depth, and texture (Modules 91\u201398) are all decisions. A workflow is the order those decisions get made in, and getting the order right is often what separates a piece that comes together smoothly from one that gets muddy and has to be reworked repeatedly.",
-  "This is also directly comparable to the concept-art pipeline from Module 80: a full-color illustration workflow is the same explore-then-commit logic applied specifically to a rendered, painterly piece rather than a concept-art production process."
-],
-"coreIdea": [
-  "The standard sequence is: sketch (loose, low-opacity, focused on proportion and gesture), line art (a clean, deliberate pass with varied line weight), flat colors (one color per element, no shading yet), then shading and rendering (light direction decided first, then shadows and highlights built on top of the flats).",
-  "Committing to a light direction before placing a single shadow is the single highest-leverage decision in the shading stage \u2014 every subsequent shadow and highlight decision flows from that one choice, and skipping it is a common reason shading ends up inconsistent.",
-  "Checking a stage in isolation before moving to the next one catches problems early: line art should read clearly with the sketch hidden, flat colors should look correct with no shading yet, because problems are far cheaper to fix at an earlier stage than after they've been built upon.",
-  "Line weight itself is an underused tool available even before any rendering happens \u2014 thicker lines on silhouettes and where shapes overlap, thinner lines on internal detail, add a sense of depth and hierarchy before a single shadow is painted."
-],
-"mistakes": [
-  "Jumping into detailed rendering before the sketch's proportions and gesture are solid, then spending far more time fixing structural problems than would have been needed at the sketch stage.",
-  "Adding shading before deciding on a light direction, producing shadows and highlights that don't agree with each other because there was no single guiding decision behind them.",
-  "Moving to the next stage without checking the current one in isolation (hiding the sketch to check line art alone, for example), missing problems that then compound into later stages.",
-  "Treating line weight as purely decorative instead of using it as an early, easy tool for depth and hierarchy before any color or shading exists.",
-  "Skipping flat colors and going straight from line art to full rendering, making it harder to isolate and fix a color choice without also affecting the shading built on top of it."
-],
-"proTips": [
-  "Keep your sketch on low opacity and your gesture loose \u2014 resist tightening it up until proportions and pose genuinely feel solid, since fixing structure later is much more expensive.",
-  "Before adding a single shadow, decide explicitly where your light is coming from, and refer back to that decision for every shadow and highlight placed afterward.",
-  "Check each stage in isolation before moving on: hide the sketch layer to verify line art alone reads clearly, hide the shading to verify flats look correct on their own.",
-  "Use line weight deliberately at the line art stage \u2014 heavier on silhouettes and overlapping shapes, lighter on internal detail \u2014 to build in depth and hierarchy before any color exists."
-],
-"practice": {
-  "warmup": "Take one simple subject through just the first two stages (sketch, then clean line art), checking that the line art reads clearly with the sketch layer hidden.",
-  "daily": "Complete one small piece through the full four-stage workflow (sketch, line art, flat colors, shading), deciding your light direction explicitly before starting to shade.",
-  "weekly": "Take a piece through the workflow, checking each stage in isolation (hide the previous layer) before moving to the next, and note any problem you catch early that you might otherwise have missed.",
-  "challenge": "Redo a finished piece's line art alone, focusing purely on deliberate line weight (heavy on silhouette/overlaps, light on interior detail), and compare it to a flat-weight version of the same lines."
-},
-"resources": [
-  {"type": "Video", "title": "Digital Painting Process Explained", "creator": "SamDoesArts", "url": "https://www.youtube.com/watch?v=0CDd22s3jec", "why": "A free, widely-viewed walkthrough of a full digital painting process from color blocking through to a finished piece.", "summary": "Walks through a digital painting process from color blocking to a finished piece, starting from a sketch and building up the overall colors before moving on to smaller details.", "verified": true},
-  {"type": "Article", "title": "How to Color Digitally: A Step-by-Step Guide for Beginners", "creator": "Artwod", "url": "https://artwod.com/blog/how-to-color-digitally-a-step-by-step-guide-for-beginners", "why": "A free, clearly staged breakdown of the sketch-to-shading workflow, with a specific emphasis on line weight and committing to a light direction before shading.", "summary": "Breaks the illustration process into sketch, line art, flat colors, and cel shading stages, emphasizing that a solid sketch prevents expensive fixes later, that line weight (thicker on silhouettes and overlaps, thinner on interior detail) adds depth before any rendering begins, and that deciding a light direction before placing the first shadow is the single most important shading decision.", "verified": true}
-],
-"quiz": [
-  {"q": "What is the standard four-stage sequence described in this module?", "options": ["Shading, line art, sketch, flat colors", "Sketch, line art, flat colors, shading and rendering", "Flat colors, sketch, shading, line art", "Rendering, sketch, shading, flats"], "correct": 1, "explain": "The standard sequence moves from a loose sketch, to clean line art, to flat colors with no shading yet, and finally to shading and rendering built on top of those flats."},
-  {"q": "According to the module, what is the single highest-leverage decision at the shading stage?", "options": ["Choosing the final export file format", "Deciding on a light direction before placing any shadow", "Picking the canvas resolution", "Selecting a brush pack"], "correct": 1, "explain": "Committing to a light direction before shading begins is presented as the decision every subsequent shadow and highlight should flow from; skipping it tends to produce inconsistent shading."},
-  {"q": "Why is it recommended to check each workflow stage in isolation before moving to the next?", "options": ["It has no real benefit and just wastes time", "Problems are far cheaper to catch and fix at an earlier stage than after later work has been built on top of them", "Isolating stages is required by most software", "It only matters for traditional media, not digital"], "correct": 1, "explain": "Checking a stage alone (like hiding the sketch to verify line art) catches problems while they're still cheap to fix, rather than discovering them after later stages have already been built on a flawed foundation."},
-  {"q": "How can line weight be used as a tool before any shading or color exists?", "options": ["Line weight has no visual effect and is purely stylistic preference", "Thicker lines on silhouettes and overlapping shapes, thinner lines on internal detail, add a sense of depth and hierarchy at the line art stage itself", "Line weight can only be adjusted after full rendering is complete", "All lines should always be the exact same weight for consistency"], "correct": 1, "explain": "Varying line weight \u2014 heavier on silhouettes and where shapes overlap, lighter on interior detail \u2014 is an early, easy way to build in depth and visual hierarchy before any color or shading is added."},
-  {"q": "What is a risk of skipping the flat colors stage and going directly from line art to full rendering?", "options": ["There is no risk; skipping stages is always more efficient", "It becomes harder to isolate and fix a color choice without also affecting the shading already built on top of it", "Flat colors are only relevant for traditional painting", "Skipping stages always improves the final quality"], "correct": 1, "explain": "Flat colors provide a clean base to check and adjust before shading is built on top; skipping straight to rendering makes it harder to fix a color problem without disturbing the shading layered above it."}
-],
-"checklist": [
-  "I can move through a piece in the order: sketch, line art, flat colors, shading.",
-  "I can decide a light direction explicitly before placing any shadow.",
-  "I can check a stage in isolation (hiding earlier layers) before moving to the next.",
-  "I can use line weight deliberately at the line art stage to add depth before any color exists."
-],
-"nextStep": "You now have a complete, repeatable workflow for taking a piece from first sketch to finished render. Module 100 is the capstone \u2014 bringing every skill from this entire arc together into one complete, fully rendered illustration."
-}
-,
-{
-"id": "m100",
-"plate": 100,
-"title": "Capstone: A Fully Rendered Illustration",
-"difficulty": "Advanced",
-"studyTime": "15 min",
-"practiceTime": "3\u20136 hours (project)",
-"prereq": ["m99"],
-"hook": "Nine modules of theory only prove themselves in one place: a single finished piece where color, value, light, material, edges, depth, and texture all have to work together at the same time.",
-"whyItMatters": [
-  "This closes out Digital Painting & Rendering by asking you to apply every skill from Modules 91\u201399 to one complete piece, the same way the Module 82 capstone closed out worldbuilding \u2014 a portfolio is built from finished pieces, not isolated exercises.",
-  "A capstone piece is also the most honest way to find your current weak point. Working on isolated skills hides gaps that only surface when everything has to work together at once, which is exactly the information you need to know what to practice next."
-],
-"coreIdea": [
-  "Follow the workflow from Module 99 in order: sketch, line art (or a painted block-in if working without hard lines), flat colors, then shading built on a light direction you decide before the first shadow.",
-  "As you render, apply each material's specific logic from Modules 94\u201395 (subsurface scattering for skin, environment reflections and extreme contrast for metal or glass) rather than treating every surface the same way.",
-  "Use edge control (Module 96) and atmospheric perspective (Module 97) together to direct the eye to one focal point and separate foreground from background, then add texture (Module 98) only at the end, concentrated at logical wear points.",
-  "A capstone piece doesn't need to be large or complex to be complete \u2014 a small, fully-considered piece that applies every skill deliberately is more valuable than an ambitious piece that skips steps to reach a finished-looking render faster."
-],
-"mistakes": [
-  "Jumping straight to rendering without deciding a light direction first, producing shading that doesn't agree with itself across different parts of the piece.",
-  "Rendering every material (skin, metal, fabric) with the same generic technique instead of applying the specific logic each one calls for.",
-  "Adding texture and wear evenly across the whole piece instead of concentrating it at points that make physical sense.",
-  "Choosing a piece so ambitious in scope that finishing every stage with real care becomes impossible within a reasonable timeframe.",
-  "Treating the finished piece as the end of the process instead of using it to honestly identify which of the nine arc skills is currently weakest."
-],
-"proTips": [
-  "Write your light direction down before shading begins, and physically check it against every shadow and highlight you place, the same discipline from Module 93.",
-  "Limit your palette of materials in the piece (skin, one hard surface, one fabric) so you can apply each one's specific rendering logic with real care rather than rushing several materials shallowly.",
-  "After finishing, go back through Modules 91\u201399 one at a time and honestly check your piece against each one's checklist \u2014 this turns the capstone into a genuine diagnostic, not just a finished picture.",
-  "Get outside feedback if you can (a critique community, a paint-over channel, a friend) \u2014 you lose the ability to see your own piece's problems clearly after staring at it for hours."
-],
-"practice": {
-  "warmup": "Write a one-sentence brief for your capstone piece: subject, one dominant material, one emotional target for the lighting.",
-  "daily": "Work through one workflow stage per session (sketch, line art or block-in, flats, shading) rather than trying to complete the whole piece in one sitting.",
-  "weekly": "Complete one full capstone illustration from brief to finished render, applying color, value, light, material-specific rendering, edges, depth, and texture deliberately at each stage.",
-  "challenge": "Score your finished capstone piece honestly against the checklist from each of Modules 91\u201399, identify your single weakest area, and name one specific thing you'll practice next because of it."
-},
-"resources": [
-  {"type": "Video", "title": "PAINTOVER PALS: Episode 5", "creator": "Sinix Design", "url": "https://www.youtube.com/watch?v=9XIWD9o2Kjw", "why": "A free, real critique episode focused on rendering tips, from a channel specifically known for diagnosing why competent art doesn't yet look professional.", "summary": "A paintover critique episode from Sinix Design focused on rendering tips.", "verified": true},
-  {"type": "Article", "title": "How to Color Digitally: A Step-by-Step Guide for Beginners", "creator": "Artwod", "url": "https://artwod.com/blog/how-to-color-digitally-a-step-by-step-guide-for-beginners", "why": "A free, concrete reference for the sketch-to-shading sequence this capstone piece should follow, useful to revisit while working through each stage.", "summary": "Reinforces the staged workflow (sketch, line art, flat colors, shading) with an emphasis on committing to a light direction before shading and pushing contrast confidently once that direction is chosen, both directly applicable to completing a capstone piece.", "verified": true}
-],
-"quiz": [
-  {"q": "What is the primary purpose of this capstone module?", "options": ["To teach an entirely new rendering technique", "To apply every skill from Modules 91\u201399 together in one finished piece, revealing your current weakest area", "To replace the need for the earlier modules in this arc", "To focus exclusively on speed painting"], "correct": 1, "explain": "The capstone has no new theory; it asks you to combine color, value, light, material, edges, depth, and texture in one piece, which reveals which specific skill is currently your weakest."},
-  {"q": "What should be decided before shading begins on the capstone piece, based on Module 93?", "options": ["The final export file format", "The light direction, checked against every shadow and highlight placed afterward", "The canvas resolution", "The brush pack to use"], "correct": 1, "explain": "Committing to a light direction before the first shadow is placed, and checking every subsequent shadow and highlight against it, prevents shading that disagrees with itself across the piece."},
-  {"q": "Why is it recommended to limit the palette of materials in a capstone piece?", "options": ["Limiting materials has no real benefit", "It allows each material's specific rendering logic (skin, metal, fabric) to be applied with real care rather than rendering several materials shallowly", "Only one material is technically allowed", "It reduces the file size significantly"], "correct": 1, "explain": "Focusing on fewer materials lets you apply each one's specific technique (subsurface scattering for skin, extreme contrast for metal, and so on) properly, rather than spreading effort thin across many surfaces."},
-  {"q": "How should texture and wear be applied in the finished capstone piece, based on Module 98?", "options": ["Spread evenly across the entire piece", "Concentrated at points that make physical sense, added near the end of the process", "Applied before any color or shading exists", "Texture should be avoided entirely in a capstone piece"], "correct": 1, "explain": "Texture and wear should be added near the end, concentrated at logical contact or stress points, following the same wear-with-a-cause logic established in Module 98."},
-  {"q": "What is the recommended way to use the finished capstone piece after completing it?", "options": ["Move on immediately without further reflection", "Go back through each of Modules 91\u201399's checklists and honestly identify the weakest skill to practice next", "Delete the working file immediately after exporting", "Compare it only to other people's finished work"], "correct": 1, "explain": "Checking the finished piece against each earlier module's checklist turns the capstone into a genuine diagnostic tool, revealing exactly which skill is worth focusing on next."}
-],
-"checklist": [
-  "I can complete a piece through the full workflow: sketch, line art, flat colors, shading.",
-  "I can apply material-specific rendering logic (skin vs. hard surface vs. fabric) rather than one generic technique for everything.",
-  "I can use edge control and atmospheric perspective together to direct focus and separate depth.",
-  "I can honestly score a finished piece against the checklists from Modules 91\u201399 to find my weakest skill."
-],
-"nextStep": "You've completed Digital Painting & Rendering \u2014 from the three properties of color to a fully rendered, material-aware illustration. These skills carry forward directly into Advanced Digital Art, where techniques like blend-mode compositing, photobashing, and speed painting build on everything rendered here."
-}
-]},
-{id:'advanced-digital', title:'Advanced Digital Art', status:'live', order:10,
-    desc:'Non-destructive workflow, blend modes, adjustment layers, photobashing, 3D-assisted painting, responsible AI-assisted workflow, speed painting, and master studies.',
-    moduleCount:10, sample:['Non-Destructive Workflow','Blend Modes','Photobashing','3D-Assisted Art','AI-Assisted Workflow','Speed Painting'],
-    modules:[
-{
-"id": "m111",
-"plate": 111,
-"title": "Non-Destructive Workflow",
-"difficulty": "Advanced",
-"studyTime": "18 min",
-"practiceTime": "25\u201330 min/day",
-"prereq": ["m90"],
-"hook": "A client asks for one small change three weeks after you finished a piece \u2014 if your file is destructively flattened, that's an hour of rebuilding; if it's non-destructive, it's thirty seconds.",
-"whyItMatters": [
-  "You've used individual non-destructive tools throughout this course (layers in Module 86, transforms in Module 88) without necessarily treating them as one deliberate system. This module ties them together into a complete philosophy: never permanently commit to a decision until you're certain you won't need to revisit it.",
-  "This is the difference between a hobbyist workflow and a professional one. Revisions, client feedback, and your own changing judgment about a piece are normal and constant in real work \u2014 a non-destructive file survives all of that; a flattened one forces you to redo work from scratch."
-],
-"coreIdea": [
-  "A Smart Object is a container that preserves an image's original data even after repeated scaling, rotating, or warping \u2014 unlike a normal layer, which loses quality every time it's transformed, a Smart Object can be resized infinitely because the software always references the untouched original.",
-  "Adjustment layers (curves, hue/saturation, color balance) sit above other layers and modify how they look without altering their actual pixel data, and can be freely edited, hidden, or deleted at any point, unlike applying the same adjustment directly to a layer.",
-  "Filters applied to a Smart Object become Smart Filters, which remain fully editable afterward \u2014 you can reopen, adjust, or mask a Smart Filter's effect at any time, rather than the effect being permanently baked into the pixels.",
-  "Masks are the mechanism that ties all of this together: rather than erasing part of a layer or filter effect, a mask hides it reversibly, so painting on the mask can restore or hide the effect at any time without ever losing the original data underneath."
-],
-"mistakes": [
-  "Rasterizing or flattening layers early to \"clean up\" a file, permanently discarding the ability to revise individual elements later.",
-  "Applying an adjustment (like brightness or hue) directly to a layer instead of using an adjustment layer, making a later change to that decision require redoing the edit rather than just adjusting a setting.",
-  "Erasing part of a layer with the eraser tool instead of using a mask, permanently deleting pixel data that a mask would have hidden reversibly.",
-  "Skipping Smart Objects for elements that are likely to need resizing or repositioning later, risking visible quality loss from repeated destructive transforms.",
-  "Treating non-destructive workflow as only relevant for professional client work, when the same benefits (easy revision, less fear of \"ruining\" a piece) apply directly to personal practice pieces too."
-],
-"proTips": [
-  "Convert imported images and any element you expect to transform more than once into a Smart Object immediately, as a default habit rather than an afterthought.",
-  "Default to adjustment layers for color and tone changes (curves, hue/saturation, color balance) instead of applying the equivalent adjustment directly to a layer.",
-  "Use masks instead of the eraser whenever you're hiding part of a layer or effect, so the option to bring it back later stays available.",
-  "Keep your working file in its native, layered format (not a flattened export) for as long as you might conceivably want to revise the piece \u2014 export flattened versions only for sharing."
-],
-"practice": {
-  "warmup": "Take one imported image, convert it to a Smart Object, and transform (scale, rotate) it five times in a row, checking that its quality stays intact throughout.",
-  "daily": "Rework a color or tone decision on an existing piece using an adjustment layer instead of a direct edit, then adjust that decision twice more to feel how easy it is to revise.",
-  "weekly": "Build a small composite using Smart Objects for every imported element and masks (not the eraser) for every hidden area, then deliberately \"undo\" and restore several of those decisions.",
-  "challenge": "Take a finished piece and simulate a client request: change one color, resize one element, and adjust one masked area, timing how long each takes in a non-destructive file versus how long you estimate it would take in a flattened one."
-},
-"resources": [
-  {"type": "Article", "title": "Nondestructive editing", "creator": "Adobe (official documentation)", "url": "https://helpx.adobe.com/photoshop/using/nondestructive-editing.html", "why": "The authoritative, free official reference covering Smart Objects, Smart Filters, adjustment layers, and masks as a complete non-destructive system.", "summary": "Explains that nondestructive editing allows changes to an image without overwriting the original data, covering Smart Objects for nondestructive scaling and transforms, Smart Filters for reversible filter effects, adjustment and fill layers for tone and color changes without altering underlying pixels, and layer masks for reversibly hiding or revealing content.", "verified": true},
-  {"type": "Article", "title": "Master Smart Objects in Photoshop: The Non-Destructive Editing Game-Changer", "creator": "Kelvin Designs", "url": "https://photoshoptutorial.com/posts/master-smart-objects-in-photoshop-the-non-destructive-editing-game-changer/", "why": "A free, practical, first-person account of how Smart Objects change a working professional's compositing workflow, including linked Smart Objects for collaborative work.", "summary": "A working compositor explains how converting imported elements to Smart Objects immediately eliminated the fear of permanently damaging quality through repeated transforms, and shows how Linked Smart Objects let a composite automatically update when a source file elsewhere is changed, a significant time-saver for collaborative or iterative work.", "verified": true}
-],
-"quiz": [
-  {"q": "Why can a Smart Object be scaled up and down repeatedly without losing quality, unlike a normal layer?", "options": ["Smart Objects use a different color mode", "A Smart Object preserves the original image data as a container, so the software always references the untouched original rather than the repeatedly-transformed version", "Smart Objects are automatically higher resolution than normal layers", "There is no real difference between Smart Objects and normal layers"], "correct": 1, "explain": "A Smart Object acts as a container preserving the original data; every transform references that untouched original, avoiding the cumulative quality loss that repeated destructive transforms cause on a normal layer."},
-  {"q": "What is the main advantage of using an adjustment layer instead of applying an adjustment directly to a layer?", "options": ["Adjustment layers render faster with no other benefit", "An adjustment layer can be freely edited, hidden, or deleted at any point without altering the underlying pixel data", "Adjustment layers are required by most software licenses", "There is no functional difference between the two approaches"], "correct": 1, "explain": "An adjustment layer modifies how layers beneath it look without changing their actual pixel data, so the adjustment itself remains fully editable or removable later, unlike a direct edit."},
-  {"q": "What happens when a filter is applied to a Smart Object?", "options": ["The filter is applied destructively and cannot be changed", "It becomes a Smart Filter, which remains fully editable, maskable, and removable afterward", "Smart Objects cannot have filters applied to them at all", "The Smart Object is automatically converted back to a normal layer"], "correct": 1, "explain": "Filters applied to a Smart Object become Smart Filters, which can be reopened, adjusted, masked, or removed at any time, rather than being permanently baked into the pixels."},
-  {"q": "Why is using a mask preferred over using the eraser tool to hide part of a layer?", "options": ["Masks and the eraser produce functionally identical, irreversible results", "A mask hides content reversibly, so painting on the mask can restore the hidden area later, while the eraser permanently deletes pixel data", "The eraser tool is faster in every situation", "Masks can only be used on Smart Objects, never on regular layers"], "correct": 1, "explain": "A mask hides part of a layer or effect without permanently deleting the underlying pixel data, so the hidden content can be reversibly restored later, unlike erasing."},
-  {"q": "According to the module, why does a non-destructive workflow matter for professional work specifically?", "options": ["It has no particular relevance to professional work over personal practice", "Client feedback and revision requests are common in professional work, and a non-destructive file allows quick changes instead of rebuilding from scratch", "Non-destructive workflows are only useful for print work, not digital delivery", "It primarily affects file size, not editing flexibility"], "correct": 1, "explain": "Because revisions and client feedback are a normal part of professional work, a non-destructive file lets those changes happen quickly, while a flattened, destructive file can require redoing significant work from scratch."}
-],
-"checklist": [
-  "I can convert an imported element to a Smart Object before transforming it.",
-  "I can use an adjustment layer instead of a direct edit for color and tone changes.",
-  "I can use a mask instead of the eraser to hide part of a layer or effect reversibly.",
-  "I can keep a native layered working file separate from a flattened export for sharing."
-],
-"nextStep": "You now treat your file structure itself as a deliberate, reversible system. Module 112 goes deeper into blend modes and adjustment layers specifically, building on this non-destructive foundation with more advanced compositing and color-grading techniques."
-}
-,
-{
-"id": "m112",
-"plate": 112,
-"title": "Blend Modes & Adjustment Layers",
-"difficulty": "Advanced",
-"studyTime": "18 min",
-"practiceTime": "25\u201330 min/day",
-"prereq": ["m111"],
-"hook": "Curves can do everything Levels can do, plus one thing Levels can't: bend the tonal range at more than one point at once, which is the real reason professional colorists reach for it over every other tool.",
-"whyItMatters": [
-  "Module 86 introduced blend modes for shadow and highlight layers, and Module 111 introduced adjustment layers as a non-destructive concept. This module goes deep on the single most powerful adjustment layer, Curves, and ties it together with blend modes into a real color-grading toolkit.",
-  "Color grading (adjusting the overall tone and mood of a finished piece) is a distinct skill from painting color in the first place \u2014 it's the final pass that unifies a piece's palette and can shift its entire mood without repainting a single object."
-],
-"coreIdea": [
-  "Curves represents an image's tonal range as a diagonal line from black (bottom-left) to white (top-right); dragging any point on that line up or down brightens or darkens that specific tonal range, and multiple points can be added and adjusted independently \u2014 this is what makes Curves more powerful than Levels, which only controls the endpoints and one midpoint.",
-  "An S-curve (pulling the upper-middle of the line up and the lower-middle down) is a classic, reliable way to add contrast: it brightens the highlights and darkens the shadows simultaneously without touching the true black and white points.",
-  "Setting white, black, and gray points with Curves' eyedroppers (clicking on what should be pure white, pure black, or neutral gray in the image) is a fast, reliable way to correct a color cast across an entire image in one move.",
-  "Layering multiple blend-mode adjustment layers (a Curves layer for contrast, an Overlay layer for a color wash, a Multiply layer for vignette) is how a complete color grade is typically built \u2014 each layer handles one specific job, stacked together rather than trying to do everything in one adjustment."
-],
-"mistakes": [
-  "Only ever using the endpoint sliders in Curves (equivalent to Levels) and never adding a midpoint, missing the tool's real advantage of independently controlling multiple points on the tonal range.",
-  "Applying a strong Curves S-curve globally when only a specific area needs more contrast, instead of using a mask to limit the effect to where it's actually needed.",
-  "Guessing at a color cast correction by eye instead of using the white/black/gray point eyedroppers, which give a fast, reliable starting correction to adjust from.",
-  "Trying to achieve a complete color grade with a single adjustment layer instead of stacking several simple ones (contrast, color wash, vignette), each handling one job.",
-  "Forgetting that adjustment layers affect everything beneath them in the layer stack by default, and not grouping or masking them when an adjustment should only apply to part of a piece."
-],
-"proTips": [
-  "Start any color grade with an S-curve for overall contrast before adding more stylized adjustments, since contrast is usually the first thing a flat-looking image needs.",
-  "Use the white, black, and gray point eyedroppers in Curves as a fast first pass for color-cast correction, then fine-tune manually from that starting point rather than guessing from scratch.",
-  "Mask a Curves adjustment layer to a specific area (using the same mask technique from Module 111) when only part of an image needs a contrast or tone change, rather than applying it globally.",
-  "Build a color grade in stages using several simple adjustment layers stacked together, rather than trying to solve contrast, color cast, and mood all in one complex adjustment."
-],
-"practice": {
-  "warmup": "Add a Curves adjustment layer to a flat-looking image and apply a simple S-curve, comparing the before and after contrast.",
-  "daily": "Take a piece with an unwanted color cast and correct it using the Curves white/black/gray point eyedroppers, then compare the result to a manual color adjustment.",
-  "weekly": "Build a full color grade on a finished piece using at least three stacked adjustment layers (a Curves contrast pass, an Overlay color wash, and a Multiply vignette).",
-  "challenge": "Mask a Curves adjustment layer to affect only one area of a piece (a single object or the background) rather than the whole image, and evaluate how that targeted change affects the composition's focus."
-},
-"resources": [
-  {"type": "Video", "title": "Couch to Photoshop: Episode 7 \u2014 Curves, Levels, and Color Grading Tutorial", "creator": "Scott Detweiler", "url": "https://www.youtube.com/watch?v=Wehtu7okml4", "why": "A free, structured lesson covering Curves and Levels together, including S-curves, sliders, and color grading built from the same tool.", "summary": "Covers the Curves tool in depth alongside Levels, including how to build a line S-curve for contrast, use curve masks to limit an adjustment's area, and apply Curves adjustment layers for stylistic color grading, along with common pitfalls to avoid when using the tool.", "verified": true},
-  {"type": "Article", "title": "Color Correction Using Curves", "creator": "Dan Rodney, Noble Desktop", "url": "https://www.nobledesktop.com/learn/photoshop/color-correction-using-curves-photoshop", "why": "A free, exact step-by-step exercise for setting white, black, and gray points with Curves and manipulating multiple midpoints.", "summary": "Walks through a concrete Curves exercise: setting the white point, black point, and gray point with the tool's eyedroppers to correct an image's tonal range and color cast, then demonstrates adding and manipulating multiple midpoints on the curve to fine-tune brightness in specific tonal ranges independently.", "verified": true}
-],
-"quiz": [
-  {"q": "What makes Curves more powerful than Levels for tonal adjustment?", "options": ["Curves only works on black and white images", "Curves allows multiple independent points to be added and adjusted along the tonal range, while Levels only controls the endpoints and one midpoint", "Levels and Curves are functionally identical tools", "Curves cannot be used as an adjustment layer"], "correct": 1, "explain": "Curves represents the tonal range as an editable line where multiple points can be added and adjusted independently, giving finer control than Levels' single midpoint and two endpoints."},
-  {"q": "What does a classic S-curve do to an image?", "options": ["It only affects the image's color saturation, not tone", "It brightens highlights and darkens shadows simultaneously, adding contrast without moving the true black and white points", "It flips the image horizontally", "It removes all color from the image"], "correct": 1, "explain": "An S-curve pulls the upper-middle of the tonal curve up and the lower-middle down, increasing contrast by brightening highlights and darkening shadows while leaving the true white and black points unchanged."},
-  {"q": "What is the benefit of using the white, black, and gray point eyedroppers in Curves?", "options": ["They only work on grayscale images", "They provide a fast, reliable way to correct a color cast across an entire image by clicking on areas that should be pure white, pure black, or neutral gray", "They permanently delete the image's original color data", "They can only be used once per document"], "correct": 1, "explain": "Clicking these eyedroppers on the corresponding tones in the image gives a quick, reliable starting correction for an unwanted color cast, which can then be fine-tuned further."},
-  {"q": "How is a complete color grade typically built, according to the module?", "options": ["Using a single complex adjustment layer that handles everything at once", "By stacking several simple adjustment layers (contrast, color wash, vignette), each handling one specific job", "Color grading requires repainting the entire piece from scratch", "Only Levels can be used for color grading, never Curves"], "correct": 1, "explain": "A complete color grade is usually built from several simple, stacked adjustment layers, each responsible for one job (like contrast, a color wash, or a vignette), rather than one adjustment trying to do everything."},
-  {"q": "Why should a Curves adjustment layer be masked when only part of an image needs a contrast change?", "options": ["Masking has no functional purpose for adjustment layers", "Adjustment layers affect everything beneath them in the layer stack by default, so a mask limits the effect to only the intended area", "Curves adjustment layers cannot be masked at all", "Masking a Curves layer converts it into a Levels layer"], "correct": 1, "explain": "Since an adjustment layer affects all layers beneath it by default, masking is necessary to restrict its effect to a specific area rather than the whole image."}
-],
-"checklist": [
-  "I can add a midpoint to a Curves adjustment and understand how it differs from Levels.",
-  "I can build a simple S-curve to add contrast to a flat image.",
-  "I can use the white/black/gray point eyedroppers to correct a color cast.",
-  "I can stack multiple adjustment layers to build a complete color grade."
-],
-"nextStep": "You now have a real color-grading toolkit built on non-destructive adjustment layers. Module 113 moves to photobashing \u2014 combining real photographic elements into a cohesive concept art or illustration piece, a technique that relies heavily on the color and tone matching skills from this module."
-}
-,
-{
-"id": "m113",
-"plate": 113,
-"title": "Photobashing",
-"difficulty": "Advanced",
-"studyTime": "18 min",
-"practiceTime": "30 min/day",
-"prereq": ["m112"],
-"hook": "A crowded photograph of a real city street can become a desolate warzone concept with a handful of confident edits \u2014 which is exactly why photobashing became standard practice for game and film concept artists working against tight deadlines.",
-"whyItMatters": [
-  "Photobashing pulls together nearly everything from this arc: non-destructive layers and masks (Module 111), blend modes and color grading (Module 112), and the material and lighting knowledge from the entire Digital Painting arc, all applied to blending real photographic elements into a single believable piece.",
-  "This technique exists specifically to solve a real production problem: concept artists are responsible for visualizing an overwhelming amount of content for a film or game, and photobashing lets a skilled artist reach a highly detailed, realistic result far faster than painting every element from scratch."
-],
-"coreIdea": [
-  "Photobashing is merging and blending photographs (or 3D-rendered assets) together while painting and compositing them into one finished piece \u2014 it's distinct from simple photo editing, which augments a single image without changing its underlying structure or combining multiple sources.",
-  "The technique doesn't replace fundamentals; it depends on them. An artist needs a functional understanding of lighting, composition, and form to select photos that will actually work together and to paint the connective tissue (shadows, lighting adjustments, integrated details) that makes bashed elements read as one coherent image.",
-  "Photo selection matters as much as the blending itself: high-quality, sharp, easy-to-cut-out images from reputable stock sources or free resources like Wikimedia Commons save enormous time compared to fighting with low-quality or awkwardly-lit source photos.",
-  "There is a genuine, ongoing debate in the art community about photobashing's legitimacy as \"true\" digital art (some contests reject photobashed entries), but there's wide agreement that skillful photobashing, used to serve a design and visualization goal, takes real artistic skill to execute well."
-],
-"mistakes": [
-  "Treating photobashing as simply cutting and pasting photos together without further work, when successfully integrating photos requires repainting lighting, adjusting color, and adding connective details.",
-  "Using low-quality, awkwardly-lit, or hard-to-cut-out source photos, which creates far more integration work than starting with clean, well-lit reference images.",
-  "Ignoring copyright and licensing when sourcing photos, instead of using licensed stock photography or genuinely free sources like Wikimedia Commons.",
-  "Relying on photobashing as a substitute for fundamentals instead of a speed tool built on top of them \u2014 without a grasp of lighting and form, bashed elements won't integrate believably no matter how they're blended.",
-  "Presenting photobashed work in a context (a contest or portfolio category) that explicitly excludes it, given the real, active debate about its categorization in some parts of the art community."
-],
-"proTips": [
-  "Start with a sketch or a base photograph that establishes the composition, then add and blend additional photo elements or painted details on top to make everything fit together.",
-  "Prioritize sourcing high-quality, sharp, easy-to-cut-out photos over settling for the first image found \u2014 the time saved in blending more than makes up for extra time spent searching.",
-  "Use free software like Krita or GIMP if you don't have Photoshop; both can handle the combination of photo editing and digital painting that photobashing requires.",
-  "When bashing multiple textures onto one surface (like feathers or fur), align pieces carefully to avoid an obvious tiled or repeated pattern, which is one of the fastest ways bashed texture reads as fake."
-],
-"practice": {
-  "warmup": "Find two free, high-quality photos (from a source like Wikimedia Commons) of related subjects and practice cutting one out cleanly and placing it into the other.",
-  "daily": "Take a rough sketch or painted background and photobash in one photographic element, adjusting its lighting and color to match the surrounding scene.",
-  "weekly": "Build a small concept piece that combines at least three photo sources with painted connective details (shadows, lighting adjustments, blended edges) to unify them.",
-  "challenge": "Take a real-world photo of a location and transform it into a completely different concept (a warzone, an overgrown ruin, a futuristic city) using photobashing and paint-overs, while keeping the underlying photo's composition and lighting logic intact."
-},
-"resources": [
-  {"type": "Video", "title": "Concept Art Tutorial: Photo-bashing Sci-Fi Environments", "creator": "Lincoln Hughes", "url": "https://www.youtube.com/watch?v=LWb_4lYLlds", "why": "A genuinely free, 75-minute lesson from a working concept artist, hosted on his own YouTube channel.", "summary": "Teaches how to seamlessly use photos to add realistic detail quickly, covering techniques for lighting, perspective, color, and composition when blending photo reference into a concept piece, along with common mistakes made when painting with photo reference and how to avoid them.", "verified": true},
-  {"type": "Article", "title": "What is Photobashing? (With Free Beginner Tutorials)", "creator": "Claire Heginbotham, Concept Art Empire", "url": "https://conceptartempire.com/photobashing/", "why": "A free, balanced overview of the technique, honestly addressing the legitimacy debate while explaining why professional concept artists rely on it, plus links to further free tutorials.", "summary": "Explains photobashing as merging and blending photographs or 3D assets while painting and compositing them into one piece, distinguishes it from simple photo editing, honestly presents the ongoing debate about its legitimacy as \"true\" digital art versus its practical value for concept art production, and recommends free software (Krita, GIMP) and free image sources (Wikimedia Commons) for artists without access to paid tools.", "verified": true}
-],
-"quiz": [
-  {"q": "How does photobashing differ from simply \"photoshopping\" a single image?", "options": ["They are exactly the same technique", "Photobashing merges and blends multiple photographs (or 3D assets) together while painting over them into one new piece, rather than just augmenting one existing image while keeping its structure", "Photobashing never involves any painting, only photo editing", "Photoshopping always requires more photos than photobashing"], "correct": 1, "explain": "Photoshopping augments and changes a single image while keeping its underlying structure; photobashing is more creative, combining multiple photos and painting over them into an entirely new composition."},
-  {"q": "Why do fundamentals like lighting, composition, and form still matter for photobashing?", "options": ["They don't matter at all once photos are being used", "Selecting photos that will actually work together and painting the connective details (shadows, adjusted lighting) that unify them both require a functional understanding of these fundamentals", "Fundamentals only apply to fully hand-painted digital art", "Photobashing eliminates the need to understand light and form entirely"], "correct": 1, "explain": "Photobashing depends on fundamentals: choosing compatible photos and painting the details that make them read as one coherent scene both require understanding lighting, composition, and form."},
-  {"q": "Why is sourcing high-quality, easy-to-cut-out photos worth the extra search time?", "options": ["Photo quality has no effect on the final result", "It significantly reduces the integration work needed later, since clean, well-lit photos blend more easily than low-quality or awkward source images", "Only paid stock photos can legally be used in any artwork", "Higher resolution photos always look worse when painted over"], "correct": 1, "explain": "Starting with high-quality, easy-to-work-with photos reduces the time and difficulty of the blending and integration work that follows, more than making up for the extra time spent searching."},
-  {"q": "What is the ongoing debate mentioned regarding photobashing?", "options": ["Whether photobashing is technically possible in modern software", "Whether photobashing counts as \"true\" digital art, since some digital art contests reject photobashed entries while others value it as a legitimate professional technique", "Whether photobashing requires expensive software", "There is no debate about photobashing in the art community"], "correct": 1, "explain": "There's a genuine, ongoing debate about photobashing's categorization as an art form, with some contests excluding it, while there's broad agreement that it requires real skill to execute well."},
-  {"q": "What is a good free source for photo reference mentioned for photobashing?", "options": ["There are no free, legal sources for photo reference", "Wikimedia Commons, alongside using free software like Krita or GIMP instead of paid tools", "Only paid stock photography sites can be used legally", "Screenshots from copyrighted films are recommended as a free source"], "correct": 1, "explain": "Wikimedia Commons is mentioned as a free, legitimate source for photo reference, and free software like Krita or GIMP can handle the photo editing and painting combination photobashing requires."}
-],
-"checklist": [
-  "I can explain the difference between photobashing and simple photo editing.",
-  "I can select clean, well-lit, easy-to-cut-out photos to reduce later integration work.",
-  "I can blend a photographic element into a painted or photographic scene by adjusting its lighting and color to match.",
-  "I can use free, legitimate photo sources and software for photobashing."
-],
-"nextStep": "You can now blend real photographic elements into a cohesive piece. Module 114 extends this further with 3D-assisted art \u2014 using free 3D software to build blockouts, lighting studies, and reference geometry that can be painted over, another major speed and accuracy tool for concept work."
-}
-,
-{
-"id": "m114",
-"plate": 114,
-"title": "3D-Assisted Art",
-"difficulty": "Advanced",
-"studyTime": "18 min",
-"practiceTime": "30 min/day",
-"prereq": ["m113"],
-"hook": "A concept artist doesn't need to be a 3D modeler to use 3D \u2014 a handful of rough, ugly cubes arranged in free software can solve a perspective and lighting problem that would take hours to get right freehand.",
-"whyItMatters": [
-  "Like photobashing (Module 113), 3D-assisted art is a speed and accuracy tool that sits on top of your existing fundamentals, not a replacement for them \u2014 it's a widely used, well-established professional technique, not a shortcut unique to beginners.",
-  "3D blocking is especially valuable for exactly the kind of environments and hard-surface subjects this curriculum has focused on: anything with straight lines, consistent perspective, or complex lighting benefits the most, since 3D software calculates perspective and light physically instead of you estimating it by eye."
-],
-"coreIdea": [
-  "A 3D blockout uses simple, rough shapes (boxes, cylinders, spheres) arranged in a free 3D program like Blender to establish accurate perspective, proportion, and composition before any detailed painting begins \u2014 messy topology and ugly geometry are completely fine at this stage, since the blockout is a tool, not the final product.",
-  "The technique works especially well for straight-edged, architectural, or hard-surface subjects, where 3D can calculate consistent perspective and lighting logic automatically; very organic, curvy subjects (a flowing cape, a creature's soft anatomy) tend to benefit less and are often faster to handle by hand.",
-  "A common workflow moves between 2D and 3D repeatedly rather than treating 3D as a one-way pipeline: rough 2D thumbnails establish the idea, 3D blocks out accurate perspective and major forms, then a 2D paintover adds detail, texture, and painterly quality on top of the 3D render.",
-  "Don't let the blockout box you in \u2014 professional concept artists consistently emphasize treating the 3D base as a flexible starting point, freely adding new elements, scrapping parts that aren't working, or overpainting entirely, rather than being limited to exactly what was modeled."
-],
-"mistakes": [
-  "Spending excessive time perfecting a 3D blockout's topology or detail when its only job is to establish perspective, proportion, and rough lighting before a paintover.",
-  "Using 3D for subjects it's poorly suited to, like flowing fabric or soft organic anatomy, where freehand painting is often faster and more expressive.",
-  "Treating the 3D render as the finished piece instead of as a base for a 2D paintover that adds painterly detail, texture, and polish.",
-  "Feeling locked into exactly what was modeled in the blockout, rather than freely adding, removing, or scrapping parts of it during the paintover stage.",
-  "Skipping the development of freehand perspective and drawing skills because 3D can handle it, when a solid understanding of perspective is still what lets you judge whether a 3D blockout is even working."
-],
-"proTips": [
-  "Build blockouts intentionally messy and fast \u2014 rough box shapes with no clean topology are completely appropriate, since the blockout's only job is perspective, proportion, and rough composition.",
-  "Reserve 3D blocking for straight-edged or architectural subjects where it saves real time, and default to freehand painting for organic, flowing forms where 3D offers little advantage.",
-  "Move back and forth between 2D and 3D as needed rather than committing to a strict one-way pipeline \u2014 a rough 2D thumbnail, a 3D blockout, then a 2D paintover is a common, flexible sequence.",
-  "When paint-overing a 3D render, add rough brush strokes and deliberate imperfection early, since a raw 3D render can look too clean and 'physically correct' compared to a natural painting."
-],
-"practice": {
-  "warmup": "In free 3D software, block out a simple room or street using only cubes and cylinders, focusing purely on getting proportions and perspective right, not detail.",
-  "daily": "Take a rough 2D thumbnail idea for an architectural or hard-surface subject and build a quick 3D blockout of it, then take a screenshot to paint over.",
-  "weekly": "Complete one small piece using the full 2D-3D-2D workflow: a rough thumbnail, a 3D blockout for perspective and lighting, and a full paintover adding painterly detail and texture.",
-  "challenge": "Block out the same subject twice \u2014 once a hard-surface, straight-edged subject, once an organic, curvy one \u2014 and compare how much time and value 3D actually added in each case."
-},
-"resources": [
-  {"type": "Video", "title": "Blender Beginners For Concept Art \u2014 TUTORIAL", "creator": "Critical Giants", "url": "https://youtu.be/CHIZtZ2JU3A", "why": "A free, complete beginner walkthrough that takes a simple Blender scene through to a finished image with some Photoshop work.", "summary": "A beginner Blender walkthrough that builds a scene from basic shapes and then finishes it with some Photoshop work.", "verified": true},
-  {"type": "Article", "title": "How simple 3D blockouts help build realistic fantasy art", "creator": "Billy Christian, Creative Bloq", "url": "https://www.creativebloq.com/art/digital-art/how-simple-3d-blockouts-help-build-realistic-fantasy-art", "why": "A free, detailed, step-by-step breakdown from a working artist showing exactly which parts of a piece benefit from 3D (armor, hard surfaces) and which are better handled in 2D (hair, fabric folds).", "summary": "Walks through a real fantasy character piece, explaining that hard-surface elements like armor and architecture are modeled simply in Blender and lit with basic three-point lighting, while organic elements like hair and fabric folds are deliberately left to 2D repainting since they're more flexible and enjoyable to refine by hand, with color grading and final polish applied afterward in Photoshop.", "verified": true}
-],
-"quiz": [
-  {"q": "What is the main purpose of a 3D blockout in a concept art workflow?", "options": ["To produce the final, finished piece of art", "To establish accurate perspective, proportion, and composition using rough shapes before detailed painting begins", "To replace the need for any painting skill entirely", "To create game-ready assets with clean topology"], "correct": 1, "explain": "A blockout's job is to quickly and accurately establish perspective, proportion, and rough composition using simple shapes; it is not meant to be polished or final."},
-  {"q": "What kind of subjects benefit most from a 3D-assisted approach?", "options": ["Flowing fabric and soft organic anatomy", "Straight-edged, architectural, or hard-surface subjects, where 3D can calculate perspective and lighting automatically", "3D offers no advantage for any type of subject", "Only subjects with no straight lines at all"], "correct": 1, "explain": "3D blocking is especially useful for hard-surface, architectural subjects where consistent perspective and lighting logic are hard to estimate by eye, while organic, curvy forms often benefit less."},
-  {"q": "According to the module, what is a common, flexible workflow combining 2D and 3D?", "options": ["3D only, with no 2D work at any stage", "A rough 2D thumbnail, followed by a 3D blockout for perspective, followed by a 2D paintover for detail and polish", "2D only, with 3D never used at all", "A strict one-way pipeline where 3D is always the very last step"], "correct": 1, "explain": "A common, flexible sequence moves between 2D and 3D repeatedly: a rough 2D idea, a 3D blockout to nail perspective and lighting, then a 2D paintover for painterly detail and polish."},
-  {"q": "Why is it important not to feel locked into exactly what was modeled in a 3D blockout?", "options": ["Because 3D blockouts cannot be changed once created", "Professional concept artists emphasize treating the blockout as a flexible base, freely adding, removing, or scrapping parts during the paintover", "Because 3D software prevents any further painting", "It is not actually important to stay flexible"], "correct": 1, "explain": "Working artists consistently stress using the 3D base as a flexible starting point rather than being boxed in by it, freely adjusting or scrapping parts during the paintover stage."},
-  {"q": "Why might a raw 3D render need extra work before it looks like a natural painting?", "options": ["3D renders are always identical to hand-painted work", "A raw render can look too clean and 'physically correct,' so adding rough brush strokes and deliberate imperfection during paintover helps it feel painterly", "3D renders cannot be painted over at all", "This is not a real consideration in 3D-assisted art"], "correct": 1, "explain": "A physically accurate 3D render can look sterile compared to natural painting, so adding rough strokes and intentional imperfection during the paintover stage helps bridge that gap."}
-],
-"checklist": [
-  "I can build a rough, messy 3D blockout focused only on perspective and proportion, not detail.",
-  "I can judge whether a subject (hard-surface vs. organic) is a good candidate for 3D assistance.",
-  "I can move flexibly between 2D and 3D stages rather than following a strict one-way pipeline.",
-  "I can paint over a 3D render with deliberate texture and imperfection rather than leaving it looking sterile."
-],
-"nextStep": "You now have a genuine 3D-to-2D workflow in your toolkit. Module 115 turns to a newer, actively-debated tool \u2014 AI-assisted workflows \u2014 covering what responsible, disclosed use actually looks like for a working artist."
-}
-,
-{
-"id": "m115",
-"plate": 115,
-"title": "Responsible AI-Assisted Workflow",
-"difficulty": "Advanced",
-"studyTime": "20 min",
-"practiceTime": "20\u201325 min (research + reflection)",
-"prereq": ["m114"],
-"hook": "This is the one module in the entire curriculum where the honest answer to \"what's the right way to do this\" is genuinely contested \u2014 by working artists, by courts, and by AI companies themselves \u2014 and pretending otherwise would do you a disservice.",
-"whyItMatters": [
-  "AI image tools are now a real part of many working artists' pipelines, used for reference gathering, rapid ideation, and mood-boarding, alongside the photobashing (Module 113) and 3D-assisted (Module 114) speed tools you've already learned. Understanding how professional and industry organizations think about using them responsibly is now a practical, professional skill, not an optional add-on.",
-  "This is also a genuinely unresolved area: artists, legal scholars, and AI companies disagree on core questions like training-data consent and what counts as meaningful human authorship. This module gives you the actual landscape and a practical decision framework, rather than a single verdict, so you can navigate it with your own judgment intact."
-],
-"coreIdea": [
-  "The central, unresolved debate is training data: AI image generators learn from very large sets of existing images, many scraped without the original artists' consent. Artists point to lost commissions and unauthorized use of their style as real harms; AI companies and users point to fair-use arguments and the transformative nature of the technology. Multiple lawsuits are working through courts worldwide with no single settled answer as of this writing.",
-  "Copyright law in the U.S. currently draws a real, practical line: purely AI-generated output with no human creative input is not copyrightable, while AI-assisted work where a human exercises substantial creative control (iterating on prompts, selecting, editing, compositing, adding original elements) may qualify for protection on those human-authored parts.",
-  "Professional guidelines converge on a small set of concrete, repeated practices regardless of where you land on the bigger debate: disclose AI involvement to clients and audiences, avoid prompting for a specific living artist's distinctive style, add substantial human creative input rather than using raw output as-is, and respect a platform or client contract's specific rules about AI use.",
-  "Where AI use sits ethically shifts by context: using it for personal ideation, mood boards, or rapid prototyping before human-made final work is broadly treated as unproblematic; passing off AI output as entirely hand-made, or deliberately mimicking a specific living artist's signature style for commercial gain, are the situations that draw the most consistent, serious concern across nearly every framework."
-],
-"mistakes": [
-  "Treating this as a settled, one-sided question in either direction \u2014 as either clearly fine or clearly forbidden \u2014 when it's a genuinely contested area with real, serious arguments and real stakeholders on multiple sides.",
-  "Using AI output as-is with minimal human input and then presenting it as fully hand-made work, which crosses from a contested gray area into straightforward misrepresentation.",
-  "Prompting to specifically mimic a named, living artist's distinctive style for commercial use without their involvement or compensation, which is the single most consistently flagged practice across professional guidelines.",
-  "Ignoring a client's or platform's explicit rules about AI use, treating your own comfort with the technology as the only relevant standard.",
-  "Assuming disclosure will hurt how your work is received; professional guidance and available research suggest transparency is generally received better than artists fear, and undisclosed use that's later discovered tends to cost far more trust."
-],
-"proTips": [
-  "If you use AI at any stage, default to disclosing it to clients and, where relevant, audiences \u2014 treat transparency as the baseline professional practice, not an optional extra.",
-  "When using AI for ideation or reference, add substantial human creative work on top (iterating deliberately, selecting critically, editing, compositing, painting over) both for the ethical strength of the practice and, in the U.S., for a stronger copyright claim.",
-  "Use general style language (\"cyberpunk,\" \"impressionist,\" \"heavy linework\") instead of naming a specific living artist when prompting, to avoid the most consistently flagged ethical issue in professional guidelines.",
-  "Read the specific terms of service or contract governing any project before using AI on it \u2014 many clients, contests, and platforms now have explicit AI policies, and \"I didn't check\" isn't a strong position if a problem comes up later."
-],
-"practice": {
-  "warmup": "Read the Graphic Artists Guild's Ethical Focus and Transparency sections in the resources below and write, in your own words, the single practice that seems most important to you and why.",
-  "daily": "If you use an AI tool for ideation this week, keep a short note of how you disclosed it and what human creative work you added on top of the AI output.",
-  "weekly": "Research one platform's or contest's current AI policy (a portfolio site, a competition, a stock art marketplace) and summarize what it specifically requires or prohibits.",
-  "challenge": "Write a one-paragraph personal policy for your own future use of AI tools in art \u2014 what you will and won't do, and how you'll disclose it \u2014 based on what you've read in this module, and revisit it as the legal and professional landscape develops."
-},
-"resources": [
-  {"type": "Article", "title": "Generative AI Ethical Use Guidelines", "creator": "Graphic Artists Guild", "url": "https://graphicartistsguild.org/general-ai-ethical-use-guidelines/", "why": "A free, authoritative set of guidelines from an established professional trade association representing illustrators and designers, organized around concrete, actionable practices.", "summary": "A professional artists' association's official guidelines, organized around ethical, inclusivity, human, and economic-empowerment lenses, recommending concrete practices: only using content you have rights to, clearly labeling AI-generated or AI-assisted work, informing clients when AI is used in any part of the process, being intentional about using AI to supplement rather than replace the creative process, and supporting collective licensing and transparency measures for training data.", "verified": true},
-  {"type": "Article", "title": "AI Art Ethics: A Practical Guide for Creators", "creator": "ZSky AI", "url": "https://zsky.ai/blog/ai-art-ethics-guide", "why": "A free, practically-organized guide that lays out both sides of the training-data debate honestly and gives a concrete decision framework for different use cases.", "summary": "Lays out the core training-data consent debate from both the artist and AI-company perspectives without resolving it, explains the current U.S. Copyright Office position that purely AI-generated work isn't copyrightable while AI-assisted work with substantial human direction may be, and offers a practical framework distinguishing clearly-uncontroversial uses (personal ideation, prototyping, accessibility) from genuinely murky ones (mimicking a specific living artist's style, passing AI work off as hand-made).", "verified": true}
-],
-"quiz": [
-  {"q": "What is the central, unresolved debate at the heart of AI art ethics discussions?", "options": ["Whether AI software is technically difficult to use", "Whether AI models were trained on artists' work without their consent, and what that means ethically and legally", "Which specific brand of AI software is the fastest", "Whether digital art itself is legitimate compared to traditional media"], "correct": 1, "explain": "The core, actively contested issue is training data consent: AI image generators learn from large image sets, many scraped without artists' explicit consent, and this is the foundation of most other ethical debates in the space."},
-  {"q": "According to current U.S. copyright guidance described in the module, what distinguishes copyrightable AI-assisted work from non-copyrightable purely AI-generated work?", "options": ["The file format used to save the image", "Whether a human exercised substantial creative control, such as iterating, selecting, editing, and adding original elements", "Whether the AI tool used was free or paid", "There is no distinction; all AI-related output is treated identically"], "correct": 1, "explain": "Purely AI-generated output with no human creative input is not copyrightable in the U.S., while AI-assisted work involving substantial human creative direction and modification may qualify for protection on those human-authored elements."},
-  {"q": "What practice is most consistently flagged as a serious ethical concern across professional guidelines?", "options": ["Using AI for personal mood boards", "Deliberately mimicking a specific living artist's distinctive style for commercial gain, or passing AI output off as entirely hand-made", "Using general style descriptors like 'watercolor' or 'cyberpunk'", "Disclosing AI use to clients"], "correct": 1, "explain": "Naming and mimicking a specific living artist's signature style commercially, and misrepresenting AI-generated work as fully hand-made, are the two practices that draw the most consistent concern across professional frameworks."},
-  {"q": "What does the module suggest about disclosing AI involvement to clients and audiences?", "options": ["Disclosure should always be avoided since it universally destroys trust", "Transparency is generally treated as the safer, more professional baseline, and available guidance suggests it's often received better than artists fear", "Disclosure is legally required in every context worldwide", "Disclosure only matters for large commercial projects, never smaller personal work"], "correct": 1, "explain": "Professional guidelines consistently recommend disclosure as a baseline practice, and available guidance suggests undisclosed use that's later discovered tends to cost more trust than upfront transparency would have."},
-  {"q": "According to the module, which use of AI tools is broadly treated as least ethically contested?", "options": ["Selling a raw, unedited AI generation as an original finished commission with no disclosure", "Using AI for personal ideation, mood boards, or rapid prototyping before creating human-made final work", "Naming a specific living artist in a prompt for a paid client project", "There is no use of AI that is considered uncontroversial"], "correct": 1, "explain": "Using AI tools for personal exploration, mood boards, or prototyping before human-made final work is broadly treated as close to ethically unambiguous across the guidelines discussed, unlike commercial misrepresentation or artist-style mimicry."}
-],
-"checklist": [
-  "I can describe the core training-data consent debate from both the artist and AI-company perspectives without taking it as settled.",
-  "I can explain what generally distinguishes copyrightable AI-assisted work from non-copyrightable purely AI-generated work in current U.S. guidance.",
-  "I can identify disclosure to clients/audiences as a baseline professional practice rather than an optional extra.",
-  "I can name the two practices (living-artist style mimicry, misrepresenting AI work as hand-made) most consistently flagged as serious concerns."
-],
-"nextStep": "You now have a grounded, practical framework for a genuinely contested area, rather than a single unexamined opinion. Module 116 turns to speed painting \u2014 a purely technical skill for producing strong work quickly under real time constraints, building on the full toolkit from this arc."
-}
-,
-{
-"id": "m116",
-"plate": 116,
-"title": "Speed Painting",
-"difficulty": "Advanced",
-"studyTime": "16 min",
-"practiceTime": "25\u201345 min/day",
-"prereq": ["m115"],
-"hook": "A striking speed painting often looks messy up close and only fully makes sense from across the room \u2014 which is exactly the point, since the time limit forces you to solve the big problems and abandon the small ones.",
-"whyItMatters": [
-  "Speed painting is a deliberate practice constraint, not a shortcut around everything you've learned \u2014 it forces you to apply composition (Module 75), value (Module 92), and color (Module 91) decisions instantly, without the safety net of unlimited time to second-guess them.",
-  "It's also directly useful for professional pitching: when you want to present several illustration ideas quickly and aren't yet sure which is strongest, speed painting lets you generate real, comparable options fast, tying directly back to the thumbnailing and iteration skills from Module 79."
-],
-"coreIdea": [
-  "A speed painting is simply a piece made within a set time limit, commonly somewhere between 10 and 30 minutes; the specific number matters less than genuinely sticking to it, since going over the limit turns the exercise back into an ordinary, unconstrained painting.",
-  "Preparation is what makes speed possible: setting a strict timer, using a limited number of brushes and tools to avoid switching time, and establishing a limited color palette in advance (using the eyedropper tool to mix colors from what's already on the canvas rather than repeatedly returning to a color wheel) all remove decision points that would otherwise eat into the clock.",
-  "Clear, confident big shapes and a few areas of deliberately placed detail are what make a speed painting read as complete even though most of it is loose \u2014 a small amount of convincing detail implies the rest of the drawing to the eye, saving enormous time versus rendering everything evenly.",
-  "Speed painting is also a structured study tool, not only a technique for original ideas: studying a reference photo or an old master painting's composition, values, or color distribution under a time limit builds a mental library of solutions (a particular way of suggesting grass, a specific light-to-dark color relationship) that speeds up your normal, unconstrained work later."
-],
-"mistakes": [
-  "Going over the time limit without acknowledging it, which turns the exercise back into an ordinary painting and defeats the purpose of the speed constraint.",
-  "Switching between many brushes, tools, or techniques mid-session, which eats into the time savings the whole exercise is built around.",
-  "Trying to render every area of the painting with even, thorough detail instead of concentrating a small amount of convincing detail in a few key areas and leaving the rest loose.",
-  "Treating speed painting purely as a technique for finished pieces, rather than also using it as a structured study tool for absorbing composition, value, or color lessons from a reference or master painting under time pressure.",
-  "Picking a subject or reference so complex that even the big shapes can't be established within the time limit, defeating the exercise before it starts."
-],
-"proTips": [
-  "Set an actual timer before you start, and if you go over, treat that run as void and start a fresh attempt rather than quietly finishing an over-time piece \u2014 speed paintings tend to get faster in general the more of them you do.",
-  "Establish a limited color palette before starting, and use the eyedropper tool (rather than the color wheel) to mix new colors directly from what's already on the canvas, which is both faster and keeps the palette naturally harmonious.",
-  "Work small, both in canvas size and in how much detail you attempt, especially at the start \u2014 a smaller working area naturally discourages getting bogged down in unnecessary detail too early.",
-  "For a structured study session, pick one specific lesson to focus on per speed painting (just composition, just values, just color distribution) rather than trying to study everything about a reference at once."
-],
-"practice": {
-  "warmup": "Do three back-to-back 10-minute speed paintings of the same simple subject, using only one brush and a limited 4-color palette for each.",
-  "daily": "Pick an old master painting or strong reference photo and do a 20-minute speed painting focused on just one lesson: its composition, its value structure, or its color distribution.",
-  "weekly": "Generate three different illustration ideas for the same concept as three separate 15-minute speed paintings, then compare them to decide which direction is strongest before developing one further.",
-  "challenge": "Do the same speed painting twice with the same time limit \u2014 once trying to render everything evenly, once concentrating detail in only one or two key areas \u2014 and compare which one reads as more complete."
-},
-"resources": [
-  {"type": "Video", "title": "Expanding your Visual Library: Speed Painting", "creator": "The Art Frog (CLIP STUDIO TIPS)", "url": "https://www.youtube.com/watch?v=DlvI_13F0S4", "why": "The free 40-minute video version of the article below, where a speed painting is actually done in Clip Studio Paint.", "summary": "Art Frog looks at different tools and techniques in Clip Studio Paint for creating a speed painting, including lasso, eyedropper and reference use, then paints one from start to finish.", "verified": true},
-  {"type": "Article", "title": "Expanding your Visual Library: Speed Painting", "creator": "ArtFrog, CLIP STUDIO TIPS", "url": "https://tips.clip-studio.com/en-us/articles/2766", "why": "A free, practical breakdown of concrete speed-painting preparation tips \u2014 timers, limited tools, and the eyedropper-based limited palette technique.", "summary": "Defines a speed painting simply as art made within a time limit, then gives concrete preparation tips: setting and sticking to a timer (restarting rather than continuing if time runs out), using a limited number of brushes and tools to avoid switching time, and establishing a limited color palette used with the eyedropper tool to mix new colors directly from the canvas rather than the color wheel.", "verified": true},
-  {"type": "Article", "title": "Speed Painting: How to Do It and Why?", "creator": "Chlo\u00e9 Pouteau, Dessindigo", "url": "https://dessindigo.com/en/blog/digital-painting-tutorial/speed-painting", "why": "A free, detailed walkthrough of speed painting as a structured study tool, with three separate worked examples for composition, values, and color under specific time limits.", "summary": "Demonstrates speed painting as a study method through three separate worked examples \u2014 a 10-minute composition study identifying leading lines and picture planes, a 20-minute grayscale value study of a lit landscape, and a 30-minute color-zone study \u2014 each showing how analyzing a reference first, then working within a tight time limit, builds a reusable mental library of compositions and techniques.", "verified": true}
-],
-"quiz": [
-  {"q": "What is the defining feature of a speed painting, according to the module?", "options": ["It must always be done in watercolor", "It is a piece of artwork completed within a set time limit that is genuinely respected, not just a loosely-timed painting", "It must always depict a landscape", "It requires at least 10 different brushes"], "correct": 1, "explain": "A speed painting is technically defined by having and sticking to a time limit; going over that limit turns it back into an ordinary, unconstrained painting."},
-  {"q": "Why is establishing a limited color palette and using the eyedropper tool recommended for speed painting?", "options": ["It has no real effect on speed", "It removes the time cost of repeatedly returning to a full color wheel, and mixing from the canvas keeps the palette naturally harmonious", "The eyedropper tool can only be used in traditional media", "A limited palette is required by copyright law"], "correct": 1, "explain": "Using the eyedropper to mix colors directly from what's already on the canvas, within a pre-established limited palette, removes decision points and color-wheel trips that would otherwise eat into the time limit."},
-  {"q": "Why does a small amount of concentrated detail often make a speed painting read as complete?", "options": ["Detail placement has no effect on how finished a piece looks", "Convincing detail in a few key areas implies the rest of the drawing to the eye, which is far faster than rendering everything evenly", "Every part of a speed painting must always be equally detailed", "Detail only matters in traditional, not digital, speed painting"], "correct": 1, "explain": "Concentrating detail in select areas while leaving the rest loose is what allows a piece to read as finished despite most of it being quick and unrefined \u2014 the eye fills in the rest based on the convincing parts."},
-  {"q": "How can speed painting be used as a structured study tool, beyond making original finished pieces?", "options": ["It cannot be used for studying, only for original work", "By analyzing a reference or master painting's composition, values, or color distribution under a time limit, to build a reusable mental library of solutions", "Study speed paintings must always be done with zero time limit", "It only applies to studying color, never composition or value"], "correct": 1, "explain": "Speed painting a specific lesson from a reference (like leading lines in a composition, or a value structure) under time pressure helps build a mental library of techniques that speeds up later, unconstrained work."},
-  {"q": "What should happen if a speed painting attempt goes over its set time limit?", "options": ["Nothing; time limits are only a suggestion", "The attempt should generally be treated as void, with a fresh attempt started, rather than quietly finishing the over-time piece", "The time limit should be permanently extended for all future attempts", "Going over time makes the resulting piece more valuable as practice"], "correct": 1, "explain": "Genuinely respecting the time limit is central to the exercise; going over it without treating the attempt as void (or starting fresh) defeats the purpose of the speed constraint."}
-],
-"checklist": [
-  "I can set and genuinely respect a time limit for a speed painting session.",
-  "I can establish a limited color palette and use the eyedropper tool to mix new colors from the canvas.",
-  "I can concentrate detail in a few key areas rather than trying to render everything evenly.",
-  "I can use speed painting as a structured study tool focused on one specific lesson (composition, value, or color) from a reference."
-],
-"nextStep": "You now have a real toolkit for working fast and decisively under real time constraints. Module 117 turns that same time-limited discipline toward copying master paintings directly \u2014 master studies, one of the oldest and most reliable ways to absorb technique from artists whose work has already stood the test of time."
-}
-,
-{
-"id": "m117",
-"plate": 117,
-"title": "Master Studies",
-"difficulty": "Advanced",
-"studyTime": "18 min",
-"practiceTime": "1\u20132 hours (project)",
-"prereq": ["m116"],
-"hook": "One artist copied over 50 master paintings with no specific goal, and the only thing he actually learned was to accidentally paint every face like a pin-up girl regardless of gender \u2014 proof that copying itself teaches nothing without a clear question in mind.",
-"whyItMatters": [
-  "Master studies are one of the oldest training methods in art history, going back centuries, and they remain a standard part of professional training today for a simple reason: a finished master painting already contains solved problems in composition, color, and technique that would take much longer to discover through trial and error alone.",
-  "This module also directly connects to the responsible-use principles from Module 115: a master study is a well-established, ethically clear form of learning from another artist's work, but only when it's treated as a labeled study, not represented or sold as original work \u2014 a distinction worth understanding clearly, not just assuming."
-],
-"coreIdea": [
-  "A master study works best with one specific, narrow learning goal chosen in advance \u2014 the design matrix and composition of a piece, its color relationships, or the paint application in one small section \u2014 rather than an unfocused, whole-canvas copy with no particular question in mind.",
-  "Studying the design matrix means identifying the large compositional structures (lead lines, implied lines of action, focal armatures) a master used to guide the eye, often by reducing a painting to a simple abstract diagram of its major shapes before ever touching paint.",
-  "A color study strips away a finished painting's optical detail and blending to find the pure, simplified hue relationships underneath \u2014 comparing a color's temperature and value relative to its neighbors, rather than trying to match one isolated color exactly.",
-  "A small-section study, focusing on just one difficult passage (a face, a fabric fold, a patch of foliage) at a larger scale, is often more valuable than a full-canvas copy, since it lets you slow down and truly understand the construction and paint handling in that one area."
-],
-"mistakes": [
-  "Copying many master paintings with no specific learning goal in mind, which risks absorbing surface habits (a particular artist's face shapes, a particular color scheme) without a real, transferable lesson underneath.",
-  "Trying to match an isolated color exactly instead of comparing its relationship (lighter, darker, warmer, cooler) to the colors around it, which is the judgment that actually transfers to original work.",
-  "Presenting or sharing a master study as if it were an original composition, rather than clearly labeling it as a study (for example, \"Study after [Artist's Name]\") and crediting the source.",
-  "Selling, exhibiting, or marketing a direct copy of a living or recently active artist's specific composition in a way that could suggest it's your own original creation, without checking applicable copyright and reproduction rules.",
-  "Stopping after completing the study itself instead of the more important final step: applying one or two of the specific lessons learned to a genuinely original composition afterward."
-],
-"proTips": [
-  "Before starting a master study, write down the one specific question you want it to answer (how does this artist handle edges? how is this composition's focal point constructed?) so you can evaluate afterward whether you actually learned it.",
-  "When studying color, ask relational questions (is this warmer or cooler, lighter or darker than its neighbor) rather than trying to precisely replicate one isolated swatch out of context.",
-  "Choose a small, specific section to study in depth (a hand, a patch of fabric, a stretch of foliage) rather than defaulting to a full-canvas copy every time \u2014 depth on one passage often teaches more than breadth across a whole piece.",
-  "Always label a shared master study clearly (\"Study after [Artist], [Painting Title]\") and follow up with an original piece that applies one specific lesson from the study to a new subject."
-],
-"practice": {
-  "warmup": "Choose one painting you admire and write down a single, specific learning goal for a study of it before making any marks.",
-  "daily": "Do a quick design-matrix breakdown of a painting's composition, reducing it to simple shapes and lead lines in a rough diagram, without adding any color or detail.",
-  "weekly": "Complete a focused master study of one small section of a painting (not the whole canvas), labeled clearly with the artist and title, focused on one specific technique.",
-  "challenge": "After completing a master study, create an original piece using a different subject that deliberately applies one specific lesson (a value pattern, a limited palette, a compositional structure) from that study."
-},
-"resources": [
-  {"type": "Article", "title": "Some Thoughts on Master Studies", "creator": "Ron Lemen, Muddy Colors", "url": "https://muddycolors.com/2017/12/some-thoughts-on-master-studies/", "why": "A free, first-person account from a working professional illustrator, giving three concrete, focused approaches to master studies instead of unfocused whole-canvas copying.", "summary": "A professional illustrator shares three focused approaches learned from a mentor: studying a painting's design matrix (its compositional armature of lead lines and shapes), studying the pure color relationships underneath a painting's optical blending, and studying just a small section of a canvas in depth to learn specific paint application \u2014 while cautioning that unfocused copying with no clear goal can lead to absorbing surface habits rather than real, transferable lessons.", "verified": true},
-  {"type": "Article", "title": "Let's Talk About Master Copies", "creator": "Miranda Meeks, Muddy Colors", "url": "https://muddycolors.com/2022/01/lets-talk-about-master-copies/", "why": "A free, practical breakdown of how to approach master copies responsibly, including the important distinction between educational study and passing work off as original.", "summary": "Explains that copying for educational purposes is broadly accepted, provided the copy isn't presented as original work and the source artist is credited when known, walks through a practical process for creating a master copy, and notes that copying an image directly for professional client work (rather than personal study) crosses into a different, more serious category.", "verified": true}
-],
-"quiz": [
-  {"q": "Why is it recommended to choose one specific learning goal before starting a master study?", "options": ["It has no real effect on the outcome", "Unfocused copying with no clear goal risks absorbing surface habits (a specific face shape, a particular palette) rather than a real, transferable lesson", "A specific goal is only relevant for traditional media, not digital", "Master studies without a goal always take less time to complete"], "correct": 1, "explain": "One artist's account in the module describes copying over 50 paintings with no specific goal and mainly absorbing surface habits rather than real technique, which is why choosing a focused question in advance matters."},
-  {"q": "What does studying a painting's \"design matrix\" mean?", "options": ["Copying the exact colors used in the painting", "Identifying the large compositional structures, like lead lines and focal armatures, that guide the eye through the piece", "Measuring the physical dimensions of the canvas", "Analyzing only the brand of paint used"], "correct": 1, "explain": "The design matrix refers to a painting's underlying compositional structure \u2014 lead lines, implied lines of action, and focal armatures \u2014 often studied by reducing the painting to a simple abstract diagram of its major shapes."},
-  {"q": "When studying color relationships in a master painting, what should you compare rather than trying to match an isolated color exactly?", "options": ["The exact pixel or paint values with no context", "How a color relates to its neighbors \u2014 whether it's lighter, darker, warmer, or cooler", "Only the most saturated color in the painting", "The color's popularity in modern palettes"], "correct": 1, "explain": "Comparing a color's relationship to its neighbors (relative lightness, warmth) builds the kind of visual judgment that transfers to original work, rather than memorizing one isolated, out-of-context color value."},
-  {"q": "According to the module, what should a master study be clearly labeled as when shared?", "options": ["An entirely original composition with no reference to the source", "A study, crediting the original artist and artwork when known (for example, \"Study after [Artist's Name]\")", "It should never be shared publicly under any circumstances", "The artist's own signature style"], "correct": 1, "explain": "Clearly labeling a master study and crediting the original artist distinguishes educational practice from presenting the work as an original composition, which is an important ethical distinction."},
-  {"q": "What is the recommended final step after completing a master study, according to the module?", "options": ["Simply moving on to a new master study with the same goal", "Applying one or two specific lessons learned from the study to an original composition with a different subject", "Deleting the study once it's finished", "Repeating the exact same study multiple times with no changes"], "correct": 1, "explain": "The greatest value of a master study comes from transferring its lessons into new, original work, applying a specific technique or principle to a different subject rather than the source painting's own composition."}
-],
-"checklist": [
-  "I can choose one specific learning goal before starting a master study.",
-  "I can break down a painting's design matrix into simple compositional shapes.",
-  "I can compare a color's relationship to its neighbors rather than matching it in isolation.",
-  "I can clearly label a master study and apply its lesson to an original piece afterward."
-],
-"nextStep": "You now have a disciplined, focused approach to learning from finished paintings. Module 118 turns to advanced compositing techniques, combining multiple painted and photographic elements into a single cohesive scene at a professional level of polish."
-}
-,
-{
-"id": "m118",
-"plate": 118,
-"title": "Advanced Compositing Techniques",
-"difficulty": "Advanced",
-"studyTime": "18 min",
-"practiceTime": "30 min/day",
-"prereq": ["m117"],
-"hook": "The single biggest giveaway of a fake composite has nothing to do with cutting an edge cleanly \u2014 it's mismatched light, and a professional compositor checks that before touching a mask or a blend mode.",
-"whyItMatters": [
-  "Photobashing (Module 113) introduced combining photo elements into a piece; this module goes deeper into the specific professional techniques \u2014 check layers, layer organization, and systematic light-and-color matching \u2014 that separate an amateur collage from a composite viewers accept as one real scene.",
-  "Compositing pulls together nearly every technical skill from this arc: non-destructive layers and masks (Module 111), blend modes and adjustment layers (Module 112), and photobashing (Module 113) all combine here into one cohesive professional workflow."
-],
-"coreIdea": [
-  "Mismatched lighting is the most common giveaway of a fake composite: your background photo's own lighting is very difficult to change, so the reliable approach is to treat the background as the fixed reference and adjust every added element's light and color to match it, not the other way around.",
-  "\"Check layers\" are a compositor's technique for seeing lighting and color mismatches more clearly: a Black & White adjustment layer over everything strips away color so light-level differences between elements become obvious, and a saturated Solid Color Fill layer set to the Saturation blend mode makes color mismatches easier to spot before you fix them with a clipped Color Balance or Curves layer.",
-  "Clear layer organization (a fixed base image at the bottom, adjustment layers clipped to specific elements in the middle, final detail work on top, each layer clearly named) is what keeps a growing composite manageable and lets you isolate and fix one element's match without disturbing the rest.",
-  "Shadows should be created using a Multiply layer with color sampled from the surface they're cast on, not plain black, and edges should be softened with a small amount of feathering and a low-opacity soft-brush mask rather than pasted in at a hard, sharp edge, since both of these small details matter as much as the big color match."
-],
-"mistakes": [
-  "Trying to change the lighting of the background photo to match an added element, instead of the more reliable approach of adjusting the added element to match the fixed background.",
-  "Judging color and light matches by eye alone in full color, instead of using check layers (black & white, saturation) to isolate exactly where mismatches are happening.",
-  "Leaving composite elements on an unorganized, unlabeled flat layer stack, making it hard to isolate and adjust one element's match without affecting everything else.",
-  "Using plain black for cast shadows in a composite instead of a Multiply layer colored from the surface the shadow falls on.",
-  "Pasting a cut-out element in with a hard, unfeathered edge, which reads as an obvious cutout even if the color and lighting are otherwise well matched."
-],
-"proTips": [
-  "Add a temporary Black & White adjustment layer over your whole composite early on to spot light-level mismatches clearly, then disable it once you've corrected the levels with a clipped Curves or Levels layer.",
-  "Use a saturated Solid Color Fill layer set to Saturation blend mode as a temporary check for color-temperature mismatches, then remove it once a clipped Color Balance layer has corrected the difference.",
-  "Name every layer clearly by its content and purpose (\"subject\", \"bg_replacement\", \"shadow_multiply\") as your composite grows, so you can navigate and isolate elements quickly later.",
-  "Feather a cutout selection by a small amount (2\u20133 pixels) before pasting it in, and use a soft-brush layer mask at low opacity to further blend its edge into the background rather than relying on a hard cutout alone."
-],
-"practice": {
-  "warmup": "Composite one simple cutout element onto a new background, then add a temporary Black & White check layer to see how well their light levels currently match.",
-  "daily": "Take a photobashed piece and add a Multiply shadow layer (colored from the surface, not black) beneath a composited element to ground it more convincingly.",
-  "weekly": "Build a small composite from at least three separate sources, using clearly named, organized layers and both check-layer techniques (black & white and saturation) to match light and color across all of them.",
-  "challenge": "Take a composite you're not fully happy with and diagnose it using check layers first \u2014 identify specifically whether the problem is light level, color temperature, edge softness, or shadow color \u2014 before making any further changes."
-},
-"resources": [
-  {"type": "Video", "title": "How to Match Light & Color for Composites Photoshop | Day 28", "creator": "Aaron Nace (PHLEARN)", "url": "https://www.youtube.com/watch?v=eNnqPKxHnjs", "why": "A free 10-minute lesson teaching the check-layer technique professionals use to match light and color in composites.", "summary": "Introduces check layers: a temporary Black & White adjustment layer to compare light levels between elements, and a solid color fill layer set to Saturation to compare color, then correcting the mismatch with clipped Levels and Color Balance adjustment layers.", "verified": true},
-  {"type": "Article", "title": "Master Photo Manipulation: A Practical Guide to Creating Seamless Composites", "creator": "Kelvin Designs", "url": "https://photoshoptutorial.com/posts/master-photo-manipulation-a-practical-guide-to-creating-seamless-composites/", "why": "A free, practical, first-person walkthrough covering layer organization, cutout technique, feathering, and adjustment-layer color matching for a complete composite workflow.", "summary": "Walks through a complete composite process: choosing a strong, well-lit base image as the fixed reference, organizing and clearly naming layers as the document grows, cutting out elements with a small amount of feathering for a soft rather than hard edge, using layer masks and blend modes (Multiply, Screen, Overlay) for natural integration, and finishing with clipped Curves and Color Balance adjustment layers plus Clone Stamp cleanup for blend-line artifacts.", "verified": true}
-],
-"quiz": [
-  {"q": "Why is the background photo generally treated as the fixed reference in a composite, rather than trying to change its lighting to match an added element?", "options": ["Background lighting has no effect on how a composite reads", "A background's own lighting is very difficult to change convincingly, so it's more reliable to adjust the added element to match it instead", "Background images are always higher resolution than added elements", "There is no real difference between adjusting the background or the added element"], "correct": 1, "explain": "Since a photographed background's lighting is hard to alter convincingly, the reliable workflow is to treat it as fixed and adjust the color and light of any added element to match it."},
-  {"q": "What do a Black & White adjustment layer and a saturated Solid Color Fill layer (set to Saturation blend mode) function as in compositing?", "options": ["Permanent final effects applied to the finished image", "Temporary \"check layers\" used to reveal light-level and color-temperature mismatches before correcting them", "Tools exclusively for adjusting file resolution", "Layers that permanently delete color data from the image"], "correct": 1, "explain": "These are used as temporary diagnostic tools: the Black & White layer isolates light-level differences, and the saturated Saturation-blend layer isolates color-temperature differences, both removed once the actual mismatch is corrected with other adjustment layers."},
-  {"q": "What color should be used for a composited element's cast shadow, according to the module?", "options": ["Pure black, regardless of the surface", "A color sampled from the surface the shadow falls on, applied via a Multiply layer", "Pure white with reduced opacity", "The exact same color as the element casting the shadow"], "correct": 1, "explain": "Shadows built from a Multiply layer colored from the surface they're cast on look more natural and grounded than a shadow made from plain black."},
-  {"q": "Why is clear, organized layer naming recommended as a composite grows in complexity?", "options": ["It has no functional benefit, only aesthetic preference", "It lets you quickly isolate and adjust a specific element's light/color match without affecting the rest of the composite", "Layer names are required by file format specifications", "Organized naming automatically improves image resolution"], "correct": 1, "explain": "Clearly named, organized layers make it much easier to navigate a growing composite and isolate one element to adjust without disturbing everything else."},
-  {"q": "Why is feathering a cutout selection before pasting it into a composite recommended?", "options": ["Feathering has no visible effect on the final result", "A small amount of feathering softens the edge so the element blends naturally rather than reading as an obvious hard-edged cutout", "Feathering is only relevant for text layers, not photo elements", "It permanently changes the element's color"], "correct": 1, "explain": "A small amount of feathering (a few pixels) softens a cutout's edge, helping it blend more naturally into the new scene instead of looking sharply pasted-in, even if the color and lighting are otherwise well matched."}
-],
-"checklist": [
-  "I can use a Black & White check layer to identify light-level mismatches in a composite.",
-  "I can use a saturated Saturation-blend check layer to identify color-temperature mismatches.",
-  "I can create a Multiply shadow layer colored from the surface it falls on, rather than using plain black.",
-  "I can organize and clearly name layers in a growing composite so elements can be isolated and adjusted individually."
-],
-"nextStep": "You now have a professional-level compositing toolkit. Module 119 shifts from technique to identity \u2014 personal style development, how the choices you've been making across this entire course start to combine into a recognizable artistic voice."
-}
-,
-{
-"id": "m119",
-"plate": 119,
-"title": "Personal Style Development",
-"difficulty": "Advanced",
-"studyTime": "16 min",
-"practiceTime": "30\u201345 min/day",
-"prereq": ["m118"],
-"hook": "Nobody wakes up with a style. Style is what is left over after you have made enough deliberate choices that you can finally name them, and that is something you can build on purpose.",
-"whyItMatters": [
-  "Across this arc you learned to copy, bash, composite and speed-paint your way through a lot of techniques. At some point a portfolio needs to look like it came from one person, and that consistency is style: the recurring choices in color, shape, line and subject that make your work recognizable.",
-  "This also connects directly to the ethics you studied in Module 115 and the master-study discipline from Module 117: the sustainable way to develop a style is to analyze what you admire, understand why it works, and rebuild those elements around your own subjects, not to imitate one living artist's surface look."
-],
-"coreIdea": [
-  "Style is built, not discovered by accident. A practical method is to pick three artists or styles you truly love, choose one favorite image for each, and write down the single artistic element in each image that grabs you first, why it grabs you, and how the artist achieved it, in specific terms like line quality, color relationships or light-and-dark structure.",
-  "The next step is to combine those analyzed elements, not the subject matter, into an original piece on the subject you draw most often. Because you chose the elements deliberately, the result is familiar enough to read as part of a tradition and different enough to be yours.",
-  "Style also emerges from the medium and subjects you commit to. Settle on a medium that suits how you work, play to your real strengths and interests (a landscape painter who is weak at figures can lean into landscapes rather than fight it), and keep a reference collection for personal inspiration only, respecting copyright.",
-  "A series is one of the fastest ways to see your own style. Producing a run of small pieces, each informing the next and each small enough to finish in a couple of days, lets you carry forward whatever worked and quickly reveals which choices keep recurring in your own hand."
-],
-"mistakes": [
-  "Copying one living artist's surface look wholesale and calling it a style, instead of analyzing why their work works and rebuilding those elements around your own subjects.",
-  "Writing vague observations like 'I like how they draw faces' instead of specific ones about line weight, color relationships, edge handling or lighting.",
-  "Combining the subject matter of your favorite artists rather than their artistic elements, which produces a mashup instead of a style.",
-  "Trying to force a style before you have enough finished work to see what keeps recurring, instead of making a body of pieces first and studying them afterward.",
-  "Boxing yourself in too early. Style evolves as your skills grow, so treating it as fixed can stop you from trying things that would improve it."
-],
-"proTips": [
-  "Write at least a full paragraph per reference image. The more specific the observation, the more usable it is when you rebuild the element in your own work.",
-  "Apply the extracted elements to the subject you already draw most, so you can see clearly what changed rather than learning a new subject and a new style at the same time.",
-  "Work in small, fast series of related pieces. Each piece should carry forward one thing that worked from the previous one.",
-  "After a dozen or so finished pieces, lay them side by side and list what repeats: colors, textures, shapes, themes. Those repeats are your style, and the next step is to push them further."
-],
-"practice": {
-  "warmup": "List three artists or styles you love, pick one favorite image for each, and write one specific paragraph per image about the single element that makes it work for you.",
-  "daily": "Redraw a subject you draw often, using one analyzed element from one of your three references, such as its line quality or its color relationships.",
-  "weekly": "Create a series of five small pieces on one subject, each informed by the last, then compare them to see which choices keep appearing.",
-  "challenge": "Combine one element from each of your three references into a single original piece on your favorite subject, then ask a friend which parts feel most like you."
-},
-"resources": [
-  {"type": "Article", "title": "4 Steps to Your Own Signature Art Style", "creator": "Copic Marker Tutorials", "url": "https://copicmarkertutorials.com/how-to-find-your-own-personal-drawing-style/", "why": "A free, step-by-step method for building a style on purpose by analyzing what you love and recombining the elements into your own subject matter.", "summary": "Lays out a four-step process: choose three artists or styles you love, pick one representative image for each, analyze the single artistic element that makes each image special by asking what grabs you, why, and how it was done, then combine those elements (not the subject matter) into an original drawing of your most-drawn subject. The author argues that analyzing rather than simply copying is what lets you deconstruct and rebuild an element in new ways.", "verified": true},
-  {"type": "Article", "title": "How to find your own artistic style", "creator": "Mark Harrison, Artists & Illustrators", "url": "https://www.artistsandillustrators.co.uk/how-to/art-theory/how-to-find-your-own-artistic-style/", "why": "A free, first-person account from a working painter covering medium, influences, strengths, inspiration and the value of working in a small series.", "summary": "A working painter shares five ways to develop a recognizable style: settle on a medium that suits how you work, study other artists but adapt only the aspects you find useful, play to your real strengths and interests, keep a personal inspiration collection while respecting copyright, and confront the blank canvas by painting a series of small pieces where each one informs the next.", "verified": true}
-],
-"quiz": [
-  {"q": "In the three-artist method, what should you do with each chosen reference image?", "options": ["Trace it exactly to learn the artist's hand", "Copy its subject matter into your own work", "Identify the single artistic element that makes it work and analyze what, why and how", "Blur it until only the colors remain"], "correct": 2, "explain": "The method asks you to find the one standout artistic element in each image and analyze what grabs you, why it grabs you, and how it was achieved, so you can rebuild that element yourself."},
-  {"q": "What should you combine from your references when building an original piece?", "options": ["The artistic elements you identified, applied to your own subject", "Their subject matter", "Their signatures", "Whole compositions pasted together"], "correct": 0, "explain": "You combine the analyzed artistic elements (line quality, color relationships, light structure) into a subject you draw often, not the subjects themselves, so the result stays yours."},
-  {"q": "Why is working in a series of small pieces useful for finding style?", "options": ["Small pieces are always better art", "Each piece can carry forward what worked in the last one, and recurring choices quickly become visible", "It removes the need to practice fundamentals", "It guarantees a unique style by the third piece"], "correct": 1, "explain": "A series of small, quickly finished pieces lets each one inform the next, and the choices that keep repeating show you what is becoming your style."},
-  {"q": "How does this module connect style development to Module 115's ethics guidance?", "options": ["Style development requires using AI tools", "It encourages mimicking one living artist as closely as possible", "Ethics only apply to commercial work", "It builds style by analyzing what you admire and rebuilding the elements around your own subjects, rather than imitating one living artist's look"], "correct": 3, "explain": "Analyzing and recombining elements is the sustainable, ethical route to style, in line with the earlier warning against mimicking a specific living artist's distinctive style for commercial use."},
-  {"q": "After you have finished a dozen or so pieces, what is the recommended way to see your style?", "options": ["Delete the weakest pieces", "Lay them side by side and list the colors, textures, shapes and themes that keep repeating", "Ask software to label your style", "Start over in a different medium"], "correct": 1, "explain": "Recurring elements across a body of work are what make up a style, so comparing finished pieces and listing what repeats shows you what to push further."}
-],
-"checklist": [
-  "I can pick three references I love and name the one element in each that makes it work, specifically.",
-  "I can combine analyzed elements, not subject matter, into an original piece.",
-  "I can use a small series of pieces to see which of my choices keep recurring.",
-  "I can explain why analyzing and rebuilding elements is a more sustainable way to build style than imitating one living artist."
-],
-"nextStep": "You now have a method for turning scattered technique into a recognizable voice. Module 120 is the capstone of Advanced Digital Art: one finished piece that combines non-destructive workflow, color grading, photobashing or 3D assistance, compositing and your emerging style."
-}
-,
-{
-"id": "m120",
-"plate": 120,
-"title": "Capstone: A Portfolio-Grade Digital Piece",
-"difficulty": "Advanced",
-"studyTime": "15 min",
-"practiceTime": "4\u20138 hours (project)",
-"prereq": ["m119"],
-"hook": "You now have a non-destructive file, a color grade, composite and 3D tricks, speed discipline, master-study habits and the beginnings of a style. The capstone asks one question: can you use them together on one piece without losing control of any of them?",
-"whyItMatters": [
-  "This closes Advanced Digital Art the same way Modules 82 and 100 closed their arcs: no new theory, just one finished piece that forces every skill to cooperate. Portfolios are built from finished work, and working under real scope and time limits is the skill studios actually hire for.",
-  "It is also the clearest diagnostic you will get. Isolated exercises hide weak spots; a full piece exposes whichever skill from Modules 111\u2013119 is currently holding you back, which tells you exactly what to train next."
-],
-"coreIdea": [
-  "Start with a one-sentence brief and a realistic scope. Choose a piece you can finish with real care in the time you have, then plan backward from that, because an over-ambitious scope is the most common reason capstone pieces stall before lighting and finishing.",
-  "Build the file non-destructively from the first layer (Module 111): Smart Objects for imported elements, adjustment layers for tone and color, masks instead of the eraser, and clearly named layers so any single decision can be revisited late in the process.",
-  "Use the speed tools deliberately and disclose them honestly. Decide whether photobashing (113), a 3D blockout (114) or neither fits the brief, keep your use of any AI assistance in line with the disclosure practices from Module 115, and paint over everything so the lighting and edges are yours.",
-  "Match light and color using check layers (Module 118) before polishing detail, grade the whole piece with stacked adjustment layers (Module 112), and let your own recurring choices from Module 119 steer the final look rather than copying any single reference."
-],
-"mistakes": [
-  "Choosing a scope so large that mood, lighting and finishing get rushed or skipped.",
-  "Flattening or rasterizing early, which makes any late revision expensive.",
-  "Polishing detail before light and color are matched, so effort goes into elements that later have to change.",
-  "Using photo, 3D or AI-assisted elements without adjusting them to the scene's light, or without being clear about what was used.",
-  "Treating the finished piece as the end of the process rather than using it to identify your weakest skill."
-],
-"proTips": [
-  "Write the brief and your time budget at the top of the working file, and check them before each session to catch scope creep early.",
-  "Save a thumbnail spread and one early block-in alongside the finished piece. Showing process is part of what makes a portfolio piece credible.",
-  "Run the check-layer routine (black and white, then saturation) at least twice: once at block-in and once before final polish.",
-  "When you finish, score the piece against the checklists from Modules 111\u2013119 and pick one weakest area to train deliberately next."
-],
-"practice": {
-  "warmup": "Write a one-sentence brief and a time budget for your capstone, and list which techniques from Modules 111\u2013119 it will use and which it will deliberately not use.",
-  "daily": "Work one stage per session: thumbnails and block-in, then composite or 3D base, then light and color matching, then grade and finishing.",
-  "weekly": "Complete one finished piece with a non-destructive layered file, keeping your thumbnails, early block-in and layered working file.",
-  "challenge": "Score the finished piece honestly against each checklist from Modules 111\u2013119, name your single weakest skill, and write one specific exercise you will do next to improve it."
-},
-"resources": [
-  {"type": "Article", "title": "Tips for Creating a Piece for Your Environment Art Portfolio Within Scope and Time", "creator": "Joyce Jiao, The Rookies", "url": "https://discover.therookies.co/2023/08/28/tips-for-creating-a-piece-for-your-environment-art-portfolio-within-scope-and-time/", "why": "A free first-person breakdown of taking one portfolio piece from planning to finish under real scope and time limits.", "summary": "A working artist walks through a full portfolio project: analyzing the concept, gathering reference, blocking out early, building and refining assets, and finishing with realistic atmosphere, ending with practical advice on keeping scope and energy under control inside a tight timeframe.", "verified": true},
-  {"type": "Video", "title": "How to Match Light & Color for Composites Photoshop | Day 28", "creator": "Aaron Nace (PHLEARN)", "url": "https://www.youtube.com/watch?v=eNnqPKxHnjs", "why": "A free 10-minute lesson on the check-layer technique that matters most when a capstone piece combines elements from different sources.", "summary": "Introduces check layers: a temporary Black & White adjustment layer to compare light levels between elements, and a solid color fill layer set to Saturation to compare color, then correcting the mismatch with clipped Levels and Color Balance adjustment layers.", "verified": true}
-],
-"quiz": [
-  {"q": "What should a capstone start from?", "options": ["The most detailed rendering you can attempt", "A one-sentence brief and a realistic scope for your time budget", "A flattened copy of an old piece", "A random preset"], "correct": 1, "explain": "A clear brief and a scope you can actually finish keep every later decision purposeful and prevent the common failure of running out of time before lighting and finishing."},
-  {"q": "Why build the file non-destructively from the beginning?", "options": ["It makes the file smaller", "So any decision can be revised late without rebuilding the work", "It is required for exporting", "It removes the need for masks"], "correct": 1, "explain": "Smart Objects, adjustment layers and masks keep every decision editable, which matters because revisions are normal in real production."},
-  {"q": "What is the right order for polishing a composited piece?", "options": ["Fine detail first, then match light and color", "Match light and color with check layers first, then polish detail", "Export first, then adjust", "Add texture before any color work"], "correct": 1, "explain": "Light and color mismatches are the biggest giveaway of a fake composite, so they must be solved before detail effort is spent."},
-  {"q": "How should AI assistance or photo and 3D elements be handled in the capstone?", "options": ["Used silently with no adjustment", "Painted over and matched to the scene, with any AI use disclosed in line with Module 115", "Avoided entirely in every case", "Left untouched for speed"], "correct": 1, "explain": "Any imported element should be integrated by painting and matching light, and any AI-assisted use should follow the disclosure practices discussed earlier."},
-  {"q": "What is the best use of the finished capstone afterward?", "options": ["Move on without reflection", "Score it against Modules 111\u2013119's checklists and pick one weakest skill to train", "Compare it only to other people's finished pieces", "Delete the layered file"], "correct": 1, "explain": "Checking the finished piece against each checklist turns it into a diagnostic that tells you exactly what to practice next."}
-],
-"checklist": [
-  "I can write a one-sentence brief and a realistic scope before starting.",
-  "I can keep a piece fully non-destructive from first layer to final grade.",
-  "I can match light and color across sources using check layers before polishing.",
-  "I can score a finished piece against the arc's checklists and name my weakest skill."
-],
-"nextStep": "You have completed Advanced Digital Art: from a non-destructive foundation through grading, photobashing, 3D assistance, speed, master studies, compositing and the start of a personal style. These skills carry forward into Professional Production, where they get applied to specialization pipelines like comics, manga, webtoon and game art."
-}
-]},
-{id:'professional-production', title:'Professional Production & Specializations', status:'soon', order:11,
-    desc:'Editorial illustration, comics, manga, webtoon, visual development, concept art, game art, animation pre-production, print production, and client work.',
-    moduleCount:11, sample:['Comic Art','Manga','Webtoon','Concept Art','Game Art Pipeline','Animation Pre-Production'],
-    modules:[
-{"id": "m121", "plate": 121, "title": "Editorial Illustration", "difficulty": "Intermediate", "studyTime": "18 min", "practiceTime": "30\u201345 min/day", "prereq": ["m120"], "hook": "An editorial illustration has about two seconds to land an idea that an entire article needs paragraphs to explain \u2014 and an art director is waiting on it by tomorrow.", "whyItMatters": ["The first three arcs built craft. Professional production is where that craft meets a client: a brief, an audience, a deadline and a format you do not control. Editorial illustration is the cleanest place to learn this, because the job is almost entirely about communicating an idea quickly and clearly.", "It is also a common route into paid work. Magazines, newspapers and online publications constantly need images for articles, and editors are buying a thought process, not just a pretty picture, which is why showing how you got from brief to final matters as much as the final art itself."], "coreIdea": ["Editorial illustration serves a text. It can explain a complex concept through a visual metaphor, take a clear point of view on an issue, or give emotional weight to dry, data-heavy material. It accompanies the article instead of competing with it.", "The professional process runs in order: read the brief (message, audience, tone, size, deadline), research the text and any symbols you plan to use, sketch several quick thumbnails, choose a style and technique that serves the message, then deliver clean files with clear specifications.", "Idea comes before style. A strong editorial piece makes one point legibly; if the image cannot be understood within a couple of seconds at the size it will actually be seen, it has failed, no matter how well it is rendered.", "Professional delivery is part of the craft: layered, tidy files, the right resolution and color profile for the destination, bleed where the image runs to the page edge, and an honest label on any portfolio piece that was a personal project rather than a commission."], "mistakes": ["Illustrating only from the headline or a summary and missing the nuance that lives in a middle paragraph of the article.", "Offering three variations of the same idea instead of genuinely different conceptual proposals for the art director to choose from.", "Using a metaphor that is clear to you but cryptic to a reader, without testing it on someone outside the project first.", "Delivering art meant to bleed without any extra margin, so the trim leaves a white edge.", "Choosing a style because it is your habit instead of because it suits the message, the publication and the time available."], "proTips": ["Read the whole article before you draw. The best visual hook is often in a nuance a summary leaves out.", "Aim for three to five thumbnails that are different concepts, then let the art director pick the direction before you invest in finish.", "Shrink your favorite sketch to phone size and to a magazine column width before committing. If information disappears, simplify.", "Practice with simulated assignments: take a current article, set a two-hour deadline, and solve it visually from reading to delivery."], "practice": {"warmup": "Take one news headline and write five different visual metaphors for it in words only, then circle the one a stranger would understand fastest.", "daily": "Read a short article and produce three thumbnails that are three different concepts, each small enough to judge at a glance.", "weekly": "Complete one simulated editorial assignment on a two-hour clock, delivering a tidy layered file plus a short note on the brief, the audience and the central idea.", "challenge": "Illustrate the same article twice for two very different publications (for example a serious news magazine and a playful online outlet), changing tone and style but keeping the same core idea."}, "resources": [{"type": "Video", "title": "What Is Editorial Illustration?", "creator": "Mikey Burton (Skillshare)", "url": "https://www.youtube.com/watch?v=7OQFk1woNMA", "why": "A free 5-minute video from a working editorial illustrator on what the job is and how a commission moves from preliminary sketches to final art.", "summary": "Illustrator Mikey Burton explains what editorial illustration is (adding visual interest to an article that might otherwise be overlooked), tells how his first magazine commission came about, and walks through his process from collaborating on preliminary sketches with an art director to delivering the final piece.", "verified": true}, {"type": "Video", "title": "Editorial Illustration Project for VICE Magazine in 4 mins - Start to Finish", "creator": "Paulina Almira", "url": "https://www.youtube.com/watch?v=KTb6-LyHhQc", "why": "A free 4-minute walkthrough of a real magazine commission, from reading the brief to the finished pieces.", "summary": "Paulina Almira walks through her process for editorial illustrations made for a VICE Magazine article, covering the brief, her brainstorming process, her illustration process and the final outcome.", "verified": true}, {"type": "Article", "title": "Editorial illustration: what is editorial illustration, formats and examples?", "creator": "UDIT (University of Design, Innovation and Technology)", "url": "https://www.udit.es/en/ilustracion-editorial-que-es-formatos-y-ejemplos/", "why": "A free, thorough guide that follows a commission from brief to delivery and lists the common mistakes beginners make.", "summary": "Describes what editorial illustration is for (explaining complex ideas through visual metaphor, taking a point of view, humanizing data), then follows the process from brief, research and thumbnails to style and technique, with practical advice such as submitting three to five different conceptual proposals, testing images at their real viewing size, adding bleed, delivering clean files with specifications, and building a portfolio that shows process.", "verified": true}, {"type": "Article", "title": "8 expert ways to commission better illustration", "creator": "Creative Bloq", "url": "https://www.creativebloq.com/advice/8-expert-ways-to-commission-better-illustration", "why": "A free look at a commission from the art director's side of the table, which helps an illustrator understand what a good brief and good feedback look like.", "summary": "Written for designers who hire illustrators, it covers choosing the right style, considering composition early, setting a detailed brief, discussing references, brainstorming concepts together, collaborating on layouts and giving direction through annotations, which shows an illustrator what an art director is trying to achieve at each step.", "verified": true}], "quiz": [{"q": "What is editorial illustration mainly for?", "options": ["Replacing the text of an article entirely", "Decoration that should be as eye-catching as possible regardless of the article", "Serving the text by explaining an idea, taking a point of view or giving emotional weight to dry material", "Showing off the illustrator's personal style"], "correct": 2, "explain": "Editorial illustration accompanies an article and helps the reader understand or feel it, rather than competing with it or being decoration."}, {"q": "What should you submit to an art director at the thumbnail stage?", "options": ["Three to five genuinely different conceptual proposals", "One finished piece only", "Five small variations of the same idea", "A moodboard with no sketches"], "correct": 0, "explain": "Different concepts give the art director a real choice; variations of one idea do not, and the thumbnail stage is where a piece is won or lost."}, {"q": "Why test your visual metaphor on someone outside the project?", "options": ["It is required by every publication", "It makes the file smaller", "It removes the need for research", "A metaphor that is obvious to you can be cryptic to a reader, and editorial illustration has to communicate quickly"], "correct": 3, "explain": "You know the article too well to judge how clear your metaphor is, so an outside viewer is the fastest honest test."}, {"q": "What common beginner mistake does bleed address?", "options": ["Using too many colors", "Art that runs to the page edge being trimmed and leaving a white border when no extra margin was delivered", "Choosing the wrong brush", "Delivering the file too early"], "correct": 1, "explain": "Art meant to run to the edge needs extra image beyond the trim line, commonly a few millimeters, or the cut can leave a white border."}, {"q": "Why show your process alongside final editorial pieces in a portfolio?", "options": ["It makes the portfolio longer", "Editors are buying how you analyze a text and reach an idea, not just a pretty finished image", "Process work is required to win contests", "It hides weak finished pieces"], "correct": 1, "explain": "Showing the path from brief to sketch to final proves you can think conceptually, which is what an editor is hiring for."}], "checklist": ["I can explain what an editorial illustration is for in terms of the article it serves.", "I can move through brief, research, thumbnails, style and delivery in order.", "I can produce several genuinely different concepts instead of variations on one.", "I can prepare a clean delivery with the right size, color profile and bleed for the destination."], "nextStep": "You can now turn a written brief into a single clear image. Module 122 moves from one image to sequential storytelling: comics, page layout and panel flow."}
-,
-{"id": "m122", "plate": 122, "title": "Comics: Page Layout & Panel Flow", "difficulty": "Intermediate", "studyTime": "18 min", "practiceTime": "30\u201345 min/day", "prereq": ["m121"], "hook": "Before anyone reads a single word balloon, their eye has already started travelling across your page, and your panel layout is the only thing deciding where it goes.", "whyItMatters": ["Editorial illustration (Module 121) was one image doing one job. Comics ask the same clarity from many images in sequence, and the page layout is what turns separate drawings into a story that reads in the right order at the right speed.", "Layout is also one of the most transferable professional skills in this arc. The same thinking about reading order, grouping and pacing carries over to manga, webtoon and storyboards in the modules that follow."], "coreIdea": ["Western comics are read in a Z pattern: left to right along a row, then back to the left and down to the next row. Panels are read one at a time like words, and rows work like sentences. Manga mirrors this and reads right to left. Whichever tradition you work in, the page has to be designed so readers do not need an explanation of the order.", "Space groups and separates panels. Panels placed closer together read as a group, a large gap separates them, and overlapping panels act as a bridge that suggests reading them together. Keeping gutters the same size across a page makes the next panel easy to find, so change them only on purpose.", "Panel size and count control pacing. Large panels slow the reader down and suit new scenes and big reveals, narrow panels pull the eye through quickly and build tension, a run of similarly sized panels creates a steady rhythm (the idea behind six-, nine- and twelve-panel grids), and varied sizes make a page feel more dynamic or chaotic.", "Design the page with thumbnails first. Quick small sketches let you test panel arrangement and reading order before any finished drawing, and the same planning covers word balloons: place the first speaker toward the left so balloon tails do not cross, and avoid balloon placements that make the eye bounce back and forth."], "mistakes": ["Breaking the natural reading order without giving the reader a clear path, so the eye jumps to the wrong panel.", "Letting a sound effect, a pointing arm or another strong tangent lead the eye to a different panel than the one you want read next.", "Using panels of identical size on every page, which produces a flat, metronome rhythm with no emphasis.", "Changing gutter widths at random instead of using them deliberately to group or separate panels.", "Relying on panel numbers or arrows to explain the order instead of designing a page that implies it."], "proTips": ["Thumbnail the whole page quickly in several versions before committing to one, and judge each by how clearly it reads, not how it looks.", "Use gutter size as a tool: tighten the gap between panels that belong together and widen it where you want a break.", "Use one large panel to reset the pacing when a new scene begins or when something important is revealed.", "Trace the reading path over your thumbnail with arrows. If the path loops back or jumps unexpectedly, adjust panel placement, eyelines or balloons until it flows."], "practice": {"warmup": "Take a published comic page and draw the reading path over it with arrows, noting which gutters, overlaps, eyelines or balloons guide you from panel to panel.", "daily": "Thumbnail the same six-beat scene five times using different panel sizes and counts, then rank them by how clearly they read.", "weekly": "Design one full comic page from thumbnail to rough, placing word balloons in reading order, then ask someone to read it aloud and note where they hesitate.", "challenge": "Lay out the same short scene as a steady nine-panel grid and again as a page with varied panel sizes, and write one sentence on how the pacing changes."}, "resources": [{"type": "Video", "title": "Mastering Panel Composition", "creator": "Aaron Conley (Proko)", "url": "https://www.youtube.com/watch?v=sSecXc1Xy7E", "why": "A free 9-minute lesson from a working comic artist on how different panel arrangements change storytelling.", "summary": "Aaron Conley looks at how different panel arrangements affect storytelling, and stresses quickly sketching both full character shots and detailed backgrounds to set the tone and context of a comic page.", "verified": true}, {"type": "Video", "title": "How to draw a comic page layout", "creator": "Walter Ostlie", "url": "https://www.youtube.com/watch?v=iogOdjuWdMQ", "why": "A free 15-minute beginner walkthrough of laying out a comic page, with quick tips for first layouts and storyboards.", "summary": "Walter Ostlie gives quick tips for drawing your first comic page layouts or storyboards, covering panels, reading order and balloon placement.", "verified": true}, {"type": "Article", "title": "Flow, & the Eyelines!", "creator": "salgoodsam.com", "url": "https://salgoodsam.com/mc/flow-the-eyelines/", "why": "A free, detailed look at how readers actually move through a page, with worked examples of what confuses them.", "summary": "Explains reading flow in comics, including left-to-right Z reading and right-to-left manga, how gutters and margins work, how large gaps group panels while overlaps bridge them, how eyelines, tangents and word balloons can lead or mislead the eye, and why a page should imply its reading order instead of relying on numbered panels.", "verified": true}, {"type": "Article", "title": "Page Composition", "creator": "Evan J. Waterman", "url": "https://evanjwaterman.com/guide/drawing/page-composition/", "why": "A free, practical checklist for page layout, from thumbnails to pacing.", "summary": "Starts with thumbnails as the first step of page design, then gives practical rules: keep a natural reading order, use smaller gutters for panels read together, keep gutters consistent, vary panel structure without overusing any one trick, use large panels to slow the reader and narrow panels to build tension, and use borderless panels for emphasis.", "verified": true}], "quiz": [{"q": "How are Western comic pages normally read?", "options": ["Right to left along each row", "Bottom to top", "In a Z pattern: left to right along a row, then down to the next row", "In whatever order the numbers suggest"], "correct": 2, "explain": "Western readers move left to right along each row and then back to the left and down; manga mirrors this and reads right to left."}, {"q": "What does a noticeably larger gap between two panels usually do?", "options": ["It groups them with the panels closest to them and separates them from the rest", "It makes the panels read faster", "It forces the reader to read in reverse", "Nothing; gutter size has no effect"], "correct": 0, "explain": "Space groups and separates panels. A large gap splits a page into clusters, while smaller gaps tell the eye which panels belong together."}, {"q": "What is a large panel typically used for in page pacing?", "options": ["Hiding mistakes in the drawing", "Speeding the reader up", "Replacing the need for thumbnails", "Slowing the reader down, for example to establish a new scene or deliver a major reveal"], "correct": 3, "explain": "Big panels take longer to read, so they hold a moment, reset the pacing for a new scene, or emphasize a climactic reveal."}, {"q": "Why is numbering panels considered a weaker solution than good layout?", "options": ["Numbers are too small to see", "A well-designed page implies its reading order without needing to explain it", "Numbers are illegal in published comics", "It makes gutters wider"], "correct": 1, "explain": "If readers need numbers to know the order, the layout is not guiding the eye by itself; the goal is a page that reads correctly without explanation."}, {"q": "What is the recommended first step when designing a comic page?", "options": ["Final inking", "Lettering every balloon", "Coloring", "Quick thumbnails to test panel arrangement and reading order"], "correct": 3, "explain": "Thumbnails let you try many arrangements fast and see what works before spending time on finished drawing."}], "checklist": ["I can trace the reading path of a comic page and explain what guides the eye.", "I can use gutter size and overlaps to group or separate panels on purpose.", "I can use panel size and count to control the pacing of a page.", "I can thumbnail a page and place word balloons so they read in the right order."], "nextStep": "You can now lay out a page so it reads in the right order at the right speed. Module 123 turns to the other half of making comics work across many pages: keeping characters consistent and lettering them clearly."}
-,
-{"id": "m123", "plate": 123, "title": "Comics: Character Consistency & Lettering", "difficulty": "Intermediate", "studyTime": "20 min", "practiceTime": "30\u201345 min/day", "prereq": ["m122"], "hook": "Bad lettering can make a good comic look amateur, and a hero whose face changes from panel to panel makes readers stop trusting the story. Both are fixable with a system.", "whyItMatters": ["Page layout (Module 122) tells readers where to look next. Consistent characters and clean lettering are what keep them oriented once they get there, across panels, pages and entire issues.", "Both are also real professional specialties. Studios rely on model sheets so that several artists can draw one character the same way, and in mainstream comics lettering is its own job with its own conventions that a letterer is expected to spot and fix in other people's scripts."], "coreIdea": ["Character consistency is built with a reference system, not memory. A turnaround or model sheet shows the character from several views (commonly front, side, three-quarter and back, with more views for animation), drawn on shared guidelines so measurements match, with every design detail and a color palette recorded. An expression sheet adds the face in different moods.", "Simple, repeatable shapes and proportions keep a character recognizable from any angle and even with exaggerated expressions. Drawing the character often is what makes the design stick, so keep it simple enough to draw without effort, and accept that a design can evolve over the years.", "Lettering has its own grammar. A standard balloon tail points to the speaker's mouth as if an invisible line continued to the face, the crossbar I is for the pronoun I and abbreviations, a double dash marks interrupted speech while an ellipsis marks speech trailing off, and captions, thought balloons, burst balloons and radio balloons each have established forms.", "Fit the text to the art. Butting a balloon against a panel border saves space, overlapping a border is usually a last resort, and balloons or sound effects that brush against other elements create tangents that should be avoided because they distract the eye."], "mistakes": ["Redrawing a character from memory every time instead of working from a model sheet.", "Packing a design with so many details that it becomes slow to draw and easy to get wrong.", "Using the crossbar I for every capital I, which is one of the most common amateur lettering mistakes.", "Pointing balloon tails at a hand or a leg instead of the speaker's mouth.", "Treating the double dash and the ellipsis as interchangeable, or writing more than three periods in an ellipsis."], "proTips": ["Build a turnaround with matching guidelines, an expression sheet and a color palette before you start your pages, and keep it open while you draw.", "Draw your character slowly turning from front to back across several quick sketches so you learn how the specific features move in each angle.", "Check every balloon tail by imagining the invisible line from the end of the tail to the speaker's mouth.", "Before finalizing a page, scan it for tangents where a balloon or sound effect just touches another line, and nudge it to either overlap clearly or clear the line."], "practice": {"warmup": "Draw one character in front, side, three-quarter and back views on shared guidelines, then check that the eyes, nose and key details sit at the same heights in every view.", "daily": "Draw your character from memory in one pose, then compare it with your model sheet and note exactly what drifted.", "weekly": "Letter one comic page by hand or digitally using correct tails, a double dash for an interruption, a three-dot ellipsis, a caption and a sound effect, then read the page aloud to check the order.", "challenge": "Give your model sheet to a friend and ask them to draw the character in a new pose, then compare their drawing to yours and fix whatever the sheet failed to explain."}, "resources": [{"type": "Video", "title": "DRAWING YOUR OC THE SAME EVERY TIME [Making Model Sheets for Animation and Comics]", "creator": "LavenderTowne", "url": "https://www.youtube.com/watch?v=sIk_LRhuVGE", "why": "A free 15-minute walkthrough of making a model sheet so you can draw the same character again and again.", "summary": "Shows how she makes a model sheet in order to draw her characters over and over consistently without them looking off, including the turnaround views and color.", "verified": true}, {"type": "Video", "title": "How To Draw Any Character Consistently From Every Angle | Schoolism Lecture", "creator": "Wouter Tulp (Schoolism)", "url": "https://www.youtube.com/watch?v=VJHD37nIqvs", "why": "A free lesson from a character designer on keeping a design recognizable from every angle.", "summary": "Schoolism instructor Wouter Tulp explains his process for keeping a character design consistent and recognizable from different angles, even with exaggerated expressions, with a focus on shapes and proportions.", "verified": true}, {"type": "Video", "title": "Top 5 Lettering Rules in Comic Books", "creator": "Walter Ostlie", "url": "https://www.youtube.com/watch?v=42dywAFsJIw", "why": "A free 6-minute video of simple lettering rules that make comics easier to read and look more professional.", "summary": "Walter Ostlie shares simple comic lettering guidelines that make text easier to read and look more professional, covering word balloons and their tails, fonts and the common crossbar-I mistake.", "verified": true}, {"type": "Article", "title": "Comic Book Grammar & Tradition", "creator": "Blambot", "url": "https://blambot.com/pages/comic-book-grammar-tradition", "why": "A free reference written by a professional letterer covering the conventions of comic lettering.", "summary": "A professional letterer's reference to comic lettering conventions: balloon tails pointing to the mouth, the four types of captions, the crossbar I rule, double dash versus ellipsis, burst, radio, wavy and thought balloons, whispering, sound effects, tangents, and how butting balloons against borders saves space.", "verified": true}, {"type": "Article", "title": "How To Draw Your Character Consistently", "creator": "Patricia Caldeira (Don Corgi)", "url": "https://doncorgi.com/blog/how-to-draw-your-character-consistently/", "why": "A free, practical guide to turnarounds, expression sheets and practice habits for keeping a character on model.", "summary": "Recommends keeping a character consistent with a turnaround (usually four views, or eight for animation) that records every design detail and a color palette, a large expression sheet, and lots of practice drawing the character, keeping the design simple enough to draw often while accepting that it can evolve over time.", "verified": true}], "quiz": [{"q": "What is the main purpose of a character model sheet or turnaround?", "options": ["To replace drawing the character at all", "To show the character only in color", "To give you and any collaborators a reference of the character from several angles so every drawing matches", "To decide the page layout"], "correct": 2, "explain": "A model sheet records the character's views, proportions and details on shared guidelines so every later drawing can be checked against it."}, {"q": "Where should a standard dialogue balloon tail point?", "options": ["At the speaker's mouth, as if an invisible line continued to the face", "At the speaker's feet", "At the center of the panel", "At the next balloon"], "correct": 0, "explain": "A tail should point at the mouth, not just the general area of the character such as a hand or a leg."}, {"q": "When is the crossbar I normally used in comic lettering?", "options": ["For every capital I in a sentence", "For the first letter of every balloon", "Only in sound effects", "For the pronoun I and in abbreviations, with the plain vertical stroke used everywhere else"], "correct": 3, "explain": "Using the crossbar I for any capital I is flagged as one of the most common amateur lettering mistakes."}, {"q": "How are the double dash and the ellipsis used?", "options": ["They are interchangeable", "A double dash marks interrupted speech, while an ellipsis (three periods) marks speech trailing off", "An ellipsis marks interruptions and a double dash marks pauses", "Neither should appear in a comic"], "correct": 1, "explain": "The two marks have different jobs: the double dash cuts speech off, and the ellipsis lets it fade."}, {"q": "Why does drawing expression sheets and practicing your character often help consistency?", "options": ["It makes the character look more realistic", "It shortens the script", "It builds muscle memory of the character's features while also creating reference for later", "It removes the need for a model sheet"], "correct": 2, "explain": "Repetition makes the design stick, and an expression sheet doubles as practice and as future reference."}], "checklist": ["I can build a turnaround with matching guidelines, an expression sheet and a color palette for a character.", "I can check a new drawing against my model sheet and name what drifted.", "I can point balloon tails at the mouth and use the double dash, ellipsis and crossbar I correctly.", "I can spot and fix tangents between balloons, sound effects and the art."], "nextStep": "You can now keep characters on model and letter a page cleanly. Module 124 moves from Western comics to manga, with its own reading direction, screentones and storytelling conventions."}
-,
-{"id": "m124", "plate": 124, "title": "Manga Fundamentals", "difficulty": "Intermediate", "studyTime": "18 min", "practiceTime": "30\u201345 min/day", "prereq": ["m123"], "hook": "Open a manga from what looks like the back and every habit from Western comics flips: the eye enters at the top right, and the whole page is built to carry it left.", "whyItMatters": ["Modules 122 and 123 taught page flow, consistent characters and lettering. Manga uses the same foundations but with its own reading direction, its own workflow and its own visual shorthand, so knowing those conventions is what separates a Western comic drawn in a manga style from real manga.", "It is also one of the most structured production workflows in this arc. Script, storyboard, pencils, inks, tones and final touches each have a clear job, and learning them in order is the quickest way to finish a first short story instead of abandoning it."], "coreIdea": ["Traditional manga reads from right to left. The first panel sits at the upper right of the right-hand page and each row moves leftward, so pages are composed for that path and every layout decision, from panel order to balloon placement, has to respect it.", "The workflow runs in a fixed order: scripting (theme, characters and sequences that each hold together by place, time or action), a storyboard that plans panel composition, a pencil sketch, inking, filling in details and blacks, and final touches. Skipping the storyboard stage is how pages end up redrawn.", "Variety keeps pages alive. Vary the size of the boxes and the distance of the shots (close-ups, medium shots and full shots) to avoid monotony, and remember that when a manga is opened the eye tends to land at the top of the left-hand page, which makes it a strong place for a significant drawing or a reveal.", "Manga has its own visual shorthand. Speed lines and flashes express motion and impact, and screentones (patterned overlays used for shading and backgrounds) give pages their characteristic texture. Clean the page before adding tone, and use white to correct and add highlights at the end."], "mistakes": ["Starting finished pencils or inks before a storyboard has settled the composition of the page.", "Using panels of the same size and the same shot distance throughout, which flattens the pacing.", "Laying out pages in left-to-right order and forgetting that readers will move right to left.", "Adding screentone to a dirty or unfinished page instead of cleaning the surface first.", "Placing the biggest moment of a spread somewhere the eye does not naturally land, instead of using the top of the left-hand page."], "proTips": ["Storyboard each sequence the way a film director would, thinking about how many panels you need and how to balance the page before you draw anything finished.", "Mix shot distances on purpose: a close-up for emotion, a medium shot for action, a full shot to establish the scene.", "Ink the panel borders first, then the dialogue balloons, then the characters and settings, and add speed lines and other effects last.", "Keep a light layer or light-colored pencil for roughs and panel borders so it does not compete with the final line art."], "practice": {"warmup": "Take a manga page you admire and number the panels in the order you read them, right to left and top to bottom, then note how the layout supports that path.", "daily": "Storyboard a two-page scene with page one on the right and page two on the left, varying panel sizes and shot distances.", "weekly": "Take one storyboarded page through pencils, inks and tone, ordering the steps as the Canson workflow does.", "challenge": "Design a two-page spread where a major reveal lands at the top of the left-hand page, and test it on a reader to see if their eye goes there."}, "resources": [{"type": "Video", "title": "How to draft and panel MANGA PAGES | DrawlikeaSir", "creator": "Draw like a Sir", "url": "https://www.youtube.com/watch?v=UGamHJjKwNw", "why": "A free 9-minute tutorial from a working manga artist on drawing panels so that the page flows well while reading.", "summary": "A tutorial about how to draw the panels on a manga page so that they flow better while reading, with sections on storyboarding your manga, the most common paneling mistake, reading flow, drawing focus points and using speech bubbles.", "verified": true}, {"type": "Video", "title": "6 Manga Paneling Rules for Beginner Mangaka", "creator": "Learn to Draw Manga", "url": "https://www.youtube.com/watch?v=iOshrMPg_S0", "why": "A free 12-minute video of paneling rules for beginner manga artists.", "summary": "Paneling rules for beginner manga artists. Chapters: Rule #1; Rule #2; Rule #3; Rule #4; Rule #5; BONUS TIP.", "verified": true}, {"type": "Video", "title": "Make your OWN MANGA | Tutorial on how to Storyboard | DrawlikeaSir", "creator": "Draw like a Sir", "url": "https://www.youtube.com/watch?v=bh_zB1zf4Hs", "why": "A free 12-minute walkthrough of planning a manga from story to storyboard.", "summary": "Explains how manga paneling works, how to plan out your manga story, and how to create a storyboard for it.", "verified": true}, {"type": "Video", "title": "Clean Manga Pages with Screentones | Beginner Guide", "creator": "Learn to Draw Manga", "url": "https://www.youtube.com/watch?v=VRiLka6G7lQ", "why": "A free 10-minute beginner guide to screentones, the patterned shading that gives manga pages their look.", "summary": "A beginner guide to using screentones to clean up and finish manga pages. Chapters: What Even Are Screentones?; Digital Screentones 101; How Do Mangakas Actually Use Screentones?; Don't Overdo It!.", "verified": true}, {"type": "Article", "title": "6 steps to drawing your manga", "creator": "Canson", "url": "https://en.canson.com/expert-advice/6-steps-drawing-your-manga", "why": "A free step-by-step manga workflow from script to final touches, including reading direction and panel variety.", "summary": "Walks through six steps: scripting (theme, characters and sequences with unity of place, time or action), a storyboard that plans panel composition and varies box sizes and shots, a pencil sketch, inking panel borders then characters and effects like speed lines, filling in details, blacks and screens, and final touches such as white for corrections and highlights. It also notes that traditional manga reads right to left, so the first box sits at the upper right of the right-hand page.", "verified": true}], "quiz": [{"q": "In what order does traditional manga read?", "options": ["Left to right, top to bottom", "Right to left, with the first panel at the upper right of the right-hand page", "Bottom to top", "Whichever order the panels are numbered"], "correct": 1, "explain": "Traditional manga reads right to left, so the first box is at the upper right of the right-hand page."}, {"q": "Why vary the size of boxes and the type of shot on a manga page?", "options": ["To fit more panels", "Because it is required by publishers", "To make the drawings easier", "To avoid monotony and keep the page and pacing interesting"], "correct": 3, "explain": "Mixing sizes and shot distances (close-ups, medium and full shots) keeps pages from feeling repetitive."}, {"q": "Where does the eye tend to land when a manga is opened, according to the Canson guide?", "options": ["The top of the left-hand page, which makes it a good spot for something significant", "The bottom of the right-hand page", "The exact center of the spread", "The page number"], "correct": 0, "explain": "The guide suggests placing a particularly significant drawing or action at the top of the left-hand page because the eye naturally goes there."}, {"q": "What should you do before adding screens (screentone) to the original drawing?", "options": ["Add the dialogue first", "Erase all the inks", "Clean the surface of the original drawing", "Skip inking"], "correct": 2, "explain": "The workflow advises cleaning the surface of your original drawing before adding a screen so the tone applies cleanly."}, {"q": "What is the storyboard stage for?", "options": ["Choosing fonts for the balloons", "Planning panel composition, how many boxes you need and how to balance the page before finished drawing", "Coloring the final pages", "Printing the volume"], "correct": 1, "explain": "The storyboard works like a film director's sketch of the panels, settling composition and balance before pencils and inks."}], "checklist": ["I can read and compose a page in right-to-left order.", "I can move through script, storyboard, pencils, inks, fills and final touches in order.", "I can vary panel sizes and shot distances to control pacing.", "I can use speed lines, screentone and white correction as part of the finish."], "nextStep": "You now know manga's reading direction, workflow and visual shorthand. Module 125 moves to webtoons, where the page becomes a vertical scroll and the layout rules change again."}
-,
-{"id": "m125", "plate": 125, "title": "Webtoon & Vertical Scroll Storytelling", "difficulty": "Intermediate", "studyTime": "18 min", "practiceTime": "30\u201345 min/day", "prereq": ["m124"], "hook": "A webtoon reader sees one panel at a time, so the space between panels is not empty. It is the timing of your story.", "whyItMatters": ["Modules 122 to 124 built page-based thinking: panels arranged on a page, read in a Z or right-to-left path. A webtoon removes the page entirely. The reader scrolls, and everything you learned about pacing has to be rebuilt around a single column on a phone.", "Webtoons are also a major professional route for new comic artists, because the format is built for mobile reading and episodic release. Learning the format's own rules, instead of cropping a page layout into a strip, is what makes the work feel native."], "coreIdea": ["A webtoon is a vertical comic that gives readers a cinematic impression, because they see only one panel at a time instead of many on a page. The creator controls the pacing of the story through where panels are placed, and because most readers use mobile devices, the layout should be comfortable on a phone.", "One creator's rules of thumb for panels: show at most two panels on the screen at a time, keep to about three dialogues per panel, vary panel width, shape and size to emphasize important scenes, leave at least about 250 px between panels and roughly 1000 px to signal a change in time, and make text large enough to read with motion and sound effects where they help.", "A webtoon storyboard plans four things: panel layout (shape and size, top-to-bottom order, whitespace as a dramatic pause), character position and composition (rough stick figures, close-up, medium or long shot, and who dominates the panel), expressions and gestures that carry emotion, and dialogue with a clear reading order that avoids overcrowded bubbles.", "Panel types each have a job: standard rectangles for stable, easy reading, tall vertical panels for towering things, falling or slowing the pace, wide panels for landscapes and calm, close-ups for emotion, establishing shots for context, splash panels for climaxes, inset panels for small details, borderless panels for a dreamlike feel, irregular panels for chaos, and silent panels for a pause."], "mistakes": ["Treating a webtoon like a comic page and packing several panels into one screen, when only about two should be visible at a time.", "Putting too much dialogue in one panel so the reader stops scrolling and starts reading a wall of text.", "Spacing every panel the same distance apart so the scroll has no rhythm and time changes are not signaled.", "Using text that looks fine on a monitor but is too small to read comfortably on a phone.", "Skipping silent panels and whitespace, which are the main tools for a dramatic pause in a scrolling format."], "proTips": ["Preview every episode on an actual phone before you finalize it, since that is where most readers will see it.", "Use whitespace as a pause: a larger gap before a reveal makes the reader scroll through a beat of anticipation.", "Vary panel width and shape to mark important scenes, and save a splash or oversized panel for the real climax.", "In Clip Studio Paint, create panels with the frame border tool so the frame masks the artwork and line art cannot spill outside it."], "practice": {"warmup": "Take one four-panel scene from a page comic and re-storyboard it for vertical scroll, leaving at least about 250 px between panels and a much larger gap where time changes.", "daily": "Storyboard ten vertical panels using at least five different panel types from the list, with stick-figure compositions.", "weekly": "Storyboard one short episode with rough sketches, place the dialogue in a clear reading order, then preview it on your phone and fix anything that crowds the screen.", "challenge": "Draw the same reveal twice, once with a silent panel and a long whitespace pause before it and once without, and write one sentence on how the timing changes."}, "resources": [{"type": "Video", "title": "Easy Paneling Tips for Making a Webtoon", "creator": "O_kids (Okids ART)", "url": "https://www.youtube.com/watch?v=M7KswiG2upQ", "why": "A free 5-minute video of five paneling points for webtoons, from the creator whose written version is linked below.", "summary": "The video companion to O_kids' written paneling tips, walking through five points for webtoon panels (limit how many panels show on screen, keep dialogue per panel low, vary panel shapes and sizes, set generous spacing, and keep text readable) and ending with a drawing demonstration.", "verified": true}, {"type": "Video", "title": "How to Make a Webtoon: Panel Types for Vertical Scroll Layout, Storyboards, and Thumbnails", "creator": "Walter Ostlie", "url": "https://www.youtube.com/watch?v=KczeJqVDxbw", "why": "A free 9-minute video on panel types and how to use them in a vertical-scroll storyboard.", "summary": "Walter Ostlie shows the different types of panels and how to use them in vertical-scroll storyboards so a Webtoon reads well.", "verified": true}, {"type": "Video", "title": "How To Pace Your Webtoon: Comicbook Writing Tutorial", "creator": "Walter Ostlie", "url": "https://www.youtube.com/watch?v=5K82seHFLHw", "why": "A free 12-minute comic-writing tutorial on pacing a Webtoon.", "summary": "A comic-writing tutorial from Walter Ostlie on how to pace a Webtoon.", "verified": true}, {"type": "Article", "title": "Panelling Tips for Making Webtoon", "creator": "O_kids (CLIP STUDIO TIPS)", "url": "https://tips.clip-studio.com/en-us/articles/9305", "why": "A free, short article of concrete panel rules for mobile webtoon readers.", "summary": "Explains that webtoon readers see one panel at a time, so pacing comes from panel placement, and gives five points: show at most two panels on screen, keep about three dialogues per panel, vary panel width, shape and size, leave at least 250 px between panels (around 1000 px for a time change), and keep text readable with motion and sound effects. It also shows how Clip Studio's frame border tool masks line art inside each panel.", "verified": true}, {"type": "Article", "title": "[MAKING A WEBTOON] Understanding Storyboard and the Component", "creator": "O_kids (CLIP STUDIO TIPS)", "url": "https://tips.clip-studio.com/en-us/articles/10886", "why": "A free guide to what a webtoon storyboard should contain, with ten panel types and their functions.", "summary": "Lists the elements a webtoon storyboard should include (panel layout with whitespace as a dramatic pause, character position and composition, expressions and gestures, dialogue and text with a clear reading order, and optional mood notes), then describes ten panel types and what each is for, from standard and tall vertical panels to splash, borderless and silent panels, plus common speech balloon types.", "verified": true}], "quiz": [{"q": "What does a webtoon reader see at one time, according to the module?", "options": ["A full page of many panels", "Two full pages side by side", "Mostly one panel, which gives a cinematic impression", "Only text"], "correct": 2, "explain": "Unlike a page comic, a vertical webtoon shows readers about one panel at a time, which is why placement and spacing control the pacing."}, {"q": "How many panels should ideally be visible on the screen at once?", "options": ["At most two", "At least six", "Exactly four", "As many as fit"], "correct": 0, "explain": "The suggested rule is to present at most two panels on the screen at a time because readers scroll through the strip."}, {"q": "What is whitespace between panels used for?", "options": ["Saving file size", "Hiding mistakes", "Making the page look empty", "As a dramatic pause, and a much larger gap signals a change in time"], "correct": 3, "explain": "In a scrolling format the gap is part of the timing: about 250 px at minimum between normal panels and roughly 1000 px to signal time passing."}, {"q": "Which panel type is common in webtoons for towering elements, falling, and slowing the pace?", "options": ["Inset panel", "Vertical (tall) panel", "Silent panel", "Borderless panel"], "correct": 1, "explain": "Tall vertical panels extend downward, show towering subjects or falling, and slow the reading pace for a dramatic effect."}, {"q": "Why should layouts be designed for mobile screens?", "options": ["Phones cannot show color", "Because print is not allowed", "Most webtoon readers use mobile devices instead of computers", "Because desktop screens are too large"], "correct": 2, "explain": "Since most readers are on phones, panels, text size and spacing need to be comfortable at that size."}], "checklist": ["I can explain why a webtoon is paced by panel placement and spacing instead of page layout.", "I can apply the panel rules of thumb: about two panels per screen, about three dialogues per panel, and generous spacing.", "I can storyboard layout, composition, expressions and dialogue for a vertical episode.", "I can choose a panel type for a job such as a pause, a climax or a detail."], "nextStep": "You can now plan comics for page, manga and vertical-scroll formats. Module 126 steps back to visual development: designing the look of characters, environments and mood before production begins."}
-,
-{"id": "m126", "plate": 126, "title": "Visual Development", "difficulty": "Advanced", "studyTime": "18 min", "practiceTime": "30\u201345 min/day", "prereq": ["m125"], "hook": "Before a single character is modeled or a single shot is animated, someone has already decided what the whole world should feel like. That decision is visual development.", "whyItMatters": ["The worldbuilding arc taught you color scripting, mood, lighting and the concept-art pipeline as separate skills. Visual development is the job where they combine: one artist, or a small team, defining the look of an entire project before production starts.", "It also changes how you build a portfolio. Studios are not only looking for beautiful single images; they want evidence that you can create a unified visual system that other artists can follow."], "coreIdea": ["Visual development defines the look, mood and feel of a project in pre-production: the color palette, lighting mood, character style, environment tone and the consistency of the whole world. It is used in animation, games, film and immersive media, and its outputs include color scripts, lighting studies, mood paintings and atmosphere tests, alongside character, costume and environment explorations.", "It sits early in the pipeline. Visual development artists work with directors, art directors, production designers and story teams, and their work becomes the visual reference that modelers, animators and lighting artists build from. Some stay on into production so that the finished result keeps matching the original vision.", "The titles overlap. In practice visual development and concept art are often used almost interchangeably, with feature and TV animation more likely to say visual development and games and live action more likely to say concept art. A useful working distinction is that visual development sets the overall look and consistency (color scripts, lighting style, shape language) while concept art designs specific characters, props and vehicles within it.", "The work is mostly 2D digital painting, increasingly supported by 3D blockouts for environments and lighting, and it rests on strong fundamentals: drawing, perspective, color, light and storytelling. A strong portfolio shows a unified visual system, with mood explorations, color studies, style variations and the process behind them, and a few strong projects are better than many unrelated pieces."], "mistakes": ["Treating visual development as one beautiful illustration instead of a system that has to stay consistent across a whole project.", "Choosing colors and lighting because they look nice rather than because they serve the emotion of the story.", "Filling a portfolio with unrelated pieces instead of a few projects that each show a complete, coherent world.", "Showing only polished finals and hiding the explorations, style variations and failed ideas that prove how you think.", "Spreading across every specialty instead of choosing a focus such as character look, environments, color scripting or props and costumes."], "proTips": ["Write the emotional beats of the story first, then let color and lighting follow them, the way a color script does.", "Build a small world bible for every portfolio project: a palette, a few lighting moods, a shape language, a handful of character silhouettes and key environments.", "Pick one specialization to be known for, and use the others to support it.", "Keep the explorations. Mood studies, color studies and style variations are the evidence that you can develop a look, not just render one."], "practice": {"warmup": "Take a short story you know and write down the emotional beat of five key scenes in one sentence each.", "daily": "Paint three 30-minute mood studies of the same location in three different emotional tones, changing only color and lighting.", "weekly": "Build a one-page style guide for an original world: palette, lighting moods, shape language, three character silhouettes and two environment keys.", "challenge": "Create a six-frame color script for your style guide and ask someone to guess the emotional arc of the story from the colors alone."}, "resources": [{"type": "Video", "title": "Inside Sony Pictures Animation - Visual Development Artist Omar Smith", "creator": "Sony Pictures Animation", "url": "https://www.youtube.com/watch?v=3ahvWdORJ20", "why": "A free 3-minute official studio video about what a visual development artist does day to day.", "summary": "An official Sony Pictures Animation video about visual development artist Omar Smith and his work at the studio.", "verified": true}, {"type": "Video", "title": "Sony Pictures Animation - Visual Development Portfolio Tips", "creator": "Sony Pictures Animation", "url": "https://www.youtube.com/watch?v=fF43pMRZamw", "why": "A free 3-minute official studio video of portfolio tips for aspiring visual development artists.", "summary": "Official portfolio tips for visual development artists from Sony Pictures Animation.", "verified": true}, {"type": "Video", "title": "WHAT IS VISUAL DEVELOPMENT? HOW TO MAKE A VIS DEV PORTFOLIO", "creator": "Laura Price", "url": "https://www.youtube.com/watch?v=SGOg4hLnBis", "why": "A free 8-minute video that explains the field and how to build a portfolio for it.", "summary": "Laura Price explains what visual development is and how to make a visual development portfolio.", "verified": true}, {"type": "Article", "title": "Visual Development Artist Guide for Creators", "creator": "VEDX (Jay Schnoor)", "url": "https://vedx.io/blogs/visual-development-artist-guide/", "why": "A free overview from a creative studio's blog covering the role, where it sits in the pipeline, how it differs from concept art, and portfolio advice. It is a studio blog rather than an industry-body source, so cross-check job-market claims.", "summary": "Defines a visual development artist as the person who sets the look, mood and consistency of a project before production, listing outputs such as color scripts, lighting studies and mood paintings, explaining that the work happens mostly in pre-production alongside directors, art directors and story teams, contrasting it with concept art, and advising a portfolio that shows a unified visual system rather than isolated pretty pieces.", "verified": true}], "quiz": [{"q": "What does visual development define for a project?", "options": ["Only the marketing posters", "The final animation timing", "The look, mood and feel of the project, such as palette, lighting mood, character style and environment tone, before full production", "The business budget"], "correct": 2, "explain": "Visual development sets the overall visual direction in pre-production so that the whole production can follow one coherent look."}, {"q": "When in the pipeline does visual development mostly happen?", "options": ["Pre-production, before modeling, animation and lighting begin", "Only after the film is released", "Only during post-production", "After final rendering"], "correct": 0, "explain": "It is mainly a pre-production role, though some artists stay into production to keep the result consistent with the original vision."}, {"q": "How do visual development and concept art relate?", "options": ["They are unrelated and never overlap", "Concept art is always 3D and visual development is always 2D", "Visual development is only for advertising", "The titles overlap, but visual development sets the overall look while concept art designs specific characters, props and vehicles within it"], "correct": 3, "explain": "In practice the titles are often used interchangeably, but a useful distinction is overall look and consistency versus specific designs."}, {"q": "What should a visual development portfolio show?", "options": ["A unified visual system with mood explorations, color studies, style variations and process", "As many unrelated pieces as possible", "Only final renders with no process", "Only character portraits"], "correct": 0, "explain": "Studios want proof that you can build a coherent look, so a few strong projects with their explorations beat many random pieces."}, {"q": "Why write the emotional beats of the story before choosing colors?", "options": ["Because colors are decided by the printer", "So color and lighting serve the story's emotion instead of just looking nice", "Because it removes the need for a palette", "To make the file smaller"], "correct": 1, "explain": "A color script works when each color choice is tied to an emotional beat in the story."}], "checklist": ["I can explain what visual development defines and where it sits in the pipeline.", "I can describe how visual development and concept art overlap and differ.", "I can build a small world bible with a palette, lighting moods, shape language and key designs.", "I can plan a portfolio project that shows a unified visual system with its process."], "nextStep": "You can now define the look of a whole project. Module 127 narrows to specific designs inside that look: concept art specializations such as character, prop and environment design sheets."}
-,
-{"id": "m127", "plate": 127, "title": "Concept Art Specializations: Character & Prop Design", "difficulty": "Advanced", "studyTime": "20 min", "practiceTime": "45\u201360 min/day", "prereq": ["m126"], "hook": "A concept artist does not just draw a character or a prop. They answer a question: what should this look like so that the writer, the animator, the modeler and the player all understand it at a glance?", "whyItMatters": ["Visual development (Module 126) sets the look of a whole project. Specializations are the specific designs inside that look, and they are what most concept art jobs actually ask for: this character, this prop, this vehicle, this creature.", "This module pulls together skills you already have. Thumbnailing (Module 79), the production pipeline (Module 80) and model sheets (Module 123) all feed into one repeatable process for designing a character or a prop that other people can build from."], "coreIdea": ["Character design is visual communication. You are telling the audience something about a character purely through how they look, using posing, expression, costuming, props, shape language and color, while keeping the design appealing. Appeal is made of several parts, not one trick.", "The process starts with a brief and references, then many thumbnails that focus on silhouette. Each design should look very different from the one before so the art director sees a real breadth of ideas, and you narrow down from there. One direction is then refined with costume and material callouts, followed by a turnaround, expression studies, prop breakouts and layered files for handoff.", "Function drives silhouette. Ask what the character does in the project, test silhouettes at small sizes and in shadow, keep the image clean instead of adding extra weapons or outfit layers, make every feature functional, and check proportions against what the character has to do, such as sit, climb or hold a two-handed weapon. A useful test is to hand the sheet to someone who has never read the brief and see whether they can describe the character back to you.", "Props are world-building. Every environment is full of them and characters carry them constantly, so a prop should say something about the world and the people who use it, not just fill space. Thinking like a game designer about what the object does in the world is part of designing it."], "mistakes": ["Jumping to a rendered illustration before exploring many different silhouettes.", "Producing a page of thumbnails that are all small variations of the same idea instead of genuinely different directions.", "Designing a character that needs a written explanation to make sense.", "Adding extra weapons, layers and decoration that must all be modeled but do not serve the character's function.", "Treating props as filler that could belong to any world instead of designing them to carry story and function."], "proTips": ["Write a short brief before you draw: the character's function in the project, one paragraph of history, three to five references and one negative reference that says what you do not want.", "Generate silhouettes quickly and force each one to be different in overall idea, not just in details.", "Test your favorite silhouettes at very small size and as solid black shapes before refining.", "For props, ask who made this, who uses it, what world it belongs to and how it is held or operated, and let the answers shape the design."], "practice": {"warmup": "Fill in a one-page character brief with function, a one-paragraph history, three references and one negative reference.", "daily": "Do 20 quick silhouette thumbnails of a traveling merchant, making each one noticeably different, then pick the three strongest.", "weekly": "Take one silhouette through refinement, a turnaround and three expression studies, plus a breakout sheet of the props your character carries.", "challenge": "Design three props for the same character that each reveal something different about their world, then write a short brief for a new item in a game you know and design it."}, "resources": [{"type": "Video", "title": "How professional CONCEPT ARTISTS design characters", "creator": "pikat", "url": "https://www.youtube.com/watch?v=9l_nuMGphW0", "why": "A free 9-minute overview of how character design works and the process professional concept art teams follow.", "summary": "Explains character design as visual communication, covering the tools designers use (posing, expression, costuming, props, shape language and color), what makes a design appealing, and four steps that many professional concept art teams, including at Riot Games, use to design characters.", "verified": true}, {"type": "Video", "title": "The \"Brain Dump\" Method for Character Design", "creator": "Dave Greco (Proko)", "url": "https://www.youtube.com/watch?v=oZfgTXDwuLI", "why": "A free 20-minute demonstration of generating many different character ideas and silhouettes quickly.", "summary": "Uses a traveling merchant to practice character thumbnailing, focusing on generating unique silhouettes and rapid ideas, and explains that thumbnails should show an art director a real breadth of ideas, with each design looking very different from the one before.", "verified": true}, {"type": "Video", "title": "Design Props like PRO", "creator": "Tyler Edlin and Josh Ash", "url": "https://www.youtube.com/watch?v=5GFxIJFb0oU", "why": "A free 19-minute lesson on prop design as a part of world-building.", "summary": "Josh Ash and Tyler Edlin discuss prop design as a vital part of world-building and show how to level up props from boring and mundane to props that say something about the world and the characters, using a personal fishing-company project as the working example.", "verified": true}, {"type": "Video", "title": "Concept Art Playbook #9 - Prop Options", "creator": "Ctrl+Paint", "url": "https://www.youtube.com/watch?v=ZcOCA7UOHjg", "why": "A free 6-minute design exercise on inventing a new object for an existing game.", "summary": "In this Concept Art Playbook episode the brief is to design a new object to fit an existing game, demonstrated with a new item for Mario Kart 8, and it is approached primarily as a written assignment from the game designer's point of view before any drawing.", "verified": true}, {"type": "Article", "title": "Character Concept: A 'Make it or Break it' in Game Design", "creator": "Innovecs Games", "url": "https://www.innovecsgames.com/blog/character-concept-for-your-game/", "why": "A free article from a games outsourcing studio's blog, useful for its brief checklist and silhouette tests. It is a company blog, so treat its schedule and cost claims as rough guidance only.", "summary": "Describes character concept art as turning a written description into a buildable design, lists deliverables such as thumbnails, silhouette passes tested at small sizes, a refined front view with material callouts, a turnaround, a model sheet with expression studies and prop breakouts, and layered files, and gives a brief checklist (the character's function, a short history, references plus one negative reference, where it will be seen, technical limits, and what is decided versus open) along with game-specific tips such as keeping the image clean and making every feature functional.", "verified": true}], "quiz": [{"q": "What is character design, in the sense this module uses it?", "options": ["Drawing the prettiest possible outfit", "Copying an existing character", "A form of visual communication that tells the audience about a character through how they look", "Choosing the character's voice"], "correct": 2, "explain": "Character designers use posing, expression, costuming, props, shape language and color to communicate who a character is, while keeping the design appealing."}, {"q": "What should you aim for at the thumbnail stage when designing a character?", "options": ["Many designs that look very different from each other, especially in silhouette, to show a breadth of ideas", "One final rendered image", "Five versions of the same silhouette with different details", "As many colors as possible"], "correct": 0, "explain": "Art directors want to see a wide range of ideas before a direction is chosen, so each thumbnail should be a genuinely different idea."}, {"q": "What is a useful test of whether a character sheet is working?", "options": ["How colorful it is", "Whether it has more than ten details", "Whether it was drawn quickly", "Whether someone who has never read the brief can describe the character back to you"], "correct": 3, "explain": "If a design needs a written explanation to make sense, it is not finished; a stranger should be able to read it from the drawing alone."}, {"q": "Why are props treated as part of world-building?", "options": ["They are always the most detailed part of an image", "Props are optional decoration", "Every environment is full of them and characters carry them, so they can say something about the world and its people", "They replace environment design"], "correct": 2, "explain": "Props appear everywhere and are handled by characters constantly, which makes them an efficient way to communicate who made and uses things and what world they belong to."}, {"q": "What does a negative reference in a brief do?", "options": ["It shows an image that illustrates what you do not want, which can save rounds of revisions", "It lists the character's flaws", "It replaces thumbnails", "It is the final render"], "correct": 0, "explain": "A reference that says 'not this' narrows the design space as effectively as positive references and is rarely included."}], "checklist": ["I can write a short design brief with function, history, references and a negative reference.", "I can generate silhouettes that are genuinely different from each other and test them at small size.", "I can take one design through refinement, a turnaround, expression studies and prop breakouts.", "I can design a prop so that it carries function and says something about its world."], "nextStep": "You can now design specific characters and props inside a project's look. Module 128 moves to how those designs actually get built for games: the game art pipeline from concept to engine."}
-,
-{"id": "m128", "plate": 128, "title": "Game Art Pipeline", "difficulty": "Advanced", "studyTime": "20 min", "practiceTime": "45\u201360 min/day", "prereq": ["m127"], "hook": "A character that looks perfect in a sculpting program can still be unusable in a game, because a game has to draw it many times a second on hardware with a fixed budget.", "whyItMatters": ["Module 127 ended with a finished design on a model sheet. This module follows that design into production: how a concept becomes an asset that actually runs inside a game engine, and why a concept artist who understands those limits is far more useful to a team.", "Games add constraints that illustration and film concept art rarely face: a performance budget, a target platform and a real-time engine. Knowing what the engine is going to ask of an asset lets you design things that are cheaper to build and survive the trip from sketch to screen."], "coreIdea": ["A game art pipeline turns a concept into an engine-ready asset. A typical 3D path runs from concept and reference, to blocking and a high-detail sculpt, to a clean low-polygon mesh (retopology), to UV unwrapping, to baking detail into textures and texturing, to rigging and animation for characters, and finally to optimization steps such as LODs and collision before import into the engine. A 2D path is shorter: concept, line work, color, export or sprite sheets, then import.", "Constraints decide the design. Unity's documentation states that the number of polygons you should use depends on the visual quality you need and the platform you target: fewer polygons run faster because every vertex, edge and face costs computing resources, while more polygons give more detail and control over shape. Its advice for models includes minimizing polygon count, using as few materials as possible, a single skinned mesh renderer and as few bones as possible, while warning that there is no single answer and that you must balance performance against realism.", "Level of detail (LOD) is how engines handle distance. Without LODs an object is rendered at the same complexity however small it appears on screen. With LODs the engine swaps in simpler versions, reducing polygons, material complexity or the number of renderers. LOD0 is the most detailed version and higher numbers have progressively less detail, and Unreal notes that it switches by screen size rather than by distance, so a smaller instance changes LOD before a larger one.", "Technical art connects the two sides. Riot Games describes technical art as being, at its core, about streamlining art creation and implementation, which is why artists who understand engine limits are valuable. Decisions are cheapest early: a change at the sketch or silhouette stage costs far less than the same change after rigging."], "mistakes": ["Designing or sculpting without asking what the target platform and the performance budget are.", "Treating polygon count as a purely artistic choice when it depends on the platform and on everything else competing for rendering resources.", "Ignoring LODs, so a detailed asset is rendered at full cost even when it is a few pixels tall.", "Adding extra details, layers and parts that must all be modeled but never read at the distances the player sees them.", "Waiting until the engine import to discover that a design breaks the rig, the budget or the silhouette."], "proTips": ["Ask for the budget up front: target platform, polygon and texture limits, and how many of the asset will be on screen at once.", "Check that your silhouette still reads at the lower LODs, since that is what most players will see most of the time.", "Preview assets in the engine early and often instead of judging them only in your modeling or painting software.", "Learn the vocabulary of the engine you target (LOD, materials, bones, collision) so you can discuss limits with technical artists and programmers."], "practice": {"warmup": "Write a pipeline checklist for one asset from your Module 127 designs, listing each stage from concept to engine import and who would own it.", "daily": "Sketch a prop at three levels of detail (LOD0, LOD1, LOD2) and check whether the silhouette still reads at the simplest level.", "weekly": "Pick a free engine and read its documentation on LODs and importing assets, then write a half-page summary of what an artist must deliver.", "challenge": "Take one prop from concept to a simple low-polygon model in free software, import it into an engine, and set up two LOD levels, noting where the budget forced you to change the design."}, "resources": [{"type": "Video", "title": "So You Wanna Make Games?? | Episode 5: Technical Art", "creator": "Riot Games", "url": "https://www.youtube.com/watch?v=kr7XYXMM7-U", "why": "A free 13-minute official video on technical art, the role that connects art to the engine.", "summary": "Riot Games' episode on technical art, which describes tech art as having many specializations but, at its core, being about streamlining art creation and implementation.", "verified": true}, {"type": "Video", "title": "The Complete AAA VIDEO GAME Character Art Pipeline", "creator": "Jared Chavez", "url": "https://www.youtube.com/watch?v=x7I4_jJZy-c", "why": "A free 17-minute walkthrough of a full character art pipeline for AAA games.", "summary": "Presents a complete AAA video game character art pipeline, using an allosaurus concept as the example.", "verified": true}, {"type": "Video", "title": "My Full Game Prop Creation Pipeline", "creator": "rileyb3d", "url": "https://www.youtube.com/watch?v=4jaY-5UpOZM", "why": "A free 9-minute look at one artist's pipeline for making a game prop.", "summary": "Walks through the creator's full pipeline for making a game prop.", "verified": true}, {"type": "Article", "title": "Creating models for optimal performance", "creator": "Unity Technologies (Unity Manual)", "url": "https://docs.unity3d.com/Manual/ModelingOptimizedCharacters.html", "why": "Free official documentation on how model choices affect performance in a real engine.", "summary": "Lists tips for performant models (minimize polygon count, use as few materials as possible, a single skinned mesh renderer, as few bones as possible, and keep forward and inverse kinematics separate), and explains that polygon count depends on the quality you need and your target platform, that fewer polygons run faster while more give more detail, and that you have to balance performance against visual realism.", "verified": true}, {"type": "Article", "title": "Introduction to level of detail", "creator": "Unity Technologies (Unity Manual)", "url": "https://docs.unity3d.com/Manual/LevelOfDetail.html", "why": "Free official documentation explaining what LODs are and why engines use them.", "summary": "Explains that level of detail improves performance by reducing the rendering workload, because without it an object is rendered with the same complexity however small it is on screen, and describes how LODs reduce polygons, material complexity or the number of mesh renderers, with LOD0 as the most detailed level and higher indices progressively less detailed.", "verified": true}, {"type": "Article", "title": "Creating and Using LODs in Unreal Engine", "creator": "Epic Games (Unreal Engine documentation)", "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/creating-and-using-lods-in-unreal-engine", "why": "Free official how-to showing the artist's side of LODs in a second major engine.", "summary": "A how-to on importing a less detailed version of a mesh so the engine swaps between versions as the player moves closer or farther away, noting that the swap is based on screen size rather than distance and that complex collision can use any imported LOD without switching at runtime.", "verified": true}], "quiz": [{"q": "What is the main purpose of level of detail (LOD)?", "options": ["To make models look more detailed up close only", "To reduce the rendering workload by using simpler versions of an object as it becomes smaller on screen", "To change a model's color", "To increase the polygon count automatically"], "correct": 1, "explain": "Without LOD an object is rendered at the same complexity no matter how small it appears, so engines swap in simpler versions as it gets smaller."}, {"q": "According to Unity's documentation, what determines how many polygons you should use?", "options": ["The visual quality you need and the platform you are targeting", "Only the artist's preference", "Only the file format", "Only the number of bones"], "correct": 0, "explain": "The right number depends on the quality you require and the target platform, and fewer polygons run faster while more give more detail."}, {"q": "How does Unreal Engine decide when to switch from one LOD to another in the how-to?", "options": ["Only by the clock", "By the camera's color settings", "By screen size rather than by distance, so a smaller instance changes LOD before a larger one", "By the artist's name"], "correct": 2, "explain": "The documentation notes that LOD switching is calculated by screen size, not distance, so two instances of different sizes switch at different distances."}, {"q": "Which of these is one of the performance tips for models given in the Unity manual?", "options": ["Use as many materials as possible", "Add extra bones for variety", "Never use polygons", "Use as few bones and as few materials as possible"], "correct": 3, "explain": "The manual advises minimizing polygons, using as few materials as possible and as few bones as possible, while balancing against visual quality."}, {"q": "Why should a concept artist learn about game performance budgets?", "options": ["Because concept art is never changed", "To avoid drawing", "So designs can be built efficiently and survive the trip from sketch to the engine, since changes are cheapest early", "Because budgets decide the story"], "correct": 2, "explain": "Understanding the limits lets you design things that are practical to model and run, and avoid expensive redesigns after rigging or import."}], "checklist": ["I can list the main stages of a game art pipeline from concept to engine import.", "I can explain why polygon count, materials and bones depend on the target platform and budget.", "I can explain what LODs are and how an engine uses them.", "I can name the questions to ask about budget and platform before starting an asset."], "nextStep": "You now understand how a design travels into a game engine. Module 129 turns to animation pre-production: storyboards, animatics and the planning that happens before a single frame is animated."}
-,
-{"id": "m129", "plate": 129, "title": "Animation Pre-Production: Storyboards & Animatics", "difficulty": "Intermediate", "studyTime": "20 min", "practiceTime": "45\u201360 min/day", "prereq": ["m128"], "hook": "A scene can read beautifully on the page and still fall flat on screen. Animation studios find that out in storyboards and animatics, before anyone animates a single frame.", "whyItMatters": ["Modules 122 to 125 taught sequential storytelling on pages and in scrolling strips. Animation pre-production applies the same thinking to moving images, and it is where a story's shots, staging, timing and designs get tested cheaply, long before production is expensive.", "It also introduces a role many artists do not expect. A story artist is hired for drawing, but communication and pitching matter just as much, because boards are performed and explained to directors and teams, not just handed over."], "coreIdea": ["In a studio pipeline, pre-production starts from a final script and runs several tracks at the same time. The design team breaks down everything the episode needs, starts with rough pre-designs that feed the storyboard artists, then moves to final designs, clean line art, color styling and background paint. The storyboard artists and director do their own breakdown of shots, compositions and action. Casting breaks the script down for voices, runs auditions and records dialogue that is then edited.", "Storyboarding is taking scripts, pitches and the early makings of a story and drawing out the shots, the staging and the scenes. The early stage is where a lot of iteration and change happens, because emotional moments that read well on the page may not land on screen and plot problems often appear only once the story has been embodied and stress-tested in boards.", "An animatic is a string of storyboard images edited together with sound to show how a sequence will flow in motion. It adds timing, dialogue, sound effects and music to the same images. It is not always necessary, but it gives a fuller sense of what the finished piece will look and sound like, and even live-action films use animatics for complex action or visual effects scenes.", "The animatic is the review tool. In a studio, board roughs get notes from the director and producers, the cleaned boards go to an animatic editor who cuts them into a timeline, and the team watches it play and breaks it down again. Designs for things that were dropped stop, and designs for things that were added begin, and the animatic keeps being revised with the director and board revisionists until it works."], "mistakes": ["Treating storyboards as finished illustrations instead of a tool for testing staging, shots and story.", "Skipping the animatic, so pacing and timing problems only show up after animation has started.", "Continuing to polish designs for things that the animatic shows are no longer in the story.", "Choosing shots and staging so that acting and action are hard to read, which is a common issue in beginner storyboard portfolios.", "Handing boards over without being able to explain and pitch them."], "proTips": ["Try the three-panel storytelling assignment first: a very small story told in three panels, which teaches visual storytelling without boarding a full sequence.", "Let sound help carry the load in an animatic, perform the dialogue yourself for the rough track, and choose original music if you will share the piece.", "Show your animatic cold, to someone who has not seen the boards, and note where they get confused.", "Re-run the script breakdown whenever the boards change, so designs and assets follow the story and not the other way around."], "practice": {"warmup": "Tell a tiny story in three panels (setup, turn, ending) and then pitch it out loud, explaining the shot in each panel.", "daily": "Board a short scene in about twelve panels, drawing the same moment with two different staging choices and comparing how clearly each reads.", "weekly": "Edit your boards into a timed animatic with scratch dialogue and simple sound in whatever video editor you have, then watch it back and adjust the timing.", "challenge": "Show the animatic to someone who has not seen the boards, ask them to retell the scene, and fix the first place where their retelling goes wrong."}, "resources": [{"type": "Video", "title": "Animation Pre-Production Explained in UNDER 5 MINUTES! \u270d\ufe0f", "creator": "Nicktoons", "url": "https://www.youtube.com/watch?v=1kN5Xi9vC04", "why": "A free 6-minute official studio walkthrough of 2D animation pre-production by a senior animation production director.", "summary": "Sandi Smith, Senior Director of Animation Production, breaks down the pipeline starting from a final script: three tracks run at once (design, storyboards with the director, and casting with dialogue recording), board roughs get notes and cleans go to an animatic editor who cuts a timeline, and the team reviews the animatic and adjusts designs, adding or dropping items, until it is right.", "verified": true}, {"type": "Video", "title": "Beginner's Guide To Storyboarding for Animation", "creator": "Alan Winn (Alanhuynhworks)", "url": "https://www.youtube.com/watch?v=gD2gEZWCNmo", "why": "A free 12-minute beginner guide from a working story artist in the animation industry.", "summary": "Story artist Alan Winn explains what storyboarding is (drawing out the shots, staging and scenes from scripts and pitches), how boards differ from animatics (boards edited on a timeline and timed with music and dialogue), why early iteration matters because plot and emotional problems appear once a story is embodied in boards, and gives a three-panel assignment that includes pitching, since communication is as important as drawing.", "verified": true}, {"type": "Video", "title": "Common MISTAKES beginning storyboard artists make for animation", "creator": "Toniko Pantoja", "url": "https://www.youtube.com/watch?v=FobYdp19LR0", "why": "A free 12-minute critique of the mistakes that hold back beginner storyboard portfolios.", "summary": "A working storyboard artist shares feedback on common things he sees holding back beginners' portfolios and animatics, touching on shot choices, camera, staging and acting.", "verified": true}, {"type": "Video", "title": "how to make animatics | beginners guide", "creator": "patchy cables", "url": "https://www.youtube.com/watch?v=OufIRwXCFnE", "why": "A free 7-minute guide to making your first animatic.", "summary": "A beginner-oriented guide to making an animatic for people who have never made one, from a creator with a little over three years of experience making them, covering how to turn storyboard frames into a timed sequence.", "verified": true}, {"type": "Article", "title": "What is an Animatic \u2014 How To Bring Your Storyboard to Life", "creator": "StudioBinder", "url": "https://www.studiobinder.com/blog/what-is-an-animatic/", "why": "A free, clear definition of animatics and how they differ from storyboards.", "summary": "Defines an animatic as a string of storyboard images edited together with sound to show how a sequence will flow in motion, explains how it differs from a storyboard (a visual representation of a sequence that breaks the action into individual panels), and covers why to use animatics, including as a rough draft of a project, for planning VFX in live action, and for collaboration.", "verified": true}, {"type": "Article", "title": "How to Make an Animatic: A Step-by-Step Guide", "creator": "StudioBinder", "url": "https://www.studiobinder.com/blog/how-to-make-an-animatic/", "why": "A free set of practical tips for building an animatic from boards.", "summary": "Gives tips for making an animatic: let sound help carry the load, perform your own dialogue, choose original music, and give it to viewers cold, plus a short explanation of keyframes.", "verified": true}], "quiz": [{"q": "What is an animatic?", "options": ["A finished animated film", "A character model sheet", "A string of storyboard images edited together with sound to show how a sequence flows in motion", "A background painting"], "correct": 2, "explain": "An animatic turns the storyboard into a timed video with dialogue, sound effects and music, so pacing can be judged before animation."}, {"q": "In the studio workflow described, what is the starting point and how do the tracks run?", "options": ["A final script, with design, storyboard and casting tracks running at the same time", "A finished animation, with tracks running one after another", "A music track, with storyboards last", "A character model, with the script written afterward"], "correct": 0, "explain": "Pre-production starts from a final script, and the design team, the storyboard artists and director, and casting and dialogue work in parallel."}, {"q": "Which of these is one of the tips for making an animatic?", "options": ["Never add sound", "Use only stock music", "Skip timing entirely", "Give it to viewers cold, meaning to someone who has not seen the boards"], "correct": 3, "explain": "A fresh viewer shows you where the story or pacing is confusing, because they cannot fill the gaps from memory."}, {"q": "Why is the storyboard stage a place for a lot of iteration?", "options": ["Because boards are never reviewed", "Because emotional moments and plot problems often only show up once the story has been drawn out and tested", "Because drawings cannot be changed later", "Because animators dislike boards"], "correct": 1, "explain": "A script can read well and still not work on screen, so boards and animatics are where those problems get found and fixed cheaply."}, {"q": "Besides drawing, which skills does the story artist in the video call equally important?", "options": ["Music composition", "3D modeling", "Communication and pitching", "Rigging"], "correct": 2, "explain": "Story artists present and pitch their boards, so explaining and performing the story matters as much as drawing it."}], "checklist": ["I can explain the difference between a storyboard and an animatic.", "I can describe how design, storyboard and casting tracks run from a final script.", "I can build a short animatic with timing and scratch sound.", "I can test boards on a fresh viewer and fix the first point of confusion."], "nextStep": "You can now plan an animated sequence before production starts. Module 130 turns to print production: preparing artwork for printing, from resolution and color to bleed and file setup."}
-]},
-{id:'portfolio-branding', title:'Portfolio & Personal Branding', status:'soon', order:12,
-    desc:'Building a studio-quality portfolio, case studies, online presence across ArtStation/Behance/Instagram, and a coherent personal brand.',
-    moduleCount:10, sample:['Building a Portfolio','Case Studies','Online Portfolios','Personal Branding','Social Media Strategy']},
-{id:'freelancing-business', title:'Freelancing & Business', status:'soon', order:13,
-    desc:'Finding clients, pricing, contracts, project management, finances, marketing, and avoiding the scams that target working artists.',
-    moduleCount:10, sample:['Finding Clients','Pricing Artwork','Contracts & Legal Basics','Finance for Artists','Marketing & Sales']},
-{id:'careers-growth', title:'Professional Careers & Lifelong Growth', status:'soon', order:14,
-    desc:'How studio pipelines and hiring actually work, career specializations, teamwork, ethics and copyright, and a realistic long-term growth plan.',
-    moduleCount:10, sample:['Art Specializations','Studio Pipelines','Recruitment & Hiring','Professional Ethics','Lifelong Artist Roadmap']}
+  {
+    "id": "digital-fundamentals",
+    "title": "Digital Art Fundamentals",
+    "status": "live",
+    "order": 8,
+    "desc": "Software-agnostic digital basics — workspace, tablets, brush engines, layers, selections, transforms, and clean digital line art — built so the skill transfers across any application.",
+    "moduleCount": 8,
+    "sample": [
+      "Digital Workspace",
+      "Drawing Tablets",
+      "Brushes",
+      "Layers",
+      "Selection Tools",
+      "Digital Line Art"
+    ],
+    "modules": [
+      {
+        "id": "m83",
+        "plate": "87",
+        "title": "The Digital Workspace",
+        "difficulty": "Beginner",
+        "studyTime": "15 min",
+        "practiceTime": "20–25 min/day",
+        "prereq": [],
+        "hook": "Every piece of digital art software looks like a different alien cockpit at first — but underneath the menus, they're all built from the exact same handful of concepts, and once you see them once, you see them everywhere.",
+        "whyItMatters": [
+          "This module (and this whole arc) is software-agnostic on purpose: whether you end up using Krita, Clip Studio Paint, Procreate, or Photoshop, the underlying workspace concepts — canvas, panels, layers, tools — are the same. Learning the concepts once means every new piece of software becomes a matter of finding familiar things in a new place, not learning from zero.",
+          "A cluttered, default, unfamiliar interface is one of the most common reasons beginners feel overwhelmed before they've drawn a single line. A workspace you've deliberately set up to show only what you actually use removes that friction and lets you focus on drawing instead of hunting through menus."
+        ],
+        "coreIdea": [
+          "Every digital art application is built around the same core pieces: a canvas (where you draw), a set of tools (brush, eraser, selection, fill), a layers panel (stacked, independently editable sheets), and a color picker — learning to find these four things in any new software gets you most of the way to being functional in it.",
+          "You don't need to memorize every menu on day one. Configure the minimum required to make a mark on a blank canvas — set canvas size, pick a default brush, confirm you have one layer — and learn additional features only when you hit a specific problem the basics can't solve.",
+          "A default workspace is usually cluttered with panels you'll rarely use. Most working artists trim their workspace down to only a few panels they actually reference constantly, commonly layers, color, and brush settings, and save that as their own custom layout.",
+          "You do not need expensive hardware to learn these concepts. A budget entry-level tablet and free software (like Krita) teach the exact same underlying skills as a professional setup — the tool only becomes the limiting factor much later, once you already know what you're doing."
+        ],
+        "mistakes": [
+          "Spending excessive time researching the \"best\" software, brush, or settings before ever opening a blank canvas and making a mark — research feels like progress but isn't the same as practice.",
+          "Leaving every default panel open and visible, creating visual clutter that makes it harder to find the few tools you actually use regularly.",
+          "Assuming you need to learn every menu and feature before starting to draw, instead of configuring the bare minimum and learning more only as specific problems come up.",
+          "Believing that better or more expensive hardware is the current bottleneck, when in most cases consistent practice with a basic setup would produce more improvement.",
+          "Drawing everything on a single layer out of unfamiliarity with layers, making it easy to accidentally damage a sketch while trying to add color or line work."
+        ],
+        "proTips": [
+          "In any new software, find these four things first and nothing else: the canvas, the brush tool, the layers panel, and the color picker. That's enough to start drawing.",
+          "Create and save a custom workspace layout with only the panels you actually use (commonly layers, color, brush) so you're not hunting through clutter every session.",
+          "Give yourself a five-drawing rule: don't research a \"better\" brush, software, or setting until you've completed at least five finished drawings on your current setup and have a specific, real problem to solve.",
+          "Use the default round brush and a basic three-layer structure (sketch, line, color) for your first pieces — there's no need for anything more advanced until you hit a specific limitation."
+        ],
+        "practice": {
+          "warmup": "Open your chosen software, set up a blank canvas, and locate the four core things (canvas, brush tool, layers panel, color picker) without following a tutorial.",
+          "daily": "Draw for 20–30 minutes using only the default round brush and a basic three-layer setup (sketch, line, color) — no new tools or settings.",
+          "weekly": "Customize your workspace layout by removing panels you haven't used all week and saving the result as your own default.",
+          "challenge": "Complete one small drawing using only a single layer with no undo, to feel the difference layers and undo normally give you."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "Digital Painting Basics - Simple Forms to Complex Paintings",
+            "creator": "Tayler Olivas (Proko)",
+            "url": "https://www.youtube.com/watch?v=fJvcllrOrr4",
+            "why": "A free 21-minute beginner lesson from the same instructor as the Wacom article below, showing the workspace and tools in actual use.",
+            "summary": "Tayler Olivas shows how to set up your workspace, the digital tools he relies on and their shortcuts, how to practice non-destructive editing and use texture brushes, then combines them into a finished painting.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Digital Painting Basics For Beginners",
+            "creator": "Tayler Olivas, via Wacom Community",
+            "url": "https://community.wacom.com/en-it/digital-painting-for-beginners-wacom/",
+            "why": "A free, real workspace walkthrough from a working concept artist and teacher, showing exactly how and why to trim a cluttered default interface down to what you actually use.",
+            "summary": "Tayler Olivas shows how to strip a cluttered default software interface down to a custom workspace showing only the Layer, Color, and Brush panels, plus an overview of the selection-based tools he relies on most, aimed specifically at someone opening digital painting software for the first time.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Tips for Beginners: Getting Started in Digital Art",
+            "creator": "Allard Lavaritte",
+            "url": "https://lavaritte.com/blogs/how-to-start-digital-art/",
+            "why": "A free, honest, detailed guide covering exact minimum setup steps for three different free/common software options (Krita, Clip Studio Paint, Procreate), plus a clear explanation of layers.",
+            "summary": "Gives exact minimum setup steps to open a first canvas in Krita, Clip Studio Paint, and Procreate, explains layers as stacked transparent sheets with a basic sketch/line/color structure, and argues that researching the \"best\" brush or software before drawing is a common trap that delays real practice.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What four core pieces are present in nearly every digital art application, according to this module?",
+            "options": [
+              "Filters, plugins, presets, and templates",
+              "Canvas, tools, layers panel, and color picker",
+              "Export settings, cloud sync, subscriptions, and updates",
+              "Text tool, shape tool, gradient tool, and crop tool"
+            ],
+            "correct": 1,
+            "explain": "These four core pieces — the canvas, tools, layers panel, and color picker — exist in nearly every digital art application, which is why learning them once transfers across different software."
+          },
+          {
+            "q": "According to the module, what should you configure before your first drawing session in new software?",
+            "options": [
+              "Every available menu and setting",
+              "Only the minimum required to make a mark on a blank canvas",
+              "A custom brush pack downloaded from the internet",
+              "A subscription to premium features"
+            ],
+            "correct": 1,
+            "explain": "The recommended approach is configuring only the bare minimum — canvas size, a default brush, one layer — and learning more features only when a specific problem requires it."
+          },
+          {
+            "q": "Why is trimming a default workspace down to a few key panels recommended?",
+            "options": [
+              "It's required by the software license",
+              "A cluttered default interface makes it harder to find the few tools you actually use regularly",
+              "It makes the file size smaller",
+              "Extra panels slow down the computer significantly"
+            ],
+            "correct": 1,
+            "explain": "Most working artists customize their workspace to show only a few frequently-used panels (like layers, color, and brush), removing the visual clutter of a default layout."
+          },
+          {
+            "q": "What is the basic three-layer structure recommended for a beginner's first digital drawings?",
+            "options": [
+              "Background, midground, foreground",
+              "Sketch, line, color",
+              "Highlights, shadows, midtones",
+              "Text, image, effects"
+            ],
+            "correct": 1,
+            "explain": "A simple starting structure — a sketch layer, a clean line layer, and a color layer — lets a beginner separate stages of a drawing without needing an advanced layer setup."
+          },
+          {
+            "q": "What does the module suggest about needing expensive hardware to start learning digital art?",
+            "options": [
+              "Expensive hardware is required from day one",
+              "A budget entry-level tablet and free software teach the same underlying skills as a professional setup",
+              "Hardware has no effect on learning at all",
+              "Only tablets with screens (pen displays) can be used for beginners"
+            ],
+            "correct": 1,
+            "explain": "The module argues that a basic, affordable tablet and free software are enough to learn the same underlying skills as expensive professional equipment, which only becomes the limiting factor much later."
+          }
+        ],
+        "checklist": [
+          "I can locate the canvas, brush tool, layers panel, and color picker in a new piece of digital art software.",
+          "I can set up a basic three-layer structure (sketch, line, color) for a drawing.",
+          "I can trim a cluttered default workspace down to only the panels I actually use.",
+          "I can configure the minimum settings needed to start drawing without over-researching first."
+        ],
+        "nextStep": "You can now navigate any digital art software's core workspace. Module 88 goes deeper into the primary input device itself — drawing tablets, pressure sensitivity, and the specific hand-eye adjustment of moving a pen on a flat surface while looking at a screen."
+      },
+      {
+        "id": "m84",
+        "plate": "88",
+        "title": "Drawing Tablets",
+        "difficulty": "Beginner",
+        "studyTime": "15 min",
+        "practiceTime": "20–30 min/day",
+        "prereq": [
+          "m83"
+        ],
+        "hook": "The first time you draw on a tablet, your hand moves on a flat pad while your eyes watch a completely separate screen — and for about a week, your brain treats that as a genuinely strange problem to solve.",
+        "whyItMatters": [
+          "Every skill you build going forward runs through this one piece of hardware. Understanding what a tablet actually senses — position, pressure, and sometimes tilt — and how to configure it correctly is what determines whether your lines feel natural or fight you the whole time.",
+          "The single most common cause of frustrating, skewed, or unpredictable lines for a beginner isn't lack of skill — it's an unconfigured tablet: wrong area mapping, an uncalibrated pressure curve, or a missing driver. Fixing the hardware layer first means your practice time actually builds drawing skill instead of fighting the tool."
+        ],
+        "coreIdea": [
+          "A tablet tracks three things: position (where the pen is), pressure (how hard you're pressing, typically 2,048+ levels), and on many tablets, tilt (the angle of the pen relative to the surface). Pressure is the one that matters most day-to-day, since it directly drives line thickness and opacity in almost every brush.",
+          "Tablet area mapping has to match your monitor's aspect ratio, or a circle you draw becomes an oval on screen. This is an easy, invisible-until-you-know-about-it setup step that fixes a huge share of \"my lines feel off\" frustration.",
+          "The pressure curve (how much physical force maps to how much digital effect) is adjustable in both the tablet driver and your software, and most factory defaults require more pressure than feels natural — softening the curve usually makes lines feel more responsive immediately.",
+          "The hand-eye disconnect of drawing on a screenless tablet (moving your hand on a flat surface while watching a separate monitor) is a real, temporary adjustment that most people stop consciously noticing within one to two weeks of consistent, short daily practice — it is not a sign you're using the wrong tool."
+        ],
+        "mistakes": [
+          "Skipping the driver installation, which limits the tablet to basic cursor movement with no pressure sensitivity, tilt detection, or shortcut button support.",
+          "Never checking or correcting tablet area mapping, so circles come out as ovals and lines feel subtly wrong without an obvious cause.",
+          "Judging the tool as \"not for me\" after only two or three sessions, when the normal hand-eye adjustment period is closer to one to two weeks of consistent practice.",
+          "Leaving the factory-default pressure curve untouched when it feels too stiff, instead of softening it in the driver panel to match a natural hand pressure.",
+          "Prioritizing tilt-sensitive brushes and advanced features before pressure control feels confident and automatic, which fragments attention across too many variables at once."
+        ],
+        "proTips": [
+          "Lock your tablet's active area to your monitor's aspect ratio in the driver panel before your first real drawing session — this single setting prevents a huge share of \"my lines feel off\" frustration.",
+          "If lines feel unresponsive or require too much force, open the driver's pressure curve settings and move it toward \"soft\" rather than assuming the tablet itself is the problem.",
+          "For your very first sessions, skip actual artwork and just draw long straight lines, smooth curves, and circles at different sizes — pure hand-eye calibration, not finished pictures.",
+          "Hold the stylus more like a pen than a mouse, and move from the shoulder and elbow rather than just the wrist for longer, smoother strokes."
+        ],
+        "practice": {
+          "warmup": "Draw 20 straight lines and 20 smooth curves across your full canvas, focusing purely on control, not on making anything look good.",
+          "daily": "Spend 20–30 minutes drawing simple shapes and lines using only the default brush, paying attention to how pressure changes line thickness as you draw.",
+          "weekly": "Check and, if needed, correct your tablet's area mapping and pressure curve, then draw one simple finished sketch to compare against how it felt before the adjustment.",
+          "challenge": "Draw the same simple shape (a spiral, a wave) 10 times in a row, trying to make each one smoother and more consistent than the last, using full arm movement rather than just the wrist."
+        },
+        "resources": [
+          {
+            "type": "Article",
+            "title": "Beginner's guide to drawing tablets",
+            "creator": "SevenPens (DrawTab documentation)",
+            "url": "https://docs.sevenpens.com/drawtab/basics/beginners-guide",
+            "why": "Clean, free, technical documentation explaining exactly what a tablet senses — hover, pressure, and tilt — without being tied to marketing for a specific brand.",
+            "summary": "Explains the three core things a drawing tablet tracks — hover (pointer position up to about 10mm above the surface), pressure sensitivity (typically thousands of levels controlling stroke size), and pen tilt — and clarifies that a tablet uses absolute positioning, unlike a mouse's relative positioning, which is why the two feel so different to use.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "How to Use a Drawing Tablet: Complete Setup Guide for Beginners",
+            "creator": "ugee",
+            "url": "https://shop.ugee.com/blogs/tips-tricks/how-to-use-drawing-tablet",
+            "why": "A free, detailed, step-by-step setup guide covering the specific configuration steps (driver, area mapping, pressure curve) that prevent common beginner frustrations.",
+            "summary": "Walks through driver installation, connecting and verifying tablet detection, correctly mapping the tablet's physical area to your monitor's aspect ratio to avoid skewed lines, softening the pressure curve for a more natural feel, and sets realistic expectations that the hand-eye adjustment period normally takes about one to two weeks of consistent practice.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What are the three things a drawing tablet primarily tracks?",
+            "options": [
+              "Color, brightness, and contrast",
+              "Position, pressure, and (on many tablets) tilt",
+              "File size, resolution, and DPI",
+              "Layer count, blend mode, and opacity"
+            ],
+            "correct": 1,
+            "explain": "A drawing tablet senses the pen's position (including hover), how hard you're pressing (pressure sensitivity), and on many models, the angle of the pen (tilt)."
+          },
+          {
+            "q": "Why is correctly mapping the tablet's active area to your monitor's aspect ratio important?",
+            "options": [
+              "It has no real effect on drawing quality",
+              "Mismatched mapping causes shapes like circles to come out skewed as ovals on screen",
+              "It only affects battery life on wireless tablets",
+              "It changes the tablet's pressure sensitivity levels"
+            ],
+            "correct": 1,
+            "explain": "If the tablet's physical drawing area doesn't match your monitor's aspect ratio proportionally, shapes get distorted on screen, which is a common invisible cause of \"my lines feel off\" frustration."
+          },
+          {
+            "q": "What is the recommended first response if lines feel unresponsive and require too much force?",
+            "options": [
+              "Immediately buy a more expensive tablet",
+              "Soften the pressure curve in the driver panel",
+              "Switch to a mouse instead",
+              "Increase your monitor's brightness"
+            ],
+            "correct": 1,
+            "explain": "A stiff, unresponsive feel is often a pressure curve set too hard by default; softening it in the driver panel is the recommended first fix before assuming the hardware itself is the problem."
+          },
+          {
+            "q": "How long does the hand-eye adjustment period for a screenless drawing tablet typically take, according to the module?",
+            "options": [
+              "It never goes away",
+              "About one to two weeks of consistent, short daily practice",
+              "Exactly one single session",
+              "Several months at minimum"
+            ],
+            "correct": 1,
+            "explain": "Most people stop consciously noticing the hand-eye disconnect after about one to two weeks of consistent practice — quitting after only two or three sessions is too early to judge the tool."
+          },
+          {
+            "q": "What does the module recommend prioritizing before exploring tilt-sensitive brushes and advanced features?",
+            "options": [
+              "Buying additional hardware accessories",
+              "Building confident, automatic pressure control first",
+              "Learning every keyboard shortcut available",
+              "Switching between multiple different tablets"
+            ],
+            "correct": 1,
+            "explain": "Adding advanced features like tilt before pressure control feels natural fragments attention across too many variables; mastering pressure first gives a more solid foundation."
+          }
+        ],
+        "checklist": [
+          "I can explain the difference between position, pressure, and tilt tracking on a drawing tablet.",
+          "I can check and correct my tablet's area mapping to match my monitor's aspect ratio.",
+          "I can adjust a pressure curve if lines feel too stiff or unresponsive.",
+          "I can recognize the hand-eye adjustment period as normal and temporary rather than a sign I'm using the wrong tool."
+        ],
+        "nextStep": "You now understand the hardware layer your hand interacts with directly. Module 89 moves to the software side of that same interaction — brushes and brush engines, and how settings like opacity, flow, and blending actually work underneath the presets."
+      },
+      {
+        "id": "m85",
+        "plate": "89",
+        "title": "Brushes & Brush Engines",
+        "difficulty": "Beginner",
+        "studyTime": "16 min",
+        "practiceTime": "25–30 min/day",
+        "prereq": [
+          "m84"
+        ],
+        "hook": "Two settings you'll touch on almost every single stroke — opacity and flow — look nearly identical in the menu and behave completely differently, and confusing them is the single most common reason a beginner's blending looks muddy or patchy.",
+        "whyItMatters": [
+          "You now have the workspace (Module 87) and the hardware (Module 88) sorted — brushes are the actual point of contact between your hand and the image. Understanding what a brush's core settings actually do, rather than just picking presets randomly, is what lets you get a specific, intentional result instead of fighting the tool.",
+          "Beginners consistently report muddy, patchy, or 'stuck' looking digital paintings, and the root cause is almost always confusing a small number of brush settings — mainly opacity, flow, and hardness — not a lack of drawing skill. Fixing this understanding has an outsized effect on how finished your work looks."
+        ],
+        "coreIdea": [
+          "Opacity sets the maximum amount of color a single stroke can lay down — once you lift the pen, that stroke is capped at that opacity no matter how many times your path crosses itself, creating a hard, glass-like layering when stacked.",
+          "Flow controls the rate color builds up as you paint, even within one continuous stroke — a low-flow stroke can still reach full opacity if you paint back and forth over the same spot, producing a softer, more gradual, \"painterly\" buildup than opacity alone.",
+          "Hardness controls the brush's edge: a hard brush gives a crisp, clean edge good for linework and details, while a soft brush gives a feathered, gradual edge good for blending and atmosphere — mixing the two intentionally, rather than picking one for an entire piece, is what most blending techniques are built on.",
+          "You don't need many brushes to start. A single hard round brush and a single soft round brush, used with different opacity, flow, and hardness combinations, can carry an entire finished illustration — chasing more brushes before you understand these core settings is a common and easily avoidable trap."
+        ],
+        "mistakes": [
+          "Confusing opacity and flow, or not knowing the difference, leading to unpredictable results when trying to blend or build up color gradually.",
+          "Using a single hardness/opacity setting for an entire painting instead of deliberately switching between harder settings for blocking in and detail, and softer settings for blending and atmosphere.",
+          "Downloading and researching many different brush packs before understanding the core settings (opacity, flow, hardness) that determine how any brush actually behaves.",
+          "Using a very soft, low-opacity brush for edges that need to stay clean and crisp, producing a hazy, undefined result instead of a controlled one.",
+          "Giving up on blending after a few muddy attempts instead of recognizing that constantly adjusting hardness and opacity throughout a painting, not finding one perfect setting, is the actual normal workflow."
+        ],
+        "proTips": [
+          "If you want one flat, capped layer of translucent color, turn down opacity. If you want a natural, gradually-building painterly feel, turn down flow instead and keep opacity high.",
+          "Use the eyedropper tool (usually Alt/Option plus the brush tool) constantly while blending — picking a color directly from your canvas and painting a new stroke next to it is the core technique behind most manual color blending.",
+          "Start with brush Hardness and Opacity both around 50% for general blending practice, then deliberately push one setting at a time toward its extreme to feel what changes.",
+          "Limit yourself to one hard round brush and one soft round brush for your first several finished pieces before exploring specialty brushes — mastering the two core settings matters far more than the brush shape itself."
+        ],
+        "practice": {
+          "warmup": "Paint one stroke at 100% opacity/100% flow, then one at 100% opacity/20% flow, then one at 20% opacity/100% flow, and compare how each one looks and builds up when you paint back over itself.",
+          "daily": "Pick two colors and blend them into each other using only the eyedropper-and-repaint technique, practicing until the transition looks smooth with no hard edges.",
+          "weekly": "Paint a small study using only a hard round brush for construction and a soft round brush for blending, deliberately switching hardness and opacity multiple times through the piece.",
+          "challenge": "Recreate the same small color blend three times — once using only opacity changes, once using only flow changes, once mixing both — and write one sentence comparing how each result felt to control."
+        },
+        "resources": [
+          {
+            "type": "Article",
+            "title": "A Complete Guide To Photoshop Brushes, Pt. I: The Toolbar",
+            "creator": "C.S. Jones, via Wacom Community",
+            "url": "https://community.wacom.com/en-us/guide-to-photoshop-brushes-pt-1/",
+            "why": "A free, detailed, accurate breakdown of exactly what opacity, flow, and blend mode settings do and how they differ.",
+            "summary": "Explains that opacity and flow are the two controls for stroke transparency: opacity caps how opaque a single stroke can get regardless of overlap, while flow controls how gradually color builds up even within one continuous stroke, producing a softer, more paint-like buildup that many artists prefer for natural blending.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Quick Tip: How to Blend With the Brush Tool for Digital Paintings",
+            "creator": "Melody Nieves, Envato Tuts+",
+            "url": "https://design.tutsplus.com/tutorials/quick-tip-how-to-blend-with-the-brush-tool-for-digital-paintings--cms-23052",
+            "why": "A free, practical, step-by-step exercise for the core manual blending technique using hardness, opacity, and the eyedropper tool together.",
+            "summary": "Teaches a concrete blending technique: start a stroke at 100% opacity and hardness, drop both to around 50%, then repeatedly use the eyedropper tool to sample the edge of a stroke and paint a new one beside it, gradually fading colors into each other — with a clear warning that constantly adjusting hardness and opacity through a painting, not settling on one setting, is the normal workflow.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What is the key difference between how opacity and flow affect a single brush stroke?",
+            "options": [
+              "They are exactly the same setting with different names",
+              "Opacity caps how opaque one stroke can get no matter how much it overlaps itself; flow lets color build up gradually even within one continuous stroke",
+              "Flow only affects erasers, not brushes",
+              "Opacity only works with soft brushes"
+            ],
+            "correct": 1,
+            "explain": "Opacity sets a hard ceiling for a single stroke, while flow determines how gradually color accumulates as you paint, even while the stroke overlaps itself, producing a softer buildup."
+          },
+          {
+            "q": "What does brush hardness primarily control?",
+            "options": [
+              "The color saturation of the brush",
+              "How crisp or feathered the brush's edge is",
+              "The speed at which the brush moves",
+              "The file size of the final image"
+            ],
+            "correct": 1,
+            "explain": "Hardness controls the brush's edge quality: a hard brush gives a crisp, clean edge, while a soft brush gives a feathered, gradual edge, useful for different purposes in the same piece."
+          },
+          {
+            "q": "According to the module, how many brushes does a beginner actually need to produce a full finished illustration?",
+            "options": [
+              "At least 20 different specialty brushes",
+              "Potentially just one hard round brush and one soft round brush, used with different settings",
+              "A different brush for every color used",
+              "Only brushes purchased from a paid brush pack"
+            ],
+            "correct": 1,
+            "explain": "A single hard round brush and a single soft round brush, combined with deliberate changes to opacity, flow, and hardness, can carry an entire finished piece — chasing more brushes before understanding these settings is a common trap."
+          },
+          {
+            "q": "What is the core manual blending technique described in the Tuts+ resource?",
+            "options": [
+              "Applying a single blur filter to the whole image",
+              "Repeatedly using the eyedropper tool to sample a stroke's edge and painting a new stroke beside it to gradually fade colors together",
+              "Using only the fill tool for all color transitions",
+              "Painting every color at 100% opacity and flow"
+            ],
+            "correct": 1,
+            "explain": "The technique involves alternating between the brush tool and the eyedropper tool, sampling the edge of a stroke and painting a new one next to it, gradually building a smooth transition between colors."
+          },
+          {
+            "q": "What is a common beginner mistake with hardness and opacity across a whole painting, according to the module?",
+            "options": [
+              "Adjusting them too frequently throughout the piece",
+              "Using a single hardness/opacity setting for the entire painting instead of switching deliberately between harder and softer settings for different purposes",
+              "Only using hard brushes, never soft ones",
+              "Never using the eyedropper tool"
+            ],
+            "correct": 1,
+            "explain": "Sticking to one setting for an entire painting is a common mistake; the normal workflow involves deliberately switching between harder settings for blocking-in/detail and softer settings for blending, constantly."
+          }
+        ],
+        "checklist": [
+          "I can explain the difference between opacity and flow in my own words.",
+          "I can deliberately switch between hard and soft brush settings for different purposes within one piece.",
+          "I can use the eyedropper tool combined with a brush to manually blend two colors together.",
+          "I can produce a reasonably finished piece using only a hard round brush and a soft round brush."
+        ],
+        "nextStep": "You now understand how a single brush stroke behaves. Module 90 moves from one stroke to a whole image — layers, and how stacking, opacity, and blend modes at the layer level let you organize and edit a piece non-destructively."
+      },
+      {
+        "id": "m86",
+        "plate": "90",
+        "title": "Layers",
+        "difficulty": "Beginner",
+        "studyTime": "16 min",
+        "practiceTime": "25–30 min/day",
+        "prereq": [
+          "m85"
+        ],
+        "hook": "Traditional painters have exactly one shot to get a mark right on the canvas. Digital artists have layers — the single feature that makes almost everything else about digital art forgiving, editable, and non-destructive.",
+        "whyItMatters": [
+          "Module 87 introduced a basic sketch/line/color layer structure just to get you drawing. This module goes deeper into what layers actually let you do — stacking, opacity, and blend modes — which is the organizational backbone every piece you build from here forward will rely on.",
+          "Blend modes specifically are one of the highest-leverage tools in digital art: a single Multiply layer can add convincing shadow across an entire piece in seconds, and a single Overlay or Soft Light layer can shift a scene's entire mood — effects that would take far longer to achieve by hand-painting every affected pixel."
+        ],
+        "coreIdea": [
+          "A layer stack works like transparent sheets stacked on top of each other: higher layers cover lower ones by default (Normal blend mode), and you can hide, reorder, or delete any single layer without touching the others — this is what \"non-destructive\" means.",
+          "A blend mode changes how a layer's colors combine with the layers beneath it, rather than simply covering them. The three you'll use constantly: Multiply darkens (perfect for shadows), Screen lightens (perfect for highlights, glows, and light effects like rain or snow), and Overlay boosts contrast by combining both (brightening light areas and darkening dark ones).",
+          "Layer opacity and blend mode work together, not separately — a common workflow is setting a layer to a blend mode like Multiply or Overlay first, then lowering that layer's opacity to control how strong the effect reads, rather than trying to get the exact right color on a Normal layer.",
+          "Grouping related layers together (for example, all the layers that make up one character or one prop) keeps a growing layer stack manageable, and clipping one layer to another restricts an effect (like a shadow or color adjustment) to only the pixels already on that layer below."
+        ],
+        "mistakes": [
+          "Painting everything on a single layer, making it impossible to isolate or adjust one part of a piece without repainting it.",
+          "Trying to manually pick and paint the exact right shadow or highlight color on a Normal layer, instead of using Multiply or Screen at a lower opacity to get a similar result far faster.",
+          "Forgetting that white is invisible on a Multiply layer and black is invisible on a Screen layer, then being confused about why part of an effect layer isn't showing up.",
+          "Never grouping or organizing layers as a piece grows, leading to a long, unmanageable list that's hard to navigate or edit later.",
+          "Applying a blend-mode layer globally across the whole piece when the effect should only affect one specific object, instead of clipping it to that object's layer."
+        ],
+        "proTips": [
+          "Use a Multiply layer at a lower opacity for shadows and a Screen layer at a lower opacity for highlights or glow effects — this is faster and more flexible than hand-mixing the exact colors on a Normal layer.",
+          "When an effect should only apply to one object (a character, a prop) rather than the whole canvas, clip the effect layer to that object's layer instead of painting across the whole piece and risking it bleeding outside the object's edges.",
+          "Group related layers together as soon as a piece grows past roughly 8–10 layers, so you can collapse and navigate sections instead of scrolling through a long flat list.",
+          "Keep a layered working file (not a flattened export) as you work, so masks, groups, and individual layers stay editable if you need to revise the piece later."
+        ],
+        "practice": {
+          "warmup": "Create a small flat-colored shape on one layer, then add a Multiply layer above it and paint a shadow shape, and a Screen layer above that for a highlight, adjusting opacity on each.",
+          "daily": "Take a simple piece and add one Multiply shadow layer and one Overlay color-mood layer over the whole composition, adjusting each layer's opacity until the effect feels right.",
+          "weekly": "Build a small piece using at least three organized layer groups (for example: background, main subject, effects), keeping each group collapsed except when actively working in it.",
+          "challenge": "Take one finished flat-colored piece and transform its entire mood using only blend-mode layers (Multiply, Screen, Overlay) and their opacity — no repainting of the original colors allowed."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "How to ACTUALLY Use Layer Blend Modes",
+            "creator": "8edhead (CLIP STUDIO TIPS)",
+            "url": "https://www.youtube.com/watch?v=GxxJ2OkRdFg",
+            "why": "A free 7-minute walkthrough of the most useful blend modes, with a written version on Clip Studio TIPS.",
+            "summary": "Explains blend modes as a non-destructive way to change how a layer interacts with the layers beneath it, then demonstrates Multiply for dim lighting and shadow, Screen for highlights, snow, and rain textures, and Overlay for adding soft, vibrant color washes over a finished illustration.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Ultimate Guide to Blending Modes",
+            "creator": "Art Rocket (Clip Studio)",
+            "url": "https://www.clipstudio.net/how-to-draw/archives/154182",
+            "why": "A free, comprehensive reference covering every major blend mode with a clear description of what each one does, plus a worked example turning a daytime scene into a sunset.",
+            "summary": "Catalogs every major blend mode grouped by effect (darkening, lightening, contrast-boosting), then demonstrates a concrete example: adding an orange gradient layer set to Hard Light at 85% opacity over a daytime sky to convincingly transform the entire scene into a sunset.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What does \"non-destructive\" mean in the context of layers?",
+            "options": [
+              "The file can never be deleted",
+              "You can hide, reorder, or delete a single layer without permanently altering the pixels on other layers",
+              "The software cannot crash while layers are open",
+              "Layers automatically save every few seconds"
+            ],
+            "correct": 1,
+            "explain": "Non-destructive editing means changes on one layer (or removing it entirely) don't permanently affect the pixels on other layers, unlike painting everything on a single flat layer."
+          },
+          {
+            "q": "Which blend mode is best suited for quickly adding shadow across a piece?",
+            "options": [
+              "Screen",
+              "Multiply",
+              "Normal",
+              "Difference"
+            ],
+            "correct": 1,
+            "explain": "Multiply darkens colors beneath it and is the standard choice for shadow, since white on a Multiply layer is invisible and darker tones progressively darken what's underneath."
+          },
+          {
+            "q": "What is a common, efficient workflow for using a blend-mode layer like Multiply or Screen?",
+            "options": [
+              "Set the blend mode, then adjust that layer's opacity to control how strongly the effect reads",
+              "Never adjust opacity once a blend mode is chosen",
+              "Only use blend modes on the very bottom layer",
+              "Blend modes should always stay at 100% opacity"
+            ],
+            "correct": 0,
+            "explain": "Combining a blend mode with adjusted opacity — rather than trying to hand-mix the exact right color on a Normal layer — is a fast, flexible way to control how strong an effect like shadow or a color mood layer reads."
+          },
+          {
+            "q": "What does clipping a layer to the layer below it accomplish?",
+            "options": [
+              "It merges the two layers permanently into one",
+              "It restricts the clipped layer's effect to only the pixels already present on the layer below it",
+              "It deletes the layer below automatically",
+              "It changes the file format of the image"
+            ],
+            "correct": 1,
+            "explain": "Clipping restricts an effect layer (like a shadow or color adjustment) to the shape of the layer beneath it, preventing the effect from bleeding outside that object's edges."
+          },
+          {
+            "q": "Why is grouping related layers together recommended as a piece grows?",
+            "options": [
+              "It automatically improves image quality",
+              "It keeps a growing layer stack manageable and easier to navigate than one long flat list",
+              "Grouped layers render faster in every case",
+              "It's required before a file can be exported"
+            ],
+            "correct": 1,
+            "explain": "Organizing related layers (like all the layers for one character or prop) into groups keeps a growing stack navigable, letting you collapse sections you're not actively working on."
+          }
+        ],
+        "checklist": [
+          "I can explain what makes layer editing non-destructive.",
+          "I can use a Multiply layer for shadow and a Screen layer for highlights or glow, adjusting opacity to control strength.",
+          "I can clip an effect layer to restrict it to a specific object rather than the whole canvas.",
+          "I can organize a growing layer stack into logical groups."
+        ],
+        "nextStep": "You now understand how to structure and combine layers. Module 91 covers selection tools — how to isolate a specific area to edit, fill, or protect, which works hand-in-hand with layers and masks for precise, controlled changes."
+      },
+      {
+        "id": "m87",
+        "plate": "91",
+        "title": "Selection Tools",
+        "difficulty": "Beginner",
+        "studyTime": "15 min",
+        "practiceTime": "25–30 min/day",
+        "prereq": [
+          "m86"
+        ],
+        "hook": "Some of the cleanest, most confident-looking digital paintings aren't built with a brush at all — they're built by selecting a hard-edged shape and filling it, a completely different way of thinking about construction than drawing freehand.",
+        "whyItMatters": [
+          "Selections work hand-in-hand with the layers and masks from Module 90: a selection is how you tell the software exactly which pixels a fill, adjustment, or mask should affect, instead of it applying to the whole layer.",
+          "Beyond the obvious use (isolating an object to cut it out or protect it), selection-based construction — building shapes with the lasso tool and filling them — is a real, widely used technique among professional concept artists and illustrators for getting clean, confident, graphic shapes that freehand brushwork makes much harder to achieve."
+        ],
+        "coreIdea": [
+          "The marquee tool selects basic rectangular or oval shapes, the lasso tool lets you draw a freeform (or polygonal, point-by-point) selection outline by hand, and the magic wand selects pixels based on color similarity within an adjustable tolerance — each is suited to a different kind of shape.",
+          "Selections can be combined: holding Shift while making a new selection adds it to the existing one, holding Alt/Option subtracts from it, letting you build up a complex selection area from several simpler ones.",
+          "Inverse selection (flipping a selection so everything NOT selected becomes selected) is a powerful shortcut: it's often far easier to select a plain background with the magic wand and then invert the selection than to try to trace a complicated object directly.",
+          "Feathering softens a selection's edge so a fill or cutout blends more naturally instead of having a harsh, jagged boundary — useful both for cutting an object out cleanly and for creating vignette-style fades."
+        ],
+        "mistakes": [
+          "Trying to trace a complicated object directly with the lasso tool when selecting its simpler background and inverting the selection would be much faster and more accurate.",
+          "Forgetting to clear an active selection before continuing to paint elsewhere, then being confused why new brush strokes only appear inside a small, forgotten selected area.",
+          "Using a single flat tolerance setting on the magic wand for every image, instead of adjusting it based on how much color variation is actually in the area you're trying to select.",
+          "Leaving a cutout's edge completely hard and unfeathered when it needs to blend into a new background, producing an obviously pasted-in look.",
+          "Not combining selection tools — relying on only one (usually just the lasso) instead of mixing marquee, lasso, and magic wand with add/subtract to build a more precise selection faster."
+        ],
+        "proTips": [
+          "When cutting an object out of a plain or simple background, try selecting the background with the magic wand and inverting the selection instead of tracing the object itself.",
+          "Use Shift to add to a selection and Alt/Option to subtract from it as your default habit, rather than trying to get a complex selection right in a single pass.",
+          "Try the lasso-and-fill construction technique deliberately at least once: instead of brushing in a shape, select its outline with the lasso tool and fill it with the paint bucket for a clean, confident, graphic result.",
+          "Add a small amount of feathering before cutting out or pasting an object into a new scene so the edge blends rather than looking sharply pasted-in."
+        ],
+        "practice": {
+          "warmup": "Practice selecting a simple shape three different ways: once with the marquee, once with the freeform lasso, and once with the magic wand, comparing how each felt to control.",
+          "daily": "Select a plain background behind a simple object using the magic wand, invert the selection, and move the isolated object onto a new background layer.",
+          "weekly": "Build one small shape (a rock, a building silhouette, a simple prop) entirely using the lasso-and-fill technique instead of freehand brushing, and compare the edge quality to a brushed version.",
+          "challenge": "Combine at least three selection tools (marquee, lasso, magic wand) with Shift/Alt add-and-subtract to build one complex, precise selection area in a single image."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "How to Paint With the Lasso Tool",
+            "creator": "Forrest Imel",
+            "url": "https://www.youtube.com/watch?v=d0uYH8pRyYw",
+            "why": "A free, real demonstration from a working artist of the lasso-and-fill construction technique, showing how selections can be used to build a painting, not just cut objects out.",
+            "summary": "Forrest Imel demonstrates painting by selecting shapes with the lasso tool and filling them, rather than brushing freehand, showing how this selection-based construction technique produces clean, confident edges and efficient, graphic shape-building in a finished painting.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Selection Tools",
+            "creator": "University of Washington, AccessComputing WebD2",
+            "url": "https://www.washington.edu/accesscomputing/webd2/student/unit4/module4/selection_tools.html",
+            "why": "A free, clear educational resource covering all core selection concepts — marquee, lasso, magic wand, feathering, and inverse selection — explicitly licensed for free educational use.",
+            "summary": "Covers the core selection toolkit: the marquee for basic shapes, the lasso for freeform outlines, the magic wand for color-based selection with adjustable tolerance, and explains the practical trick of selecting a plain background and using inverse selection to isolate a more complex object, plus feathering to soften a selection's edge.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Which selection tool is best suited for selecting pixels based on color similarity?",
+            "options": [
+              "Marquee tool",
+              "Magic wand tool",
+              "Eraser tool",
+              "Eyedropper tool"
+            ],
+            "correct": 1,
+            "explain": "The magic wand tool selects pixels that match a similar color within an adjustable tolerance range, making it ideal for solid-color or low-variation areas."
+          },
+          {
+            "q": "What does inverse selection let you do?",
+            "options": [
+              "Undo the last selection made",
+              "Flip a selection so everything that was NOT selected becomes selected, and vice versa",
+              "Automatically feather a selection's edges",
+              "Convert a selection into a new layer"
+            ],
+            "correct": 1,
+            "explain": "Inverse selection flips the selected and unselected areas, which is especially useful for isolating a complex object by first selecting its simpler background."
+          },
+          {
+            "q": "What is the lasso-and-fill construction technique?",
+            "options": [
+              "Erasing a drawing and starting over",
+              "Selecting a shape's outline with the lasso tool and filling it, instead of brushing the shape in freehand",
+              "A method for adjusting brush pressure sensitivity",
+              "A way to organize layers into groups"
+            ],
+            "correct": 1,
+            "explain": "This technique builds shapes by selecting an outline with the lasso tool and filling it with color, producing clean, confident, graphic edges that are harder to achieve with freehand brushwork."
+          },
+          {
+            "q": "What does feathering a selection do?",
+            "options": [
+              "It deletes the selected area permanently",
+              "It softens the selection's edge so a fill or cutout blends more naturally instead of having a harsh boundary",
+              "It increases the selection's color tolerance",
+              "It converts the selection to a perfect circle"
+            ],
+            "correct": 1,
+            "explain": "Feathering creates a soft, gradual transition at a selection's edge, useful for natural-looking cutouts or vignette-style fades."
+          },
+          {
+            "q": "According to the module, what keyboard modifiers are commonly used to add to or subtract from an existing selection?",
+            "options": [
+              "Only the spacebar",
+              "Shift to add, Alt/Option to subtract",
+              "Only the Tab key",
+              "Ctrl+Z for both"
+            ],
+            "correct": 1,
+            "explain": "Holding Shift while making a new selection adds it to the existing one, while holding Alt/Option subtracts the new area, allowing complex selections to be built from simpler pieces."
+          }
+        ],
+        "checklist": [
+          "I can choose the right selection tool (marquee, lasso, or magic wand) based on the shape I need to select.",
+          "I can use inverse selection to isolate a complex object by selecting its simpler background first.",
+          "I can add to or subtract from a selection using Shift and Alt/Option.",
+          "I can use the lasso-and-fill technique to construct a clean shape instead of brushing it freehand."
+        ],
+        "nextStep": "You now have precise control over which pixels an edit affects. Module 92 covers transform tools — moving, scaling, rotating, and distorting a selection or layer, and how to do it non-destructively as your piece develops."
+      },
+      {
+        "id": "m88",
+        "plate": "92",
+        "title": "Transform Tools",
+        "difficulty": "Beginner",
+        "studyTime": "16 min",
+        "practiceTime": "20–25 min/day",
+        "prereq": [
+          "m87"
+        ],
+        "hook": "Traditional artists can't casually pick up a finished drawing, stretch it wider, rotate it, or make a mirrored copy in two seconds — digital artists do this constantly, and it changes how freely you can experiment.",
+        "whyItMatters": [
+          "Transform tools work directly with the layers (Module 90) and selections (Module 91) you've already learned — they're how you actually move, resize, rotate, or reshape whatever you've isolated, rather than repainting it from scratch.",
+          "Used well, transforming is a genuine construction technique, not just cleanup: mirroring a symmetrical shape, distorting a flat texture onto a 3D-looking surface, or nudging a proportion after the fact are all things that would take far longer to redo by hand than to transform."
+        ],
+        "coreIdea": [
+          "The core transform operations are scale (resize), rotate, skew (slant), distort (move each corner independently), and perspective (move corners in linked opposite pairs, useful for matching a surface's perspective) — most software lets you access all of them from one combined tool rather than separate menu items.",
+          "The reference point (sometimes shown as a small target icon in the center of the transform box) marks the anchor a transformation happens around — moving it to an edge or corner before rotating or scaling changes the whole effect, which is exactly how tricks like mirrored or radial copies are built.",
+          "Every time you transform a normal (rasterized) layer, the software has to redraw its pixels, which gradually degrades quality if repeated — this is a destructive edit. Working on a smart object (or vector layer, where available) instead keeps the original data intact no matter how many times you transform it.",
+          "Holding Shift while dragging a scale handle is the standard shortcut for keeping (or, depending on the software's default, deliberately breaking) an image's proportional aspect ratio — knowing which behavior is the default in your software prevents accidentally squishing or stretching something you meant to scale evenly."
+        ],
+        "mistakes": [
+          "Repeatedly scaling, rotating, or distorting the same rasterized layer directly, gradually degrading its quality instead of working on a smart object or vector layer that stays undamaged.",
+          "Not noticing or intentionally moving the reference point before a transform, then being confused why a rotation or scale isn't centered where expected.",
+          "Confusing Distort (each corner moves independently) with Perspective (opposite corners move together in linked pairs) and picking the wrong one for the effect intended.",
+          "Scaling an image non-proportionally by accident because the software's default Shift behavior wasn't what was expected, producing an unintentionally squished or stretched result.",
+          "Flattening a piece before confirming every transform is finalized, losing the ability to go back and adjust a transformation non-destructively."
+        ],
+        "proTips": [
+          "Convert a layer to a smart object (or work in vector where available) before transforming it, especially if you expect to scale or rotate it more than once.",
+          "Deliberately move the reference point to an edge before flipping or rotating a copy of a shape — this is the core trick behind quick mirrored or radial-symmetry effects.",
+          "Use Perspective mode specifically when you need a flat texture or image to match the converging angles of a surface in your scene, rather than trying to eyeball it with Distort.",
+          "Check whether your software's default Shift behavior locks or breaks proportional scaling before you rely on muscle memory from a different program."
+        ],
+        "practice": {
+          "warmup": "Take one simple shape and practice all five core transforms on copies of it: scale, rotate, skew, distort, and perspective, labeling which is which.",
+          "daily": "Convert a layer to a smart object, then scale and rotate it several times in a row, comparing its quality to a non-smart-object version transformed the same number of times.",
+          "weekly": "Create a mirrored or radially-symmetric shape by moving the reference point to an edge and flipping or rotating a duplicated layer around it.",
+          "challenge": "Take a flat texture or pattern and use Distort or Perspective mode to make it appear to wrap realistically onto an angled surface, like a sign on a building wall."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "Photoshop Transformation Tutorial: Skew, Distort, Perspective, Warp",
+            "creator": "Ethan Dray",
+            "url": "https://www.youtube.com/watch?v=rWHN--thboI",
+            "why": "A free 9-minute walkthrough of the transform modes this module covers: skew, distort, perspective and warp.",
+            "summary": "A short tutorial on using transformations in Photoshop, showing how they let you skew, distort, change the perspective of and warp the shape of a layer or object.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "Edit Non-Destructively with Smart Objects in Photoshop | Day 13",
+            "creator": "PHLEARN",
+            "url": "https://www.youtube.com/watch?v=44KFPa6WzWI",
+            "why": "A free, focused lesson from a well-established free Photoshop education channel, covering exactly why smart objects protect quality during repeated transforms.",
+            "summary": "Aaron Nace shows what breaks when you resize a regular layer versus a Smart Object: in a four-photo collage the regular layer loses real resolution after being shrunk and scaled back up while the Smart Object stays sharp, and the same protection applies to filters.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "How to use Free Transform in Photoshop",
+            "creator": "Steve Patterson, Photoshop Essentials",
+            "url": "https://www.photoshopessentials.com/basics/transform-and-warp-images-with-free-transform-in-photoshop-cc-2019/",
+            "why": "An extremely thorough, free breakdown of every transform mode (scale, rotate, skew, distort, perspective) and the reference point, with clear step-by-step examples.",
+            "summary": "Covers every transform mode in detail — proportional and non-proportional scaling, rotation, skew, the difference between Distort (independent corners) and Perspective (linked opposite corners) — and explains how moving the reference point (the target icon) changes the anchor of a transform, using it to build a four-way mirrored image as a concrete example.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What is the key difference between Distort and Perspective transform modes?",
+            "options": [
+              "They are identical with different names",
+              "Distort moves each corner handle independently, while Perspective moves opposite corners together in linked pairs",
+              "Distort only works on text layers",
+              "Perspective can only be used on circular shapes"
+            ],
+            "correct": 1,
+            "explain": "Distort lets each corner move freely and independently, while Perspective links opposite corners so they move together in opposite directions, which is useful for matching a surface's converging angles."
+          },
+          {
+            "q": "Why is transforming a smart object preferred over transforming a regular rasterized layer repeatedly?",
+            "options": [
+              "Smart objects load faster in every case",
+              "Regular layers lose quality with each destructive transform, while a smart object preserves the original image data through repeated transforms",
+              "Smart objects cannot be transformed at all",
+              "There is no real difference between the two"
+            ],
+            "correct": 1,
+            "explain": "Repeatedly transforming a rasterized layer redraws its pixels each time, gradually degrading quality; a smart object keeps the original data intact no matter how many times it's transformed."
+          },
+          {
+            "q": "What does the reference point (target icon) control during a transform?",
+            "options": [
+              "The color of the transformed layer",
+              "The anchor point that a rotation or scale happens around",
+              "The file format of the exported image",
+              "The brush size used afterward"
+            ],
+            "correct": 1,
+            "explain": "The reference point marks the center a transformation pivots or scales around; moving it to an edge, for example, changes a rotation from spinning in place to swinging around that edge instead."
+          },
+          {
+            "q": "What is a practical technique that relies on moving the reference point?",
+            "options": [
+              "Adjusting brush opacity",
+              "Creating a mirrored or radially-symmetric copy by flipping or rotating around a moved reference point",
+              "Changing the canvas resolution",
+              "Selecting a color from the color picker"
+            ],
+            "correct": 1,
+            "explain": "Moving the reference point to an edge before flipping or rotating a duplicated layer is the core technique behind quick mirror-image or radial-symmetry effects."
+          },
+          {
+            "q": "What does holding Shift while dragging a scale handle typically control?",
+            "options": [
+              "The layer's blend mode",
+              "Whether the image scales proportionally (keeping aspect ratio) or not, depending on the software's default behavior",
+              "The brush hardness setting",
+              "The selection tool being used"
+            ],
+            "correct": 1,
+            "explain": "Shift is the standard modifier for toggling proportional versus non-proportional scaling, though which behavior is the default versus the Shift-modified one can vary between software, so it's worth confirming in whichever program you use."
+          }
+        ],
+        "checklist": [
+          "I can explain the difference between Distort and Perspective transform modes.",
+          "I can convert a layer to a smart object before transforming it to avoid quality loss.",
+          "I can move a reference point to create a mirrored or radial-symmetry effect.",
+          "I can scale an image proportionally or non-proportionally on purpose, not by accident."
+        ],
+        "nextStep": "You now have the core toolkit — workspace, hardware, brushes, layers, selections, transforms — to construct and edit any digital piece. Module 93 focuses specifically on clean digital line art, bringing several of these tools together for confident, controlled linework."
+      },
+      {
+        "id": "m89",
+        "plate": "93",
+        "title": "Digital Line Art",
+        "difficulty": "Beginner",
+        "studyTime": "16 min",
+        "practiceTime": "25–30 min/day",
+        "prereq": [
+          "m88"
+        ],
+        "hook": "The line stabilizer setting you probably ignored in your software's menu is the single biggest lever for turning a shaky, uncertain hand into confident, clean linework — and most beginners never touch it.",
+        "whyItMatters": [
+          "This module brings the workspace, tablet, brushes, layers, selections, and transforms from Modules 87–88 together into one concrete, practiced skill: clean confident line art is the most common finishing step for illustration, comics, and character work, and shaky or inconsistent lines undermine even a strong underlying drawing.",
+          "Clean linework is also a genuinely learnable, mechanical skill, not just raw talent — specific habits like stabilization settings, canvas rotation, and controlled pressure account for most of the visible difference between a beginner's shaky lines and a professional's confident ones."
+        ],
+        "coreIdea": [
+          "A line stabilizer (sometimes called smoothing) delays and averages your pen's movement slightly to smooth out small hand tremors, producing steadier lines — a moderate setting (often around the middle of the available range) balances smoothness against responsiveness, since too much stabilization adds noticeable lag.",
+          "Confident lines come from slow, steady, complete strokes rather than many short hesitant ones — if a stroke doesn't come out right, undoing and trying again produces a cleaner result than trying to patch or trace over a bad line.",
+          "Rotating and moving the canvas as you draw (not just your hand) lets every stroke approach from a comfortable angle, similar to how traditional artists physically turn a piece of paper — awkward strokes are very often a canvas-angle problem, not a skill problem.",
+          "Line weight (varying a line's thickness along its length, usually by varying pen pressure) adds a sense of form, connection, and depth — thicker where lines connect or an object is closer to the viewer, thinner where it recedes or across simpler open space."
+        ],
+        "mistakes": [
+          "Drawing every line with identical, flat weight, producing a stiff and uniform result rather than lines that feel connected and grounded to the shapes they define.",
+          "Trying to trace over or patch a bad stroke repeatedly instead of undoing it and drawing the whole stroke again in one confident pass.",
+          "Never adjusting canvas rotation, forcing awkward wrist angles on strokes that would be easy from a rotated position.",
+          "Setting stabilization very high for all situations, including loose sketching or fast hatching, where the resulting lag actually hurts more than it helps.",
+          "Drawing an entire character or scene's lineart on a single layer, making later cleanup, recoloring, or part-specific edits far more difficult than necessary."
+        ],
+        "proTips": [
+          "Start with a stabilizer value around the middle of your software's range and adjust from there — too little won't smooth shaky strokes, too much will feel laggy and unresponsive.",
+          "Zoom in close enough that the area you're inking fills most of your screen; mistakes are far easier to catch at this scale than when working zoomed out.",
+          "Flip your canvas horizontally periodically while inking — it resets your eye and reveals proportion or symmetry issues you've gone blind to from staring at the same orientation too long.",
+          "Build line weight by varying pen pressure through a single stroke (lighter at the start, heavier through the middle, lighter again at the end) rather than drawing a flat line and trying to thicken parts of it afterward."
+        ],
+        "practice": {
+          "warmup": "Draw 15 long, confident lines using only full-arm movement (not wrist-only), trying to keep each one steady from start to finish without lifting the pen partway through.",
+          "daily": "Ink one small sketch from an earlier module using a moderate stabilizer setting, rotating the canvas as needed, and separating major parts (like a head vs. body) onto different layers.",
+          "weekly": "Ink a slightly more complex piece, deliberately varying line weight to make connected areas (like where two shapes overlap) read as heavier than open, simple areas.",
+          "challenge": "Ink the same simple shape twice — once with a low stabilizer setting, once with a high one — and compare which strokes came out cleaner and which felt more or less responsive to control."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "How to Quickly Improve your Digital Lineart",
+            "creator": "CrimsyCreates",
+            "url": "https://www.youtube.com/watch?v=YvcyUOJjVH4",
+            "why": "A free, thorough video covering 15 concrete tips for cleaner digital line art, from sketch prep through stabilization to line weight.",
+            "summary": "Covers 15 practical tips for cleaner digital inking, including keeping the underlying sketch clean before inking, using a moderate stabilizer setting (around the middle of the available range), rotating and moving the canvas for awkward angles, keeping line width consistent, flipping the canvas periodically to catch mistakes, and building line weight by varying pen pressure through a stroke.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "15 Quick Tips to Improve your Digital Lineart!",
+            "creator": "CrimsyCreates, CLIP STUDIO TIPS",
+            "url": "https://tips.clip-studio.com/en-us/articles/3891",
+            "why": "The free written companion to the same 15 tips, useful as a reference to revisit specific techniques without rewatching the full video.",
+            "summary": "A written, tip-by-tip breakdown covering sketch preparation, canvas size and resolution, stabilization settings, relaxed arm movement for smoother curves, rotating and flipping the canvas, multi-layered lineart organization by body part or material, and how to build line weight to show where forms connect and simulate proximity to the viewer.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What does a line stabilizer (or smoothing) setting actually do?",
+            "options": [
+              "It automatically colors a finished line art",
+              "It delays and averages pen movement slightly to smooth out small hand tremors",
+              "It permanently locks the canvas in place",
+              "It converts a raster layer into a vector layer"
+            ],
+            "correct": 1,
+            "explain": "A stabilizer smooths a line by slightly delaying and averaging the pen's tracked movement, reducing small tremors and producing steadier strokes, at the cost of some added lag at high settings."
+          },
+          {
+            "q": "What is the recommended response when a single inked stroke comes out wrong?",
+            "options": [
+              "Trace over it repeatedly until it looks better",
+              "Undo it and draw the whole stroke again in one confident pass",
+              "Leave it as is and move on to a different part of the piece",
+              "Increase the canvas resolution to fix it"
+            ],
+            "correct": 1,
+            "explain": "Undoing and redrawing a full stroke tends to produce a cleaner result than trying to patch or trace over a stroke that already went wrong."
+          },
+          {
+            "q": "Why is rotating the canvas while inking recommended?",
+            "options": [
+              "It changes the file's color profile",
+              "It lets every stroke approach from a comfortable angle, since awkward strokes are often a canvas-angle problem rather than a skill problem",
+              "It automatically applies a stabilizer effect",
+              "Canvas rotation has no real effect on line quality"
+            ],
+            "correct": 1,
+            "explain": "Rotating the canvas (like a traditional artist physically turning paper) lets you approach each stroke from a comfortable angle, fixing many strokes that feel awkward purely because of hand position."
+          },
+          {
+            "q": "What does varying line weight (thickness) along a stroke typically communicate?",
+            "options": [
+              "The file's resolution setting",
+              "A sense of form, connection, and depth, with thicker lines often at points of connection or proximity to the viewer",
+              "The brush's opacity setting",
+              "Nothing meaningful; it is purely decorative"
+            ],
+            "correct": 1,
+            "explain": "Varying line weight, usually by adjusting pen pressure through a stroke, adds a sense of where forms connect and which elements are closer to the viewer, giving lineart more depth than uniformly flat lines."
+          },
+          {
+            "q": "Why is organizing lineart across multiple layers (rather than one single layer) recommended?",
+            "options": [
+              "It has no practical benefit, it's purely stylistic",
+              "It makes later cleanup, recoloring, or editing specific parts (like hair versus a face) significantly easier",
+              "Multiple layers are required by most software licenses",
+              "It automatically improves line stabilization"
+            ],
+            "correct": 1,
+            "explain": "Separating lineart into multiple layers (for example, by body part or material) makes it much easier to edit, recolor, or clean up one part without affecting the rest of the linework."
+          }
+        ],
+        "checklist": [
+          "I can set a moderate line stabilizer value appropriate to the kind of stroke I'm drawing.",
+          "I can rotate my canvas to approach an awkward stroke from a more comfortable angle.",
+          "I can vary line weight within a stroke using pen pressure to suggest connection and depth.",
+          "I can organize a piece's lineart across multiple layers instead of drawing everything on one."
+        ],
+        "nextStep": "You've completed the core toolkit of Digital Art Fundamentals — workspace, tablet, brushes, layers, selections, transforms, and clean line art. Module 94 closes out this arc with canvas setup and export: resolution, DPI, color modes, and getting a finished piece out of your software correctly for print or web."
+      },
+      {
+        "id": "m90",
+        "plate": "94",
+        "title": "Canvas Setup & Export",
+        "difficulty": "Beginner",
+        "studyTime": "16 min",
+        "practiceTime": "15–20 min setup + review",
+        "prereq": [
+          "m89"
+        ],
+        "hook": "DPI is probably the most misunderstood setting in every piece of digital art software — and the honest truth is that for anything staying on a screen, it does absolutely nothing at all.",
+        "whyItMatters": [
+          "This closes out the Digital Art Fundamentals arc by covering the two moments that bookend every single piece you make: setting up the canvas correctly before you start, and exporting it correctly when you're done, so all the workspace, brush, layer, and line-art skills from this arc actually reach a viewer at full quality.",
+          "Getting this wrong is expensive in a way other mistakes aren't: a bad brush stroke can be undone, but a canvas started too small can't be scaled up later without visible quality loss — you can never add resolution you didn't capture while drawing."
+        ],
+        "coreIdea": [
+          "Resolution is simply the total pixel count of your canvas (width × height); DPI (dots per inch) only controls how densely those pixels get packed onto paper when printed. On a screen, DPI is meaningless — two canvases with identical pixel dimensions look completely identical on a monitor no matter what DPI number is set.",
+          "The practical rule: for screen-only work, ignore DPI entirely and focus on pixel dimensions; for print work, set DPI to 300 (the standard for sharp prints) and let your chosen pixel dimensions determine the physical print size.",
+          "Color mode matters at setup too: RGB is correct for anything that will be viewed on a screen (which is almost everything you'll make), while CMYK is only for professional offset printing, and switching modes after painting can shift your colors.",
+          "You can safely resize a canvas smaller or add empty space around existing art at any time, but scaling existing art larger degrades it, since the software has to invent pixel data that was never captured — which is why starting reasonably large (a common default is roughly A4 at 300 DPI) is safer than starting too small."
+        ],
+        "mistakes": [
+          "Starting a canvas too small and trying to scale the finished art larger later, producing visible blurring since new pixel information can't be invented from nothing.",
+          "Worrying about DPI for art that will only ever be viewed on a screen, when pixel dimensions are the only setting that actually matters for screen display.",
+          "Exporting a working file's only copy as a flattened JPG and discarding the original layered file, losing the ability to make any future edits.",
+          "Leaving color mode set to CMYK for work that's only ever going to be viewed digitally, resulting in duller on-screen colors than RGB would show.",
+          "Starting a canvas so large that the software lags through every brush stroke, when a more modest size would have looked just as good in the final shared image."
+        ],
+        "proTips": [
+          "Ask what the piece is actually for before creating the canvas: purely digital (ignore DPI, focus on pixel size) or possibly print (set 300 DPI and physical dimensions from the start) — deciding this first avoids the far more painful fix of upscaling later.",
+          "Always keep your native, layered working file (like a .psd, .clip, or .kra) even after exporting a flattened PNG or JPG for sharing — the export is disposable, the working file is not.",
+          "Use PNG for lossless sharing or anything needing transparency, and JPG at a high quality setting for smaller files where transparency isn't needed, since social platforms compress uploads anyway.",
+          "If your software feels laggy at your chosen canvas size, that's a real signal to work smaller rather than push through — a smooth, confidently-executed smaller piece usually looks better than a laggy, rushed large one."
+        ],
+        "practice": {
+          "warmup": "Set up three canvases for three different purposes (a square social media post, an A4-equivalent print piece, and a 16:9 wallpaper) and note the different resolution and DPI choices for each.",
+          "daily": "Take a finished piece from an earlier module and export it twice — once as a PNG for a portfolio site, once as a JPG for social sharing — and compare file size and any visible quality difference.",
+          "weekly": "Deliberately test the scale-up problem: take a small canvas piece, scale it 300% larger, and examine the blurring up close, so the \"never scale up\" rule is felt firsthand rather than just read.",
+          "challenge": "Set up a canvas specifically intended for print (300 DPI, physical dimensions in inches or cm) and export a print-ready file, confirming the exported pixel dimensions match what you expect from the DPI math."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "This is not how DPI works! Let me explain.",
+            "creator": "VildrArt™",
+            "url": "https://www.youtube.com/watch?v=ecOgVkfyA9c",
+            "why": "A free video specifically addressing common DPI misconceptions among digital artists, directly relevant to the most confusing setting covered in this module.",
+            "summary": "Addresses widespread misconceptions about DPI among digital artists, clarifying what the setting actually controls and correcting the common assumption that a higher DPI number automatically means a better or more detailed image regardless of pixel dimensions.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Canvas Size for Digital Art: The Complete Guide to Resolution, DPI, and Dimensions",
+            "creator": "Allard Lavaritte",
+            "url": "https://lavaritte.com/blogs/digital-canvas-sizes/",
+            "why": "An extremely thorough, free reference covering resolution, DPI, color mode, software-specific canvas setup, performance troubleshooting, and export settings by destination, with concrete size tables.",
+            "summary": "Covers the full lifecycle from canvas creation to export: explains that DPI only matters for print (screen display is identical regardless of DPI), gives concrete canvas size tables for social media, print, and merchandise, walks through software-specific setup in Clip Studio Paint, Procreate, and Krita, and ends with a file-format guide (PNG for lossless sharing, JPG for smaller social files, TIFF for professional print) plus the rule to always keep a native layered working file separate from any export.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What does DPI actually control?",
+            "options": [
+              "The total pixel count of an image",
+              "How densely pixels are packed onto paper when printed; it has no effect on how an image looks on a screen",
+              "The color mode of the canvas",
+              "The number of layers available in a document"
+            ],
+            "correct": 1,
+            "explain": "DPI (dots per inch) only affects print density. Two images with identical pixel dimensions look completely identical on a screen regardless of their DPI setting."
+          },
+          {
+            "q": "For art that will only ever be viewed on a screen (social media, portfolio sites), what setting should you focus on instead of DPI?",
+            "options": [
+              "Color mode only",
+              "Pixel dimensions (resolution)",
+              "File format exclusively",
+              "Brush hardness"
+            ],
+            "correct": 1,
+            "explain": "Since DPI is meaningless for screen display, pixel dimensions (the actual resolution) are what determine how sharp an image looks on any monitor."
+          },
+          {
+            "q": "Why is scaling a finished piece of art to a larger canvas size risky?",
+            "options": [
+              "It has no real risk at all",
+              "The software has to invent pixel data that was never captured, causing visible blurring",
+              "It automatically changes the color mode",
+              "It only affects the file format, not image quality"
+            ],
+            "correct": 1,
+            "explain": "Scaling up requires the software to generate new pixel information that doesn't exist in the original, which degrades quality — unlike scaling down, which only discards unneeded data."
+          },
+          {
+            "q": "Which color mode is correct for art that will only be viewed digitally?",
+            "options": [
+              "CMYK",
+              "RGB",
+              "Greyscale, always",
+              "It doesn't matter at all"
+            ],
+            "correct": 1,
+            "explain": "RGB is the correct mode for anything displayed on a screen; CMYK is reserved for professional offset printing and can make on-screen colors look duller if used unnecessarily."
+          },
+          {
+            "q": "What should you always keep after exporting a flattened PNG or JPG for sharing?",
+            "options": [
+              "Nothing, the export is sufficient",
+              "The native, layered working file (like a .psd, .clip, or .kra)",
+              "Only a low-resolution thumbnail",
+              "The canvas can be deleted immediately after export"
+            ],
+            "correct": 1,
+            "explain": "The native layered file preserves every layer and setting and allows future edits; a flattened export is meant for sharing, not as your only saved copy of the work."
+          }
+        ],
+        "checklist": [
+          "I can explain why DPI has no effect on how an image looks on a screen.",
+          "I can choose appropriate pixel dimensions and DPI based on whether a piece is for screen or print.",
+          "I can choose RGB versus CMYK appropriately based on a piece's intended use.",
+          "I can export a piece in an appropriate file format while keeping my native layered working file."
+        ],
+        "nextStep": "You've completed Digital Art Fundamentals — workspace, tablet, brushes, layers, selections, transforms, line art, and canvas setup. Every one of these skills carries forward directly into the next arc, Digital Painting & Rendering, where they get applied to full-color, fully-rendered work."
+      }
+    ]
+  },
+  {
+    "id": "digital-painting",
+    "title": "Digital Painting & Rendering",
+    "status": "live",
+    "order": 9,
+    "desc": "Color theory, value control, lighting, material rendering, edge control, atmospheric effects, and a complete professional illustration workflow.",
+    "moduleCount": 10,
+    "sample": [
+      "Color Theory",
+      "Values",
+      "Lighting",
+      "Material Rendering",
+      "Edge Control",
+      "Illustration Workflow"
+    ],
+    "modules": [
+      {
+        "id": "m91",
+        "plate": "95",
+        "title": "Color Theory Fundamentals",
+        "difficulty": "Intermediate",
+        "studyTime": "18 min",
+        "practiceTime": "25–30 min/day",
+        "prereq": [
+          "m90"
+        ],
+        "hook": "Two colors can be mathematically \"correct\" on a color wheel and still make a painting feel dead — because color isn't really three separate ingredients, it's one relationship, and most beginners are only ever adjusting one dial at a time.",
+        "whyItMatters": [
+          "Everything you've built through Digital Art Fundamentals (Modules 87–90) gave you the mechanical control to put color anywhere on a canvas. This arc is about knowing which color, and why — color theory is the first and most foundational decision-making layer of full-color rendering.",
+          "Working artists consistently point to one specific insight as the turning point in their color understanding: hue is the least important of the three properties of color, and value is what actually holds a painting together — skipping straight to hue choices without value control is one of the most common reasons colorful paintings still look muddy or flat."
+        ],
+        "coreIdea": [
+          "Every color has three independent properties: hue (its name — red, blue, green), value (how light or dark it is), and saturation (how intense or muted it is). A painting can fail in each one differently: wrong hues feel off, weak values feel flat, and wrong saturation feels either chaotic or dull.",
+          "Value matters more than hue for a painting's basic readability. A composition that still reads clearly in grayscale has a sound value structure; if it collapses into a gray mush without color to lean on, the hue choices were doing work the values should have been doing.",
+          "Different pure hues carry different inherent values — a pure yellow is naturally much lighter than a pure blue at maximum saturation. This matters constantly when planning a value structure, since simply picking \"nice colors\" can accidentally produce weak value contrast.",
+          "Saturation should be spent deliberately, not spread evenly: reserving your most saturated color for a focal point (a glowing object, a key light source) while keeping the rest of the palette more muted creates a clear hierarchy of what the viewer should look at first."
+        ],
+        "mistakes": [
+          "Choosing colors based on hue alone (\"this looks like a nice blue\") without checking whether the underlying value structure is doing the actual work of readability.",
+          "Assuming that colorful automatically means good — saturating everything in a painting equally removes the contrast that would otherwise direct the eye to a focal point.",
+          "Forgetting that different hues have different natural values, leading to value contrast that's accidentally weaker (or stronger) than intended when colors are chosen by eye alone.",
+          "Treating hue, value, and saturation as one combined \"color\" decision instead of three separate, individually adjustable properties that can each be diagnosed and fixed on their own.",
+          "Never testing a painting in grayscale, missing an easy, fast way to check whether the value structure holds up independent of color."
+        ],
+        "proTips": [
+          "When a painting feels wrong, diagnose it property by property: if the colors feel off, check hue; if it looks flat, check value; if it feels chaotic or dull, check saturation — don't try to fix all three with one change.",
+          "Squint at your painting or apply a grayscale filter regularly while working, especially at the block-in stage, to confirm your value structure reads before you commit further detail on top of it.",
+          "Reserve your highest saturation for the single area you most want the eye to land on, and deliberately mute the saturation everywhere else to support that hierarchy.",
+          "When picking a limited palette, plan your values first using a grayscale value study, then assign hues to that existing value structure rather than picking colors and hoping the values work out."
+        ],
+        "practice": {
+          "warmup": "Take five random color swatches at full saturation and rank them from lightest to darkest value without using any tool, then check your ranking with a grayscale filter.",
+          "daily": "Paint a small study using only value first (grayscale), then add a single limited hue on top at low opacity to see how much the existing value structure carries the piece.",
+          "weekly": "Paint the same small scene twice: once with saturation spread evenly across the whole image, once with saturation concentrated only at one focal point, and compare which reads more clearly.",
+          "challenge": "Take a finished piece from an earlier module and diagnose it property by property (hue, value, saturation) using the grayscale test, then make one deliberate fix in only the weakest property."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "Something strange you should know about color",
+            "creator": "Marco Bucci",
+            "url": "https://www.youtube.com/watch?v=gJ2HOj22gDo",
+            "why": "A free video from a widely-recommended professional colorist, explaining a core insight about how value and hue actually relate to each other in painting.",
+            "summary": "Marco Bucci explains a counterintuitive fact about color perception that trips up most beginners: that value, not hue, is the property doing the most work in making a painting read clearly, and demonstrates how to check and control value independent of hue while painting.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Hue, Value, and Saturation: The Holy Trinity of Color",
+            "creator": "Lunar Academy",
+            "url": "https://www.lunaracademy.co/post/hue-value-and-saturation",
+            "why": "A free, clearly written breakdown of the three properties of color specifically aimed at digital artists, with concrete examples from games and illustration.",
+            "summary": "Breaks color down into hue, value, and saturation as three independent, diagnosable properties, explaining that value is the single most important one for readability (a painting should read clearly even in grayscale), that different hues carry different inherent values, and that saturation should be reserved deliberately for areas of focus rather than spread evenly.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "According to this module, which of the three color properties matters most for a painting's basic readability?",
+            "options": [
+              "Hue",
+              "Value",
+              "Saturation",
+              "All three matter equally with no priority"
+            ],
+            "correct": 1,
+            "explain": "Value (lightness or darkness) is presented as the most important property for readability — a painting with strong value contrast reads clearly even in grayscale, while weak values produce a flat or muddy result regardless of hue choices."
+          },
+          {
+            "q": "What is a simple, fast way to check whether a painting's value structure is working?",
+            "options": [
+              "Increase the saturation of every color",
+              "Apply a grayscale filter or squint at the painting to see if it still reads clearly without color",
+              "Add more detail to every area equally",
+              "Switch the canvas to CMYK color mode"
+            ],
+            "correct": 1,
+            "explain": "Converting to grayscale or squinting removes hue and reveals whether the underlying value structure alone is strong enough to read clearly."
+          },
+          {
+            "q": "Why do different pure hues have different inherent values?",
+            "options": [
+              "This is a myth with no basis in how color works",
+              "At maximum saturation, some hues (like yellow) are naturally much lighter than others (like blue), which affects value contrast even when colors are chosen only by eye",
+              "All hues have identical value by definition",
+              "It only applies to physical paint, not digital color"
+            ],
+            "correct": 1,
+            "explain": "Pure yellow is naturally much lighter in value than pure blue at the same saturation, which is why simply picking \"nice\" hues can accidentally produce unintended value contrast (or a lack of it)."
+          },
+          {
+            "q": "How should saturation ideally be distributed across a painting, according to the module?",
+            "options": [
+              "Spread as evenly and highly as possible across the whole image",
+              "Reserved deliberately for a focal point, with the rest of the palette kept more muted",
+              "Kept at the same low level everywhere with no variation",
+              "Saturation has no effect on where the eye looks"
+            ],
+            "correct": 1,
+            "explain": "Concentrating the highest saturation on a single focal area while muting the rest creates a clear visual hierarchy, rather than spreading saturation evenly and losing that focus."
+          },
+          {
+            "q": "What is the recommended way to diagnose a painting that \"feels wrong\"?",
+            "options": [
+              "Change hue, value, and saturation all at once and hope it improves",
+              "Check each property individually — hue, value, and saturation — since each one causes a different kind of visual problem",
+              "Only ever adjust saturation, since it's the most important property",
+              "Start the painting over completely"
+            ],
+            "correct": 1,
+            "explain": "Since hue, value, and saturation are independent properties that each cause distinct visual problems, diagnosing and adjusting them one at a time is more effective than changing all three simultaneously."
+          }
+        ],
+        "checklist": [
+          "I can name the three independent properties of color: hue, value, and saturation.",
+          "I can check a painting's value structure using a grayscale test.",
+          "I can explain why different hues have different inherent values at full saturation.",
+          "I can deliberately concentrate saturation at a focal point rather than spreading it evenly."
+        ],
+        "nextStep": "You now understand color as three separate, diagnosable properties. Module 96 goes deeper specifically into value — how to plan and control a value structure across a full painting before color is even introduced."
+      },
+      {
+        "id": "m92",
+        "plate": "96",
+        "title": "Value Control & Value Studies",
+        "difficulty": "Intermediate",
+        "studyTime": "18 min",
+        "practiceTime": "25–30 min/day",
+        "prereq": [
+          "m91"
+        ],
+        "hook": "A painting that falls apart in grayscale was never really working in color — and a value study is the cheapest way to find that out before you have spent hours rendering.",
+        "whyItMatters": [
+          "Module 95 established that value is the single most important property for a painting's readability. This module gives you the actual practice for controlling it — grayscale studies, limited value ranges, and thumbnail value planning are the concrete techniques behind that principle.",
+          "This is a genuinely universal professional habit: working illustrators consistently follow the same sequence — value sketch, then grayscale or tonal study, then full color — specifically because a painting that fails structurally is far cheaper to fix at the thumbnail stage than after hours of color rendering."
+        ],
+        "coreIdea": [
+          "A value study strips a reference or idea down to only light and dark masses, usually limited to 3–5 distinct values rather than a full smooth range — fewer values force you to think about the big shapes and their relationships instead of getting lost in detail too early.",
+          "Local value (an object's natural value before any light hits it) is only the starting point. A believable value study also accounts for the light source, core shadow, cast shadow, and reflected light bouncing back into the shadow side — skipping reflected light is a common reason grayscale studies look flat.",
+          "Different materials hold value differently under the same light: a more reflective material creates more contrast between its lit and shadowed sides, while a matte material holds a narrower value range — useful information you'll build on in Module 98's material rendering.",
+          "Contrast is the tool that creates a focal point within a value study — the area with the strongest value contrast (the biggest jump between light and dark) is where the eye naturally goes first, so a focal point without strong local contrast tends to get lost."
+        ],
+        "mistakes": [
+          "Jumping straight into a full, smooth value range before testing whether the image reads with just 3–5 simplified values, skipping the step that would catch a weak composition early.",
+          "Giving every object the same local value, which (if translated to color) would mean every object is the same color — producing a flat, undifferentiated result.",
+          "Forgetting reflected light in shadow areas, leaving shadows pure flat dark instead of showing a subtle bounce of light and color from the environment.",
+          "Placing the strongest value contrast somewhere other than the intended focal point, accidentally pulling the eye to the wrong part of the image.",
+          "Treating a value study as throwaway busywork instead of as a genuine diagnostic tool that saves far more time than it costs by catching problems before full rendering."
+        ],
+        "proTips": [
+          "When starting a new piece, do at least one 3-value study (light, midtone, dark) before adding any more — if the composition doesn't read at 3 values, more values won't fix it.",
+          "Deliberately add a touch of reflected light to shadow areas, pulled from the color of nearby surfaces, rather than leaving shadows uniformly dark and flat.",
+          "Use a posterize adjustment (or manually flatten a study to a few discrete tones) periodically while working, as a quick check that your value structure is still holding up as detail is added.",
+          "Place your strongest value contrast exactly where you want the eye to land first, and keep contrast elsewhere in the image comparatively lower to support that hierarchy."
+        ],
+        "practice": {
+          "warmup": "Do three 5-minute thumbnail value studies of the same simple scene, using only 3 values each, and compare which composition reads most clearly.",
+          "daily": "Take a reference photo or one of your earlier pieces and desaturate it, then paint a grayscale study of it, paying attention to reflected light in shadow areas.",
+          "weekly": "Paint the same small scene at 3 values, then 5 values, then a full smooth range, and compare how much extra clarity each additional step of value range actually adds.",
+          "challenge": "Take a finished value study and deliberately move the strongest contrast to a different area, then evaluate how much that single change shifts where the eye goes first."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "Train Your Eyes to See Values",
+            "creator": "Stan Prokopenko (Proko)",
+            "url": "https://www.youtube.com/watch?v=RFQtsXktc9g",
+            "why": "A free 8-minute lesson on judging values by their relationships and context, which is exactly the skill value studies train.",
+            "summary": "Explains why our perception of values can be misleading when we draw and teaches you to focus on relationships, meaning how the surroundings change what you see, using optical illusions as examples, plus tips against tunnel vision such as flipping, tilting, stepping back and squinting to simplify values.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Understanding Grayscale/Monochrome Art",
+            "creator": "Konart, CLIP STUDIO TIPS",
+            "url": "https://tips.clip-studio.com/en-us/articles/2893",
+            "why": "An extremely detailed, free breakdown of how local value, light, cast shadow, and reflected light combine to build a believable value study, plus how limited value ranges are used for thumbnails.",
+            "summary": "Explains how a believable grayscale value study is built from local value plus the effects of a light source, cast shadow, and reflected light bouncing off nearby surfaces, shows how more reflective materials create more value contrast than matte ones, and demonstrates using limited value ranges (3–5 values) for fast, clear thumbnails before adding detail.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Why do artists often limit a value study to just 3–5 distinct values instead of a full smooth range?",
+            "options": [
+              "Software cannot render more than 5 values",
+              "Fewer values force attention onto the big shapes and their relationships instead of getting lost in detail too early",
+              "It is required by most digital painting software",
+              "More values always look worse"
+            ],
+            "correct": 1,
+            "explain": "A limited value range forces a focus on the major light and dark masses and their composition, which is easier to evaluate and fix than trying to judge a full smooth value range from the start."
+          },
+          {
+            "q": "What is reflected light, and why does skipping it often make a value study look flat?",
+            "options": [
+              "It's a lighting effect only used in digital software, not in traditional value theory",
+              "Light bouncing back into a shadow area from nearby surfaces; skipping it leaves shadows uniformly flat and dark instead of subtly varied",
+              "It refers to the brightest highlight on an object, unrelated to shadows",
+              "It only matters for transparent objects like glass"
+            ],
+            "correct": 1,
+            "explain": "Reflected light is light bouncing from the environment back into a shadow area; without it, shadows read as flat, uniform dark shapes rather than having the subtle variation seen in real lighting."
+          },
+          {
+            "q": "Why do more reflective materials generally show more value contrast under the same light than matte materials?",
+            "options": [
+              "Reflective materials always appear darker overall",
+              "They bounce more light, creating a stronger difference between their lit and shadowed sides",
+              "Material type has no effect on value contrast",
+              "Matte materials always show more contrast than reflective ones"
+            ],
+            "correct": 1,
+            "explain": "A more reflective surface bounces more light, which tends to increase the contrast between its brightest lit areas and its shadow side, compared to a matte surface holding a narrower value range."
+          },
+          {
+            "q": "How does contrast help establish a focal point in a value study?",
+            "options": [
+              "Contrast has no relationship to where the eye looks",
+              "The area with the strongest value contrast (biggest light-to-dark jump) naturally draws the eye first",
+              "Only color contrast can create a focal point, not value contrast",
+              "Focal points must always be placed in the exact center of the composition"
+            ],
+            "correct": 1,
+            "explain": "The eye is naturally drawn to the area of strongest value contrast, so placing that contrast deliberately at the intended focal point supports a clear visual hierarchy."
+          },
+          {
+            "q": "According to the module, what is the recommended order in a professional value-first workflow?",
+            "options": [
+              "Full color painting, then a value study, then a thumbnail sketch",
+              "Value sketch or thumbnail, then grayscale or tonal study, then full color painting",
+              "Full color painting only, skipping value studies entirely",
+              "Value studies are only useful after a painting is already finished"
+            ],
+            "correct": 1,
+            "explain": "The typical professional sequence starts with a small value sketch or thumbnail, moves to a grayscale or tonal study, and only then proceeds to full color, catching structural problems while they're still cheap to fix."
+          }
+        ],
+        "checklist": [
+          "I can create a 3-value thumbnail study before starting a more detailed piece.",
+          "I can add reflected light to a shadow area rather than leaving it flat and uniformly dark.",
+          "I can explain why a more reflective material shows more value contrast than a matte one under the same light.",
+          "I can deliberately place the strongest value contrast at my intended focal point."
+        ],
+        "nextStep": "You can now plan and control value independent of color. Module 97 moves into lighting specifically for rendering — form shadow, cast shadow, core shadow, and occlusion, the physical logic behind the value relationships you've been studying here."
+      },
+      {
+        "id": "m93",
+        "plate": "97",
+        "title": "Light & Shadow Logic",
+        "difficulty": "Intermediate",
+        "studyTime": "20 min",
+        "practiceTime": "25–30 min/day",
+        "prereq": [
+          "m92"
+        ],
+        "hook": "A shadow isn't one flat shape — it's actually four distinct things working together (form shadow, cast shadow, core shadow, and occlusion shadow), and most beginners paint all four as a single uniform dark blob.",
+        "whyItMatters": [
+          "Module 96 taught you to plan value structure; this module gives you the actual physical logic behind those values — the specific, nameable shadow types that make a form look convincingly three-dimensional under any single light source.",
+          "This is foundational, transferable knowledge: the exact same shadow logic applies whether you're rendering a character, a prop, or an environment, which is why it sits right before Module 98's material rendering — you need to understand how light behaves on a generic form before learning how different materials modify that behavior."
+        ],
+        "coreIdea": [
+          "A form under one light source splits into a light zone and a shadow zone, separated by the terminator (the edge where planes turn away from the light). Form shadow is caused by a surface simply facing away from the light; cast shadow is a separate shape caused by one object blocking light from reaching another surface entirely.",
+          "Shadows are rarely pure black because of reflected light (or bounce light) — light bouncing off nearby surfaces back into the shadow side. The core shadow is a distinct, often darker band that appears near the terminator specifically where reflected light doesn't reach as strongly.",
+          "The occlusion shadow is the darkest shadow in a scene, appearing in tight areas where two surfaces meet or nearly touch (like where an object sits on the ground) — neither the main light nor reflected light can reach into that tight gap, so it reads darker than the surrounding form or cast shadow.",
+          "The highlight and the center light are often confused but are different things: the center light is simply the plane facing most directly toward the light source, while the highlight is a reflection of the light source itself and moves depending on the viewer's position, the way a reflection in a mirror does."
+        ],
+        "mistakes": [
+          "Treating an entire shadow area as one flat, uniform dark shape instead of recognizing form shadow, cast shadow, core shadow, and occlusion shadow as distinct elements with different causes and values.",
+          "Painting shadows as pure black with no reflected light, producing a harsh, artificial look instead of the subtle bounce of color and light real shadows usually show.",
+          "Confusing the highlight (a moving reflection of the light source) with the center light (the plane facing the light source, which doesn't move with the viewer).",
+          "Forgetting the occlusion shadow entirely, which is often what's missing when two touching objects (a figure standing on ground, a prop resting on a table) don't feel properly grounded together.",
+          "Copying a reference's cast shadow shape exactly instead of adjusting it, when a cast shadow can be reshaped to better describe the form it's falling onto without breaking believability."
+        ],
+        "proTips": [
+          "Practice the classic \"shade an egg\" exercise: light a real egg on white paper with a single desk lamp and identify each shadow type (form, cast, core, occlusion) on it directly from observation before trying to invent them from imagination.",
+          "When a shadow area looks flat or dead, check specifically for a missing core shadow or missing reflected light — these two elements are usually what's needed to add convincing dimensionality.",
+          "Don't be afraid to adjust the shape of a cast shadow to better describe the form it lands on (wrapping it around a cylindrical object, for example) — audiences rarely notice small deviations from geometric accuracy as long as the shadow still feels believable.",
+          "Use free 3D software like Blender to build a simple sphere-and-ground scene and directly manipulate the light source, watching form shadow, cast shadow, core shadow, and occlusion shadow change in real time — this makes the abstract concepts concrete and controllable."
+        ],
+        "practice": {
+          "warmup": "Set up a real object (an egg, a ball, an apple) under a single desk lamp and identify all four shadow types on it: form shadow, cast shadow, core shadow, and occlusion shadow.",
+          "daily": "Render a simple sphere or geometric form digitally, deliberately including all four shadow types plus a distinguishable highlight and center light.",
+          "weekly": "Take one of your earlier value studies (Module 96) and add reflected light and a core shadow to its shadow areas if they're currently missing.",
+          "challenge": "Render two touching objects (a figure standing on ground, a cup resting on a table) and pay specific attention to rendering a convincing occlusion shadow where they meet."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "Shading Light and Form - Basics",
+            "creator": "Stan Prokopenko (Proko)",
+            "url": "https://www.youtube.com/watch?v=V3WmrWUEIJo",
+            "why": "A free 7-minute lesson from a highly respected figure-drawing educator, covering the named shadow types with an egg as the running example.",
+            "summary": "Stan Prokopenko explains how light affects the appearance of form, covering the terminator, form shadow, cast shadow, core shadow, reflected light, occlusion shadow, halftone, center light and highlight, using an egg as the running example.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "How to Use Blender to Learn About Light and Shadow",
+            "creator": "Monika Zagrobelna",
+            "url": "https://monikazagrobelna.com/2023/11/17/how-to-use-blender-to-learn-about-light-and-shadow/",
+            "why": "A free, hands-on tutorial using free 3D software to let you directly manipulate and observe every shadow type in real time, rather than only reading about them.",
+            "summary": "Walks through setting up a simple sphere-and-ground scene in the free software Blender, then shows how moving the light source and ground plane changes the terminator, form shadow, cast shadow, core shadow, occlusion shadow, and ambient (reflected) light in real time, turning abstract shadow theory into something directly observable and adjustable.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What is the difference between form shadow and cast shadow?",
+            "options": [
+              "They are the same thing with different names",
+              "Form shadow is caused by a surface facing away from the light source; cast shadow is a separate shape caused by one object blocking light from reaching another surface",
+              "Form shadow only appears on spheres, cast shadow only on flat surfaces",
+              "Cast shadow is always darker than form shadow"
+            ],
+            "correct": 1,
+            "explain": "Form shadow occurs on a surface simply turning away from the light, while cast shadow is an entirely separate shape produced when one object blocks light from reaching another surface."
+          },
+          {
+            "q": "Why do shadows usually appear lighter than pure black?",
+            "options": [
+              "Software cannot render pure black",
+              "Reflected light (bounce light) from nearby surfaces fills into the shadow area",
+              "Shadows are only dark in traditional media, not digital",
+              "Pure black shadows are a legal requirement in professional work"
+            ],
+            "correct": 1,
+            "explain": "Light bouncing off nearby surfaces (reflected or bounce light) typically fills shadow areas with some brightness and color, which is why real shadows are rarely pure black."
+          },
+          {
+            "q": "What causes an occlusion shadow, and why is it usually the darkest shadow in a scene?",
+            "options": [
+              "It occurs in tight areas where two surfaces meet or nearly touch, where neither the main light nor reflected light can reach",
+              "It's caused by direct sunlight only and never appears indoors",
+              "It only appears on reflective materials",
+              "It's the same thing as a highlight"
+            ],
+            "correct": 0,
+            "explain": "An occlusion shadow forms in tight gaps between touching or nearly-touching surfaces, where both the primary and reflected light are blocked, making it typically the darkest shadow in a scene."
+          },
+          {
+            "q": "What is the key difference between the highlight and the center light on a form?",
+            "options": [
+              "They are identical and interchangeable terms",
+              "The center light is the plane facing the light source and stays fixed; the highlight is a reflection of the light source that moves depending on the viewer's position",
+              "The highlight only appears on matte surfaces",
+              "The center light only appears at night"
+            ],
+            "correct": 1,
+            "explain": "The center light is a fixed plane facing the light source, while the highlight is a reflection of the light source itself, which shifts position as the viewer's (or camera's) position changes, similar to a reflection in a mirror."
+          },
+          {
+            "q": "According to the module, is it acceptable to adjust the exact shape of a cast shadow from strict geometric accuracy?",
+            "options": [
+              "No, cast shadows must always be geometrically perfect",
+              "Yes, a cast shadow can be reshaped to better describe the form it lands on, since small deviations rarely break believability",
+              "Cast shadows should never be included in a rendering",
+              "Only professional software can calculate correct cast shadow shapes"
+            ],
+            "correct": 1,
+            "explain": "The module notes that adjusting a cast shadow's shape (for example, wrapping it around a cylindrical form) to better describe the surface it falls on is a common, acceptable technique, since audiences rarely notice small deviations from strict geometric accuracy."
+          }
+        ],
+        "checklist": [
+          "I can identify form shadow, cast shadow, core shadow, and occlusion shadow on a real or rendered object.",
+          "I can add reflected light to a shadow area instead of leaving it pure black.",
+          "I can distinguish between a highlight (a moving reflection) and a center light (a fixed plane facing the light).",
+          "I can render a convincing occlusion shadow where two objects meet or touch."
+        ],
+        "nextStep": "You now understand the physical logic of light and shadow on a generic form. Module 98 builds directly on this by rendering specific materials — skin and organic surfaces — where this same shadow logic gets modified by how a particular material actually behaves under light."
+      },
+      {
+        "id": "m94",
+        "plate": "98",
+        "title": "Material Rendering: Skin & Organic Surfaces",
+        "difficulty": "Advanced",
+        "studyTime": "20 min",
+        "practiceTime": "30 min/day",
+        "prereq": [
+          "m93"
+        ],
+        "hook": "Skin isn't just a colored surface — light actually enters it, bounces around beneath the surface, and comes back out somewhere else, which is exactly why flat, single-tone skin always looks like plastic no matter how carefully it's shaded.",
+        "whyItMatters": [
+          "Module 97 gave you the universal shadow logic for any form. This module is the first of several that show how a specific material modifies that generic logic — skin is one of the most common and most demanding surfaces you'll render, since human eyes are extremely sensitive to anything that looks slightly wrong about a face.",
+          "Subsurface scattering, the core skin-specific effect covered here, is genuinely different from anything in Module 97: it's not a shadow type at all, but a property of the material itself letting light penetrate and re-emerge, which is why skin needs its own dedicated rendering approach rather than just generic shadow logic."
+        ],
+        "coreIdea": [
+          "Subsurface scattering is light entering skin, bouncing around beneath the surface, and exiting nearby, rather than reflecting straight off the surface like a hard material would. This is why thin areas like ears, nostrils, and fingertips often show a warm reddish glow when strongly backlit — light is passing partway through them.",
+          "The terminator (the transition from light to shadow) is where subsurface scattering is most visible: instead of a flat, even transition, the terminator on skin often shows a warmer, more saturated color than either the highlight or the shadow, because light is scattering internally right at that edge.",
+          "In realistic lighting, shadows on skin should generally stay more muted and desaturated than mid-tones, since shadows absorb rather than reflect light — mid-tones, which receive direct illumination without being overexposed, typically carry the most saturated color information.",
+          "Skin doesn't exist in isolation: bounce light from the surrounding environment (a red shirt, a blue sky, a warm lamp) reflects subtly into skin's shadow areas, and including this is often what makes a rendered figure feel like it belongs in its scene rather than looking pasted on top of it."
+        ],
+        "mistakes": [
+          "Treating skin like a hard, opaque material with a flat, single-tone shadow, missing the warm internal glow that subsurface scattering produces, especially in thin areas like ears and fingertips.",
+          "Making shadow areas on skin more saturated and colorful than the mid-tones, which tends to look unnatural in realistic lighting (though this can be an intentional stylistic choice in stylized or dramatically lit work).",
+          "Rendering skin in isolation from its environment, ignoring bounce light from nearby colored surfaces that would naturally reflect subtly into the shadow areas.",
+          "Relying only on mid-tones to define form instead of letting the transition between light and shadow do that work, which produces a dull, flat look.",
+          "Making skin perfectly smooth with zero texture, which reads as artificial and plastic rather than convincingly organic."
+        ],
+        "proTips": [
+          "Add a soft, warm glaze (often orange-red) specifically at the terminator, using a low-opacity airbrush or an overlay-mode layer, to simulate the way subsurface scattering shows up most strongly at the light-to-shadow transition.",
+          "Keep shadow saturation lower than mid-tone saturation for a realistic look, and treat higher-saturation shadows as a deliberate stylistic choice for dramatic or stylized lighting rather than a default.",
+          "Pull a bounce-light color from a dominant nearby surface (clothing, background) and add it subtly to skin's shadow areas at low opacity, to visually connect the figure to its environment.",
+          "Add a very subtle noise or texture pass at the end of a skin render to break up perfectly smooth gradients, which otherwise tend to read as artificial or plastic-looking."
+        ],
+        "practice": {
+          "warmup": "Render a simple sphere using skin-toned color, adding a warm terminator glaze and reflected bounce light, then compare it to the same sphere rendered with flat, single-tone shading.",
+          "daily": "Take a simple portrait or head study and render its skin using a base color, a Multiply shadow layer, a warm terminator glaze, and a Screen or Add layer for lit areas.",
+          "weekly": "Render a small figure illustration with one dominant colored surface nearby (a red shirt, a green background) and deliberately add that color as bounce light into the skin's shadow areas.",
+          "challenge": "Render the same face twice — once with muted, desaturated shadows and vibrant mid-tones (realistic), once with more saturated shadows (stylized) — and compare how each approach changes the overall feel."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "Painting Skin Tones and How Light Affects Color",
+            "creator": "Marco Bucci (via Proko)",
+            "url": "https://www.youtube.com/watch?v=kYtGh2xTAlg",
+            "why": "A free YouTube video from a respected colorist covering fleshtone values and how light and shadow specifically affect skin color.",
+            "summary": "Marco Bucci paints the planes of a head with color, demonstrating fleshtone values and showing concretely how light and shadow interact with skin tones differently than with other materials, building directly on shadow logic with skin-specific color decisions.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Mastering Skin Tones: Tips & Step-by-Step Process",
+            "creator": "nadherinn, CLIP STUDIO TIPS",
+            "url": "https://tips.clip-studio.com/en-us/articles/10434",
+            "why": "An extremely detailed, free, step-by-step guide covering base color, subsurface scattering, shadow blending modes, the terminator glow, and bounce light specifically for skin.",
+            "summary": "Walks through a complete skin-rendering workflow: establishing a base color, using a soft airbrush for subsurface scattering in thin areas, building shadows with a Multiply layer, adding a warm, saturated terminator glaze with an Overlay layer, adding lit areas with Screen or Add layers, and finishing with subtle bounce light and a light noise texture pass for realism.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What is subsurface scattering, and where is it most visible on skin?",
+            "options": [
+              "A shadow type that only appears at night, most visible on the forehead",
+              "Light entering skin and bouncing internally before exiting nearby; most visible in thin areas like ears, nostrils, and fingertips when backlit",
+              "A brush setting in digital painting software with no real-world basis",
+              "A blend mode used only for hard, reflective materials"
+            ],
+            "correct": 1,
+            "explain": "Subsurface scattering is light penetrating skin and re-emerging nearby rather than reflecting straight off the surface, and it's most visible in thin, backlit areas like ears and fingertips, which glow warmly."
+          },
+          {
+            "q": "According to the module, what should the terminator (light-to-shadow transition) on skin often show?",
+            "options": [
+              "A flat, even gray transition with no color variation",
+              "A warmer, more saturated color than either the highlight or the shadow, due to internal light scattering",
+              "Pure black with no color at all",
+              "The exact same color as the highlight"
+            ],
+            "correct": 1,
+            "explain": "Because subsurface scattering is especially active right at the terminator, this transition zone on skin often shows a warmer, more saturated hue than the surrounding highlight or shadow."
+          },
+          {
+            "q": "In realistic lighting, how should shadow saturation on skin generally compare to mid-tone saturation?",
+            "options": [
+              "Shadows should always be more saturated than mid-tones",
+              "Shadows should generally be more muted/desaturated than mid-tones, since shadows absorb rather than reflect light",
+              "Saturation should be identical in shadows and mid-tones",
+              "Saturation has no relevant effect on skin rendering"
+            ],
+            "correct": 1,
+            "explain": "In realistic lighting, mid-tones (which receive direct illumination) typically carry the most saturated color, while shadows tend to be more muted since they absorb rather than reflect light."
+          },
+          {
+            "q": "Why is bounce light from the environment important when rendering skin?",
+            "options": [
+              "It has no real effect on how skin looks in a scene",
+              "It reflects subtly into shadow areas, helping a figure feel visually connected to its environment rather than pasted on top of it",
+              "It only matters for rendering hard, reflective materials like metal",
+              "Bounce light should always be avoided when rendering people"
+            ],
+            "correct": 1,
+            "explain": "Skin doesn't exist in isolation — bounce light from nearby colored surfaces reflecting subtly into shadow areas helps a rendered figure feel integrated into its scene rather than looking separately pasted in."
+          },
+          {
+            "q": "Why is adding a subtle texture or noise pass often recommended as a final step for skin rendering?",
+            "options": [
+              "It reduces the file size significantly",
+              "Perfectly smooth skin tends to look artificial or plastic, so subtle texture helps it read as convincingly organic",
+              "It is required by most software licenses",
+              "It replaces the need for subsurface scattering entirely"
+            ],
+            "correct": 1,
+            "explain": "Completely smooth gradients on skin tend to look artificial or plastic; a light noise or texture pass breaks up that smoothness for a more convincingly organic result."
+          }
+        ],
+        "checklist": [
+          "I can explain what subsurface scattering is and where it's most visible on skin.",
+          "I can add a warm terminator glaze to simulate subsurface scattering at the light-to-shadow transition.",
+          "I can keep shadow saturation more muted than mid-tone saturation for a realistic result (or deliberately break this for a stylized look).",
+          "I can add bounce light from a nearby surface into a figure's shadow areas to integrate it with its environment."
+        ],
+        "nextStep": "You now understand how one specific material (skin) modifies the generic shadow logic from Module 97. Module 99 applies the same modify-the-logic approach to hard surfaces — metal, glass, and stone — which behave very differently from organic material."
+      },
+      {
+        "id": "m95",
+        "plate": "99",
+        "title": "Material Rendering: Hard Surfaces",
+        "difficulty": "Advanced",
+        "studyTime": "20 min",
+        "practiceTime": "30 min/day",
+        "prereq": [
+          "m94"
+        ],
+        "hook": "Metal doesn't have a color of its own — a polished sword isn't really silver-gray, it's a distorted mirror showing you the sky, the ground, and everything else in the scene, which is exactly why painting it from imagination alone is so hard.",
+        "whyItMatters": [
+          "Module 98 showed how one material (skin) modifies the generic shadow logic from Module 97. This module applies that same modify-the-logic approach to the opposite extreme: hard, reflective surfaces that behave almost nothing like organic materials, completing your range across the two most common material categories in illustration.",
+          "Metal, glass, and stone appear constantly in character and environment art — armor, weapons, windows, architecture — and getting them wrong (usually by under-committing to contrast) is one of the fastest ways a rendered piece reads as amateurish, even when everything else in the piece is strong."
+        ],
+        "coreIdea": [
+          "A reflective surface borrows its color from its environment rather than having a fixed local color — the sky reflects into the top of a metal object, the ground into the bottom, and nearby colored objects into the sides. This is why metal painted in isolation, without thinking about the surrounding scene, tends to look flat and disconnected.",
+          "Reflective surfaces have extreme, abrupt value contrast: highlights close to pure white, shadows that can be nearly black, with a hard, sharp transition between them — unlike organic materials, where transitions are soft and gradual. Beginners consistently under-commit to this contrast, which is the single most common reason painted metal reads as plastic.",
+          "The reflected light band — a strip of lighter value at the bottom edge of a shadow area, where a surface catches light bounced from the ground or nearby objects — is especially pronounced and important on reflective materials, sometimes nearly as bright as the primary highlight itself.",
+          "Different hard materials sit at different points on a reflectivity spectrum (polished chrome, brushed steel, matte stone, rough rust), and where a material sits determines everything else: how sharp its highlights are, how extreme its value contrast is, and how much of the environment visibly reflects in it."
+        ],
+        "mistakes": [
+          "Painting a hard, reflective surface in isolation from its environment, skipping the sky-colored top, ground-colored bottom, and nearby object reflections that make it feel like it belongs in the scene.",
+          "Keeping value contrast too moderate, producing a soft, plastic-like result instead of the sharp, extreme highlight-to-shadow jump that reads as genuinely reflective.",
+          "Making a highlight broad and soft instead of narrow and hard-edged, which is one of the fastest ways a metal surface reads as rubber or plastic rather than metal.",
+          "Treating every hard material the same way regardless of how reflective it actually is, instead of adjusting highlight sharpness and value contrast based on where a specific material sits on the reflectivity spectrum.",
+          "Adding surface wear (scratches, dents, rust) as random scattered marks rather than details with a believable cause and direction, which reads as decoration instead of history."
+        ],
+        "proTips": [
+          "Before painting a metal or glass object, decide what's above it (sky, ceiling), below it (ground, floor), and beside it (nearby colored objects), and let those colors show up in the reflection — this single habit does more to sell metal than any brush technique.",
+          "Push your highlight and shadow values further apart than feels comfortable at first — extreme value contrast is what separates convincing metal from a flat, moderate-contrast result that reads as plastic.",
+          "Paint a metal object's primary highlight as one confident, narrow, hard-edged stroke rather than building it up from many small uncertain marks — hesitation shows in highlights more than almost anywhere else.",
+          "When adding scratches or wear, give each one a light side and a dark side (the two walls of the groove) rather than a single flat line — this is what makes a scratch read as a 3D groove instead of a drawn-on mark."
+        ],
+        "practice": {
+          "warmup": "Paint the same sphere three times as three different hard materials (polished chrome, brushed steel, matte stone), adjusting highlight sharpness and value contrast for each.",
+          "daily": "Render one hard-surface object (a blade, a goblet, a window) with deliberate environment-color reflections — sky above, ground below, a nearby colored object to one side.",
+          "weekly": "Take a finished hard-surface render and push its value contrast noticeably further (brighter highlight, darker shadow) than your first instinct, and compare the result.",
+          "challenge": "Add believable wear (scratches, dents, or rust) to a hard-surface object, giving each mark a plausible cause and a light-and-dark paired edge rather than a single flat line."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "How to draw and paint reflective windows — 4 mediums (and a freebie!)",
+            "creator": "Sandy Allnock",
+            "url": "https://www.youtube.com/watch?v=J0CKna8A51I",
+            "why": "A free video from an established art educator specifically on reading and simplifying reflections in glass, a core hard-surface skill.",
+            "summary": "Sandy Allnock demonstrates how to simplify complicated glass reflections into simple, recognizable shapes rather than trying to render every detail, showing how squinting to find the essential shapes in a reflection is more effective than attempting photorealistic accuracy.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "How to Render Realistic Metal and Gold Digital Art Tutorial",
+            "creator": "Allard Lavaritte",
+            "url": "https://lavaritte.com/blogs/how-to-paint-realistic-metal/",
+            "why": "An exceptionally thorough, free guide covering the physics of metal reflectivity, a complete step-by-step process, six specific metal types with color palettes, and common mistakes with fixes.",
+            "summary": "Explains that metal borrows its color entirely from its environment rather than having a fixed local color, walks through a complete layer-based painting process (base color, Multiply shadows, a reflected light band, a sharp Screen/Add highlight, and environment reflections), and gives specific base colors, highlight qualities, and shadow behavior for six metal types (steel, gold, copper, bronze, silver, rusted iron), plus common mistakes like insufficient value contrast that make metal read as plastic.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Why does a highly reflective surface like polished metal not have a fixed local color?",
+            "options": [
+              "Reflective surfaces are always painted gray by convention",
+              "It borrows its color from its environment, reflecting the sky, ground, and nearby objects rather than having its own fixed hue",
+              "Local color doesn't exist as a concept in digital painting",
+              "Metal always appears white regardless of lighting"
+            ],
+            "correct": 1,
+            "explain": "A highly reflective surface acts like a distorted mirror, showing colors from its surroundings (sky above, ground below, nearby objects to the sides) rather than displaying one fixed local color."
+          },
+          {
+            "q": "What is a common beginner mistake regarding value contrast on reflective hard surfaces?",
+            "options": [
+              "Making the contrast too extreme",
+              "Keeping the value contrast too moderate, producing a soft, plastic-like result instead of the sharp jump that reads as reflective",
+              "Value contrast doesn't matter for hard surfaces",
+              "Only using pure black and white with no mid-tones at all"
+            ],
+            "correct": 1,
+            "explain": "Beginners tend to under-commit to value contrast on reflective surfaces; pushing highlights brighter and shadows darker than feels comfortable is usually necessary for a convincingly reflective result."
+          },
+          {
+            "q": "What is the reflected light band, and where does it typically appear?",
+            "options": [
+              "A rainbow effect only seen on glass prisms",
+              "A strip of lighter value at the bottom edge of a shadow area, where a surface catches light bounced from the ground or nearby objects",
+              "A type of brush exclusive to painting fabric",
+              "The brightest highlight on a surface, located at its center"
+            ],
+            "correct": 1,
+            "explain": "The reflected light band is a lighter strip typically found at the lower edge of a shadow area, caused by light bouncing up from the ground or nearby surfaces — it can be nearly as bright as the primary highlight on very reflective materials."
+          },
+          {
+            "q": "Why should a primary highlight on metal be painted as one confident, narrow stroke rather than built up gradually?",
+            "options": [
+              "It saves time only, with no visual benefit",
+              "A narrow, hard-edged, confident highlight reads as metal, while a soft or hesitant one reads as plastic or rubber",
+              "Multiple small strokes always look better on metal",
+              "Highlights have no effect on how a material reads"
+            ],
+            "correct": 1,
+            "explain": "A sharp, confidently-placed highlight is one of the clearest signals of a reflective metal surface; a broad, soft, or hesitantly-built highlight tends to read as a softer, non-metallic material instead."
+          },
+          {
+            "q": "Why should surface wear like scratches have a believable cause and direction rather than being randomly placed?",
+            "options": [
+              "Random marks are always more visually interesting",
+              "Deliberate, causally logical wear reads as history and adds believability, while random scattered marks read as decoration or noise",
+              "Scratches must always be placed in the exact center of an object",
+              "Wear marks have no effect on how convincing a render looks"
+            ],
+            "correct": 1,
+            "explain": "Wear marks placed with a plausible cause and direction (for example, concentrated where an object would logically take impact) tell a believable story about the object's history, while random scattering reads as arbitrary decoration."
+          }
+        ],
+        "checklist": [
+          "I can add environment-color reflections (sky, ground, nearby objects) to a hard-surface render.",
+          "I can push value contrast on a reflective surface further than feels immediately comfortable.",
+          "I can paint a confident, narrow, hard-edged highlight rather than a soft, built-up one.",
+          "I can add wear marks with a believable cause and a light-and-dark paired edge."
+        ],
+        "nextStep": "You now have material rendering approaches for both organic (skin) and hard-reflective (metal, glass) surfaces. Module 100 shifts to edge control — the deliberate use of hard and soft edges across an entire piece to direct focus and describe form, a skill that applies across every material you've rendered so far."
+      },
+      {
+        "id": "m96",
+        "plate": "100",
+        "title": "Edge Control",
+        "difficulty": "Advanced",
+        "studyTime": "18 min",
+        "practiceTime": "25–30 min/day",
+        "prereq": [
+          "m95"
+        ],
+        "hook": "A painting where every single edge is perfectly sharp is, paradoxically, one of the fastest ways to make it feel amateurish — real depth comes from knowing exactly which edges to let go of.",
+        "whyItMatters": [
+          "You've now rendered skin (Module 98) and hard surfaces (Module 99), each with their own edge qualities. Edge control is the skill that governs how those edges behave across an entire piece, deciding not just what a surface looks like up close, but where the viewer's eye actually travels.",
+          "Working painters describe edge control as a foundational skill, not a finishing touch — it determines how light wraps around form, how space reads as deep or flat, and how confidently the eye moves through a composition, tying directly back to the focal-point work from Module 79."
+        ],
+        "coreIdea": [
+          "There are three broad edge types: hard edges (clear, abrupt transitions that attract attention and define structure), soft edges (gradual transitions that create atmosphere and distance), and lost edges (a transition that starts clearly, disappears, then reappears elsewhere, adding rhythm and inviting the viewer to complete the form mentally).",
+          "As a general rule, hard edges come forward and pull the eye, while soft edges recede and let the eye travel over them into the next shape — which is why hard edges are typically reserved for a focal area, and soft edges for backgrounds or less important passages.",
+          "An edge can disappear entirely when two adjacent shapes share nearly identical values — this isn't a mistake to fix, but a deliberate, sophisticated tool for unifying a painting and creating a sense of atmosphere.",
+          "Edge variety should be treated as a deliberate design decision made before or during painting, not an accident of technique: deciding in advance where your single sharpest edge (the focal point), your softest edge (an atmospheric recession), and a lost edge (where values merge) will go shapes the entire piece's mood and movement."
+        ],
+        "mistakes": [
+          "Rendering every edge in a piece with the same hardness, producing either a brittle, cut-out look (all hard) or a mushy, undefined look (all soft) instead of a deliberate range.",
+          "Placing the sharpest, highest-contrast edges somewhere other than the intended focal point, unintentionally pulling the eye to the wrong part of the composition.",
+          "Treating a vanishing edge (where two shapes share a value) as an error to fix, rather than recognizing it as a legitimate, sophisticated technique for unity and atmosphere.",
+          "Deciding on edge treatment only after a piece is nearly finished, instead of planning the sharpest, softest, and lost edges as part of the composition from the start.",
+          "Softening or hardening an edge inconsistently with the rest of a shape's value logic, breaking the sense of form the edge was supposed to support."
+        ],
+        "proTips": [
+          "Before finishing a piece, explicitly identify three edges: your single sharpest (the focal point), your softest (an atmospheric or receding passage), and one lost edge (where two shapes merge in value) — then check the rest of the painting supports that hierarchy.",
+          "Practice the direct comparison exercise: paint the same simple object twice, once with every contour sharp, once with most edges softened except one — compare which reads more naturally and where your eye goes first in each.",
+          "When two adjacent shapes are close in value, consider deliberately merging their edge rather than forcing a defining line between them, especially in background or non-focal areas.",
+          "Treat edge decisions as part of your composition planning (Module 79), not an afterthought — decide where hard, soft, and lost edges will go at the same stage you're deciding your focal point and value structure."
+        ],
+        "practice": {
+          "warmup": "Paint a simple object (a cup, a rock) twice: once with all contours sharp, once with most edges softened except one — compare which feels more natural and note where your eye goes first in each.",
+          "daily": "Take one of your Module 98 or 95 material studies and deliberately vary its edges: hard at the focal point, soft toward the edges of the piece, with at least one lost edge where values merge.",
+          "weekly": "Create a small grayscale study with two adjacent shapes, then gradually adjust their values until the edge between them nearly disappears, and observe how your sense of depth changes.",
+          "challenge": "Take a finished piece from an earlier module and identify one edge you could intentionally lose (merge into a neighboring shape by matching value) without damaging the read of the form — then make that change."
+        },
+        "resources": [
+          {
+            "type": "Article",
+            "title": "How to Handle the Edges in Your Paintings",
+            "creator": "Krista Hasson",
+            "url": "https://kristahasson.com/edges-in-painting/",
+            "why": "A free, clear, visually-demonstrated breakdown of hard versus soft edges and how they direct a viewer's eye through a composition.",
+            "summary": "Explains that hard or high-contrast edges attract the eye and pull it along their length, making them ideal for a focal area, while soft edges let the eye travel over them into the next shape and are better suited to backgrounds, with a concrete example showing how a softer edge at a composition's outer border keeps the viewer's eye from exiting the painting.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Mastering Edge Control in Painting: Skip Whitcomb Guide",
+            "creator": "Gabor Svagrik (Skip Whitcomb), TAAO",
+            "url": "https://tucsonartacademyonline.com/blog/2025/11/5/controlling-your-edges",
+            "why": "A free, in-depth lesson from a working professional painter's teaching, covering hard, soft, and lost edges as a design tool with concrete practice exercises.",
+            "summary": "Skip Whitcomb categorizes edges into hard (clear, attention-grabbing transitions), soft (gradual, atmosphere-creating transitions), and lost-and-found (edges that dissolve and reappear, adding rhythm and inviting the viewer to mentally complete the form), and explains that when two shapes share nearly identical values their edge can vanish entirely as a deliberate tool for unity, recommending painters decide their sharpest, softest, and lost edge in advance as part of composition planning.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What is the general rule for how hard versus soft edges affect the eye?",
+            "options": [
+              "Both edge types have identical effects on where the eye looks",
+              "Hard edges come forward and pull the eye along them; soft edges recede and let the eye travel over them into the next shape",
+              "Soft edges always attract more attention than hard edges",
+              "Edge hardness only matters in traditional media, not digital"
+            ],
+            "correct": 1,
+            "explain": "Hard, high-contrast edges attract and hold the eye, making them suited to focal areas, while soft edges let the eye pass over them into adjacent shapes, making them suited to backgrounds and less important passages."
+          },
+          {
+            "q": "What is a \"lost\" edge, according to the module?",
+            "options": [
+              "An edge that has been erased by mistake",
+              "A transition that begins clearly, disappears, then reappears elsewhere, adding rhythm and inviting the viewer to complete the form mentally",
+              "Any edge that is completely straight",
+              "An edge that only appears in black-and-white value studies"
+            ],
+            "correct": 1,
+            "explain": "A lost edge starts clearly defined, dissolves (often where values merge), and reappears elsewhere, which adds visual rhythm and engages the viewer in mentally completing the form."
+          },
+          {
+            "q": "What happens when two adjacent shapes share nearly identical values, and how should this be treated?",
+            "options": [
+              "It's always a mistake that must be corrected with a defining line",
+              "The edge between them can disappear, which is a legitimate, deliberate technique for unity and atmosphere, not necessarily an error",
+              "This situation is technically impossible in painting",
+              "It only happens in digital painting, never in traditional media"
+            ],
+            "correct": 1,
+            "explain": "When two shapes are close in value, their edge can vanish entirely; this is a sophisticated tool for creating unity and atmosphere rather than a flaw to fix."
+          },
+          {
+            "q": "According to the module, when should edge decisions (sharpest, softest, lost) ideally be planned?",
+            "options": [
+              "Only after a piece is completely finished",
+              "As part of the composition planning stage, alongside decisions about the focal point and value structure",
+              "Edge decisions should never be planned in advance",
+              "Only the software's default settings should determine edge quality"
+            ],
+            "correct": 1,
+            "explain": "Edge control is treated as a foundational design decision, planned alongside the focal point and value structure, rather than an afterthought applied once a piece is otherwise finished."
+          },
+          {
+            "q": "What is the risk of rendering every edge in a painting with the same hardness?",
+            "options": [
+              "There is no risk; uniform edges are always ideal",
+              "It produces either a brittle, cut-out look (if all hard) or a mushy, undefined look (if all soft), rather than a deliberate range that guides the eye",
+              "Uniform edges automatically create the strongest possible focal point",
+              "This only affects file size, not visual quality"
+            ],
+            "correct": 1,
+            "explain": "Using only one edge quality throughout a piece removes the contrast in edge treatment that normally guides the eye and creates depth, resulting in either an overly brittle or overly mushy overall feel."
+          }
+        ],
+        "checklist": [
+          "I can identify hard, soft, and lost edges in a reference painting or my own work.",
+          "I can place my sharpest edge deliberately at my intended focal point.",
+          "I can deliberately merge (lose) an edge between two shapes of similar value for unity.",
+          "I can plan edge treatment as part of my composition, alongside focal point and value structure."
+        ],
+        "nextStep": "You now control edges as a deliberate design tool across an entire piece. Module 101 applies everything so far — color, value, light, material, edges — to atmospheric perspective, using these tools specifically to create a convincing sense of depth and distance in an environment."
+      },
+      {
+        "id": "m97",
+        "plate": "101",
+        "title": "Atmospheric Perspective & Depth",
+        "difficulty": "Advanced",
+        "studyTime": "18 min",
+        "practiceTime": "25–30 min/day",
+        "prereq": [
+          "m96"
+        ],
+        "hook": "Distant mountains aren't actually blue — there's an entire ocean of air between you and them, and that air itself has a color, which is the whole secret behind why far-away things look hazy, pale, and cool.",
+        "whyItMatters": [
+          "Everything from Modules 95–96 — color, value, light, material, edges — has mostly been applied to a single object or figure. Atmospheric perspective is where those same tools get used across an entire scene, to convince a viewer that some things are close and others are genuinely far away.",
+          "This directly extends the edge control from Module 100: atmospheric perspective is really edge control, value control, and color control all applied specifically along the axis of depth, using the same underlying skills for a new purpose."
+        ],
+        "coreIdea": [
+          "Atmospheric perspective happens because the air between a viewer and a distant object scatters light through countless tiny particles (water vapor, dust, haze), which is the same effect that makes the sky blue. The more air between you and an object, the more that scattering affects how the object looks.",
+          "Three effects reliably increase with distance: reduced detail (individual leaves become a single tree-mass, then a single forest-mass), reduced value contrast (darks get lighter and lights get slightly darker, compressing the range), and a color shift toward cooler, less saturated hues, typically toward blue.",
+          "This is not just a landscape technique — it can be used within a single object too, such as making the far side of a large form (a big rock, a long wall) slightly cooler and less detailed than the near side to reinforce its size and depth.",
+          "A distant light source changes the rule: if the primary light is positioned near the horizon (a low sun), distant objects will be paler and warmer rather than cooler, since there's less atmosphere between the light source and the object to introduce blue — the underlying principle (less contrast, less detail with distance) stays the same even when the specific color shift changes."
+        ],
+        "mistakes": [
+          "Keeping full sharp detail on background elements, which fights against the sense of depth the rest of the piece is trying to create.",
+          "Keeping value contrast and saturation just as strong in the background as the foreground, flattening the scene instead of letting distant elements recede.",
+          "Assuming distant objects must always shift toward blue regardless of lighting conditions, when a low warm light source (like sunset) can instead push distant objects toward pale warm tones.",
+          "Applying atmospheric perspective only at the very back of a scene instead of gradually, missing the middle-ground gradation that makes the effect read as continuous rather than a single hard jump.",
+          "Forgetting that atmospheric perspective can also describe depth within a single large object, not just across a whole landscape."
+        ],
+        "proTips": [
+          "Push the value range you allow yourself as elements recede: keep your darkest darks and lightest lights reserved for the foreground, and compress the range noticeably as you move toward the background.",
+          "As a starting technique, mix a small amount of your sky color directly into far-background elements (mountains, distant buildings) rather than trying to invent the right cooled, desaturated color from scratch.",
+          "Combine physical texture with implied distance where your medium allows: heavier, more textured brushwork in the foreground and smoother, flatter brushwork in the background reinforces the sense of near versus far.",
+          "Check your scene's dominant light direction before deciding your distance color shift — default to cooler and paler for typical daylight, but expect warmer and paler for a low, warm light source near the horizon."
+        ],
+        "practice": {
+          "warmup": "Paint three simple overlapping mountain shapes at different distances, using only reduced detail, reduced value contrast, and cooler, less saturated color to separate them.",
+          "daily": "Take one of your earlier environment pieces and add a foreground, middle-ground, and background layer of atmospheric perspective, checking that detail, contrast, and saturation all decrease together with distance.",
+          "weekly": "Paint the same simple scene twice: once under typical daylight (cooler, paler distance), once under a low warm light source like sunset (warmer, paler distance), and compare the difference.",
+          "challenge": "Apply atmospheric perspective within a single large object (a long wall, a big rock formation) rather than across a landscape, making its far side cooler and less detailed than its near side."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "Quick Painting Tips | Atmospheric Perspective",
+            "creator": "Roxane Lapa",
+            "url": "https://www.youtube.com/watch?v=Wj7y3dtUTzQ",
+            "why": "A free, fast, digital-art-focused explanation of atmospheric perspective as a practical painting technique.",
+            "summary": "A quick, practical digital painting lesson demonstrating how to use (and deliberately push, or 'abuse') atmospheric perspective as a fast technique for separating foreground, middle-ground, and background elements in a painting.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Aerial Perspective — How To Create Depth In Your Paintings",
+            "creator": "Felix Auer, TwoInchBrush.com",
+            "url": "https://blog.twoinchbrush.com/article/aerial-perspective-how-to-create-depth-in-your-paintings/",
+            "why": "A free, clearly organized breakdown of the three core principles of atmospheric perspective, illustrated with real paintings by Monet.",
+            "summary": "Explains that atmospheric perspective comes from light scattering through particles in the air, then organizes the effect into three principles: reduced detail and texture with distance, reduced value contrast (distant objects become lighter and lower-contrast), and a color shift toward cooler, less saturated hues, illustrated with Monet's 'The Thames at Westminster' and a tip about blending a touch of sky color into distant elements.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What physically causes atmospheric (aerial) perspective?",
+            "options": [
+              "Objects genuinely change color as they get farther away",
+              "Light scattering through countless tiny particles (water vapor, dust, haze) in the air between the viewer and the object — the same effect that makes the sky blue",
+              "It is a purely artistic convention with no basis in real optics",
+              "Distance affects only the size of objects, not their color or detail"
+            ],
+            "correct": 1,
+            "explain": "Atmospheric perspective results from light scattering through particles in the air; the more atmosphere between a viewer and an object, the more this scattering affects the object's apparent color, contrast, and detail."
+          },
+          {
+            "q": "Which three effects reliably increase with distance in atmospheric perspective?",
+            "options": [
+              "Increased detail, increased contrast, increased saturation",
+              "Reduced detail, reduced value contrast, and a shift toward cooler, less saturated color",
+              "Increased sharpness, increased darkness, no color change",
+              "None of these effects are related to distance"
+            ],
+            "correct": 1,
+            "explain": "As distance increases, detail decreases, value contrast compresses (darks lighten, lights darken slightly), and color shifts toward cooler, less saturated hues, typically toward blue."
+          },
+          {
+            "q": "How does a low, warm light source (like a sunset) change the typical atmospheric perspective color shift?",
+            "options": [
+              "It has no effect; distant objects always shift toward blue regardless of light source",
+              "Distant objects may shift toward pale warm tones rather than cool blue tones, since there's less atmosphere between the light source and object to introduce blue",
+              "It only affects foreground objects, never background ones",
+              "It eliminates atmospheric perspective entirely"
+            ],
+            "correct": 1,
+            "explain": "When the primary light source is low and warm, distant objects can appear paler and warmer instead of cooler, though the underlying principle of reduced contrast and detail with distance still applies."
+          },
+          {
+            "q": "Can atmospheric perspective be used within a single large object, not just across a whole landscape?",
+            "options": [
+              "No, it only applies to landscapes with multiple distinct elements",
+              "Yes, the far side of a large object (like a long wall or big rock) can be made cooler and less detailed than the near side to reinforce its size and depth",
+              "It only works underwater, never on land",
+              "It is exclusively a linear perspective technique, unrelated to atmosphere"
+            ],
+            "correct": 1,
+            "explain": "Atmospheric perspective principles can be applied within a single large form, making its far side recede relative to its near side, reinforcing a sense of scale and depth even without a full landscape."
+          },
+          {
+            "q": "What is a practical starting technique for coloring distant background elements?",
+            "options": [
+              "Use pure black for all distant shadows",
+              "Mix a small amount of the scene's sky color directly into far-background elements rather than inventing the color from scratch",
+              "Always use the exact same color as foreground elements",
+              "Avoid using the sky color anywhere except the sky itself"
+            ],
+            "correct": 1,
+            "explain": "Blending a touch of sky color into distant elements simulates the scattering of light into the line of sight, giving background elements a believable atmospheric tint without having to invent the exact color from imagination."
+          }
+        ],
+        "checklist": [
+          "I can explain why distant objects appear hazier, paler, and cooler due to atmospheric scattering.",
+          "I can reduce detail, value contrast, and saturation together as elements recede into the background.",
+          "I can adjust my atmospheric color shift based on whether the scene's light source is typical daylight or a low, warm light.",
+          "I can apply atmospheric perspective principles within a single large object, not just across a full landscape."
+        ],
+        "nextStep": "You now control depth across an entire scene using color, value, and detail. Module 102 covers texture and surface detail — the finishing layer that adds believable wear, grain, and material specificity once the larger structural decisions from this arc are in place."
+      },
+      {
+        "id": "m98",
+        "plate": "102",
+        "title": "Texture & Surface Detail",
+        "difficulty": "Advanced",
+        "studyTime": "18 min",
+        "practiceTime": "25–30 min/day",
+        "prereq": [
+          "m97"
+        ],
+        "hook": "The exact same rendering skills you've built for skin and metal can be shortcut entirely for some materials — a photo of real fabric, lightly painted over, can outperform hours of hand-rendered texture, and knowing when to use which approach is its own skill.",
+        "whyItMatters": [
+          "This module is the finishing layer on top of everything from Modules 95–97: color, value, light, material, edges, and depth are all structural decisions, while texture and surface detail are what a viewer notices up close, adding the specific, believable wear and material identity that makes a piece feel real rather than generic.",
+          "Texture decisions also have a genuine time-management dimension: knowing when to hand-paint a texture versus when to use a filter or a reference photo (photobashing) is a practical skill that affects how realistic a professional-speed workflow actually is."
+        ],
+        "coreIdea": [
+          "A subtle noise or grain layer added near the end of a piece breaks up overly smooth digital gradients, which otherwise read as artificial or plastic — this is a fast, software-native technique (a noise filter) rather than something that needs to be hand-painted.",
+          "Different fabric types call for genuinely different rendering approaches: smooth, slippery fabrics (silk, satin) are rendered mostly through soft blended value shifts with almost no separate texture pass, while rough, textured fabrics (denim, tweed) benefit from a textured brush and more visible, broken brushwork.",
+          "Overlapping texture (also called photobashing for this purpose) — placing a desaturated, contrast-adjusted photo of a real texture on top of already-rendered form, then adjusting blend mode and opacity — is a legitimate, efficient technique for highly detailed textures like lace, chainmail, or close-up fabric weave, not a shortcut to be ashamed of.",
+          "Texture should follow the same wear-with-a-cause logic established for hard-surface scratches in Module 99: applied sparingly, concentrated where physical contact or stress would logically occur, rather than scattered evenly across a whole surface."
+        ],
+        "mistakes": [
+          "Adding heavy texture uniformly across an entire piece regardless of material, when smooth or slippery materials should stay relatively textureless and let value do the work instead.",
+          "Skipping a final noise or grain pass entirely on a fully rendered piece, leaving smooth gradients that read as artificial or plastic-like.",
+          "Treating overlapping texture (using a real photo) as an illegitimate shortcut rather than a genuine professional technique appropriate for certain kinds of highly detailed surfaces.",
+          "Placing a texture photo directly onto a form without adjusting its contrast, saturation, and blend mode first, causing it to look pasted-on rather than integrated into the existing rendering.",
+          "Scattering wear and texture evenly across a surface instead of concentrating it where physical logic (contact points, stress areas, exposure) would place it."
+        ],
+        "proTips": [
+          "Save a subtle noise/grain pass for near the very end of a piece, after color and value are otherwise finished, as a fast way to unify smooth digital gradients into something more textured and alive.",
+          "Match your rendering approach to the fabric: minimal separate texture work for smooth/slippery materials, visible textured brushwork for rough/stiff materials, and overlapping texture (photo reference) for extremely fine, detailed patterns like lace or chainmail.",
+          "When using a photo texture, always adjust its contrast and desaturate it first, then experiment with blend modes (Multiply for light fabrics, Lighten or Screen for dark ones) rather than pasting it in at full opacity and Normal blend mode.",
+          "Concentrate texture and wear detail at logical contact points (where a bag is gripped, where fabric stretches over a joint) rather than spreading it evenly, using the same wear-with-a-cause logic from Module 99's scratches."
+        ],
+        "practice": {
+          "warmup": "Render three small identical shapes as three different fabric types (silk, denim, lace) using the appropriate technique for each: soft blending, textured brushwork, and overlapping photo texture.",
+          "daily": "Take a finished piece from an earlier module and add a final subtle noise/grain layer, comparing the result before and after.",
+          "weekly": "Render a piece of clothing with fabric folds, using overlapping texture (a real photo, desaturated and contrast-adjusted) for one detailed area, and hand-painted texture for the rest.",
+          "challenge": "Add wear or texture detail to a piece concentrated only at logical contact points (a bag's handle grip, a jacket's elbow) rather than spread evenly, and evaluate how much more specific and believable it feels."
+        },
+        "resources": [
+          {
+            "type": "Article",
+            "title": "[Custom Noise] Use noise filters to create textured art",
+            "creator": "MediBang Paint (official)",
+            "url": "https://medibangpaint.com/en/use/2022/09/how-to-use-the-custom-noise-function/",
+            "why": "A free, official software tutorial from a completely free digital painting program, showing exactly how to add a fast, effective noise/grain texture pass.",
+            "summary": "Demonstrates MediBang Paint's Custom Noise filter, walking through choosing a noise type, adjusting grain size and posterization, selecting a blend mode, and controlling opacity to add a fast, analog-style grain texture to a finished digital illustration.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "Digital Sketching: Real Object, Imaginary Details",
+            "creator": "Matt Kohr (Ctrl+Paint)",
+            "url": "https://www.youtube.com/watch?v=NCcd3xrNbzw",
+            "why": "A short, free 4-minute exercise showing how added surface detail should follow the form underneath it.",
+            "summary": "Matt Kohr has you draw an object from observation, then add imaginary details on a new layer that follow the object's form, mirroring curves and extending them off the form, as practice for drawing detail on top of a basic three-dimensional shape.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What is the purpose of adding a subtle noise or grain layer near the end of a digital painting?",
+            "options": [
+              "To reduce the file size significantly",
+              "To break up overly smooth digital gradients, which otherwise read as artificial or plastic",
+              "It has no real visual effect and is purely optional decoration",
+              "To automatically fix color mistakes"
+            ],
+            "correct": 1,
+            "explain": "A subtle noise or grain pass helps break up perfectly smooth digital gradients, giving a piece a more organic, less artificial feel."
+          },
+          {
+            "q": "How should smooth, slippery fabrics (like silk or satin) generally be rendered compared to rough, textured fabrics (like denim)?",
+            "options": [
+              "Both should be rendered identically with heavy visible texture",
+              "Smooth fabrics mostly through soft blended value shifts with minimal separate texture; rough fabrics with more visible, broken textured brushwork",
+              "Smooth fabrics need more texture than rough fabrics",
+              "Fabric type has no effect on rendering approach"
+            ],
+            "correct": 1,
+            "explain": "Smooth, slippery materials read convincingly through value and blending alone, while rough or textured materials benefit from actual visible textured brushwork to communicate their surface quality."
+          },
+          {
+            "q": "What is \"overlapping texture\" (or photobashing for texture), and when is it appropriate?",
+            "options": [
+              "It's considered cheating and should never be used",
+              "Placing an adjusted photo of a real texture on top of already-rendered form, appropriate for highly detailed surfaces like lace or chainmail",
+              "It only applies to backgrounds, never to clothing or props",
+              "It means copying another artist's finished painting"
+            ],
+            "correct": 1,
+            "explain": "Overlapping texture is a legitimate technique where a real texture photo, adjusted in contrast and saturation, is blended onto already-rendered form — particularly useful for very fine, detailed patterns that would take excessive time to hand-paint."
+          },
+          {
+            "q": "What should be adjusted on a texture photo before blending it onto a rendered surface?",
+            "options": [
+              "Nothing; paste it directly at full opacity",
+              "Its contrast, saturation, and blend mode, so it integrates with the existing rendering instead of looking pasted-on",
+              "Only its file format needs to change",
+              "The photo should be used exactly as taken with no software adjustments"
+            ],
+            "correct": 1,
+            "explain": "Adjusting a texture photo's contrast, desaturating it, and choosing an appropriate blend mode (rather than pasting it at full opacity in Normal mode) is what allows it to integrate believably with the rendered surface beneath it."
+          },
+          {
+            "q": "According to the module, how should texture and wear detail generally be distributed across a surface?",
+            "options": [
+              "Spread perfectly evenly across the entire surface",
+              "Concentrated at logical contact points or stress areas, following the same wear-with-a-cause logic as Module 99's scratches",
+              "Applied randomly with no consideration of cause",
+              "Texture should never be applied selectively"
+            ],
+            "correct": 1,
+            "explain": "Concentrating texture and wear at points where physical contact, stress, or exposure would logically occur produces more specific, believable results than spreading detail evenly across a whole surface."
+          }
+        ],
+        "checklist": [
+          "I can add a subtle noise/grain pass to unify a finished piece's smooth gradients.",
+          "I can choose an appropriate rendering approach (soft blending vs. textured brushwork) based on a fabric's properties.",
+          "I can use the overlapping-texture technique, adjusting a photo's contrast and blend mode before applying it to a rendered surface.",
+          "I can concentrate texture and wear detail at logical contact points rather than spreading it evenly."
+        ],
+        "nextStep": "You now have every rendering tool this arc has covered — color, value, light, material, edges, depth, and texture. Module 103 brings them together into a complete illustration workflow, the professional sequence for taking a piece from first sketch to finished render."
+      },
+      {
+        "id": "m99",
+        "plate": "103",
+        "title": "The Complete Illustration Workflow",
+        "difficulty": "Advanced",
+        "studyTime": "18 min",
+        "practiceTime": "2–4 hours (project)",
+        "prereq": [
+          "m98"
+        ],
+        "hook": "Every skill in this arc so far has been a single tool in a toolbox. This module is about the order you actually pick them up in — because the same nine tools used in the wrong sequence produce a mess, and used in the right sequence produce a finished piece.",
+        "whyItMatters": [
+          "Color theory, value, light, material, edges, depth, and texture (Modules 95–98) are all decisions. A workflow is the order those decisions get made in, and getting the order right is often what separates a piece that comes together smoothly from one that gets muddy and has to be reworked repeatedly.",
+          "This is also directly comparable to the concept-art pipeline from Module 84: a full-color illustration workflow is the same explore-then-commit logic applied specifically to a rendered, painterly piece rather than a concept-art production process."
+        ],
+        "coreIdea": [
+          "The standard sequence is: sketch (loose, low-opacity, focused on proportion and gesture), line art (a clean, deliberate pass with varied line weight), flat colors (one color per element, no shading yet), then shading and rendering (light direction decided first, then shadows and highlights built on top of the flats).",
+          "Committing to a light direction before placing a single shadow is the single highest-leverage decision in the shading stage — every subsequent shadow and highlight decision flows from that one choice, and skipping it is a common reason shading ends up inconsistent.",
+          "Checking a stage in isolation before moving to the next one catches problems early: line art should read clearly with the sketch hidden, flat colors should look correct with no shading yet, because problems are far cheaper to fix at an earlier stage than after they've been built upon.",
+          "Line weight itself is an underused tool available even before any rendering happens — thicker lines on silhouettes and where shapes overlap, thinner lines on internal detail, add a sense of depth and hierarchy before a single shadow is painted."
+        ],
+        "mistakes": [
+          "Jumping into detailed rendering before the sketch's proportions and gesture are solid, then spending far more time fixing structural problems than would have been needed at the sketch stage.",
+          "Adding shading before deciding on a light direction, producing shadows and highlights that don't agree with each other because there was no single guiding decision behind them.",
+          "Moving to the next stage without checking the current one in isolation (hiding the sketch to check line art alone, for example), missing problems that then compound into later stages.",
+          "Treating line weight as purely decorative instead of using it as an early, easy tool for depth and hierarchy before any color or shading exists.",
+          "Skipping flat colors and going straight from line art to full rendering, making it harder to isolate and fix a color choice without also affecting the shading built on top of it."
+        ],
+        "proTips": [
+          "Keep your sketch on low opacity and your gesture loose — resist tightening it up until proportions and pose genuinely feel solid, since fixing structure later is much more expensive.",
+          "Before adding a single shadow, decide explicitly where your light is coming from, and refer back to that decision for every shadow and highlight placed afterward.",
+          "Check each stage in isolation before moving on: hide the sketch layer to verify line art alone reads clearly, hide the shading to verify flats look correct on their own.",
+          "Use line weight deliberately at the line art stage — heavier on silhouettes and overlapping shapes, lighter on internal detail — to build in depth and hierarchy before any color exists."
+        ],
+        "practice": {
+          "warmup": "Take one simple subject through just the first two stages (sketch, then clean line art), checking that the line art reads clearly with the sketch layer hidden.",
+          "daily": "Complete one small piece through the full four-stage workflow (sketch, line art, flat colors, shading), deciding your light direction explicitly before starting to shade.",
+          "weekly": "Take a piece through the workflow, checking each stage in isolation (hide the previous layer) before moving to the next, and note any problem you catch early that you might otherwise have missed.",
+          "challenge": "Redo a finished piece's line art alone, focusing purely on deliberate line weight (heavy on silhouette/overlaps, light on interior detail), and compare it to a flat-weight version of the same lines."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "Digital Painting Process Explained",
+            "creator": "SamDoesArts",
+            "url": "https://www.youtube.com/watch?v=0CDd22s3jec",
+            "why": "A free, widely-viewed walkthrough of a full digital painting process from color blocking through to a finished piece.",
+            "summary": "Walks through a digital painting process from color blocking to a finished piece, starting from a sketch and building up the overall colors before moving on to smaller details.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "How to Color Digitally: A Step-by-Step Guide for Beginners",
+            "creator": "Artwod",
+            "url": "https://artwod.com/blog/how-to-color-digitally-a-step-by-step-guide-for-beginners",
+            "why": "A free, clearly staged breakdown of the sketch-to-shading workflow, with a specific emphasis on line weight and committing to a light direction before shading.",
+            "summary": "Breaks the illustration process into sketch, line art, flat colors, and cel shading stages, emphasizing that a solid sketch prevents expensive fixes later, that line weight (thicker on silhouettes and overlaps, thinner on interior detail) adds depth before any rendering begins, and that deciding a light direction before placing the first shadow is the single most important shading decision.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What is the standard four-stage sequence described in this module?",
+            "options": [
+              "Shading, line art, sketch, flat colors",
+              "Sketch, line art, flat colors, shading and rendering",
+              "Flat colors, sketch, shading, line art",
+              "Rendering, sketch, shading, flats"
+            ],
+            "correct": 1,
+            "explain": "The standard sequence moves from a loose sketch, to clean line art, to flat colors with no shading yet, and finally to shading and rendering built on top of those flats."
+          },
+          {
+            "q": "According to the module, what is the single highest-leverage decision at the shading stage?",
+            "options": [
+              "Choosing the final export file format",
+              "Deciding on a light direction before placing any shadow",
+              "Picking the canvas resolution",
+              "Selecting a brush pack"
+            ],
+            "correct": 1,
+            "explain": "Committing to a light direction before shading begins is presented as the decision every subsequent shadow and highlight should flow from; skipping it tends to produce inconsistent shading."
+          },
+          {
+            "q": "Why is it recommended to check each workflow stage in isolation before moving to the next?",
+            "options": [
+              "It has no real benefit and just wastes time",
+              "Problems are far cheaper to catch and fix at an earlier stage than after later work has been built on top of them",
+              "Isolating stages is required by most software",
+              "It only matters for traditional media, not digital"
+            ],
+            "correct": 1,
+            "explain": "Checking a stage alone (like hiding the sketch to verify line art) catches problems while they're still cheap to fix, rather than discovering them after later stages have already been built on a flawed foundation."
+          },
+          {
+            "q": "How can line weight be used as a tool before any shading or color exists?",
+            "options": [
+              "Line weight has no visual effect and is purely stylistic preference",
+              "Thicker lines on silhouettes and overlapping shapes, thinner lines on internal detail, add a sense of depth and hierarchy at the line art stage itself",
+              "Line weight can only be adjusted after full rendering is complete",
+              "All lines should always be the exact same weight for consistency"
+            ],
+            "correct": 1,
+            "explain": "Varying line weight — heavier on silhouettes and where shapes overlap, lighter on interior detail — is an early, easy way to build in depth and visual hierarchy before any color or shading is added."
+          },
+          {
+            "q": "What is a risk of skipping the flat colors stage and going directly from line art to full rendering?",
+            "options": [
+              "There is no risk; skipping stages is always more efficient",
+              "It becomes harder to isolate and fix a color choice without also affecting the shading already built on top of it",
+              "Flat colors are only relevant for traditional painting",
+              "Skipping stages always improves the final quality"
+            ],
+            "correct": 1,
+            "explain": "Flat colors provide a clean base to check and adjust before shading is built on top; skipping straight to rendering makes it harder to fix a color problem without disturbing the shading layered above it."
+          }
+        ],
+        "checklist": [
+          "I can move through a piece in the order: sketch, line art, flat colors, shading.",
+          "I can decide a light direction explicitly before placing any shadow.",
+          "I can check a stage in isolation (hiding earlier layers) before moving to the next.",
+          "I can use line weight deliberately at the line art stage to add depth before any color exists."
+        ],
+        "nextStep": "You now have a complete, repeatable workflow for taking a piece from first sketch to finished render. Module 104 is the capstone — bringing every skill from this entire arc together into one complete, fully rendered illustration."
+      },
+      {
+        "id": "m100",
+        "plate": "104",
+        "title": "Capstone: A Fully Rendered Illustration",
+        "difficulty": "Advanced",
+        "studyTime": "15 min",
+        "practiceTime": "3–6 hours (project)",
+        "prereq": [
+          "m99",
+          "m82",
+          "m91",
+          "m93",
+          "m94",
+          "m96",
+          "m97",
+          "m98"
+        ],
+        "hook": "Nine modules of theory only prove themselves in one place: a single finished piece where color, value, light, material, edges, depth, and texture all have to work together at the same time.",
+        "whyItMatters": [
+          "This closes out Digital Painting & Rendering by asking you to apply every skill from Modules 95–99 to one complete piece, the same way the Module 86 capstone closed out worldbuilding — a portfolio is built from finished pieces, not isolated exercises.",
+          "A capstone piece is also the most honest way to find your current weak point. Working on isolated skills hides gaps that only surface when everything has to work together at once, which is exactly the information you need to know what to practice next."
+        ],
+        "coreIdea": [
+          "Follow the workflow from Module 103 in order: sketch, line art (or a painted block-in if working without hard lines), flat colors, then shading built on a light direction you decide before the first shadow.",
+          "As you render, apply each material's specific logic from Modules 98–95 (subsurface scattering for skin, environment reflections and extreme contrast for metal or glass) rather than treating every surface the same way.",
+          "Use edge control (Module 100) and atmospheric perspective (Module 101) together to direct the eye to one focal point and separate foreground from background, then add texture (Module 102) only at the end, concentrated at logical wear points.",
+          "A capstone piece doesn't need to be large or complex to be complete — a small, fully-considered piece that applies every skill deliberately is more valuable than an ambitious piece that skips steps to reach a finished-looking render faster."
+        ],
+        "mistakes": [
+          "Jumping straight to rendering without deciding a light direction first, producing shading that doesn't agree with itself across different parts of the piece.",
+          "Rendering every material (skin, metal, fabric) with the same generic technique instead of applying the specific logic each one calls for.",
+          "Adding texture and wear evenly across the whole piece instead of concentrating it at points that make physical sense.",
+          "Choosing a piece so ambitious in scope that finishing every stage with real care becomes impossible within a reasonable timeframe.",
+          "Treating the finished piece as the end of the process instead of using it to honestly identify which of the nine arc skills is currently weakest."
+        ],
+        "proTips": [
+          "Write your light direction down before shading begins, and physically check it against every shadow and highlight you place, the same discipline from Module 97.",
+          "Limit your palette of materials in the piece (skin, one hard surface, one fabric) so you can apply each one's specific rendering logic with real care rather than rushing several materials shallowly.",
+          "After finishing, go back through Modules 95–99 one at a time and honestly check your piece against each one's checklist — this turns the capstone into a genuine diagnostic, not just a finished picture.",
+          "Get outside feedback if you can (a critique community, a paint-over channel, a friend) — you lose the ability to see your own piece's problems clearly after staring at it for hours."
+        ],
+        "practice": {
+          "warmup": "Write a one-sentence brief for your capstone piece: subject, one dominant material, one emotional target for the lighting.",
+          "daily": "Work through one workflow stage per session (sketch, line art or block-in, flats, shading) rather than trying to complete the whole piece in one sitting.",
+          "weekly": "Complete one full capstone illustration from brief to finished render, applying color, value, light, material-specific rendering, edges, depth, and texture deliberately at each stage.",
+          "challenge": "Score your finished capstone piece honestly against the checklist from each of Modules 95–99, identify your single weakest area, and name one specific thing you'll practice next because of it."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "PAINTOVER PALS: Episode 5",
+            "creator": "Sinix Design",
+            "url": "https://www.youtube.com/watch?v=9XIWD9o2Kjw",
+            "why": "A free, real critique episode focused on rendering tips, from a channel specifically known for diagnosing why competent art doesn't yet look professional.",
+            "summary": "A paintover critique episode from Sinix Design focused on rendering tips.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "How to Color Digitally: A Step-by-Step Guide for Beginners",
+            "creator": "Artwod",
+            "url": "https://artwod.com/blog/how-to-color-digitally-a-step-by-step-guide-for-beginners",
+            "why": "A free, concrete reference for the sketch-to-shading sequence this capstone piece should follow, useful to revisit while working through each stage.",
+            "summary": "Reinforces the staged workflow (sketch, line art, flat colors, shading) with an emphasis on committing to a light direction before shading and pushing contrast confidently once that direction is chosen, both directly applicable to completing a capstone piece.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What is the primary purpose of this capstone module?",
+            "options": [
+              "To teach an entirely new rendering technique",
+              "To apply every skill from Modules 95–99 together in one finished piece, revealing your current weakest area",
+              "To replace the need for the earlier modules in this arc",
+              "To focus exclusively on speed painting"
+            ],
+            "correct": 1,
+            "explain": "The capstone has no new theory; it asks you to combine color, value, light, material, edges, depth, and texture in one piece, which reveals which specific skill is currently your weakest."
+          },
+          {
+            "q": "What should be decided before shading begins on the capstone piece, based on Module 97?",
+            "options": [
+              "The final export file format",
+              "The light direction, checked against every shadow and highlight placed afterward",
+              "The canvas resolution",
+              "The brush pack to use"
+            ],
+            "correct": 1,
+            "explain": "Committing to a light direction before the first shadow is placed, and checking every subsequent shadow and highlight against it, prevents shading that disagrees with itself across the piece."
+          },
+          {
+            "q": "Why is it recommended to limit the palette of materials in a capstone piece?",
+            "options": [
+              "Limiting materials has no real benefit",
+              "It allows each material's specific rendering logic (skin, metal, fabric) to be applied with real care rather than rendering several materials shallowly",
+              "Only one material is technically allowed",
+              "It reduces the file size significantly"
+            ],
+            "correct": 1,
+            "explain": "Focusing on fewer materials lets you apply each one's specific technique (subsurface scattering for skin, extreme contrast for metal, and so on) properly, rather than spreading effort thin across many surfaces."
+          },
+          {
+            "q": "How should texture and wear be applied in the finished capstone piece, based on Module 102?",
+            "options": [
+              "Spread evenly across the entire piece",
+              "Concentrated at points that make physical sense, added near the end of the process",
+              "Applied before any color or shading exists",
+              "Texture should be avoided entirely in a capstone piece"
+            ],
+            "correct": 1,
+            "explain": "Texture and wear should be added near the end, concentrated at logical contact or stress points, following the same wear-with-a-cause logic established in Module 102."
+          },
+          {
+            "q": "What is the recommended way to use the finished capstone piece after completing it?",
+            "options": [
+              "Move on immediately without further reflection",
+              "Go back through each of Modules 95–99's checklists and honestly identify the weakest skill to practice next",
+              "Delete the working file immediately after exporting",
+              "Compare it only to other people's finished work"
+            ],
+            "correct": 1,
+            "explain": "Checking the finished piece against each earlier module's checklist turns the capstone into a genuine diagnostic tool, revealing exactly which skill is worth focusing on next."
+          }
+        ],
+        "checklist": [
+          "I can complete a piece through the full workflow: sketch, line art, flat colors, shading.",
+          "I can apply material-specific rendering logic (skin vs. hard surface vs. fabric) rather than one generic technique for everything.",
+          "I can use edge control and atmospheric perspective together to direct focus and separate depth.",
+          "I can honestly score a finished piece against the checklists from Modules 95–99 to find my weakest skill."
+        ],
+        "nextStep": "You've completed Digital Painting & Rendering — from the three properties of color to a fully rendered, material-aware illustration. These skills carry forward directly into Advanced Digital Art, where techniques like blend-mode compositing, photobashing, and speed painting build on everything rendered here."
+      }
+    ]
+  },
+  {
+    "id": "advanced-digital",
+    "title": "Advanced Digital Art",
+    "status": "live",
+    "order": 10,
+    "desc": "Non-destructive workflow, blend modes, adjustment layers, photobashing, 3D-assisted painting, responsible AI-assisted workflow, speed painting, and master studies.",
+    "moduleCount": 10,
+    "sample": [
+      "Non-Destructive Workflow",
+      "Blend Modes",
+      "Photobashing",
+      "3D-Assisted Art",
+      "AI-Assisted Workflow",
+      "Speed Painting"
+    ],
+    "modules": [
+      {
+        "id": "m111",
+        "plate": "105",
+        "title": "Non-Destructive Workflow",
+        "difficulty": "Advanced",
+        "studyTime": "18 min",
+        "practiceTime": "25–30 min/day",
+        "prereq": [
+          "m90"
+        ],
+        "hook": "A client asks for one small change three weeks after you finished a piece — if your file is destructively flattened, that's an hour of rebuilding; if it's non-destructive, it's thirty seconds.",
+        "whyItMatters": [
+          "You've used individual non-destructive tools throughout this course (layers in Module 90, transforms in Module 92) without necessarily treating them as one deliberate system. This module ties them together into a complete philosophy: never permanently commit to a decision until you're certain you won't need to revisit it.",
+          "This is the difference between a hobbyist workflow and a professional one. Revisions, client feedback, and your own changing judgment about a piece are normal and constant in real work — a non-destructive file survives all of that; a flattened one forces you to redo work from scratch."
+        ],
+        "coreIdea": [
+          "A Smart Object is a container that preserves an image's original data even after repeated scaling, rotating, or warping — unlike a normal layer, which loses quality every time it's transformed, a Smart Object can be resized infinitely because the software always references the untouched original.",
+          "Adjustment layers (curves, hue/saturation, color balance) sit above other layers and modify how they look without altering their actual pixel data, and can be freely edited, hidden, or deleted at any point, unlike applying the same adjustment directly to a layer.",
+          "Filters applied to a Smart Object become Smart Filters, which remain fully editable afterward — you can reopen, adjust, or mask a Smart Filter's effect at any time, rather than the effect being permanently baked into the pixels.",
+          "Masks are the mechanism that ties all of this together: rather than erasing part of a layer or filter effect, a mask hides it reversibly, so painting on the mask can restore or hide the effect at any time without ever losing the original data underneath."
+        ],
+        "mistakes": [
+          "Rasterizing or flattening layers early to \"clean up\" a file, permanently discarding the ability to revise individual elements later.",
+          "Applying an adjustment (like brightness or hue) directly to a layer instead of using an adjustment layer, making a later change to that decision require redoing the edit rather than just adjusting a setting.",
+          "Erasing part of a layer with the eraser tool instead of using a mask, permanently deleting pixel data that a mask would have hidden reversibly.",
+          "Skipping Smart Objects for elements that are likely to need resizing or repositioning later, risking visible quality loss from repeated destructive transforms.",
+          "Treating non-destructive workflow as only relevant for professional client work, when the same benefits (easy revision, less fear of \"ruining\" a piece) apply directly to personal practice pieces too."
+        ],
+        "proTips": [
+          "Convert imported images and any element you expect to transform more than once into a Smart Object immediately, as a default habit rather than an afterthought.",
+          "Default to adjustment layers for color and tone changes (curves, hue/saturation, color balance) instead of applying the equivalent adjustment directly to a layer.",
+          "Use masks instead of the eraser whenever you're hiding part of a layer or effect, so the option to bring it back later stays available.",
+          "Keep your working file in its native, layered format (not a flattened export) for as long as you might conceivably want to revise the piece — export flattened versions only for sharing."
+        ],
+        "practice": {
+          "warmup": "Take one imported image, convert it to a Smart Object, and transform (scale, rotate) it five times in a row, checking that its quality stays intact throughout.",
+          "daily": "Rework a color or tone decision on an existing piece using an adjustment layer instead of a direct edit, then adjust that decision twice more to feel how easy it is to revise.",
+          "weekly": "Build a small composite using Smart Objects for every imported element and masks (not the eraser) for every hidden area, then deliberately \"undo\" and restore several of those decisions.",
+          "challenge": "Take a finished piece and simulate a client request: change one color, resize one element, and adjust one masked area, timing how long each takes in a non-destructive file versus how long you estimate it would take in a flattened one."
+        },
+        "resources": [
+          {
+            "type": "Article",
+            "title": "Nondestructive editing",
+            "creator": "Adobe (official documentation)",
+            "url": "https://helpx.adobe.com/photoshop/using/nondestructive-editing.html",
+            "why": "The authoritative, free official reference covering Smart Objects, Smart Filters, adjustment layers, and masks as a complete non-destructive system.",
+            "summary": "Explains that nondestructive editing allows changes to an image without overwriting the original data, covering Smart Objects for nondestructive scaling and transforms, Smart Filters for reversible filter effects, adjustment and fill layers for tone and color changes without altering underlying pixels, and layer masks for reversibly hiding or revealing content.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Master Smart Objects in Photoshop: The Non-Destructive Editing Game-Changer",
+            "creator": "Kelvin Designs",
+            "url": "https://photoshoptutorial.com/posts/master-smart-objects-in-photoshop-the-non-destructive-editing-game-changer/",
+            "why": "A free, practical, first-person account of how Smart Objects change a working professional's compositing workflow, including linked Smart Objects for collaborative work.",
+            "summary": "A working compositor explains how converting imported elements to Smart Objects immediately eliminated the fear of permanently damaging quality through repeated transforms, and shows how Linked Smart Objects let a composite automatically update when a source file elsewhere is changed, a significant time-saver for collaborative or iterative work.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Why can a Smart Object be scaled up and down repeatedly without losing quality, unlike a normal layer?",
+            "options": [
+              "Smart Objects use a different color mode",
+              "A Smart Object preserves the original image data as a container, so the software always references the untouched original rather than the repeatedly-transformed version",
+              "Smart Objects are automatically higher resolution than normal layers",
+              "There is no real difference between Smart Objects and normal layers"
+            ],
+            "correct": 1,
+            "explain": "A Smart Object acts as a container preserving the original data; every transform references that untouched original, avoiding the cumulative quality loss that repeated destructive transforms cause on a normal layer."
+          },
+          {
+            "q": "What is the main advantage of using an adjustment layer instead of applying an adjustment directly to a layer?",
+            "options": [
+              "Adjustment layers render faster with no other benefit",
+              "An adjustment layer can be freely edited, hidden, or deleted at any point without altering the underlying pixel data",
+              "Adjustment layers are required by most software licenses",
+              "There is no functional difference between the two approaches"
+            ],
+            "correct": 1,
+            "explain": "An adjustment layer modifies how layers beneath it look without changing their actual pixel data, so the adjustment itself remains fully editable or removable later, unlike a direct edit."
+          },
+          {
+            "q": "What happens when a filter is applied to a Smart Object?",
+            "options": [
+              "The filter is applied destructively and cannot be changed",
+              "It becomes a Smart Filter, which remains fully editable, maskable, and removable afterward",
+              "Smart Objects cannot have filters applied to them at all",
+              "The Smart Object is automatically converted back to a normal layer"
+            ],
+            "correct": 1,
+            "explain": "Filters applied to a Smart Object become Smart Filters, which can be reopened, adjusted, masked, or removed at any time, rather than being permanently baked into the pixels."
+          },
+          {
+            "q": "Why is using a mask preferred over using the eraser tool to hide part of a layer?",
+            "options": [
+              "Masks and the eraser produce functionally identical, irreversible results",
+              "A mask hides content reversibly, so painting on the mask can restore the hidden area later, while the eraser permanently deletes pixel data",
+              "The eraser tool is faster in every situation",
+              "Masks can only be used on Smart Objects, never on regular layers"
+            ],
+            "correct": 1,
+            "explain": "A mask hides part of a layer or effect without permanently deleting the underlying pixel data, so the hidden content can be reversibly restored later, unlike erasing."
+          },
+          {
+            "q": "According to the module, why does a non-destructive workflow matter for professional work specifically?",
+            "options": [
+              "It has no particular relevance to professional work over personal practice",
+              "Client feedback and revision requests are common in professional work, and a non-destructive file allows quick changes instead of rebuilding from scratch",
+              "Non-destructive workflows are only useful for print work, not digital delivery",
+              "It primarily affects file size, not editing flexibility"
+            ],
+            "correct": 1,
+            "explain": "Because revisions and client feedback are a normal part of professional work, a non-destructive file lets those changes happen quickly, while a flattened, destructive file can require redoing significant work from scratch."
+          }
+        ],
+        "checklist": [
+          "I can convert an imported element to a Smart Object before transforming it.",
+          "I can use an adjustment layer instead of a direct edit for color and tone changes.",
+          "I can use a mask instead of the eraser to hide part of a layer or effect reversibly.",
+          "I can keep a native layered working file separate from a flattened export for sharing."
+        ],
+        "nextStep": "You now treat your file structure itself as a deliberate, reversible system. Module 106 goes deeper into blend modes and adjustment layers specifically, building on this non-destructive foundation with more advanced compositing and color-grading techniques."
+      },
+      {
+        "id": "m112",
+        "plate": "106",
+        "title": "Blend Modes & Adjustment Layers",
+        "difficulty": "Advanced",
+        "studyTime": "18 min",
+        "practiceTime": "25–30 min/day",
+        "prereq": [
+          "m111"
+        ],
+        "hook": "Curves can do everything Levels can do, plus one thing Levels can't: bend the tonal range at more than one point at once, which is the real reason professional colorists reach for it over every other tool.",
+        "whyItMatters": [
+          "Module 90 introduced blend modes for shadow and highlight layers, and Module 105 introduced adjustment layers as a non-destructive concept. This module goes deep on the single most powerful adjustment layer, Curves, and ties it together with blend modes into a real color-grading toolkit.",
+          "Color grading (adjusting the overall tone and mood of a finished piece) is a distinct skill from painting color in the first place — it's the final pass that unifies a piece's palette and can shift its entire mood without repainting a single object."
+        ],
+        "coreIdea": [
+          "Curves represents an image's tonal range as a diagonal line from black (bottom-left) to white (top-right); dragging any point on that line up or down brightens or darkens that specific tonal range, and multiple points can be added and adjusted independently — this is what makes Curves more powerful than Levels, which only controls the endpoints and one midpoint.",
+          "An S-curve (pulling the upper-middle of the line up and the lower-middle down) is a classic, reliable way to add contrast: it brightens the highlights and darkens the shadows simultaneously without touching the true black and white points.",
+          "Setting white, black, and gray points with Curves' eyedroppers (clicking on what should be pure white, pure black, or neutral gray in the image) is a fast, reliable way to correct a color cast across an entire image in one move.",
+          "Layering multiple blend-mode adjustment layers (a Curves layer for contrast, an Overlay layer for a color wash, a Multiply layer for vignette) is how a complete color grade is typically built — each layer handles one specific job, stacked together rather than trying to do everything in one adjustment."
+        ],
+        "mistakes": [
+          "Only ever using the endpoint sliders in Curves (equivalent to Levels) and never adding a midpoint, missing the tool's real advantage of independently controlling multiple points on the tonal range.",
+          "Applying a strong Curves S-curve globally when only a specific area needs more contrast, instead of using a mask to limit the effect to where it's actually needed.",
+          "Guessing at a color cast correction by eye instead of using the white/black/gray point eyedroppers, which give a fast, reliable starting correction to adjust from.",
+          "Trying to achieve a complete color grade with a single adjustment layer instead of stacking several simple ones (contrast, color wash, vignette), each handling one job.",
+          "Forgetting that adjustment layers affect everything beneath them in the layer stack by default, and not grouping or masking them when an adjustment should only apply to part of a piece."
+        ],
+        "proTips": [
+          "Start any color grade with an S-curve for overall contrast before adding more stylized adjustments, since contrast is usually the first thing a flat-looking image needs.",
+          "Use the white, black, and gray point eyedroppers in Curves as a fast first pass for color-cast correction, then fine-tune manually from that starting point rather than guessing from scratch.",
+          "Mask a Curves adjustment layer to a specific area (using the same mask technique from Module 105) when only part of an image needs a contrast or tone change, rather than applying it globally.",
+          "Build a color grade in stages using several simple adjustment layers stacked together, rather than trying to solve contrast, color cast, and mood all in one complex adjustment."
+        ],
+        "practice": {
+          "warmup": "Add a Curves adjustment layer to a flat-looking image and apply a simple S-curve, comparing the before and after contrast.",
+          "daily": "Take a piece with an unwanted color cast and correct it using the Curves white/black/gray point eyedroppers, then compare the result to a manual color adjustment.",
+          "weekly": "Build a full color grade on a finished piece using at least three stacked adjustment layers (a Curves contrast pass, an Overlay color wash, and a Multiply vignette).",
+          "challenge": "Mask a Curves adjustment layer to affect only one area of a piece (a single object or the background) rather than the whole image, and evaluate how that targeted change affects the composition's focus."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "Couch to Photoshop: Episode 7 — Curves, Levels, and Color Grading Tutorial",
+            "creator": "Scott Detweiler",
+            "url": "https://www.youtube.com/watch?v=Wehtu7okml4",
+            "why": "A free, structured lesson covering Curves and Levels together, including S-curves, sliders, and color grading built from the same tool.",
+            "summary": "Covers the Curves tool in depth alongside Levels, including how to build a line S-curve for contrast, use curve masks to limit an adjustment's area, and apply Curves adjustment layers for stylistic color grading, along with common pitfalls to avoid when using the tool.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Color Correction Using Curves",
+            "creator": "Dan Rodney, Noble Desktop",
+            "url": "https://www.nobledesktop.com/learn/photoshop/color-correction-using-curves-photoshop",
+            "why": "A free, exact step-by-step exercise for setting white, black, and gray points with Curves and manipulating multiple midpoints.",
+            "summary": "Walks through a concrete Curves exercise: setting the white point, black point, and gray point with the tool's eyedroppers to correct an image's tonal range and color cast, then demonstrates adding and manipulating multiple midpoints on the curve to fine-tune brightness in specific tonal ranges independently.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What makes Curves more powerful than Levels for tonal adjustment?",
+            "options": [
+              "Curves only works on black and white images",
+              "Curves allows multiple independent points to be added and adjusted along the tonal range, while Levels only controls the endpoints and one midpoint",
+              "Levels and Curves are functionally identical tools",
+              "Curves cannot be used as an adjustment layer"
+            ],
+            "correct": 1,
+            "explain": "Curves represents the tonal range as an editable line where multiple points can be added and adjusted independently, giving finer control than Levels' single midpoint and two endpoints."
+          },
+          {
+            "q": "What does a classic S-curve do to an image?",
+            "options": [
+              "It only affects the image's color saturation, not tone",
+              "It brightens highlights and darkens shadows simultaneously, adding contrast without moving the true black and white points",
+              "It flips the image horizontally",
+              "It removes all color from the image"
+            ],
+            "correct": 1,
+            "explain": "An S-curve pulls the upper-middle of the tonal curve up and the lower-middle down, increasing contrast by brightening highlights and darkening shadows while leaving the true white and black points unchanged."
+          },
+          {
+            "q": "What is the benefit of using the white, black, and gray point eyedroppers in Curves?",
+            "options": [
+              "They only work on grayscale images",
+              "They provide a fast, reliable way to correct a color cast across an entire image by clicking on areas that should be pure white, pure black, or neutral gray",
+              "They permanently delete the image's original color data",
+              "They can only be used once per document"
+            ],
+            "correct": 1,
+            "explain": "Clicking these eyedroppers on the corresponding tones in the image gives a quick, reliable starting correction for an unwanted color cast, which can then be fine-tuned further."
+          },
+          {
+            "q": "How is a complete color grade typically built, according to the module?",
+            "options": [
+              "Using a single complex adjustment layer that handles everything at once",
+              "By stacking several simple adjustment layers (contrast, color wash, vignette), each handling one specific job",
+              "Color grading requires repainting the entire piece from scratch",
+              "Only Levels can be used for color grading, never Curves"
+            ],
+            "correct": 1,
+            "explain": "A complete color grade is usually built from several simple, stacked adjustment layers, each responsible for one job (like contrast, a color wash, or a vignette), rather than one adjustment trying to do everything."
+          },
+          {
+            "q": "Why should a Curves adjustment layer be masked when only part of an image needs a contrast change?",
+            "options": [
+              "Masking has no functional purpose for adjustment layers",
+              "Adjustment layers affect everything beneath them in the layer stack by default, so a mask limits the effect to only the intended area",
+              "Curves adjustment layers cannot be masked at all",
+              "Masking a Curves layer converts it into a Levels layer"
+            ],
+            "correct": 1,
+            "explain": "Since an adjustment layer affects all layers beneath it by default, masking is necessary to restrict its effect to a specific area rather than the whole image."
+          }
+        ],
+        "checklist": [
+          "I can add a midpoint to a Curves adjustment and understand how it differs from Levels.",
+          "I can build a simple S-curve to add contrast to a flat image.",
+          "I can use the white/black/gray point eyedroppers to correct a color cast.",
+          "I can stack multiple adjustment layers to build a complete color grade."
+        ],
+        "nextStep": "You now have a real color-grading toolkit built on non-destructive adjustment layers. Module 107 moves to photobashing — combining real photographic elements into a cohesive concept art or illustration piece, a technique that relies heavily on the color and tone matching skills from this module."
+      },
+      {
+        "id": "m113",
+        "plate": "107",
+        "title": "Photobashing",
+        "difficulty": "Advanced",
+        "studyTime": "18 min",
+        "practiceTime": "30 min/day",
+        "prereq": [
+          "m112"
+        ],
+        "hook": "A crowded photograph of a real city street can become a desolate warzone concept with a handful of confident edits — which is exactly why photobashing became standard practice for game and film concept artists working against tight deadlines.",
+        "whyItMatters": [
+          "Photobashing pulls together nearly everything from this arc: non-destructive layers and masks (Module 105), blend modes and color grading (Module 106), and the material and lighting knowledge from the entire Digital Painting arc, all applied to blending real photographic elements into a single believable piece.",
+          "This technique exists specifically to solve a real production problem: concept artists are responsible for visualizing an overwhelming amount of content for a film or game, and photobashing lets a skilled artist reach a highly detailed, realistic result far faster than painting every element from scratch."
+        ],
+        "coreIdea": [
+          "Photobashing is merging and blending photographs (or 3D-rendered assets) together while painting and compositing them into one finished piece — it's distinct from simple photo editing, which augments a single image without changing its underlying structure or combining multiple sources.",
+          "The technique doesn't replace fundamentals; it depends on them. An artist needs a functional understanding of lighting, composition, and form to select photos that will actually work together and to paint the connective tissue (shadows, lighting adjustments, integrated details) that makes bashed elements read as one coherent image.",
+          "Photo selection matters as much as the blending itself: high-quality, sharp, easy-to-cut-out images from reputable stock sources or free resources like Wikimedia Commons save enormous time compared to fighting with low-quality or awkwardly-lit source photos.",
+          "There is a genuine, ongoing debate in the art community about photobashing's legitimacy as \"true\" digital art (some contests reject photobashed entries), but there's wide agreement that skillful photobashing, used to serve a design and visualization goal, takes real artistic skill to execute well."
+        ],
+        "mistakes": [
+          "Treating photobashing as simply cutting and pasting photos together without further work, when successfully integrating photos requires repainting lighting, adjusting color, and adding connective details.",
+          "Using low-quality, awkwardly-lit, or hard-to-cut-out source photos, which creates far more integration work than starting with clean, well-lit reference images.",
+          "Ignoring copyright and licensing when sourcing photos, instead of using licensed stock photography or genuinely free sources like Wikimedia Commons.",
+          "Relying on photobashing as a substitute for fundamentals instead of a speed tool built on top of them — without a grasp of lighting and form, bashed elements won't integrate believably no matter how they're blended.",
+          "Presenting photobashed work in a context (a contest or portfolio category) that explicitly excludes it, given the real, active debate about its categorization in some parts of the art community."
+        ],
+        "proTips": [
+          "Start with a sketch or a base photograph that establishes the composition, then add and blend additional photo elements or painted details on top to make everything fit together.",
+          "Prioritize sourcing high-quality, sharp, easy-to-cut-out photos over settling for the first image found — the time saved in blending more than makes up for extra time spent searching.",
+          "Use free software like Krita or GIMP if you don't have Photoshop; both can handle the combination of photo editing and digital painting that photobashing requires.",
+          "When bashing multiple textures onto one surface (like feathers or fur), align pieces carefully to avoid an obvious tiled or repeated pattern, which is one of the fastest ways bashed texture reads as fake."
+        ],
+        "practice": {
+          "warmup": "Find two free, high-quality photos (from a source like Wikimedia Commons) of related subjects and practice cutting one out cleanly and placing it into the other.",
+          "daily": "Take a rough sketch or painted background and photobash in one photographic element, adjusting its lighting and color to match the surrounding scene.",
+          "weekly": "Build a small concept piece that combines at least three photo sources with painted connective details (shadows, lighting adjustments, blended edges) to unify them.",
+          "challenge": "Take a real-world photo of a location and transform it into a completely different concept (a warzone, an overgrown ruin, a futuristic city) using photobashing and paint-overs, while keeping the underlying photo's composition and lighting logic intact."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "Concept Art Tutorial: Photo-bashing Sci-Fi Environments",
+            "creator": "Lincoln Hughes",
+            "url": "https://www.youtube.com/watch?v=LWb_4lYLlds",
+            "why": "A genuinely free, 75-minute lesson from a working concept artist, hosted on his own YouTube channel.",
+            "summary": "Teaches how to seamlessly use photos to add realistic detail quickly, covering techniques for lighting, perspective, color, and composition when blending photo reference into a concept piece, along with common mistakes made when painting with photo reference and how to avoid them.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "What is Photobashing? (With Free Beginner Tutorials)",
+            "creator": "Claire Heginbotham, Concept Art Empire",
+            "url": "https://conceptartempire.com/photobashing/",
+            "why": "A free, balanced overview of the technique, honestly addressing the legitimacy debate while explaining why professional concept artists rely on it, plus links to further free tutorials.",
+            "summary": "Explains photobashing as merging and blending photographs or 3D assets while painting and compositing them into one piece, distinguishes it from simple photo editing, honestly presents the ongoing debate about its legitimacy as \"true\" digital art versus its practical value for concept art production, and recommends free software (Krita, GIMP) and free image sources (Wikimedia Commons) for artists without access to paid tools.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "How does photobashing differ from simply \"photoshopping\" a single image?",
+            "options": [
+              "They are exactly the same technique",
+              "Photobashing merges and blends multiple photographs (or 3D assets) together while painting over them into one new piece, rather than just augmenting one existing image while keeping its structure",
+              "Photobashing never involves any painting, only photo editing",
+              "Photoshopping always requires more photos than photobashing"
+            ],
+            "correct": 1,
+            "explain": "Photoshopping augments and changes a single image while keeping its underlying structure; photobashing is more creative, combining multiple photos and painting over them into an entirely new composition."
+          },
+          {
+            "q": "Why do fundamentals like lighting, composition, and form still matter for photobashing?",
+            "options": [
+              "They don't matter at all once photos are being used",
+              "Selecting photos that will actually work together and painting the connective details (shadows, adjusted lighting) that unify them both require a functional understanding of these fundamentals",
+              "Fundamentals only apply to fully hand-painted digital art",
+              "Photobashing eliminates the need to understand light and form entirely"
+            ],
+            "correct": 1,
+            "explain": "Photobashing depends on fundamentals: choosing compatible photos and painting the details that make them read as one coherent scene both require understanding lighting, composition, and form."
+          },
+          {
+            "q": "Why is sourcing high-quality, easy-to-cut-out photos worth the extra search time?",
+            "options": [
+              "Photo quality has no effect on the final result",
+              "It significantly reduces the integration work needed later, since clean, well-lit photos blend more easily than low-quality or awkward source images",
+              "Only paid stock photos can legally be used in any artwork",
+              "Higher resolution photos always look worse when painted over"
+            ],
+            "correct": 1,
+            "explain": "Starting with high-quality, easy-to-work-with photos reduces the time and difficulty of the blending and integration work that follows, more than making up for the extra time spent searching."
+          },
+          {
+            "q": "What is the ongoing debate mentioned regarding photobashing?",
+            "options": [
+              "Whether photobashing is technically possible in modern software",
+              "Whether photobashing counts as \"true\" digital art, since some digital art contests reject photobashed entries while others value it as a legitimate professional technique",
+              "Whether photobashing requires expensive software",
+              "There is no debate about photobashing in the art community"
+            ],
+            "correct": 1,
+            "explain": "There's a genuine, ongoing debate about photobashing's categorization as an art form, with some contests excluding it, while there's broad agreement that it requires real skill to execute well."
+          },
+          {
+            "q": "What is a good free source for photo reference mentioned for photobashing?",
+            "options": [
+              "There are no free, legal sources for photo reference",
+              "Wikimedia Commons, alongside using free software like Krita or GIMP instead of paid tools",
+              "Only paid stock photography sites can be used legally",
+              "Screenshots from copyrighted films are recommended as a free source"
+            ],
+            "correct": 1,
+            "explain": "Wikimedia Commons is mentioned as a free, legitimate source for photo reference, and free software like Krita or GIMP can handle the photo editing and painting combination photobashing requires."
+          }
+        ],
+        "checklist": [
+          "I can explain the difference between photobashing and simple photo editing.",
+          "I can select clean, well-lit, easy-to-cut-out photos to reduce later integration work.",
+          "I can blend a photographic element into a painted or photographic scene by adjusting its lighting and color to match.",
+          "I can use free, legitimate photo sources and software for photobashing."
+        ],
+        "nextStep": "You can now blend real photographic elements into a cohesive piece. Module 108 extends this further with 3D-assisted art — using free 3D software to build blockouts, lighting studies, and reference geometry that can be painted over, another major speed and accuracy tool for concept work."
+      },
+      {
+        "id": "m114",
+        "plate": "108",
+        "title": "3D-Assisted Art",
+        "difficulty": "Advanced",
+        "studyTime": "18 min",
+        "practiceTime": "30 min/day",
+        "prereq": [
+          "m113"
+        ],
+        "hook": "A concept artist doesn't need to be a 3D modeler to use 3D — a handful of rough, ugly cubes arranged in free software can solve a perspective and lighting problem that would take hours to get right freehand.",
+        "whyItMatters": [
+          "Like photobashing (Module 107), 3D-assisted art is a speed and accuracy tool that sits on top of your existing fundamentals, not a replacement for them — it's a widely used, well-established professional technique, not a shortcut unique to beginners.",
+          "3D blocking is especially valuable for exactly the kind of environments and hard-surface subjects this curriculum has focused on: anything with straight lines, consistent perspective, or complex lighting benefits the most, since 3D software calculates perspective and light physically instead of you estimating it by eye."
+        ],
+        "coreIdea": [
+          "A 3D blockout uses simple, rough shapes (boxes, cylinders, spheres) arranged in a free 3D program like Blender to establish accurate perspective, proportion, and composition before any detailed painting begins — messy topology and ugly geometry are completely fine at this stage, since the blockout is a tool, not the final product.",
+          "The technique works especially well for straight-edged, architectural, or hard-surface subjects, where 3D can calculate consistent perspective and lighting logic automatically; very organic, curvy subjects (a flowing cape, a creature's soft anatomy) tend to benefit less and are often faster to handle by hand.",
+          "A common workflow moves between 2D and 3D repeatedly rather than treating 3D as a one-way pipeline: rough 2D thumbnails establish the idea, 3D blocks out accurate perspective and major forms, then a 2D paintover adds detail, texture, and painterly quality on top of the 3D render.",
+          "Don't let the blockout box you in — professional concept artists consistently emphasize treating the 3D base as a flexible starting point, freely adding new elements, scrapping parts that aren't working, or overpainting entirely, rather than being limited to exactly what was modeled."
+        ],
+        "mistakes": [
+          "Spending excessive time perfecting a 3D blockout's topology or detail when its only job is to establish perspective, proportion, and rough lighting before a paintover.",
+          "Using 3D for subjects it's poorly suited to, like flowing fabric or soft organic anatomy, where freehand painting is often faster and more expressive.",
+          "Treating the 3D render as the finished piece instead of as a base for a 2D paintover that adds painterly detail, texture, and polish.",
+          "Feeling locked into exactly what was modeled in the blockout, rather than freely adding, removing, or scrapping parts of it during the paintover stage.",
+          "Skipping the development of freehand perspective and drawing skills because 3D can handle it, when a solid understanding of perspective is still what lets you judge whether a 3D blockout is even working."
+        ],
+        "proTips": [
+          "Build blockouts intentionally messy and fast — rough box shapes with no clean topology are completely appropriate, since the blockout's only job is perspective, proportion, and rough composition.",
+          "Reserve 3D blocking for straight-edged or architectural subjects where it saves real time, and default to freehand painting for organic, flowing forms where 3D offers little advantage.",
+          "Move back and forth between 2D and 3D as needed rather than committing to a strict one-way pipeline — a rough 2D thumbnail, a 3D blockout, then a 2D paintover is a common, flexible sequence.",
+          "When paint-overing a 3D render, add rough brush strokes and deliberate imperfection early, since a raw 3D render can look too clean and 'physically correct' compared to a natural painting."
+        ],
+        "practice": {
+          "warmup": "In free 3D software, block out a simple room or street using only cubes and cylinders, focusing purely on getting proportions and perspective right, not detail.",
+          "daily": "Take a rough 2D thumbnail idea for an architectural or hard-surface subject and build a quick 3D blockout of it, then take a screenshot to paint over.",
+          "weekly": "Complete one small piece using the full 2D-3D-2D workflow: a rough thumbnail, a 3D blockout for perspective and lighting, and a full paintover adding painterly detail and texture.",
+          "challenge": "Block out the same subject twice — once a hard-surface, straight-edged subject, once an organic, curvy one — and compare how much time and value 3D actually added in each case."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "Blender Beginners For Concept Art — TUTORIAL",
+            "creator": "Critical Giants",
+            "url": "https://youtu.be/CHIZtZ2JU3A",
+            "why": "A free, complete beginner walkthrough that takes a simple Blender scene through to a finished image with some Photoshop work.",
+            "summary": "A beginner Blender walkthrough that builds a scene from basic shapes and then finishes it with some Photoshop work.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "How simple 3D blockouts help build realistic fantasy art",
+            "creator": "Billy Christian, Creative Bloq",
+            "url": "https://www.creativebloq.com/art/digital-art/how-simple-3d-blockouts-help-build-realistic-fantasy-art",
+            "why": "A free, detailed, step-by-step breakdown from a working artist showing exactly which parts of a piece benefit from 3D (armor, hard surfaces) and which are better handled in 2D (hair, fabric folds).",
+            "summary": "Walks through a real fantasy character piece, explaining that hard-surface elements like armor and architecture are modeled simply in Blender and lit with basic three-point lighting, while organic elements like hair and fabric folds are deliberately left to 2D repainting since they're more flexible and enjoyable to refine by hand, with color grading and final polish applied afterward in Photoshop.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What is the main purpose of a 3D blockout in a concept art workflow?",
+            "options": [
+              "To produce the final, finished piece of art",
+              "To establish accurate perspective, proportion, and composition using rough shapes before detailed painting begins",
+              "To replace the need for any painting skill entirely",
+              "To create game-ready assets with clean topology"
+            ],
+            "correct": 1,
+            "explain": "A blockout's job is to quickly and accurately establish perspective, proportion, and rough composition using simple shapes; it is not meant to be polished or final."
+          },
+          {
+            "q": "What kind of subjects benefit most from a 3D-assisted approach?",
+            "options": [
+              "Flowing fabric and soft organic anatomy",
+              "Straight-edged, architectural, or hard-surface subjects, where 3D can calculate perspective and lighting automatically",
+              "3D offers no advantage for any type of subject",
+              "Only subjects with no straight lines at all"
+            ],
+            "correct": 1,
+            "explain": "3D blocking is especially useful for hard-surface, architectural subjects where consistent perspective and lighting logic are hard to estimate by eye, while organic, curvy forms often benefit less."
+          },
+          {
+            "q": "According to the module, what is a common, flexible workflow combining 2D and 3D?",
+            "options": [
+              "3D only, with no 2D work at any stage",
+              "A rough 2D thumbnail, followed by a 3D blockout for perspective, followed by a 2D paintover for detail and polish",
+              "2D only, with 3D never used at all",
+              "A strict one-way pipeline where 3D is always the very last step"
+            ],
+            "correct": 1,
+            "explain": "A common, flexible sequence moves between 2D and 3D repeatedly: a rough 2D idea, a 3D blockout to nail perspective and lighting, then a 2D paintover for painterly detail and polish."
+          },
+          {
+            "q": "Why is it important not to feel locked into exactly what was modeled in a 3D blockout?",
+            "options": [
+              "Because 3D blockouts cannot be changed once created",
+              "Professional concept artists emphasize treating the blockout as a flexible base, freely adding, removing, or scrapping parts during the paintover",
+              "Because 3D software prevents any further painting",
+              "It is not actually important to stay flexible"
+            ],
+            "correct": 1,
+            "explain": "Working artists consistently stress using the 3D base as a flexible starting point rather than being boxed in by it, freely adjusting or scrapping parts during the paintover stage."
+          },
+          {
+            "q": "Why might a raw 3D render need extra work before it looks like a natural painting?",
+            "options": [
+              "3D renders are always identical to hand-painted work",
+              "A raw render can look too clean and 'physically correct,' so adding rough brush strokes and deliberate imperfection during paintover helps it feel painterly",
+              "3D renders cannot be painted over at all",
+              "This is not a real consideration in 3D-assisted art"
+            ],
+            "correct": 1,
+            "explain": "A physically accurate 3D render can look sterile compared to natural painting, so adding rough strokes and intentional imperfection during the paintover stage helps bridge that gap."
+          }
+        ],
+        "checklist": [
+          "I can build a rough, messy 3D blockout focused only on perspective and proportion, not detail.",
+          "I can judge whether a subject (hard-surface vs. organic) is a good candidate for 3D assistance.",
+          "I can move flexibly between 2D and 3D stages rather than following a strict one-way pipeline.",
+          "I can paint over a 3D render with deliberate texture and imperfection rather than leaving it looking sterile."
+        ],
+        "nextStep": "You now have a genuine 3D-to-2D workflow in your toolkit. Module 109 turns to a newer, actively-debated tool — AI-assisted workflows — covering what responsible, disclosed use actually looks like for a working artist."
+      },
+      {
+        "id": "m115",
+        "plate": "109",
+        "title": "Responsible AI-Assisted Workflow",
+        "difficulty": "Advanced",
+        "studyTime": "20 min",
+        "practiceTime": "20–25 min (research + reflection)",
+        "prereq": [
+          "m114"
+        ],
+        "hook": "This is the one module in the entire curriculum where the honest answer to \"what's the right way to do this\" is genuinely contested — by working artists, by courts, and by AI companies themselves — and pretending otherwise would do you a disservice.",
+        "whyItMatters": [
+          "AI image tools are now a real part of many working artists' pipelines, used for reference gathering, rapid ideation, and mood-boarding, alongside the photobashing (Module 107) and 3D-assisted (Module 108) speed tools you've already learned. Understanding how professional and industry organizations think about using them responsibly is now a practical, professional skill, not an optional add-on.",
+          "This is also a genuinely unresolved area: artists, legal scholars, and AI companies disagree on core questions like training-data consent and what counts as meaningful human authorship. This module gives you the actual landscape and a practical decision framework, rather than a single verdict, so you can navigate it with your own judgment intact."
+        ],
+        "coreIdea": [
+          "The central, unresolved debate is training data: AI image generators learn from very large sets of existing images, many scraped without the original artists' consent. Artists point to lost commissions and unauthorized use of their style as real harms; AI companies and users point to fair-use arguments and the transformative nature of the technology. Multiple lawsuits are working through courts worldwide with no single settled answer as of this writing.",
+          "Copyright law in the U.S. currently draws a real, practical line: purely AI-generated output with no human creative input is not copyrightable, while AI-assisted work where a human exercises substantial creative control (iterating on prompts, selecting, editing, compositing, adding original elements) may qualify for protection on those human-authored parts.",
+          "Professional guidelines converge on a small set of concrete, repeated practices regardless of where you land on the bigger debate: disclose AI involvement to clients and audiences, avoid prompting for a specific living artist's distinctive style, add substantial human creative input rather than using raw output as-is, and respect a platform or client contract's specific rules about AI use.",
+          "Where AI use sits ethically shifts by context: using it for personal ideation, mood boards, or rapid prototyping before human-made final work is broadly treated as unproblematic; passing off AI output as entirely hand-made, or deliberately mimicking a specific living artist's signature style for commercial gain, are the situations that draw the most consistent, serious concern across nearly every framework."
+        ],
+        "mistakes": [
+          "Treating this as a settled, one-sided question in either direction — as either clearly fine or clearly forbidden — when it's a genuinely contested area with real, serious arguments and real stakeholders on multiple sides.",
+          "Using AI output as-is with minimal human input and then presenting it as fully hand-made work, which crosses from a contested gray area into straightforward misrepresentation.",
+          "Prompting to specifically mimic a named, living artist's distinctive style for commercial use without their involvement or compensation, which is the single most consistently flagged practice across professional guidelines.",
+          "Ignoring a client's or platform's explicit rules about AI use, treating your own comfort with the technology as the only relevant standard.",
+          "Assuming disclosure will hurt how your work is received; professional guidance and available research suggest transparency is generally received better than artists fear, and undisclosed use that's later discovered tends to cost far more trust."
+        ],
+        "proTips": [
+          "If you use AI at any stage, default to disclosing it to clients and, where relevant, audiences — treat transparency as the baseline professional practice, not an optional extra.",
+          "When using AI for ideation or reference, add substantial human creative work on top (iterating deliberately, selecting critically, editing, compositing, painting over) both for the ethical strength of the practice and, in the U.S., for a stronger copyright claim.",
+          "Use general style language (\"cyberpunk,\" \"impressionist,\" \"heavy linework\") instead of naming a specific living artist when prompting, to avoid the most consistently flagged ethical issue in professional guidelines.",
+          "Read the specific terms of service or contract governing any project before using AI on it — many clients, contests, and platforms now have explicit AI policies, and \"I didn't check\" isn't a strong position if a problem comes up later."
+        ],
+        "practice": {
+          "warmup": "Read the Graphic Artists Guild's Ethical Focus and Transparency sections in the resources below and write, in your own words, the single practice that seems most important to you and why.",
+          "daily": "If you use an AI tool for ideation this week, keep a short note of how you disclosed it and what human creative work you added on top of the AI output.",
+          "weekly": "Research one platform's or contest's current AI policy (a portfolio site, a competition, a stock art marketplace) and summarize what it specifically requires or prohibits.",
+          "challenge": "Write a one-paragraph personal policy for your own future use of AI tools in art — what you will and won't do, and how you'll disclose it — based on what you've read in this module, and revisit it as the legal and professional landscape develops."
+        },
+        "resources": [
+          {
+            "type": "Article",
+            "title": "Generative AI Ethical Use Guidelines",
+            "creator": "Graphic Artists Guild",
+            "url": "https://graphicartistsguild.org/general-ai-ethical-use-guidelines/",
+            "why": "A free, authoritative set of guidelines from an established professional trade association representing illustrators and designers, organized around concrete, actionable practices.",
+            "summary": "A professional artists' association's official guidelines, organized around ethical, inclusivity, human, and economic-empowerment lenses, recommending concrete practices: only using content you have rights to, clearly labeling AI-generated or AI-assisted work, informing clients when AI is used in any part of the process, being intentional about using AI to supplement rather than replace the creative process, and supporting collective licensing and transparency measures for training data.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "AI Art Ethics: A Practical Guide for Creators",
+            "creator": "ZSky AI",
+            "url": "https://zsky.ai/blog/ai-art-ethics-guide",
+            "why": "A free, practically-organized guide that lays out both sides of the training-data debate honestly and gives a concrete decision framework for different use cases.",
+            "summary": "Lays out the core training-data consent debate from both the artist and AI-company perspectives without resolving it, explains the current U.S. Copyright Office position that purely AI-generated work isn't copyrightable while AI-assisted work with substantial human direction may be, and offers a practical framework distinguishing clearly-uncontroversial uses (personal ideation, prototyping, accessibility) from genuinely murky ones (mimicking a specific living artist's style, passing AI work off as hand-made).",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What is the central, unresolved debate at the heart of AI art ethics discussions?",
+            "options": [
+              "Whether AI software is technically difficult to use",
+              "Whether AI models were trained on artists' work without their consent, and what that means ethically and legally",
+              "Which specific brand of AI software is the fastest",
+              "Whether digital art itself is legitimate compared to traditional media"
+            ],
+            "correct": 1,
+            "explain": "The core, actively contested issue is training data consent: AI image generators learn from large image sets, many scraped without artists' explicit consent, and this is the foundation of most other ethical debates in the space."
+          },
+          {
+            "q": "According to current U.S. copyright guidance described in the module, what distinguishes copyrightable AI-assisted work from non-copyrightable purely AI-generated work?",
+            "options": [
+              "The file format used to save the image",
+              "Whether a human exercised substantial creative control, such as iterating, selecting, editing, and adding original elements",
+              "Whether the AI tool used was free or paid",
+              "There is no distinction; all AI-related output is treated identically"
+            ],
+            "correct": 1,
+            "explain": "Purely AI-generated output with no human creative input is not copyrightable in the U.S., while AI-assisted work involving substantial human creative direction and modification may qualify for protection on those human-authored elements."
+          },
+          {
+            "q": "What practice is most consistently flagged as a serious ethical concern across professional guidelines?",
+            "options": [
+              "Using AI for personal mood boards",
+              "Deliberately mimicking a specific living artist's distinctive style for commercial gain, or passing AI output off as entirely hand-made",
+              "Using general style descriptors like 'watercolor' or 'cyberpunk'",
+              "Disclosing AI use to clients"
+            ],
+            "correct": 1,
+            "explain": "Naming and mimicking a specific living artist's signature style commercially, and misrepresenting AI-generated work as fully hand-made, are the two practices that draw the most consistent concern across professional frameworks."
+          },
+          {
+            "q": "What does the module suggest about disclosing AI involvement to clients and audiences?",
+            "options": [
+              "Disclosure should always be avoided since it universally destroys trust",
+              "Transparency is generally treated as the safer, more professional baseline, and available guidance suggests it's often received better than artists fear",
+              "Disclosure is legally required in every context worldwide",
+              "Disclosure only matters for large commercial projects, never smaller personal work"
+            ],
+            "correct": 1,
+            "explain": "Professional guidelines consistently recommend disclosure as a baseline practice, and available guidance suggests undisclosed use that's later discovered tends to cost more trust than upfront transparency would have."
+          },
+          {
+            "q": "According to the module, which use of AI tools is broadly treated as least ethically contested?",
+            "options": [
+              "Selling a raw, unedited AI generation as an original finished commission with no disclosure",
+              "Using AI for personal ideation, mood boards, or rapid prototyping before creating human-made final work",
+              "Naming a specific living artist in a prompt for a paid client project",
+              "There is no use of AI that is considered uncontroversial"
+            ],
+            "correct": 1,
+            "explain": "Using AI tools for personal exploration, mood boards, or prototyping before human-made final work is broadly treated as close to ethically unambiguous across the guidelines discussed, unlike commercial misrepresentation or artist-style mimicry."
+          }
+        ],
+        "checklist": [
+          "I can describe the core training-data consent debate from both the artist and AI-company perspectives without taking it as settled.",
+          "I can explain what generally distinguishes copyrightable AI-assisted work from non-copyrightable purely AI-generated work in current U.S. guidance.",
+          "I can identify disclosure to clients/audiences as a baseline professional practice rather than an optional extra.",
+          "I can name the two practices (living-artist style mimicry, misrepresenting AI work as hand-made) most consistently flagged as serious concerns."
+        ],
+        "nextStep": "You now have a grounded, practical framework for a genuinely contested area, rather than a single unexamined opinion. Module 110 turns to speed painting — a purely technical skill for producing strong work quickly under real time constraints, building on the full toolkit from this arc."
+      },
+      {
+        "id": "m116",
+        "plate": "110",
+        "title": "Speed Painting",
+        "difficulty": "Advanced",
+        "studyTime": "16 min",
+        "practiceTime": "25–45 min/day",
+        "prereq": [
+          "m115"
+        ],
+        "hook": "A striking speed painting often looks messy up close and only fully makes sense from across the room — which is exactly the point, since the time limit forces you to solve the big problems and abandon the small ones.",
+        "whyItMatters": [
+          "Speed painting is a deliberate practice constraint, not a shortcut around everything you've learned — it forces you to apply composition (Module 79), value (Module 96), and color (Module 95) decisions instantly, without the safety net of unlimited time to second-guess them.",
+          "It's also directly useful for professional pitching: when you want to present several illustration ideas quickly and aren't yet sure which is strongest, speed painting lets you generate real, comparable options fast, tying directly back to the thumbnailing and iteration skills from Module 83."
+        ],
+        "coreIdea": [
+          "A speed painting is simply a piece made within a set time limit, commonly somewhere between 10 and 30 minutes; the specific number matters less than genuinely sticking to it, since going over the limit turns the exercise back into an ordinary, unconstrained painting.",
+          "Preparation is what makes speed possible: setting a strict timer, using a limited number of brushes and tools to avoid switching time, and establishing a limited color palette in advance (using the eyedropper tool to mix colors from what's already on the canvas rather than repeatedly returning to a color wheel) all remove decision points that would otherwise eat into the clock.",
+          "Clear, confident big shapes and a few areas of deliberately placed detail are what make a speed painting read as complete even though most of it is loose — a small amount of convincing detail implies the rest of the drawing to the eye, saving enormous time versus rendering everything evenly.",
+          "Speed painting is also a structured study tool, not only a technique for original ideas: studying a reference photo or an old master painting's composition, values, or color distribution under a time limit builds a mental library of solutions (a particular way of suggesting grass, a specific light-to-dark color relationship) that speeds up your normal, unconstrained work later."
+        ],
+        "mistakes": [
+          "Going over the time limit without acknowledging it, which turns the exercise back into an ordinary painting and defeats the purpose of the speed constraint.",
+          "Switching between many brushes, tools, or techniques mid-session, which eats into the time savings the whole exercise is built around.",
+          "Trying to render every area of the painting with even, thorough detail instead of concentrating a small amount of convincing detail in a few key areas and leaving the rest loose.",
+          "Treating speed painting purely as a technique for finished pieces, rather than also using it as a structured study tool for absorbing composition, value, or color lessons from a reference or master painting under time pressure.",
+          "Picking a subject or reference so complex that even the big shapes can't be established within the time limit, defeating the exercise before it starts."
+        ],
+        "proTips": [
+          "Set an actual timer before you start, and if you go over, treat that run as void and start a fresh attempt rather than quietly finishing an over-time piece — speed paintings tend to get faster in general the more of them you do.",
+          "Establish a limited color palette before starting, and use the eyedropper tool (rather than the color wheel) to mix new colors directly from what's already on the canvas, which is both faster and keeps the palette naturally harmonious.",
+          "Work small, both in canvas size and in how much detail you attempt, especially at the start — a smaller working area naturally discourages getting bogged down in unnecessary detail too early.",
+          "For a structured study session, pick one specific lesson to focus on per speed painting (just composition, just values, just color distribution) rather than trying to study everything about a reference at once."
+        ],
+        "practice": {
+          "warmup": "Do three back-to-back 10-minute speed paintings of the same simple subject, using only one brush and a limited 4-color palette for each.",
+          "daily": "Pick an old master painting or strong reference photo and do a 20-minute speed painting focused on just one lesson: its composition, its value structure, or its color distribution.",
+          "weekly": "Generate three different illustration ideas for the same concept as three separate 15-minute speed paintings, then compare them to decide which direction is strongest before developing one further.",
+          "challenge": "Do the same speed painting twice with the same time limit — once trying to render everything evenly, once concentrating detail in only one or two key areas — and compare which one reads as more complete."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "Expanding your Visual Library: Speed Painting",
+            "creator": "The Art Frog (CLIP STUDIO TIPS)",
+            "url": "https://www.youtube.com/watch?v=DlvI_13F0S4",
+            "why": "The free 40-minute video version of the article below, where a speed painting is actually done in Clip Studio Paint.",
+            "summary": "Art Frog looks at different tools and techniques in Clip Studio Paint for creating a speed painting, including lasso, eyedropper and reference use, then paints one from start to finish.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Expanding your Visual Library: Speed Painting",
+            "creator": "ArtFrog, CLIP STUDIO TIPS",
+            "url": "https://tips.clip-studio.com/en-us/articles/2766",
+            "why": "A free, practical breakdown of concrete speed-painting preparation tips — timers, limited tools, and the eyedropper-based limited palette technique.",
+            "summary": "Defines a speed painting simply as art made within a time limit, then gives concrete preparation tips: setting and sticking to a timer (restarting rather than continuing if time runs out), using a limited number of brushes and tools to avoid switching time, and establishing a limited color palette used with the eyedropper tool to mix new colors directly from the canvas rather than the color wheel.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Speed Painting: How to Do It and Why?",
+            "creator": "Chloé Pouteau, Dessindigo",
+            "url": "https://dessindigo.com/en/blog/digital-painting-tutorial/speed-painting",
+            "why": "A free, detailed walkthrough of speed painting as a structured study tool, with three separate worked examples for composition, values, and color under specific time limits.",
+            "summary": "Demonstrates speed painting as a study method through three separate worked examples — a 10-minute composition study identifying leading lines and picture planes, a 20-minute grayscale value study of a lit landscape, and a 30-minute color-zone study — each showing how analyzing a reference first, then working within a tight time limit, builds a reusable mental library of compositions and techniques.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What is the defining feature of a speed painting, according to the module?",
+            "options": [
+              "It must always be done in watercolor",
+              "It is a piece of artwork completed within a set time limit that is genuinely respected, not just a loosely-timed painting",
+              "It must always depict a landscape",
+              "It requires at least 10 different brushes"
+            ],
+            "correct": 1,
+            "explain": "A speed painting is technically defined by having and sticking to a time limit; going over that limit turns it back into an ordinary, unconstrained painting."
+          },
+          {
+            "q": "Why is establishing a limited color palette and using the eyedropper tool recommended for speed painting?",
+            "options": [
+              "It has no real effect on speed",
+              "It removes the time cost of repeatedly returning to a full color wheel, and mixing from the canvas keeps the palette naturally harmonious",
+              "The eyedropper tool can only be used in traditional media",
+              "A limited palette is required by copyright law"
+            ],
+            "correct": 1,
+            "explain": "Using the eyedropper to mix colors directly from what's already on the canvas, within a pre-established limited palette, removes decision points and color-wheel trips that would otherwise eat into the time limit."
+          },
+          {
+            "q": "Why does a small amount of concentrated detail often make a speed painting read as complete?",
+            "options": [
+              "Detail placement has no effect on how finished a piece looks",
+              "Convincing detail in a few key areas implies the rest of the drawing to the eye, which is far faster than rendering everything evenly",
+              "Every part of a speed painting must always be equally detailed",
+              "Detail only matters in traditional, not digital, speed painting"
+            ],
+            "correct": 1,
+            "explain": "Concentrating detail in select areas while leaving the rest loose is what allows a piece to read as finished despite most of it being quick and unrefined — the eye fills in the rest based on the convincing parts."
+          },
+          {
+            "q": "How can speed painting be used as a structured study tool, beyond making original finished pieces?",
+            "options": [
+              "It cannot be used for studying, only for original work",
+              "By analyzing a reference or master painting's composition, values, or color distribution under a time limit, to build a reusable mental library of solutions",
+              "Study speed paintings must always be done with zero time limit",
+              "It only applies to studying color, never composition or value"
+            ],
+            "correct": 1,
+            "explain": "Speed painting a specific lesson from a reference (like leading lines in a composition, or a value structure) under time pressure helps build a mental library of techniques that speeds up later, unconstrained work."
+          },
+          {
+            "q": "What should happen if a speed painting attempt goes over its set time limit?",
+            "options": [
+              "Nothing; time limits are only a suggestion",
+              "The attempt should generally be treated as void, with a fresh attempt started, rather than quietly finishing the over-time piece",
+              "The time limit should be permanently extended for all future attempts",
+              "Going over time makes the resulting piece more valuable as practice"
+            ],
+            "correct": 1,
+            "explain": "Genuinely respecting the time limit is central to the exercise; going over it without treating the attempt as void (or starting fresh) defeats the purpose of the speed constraint."
+          }
+        ],
+        "checklist": [
+          "I can set and genuinely respect a time limit for a speed painting session.",
+          "I can establish a limited color palette and use the eyedropper tool to mix new colors from the canvas.",
+          "I can concentrate detail in a few key areas rather than trying to render everything evenly.",
+          "I can use speed painting as a structured study tool focused on one specific lesson (composition, value, or color) from a reference."
+        ],
+        "nextStep": "You now have a real toolkit for working fast and decisively under real time constraints. Module 111 turns that same time-limited discipline toward copying master paintings directly — master studies, one of the oldest and most reliable ways to absorb technique from artists whose work has already stood the test of time."
+      },
+      {
+        "id": "m117",
+        "plate": "111",
+        "title": "Master Studies",
+        "difficulty": "Advanced",
+        "studyTime": "18 min",
+        "practiceTime": "1–2 hours (project)",
+        "prereq": [
+          "m116"
+        ],
+        "hook": "One artist copied over 50 master paintings with no specific goal, and the only thing he actually learned was to accidentally paint every face like a pin-up girl regardless of gender — proof that copying itself teaches nothing without a clear question in mind.",
+        "whyItMatters": [
+          "Master studies are one of the oldest training methods in art history, going back centuries, and they remain a standard part of professional training today for a simple reason: a finished master painting already contains solved problems in composition, color, and technique that would take much longer to discover through trial and error alone.",
+          "This module also directly connects to the responsible-use principles from Module 109: a master study is a well-established, ethically clear form of learning from another artist's work, but only when it's treated as a labeled study, not represented or sold as original work — a distinction worth understanding clearly, not just assuming."
+        ],
+        "coreIdea": [
+          "A master study works best with one specific, narrow learning goal chosen in advance — the design matrix and composition of a piece, its color relationships, or the paint application in one small section — rather than an unfocused, whole-canvas copy with no particular question in mind.",
+          "Studying the design matrix means identifying the large compositional structures (lead lines, implied lines of action, focal armatures) a master used to guide the eye, often by reducing a painting to a simple abstract diagram of its major shapes before ever touching paint.",
+          "A color study strips away a finished painting's optical detail and blending to find the pure, simplified hue relationships underneath — comparing a color's temperature and value relative to its neighbors, rather than trying to match one isolated color exactly.",
+          "A small-section study, focusing on just one difficult passage (a face, a fabric fold, a patch of foliage) at a larger scale, is often more valuable than a full-canvas copy, since it lets you slow down and truly understand the construction and paint handling in that one area."
+        ],
+        "mistakes": [
+          "Copying many master paintings with no specific learning goal in mind, which risks absorbing surface habits (a particular artist's face shapes, a particular color scheme) without a real, transferable lesson underneath.",
+          "Trying to match an isolated color exactly instead of comparing its relationship (lighter, darker, warmer, cooler) to the colors around it, which is the judgment that actually transfers to original work.",
+          "Presenting or sharing a master study as if it were an original composition, rather than clearly labeling it as a study (for example, \"Study after [Artist's Name]\") and crediting the source.",
+          "Selling, exhibiting, or marketing a direct copy of a living or recently active artist's specific composition in a way that could suggest it's your own original creation, without checking applicable copyright and reproduction rules.",
+          "Stopping after completing the study itself instead of the more important final step: applying one or two of the specific lessons learned to a genuinely original composition afterward."
+        ],
+        "proTips": [
+          "Before starting a master study, write down the one specific question you want it to answer (how does this artist handle edges? how is this composition's focal point constructed?) so you can evaluate afterward whether you actually learned it.",
+          "When studying color, ask relational questions (is this warmer or cooler, lighter or darker than its neighbor) rather than trying to precisely replicate one isolated swatch out of context.",
+          "Choose a small, specific section to study in depth (a hand, a patch of fabric, a stretch of foliage) rather than defaulting to a full-canvas copy every time — depth on one passage often teaches more than breadth across a whole piece.",
+          "Always label a shared master study clearly (\"Study after [Artist], [Painting Title]\") and follow up with an original piece that applies one specific lesson from the study to a new subject."
+        ],
+        "practice": {
+          "warmup": "Choose one painting you admire and write down a single, specific learning goal for a study of it before making any marks.",
+          "daily": "Do a quick design-matrix breakdown of a painting's composition, reducing it to simple shapes and lead lines in a rough diagram, without adding any color or detail.",
+          "weekly": "Complete a focused master study of one small section of a painting (not the whole canvas), labeled clearly with the artist and title, focused on one specific technique.",
+          "challenge": "After completing a master study, create an original piece using a different subject that deliberately applies one specific lesson (a value pattern, a limited palette, a compositional structure) from that study."
+        },
+        "resources": [
+          {
+            "type": "Article",
+            "title": "Some Thoughts on Master Studies",
+            "creator": "Ron Lemen, Muddy Colors",
+            "url": "https://muddycolors.com/2017/12/some-thoughts-on-master-studies/",
+            "why": "A free, first-person account from a working professional illustrator, giving three concrete, focused approaches to master studies instead of unfocused whole-canvas copying.",
+            "summary": "A professional illustrator shares three focused approaches learned from a mentor: studying a painting's design matrix (its compositional armature of lead lines and shapes), studying the pure color relationships underneath a painting's optical blending, and studying just a small section of a canvas in depth to learn specific paint application — while cautioning that unfocused copying with no clear goal can lead to absorbing surface habits rather than real, transferable lessons.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Let's Talk About Master Copies",
+            "creator": "Miranda Meeks, Muddy Colors",
+            "url": "https://muddycolors.com/2022/01/lets-talk-about-master-copies/",
+            "why": "A free, practical breakdown of how to approach master copies responsibly, including the important distinction between educational study and passing work off as original.",
+            "summary": "Explains that copying for educational purposes is broadly accepted, provided the copy isn't presented as original work and the source artist is credited when known, walks through a practical process for creating a master copy, and notes that copying an image directly for professional client work (rather than personal study) crosses into a different, more serious category.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Why is it recommended to choose one specific learning goal before starting a master study?",
+            "options": [
+              "It has no real effect on the outcome",
+              "Unfocused copying with no clear goal risks absorbing surface habits (a specific face shape, a particular palette) rather than a real, transferable lesson",
+              "A specific goal is only relevant for traditional media, not digital",
+              "Master studies without a goal always take less time to complete"
+            ],
+            "correct": 1,
+            "explain": "One artist's account in the module describes copying over 50 paintings with no specific goal and mainly absorbing surface habits rather than real technique, which is why choosing a focused question in advance matters."
+          },
+          {
+            "q": "What does studying a painting's \"design matrix\" mean?",
+            "options": [
+              "Copying the exact colors used in the painting",
+              "Identifying the large compositional structures, like lead lines and focal armatures, that guide the eye through the piece",
+              "Measuring the physical dimensions of the canvas",
+              "Analyzing only the brand of paint used"
+            ],
+            "correct": 1,
+            "explain": "The design matrix refers to a painting's underlying compositional structure — lead lines, implied lines of action, and focal armatures — often studied by reducing the painting to a simple abstract diagram of its major shapes."
+          },
+          {
+            "q": "When studying color relationships in a master painting, what should you compare rather than trying to match an isolated color exactly?",
+            "options": [
+              "The exact pixel or paint values with no context",
+              "How a color relates to its neighbors — whether it's lighter, darker, warmer, or cooler",
+              "Only the most saturated color in the painting",
+              "The color's popularity in modern palettes"
+            ],
+            "correct": 1,
+            "explain": "Comparing a color's relationship to its neighbors (relative lightness, warmth) builds the kind of visual judgment that transfers to original work, rather than memorizing one isolated, out-of-context color value."
+          },
+          {
+            "q": "According to the module, what should a master study be clearly labeled as when shared?",
+            "options": [
+              "An entirely original composition with no reference to the source",
+              "A study, crediting the original artist and artwork when known (for example, \"Study after [Artist's Name]\")",
+              "It should never be shared publicly under any circumstances",
+              "The artist's own signature style"
+            ],
+            "correct": 1,
+            "explain": "Clearly labeling a master study and crediting the original artist distinguishes educational practice from presenting the work as an original composition, which is an important ethical distinction."
+          },
+          {
+            "q": "What is the recommended final step after completing a master study, according to the module?",
+            "options": [
+              "Simply moving on to a new master study with the same goal",
+              "Applying one or two specific lessons learned from the study to an original composition with a different subject",
+              "Deleting the study once it's finished",
+              "Repeating the exact same study multiple times with no changes"
+            ],
+            "correct": 1,
+            "explain": "The greatest value of a master study comes from transferring its lessons into new, original work, applying a specific technique or principle to a different subject rather than the source painting's own composition."
+          }
+        ],
+        "checklist": [
+          "I can choose one specific learning goal before starting a master study.",
+          "I can break down a painting's design matrix into simple compositional shapes.",
+          "I can compare a color's relationship to its neighbors rather than matching it in isolation.",
+          "I can clearly label a master study and apply its lesson to an original piece afterward."
+        ],
+        "nextStep": "You now have a disciplined, focused approach to learning from finished paintings. Module 112 turns to advanced compositing techniques, combining multiple painted and photographic elements into a single cohesive scene at a professional level of polish."
+      },
+      {
+        "id": "m118",
+        "plate": "112",
+        "title": "Advanced Compositing Techniques",
+        "difficulty": "Advanced",
+        "studyTime": "18 min",
+        "practiceTime": "30 min/day",
+        "prereq": [
+          "m117"
+        ],
+        "hook": "The single biggest giveaway of a fake composite has nothing to do with cutting an edge cleanly — it's mismatched light, and a professional compositor checks that before touching a mask or a blend mode.",
+        "whyItMatters": [
+          "Photobashing (Module 107) introduced combining photo elements into a piece; this module goes deeper into the specific professional techniques — check layers, layer organization, and systematic light-and-color matching — that separate an amateur collage from a composite viewers accept as one real scene.",
+          "Compositing pulls together nearly every technical skill from this arc: non-destructive layers and masks (Module 105), blend modes and adjustment layers (Module 106), and photobashing (Module 107) all combine here into one cohesive professional workflow."
+        ],
+        "coreIdea": [
+          "Mismatched lighting is the most common giveaway of a fake composite: your background photo's own lighting is very difficult to change, so the reliable approach is to treat the background as the fixed reference and adjust every added element's light and color to match it, not the other way around.",
+          "\"Check layers\" are a compositor's technique for seeing lighting and color mismatches more clearly: a Black & White adjustment layer over everything strips away color so light-level differences between elements become obvious, and a saturated Solid Color Fill layer set to the Saturation blend mode makes color mismatches easier to spot before you fix them with a clipped Color Balance or Curves layer.",
+          "Clear layer organization (a fixed base image at the bottom, adjustment layers clipped to specific elements in the middle, final detail work on top, each layer clearly named) is what keeps a growing composite manageable and lets you isolate and fix one element's match without disturbing the rest.",
+          "Shadows should be created using a Multiply layer with color sampled from the surface they're cast on, not plain black, and edges should be softened with a small amount of feathering and a low-opacity soft-brush mask rather than pasted in at a hard, sharp edge, since both of these small details matter as much as the big color match."
+        ],
+        "mistakes": [
+          "Trying to change the lighting of the background photo to match an added element, instead of the more reliable approach of adjusting the added element to match the fixed background.",
+          "Judging color and light matches by eye alone in full color, instead of using check layers (black & white, saturation) to isolate exactly where mismatches are happening.",
+          "Leaving composite elements on an unorganized, unlabeled flat layer stack, making it hard to isolate and adjust one element's match without affecting everything else.",
+          "Using plain black for cast shadows in a composite instead of a Multiply layer colored from the surface the shadow falls on.",
+          "Pasting a cut-out element in with a hard, unfeathered edge, which reads as an obvious cutout even if the color and lighting are otherwise well matched."
+        ],
+        "proTips": [
+          "Add a temporary Black & White adjustment layer over your whole composite early on to spot light-level mismatches clearly, then disable it once you've corrected the levels with a clipped Curves or Levels layer.",
+          "Use a saturated Solid Color Fill layer set to Saturation blend mode as a temporary check for color-temperature mismatches, then remove it once a clipped Color Balance layer has corrected the difference.",
+          "Name every layer clearly by its content and purpose (\"subject\", \"bg_replacement\", \"shadow_multiply\") as your composite grows, so you can navigate and isolate elements quickly later.",
+          "Feather a cutout selection by a small amount (2–3 pixels) before pasting it in, and use a soft-brush layer mask at low opacity to further blend its edge into the background rather than relying on a hard cutout alone."
+        ],
+        "practice": {
+          "warmup": "Composite one simple cutout element onto a new background, then add a temporary Black & White check layer to see how well their light levels currently match.",
+          "daily": "Take a photobashed piece and add a Multiply shadow layer (colored from the surface, not black) beneath a composited element to ground it more convincingly.",
+          "weekly": "Build a small composite from at least three separate sources, using clearly named, organized layers and both check-layer techniques (black & white and saturation) to match light and color across all of them.",
+          "challenge": "Take a composite you're not fully happy with and diagnose it using check layers first — identify specifically whether the problem is light level, color temperature, edge softness, or shadow color — before making any further changes."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "How to Match Light & Color for Composites Photoshop | Day 28",
+            "creator": "Aaron Nace (PHLEARN)",
+            "url": "https://www.youtube.com/watch?v=eNnqPKxHnjs",
+            "why": "A free 10-minute lesson teaching the check-layer technique professionals use to match light and color in composites.",
+            "summary": "Introduces check layers: a temporary Black & White adjustment layer to compare light levels between elements, and a solid color fill layer set to Saturation to compare color, then correcting the mismatch with clipped Levels and Color Balance adjustment layers.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Master Photo Manipulation: A Practical Guide to Creating Seamless Composites",
+            "creator": "Kelvin Designs",
+            "url": "https://photoshoptutorial.com/posts/master-photo-manipulation-a-practical-guide-to-creating-seamless-composites/",
+            "why": "A free, practical, first-person walkthrough covering layer organization, cutout technique, feathering, and adjustment-layer color matching for a complete composite workflow.",
+            "summary": "Walks through a complete composite process: choosing a strong, well-lit base image as the fixed reference, organizing and clearly naming layers as the document grows, cutting out elements with a small amount of feathering for a soft rather than hard edge, using layer masks and blend modes (Multiply, Screen, Overlay) for natural integration, and finishing with clipped Curves and Color Balance adjustment layers plus Clone Stamp cleanup for blend-line artifacts.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "Why is the background photo generally treated as the fixed reference in a composite, rather than trying to change its lighting to match an added element?",
+            "options": [
+              "Background lighting has no effect on how a composite reads",
+              "A background's own lighting is very difficult to change convincingly, so it's more reliable to adjust the added element to match it instead",
+              "Background images are always higher resolution than added elements",
+              "There is no real difference between adjusting the background or the added element"
+            ],
+            "correct": 1,
+            "explain": "Since a photographed background's lighting is hard to alter convincingly, the reliable workflow is to treat it as fixed and adjust the color and light of any added element to match it."
+          },
+          {
+            "q": "What do a Black & White adjustment layer and a saturated Solid Color Fill layer (set to Saturation blend mode) function as in compositing?",
+            "options": [
+              "Permanent final effects applied to the finished image",
+              "Temporary \"check layers\" used to reveal light-level and color-temperature mismatches before correcting them",
+              "Tools exclusively for adjusting file resolution",
+              "Layers that permanently delete color data from the image"
+            ],
+            "correct": 1,
+            "explain": "These are used as temporary diagnostic tools: the Black & White layer isolates light-level differences, and the saturated Saturation-blend layer isolates color-temperature differences, both removed once the actual mismatch is corrected with other adjustment layers."
+          },
+          {
+            "q": "What color should be used for a composited element's cast shadow, according to the module?",
+            "options": [
+              "Pure black, regardless of the surface",
+              "A color sampled from the surface the shadow falls on, applied via a Multiply layer",
+              "Pure white with reduced opacity",
+              "The exact same color as the element casting the shadow"
+            ],
+            "correct": 1,
+            "explain": "Shadows built from a Multiply layer colored from the surface they're cast on look more natural and grounded than a shadow made from plain black."
+          },
+          {
+            "q": "Why is clear, organized layer naming recommended as a composite grows in complexity?",
+            "options": [
+              "It has no functional benefit, only aesthetic preference",
+              "It lets you quickly isolate and adjust a specific element's light/color match without affecting the rest of the composite",
+              "Layer names are required by file format specifications",
+              "Organized naming automatically improves image resolution"
+            ],
+            "correct": 1,
+            "explain": "Clearly named, organized layers make it much easier to navigate a growing composite and isolate one element to adjust without disturbing everything else."
+          },
+          {
+            "q": "Why is feathering a cutout selection before pasting it into a composite recommended?",
+            "options": [
+              "Feathering has no visible effect on the final result",
+              "A small amount of feathering softens the edge so the element blends naturally rather than reading as an obvious hard-edged cutout",
+              "Feathering is only relevant for text layers, not photo elements",
+              "It permanently changes the element's color"
+            ],
+            "correct": 1,
+            "explain": "A small amount of feathering (a few pixels) softens a cutout's edge, helping it blend more naturally into the new scene instead of looking sharply pasted-in, even if the color and lighting are otherwise well matched."
+          }
+        ],
+        "checklist": [
+          "I can use a Black & White check layer to identify light-level mismatches in a composite.",
+          "I can use a saturated Saturation-blend check layer to identify color-temperature mismatches.",
+          "I can create a Multiply shadow layer colored from the surface it falls on, rather than using plain black.",
+          "I can organize and clearly name layers in a growing composite so elements can be isolated and adjusted individually."
+        ],
+        "nextStep": "You now have a professional-level compositing toolkit. Module 113 shifts from technique to identity — personal style development, how the choices you've been making across this entire course start to combine into a recognizable artistic voice."
+      },
+      {
+        "id": "m119",
+        "plate": "113",
+        "title": "Personal Style Development",
+        "difficulty": "Advanced",
+        "studyTime": "16 min",
+        "practiceTime": "30–45 min/day",
+        "prereq": [
+          "m118"
+        ],
+        "hook": "Nobody wakes up with a style. Style is what is left over after you have made enough deliberate choices that you can finally name them, and that is something you can build on purpose.",
+        "whyItMatters": [
+          "Across this arc you learned to copy, bash, composite and speed-paint your way through a lot of techniques. At some point a portfolio needs to look like it came from one person, and that consistency is style: the recurring choices in color, shape, line and subject that make your work recognizable.",
+          "This also connects directly to the ethics you studied in Module 109 and the master-study discipline from Module 111: the sustainable way to develop a style is to analyze what you admire, understand why it works, and rebuild those elements around your own subjects, not to imitate one living artist's surface look."
+        ],
+        "coreIdea": [
+          "Style is built, not discovered by accident. A practical method is to pick three artists or styles you truly love, choose one favorite image for each, and write down the single artistic element in each image that grabs you first, why it grabs you, and how the artist achieved it, in specific terms like line quality, color relationships or light-and-dark structure.",
+          "The next step is to combine those analyzed elements, not the subject matter, into an original piece on the subject you draw most often. Because you chose the elements deliberately, the result is familiar enough to read as part of a tradition and different enough to be yours.",
+          "Style also emerges from the medium and subjects you commit to. Settle on a medium that suits how you work, play to your real strengths and interests (a landscape painter who is weak at figures can lean into landscapes rather than fight it), and keep a reference collection for personal inspiration only, respecting copyright.",
+          "A series is one of the fastest ways to see your own style. Producing a run of small pieces, each informing the next and each small enough to finish in a couple of days, lets you carry forward whatever worked and quickly reveals which choices keep recurring in your own hand."
+        ],
+        "mistakes": [
+          "Copying one living artist's surface look wholesale and calling it a style, instead of analyzing why their work works and rebuilding those elements around your own subjects.",
+          "Writing vague observations like 'I like how they draw faces' instead of specific ones about line weight, color relationships, edge handling or lighting.",
+          "Combining the subject matter of your favorite artists rather than their artistic elements, which produces a mashup instead of a style.",
+          "Trying to force a style before you have enough finished work to see what keeps recurring, instead of making a body of pieces first and studying them afterward.",
+          "Boxing yourself in too early. Style evolves as your skills grow, so treating it as fixed can stop you from trying things that would improve it."
+        ],
+        "proTips": [
+          "Write at least a full paragraph per reference image. The more specific the observation, the more usable it is when you rebuild the element in your own work.",
+          "Apply the extracted elements to the subject you already draw most, so you can see clearly what changed rather than learning a new subject and a new style at the same time.",
+          "Work in small, fast series of related pieces. Each piece should carry forward one thing that worked from the previous one.",
+          "After a dozen or so finished pieces, lay them side by side and list what repeats: colors, textures, shapes, themes. Those repeats are your style, and the next step is to push them further."
+        ],
+        "practice": {
+          "warmup": "List three artists or styles you love, pick one favorite image for each, and write one specific paragraph per image about the single element that makes it work for you.",
+          "daily": "Redraw a subject you draw often, using one analyzed element from one of your three references, such as its line quality or its color relationships.",
+          "weekly": "Create a series of five small pieces on one subject, each informed by the last, then compare them to see which choices keep appearing.",
+          "challenge": "Combine one element from each of your three references into a single original piece on your favorite subject, then ask a friend which parts feel most like you."
+        },
+        "resources": [
+          {
+            "type": "Article",
+            "title": "4 Steps to Your Own Signature Art Style",
+            "creator": "Copic Marker Tutorials",
+            "url": "https://copicmarkertutorials.com/how-to-find-your-own-personal-drawing-style/",
+            "why": "A free, step-by-step method for building a style on purpose by analyzing what you love and recombining the elements into your own subject matter.",
+            "summary": "Lays out a four-step process: choose three artists or styles you love, pick one representative image for each, analyze the single artistic element that makes each image special by asking what grabs you, why, and how it was done, then combine those elements (not the subject matter) into an original drawing of your most-drawn subject. The author argues that analyzing rather than simply copying is what lets you deconstruct and rebuild an element in new ways.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "How to find your own artistic style",
+            "creator": "Mark Harrison, Artists & Illustrators",
+            "url": "https://www.artistsandillustrators.co.uk/how-to/art-theory/how-to-find-your-own-artistic-style/",
+            "why": "A free, first-person account from a working painter covering medium, influences, strengths, inspiration and the value of working in a small series.",
+            "summary": "A working painter shares five ways to develop a recognizable style: settle on a medium that suits how you work, study other artists but adapt only the aspects you find useful, play to your real strengths and interests, keep a personal inspiration collection while respecting copyright, and confront the blank canvas by painting a series of small pieces where each one informs the next.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "In the three-artist method, what should you do with each chosen reference image?",
+            "options": [
+              "Trace it exactly to learn the artist's hand",
+              "Copy its subject matter into your own work",
+              "Identify the single artistic element that makes it work and analyze what, why and how",
+              "Blur it until only the colors remain"
+            ],
+            "correct": 2,
+            "explain": "The method asks you to find the one standout artistic element in each image and analyze what grabs you, why it grabs you, and how it was achieved, so you can rebuild that element yourself."
+          },
+          {
+            "q": "What should you combine from your references when building an original piece?",
+            "options": [
+              "The artistic elements you identified, applied to your own subject",
+              "Their subject matter",
+              "Their signatures",
+              "Whole compositions pasted together"
+            ],
+            "correct": 0,
+            "explain": "You combine the analyzed artistic elements (line quality, color relationships, light structure) into a subject you draw often, not the subjects themselves, so the result stays yours."
+          },
+          {
+            "q": "Why is working in a series of small pieces useful for finding style?",
+            "options": [
+              "Small pieces are always better art",
+              "Each piece can carry forward what worked in the last one, and recurring choices quickly become visible",
+              "It removes the need to practice fundamentals",
+              "It guarantees a unique style by the third piece"
+            ],
+            "correct": 1,
+            "explain": "A series of small, quickly finished pieces lets each one inform the next, and the choices that keep repeating show you what is becoming your style."
+          },
+          {
+            "q": "How does this module connect style development to Module 109's ethics guidance?",
+            "options": [
+              "Style development requires using AI tools",
+              "It encourages mimicking one living artist as closely as possible",
+              "Ethics only apply to commercial work",
+              "It builds style by analyzing what you admire and rebuilding the elements around your own subjects, rather than imitating one living artist's look"
+            ],
+            "correct": 3,
+            "explain": "Analyzing and recombining elements is the sustainable, ethical route to style, in line with the earlier warning against mimicking a specific living artist's distinctive style for commercial use."
+          },
+          {
+            "q": "After you have finished a dozen or so pieces, what is the recommended way to see your style?",
+            "options": [
+              "Delete the weakest pieces",
+              "Lay them side by side and list the colors, textures, shapes and themes that keep repeating",
+              "Ask software to label your style",
+              "Start over in a different medium"
+            ],
+            "correct": 1,
+            "explain": "Recurring elements across a body of work are what make up a style, so comparing finished pieces and listing what repeats shows you what to push further."
+          }
+        ],
+        "checklist": [
+          "I can pick three references I love and name the one element in each that makes it work, specifically.",
+          "I can combine analyzed elements, not subject matter, into an original piece.",
+          "I can use a small series of pieces to see which of my choices keep recurring.",
+          "I can explain why analyzing and rebuilding elements is a more sustainable way to build style than imitating one living artist."
+        ],
+        "nextStep": "You now have a method for turning scattered technique into a recognizable voice. Module 114 is the capstone of Advanced Digital Art: one finished piece that combines non-destructive workflow, color grading, photobashing or 3D assistance, compositing and your emerging style."
+      },
+      {
+        "id": "m120",
+        "plate": "114",
+        "title": "Capstone: A Portfolio-Grade Digital Piece",
+        "difficulty": "Advanced",
+        "studyTime": "15 min",
+        "practiceTime": "4–8 hours (project)",
+        "prereq": [
+          "m119",
+          "m82",
+          "m111",
+          "m112",
+          "m115",
+          "m118"
+        ],
+        "hook": "You now have a non-destructive file, a color grade, composite and 3D tricks, speed discipline, master-study habits and the beginnings of a style. The capstone asks one question: can you use them together on one piece without losing control of any of them?",
+        "whyItMatters": [
+          "This closes Advanced Digital Art the same way Modules 86 and 100 closed their arcs: no new theory, just one finished piece that forces every skill to cooperate. Portfolios are built from finished work, and working under real scope and time limits is the skill studios actually hire for.",
+          "It is also the clearest diagnostic you will get. Isolated exercises hide weak spots; a full piece exposes whichever skill from Modules 105–119 is currently holding you back, which tells you exactly what to train next."
+        ],
+        "coreIdea": [
+          "Start with a one-sentence brief and a realistic scope. Choose a piece you can finish with real care in the time you have, then plan backward from that, because an over-ambitious scope is the most common reason capstone pieces stall before lighting and finishing.",
+          "Build the file non-destructively from the first layer (Module 105): Smart Objects for imported elements, adjustment layers for tone and color, masks instead of the eraser, and clearly named layers so any single decision can be revisited late in the process.",
+          "Use the speed tools deliberately and disclose them honestly. Decide whether photobashing (113), a 3D blockout (114) or neither fits the brief, keep your use of any AI assistance in line with the disclosure practices from Module 109, and paint over everything so the lighting and edges are yours.",
+          "Match light and color using check layers (Module 112) before polishing detail, grade the whole piece with stacked adjustment layers (Module 106), and let your own recurring choices from Module 113 steer the final look rather than copying any single reference."
+        ],
+        "mistakes": [
+          "Choosing a scope so large that mood, lighting and finishing get rushed or skipped.",
+          "Flattening or rasterizing early, which makes any late revision expensive.",
+          "Polishing detail before light and color are matched, so effort goes into elements that later have to change.",
+          "Using photo, 3D or AI-assisted elements without adjusting them to the scene's light, or without being clear about what was used.",
+          "Treating the finished piece as the end of the process rather than using it to identify your weakest skill."
+        ],
+        "proTips": [
+          "Write the brief and your time budget at the top of the working file, and check them before each session to catch scope creep early.",
+          "Save a thumbnail spread and one early block-in alongside the finished piece. Showing process is part of what makes a portfolio piece credible.",
+          "Run the check-layer routine (black and white, then saturation) at least twice: once at block-in and once before final polish.",
+          "When you finish, score the piece against the checklists from Modules 105–119 and pick one weakest area to train deliberately next."
+        ],
+        "practice": {
+          "warmup": "Write a one-sentence brief and a time budget for your capstone, and list which techniques from Modules 105–119 it will use and which it will deliberately not use.",
+          "daily": "Work one stage per session: thumbnails and block-in, then composite or 3D base, then light and color matching, then grade and finishing.",
+          "weekly": "Complete one finished piece with a non-destructive layered file, keeping your thumbnails, early block-in and layered working file.",
+          "challenge": "Score the finished piece honestly against each checklist from Modules 105–119, name your single weakest skill, and write one specific exercise you will do next to improve it."
+        },
+        "resources": [
+          {
+            "type": "Article",
+            "title": "Tips for Creating a Piece for Your Environment Art Portfolio Within Scope and Time",
+            "creator": "Joyce Jiao, The Rookies",
+            "url": "https://discover.therookies.co/2023/08/28/tips-for-creating-a-piece-for-your-environment-art-portfolio-within-scope-and-time/",
+            "why": "A free first-person breakdown of taking one portfolio piece from planning to finish under real scope and time limits.",
+            "summary": "A working artist walks through a full portfolio project: analyzing the concept, gathering reference, blocking out early, building and refining assets, and finishing with realistic atmosphere, ending with practical advice on keeping scope and energy under control inside a tight timeframe.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "How to Match Light & Color for Composites Photoshop | Day 28",
+            "creator": "Aaron Nace (PHLEARN)",
+            "url": "https://www.youtube.com/watch?v=eNnqPKxHnjs",
+            "why": "A free 10-minute lesson on the check-layer technique that matters most when a capstone piece combines elements from different sources.",
+            "summary": "Introduces check layers: a temporary Black & White adjustment layer to compare light levels between elements, and a solid color fill layer set to Saturation to compare color, then correcting the mismatch with clipped Levels and Color Balance adjustment layers.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What should a capstone start from?",
+            "options": [
+              "The most detailed rendering you can attempt",
+              "A one-sentence brief and a realistic scope for your time budget",
+              "A flattened copy of an old piece",
+              "A random preset"
+            ],
+            "correct": 1,
+            "explain": "A clear brief and a scope you can actually finish keep every later decision purposeful and prevent the common failure of running out of time before lighting and finishing."
+          },
+          {
+            "q": "Why build the file non-destructively from the beginning?",
+            "options": [
+              "It makes the file smaller",
+              "So any decision can be revised late without rebuilding the work",
+              "It is required for exporting",
+              "It removes the need for masks"
+            ],
+            "correct": 1,
+            "explain": "Smart Objects, adjustment layers and masks keep every decision editable, which matters because revisions are normal in real production."
+          },
+          {
+            "q": "What is the right order for polishing a composited piece?",
+            "options": [
+              "Fine detail first, then match light and color",
+              "Match light and color with check layers first, then polish detail",
+              "Export first, then adjust",
+              "Add texture before any color work"
+            ],
+            "correct": 1,
+            "explain": "Light and color mismatches are the biggest giveaway of a fake composite, so they must be solved before detail effort is spent."
+          },
+          {
+            "q": "How should AI assistance or photo and 3D elements be handled in the capstone?",
+            "options": [
+              "Used silently with no adjustment",
+              "Painted over and matched to the scene, with any AI use disclosed in line with Module 109",
+              "Avoided entirely in every case",
+              "Left untouched for speed"
+            ],
+            "correct": 1,
+            "explain": "Any imported element should be integrated by painting and matching light, and any AI-assisted use should follow the disclosure practices discussed earlier."
+          },
+          {
+            "q": "What is the best use of the finished capstone afterward?",
+            "options": [
+              "Move on without reflection",
+              "Score it against Modules 105–119's checklists and pick one weakest skill to train",
+              "Compare it only to other people's finished pieces",
+              "Delete the layered file"
+            ],
+            "correct": 1,
+            "explain": "Checking the finished piece against each checklist turns it into a diagnostic that tells you exactly what to practice next."
+          }
+        ],
+        "checklist": [
+          "I can write a one-sentence brief and a realistic scope before starting.",
+          "I can keep a piece fully non-destructive from first layer to final grade.",
+          "I can match light and color across sources using check layers before polishing.",
+          "I can score a finished piece against the arc's checklists and name my weakest skill."
+        ],
+        "nextStep": "You have completed Advanced Digital Art: from a non-destructive foundation through grading, photobashing, 3D assistance, speed, master studies, compositing and the start of a personal style. These skills carry forward into Professional Production, where they get applied to specialization pipelines like comics, manga, webtoon and game art."
+      }
+    ]
+  },
+  {
+    "id": "professional-production",
+    "title": "Professional Production & Specializations",
+    "status": "soon",
+    "order": 11,
+    "desc": "Editorial illustration, comics, manga, webtoon, visual development, concept art, game art, animation pre-production, print production, and client work.",
+    "moduleCount": 11,
+    "sample": [
+      "Comic Art",
+      "Manga",
+      "Webtoon",
+      "Concept Art",
+      "Game Art Pipeline",
+      "Animation Pre-Production"
+    ],
+    "modules": [
+      {
+        "id": "m121",
+        "plate": "115",
+        "title": "Editorial Illustration",
+        "difficulty": "Intermediate",
+        "studyTime": "18 min",
+        "practiceTime": "30–45 min/day",
+        "prereq": [
+          "m120"
+        ],
+        "hook": "An editorial illustration has about two seconds to land an idea that an entire article needs paragraphs to explain — and an art director is waiting on it by tomorrow.",
+        "whyItMatters": [
+          "The first three arcs built craft. Professional production is where that craft meets a client: a brief, an audience, a deadline and a format you do not control. Editorial illustration is the cleanest place to learn this, because the job is almost entirely about communicating an idea quickly and clearly.",
+          "It is also a common route into paid work. Magazines, newspapers and online publications constantly need images for articles, and editors are buying a thought process, not just a pretty picture, which is why showing how you got from brief to final matters as much as the final art itself."
+        ],
+        "coreIdea": [
+          "Editorial illustration serves a text. It can explain a complex concept through a visual metaphor, take a clear point of view on an issue, or give emotional weight to dry, data-heavy material. It accompanies the article instead of competing with it.",
+          "The professional process runs in order: read the brief (message, audience, tone, size, deadline), research the text and any symbols you plan to use, sketch several quick thumbnails, choose a style and technique that serves the message, then deliver clean files with clear specifications.",
+          "Idea comes before style. A strong editorial piece makes one point legibly; if the image cannot be understood within a couple of seconds at the size it will actually be seen, it has failed, no matter how well it is rendered.",
+          "Professional delivery is part of the craft: layered, tidy files, the right resolution and color profile for the destination, bleed where the image runs to the page edge, and an honest label on any portfolio piece that was a personal project rather than a commission."
+        ],
+        "mistakes": [
+          "Illustrating only from the headline or a summary and missing the nuance that lives in a middle paragraph of the article.",
+          "Offering three variations of the same idea instead of genuinely different conceptual proposals for the art director to choose from.",
+          "Using a metaphor that is clear to you but cryptic to a reader, without testing it on someone outside the project first.",
+          "Delivering art meant to bleed without any extra margin, so the trim leaves a white edge.",
+          "Choosing a style because it is your habit instead of because it suits the message, the publication and the time available."
+        ],
+        "proTips": [
+          "Read the whole article before you draw. The best visual hook is often in a nuance a summary leaves out.",
+          "Aim for three to five thumbnails that are different concepts, then let the art director pick the direction before you invest in finish.",
+          "Shrink your favorite sketch to phone size and to a magazine column width before committing. If information disappears, simplify.",
+          "Practice with simulated assignments: take a current article, set a two-hour deadline, and solve it visually from reading to delivery."
+        ],
+        "practice": {
+          "warmup": "Take one news headline and write five different visual metaphors for it in words only, then circle the one a stranger would understand fastest.",
+          "daily": "Read a short article and produce three thumbnails that are three different concepts, each small enough to judge at a glance.",
+          "weekly": "Complete one simulated editorial assignment on a two-hour clock, delivering a tidy layered file plus a short note on the brief, the audience and the central idea.",
+          "challenge": "Illustrate the same article twice for two very different publications (for example a serious news magazine and a playful online outlet), changing tone and style but keeping the same core idea."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "What Is Editorial Illustration?",
+            "creator": "Mikey Burton (Skillshare)",
+            "url": "https://www.youtube.com/watch?v=7OQFk1woNMA",
+            "why": "A free 5-minute video from a working editorial illustrator on what the job is and how a commission moves from preliminary sketches to final art.",
+            "summary": "Illustrator Mikey Burton explains what editorial illustration is (adding visual interest to an article that might otherwise be overlooked), tells how his first magazine commission came about, and walks through his process from collaborating on preliminary sketches with an art director to delivering the final piece.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "Editorial Illustration Project for VICE Magazine in 4 mins - Start to Finish",
+            "creator": "Paulina Almira",
+            "url": "https://www.youtube.com/watch?v=KTb6-LyHhQc",
+            "why": "A free 4-minute walkthrough of a real magazine commission, from reading the brief to the finished pieces.",
+            "summary": "Paulina Almira walks through her process for editorial illustrations made for a VICE Magazine article, covering the brief, her brainstorming process, her illustration process and the final outcome.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Editorial illustration: what is editorial illustration, formats and examples?",
+            "creator": "UDIT (University of Design, Innovation and Technology)",
+            "url": "https://www.udit.es/en/ilustracion-editorial-que-es-formatos-y-ejemplos/",
+            "why": "A free, thorough guide that follows a commission from brief to delivery and lists the common mistakes beginners make.",
+            "summary": "Describes what editorial illustration is for (explaining complex ideas through visual metaphor, taking a point of view, humanizing data), then follows the process from brief, research and thumbnails to style and technique, with practical advice such as submitting three to five different conceptual proposals, testing images at their real viewing size, adding bleed, delivering clean files with specifications, and building a portfolio that shows process.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "8 expert ways to commission better illustration",
+            "creator": "Creative Bloq",
+            "url": "https://www.creativebloq.com/advice/8-expert-ways-to-commission-better-illustration",
+            "why": "A free look at a commission from the art director's side of the table, which helps an illustrator understand what a good brief and good feedback look like.",
+            "summary": "Written for designers who hire illustrators, it covers choosing the right style, considering composition early, setting a detailed brief, discussing references, brainstorming concepts together, collaborating on layouts and giving direction through annotations, which shows an illustrator what an art director is trying to achieve at each step.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What is editorial illustration mainly for?",
+            "options": [
+              "Replacing the text of an article entirely",
+              "Decoration that should be as eye-catching as possible regardless of the article",
+              "Serving the text by explaining an idea, taking a point of view or giving emotional weight to dry material",
+              "Showing off the illustrator's personal style"
+            ],
+            "correct": 2,
+            "explain": "Editorial illustration accompanies an article and helps the reader understand or feel it, rather than competing with it or being decoration."
+          },
+          {
+            "q": "What should you submit to an art director at the thumbnail stage?",
+            "options": [
+              "Three to five genuinely different conceptual proposals",
+              "One finished piece only",
+              "Five small variations of the same idea",
+              "A moodboard with no sketches"
+            ],
+            "correct": 0,
+            "explain": "Different concepts give the art director a real choice; variations of one idea do not, and the thumbnail stage is where a piece is won or lost."
+          },
+          {
+            "q": "Why test your visual metaphor on someone outside the project?",
+            "options": [
+              "It is required by every publication",
+              "It makes the file smaller",
+              "It removes the need for research",
+              "A metaphor that is obvious to you can be cryptic to a reader, and editorial illustration has to communicate quickly"
+            ],
+            "correct": 3,
+            "explain": "You know the article too well to judge how clear your metaphor is, so an outside viewer is the fastest honest test."
+          },
+          {
+            "q": "What common beginner mistake does bleed address?",
+            "options": [
+              "Using too many colors",
+              "Art that runs to the page edge being trimmed and leaving a white border when no extra margin was delivered",
+              "Choosing the wrong brush",
+              "Delivering the file too early"
+            ],
+            "correct": 1,
+            "explain": "Art meant to run to the edge needs extra image beyond the trim line, commonly a few millimeters, or the cut can leave a white border."
+          },
+          {
+            "q": "Why show your process alongside final editorial pieces in a portfolio?",
+            "options": [
+              "It makes the portfolio longer",
+              "Editors are buying how you analyze a text and reach an idea, not just a pretty finished image",
+              "Process work is required to win contests",
+              "It hides weak finished pieces"
+            ],
+            "correct": 1,
+            "explain": "Showing the path from brief to sketch to final proves you can think conceptually, which is what an editor is hiring for."
+          }
+        ],
+        "checklist": [
+          "I can explain what an editorial illustration is for in terms of the article it serves.",
+          "I can move through brief, research, thumbnails, style and delivery in order.",
+          "I can produce several genuinely different concepts instead of variations on one.",
+          "I can prepare a clean delivery with the right size, color profile and bleed for the destination."
+        ],
+        "nextStep": "You can now turn a written brief into a single clear image. Module 116 moves from one image to sequential storytelling: comics, page layout and panel flow."
+      },
+      {
+        "id": "m122",
+        "plate": "116",
+        "title": "Comics: Page Layout & Panel Flow",
+        "difficulty": "Intermediate",
+        "studyTime": "18 min",
+        "practiceTime": "30–45 min/day",
+        "prereq": [
+          "m121"
+        ],
+        "hook": "Before anyone reads a single word balloon, their eye has already started travelling across your page, and your panel layout is the only thing deciding where it goes.",
+        "whyItMatters": [
+          "Editorial illustration (Module 115) was one image doing one job. Comics ask the same clarity from many images in sequence, and the page layout is what turns separate drawings into a story that reads in the right order at the right speed.",
+          "Layout is also one of the most transferable professional skills in this arc. The same thinking about reading order, grouping and pacing carries over to manga, webtoon and storyboards in the modules that follow."
+        ],
+        "coreIdea": [
+          "Western comics are read in a Z pattern: left to right along a row, then back to the left and down to the next row. Panels are read one at a time like words, and rows work like sentences. Manga mirrors this and reads right to left. Whichever tradition you work in, the page has to be designed so readers do not need an explanation of the order.",
+          "Space groups and separates panels. Panels placed closer together read as a group, a large gap separates them, and overlapping panels act as a bridge that suggests reading them together. Keeping gutters the same size across a page makes the next panel easy to find, so change them only on purpose.",
+          "Panel size and count control pacing. Large panels slow the reader down and suit new scenes and big reveals, narrow panels pull the eye through quickly and build tension, a run of similarly sized panels creates a steady rhythm (the idea behind six-, nine- and twelve-panel grids), and varied sizes make a page feel more dynamic or chaotic.",
+          "Design the page with thumbnails first. Quick small sketches let you test panel arrangement and reading order before any finished drawing, and the same planning covers word balloons: place the first speaker toward the left so balloon tails do not cross, and avoid balloon placements that make the eye bounce back and forth."
+        ],
+        "mistakes": [
+          "Breaking the natural reading order without giving the reader a clear path, so the eye jumps to the wrong panel.",
+          "Letting a sound effect, a pointing arm or another strong tangent lead the eye to a different panel than the one you want read next.",
+          "Using panels of identical size on every page, which produces a flat, metronome rhythm with no emphasis.",
+          "Changing gutter widths at random instead of using them deliberately to group or separate panels.",
+          "Relying on panel numbers or arrows to explain the order instead of designing a page that implies it."
+        ],
+        "proTips": [
+          "Thumbnail the whole page quickly in several versions before committing to one, and judge each by how clearly it reads, not how it looks.",
+          "Use gutter size as a tool: tighten the gap between panels that belong together and widen it where you want a break.",
+          "Use one large panel to reset the pacing when a new scene begins or when something important is revealed.",
+          "Trace the reading path over your thumbnail with arrows. If the path loops back or jumps unexpectedly, adjust panel placement, eyelines or balloons until it flows."
+        ],
+        "practice": {
+          "warmup": "Take a published comic page and draw the reading path over it with arrows, noting which gutters, overlaps, eyelines or balloons guide you from panel to panel.",
+          "daily": "Thumbnail the same six-beat scene five times using different panel sizes and counts, then rank them by how clearly they read.",
+          "weekly": "Design one full comic page from thumbnail to rough, placing word balloons in reading order, then ask someone to read it aloud and note where they hesitate.",
+          "challenge": "Lay out the same short scene as a steady nine-panel grid and again as a page with varied panel sizes, and write one sentence on how the pacing changes."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "Mastering Panel Composition",
+            "creator": "Aaron Conley (Proko)",
+            "url": "https://www.youtube.com/watch?v=sSecXc1Xy7E",
+            "why": "A free 9-minute lesson from a working comic artist on how different panel arrangements change storytelling.",
+            "summary": "Aaron Conley looks at how different panel arrangements affect storytelling, and stresses quickly sketching both full character shots and detailed backgrounds to set the tone and context of a comic page.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "How to draw a comic page layout",
+            "creator": "Walter Ostlie",
+            "url": "https://www.youtube.com/watch?v=iogOdjuWdMQ",
+            "why": "A free 15-minute beginner walkthrough of laying out a comic page, with quick tips for first layouts and storyboards.",
+            "summary": "Walter Ostlie gives quick tips for drawing your first comic page layouts or storyboards, covering panels, reading order and balloon placement.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Flow, & the Eyelines!",
+            "creator": "salgoodsam.com",
+            "url": "https://salgoodsam.com/mc/flow-the-eyelines/",
+            "why": "A free, detailed look at how readers actually move through a page, with worked examples of what confuses them.",
+            "summary": "Explains reading flow in comics, including left-to-right Z reading and right-to-left manga, how gutters and margins work, how large gaps group panels while overlaps bridge them, how eyelines, tangents and word balloons can lead or mislead the eye, and why a page should imply its reading order instead of relying on numbered panels.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Page Composition",
+            "creator": "Evan J. Waterman",
+            "url": "https://evanjwaterman.com/guide/drawing/page-composition/",
+            "why": "A free, practical checklist for page layout, from thumbnails to pacing.",
+            "summary": "Starts with thumbnails as the first step of page design, then gives practical rules: keep a natural reading order, use smaller gutters for panels read together, keep gutters consistent, vary panel structure without overusing any one trick, use large panels to slow the reader and narrow panels to build tension, and use borderless panels for emphasis.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "How are Western comic pages normally read?",
+            "options": [
+              "Right to left along each row",
+              "Bottom to top",
+              "In a Z pattern: left to right along a row, then down to the next row",
+              "In whatever order the numbers suggest"
+            ],
+            "correct": 2,
+            "explain": "Western readers move left to right along each row and then back to the left and down; manga mirrors this and reads right to left."
+          },
+          {
+            "q": "What does a noticeably larger gap between two panels usually do?",
+            "options": [
+              "It groups them with the panels closest to them and separates them from the rest",
+              "It makes the panels read faster",
+              "It forces the reader to read in reverse",
+              "Nothing; gutter size has no effect"
+            ],
+            "correct": 0,
+            "explain": "Space groups and separates panels. A large gap splits a page into clusters, while smaller gaps tell the eye which panels belong together."
+          },
+          {
+            "q": "What is a large panel typically used for in page pacing?",
+            "options": [
+              "Hiding mistakes in the drawing",
+              "Speeding the reader up",
+              "Replacing the need for thumbnails",
+              "Slowing the reader down, for example to establish a new scene or deliver a major reveal"
+            ],
+            "correct": 3,
+            "explain": "Big panels take longer to read, so they hold a moment, reset the pacing for a new scene, or emphasize a climactic reveal."
+          },
+          {
+            "q": "Why is numbering panels considered a weaker solution than good layout?",
+            "options": [
+              "Numbers are too small to see",
+              "A well-designed page implies its reading order without needing to explain it",
+              "Numbers are illegal in published comics",
+              "It makes gutters wider"
+            ],
+            "correct": 1,
+            "explain": "If readers need numbers to know the order, the layout is not guiding the eye by itself; the goal is a page that reads correctly without explanation."
+          },
+          {
+            "q": "What is the recommended first step when designing a comic page?",
+            "options": [
+              "Final inking",
+              "Lettering every balloon",
+              "Coloring",
+              "Quick thumbnails to test panel arrangement and reading order"
+            ],
+            "correct": 3,
+            "explain": "Thumbnails let you try many arrangements fast and see what works before spending time on finished drawing."
+          }
+        ],
+        "checklist": [
+          "I can trace the reading path of a comic page and explain what guides the eye.",
+          "I can use gutter size and overlaps to group or separate panels on purpose.",
+          "I can use panel size and count to control the pacing of a page.",
+          "I can thumbnail a page and place word balloons so they read in the right order."
+        ],
+        "nextStep": "You can now lay out a page so it reads in the right order at the right speed. Module 117 turns to the other half of making comics work across many pages: keeping characters consistent and lettering them clearly."
+      },
+      {
+        "id": "m123",
+        "plate": "117",
+        "title": "Comics: Character Consistency & Lettering",
+        "difficulty": "Intermediate",
+        "studyTime": "20 min",
+        "practiceTime": "30–45 min/day",
+        "prereq": [
+          "m122"
+        ],
+        "hook": "Bad lettering can make a good comic look amateur, and a hero whose face changes from panel to panel makes readers stop trusting the story. Both are fixable with a system.",
+        "whyItMatters": [
+          "Page layout (Module 116) tells readers where to look next. Consistent characters and clean lettering are what keep them oriented once they get there, across panels, pages and entire issues.",
+          "Both are also real professional specialties. Studios rely on model sheets so that several artists can draw one character the same way, and in mainstream comics lettering is its own job with its own conventions that a letterer is expected to spot and fix in other people's scripts."
+        ],
+        "coreIdea": [
+          "Character consistency is built with a reference system, not memory. A turnaround or model sheet shows the character from several views (commonly front, side, three-quarter and back, with more views for animation), drawn on shared guidelines so measurements match, with every design detail and a color palette recorded. An expression sheet adds the face in different moods.",
+          "Simple, repeatable shapes and proportions keep a character recognizable from any angle and even with exaggerated expressions. Drawing the character often is what makes the design stick, so keep it simple enough to draw without effort, and accept that a design can evolve over the years.",
+          "Lettering has its own grammar. A standard balloon tail points to the speaker's mouth as if an invisible line continued to the face, the crossbar I is for the pronoun I and abbreviations, a double dash marks interrupted speech while an ellipsis marks speech trailing off, and captions, thought balloons, burst balloons and radio balloons each have established forms.",
+          "Fit the text to the art. Butting a balloon against a panel border saves space, overlapping a border is usually a last resort, and balloons or sound effects that brush against other elements create tangents that should be avoided because they distract the eye."
+        ],
+        "mistakes": [
+          "Redrawing a character from memory every time instead of working from a model sheet.",
+          "Packing a design with so many details that it becomes slow to draw and easy to get wrong.",
+          "Using the crossbar I for every capital I, which is one of the most common amateur lettering mistakes.",
+          "Pointing balloon tails at a hand or a leg instead of the speaker's mouth.",
+          "Treating the double dash and the ellipsis as interchangeable, or writing more than three periods in an ellipsis."
+        ],
+        "proTips": [
+          "Build a turnaround with matching guidelines, an expression sheet and a color palette before you start your pages, and keep it open while you draw.",
+          "Draw your character slowly turning from front to back across several quick sketches so you learn how the specific features move in each angle.",
+          "Check every balloon tail by imagining the invisible line from the end of the tail to the speaker's mouth.",
+          "Before finalizing a page, scan it for tangents where a balloon or sound effect just touches another line, and nudge it to either overlap clearly or clear the line."
+        ],
+        "practice": {
+          "warmup": "Draw one character in front, side, three-quarter and back views on shared guidelines, then check that the eyes, nose and key details sit at the same heights in every view.",
+          "daily": "Draw your character from memory in one pose, then compare it with your model sheet and note exactly what drifted.",
+          "weekly": "Letter one comic page by hand or digitally using correct tails, a double dash for an interruption, a three-dot ellipsis, a caption and a sound effect, then read the page aloud to check the order.",
+          "challenge": "Give your model sheet to a friend and ask them to draw the character in a new pose, then compare their drawing to yours and fix whatever the sheet failed to explain."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "DRAWING YOUR OC THE SAME EVERY TIME [Making Model Sheets for Animation and Comics]",
+            "creator": "LavenderTowne",
+            "url": "https://www.youtube.com/watch?v=sIk_LRhuVGE",
+            "why": "A free 15-minute walkthrough of making a model sheet so you can draw the same character again and again.",
+            "summary": "Shows how she makes a model sheet in order to draw her characters over and over consistently without them looking off, including the turnaround views and color.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "How To Draw Any Character Consistently From Every Angle | Schoolism Lecture",
+            "creator": "Wouter Tulp (Schoolism)",
+            "url": "https://www.youtube.com/watch?v=VJHD37nIqvs",
+            "why": "A free lesson from a character designer on keeping a design recognizable from every angle.",
+            "summary": "Schoolism instructor Wouter Tulp explains his process for keeping a character design consistent and recognizable from different angles, even with exaggerated expressions, with a focus on shapes and proportions.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "Top 5 Lettering Rules in Comic Books",
+            "creator": "Walter Ostlie",
+            "url": "https://www.youtube.com/watch?v=42dywAFsJIw",
+            "why": "A free 6-minute video of simple lettering rules that make comics easier to read and look more professional.",
+            "summary": "Walter Ostlie shares simple comic lettering guidelines that make text easier to read and look more professional, covering word balloons and their tails, fonts and the common crossbar-I mistake.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Comic Book Grammar & Tradition",
+            "creator": "Blambot",
+            "url": "https://blambot.com/pages/comic-book-grammar-tradition",
+            "why": "A free reference written by a professional letterer covering the conventions of comic lettering.",
+            "summary": "A professional letterer's reference to comic lettering conventions: balloon tails pointing to the mouth, the four types of captions, the crossbar I rule, double dash versus ellipsis, burst, radio, wavy and thought balloons, whispering, sound effects, tangents, and how butting balloons against borders saves space.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "How To Draw Your Character Consistently",
+            "creator": "Patricia Caldeira (Don Corgi)",
+            "url": "https://doncorgi.com/blog/how-to-draw-your-character-consistently/",
+            "why": "A free, practical guide to turnarounds, expression sheets and practice habits for keeping a character on model.",
+            "summary": "Recommends keeping a character consistent with a turnaround (usually four views, or eight for animation) that records every design detail and a color palette, a large expression sheet, and lots of practice drawing the character, keeping the design simple enough to draw often while accepting that it can evolve over time.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What is the main purpose of a character model sheet or turnaround?",
+            "options": [
+              "To replace drawing the character at all",
+              "To show the character only in color",
+              "To give you and any collaborators a reference of the character from several angles so every drawing matches",
+              "To decide the page layout"
+            ],
+            "correct": 2,
+            "explain": "A model sheet records the character's views, proportions and details on shared guidelines so every later drawing can be checked against it."
+          },
+          {
+            "q": "Where should a standard dialogue balloon tail point?",
+            "options": [
+              "At the speaker's mouth, as if an invisible line continued to the face",
+              "At the speaker's feet",
+              "At the center of the panel",
+              "At the next balloon"
+            ],
+            "correct": 0,
+            "explain": "A tail should point at the mouth, not just the general area of the character such as a hand or a leg."
+          },
+          {
+            "q": "When is the crossbar I normally used in comic lettering?",
+            "options": [
+              "For every capital I in a sentence",
+              "For the first letter of every balloon",
+              "Only in sound effects",
+              "For the pronoun I and in abbreviations, with the plain vertical stroke used everywhere else"
+            ],
+            "correct": 3,
+            "explain": "Using the crossbar I for any capital I is flagged as one of the most common amateur lettering mistakes."
+          },
+          {
+            "q": "How are the double dash and the ellipsis used?",
+            "options": [
+              "They are interchangeable",
+              "A double dash marks interrupted speech, while an ellipsis (three periods) marks speech trailing off",
+              "An ellipsis marks interruptions and a double dash marks pauses",
+              "Neither should appear in a comic"
+            ],
+            "correct": 1,
+            "explain": "The two marks have different jobs: the double dash cuts speech off, and the ellipsis lets it fade."
+          },
+          {
+            "q": "Why does drawing expression sheets and practicing your character often help consistency?",
+            "options": [
+              "It makes the character look more realistic",
+              "It shortens the script",
+              "It builds muscle memory of the character's features while also creating reference for later",
+              "It removes the need for a model sheet"
+            ],
+            "correct": 2,
+            "explain": "Repetition makes the design stick, and an expression sheet doubles as practice and as future reference."
+          }
+        ],
+        "checklist": [
+          "I can build a turnaround with matching guidelines, an expression sheet and a color palette for a character.",
+          "I can check a new drawing against my model sheet and name what drifted.",
+          "I can point balloon tails at the mouth and use the double dash, ellipsis and crossbar I correctly.",
+          "I can spot and fix tangents between balloons, sound effects and the art."
+        ],
+        "nextStep": "You can now keep characters on model and letter a page cleanly. Module 118 moves from Western comics to manga, with its own reading direction, screentones and storytelling conventions."
+      },
+      {
+        "id": "m124",
+        "plate": "118",
+        "title": "Manga Fundamentals",
+        "difficulty": "Intermediate",
+        "studyTime": "18 min",
+        "practiceTime": "30–45 min/day",
+        "prereq": [
+          "m123"
+        ],
+        "hook": "Open a manga from what looks like the back and every habit from Western comics flips: the eye enters at the top right, and the whole page is built to carry it left.",
+        "whyItMatters": [
+          "Modules 116 and 123 taught page flow, consistent characters and lettering. Manga uses the same foundations but with its own reading direction, its own workflow and its own visual shorthand, so knowing those conventions is what separates a Western comic drawn in a manga style from real manga.",
+          "It is also one of the most structured production workflows in this arc. Script, storyboard, pencils, inks, tones and final touches each have a clear job, and learning them in order is the quickest way to finish a first short story instead of abandoning it."
+        ],
+        "coreIdea": [
+          "Traditional manga reads from right to left. The first panel sits at the upper right of the right-hand page and each row moves leftward, so pages are composed for that path and every layout decision, from panel order to balloon placement, has to respect it.",
+          "The workflow runs in a fixed order: scripting (theme, characters and sequences that each hold together by place, time or action), a storyboard that plans panel composition, a pencil sketch, inking, filling in details and blacks, and final touches. Skipping the storyboard stage is how pages end up redrawn.",
+          "Variety keeps pages alive. Vary the size of the boxes and the distance of the shots (close-ups, medium shots and full shots) to avoid monotony, and remember that when a manga is opened the eye tends to land at the top of the left-hand page, which makes it a strong place for a significant drawing or a reveal.",
+          "Manga has its own visual shorthand. Speed lines and flashes express motion and impact, and screentones (patterned overlays used for shading and backgrounds) give pages their characteristic texture. Clean the page before adding tone, and use white to correct and add highlights at the end."
+        ],
+        "mistakes": [
+          "Starting finished pencils or inks before a storyboard has settled the composition of the page.",
+          "Using panels of the same size and the same shot distance throughout, which flattens the pacing.",
+          "Laying out pages in left-to-right order and forgetting that readers will move right to left.",
+          "Adding screentone to a dirty or unfinished page instead of cleaning the surface first.",
+          "Placing the biggest moment of a spread somewhere the eye does not naturally land, instead of using the top of the left-hand page."
+        ],
+        "proTips": [
+          "Storyboard each sequence the way a film director would, thinking about how many panels you need and how to balance the page before you draw anything finished.",
+          "Mix shot distances on purpose: a close-up for emotion, a medium shot for action, a full shot to establish the scene.",
+          "Ink the panel borders first, then the dialogue balloons, then the characters and settings, and add speed lines and other effects last.",
+          "Keep a light layer or light-colored pencil for roughs and panel borders so it does not compete with the final line art."
+        ],
+        "practice": {
+          "warmup": "Take a manga page you admire and number the panels in the order you read them, right to left and top to bottom, then note how the layout supports that path.",
+          "daily": "Storyboard a two-page scene with page one on the right and page two on the left, varying panel sizes and shot distances.",
+          "weekly": "Take one storyboarded page through pencils, inks and tone, ordering the steps as the Canson workflow does.",
+          "challenge": "Design a two-page spread where a major reveal lands at the top of the left-hand page, and test it on a reader to see if their eye goes there."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "How to draft and panel MANGA PAGES | DrawlikeaSir",
+            "creator": "Draw like a Sir",
+            "url": "https://www.youtube.com/watch?v=UGamHJjKwNw",
+            "why": "A free 9-minute tutorial from a working manga artist on drawing panels so that the page flows well while reading.",
+            "summary": "A tutorial about how to draw the panels on a manga page so that they flow better while reading, with sections on storyboarding your manga, the most common paneling mistake, reading flow, drawing focus points and using speech bubbles.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "6 Manga Paneling Rules for Beginner Mangaka",
+            "creator": "Learn to Draw Manga",
+            "url": "https://www.youtube.com/watch?v=iOshrMPg_S0",
+            "why": "A free 12-minute video of paneling rules for beginner manga artists.",
+            "summary": "Paneling rules for beginner manga artists. Chapters: Rule #1; Rule #2; Rule #3; Rule #4; Rule #5; BONUS TIP.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "Make your OWN MANGA | Tutorial on how to Storyboard | DrawlikeaSir",
+            "creator": "Draw like a Sir",
+            "url": "https://www.youtube.com/watch?v=bh_zB1zf4Hs",
+            "why": "A free 12-minute walkthrough of planning a manga from story to storyboard.",
+            "summary": "Explains how manga paneling works, how to plan out your manga story, and how to create a storyboard for it.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "Clean Manga Pages with Screentones | Beginner Guide",
+            "creator": "Learn to Draw Manga",
+            "url": "https://www.youtube.com/watch?v=VRiLka6G7lQ",
+            "why": "A free 10-minute beginner guide to screentones, the patterned shading that gives manga pages their look.",
+            "summary": "A beginner guide to using screentones to clean up and finish manga pages. Chapters: What Even Are Screentones?; Digital Screentones 101; How Do Mangakas Actually Use Screentones?; Don't Overdo It!.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "6 steps to drawing your manga",
+            "creator": "Canson",
+            "url": "https://en.canson.com/expert-advice/6-steps-drawing-your-manga",
+            "why": "A free step-by-step manga workflow from script to final touches, including reading direction and panel variety.",
+            "summary": "Walks through six steps: scripting (theme, characters and sequences with unity of place, time or action), a storyboard that plans panel composition and varies box sizes and shots, a pencil sketch, inking panel borders then characters and effects like speed lines, filling in details, blacks and screens, and final touches such as white for corrections and highlights. It also notes that traditional manga reads right to left, so the first box sits at the upper right of the right-hand page.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "In what order does traditional manga read?",
+            "options": [
+              "Left to right, top to bottom",
+              "Right to left, with the first panel at the upper right of the right-hand page",
+              "Bottom to top",
+              "Whichever order the panels are numbered"
+            ],
+            "correct": 1,
+            "explain": "Traditional manga reads right to left, so the first box is at the upper right of the right-hand page."
+          },
+          {
+            "q": "Why vary the size of boxes and the type of shot on a manga page?",
+            "options": [
+              "To fit more panels",
+              "Because it is required by publishers",
+              "To make the drawings easier",
+              "To avoid monotony and keep the page and pacing interesting"
+            ],
+            "correct": 3,
+            "explain": "Mixing sizes and shot distances (close-ups, medium and full shots) keeps pages from feeling repetitive."
+          },
+          {
+            "q": "Where does the eye tend to land when a manga is opened, according to the Canson guide?",
+            "options": [
+              "The top of the left-hand page, which makes it a good spot for something significant",
+              "The bottom of the right-hand page",
+              "The exact center of the spread",
+              "The page number"
+            ],
+            "correct": 0,
+            "explain": "The guide suggests placing a particularly significant drawing or action at the top of the left-hand page because the eye naturally goes there."
+          },
+          {
+            "q": "What should you do before adding screens (screentone) to the original drawing?",
+            "options": [
+              "Add the dialogue first",
+              "Erase all the inks",
+              "Clean the surface of the original drawing",
+              "Skip inking"
+            ],
+            "correct": 2,
+            "explain": "The workflow advises cleaning the surface of your original drawing before adding a screen so the tone applies cleanly."
+          },
+          {
+            "q": "What is the storyboard stage for?",
+            "options": [
+              "Choosing fonts for the balloons",
+              "Planning panel composition, how many boxes you need and how to balance the page before finished drawing",
+              "Coloring the final pages",
+              "Printing the volume"
+            ],
+            "correct": 1,
+            "explain": "The storyboard works like a film director's sketch of the panels, settling composition and balance before pencils and inks."
+          }
+        ],
+        "checklist": [
+          "I can read and compose a page in right-to-left order.",
+          "I can move through script, storyboard, pencils, inks, fills and final touches in order.",
+          "I can vary panel sizes and shot distances to control pacing.",
+          "I can use speed lines, screentone and white correction as part of the finish."
+        ],
+        "nextStep": "You now know manga's reading direction, workflow and visual shorthand. Module 119 moves to webtoons, where the page becomes a vertical scroll and the layout rules change again."
+      },
+      {
+        "id": "m125",
+        "plate": "119",
+        "title": "Webtoon & Vertical Scroll Storytelling",
+        "difficulty": "Intermediate",
+        "studyTime": "18 min",
+        "practiceTime": "30–45 min/day",
+        "prereq": [
+          "m124"
+        ],
+        "hook": "A webtoon reader sees one panel at a time, so the space between panels is not empty. It is the timing of your story.",
+        "whyItMatters": [
+          "Modules 116 to 124 built page-based thinking: panels arranged on a page, read in a Z or right-to-left path. A webtoon removes the page entirely. The reader scrolls, and everything you learned about pacing has to be rebuilt around a single column on a phone.",
+          "Webtoons are also a major professional route for new comic artists, because the format is built for mobile reading and episodic release. Learning the format's own rules, instead of cropping a page layout into a strip, is what makes the work feel native."
+        ],
+        "coreIdea": [
+          "A webtoon is a vertical comic that gives readers a cinematic impression, because they see only one panel at a time instead of many on a page. The creator controls the pacing of the story through where panels are placed, and because most readers use mobile devices, the layout should be comfortable on a phone.",
+          "One creator's rules of thumb for panels: show at most two panels on the screen at a time, keep to about three dialogues per panel, vary panel width, shape and size to emphasize important scenes, leave at least about 250 px between panels and roughly 1000 px to signal a change in time, and make text large enough to read with motion and sound effects where they help.",
+          "A webtoon storyboard plans four things: panel layout (shape and size, top-to-bottom order, whitespace as a dramatic pause), character position and composition (rough stick figures, close-up, medium or long shot, and who dominates the panel), expressions and gestures that carry emotion, and dialogue with a clear reading order that avoids overcrowded bubbles.",
+          "Panel types each have a job: standard rectangles for stable, easy reading, tall vertical panels for towering things, falling or slowing the pace, wide panels for landscapes and calm, close-ups for emotion, establishing shots for context, splash panels for climaxes, inset panels for small details, borderless panels for a dreamlike feel, irregular panels for chaos, and silent panels for a pause."
+        ],
+        "mistakes": [
+          "Treating a webtoon like a comic page and packing several panels into one screen, when only about two should be visible at a time.",
+          "Putting too much dialogue in one panel so the reader stops scrolling and starts reading a wall of text.",
+          "Spacing every panel the same distance apart so the scroll has no rhythm and time changes are not signaled.",
+          "Using text that looks fine on a monitor but is too small to read comfortably on a phone.",
+          "Skipping silent panels and whitespace, which are the main tools for a dramatic pause in a scrolling format."
+        ],
+        "proTips": [
+          "Preview every episode on an actual phone before you finalize it, since that is where most readers will see it.",
+          "Use whitespace as a pause: a larger gap before a reveal makes the reader scroll through a beat of anticipation.",
+          "Vary panel width and shape to mark important scenes, and save a splash or oversized panel for the real climax.",
+          "In Clip Studio Paint, create panels with the frame border tool so the frame masks the artwork and line art cannot spill outside it."
+        ],
+        "practice": {
+          "warmup": "Take one four-panel scene from a page comic and re-storyboard it for vertical scroll, leaving at least about 250 px between panels and a much larger gap where time changes.",
+          "daily": "Storyboard ten vertical panels using at least five different panel types from the list, with stick-figure compositions.",
+          "weekly": "Storyboard one short episode with rough sketches, place the dialogue in a clear reading order, then preview it on your phone and fix anything that crowds the screen.",
+          "challenge": "Draw the same reveal twice, once with a silent panel and a long whitespace pause before it and once without, and write one sentence on how the timing changes."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "Easy Paneling Tips for Making a Webtoon",
+            "creator": "O_kids (Okids ART)",
+            "url": "https://www.youtube.com/watch?v=M7KswiG2upQ",
+            "why": "A free 5-minute video of five paneling points for webtoons, from the creator whose written version is linked below.",
+            "summary": "The video companion to O_kids' written paneling tips, walking through five points for webtoon panels (limit how many panels show on screen, keep dialogue per panel low, vary panel shapes and sizes, set generous spacing, and keep text readable) and ending with a drawing demonstration.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "How to Make a Webtoon: Panel Types for Vertical Scroll Layout, Storyboards, and Thumbnails",
+            "creator": "Walter Ostlie",
+            "url": "https://www.youtube.com/watch?v=KczeJqVDxbw",
+            "why": "A free 9-minute video on panel types and how to use them in a vertical-scroll storyboard.",
+            "summary": "Walter Ostlie shows the different types of panels and how to use them in vertical-scroll storyboards so a Webtoon reads well.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "How To Pace Your Webtoon: Comicbook Writing Tutorial",
+            "creator": "Walter Ostlie",
+            "url": "https://www.youtube.com/watch?v=5K82seHFLHw",
+            "why": "A free 12-minute comic-writing tutorial on pacing a Webtoon.",
+            "summary": "A comic-writing tutorial from Walter Ostlie on how to pace a Webtoon.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Panelling Tips for Making Webtoon",
+            "creator": "O_kids (CLIP STUDIO TIPS)",
+            "url": "https://tips.clip-studio.com/en-us/articles/9305",
+            "why": "A free, short article of concrete panel rules for mobile webtoon readers.",
+            "summary": "Explains that webtoon readers see one panel at a time, so pacing comes from panel placement, and gives five points: show at most two panels on screen, keep about three dialogues per panel, vary panel width, shape and size, leave at least 250 px between panels (around 1000 px for a time change), and keep text readable with motion and sound effects. It also shows how Clip Studio's frame border tool masks line art inside each panel.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "[MAKING A WEBTOON] Understanding Storyboard and the Component",
+            "creator": "O_kids (CLIP STUDIO TIPS)",
+            "url": "https://tips.clip-studio.com/en-us/articles/10886",
+            "why": "A free guide to what a webtoon storyboard should contain, with ten panel types and their functions.",
+            "summary": "Lists the elements a webtoon storyboard should include (panel layout with whitespace as a dramatic pause, character position and composition, expressions and gestures, dialogue and text with a clear reading order, and optional mood notes), then describes ten panel types and what each is for, from standard and tall vertical panels to splash, borderless and silent panels, plus common speech balloon types.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What does a webtoon reader see at one time, according to the module?",
+            "options": [
+              "A full page of many panels",
+              "Two full pages side by side",
+              "Mostly one panel, which gives a cinematic impression",
+              "Only text"
+            ],
+            "correct": 2,
+            "explain": "Unlike a page comic, a vertical webtoon shows readers about one panel at a time, which is why placement and spacing control the pacing."
+          },
+          {
+            "q": "How many panels should ideally be visible on the screen at once?",
+            "options": [
+              "At most two",
+              "At least six",
+              "Exactly four",
+              "As many as fit"
+            ],
+            "correct": 0,
+            "explain": "The suggested rule is to present at most two panels on the screen at a time because readers scroll through the strip."
+          },
+          {
+            "q": "What is whitespace between panels used for?",
+            "options": [
+              "Saving file size",
+              "Hiding mistakes",
+              "Making the page look empty",
+              "As a dramatic pause, and a much larger gap signals a change in time"
+            ],
+            "correct": 3,
+            "explain": "In a scrolling format the gap is part of the timing: about 250 px at minimum between normal panels and roughly 1000 px to signal time passing."
+          },
+          {
+            "q": "Which panel type is common in webtoons for towering elements, falling, and slowing the pace?",
+            "options": [
+              "Inset panel",
+              "Vertical (tall) panel",
+              "Silent panel",
+              "Borderless panel"
+            ],
+            "correct": 1,
+            "explain": "Tall vertical panels extend downward, show towering subjects or falling, and slow the reading pace for a dramatic effect."
+          },
+          {
+            "q": "Why should layouts be designed for mobile screens?",
+            "options": [
+              "Phones cannot show color",
+              "Because print is not allowed",
+              "Most webtoon readers use mobile devices instead of computers",
+              "Because desktop screens are too large"
+            ],
+            "correct": 2,
+            "explain": "Since most readers are on phones, panels, text size and spacing need to be comfortable at that size."
+          }
+        ],
+        "checklist": [
+          "I can explain why a webtoon is paced by panel placement and spacing instead of page layout.",
+          "I can apply the panel rules of thumb: about two panels per screen, about three dialogues per panel, and generous spacing.",
+          "I can storyboard layout, composition, expressions and dialogue for a vertical episode.",
+          "I can choose a panel type for a job such as a pause, a climax or a detail."
+        ],
+        "nextStep": "You can now plan comics for page, manga and vertical-scroll formats. Module 120 steps back to visual development: designing the look of characters, environments and mood before production begins."
+      },
+      {
+        "id": "m126",
+        "plate": "120",
+        "title": "Visual Development",
+        "difficulty": "Advanced",
+        "studyTime": "18 min",
+        "practiceTime": "30–45 min/day",
+        "prereq": [
+          "m125"
+        ],
+        "hook": "Before a single character is modeled or a single shot is animated, someone has already decided what the whole world should feel like. That decision is visual development.",
+        "whyItMatters": [
+          "The worldbuilding arc taught you color scripting, mood, lighting and the concept-art pipeline as separate skills. Visual development is the job where they combine: one artist, or a small team, defining the look of an entire project before production starts.",
+          "It also changes how you build a portfolio. Studios are not only looking for beautiful single images; they want evidence that you can create a unified visual system that other artists can follow."
+        ],
+        "coreIdea": [
+          "Visual development defines the look, mood and feel of a project in pre-production: the color palette, lighting mood, character style, environment tone and the consistency of the whole world. It is used in animation, games, film and immersive media, and its outputs include color scripts, lighting studies, mood paintings and atmosphere tests, alongside character, costume and environment explorations.",
+          "It sits early in the pipeline. Visual development artists work with directors, art directors, production designers and story teams, and their work becomes the visual reference that modelers, animators and lighting artists build from. Some stay on into production so that the finished result keeps matching the original vision.",
+          "The titles overlap. In practice visual development and concept art are often used almost interchangeably, with feature and TV animation more likely to say visual development and games and live action more likely to say concept art. A useful working distinction is that visual development sets the overall look and consistency (color scripts, lighting style, shape language) while concept art designs specific characters, props and vehicles within it.",
+          "The work is mostly 2D digital painting, increasingly supported by 3D blockouts for environments and lighting, and it rests on strong fundamentals: drawing, perspective, color, light and storytelling. A strong portfolio shows a unified visual system, with mood explorations, color studies, style variations and the process behind them, and a few strong projects are better than many unrelated pieces."
+        ],
+        "mistakes": [
+          "Treating visual development as one beautiful illustration instead of a system that has to stay consistent across a whole project.",
+          "Choosing colors and lighting because they look nice rather than because they serve the emotion of the story.",
+          "Filling a portfolio with unrelated pieces instead of a few projects that each show a complete, coherent world.",
+          "Showing only polished finals and hiding the explorations, style variations and failed ideas that prove how you think.",
+          "Spreading across every specialty instead of choosing a focus such as character look, environments, color scripting or props and costumes."
+        ],
+        "proTips": [
+          "Write the emotional beats of the story first, then let color and lighting follow them, the way a color script does.",
+          "Build a small world bible for every portfolio project: a palette, a few lighting moods, a shape language, a handful of character silhouettes and key environments.",
+          "Pick one specialization to be known for, and use the others to support it.",
+          "Keep the explorations. Mood studies, color studies and style variations are the evidence that you can develop a look, not just render one."
+        ],
+        "practice": {
+          "warmup": "Take a short story you know and write down the emotional beat of five key scenes in one sentence each.",
+          "daily": "Paint three 30-minute mood studies of the same location in three different emotional tones, changing only color and lighting.",
+          "weekly": "Build a one-page style guide for an original world: palette, lighting moods, shape language, three character silhouettes and two environment keys.",
+          "challenge": "Create a six-frame color script for your style guide and ask someone to guess the emotional arc of the story from the colors alone."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "Inside Sony Pictures Animation - Visual Development Artist Omar Smith",
+            "creator": "Sony Pictures Animation",
+            "url": "https://www.youtube.com/watch?v=3ahvWdORJ20",
+            "why": "A free 3-minute official studio video about what a visual development artist does day to day.",
+            "summary": "An official Sony Pictures Animation video about visual development artist Omar Smith and his work at the studio.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "Sony Pictures Animation - Visual Development Portfolio Tips",
+            "creator": "Sony Pictures Animation",
+            "url": "https://www.youtube.com/watch?v=fF43pMRZamw",
+            "why": "A free 3-minute official studio video of portfolio tips for aspiring visual development artists.",
+            "summary": "Official portfolio tips for visual development artists from Sony Pictures Animation.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "WHAT IS VISUAL DEVELOPMENT? HOW TO MAKE A VIS DEV PORTFOLIO",
+            "creator": "Laura Price",
+            "url": "https://www.youtube.com/watch?v=SGOg4hLnBis",
+            "why": "A free 8-minute video that explains the field and how to build a portfolio for it.",
+            "summary": "Laura Price explains what visual development is and how to make a visual development portfolio.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Visual Development Artist Guide for Creators",
+            "creator": "VEDX (Jay Schnoor)",
+            "url": "https://vedx.io/blogs/visual-development-artist-guide/",
+            "why": "A free overview from a creative studio's blog covering the role, where it sits in the pipeline, how it differs from concept art, and portfolio advice. It is a studio blog rather than an industry-body source, so cross-check job-market claims.",
+            "summary": "Defines a visual development artist as the person who sets the look, mood and consistency of a project before production, listing outputs such as color scripts, lighting studies and mood paintings, explaining that the work happens mostly in pre-production alongside directors, art directors and story teams, contrasting it with concept art, and advising a portfolio that shows a unified visual system rather than isolated pretty pieces.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What does visual development define for a project?",
+            "options": [
+              "Only the marketing posters",
+              "The final animation timing",
+              "The look, mood and feel of the project, such as palette, lighting mood, character style and environment tone, before full production",
+              "The business budget"
+            ],
+            "correct": 2,
+            "explain": "Visual development sets the overall visual direction in pre-production so that the whole production can follow one coherent look."
+          },
+          {
+            "q": "When in the pipeline does visual development mostly happen?",
+            "options": [
+              "Pre-production, before modeling, animation and lighting begin",
+              "Only after the film is released",
+              "Only during post-production",
+              "After final rendering"
+            ],
+            "correct": 0,
+            "explain": "It is mainly a pre-production role, though some artists stay into production to keep the result consistent with the original vision."
+          },
+          {
+            "q": "How do visual development and concept art relate?",
+            "options": [
+              "They are unrelated and never overlap",
+              "Concept art is always 3D and visual development is always 2D",
+              "Visual development is only for advertising",
+              "The titles overlap, but visual development sets the overall look while concept art designs specific characters, props and vehicles within it"
+            ],
+            "correct": 3,
+            "explain": "In practice the titles are often used interchangeably, but a useful distinction is overall look and consistency versus specific designs."
+          },
+          {
+            "q": "What should a visual development portfolio show?",
+            "options": [
+              "A unified visual system with mood explorations, color studies, style variations and process",
+              "As many unrelated pieces as possible",
+              "Only final renders with no process",
+              "Only character portraits"
+            ],
+            "correct": 0,
+            "explain": "Studios want proof that you can build a coherent look, so a few strong projects with their explorations beat many random pieces."
+          },
+          {
+            "q": "Why write the emotional beats of the story before choosing colors?",
+            "options": [
+              "Because colors are decided by the printer",
+              "So color and lighting serve the story's emotion instead of just looking nice",
+              "Because it removes the need for a palette",
+              "To make the file smaller"
+            ],
+            "correct": 1,
+            "explain": "A color script works when each color choice is tied to an emotional beat in the story."
+          }
+        ],
+        "checklist": [
+          "I can explain what visual development defines and where it sits in the pipeline.",
+          "I can describe how visual development and concept art overlap and differ.",
+          "I can build a small world bible with a palette, lighting moods, shape language and key designs.",
+          "I can plan a portfolio project that shows a unified visual system with its process."
+        ],
+        "nextStep": "You can now define the look of a whole project. Module 121 narrows to specific designs inside that look: concept art specializations such as character, prop and environment design sheets."
+      },
+      {
+        "id": "m127",
+        "plate": "121",
+        "title": "Concept Art Specializations: Character & Prop Design",
+        "difficulty": "Advanced",
+        "studyTime": "20 min",
+        "practiceTime": "45–60 min/day",
+        "prereq": [
+          "m126"
+        ],
+        "hook": "A concept artist does not just draw a character or a prop. They answer a question: what should this look like so that the writer, the animator, the modeler and the player all understand it at a glance?",
+        "whyItMatters": [
+          "Visual development (Module 120) sets the look of a whole project. Specializations are the specific designs inside that look, and they are what most concept art jobs actually ask for: this character, this prop, this vehicle, this creature.",
+          "This module pulls together skills you already have. Thumbnailing (Module 83), the production pipeline (Module 84) and model sheets (Module 117) all feed into one repeatable process for designing a character or a prop that other people can build from."
+        ],
+        "coreIdea": [
+          "Character design is visual communication. You are telling the audience something about a character purely through how they look, using posing, expression, costuming, props, shape language and color, while keeping the design appealing. Appeal is made of several parts, not one trick.",
+          "The process starts with a brief and references, then many thumbnails that focus on silhouette. Each design should look very different from the one before so the art director sees a real breadth of ideas, and you narrow down from there. One direction is then refined with costume and material callouts, followed by a turnaround, expression studies, prop breakouts and layered files for handoff.",
+          "Function drives silhouette. Ask what the character does in the project, test silhouettes at small sizes and in shadow, keep the image clean instead of adding extra weapons or outfit layers, make every feature functional, and check proportions against what the character has to do, such as sit, climb or hold a two-handed weapon. A useful test is to hand the sheet to someone who has never read the brief and see whether they can describe the character back to you.",
+          "Props are world-building. Every environment is full of them and characters carry them constantly, so a prop should say something about the world and the people who use it, not just fill space. Thinking like a game designer about what the object does in the world is part of designing it."
+        ],
+        "mistakes": [
+          "Jumping to a rendered illustration before exploring many different silhouettes.",
+          "Producing a page of thumbnails that are all small variations of the same idea instead of genuinely different directions.",
+          "Designing a character that needs a written explanation to make sense.",
+          "Adding extra weapons, layers and decoration that must all be modeled but do not serve the character's function.",
+          "Treating props as filler that could belong to any world instead of designing them to carry story and function."
+        ],
+        "proTips": [
+          "Write a short brief before you draw: the character's function in the project, one paragraph of history, three to five references and one negative reference that says what you do not want.",
+          "Generate silhouettes quickly and force each one to be different in overall idea, not just in details.",
+          "Test your favorite silhouettes at very small size and as solid black shapes before refining.",
+          "For props, ask who made this, who uses it, what world it belongs to and how it is held or operated, and let the answers shape the design."
+        ],
+        "practice": {
+          "warmup": "Fill in a one-page character brief with function, a one-paragraph history, three references and one negative reference.",
+          "daily": "Do 20 quick silhouette thumbnails of a traveling merchant, making each one noticeably different, then pick the three strongest.",
+          "weekly": "Take one silhouette through refinement, a turnaround and three expression studies, plus a breakout sheet of the props your character carries.",
+          "challenge": "Design three props for the same character that each reveal something different about their world, then write a short brief for a new item in a game you know and design it."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "How professional CONCEPT ARTISTS design characters",
+            "creator": "pikat",
+            "url": "https://www.youtube.com/watch?v=9l_nuMGphW0",
+            "why": "A free 9-minute overview of how character design works and the process professional concept art teams follow.",
+            "summary": "Explains character design as visual communication, covering the tools designers use (posing, expression, costuming, props, shape language and color), what makes a design appealing, and four steps that many professional concept art teams, including at Riot Games, use to design characters.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "The \"Brain Dump\" Method for Character Design",
+            "creator": "Dave Greco (Proko)",
+            "url": "https://www.youtube.com/watch?v=oZfgTXDwuLI",
+            "why": "A free 20-minute demonstration of generating many different character ideas and silhouettes quickly.",
+            "summary": "Uses a traveling merchant to practice character thumbnailing, focusing on generating unique silhouettes and rapid ideas, and explains that thumbnails should show an art director a real breadth of ideas, with each design looking very different from the one before.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "Design Props like PRO",
+            "creator": "Tyler Edlin and Josh Ash",
+            "url": "https://www.youtube.com/watch?v=5GFxIJFb0oU",
+            "why": "A free 19-minute lesson on prop design as a part of world-building.",
+            "summary": "Josh Ash and Tyler Edlin discuss prop design as a vital part of world-building and show how to level up props from boring and mundane to props that say something about the world and the characters, using a personal fishing-company project as the working example.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "Concept Art Playbook #9 - Prop Options",
+            "creator": "Ctrl+Paint",
+            "url": "https://www.youtube.com/watch?v=ZcOCA7UOHjg",
+            "why": "A free 6-minute design exercise on inventing a new object for an existing game.",
+            "summary": "In this Concept Art Playbook episode the brief is to design a new object to fit an existing game, demonstrated with a new item for Mario Kart 8, and it is approached primarily as a written assignment from the game designer's point of view before any drawing.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Character Concept: A 'Make it or Break it' in Game Design",
+            "creator": "Innovecs Games",
+            "url": "https://www.innovecsgames.com/blog/character-concept-for-your-game/",
+            "why": "A free article from a games outsourcing studio's blog, useful for its brief checklist and silhouette tests. It is a company blog, so treat its schedule and cost claims as rough guidance only.",
+            "summary": "Describes character concept art as turning a written description into a buildable design, lists deliverables such as thumbnails, silhouette passes tested at small sizes, a refined front view with material callouts, a turnaround, a model sheet with expression studies and prop breakouts, and layered files, and gives a brief checklist (the character's function, a short history, references plus one negative reference, where it will be seen, technical limits, and what is decided versus open) along with game-specific tips such as keeping the image clean and making every feature functional.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What is character design, in the sense this module uses it?",
+            "options": [
+              "Drawing the prettiest possible outfit",
+              "Copying an existing character",
+              "A form of visual communication that tells the audience about a character through how they look",
+              "Choosing the character's voice"
+            ],
+            "correct": 2,
+            "explain": "Character designers use posing, expression, costuming, props, shape language and color to communicate who a character is, while keeping the design appealing."
+          },
+          {
+            "q": "What should you aim for at the thumbnail stage when designing a character?",
+            "options": [
+              "Many designs that look very different from each other, especially in silhouette, to show a breadth of ideas",
+              "One final rendered image",
+              "Five versions of the same silhouette with different details",
+              "As many colors as possible"
+            ],
+            "correct": 0,
+            "explain": "Art directors want to see a wide range of ideas before a direction is chosen, so each thumbnail should be a genuinely different idea."
+          },
+          {
+            "q": "What is a useful test of whether a character sheet is working?",
+            "options": [
+              "How colorful it is",
+              "Whether it has more than ten details",
+              "Whether it was drawn quickly",
+              "Whether someone who has never read the brief can describe the character back to you"
+            ],
+            "correct": 3,
+            "explain": "If a design needs a written explanation to make sense, it is not finished; a stranger should be able to read it from the drawing alone."
+          },
+          {
+            "q": "Why are props treated as part of world-building?",
+            "options": [
+              "They are always the most detailed part of an image",
+              "Props are optional decoration",
+              "Every environment is full of them and characters carry them, so they can say something about the world and its people",
+              "They replace environment design"
+            ],
+            "correct": 2,
+            "explain": "Props appear everywhere and are handled by characters constantly, which makes them an efficient way to communicate who made and uses things and what world they belong to."
+          },
+          {
+            "q": "What does a negative reference in a brief do?",
+            "options": [
+              "It shows an image that illustrates what you do not want, which can save rounds of revisions",
+              "It lists the character's flaws",
+              "It replaces thumbnails",
+              "It is the final render"
+            ],
+            "correct": 0,
+            "explain": "A reference that says 'not this' narrows the design space as effectively as positive references and is rarely included."
+          }
+        ],
+        "checklist": [
+          "I can write a short design brief with function, history, references and a negative reference.",
+          "I can generate silhouettes that are genuinely different from each other and test them at small size.",
+          "I can take one design through refinement, a turnaround, expression studies and prop breakouts.",
+          "I can design a prop so that it carries function and says something about its world."
+        ],
+        "nextStep": "You can now design specific characters and props inside a project's look. Module 122 moves to how those designs actually get built for games: the game art pipeline from concept to engine."
+      },
+      {
+        "id": "m128",
+        "plate": "122",
+        "title": "Game Art Pipeline",
+        "difficulty": "Advanced",
+        "studyTime": "20 min",
+        "practiceTime": "45–60 min/day",
+        "prereq": [
+          "m127"
+        ],
+        "hook": "A character that looks perfect in a sculpting program can still be unusable in a game, because a game has to draw it many times a second on hardware with a fixed budget.",
+        "whyItMatters": [
+          "Module 121 ended with a finished design on a model sheet. This module follows that design into production: how a concept becomes an asset that actually runs inside a game engine, and why a concept artist who understands those limits is far more useful to a team.",
+          "Games add constraints that illustration and film concept art rarely face: a performance budget, a target platform and a real-time engine. Knowing what the engine is going to ask of an asset lets you design things that are cheaper to build and survive the trip from sketch to screen."
+        ],
+        "coreIdea": [
+          "A game art pipeline turns a concept into an engine-ready asset. A typical 3D path runs from concept and reference, to blocking and a high-detail sculpt, to a clean low-polygon mesh (retopology), to UV unwrapping, to baking detail into textures and texturing, to rigging and animation for characters, and finally to optimization steps such as LODs and collision before import into the engine. A 2D path is shorter: concept, line work, color, export or sprite sheets, then import.",
+          "Constraints decide the design. Unity's documentation states that the number of polygons you should use depends on the visual quality you need and the platform you target: fewer polygons run faster because every vertex, edge and face costs computing resources, while more polygons give more detail and control over shape. Its advice for models includes minimizing polygon count, using as few materials as possible, a single skinned mesh renderer and as few bones as possible, while warning that there is no single answer and that you must balance performance against realism.",
+          "Level of detail (LOD) is how engines handle distance. Without LODs an object is rendered at the same complexity however small it appears on screen. With LODs the engine swaps in simpler versions, reducing polygons, material complexity or the number of renderers. LOD0 is the most detailed version and higher numbers have progressively less detail, and Unreal notes that it switches by screen size rather than by distance, so a smaller instance changes LOD before a larger one.",
+          "Technical art connects the two sides. Riot Games describes technical art as being, at its core, about streamlining art creation and implementation, which is why artists who understand engine limits are valuable. Decisions are cheapest early: a change at the sketch or silhouette stage costs far less than the same change after rigging."
+        ],
+        "mistakes": [
+          "Designing or sculpting without asking what the target platform and the performance budget are.",
+          "Treating polygon count as a purely artistic choice when it depends on the platform and on everything else competing for rendering resources.",
+          "Ignoring LODs, so a detailed asset is rendered at full cost even when it is a few pixels tall.",
+          "Adding extra details, layers and parts that must all be modeled but never read at the distances the player sees them.",
+          "Waiting until the engine import to discover that a design breaks the rig, the budget or the silhouette."
+        ],
+        "proTips": [
+          "Ask for the budget up front: target platform, polygon and texture limits, and how many of the asset will be on screen at once.",
+          "Check that your silhouette still reads at the lower LODs, since that is what most players will see most of the time.",
+          "Preview assets in the engine early and often instead of judging them only in your modeling or painting software.",
+          "Learn the vocabulary of the engine you target (LOD, materials, bones, collision) so you can discuss limits with technical artists and programmers."
+        ],
+        "practice": {
+          "warmup": "Write a pipeline checklist for one asset from your Module 121 designs, listing each stage from concept to engine import and who would own it.",
+          "daily": "Sketch a prop at three levels of detail (LOD0, LOD1, LOD2) and check whether the silhouette still reads at the simplest level.",
+          "weekly": "Pick a free engine and read its documentation on LODs and importing assets, then write a half-page summary of what an artist must deliver.",
+          "challenge": "Take one prop from concept to a simple low-polygon model in free software, import it into an engine, and set up two LOD levels, noting where the budget forced you to change the design."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "So You Wanna Make Games?? | Episode 5: Technical Art",
+            "creator": "Riot Games",
+            "url": "https://www.youtube.com/watch?v=kr7XYXMM7-U",
+            "why": "A free 13-minute official video on technical art, the role that connects art to the engine.",
+            "summary": "Riot Games' episode on technical art, which describes tech art as having many specializations but, at its core, being about streamlining art creation and implementation.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "The Complete AAA VIDEO GAME Character Art Pipeline",
+            "creator": "Jared Chavez",
+            "url": "https://www.youtube.com/watch?v=x7I4_jJZy-c",
+            "why": "A free 17-minute walkthrough of a full character art pipeline for AAA games.",
+            "summary": "Presents a complete AAA video game character art pipeline, using an allosaurus concept as the example.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "My Full Game Prop Creation Pipeline",
+            "creator": "rileyb3d",
+            "url": "https://www.youtube.com/watch?v=4jaY-5UpOZM",
+            "why": "A free 9-minute look at one artist's pipeline for making a game prop.",
+            "summary": "Walks through the creator's full pipeline for making a game prop.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Creating models for optimal performance",
+            "creator": "Unity Technologies (Unity Manual)",
+            "url": "https://docs.unity3d.com/Manual/ModelingOptimizedCharacters.html",
+            "why": "Free official documentation on how model choices affect performance in a real engine.",
+            "summary": "Lists tips for performant models (minimize polygon count, use as few materials as possible, a single skinned mesh renderer, as few bones as possible, and keep forward and inverse kinematics separate), and explains that polygon count depends on the quality you need and your target platform, that fewer polygons run faster while more give more detail, and that you have to balance performance against visual realism.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Introduction to level of detail",
+            "creator": "Unity Technologies (Unity Manual)",
+            "url": "https://docs.unity3d.com/Manual/LevelOfDetail.html",
+            "why": "Free official documentation explaining what LODs are and why engines use them.",
+            "summary": "Explains that level of detail improves performance by reducing the rendering workload, because without it an object is rendered with the same complexity however small it is on screen, and describes how LODs reduce polygons, material complexity or the number of mesh renderers, with LOD0 as the most detailed level and higher indices progressively less detailed.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "Creating and Using LODs in Unreal Engine",
+            "creator": "Epic Games (Unreal Engine documentation)",
+            "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/creating-and-using-lods-in-unreal-engine",
+            "why": "Free official how-to showing the artist's side of LODs in a second major engine.",
+            "summary": "A how-to on importing a less detailed version of a mesh so the engine swaps between versions as the player moves closer or farther away, noting that the swap is based on screen size rather than distance and that complex collision can use any imported LOD without switching at runtime.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What is the main purpose of level of detail (LOD)?",
+            "options": [
+              "To make models look more detailed up close only",
+              "To reduce the rendering workload by using simpler versions of an object as it becomes smaller on screen",
+              "To change a model's color",
+              "To increase the polygon count automatically"
+            ],
+            "correct": 1,
+            "explain": "Without LOD an object is rendered at the same complexity no matter how small it appears, so engines swap in simpler versions as it gets smaller."
+          },
+          {
+            "q": "According to Unity's documentation, what determines how many polygons you should use?",
+            "options": [
+              "The visual quality you need and the platform you are targeting",
+              "Only the artist's preference",
+              "Only the file format",
+              "Only the number of bones"
+            ],
+            "correct": 0,
+            "explain": "The right number depends on the quality you require and the target platform, and fewer polygons run faster while more give more detail."
+          },
+          {
+            "q": "How does Unreal Engine decide when to switch from one LOD to another in the how-to?",
+            "options": [
+              "Only by the clock",
+              "By the camera's color settings",
+              "By screen size rather than by distance, so a smaller instance changes LOD before a larger one",
+              "By the artist's name"
+            ],
+            "correct": 2,
+            "explain": "The documentation notes that LOD switching is calculated by screen size, not distance, so two instances of different sizes switch at different distances."
+          },
+          {
+            "q": "Which of these is one of the performance tips for models given in the Unity manual?",
+            "options": [
+              "Use as many materials as possible",
+              "Add extra bones for variety",
+              "Never use polygons",
+              "Use as few bones and as few materials as possible"
+            ],
+            "correct": 3,
+            "explain": "The manual advises minimizing polygons, using as few materials as possible and as few bones as possible, while balancing against visual quality."
+          },
+          {
+            "q": "Why should a concept artist learn about game performance budgets?",
+            "options": [
+              "Because concept art is never changed",
+              "To avoid drawing",
+              "So designs can be built efficiently and survive the trip from sketch to the engine, since changes are cheapest early",
+              "Because budgets decide the story"
+            ],
+            "correct": 2,
+            "explain": "Understanding the limits lets you design things that are practical to model and run, and avoid expensive redesigns after rigging or import."
+          }
+        ],
+        "checklist": [
+          "I can list the main stages of a game art pipeline from concept to engine import.",
+          "I can explain why polygon count, materials and bones depend on the target platform and budget.",
+          "I can explain what LODs are and how an engine uses them.",
+          "I can name the questions to ask about budget and platform before starting an asset."
+        ],
+        "nextStep": "You now understand how a design travels into a game engine. Module 123 turns to animation pre-production: storyboards, animatics and the planning that happens before a single frame is animated."
+      },
+      {
+        "id": "m129",
+        "plate": "123",
+        "title": "Animation Pre-Production: Storyboards & Animatics",
+        "difficulty": "Intermediate",
+        "studyTime": "20 min",
+        "practiceTime": "45–60 min/day",
+        "prereq": [
+          "m128"
+        ],
+        "hook": "A scene can read beautifully on the page and still fall flat on screen. Animation studios find that out in storyboards and animatics, before anyone animates a single frame.",
+        "whyItMatters": [
+          "Modules 116 to 125 taught sequential storytelling on pages and in scrolling strips. Animation pre-production applies the same thinking to moving images, and it is where a story's shots, staging, timing and designs get tested cheaply, long before production is expensive.",
+          "It also introduces a role many artists do not expect. A story artist is hired for drawing, but communication and pitching matter just as much, because boards are performed and explained to directors and teams, not just handed over."
+        ],
+        "coreIdea": [
+          "In a studio pipeline, pre-production starts from a final script and runs several tracks at the same time. The design team breaks down everything the episode needs, starts with rough pre-designs that feed the storyboard artists, then moves to final designs, clean line art, color styling and background paint. The storyboard artists and director do their own breakdown of shots, compositions and action. Casting breaks the script down for voices, runs auditions and records dialogue that is then edited.",
+          "Storyboarding is taking scripts, pitches and the early makings of a story and drawing out the shots, the staging and the scenes. The early stage is where a lot of iteration and change happens, because emotional moments that read well on the page may not land on screen and plot problems often appear only once the story has been embodied and stress-tested in boards.",
+          "An animatic is a string of storyboard images edited together with sound to show how a sequence will flow in motion. It adds timing, dialogue, sound effects and music to the same images. It is not always necessary, but it gives a fuller sense of what the finished piece will look and sound like, and even live-action films use animatics for complex action or visual effects scenes.",
+          "The animatic is the review tool. In a studio, board roughs get notes from the director and producers, the cleaned boards go to an animatic editor who cuts them into a timeline, and the team watches it play and breaks it down again. Designs for things that were dropped stop, and designs for things that were added begin, and the animatic keeps being revised with the director and board revisionists until it works."
+        ],
+        "mistakes": [
+          "Treating storyboards as finished illustrations instead of a tool for testing staging, shots and story.",
+          "Skipping the animatic, so pacing and timing problems only show up after animation has started.",
+          "Continuing to polish designs for things that the animatic shows are no longer in the story.",
+          "Choosing shots and staging so that acting and action are hard to read, which is a common issue in beginner storyboard portfolios.",
+          "Handing boards over without being able to explain and pitch them."
+        ],
+        "proTips": [
+          "Try the three-panel storytelling assignment first: a very small story told in three panels, which teaches visual storytelling without boarding a full sequence.",
+          "Let sound help carry the load in an animatic, perform the dialogue yourself for the rough track, and choose original music if you will share the piece.",
+          "Show your animatic cold, to someone who has not seen the boards, and note where they get confused.",
+          "Re-run the script breakdown whenever the boards change, so designs and assets follow the story and not the other way around."
+        ],
+        "practice": {
+          "warmup": "Tell a tiny story in three panels (setup, turn, ending) and then pitch it out loud, explaining the shot in each panel.",
+          "daily": "Board a short scene in about twelve panels, drawing the same moment with two different staging choices and comparing how clearly each reads.",
+          "weekly": "Edit your boards into a timed animatic with scratch dialogue and simple sound in whatever video editor you have, then watch it back and adjust the timing.",
+          "challenge": "Show the animatic to someone who has not seen the boards, ask them to retell the scene, and fix the first place where their retelling goes wrong."
+        },
+        "resources": [
+          {
+            "type": "Video",
+            "title": "Animation Pre-Production Explained in UNDER 5 MINUTES! ✍️",
+            "creator": "Nicktoons",
+            "url": "https://www.youtube.com/watch?v=1kN5Xi9vC04",
+            "why": "A free 6-minute official studio walkthrough of 2D animation pre-production by a senior animation production director.",
+            "summary": "Sandi Smith, Senior Director of Animation Production, breaks down the pipeline starting from a final script: three tracks run at once (design, storyboards with the director, and casting with dialogue recording), board roughs get notes and cleans go to an animatic editor who cuts a timeline, and the team reviews the animatic and adjusts designs, adding or dropping items, until it is right.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "Beginner's Guide To Storyboarding for Animation",
+            "creator": "Alan Winn (Alanhuynhworks)",
+            "url": "https://www.youtube.com/watch?v=gD2gEZWCNmo",
+            "why": "A free 12-minute beginner guide from a working story artist in the animation industry.",
+            "summary": "Story artist Alan Winn explains what storyboarding is (drawing out the shots, staging and scenes from scripts and pitches), how boards differ from animatics (boards edited on a timeline and timed with music and dialogue), why early iteration matters because plot and emotional problems appear once a story is embodied in boards, and gives a three-panel assignment that includes pitching, since communication is as important as drawing.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "Common MISTAKES beginning storyboard artists make for animation",
+            "creator": "Toniko Pantoja",
+            "url": "https://www.youtube.com/watch?v=FobYdp19LR0",
+            "why": "A free 12-minute critique of the mistakes that hold back beginner storyboard portfolios.",
+            "summary": "A working storyboard artist shares feedback on common things he sees holding back beginners' portfolios and animatics, touching on shot choices, camera, staging and acting.",
+            "verified": true
+          },
+          {
+            "type": "Video",
+            "title": "how to make animatics | beginners guide",
+            "creator": "patchy cables",
+            "url": "https://www.youtube.com/watch?v=OufIRwXCFnE",
+            "why": "A free 7-minute guide to making your first animatic.",
+            "summary": "A beginner-oriented guide to making an animatic for people who have never made one, from a creator with a little over three years of experience making them, covering how to turn storyboard frames into a timed sequence.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "What is an Animatic — How To Bring Your Storyboard to Life",
+            "creator": "StudioBinder",
+            "url": "https://www.studiobinder.com/blog/what-is-an-animatic/",
+            "why": "A free, clear definition of animatics and how they differ from storyboards.",
+            "summary": "Defines an animatic as a string of storyboard images edited together with sound to show how a sequence will flow in motion, explains how it differs from a storyboard (a visual representation of a sequence that breaks the action into individual panels), and covers why to use animatics, including as a rough draft of a project, for planning VFX in live action, and for collaboration.",
+            "verified": true
+          },
+          {
+            "type": "Article",
+            "title": "How to Make an Animatic: A Step-by-Step Guide",
+            "creator": "StudioBinder",
+            "url": "https://www.studiobinder.com/blog/how-to-make-an-animatic/",
+            "why": "A free set of practical tips for building an animatic from boards.",
+            "summary": "Gives tips for making an animatic: let sound help carry the load, perform your own dialogue, choose original music, and give it to viewers cold, plus a short explanation of keyframes.",
+            "verified": true
+          }
+        ],
+        "quiz": [
+          {
+            "q": "What is an animatic?",
+            "options": [
+              "A finished animated film",
+              "A character model sheet",
+              "A string of storyboard images edited together with sound to show how a sequence flows in motion",
+              "A background painting"
+            ],
+            "correct": 2,
+            "explain": "An animatic turns the storyboard into a timed video with dialogue, sound effects and music, so pacing can be judged before animation."
+          },
+          {
+            "q": "In the studio workflow described, what is the starting point and how do the tracks run?",
+            "options": [
+              "A final script, with design, storyboard and casting tracks running at the same time",
+              "A finished animation, with tracks running one after another",
+              "A music track, with storyboards last",
+              "A character model, with the script written afterward"
+            ],
+            "correct": 0,
+            "explain": "Pre-production starts from a final script, and the design team, the storyboard artists and director, and casting and dialogue work in parallel."
+          },
+          {
+            "q": "Which of these is one of the tips for making an animatic?",
+            "options": [
+              "Never add sound",
+              "Use only stock music",
+              "Skip timing entirely",
+              "Give it to viewers cold, meaning to someone who has not seen the boards"
+            ],
+            "correct": 3,
+            "explain": "A fresh viewer shows you where the story or pacing is confusing, because they cannot fill the gaps from memory."
+          },
+          {
+            "q": "Why is the storyboard stage a place for a lot of iteration?",
+            "options": [
+              "Because boards are never reviewed",
+              "Because emotional moments and plot problems often only show up once the story has been drawn out and tested",
+              "Because drawings cannot be changed later",
+              "Because animators dislike boards"
+            ],
+            "correct": 1,
+            "explain": "A script can read well and still not work on screen, so boards and animatics are where those problems get found and fixed cheaply."
+          },
+          {
+            "q": "Besides drawing, which skills does the story artist in the video call equally important?",
+            "options": [
+              "Music composition",
+              "3D modeling",
+              "Communication and pitching",
+              "Rigging"
+            ],
+            "correct": 2,
+            "explain": "Story artists present and pitch their boards, so explaining and performing the story matters as much as drawing it."
+          }
+        ],
+        "checklist": [
+          "I can explain the difference between a storyboard and an animatic.",
+          "I can describe how design, storyboard and casting tracks run from a final script.",
+          "I can build a short animatic with timing and scratch sound.",
+          "I can test boards on a fresh viewer and fix the first point of confusion."
+        ],
+        "nextStep": "You can now plan an animated sequence before production starts. Module 130 turns to print production: preparing artwork for printing, from resolution and color to bleed and file setup."
+      }
+    ]
+  },
+  {
+    "id": "portfolio-branding",
+    "title": "Portfolio & Personal Branding",
+    "status": "soon",
+    "order": 12,
+    "desc": "Building a studio-quality portfolio, case studies, online presence across ArtStation/Behance/Instagram, and a coherent personal brand.",
+    "moduleCount": 10,
+    "sample": [
+      "Building a Portfolio",
+      "Case Studies",
+      "Online Portfolios",
+      "Personal Branding",
+      "Social Media Strategy"
+    ]
+  },
+  {
+    "id": "freelancing-business",
+    "title": "Freelancing & Business",
+    "status": "soon",
+    "order": 13,
+    "desc": "Finding clients, pricing, contracts, project management, finances, marketing, and avoiding the scams that target working artists.",
+    "moduleCount": 10,
+    "sample": [
+      "Finding Clients",
+      "Pricing Artwork",
+      "Contracts & Legal Basics",
+      "Finance for Artists",
+      "Marketing & Sales"
+    ]
+  },
+  {
+    "id": "careers-growth",
+    "title": "Professional Careers & Lifelong Growth",
+    "status": "soon",
+    "order": 14,
+    "desc": "How studio pipelines and hiring actually work, career specializations, teamwork, ethics and copyright, and a realistic long-term growth plan.",
+    "moduleCount": 10,
+    "sample": [
+      "Art Specializations",
+      "Studio Pipelines",
+      "Recruitment & Hiring",
+      "Professional Ethics",
+      "Lifelong Artist Roadmap"
+    ]
+  }
 ];
