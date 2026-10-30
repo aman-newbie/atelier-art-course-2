@@ -654,7 +654,7 @@ const CURRICULUM_1 = [
       },
       {
         id:'m14', plate:'14', title:'Composition Foundations', difficulty:'Intermediate',
-        studyTime:'30 min', practiceTime:'20\u201325 min/day', prereq:['m8','m11'],
+        studyTime:'30 min', practiceTime:'20\u201325 min/day', prereq:['m8','m11','m12','m13'],
         hook:"Every technique in this arc, arranged badly, still fails \u2014 composition decides whether a viewer's eye goes where you meant it to.",
         whyItMatters:[
           "This module closes the Perspective & Construction arc by zooming back out. Everything learned so far \u2014 forms, perspective, gesture, construction, light, shading, texture \u2014 can be individually excellent and still add up to a weak image if the composition doesn't organize it. Composition is the layer that decides what a viewer looks at first, second, and last.",
