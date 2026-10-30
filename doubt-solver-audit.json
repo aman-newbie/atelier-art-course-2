@@ -55,7 +55,7 @@
     },
     "conversation_routing": {
       "total": 29,
-      "passed": 28,
+      "passed": 29,
       "router_cases": 19,
       "external_search_gate_cases": 7,
       "send_handler_integration_cases": 3

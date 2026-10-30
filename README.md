@@ -28,3 +28,10 @@ Serve this directory as static files and open `index.html`. Browser storage is u
 ## Regression tests
 
 Run `node training/doubt-solver-regression.js` for the bilingual capability/current-lesson suite and `node training/conversation-routing-regression.js` for greetings, identity, clarification, external-search gating, and send-handler routing.
+## Atelier Admin Dashboard (local demo)
+
+Open `admin.html` on the same site to reach the separate, read-only Atelier Admin Dashboard. On first use, create a local passphrase of at least 8 characters; it is stored as a salted PBKDF2-SHA-256 hash in this browser. The dashboard includes Overview, Message Library, Intent & Rules, Capabilities, Knowledge Base, Conversation Log, Testing Lab, Diagnostics, and Mentor Q&A.
+
+**Security limitation:** this is a local convenience lock, not secure owner authentication. GitHub Pages serves public static files; the dashboard code and catalogue can be inspected, and browser storage can be modified. Do not enter secrets or reuse an important password. No server-side authentication, protected API, global visitor analytics, or cross-device chat log exists. The Conversation Log can only show the latest 40 records saved in the current browser. The Mentor Q&A is deterministic and reads the local catalogue; it does not call a generative AI service.
+
+Run `node training/admin-dashboard-regression.js` for local passphrase, direct-route access gate, source catalogue integrity, and dashboard-section checks. The admin dashboard is intentionally not linked from the normal course UI.

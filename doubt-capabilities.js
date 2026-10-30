@@ -100,5 +100,5 @@ window.ATELIER_DOUBT_CAPABILITIES = (function(){
     out+=hi?'\nCourse references: Module 2 — Materials & Tools; Module 3 — How to Hold a Pencil; Module 12 — Shading Systems; Module 83–85 — Digital Art Fundamentals.':'\nCourse references: Module 2 — Materials & Tools; Module 3 — How to Hold a Pencil; Module 12 — Shading Systems; Module 83–85 — Digital Art Fundamentals.';
     return out;
   }
-  return {answer,toolCount:TOOLS.length};
+  return {answer,toolCount:TOOLS.length,catalog:function(){return TOOLS.map(t=>({id:t.id,label:t.label,names:t.names.slice(),can:t.can||t.hiCan||'',limit:t.limit||''}));}};
 })();
