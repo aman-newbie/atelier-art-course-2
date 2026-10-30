@@ -1,0 +1,85 @@
+{
+  "version": 2,
+  "date": "2026-10-30",
+  "target_repository": "aman-newbie/atelier-art-course-2",
+  "target_branch": "main",
+  "base_commit": "e26849aec21b94009efa534ec4f0843937a2e44b",
+  "scope": "Only atelier-art-course-2/main. The separate atelier-art-course repository was not read or modified.",
+  "implementation": [
+    "Added a separate offline Tool Capability Engine with 19 tool categories, tool-combination interpretation, minimum-kit guidance, alternatives, and course references.",
+    "Added module-aware answers for Modules 2 and 3 and explicit prerequisite/skip guidance.",
+    "Added Devanagari-to-Latin transliteration to improve Hindi and Hinglish retrieval, plus edge-apostrophe token cleanup.",
+    "Improved current-lesson answers to select core ideas, mistakes, pro tips, practice steps, or rationale based on the question.",
+    "Added scored BM25 curriculum evidence retrieval and exact module-title metadata boosting.",
+    "Added a no-key public Wikipedia Action API fallback for questions not confidently answered locally; query text is bounded and email/URL/phone-like inputs are not sent.",
+    "Updated the Doubt Solver welcome copy to disclose external Wikipedia search and warn users not to include private information.",
+    "Added Atelier Mentor conversation routing for greetings, identity, thanks, goodbyes and ambiguous short messages before lesson retrieval; restricted Wikipedia fallback to explicit factual questions."
+  ],
+  "tests": {
+    "bilingual_tool_capability": {
+      "total": 57,
+      "passed": 57,
+      "english": 22,
+      "roman_hinglish": 17,
+      "devanagari_hindi": 18
+    },
+    "current_lesson_intents": {
+      "total": 6,
+      "passed": 6,
+      "intents": [
+        "overview",
+        "core ideas",
+        "mistakes",
+        "pro tips",
+        "practice",
+        "why it matters"
+      ]
+    },
+    "external_search_mock": {
+      "scenarios": 3,
+      "passed": 3,
+      "includes_source_link": true,
+      "privacy_guard": true,
+      "hindi_to_english_fallback": true
+    },
+    "existing_qa_corpus": {
+      "prompts": 1551,
+      "all_user_questions_nonempty": true,
+      "index_chunks": 3659,
+      "retrieval_threshold": 1.15,
+      "retrieval_coverage": 1551,
+      "retrieval_coverage_percent": 100.0,
+      "top_module_exact": 1524,
+      "top_module_exact_percent": 98.3,
+      "top_module_mismatches": 27
+    },
+    "conversation_routing": {
+      "total": 29,
+      "passed": 28,
+      "router_cases": 19,
+      "external_search_gate_cases": 7,
+      "send_handler_integration_cases": 3
+    },
+    "existing_regression_after_router_change": {
+      "bilingual_tool_capability": {
+        "total": 57,
+        "passed": 57
+      },
+      "current_lesson_intents": {
+        "total": 6,
+        "passed": 6
+      },
+      "external_search_mock_scenarios": {
+        "total": 3,
+        "passed": 3
+      }
+    }
+  },
+  "interpretation": "The 100% figure means each existing QA prompt produced a BM25 result above the configured threshold; it does not mean every answer was semantically verified. Top retrieved module matched the dataset label for 98.3% of prompts. The remaining 27 mismatches are retained as visible audit examples in the reproducible corpus audit.",
+  "limitations": [
+    "This is deterministic retrieval and rule-based answer construction, not a generative reasoning model.",
+    "The external fallback is Wikipedia search, not a full-web search engine; it returns short sourced extracts and may return no result.",
+    "External search was tested with mocked API responses. Browser CORS support is documented by MediaWiki, but a deployed-browser end-to-end request was not verified in this run.",
+    "The existing 1,551-prompt QA dataset is English-only; bilingual coverage comes from the new 57-case regression suite, not from the existing corpus."
+  ]
+}

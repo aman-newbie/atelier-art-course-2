@@ -2624,6 +2624,36 @@ function getDoubtRelatedTitles(moduleIds){
     const m=findModule(id); return m ? (id.toUpperCase()+' '+L(m,'title')) : null;
   }).filter(Boolean).slice(0,4);
 }
+function getConversationReply(query,isHi){
+  const raw=String(query||'').trim();
+  const q=normalizeDoubtText(raw).replace(/\s+/g,' ').trim();
+  const hi=!!isHi||/[\u0900-\u097f]/.test(raw);
+  const greetings=new Set(['hi','hello','hey','hey there','hiya','yo','namaste','namaskar','good morning','good afternoon','good evening']);
+  if(greetings.has(q)) return hi
+    ? 'Namaste! Main Atelier Mentor hoon. Drawing, art concepts ya course ke kisi bhi lesson ke baare mein poochho.'
+    : 'Hi! I’m Atelier Mentor. Ask me about drawing, art concepts, or any Atelier lesson.';
+  const identity=new Set(['who are you','who are u','who r you','who r u','what are you','what r you','are you ai','are you an ai','are you a bot','are you an ai bot','what is your name','whats your name','your name','tum kaun ho','tum kon ho','aap kaun ho','aap kon ho','aapa kauna ho','aapa kona ho','tuma kauna ho','tuma kona ho','tu kaun hai','tu kon hai','tum kaun ho bhai','aapka naam kya hai','tumhara naam kya hai','tera naam kya hai']);
+  if(identity.has(q)) return hi
+    ? 'Main Atelier Mentor hoon — Atelier Art Course ka built-in learning assistant. Main prepared course knowledge aur lesson material se guidance deta hoon; main generative AI model nahi hoon.'
+    : 'I’m Atelier Mentor, the built-in learning assistant for Atelier Art Course. I guide you using prepared course knowledge and lesson material; I’m not a generative AI model.';
+  const thanks=new Set(['thanks','thank you','thank u','thx','shukriya','dhanyavaad']);
+  if(thanks.has(q)) return hi ? 'Koi baat nahi! Art ya course se related kuch bhi pooch sakte ho.' : 'You’re welcome! Ask whenever you need help with art or an Atelier lesson.';
+  const goodbyes=new Set(['bye','goodbye','see you','see ya','later','alvida','phir milte hain']);
+  if(goodbyes.has(q)) return hi ? 'Phir milte hain! Practice ke liye all the best.' : 'See you next time. Happy practicing!';
+  const unclear=new Set(['eh','ehh','huh','what','hmm','hm','umm','um','uh','??','???','...','ok?','okay?']);
+  if(unclear.has(q)) return hi
+    ? 'Kya unclear laga? Apna sawaal thoda aur context ke saath likho, main help karunga.'
+    : 'Not sure what you mean yet. Did something seem unclear? Add a little context and I’ll help.';
+  return null;
+}
+function shouldSearchExternalKnowledge(query){
+  if(getConversationReply(query,false)) return false;
+  const q=normalizeDoubtText(query);
+  const words=q.split(' ').filter(w=>w.length>1);
+  if(words.length<3) return false;
+  return /^(what|who|when|where|why|how|define|explain|tell me about|kya|kaun|kab|kahan|kyun|kaise|samjhao|batao)\b/.test(q);
+}
+
 function answerCurrentLessonQuestion(query){
   const route=STATE.route;
   if(route.view!=='module'||!route.moduleId) return null;
@@ -2651,8 +2681,14 @@ async function sendDoubtMessage(){
   const question=input.value.trim(); if(!question) return;
   appendDoubtMessage('user',question); input.value='';
   doubtHistory.push({role:'user',text:question}); saveDoubtHistory();
-  const isHi=isHinglishDoubt(question);
+  const isHi=isHinglishDoubt(question)||STATE.language==='hi';
   let answer='';
+  const conversationReply=getConversationReply(question,isHi);
+  if(conversationReply){
+    appendDoubtMessage('bot',conversationReply);
+    doubtHistory.push({role:'bot',text:conversationReply}); saveDoubtHistory();
+    return;
+  }
   const currentLessonAnswer=answerCurrentLessonQuestion(question);
   if(currentLessonAnswer){
     answer=currentLessonAnswer;
@@ -2679,7 +2715,7 @@ async function sendDoubtMessage(){
         });
         answer=(isHi?'Atelier course mein is sawaal se related material mila:\n\n':'I found relevant material in the Atelier course:\n\n')+lines.join('\n\n')+'\n\nThese are retrieved lesson excerpts, not a generated explanation. Open the cited module for the complete context.';
       }else{
-        const external=await searchExternalKnowledge(question,isHi);
+        const external=shouldSearchExternalKnowledge(question) ? await searchExternalKnowledge(question,isHi) : null;
         if(external) answer=external;
         else{
           const hits=evidence.length?evidence:await searchCurriculumEvidence(question,3);
